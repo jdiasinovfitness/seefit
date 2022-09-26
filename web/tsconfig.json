@@ -21,9 +21,15 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "resolveJsonModule": true,
+    "types": ["cypress", "node"]
   },
   "angularCompilerOptions": {
+    "enableIvy": true,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

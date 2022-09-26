@@ -1,0 +1,20 @@
+<!--
+  WARNING:
+  This is a dummy HTML code in order to test the login and the main structure such as bootstrap or cypress testing
+  TODO:
+        this code must be reviewed in order to meet the mockups requirements
+        unit tests must be defined to the new screen
+    -->
+
+<h1>SEEFIT Dummy Initial Example</h1>
+<div class="login h-100">
+  <h2 class="login-header">{{'welcome' | transloco}}</h2>
+  <form [formGroup]="authForm" class="login-container" (ngSubmit)="signIn()">
+    <input type="email" placeholder="Email" formControlName="email" />
+
+    <input type="password" placeholder="Password" formControlName="password" />
+    <input type="submit" value="Log in" />
+  </form>
+
+
+</div>

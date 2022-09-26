@@ -2,20 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-
   {
-    path: 'login',
-    loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule),
+    path: '',
+    redirectTo: 'authentication',
+    pathMatch: 'full',
   },
   {
-    path: 'private/home',
-    loadChildren: () => import('./modules/private/private.module').then(m => m.PrivateModule),
+    path: 'authentication',
+    loadChildren: () =>
+      import('./modules/authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
+  },
+  {
+    path: 'platform',
+    loadChildren: () =>
+      import('./modules/platform/platform.module').then(
+        (m) => m.PlatformModule
+      ),
   },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

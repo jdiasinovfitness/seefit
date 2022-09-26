@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/app/core/styles/global.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,23 +88,21 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "watch": true,
+            "headless": false,
+            "browser": "chrome",
+            "devServerTarget": "seefit:serve"
+          }, 
+          "configurations": {
+            "production": {
+              "devServerTarget": "seefit:serve:production"
+            }
           }
+
         }
+
       }
     }
   },
