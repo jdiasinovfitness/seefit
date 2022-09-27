@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-
+  //set activate language
   public setActiveLang(lang: string) {
     this.transloco.setActiveLang(lang);
   }
