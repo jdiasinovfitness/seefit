@@ -1,0 +1,11 @@
+node_modules/
+__kube-dev/
+images.tmp
+native/platforms/
+native/plugins/*
+!native/plugins/fetch.json
+native/www/
+dist/
+.idea/
+.nyc_output/
+.vscode/*

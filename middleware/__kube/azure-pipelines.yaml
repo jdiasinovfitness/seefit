@@ -1,0 +1,29 @@
+name: $(date:yyyyMMdd)$(rev:.rr)
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - middleware
+pool: "devops-agent"
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: PRODUCT_DEVELOPMENT/PRODUCT_DEVELOPMENT
+variables:
+  - group: Deploy
+  - name: App
+    value: seefit
+stages:
+  - stage: Build
+    jobs:
+      - template: azure-pipelines/prepare-manifest.yml@templates
+        parameters:
+          App: $(App)
+      - template: azure-pipelines/build-docker-many.yml@templates
+        parameters:
+          App: $(App)
+          ServiceList:
+            - "middleware"
