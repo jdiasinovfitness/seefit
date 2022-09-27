@@ -8,3 +8,4 @@ native/www/
 dist/
 .idea/
 .nyc_output/
+.vscode/*

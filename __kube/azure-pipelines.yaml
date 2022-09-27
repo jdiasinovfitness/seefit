@@ -1,0 +1,24 @@
+name: $(date:yyyyMMdd)$(rev:.rr)
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - __kube/*
+pool: "devops-agent"
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: PRODUCT_DEVELOPMENT/PRODUCT_DEVELOPMENT
+variables:
+  - group: Deploy
+  - name: App
+    value: seefit
+stages:
+  - stage: Build
+    jobs:
+      - template: azure-pipelines/prepare-manifest.yml@templates
+        parameters:
+          App: $(App)
