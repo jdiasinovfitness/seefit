@@ -1,0 +1,28 @@
+<button id="en" (click)="setActiveLang('en')">EN</button>
+<button id="pt" (click)="setActiveLang('pt')">PT</button>
+<!--
+  TODO: menu layout
+-->
+<h1>
+	{{ 'plt.langs' | transloco }}
+	<!--scope 'plataform' with alias 'plt' defined in plataform.module-->
+</h1>
+<span>
+	{{ 'en' | transloco }}
+	<!-- global scope, defined in /assets-->
+</span>
+<span>
+	{{ 'pt' | transloco }}
+</span>
+<ul>
+	<li>
+		<a>Menu 1</a>
+	</li>
+
+	<li>
+		<a>Menu 2</a>
+	</li>
+	<li>
+		<a>Menu 2</a>
+	</li>
+</ul>
