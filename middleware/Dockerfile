@@ -1,5 +1,15 @@
 FROM node:15 as base
+ARG DEVOPS_FEED_READ_TOKEN
 WORKDIR /app
+
+RUN echo \; begin auth token > /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/registry/:username=inovretail >> /root/.npmrc && \ 
+echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/registry/:_password=${DEVOPS_FEED_READ_TOKEN} >> /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/registry/:email=email >> /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/:username=inovretail >> /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/:_password=${DEVOPS_FEED_READ_TOKEN} >> /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/:email=email >> /root/.npmrc && \
+echo \; end auth token >> /root/.npmrc
 
 COPY package.json package-lock.json .npmrc ./
 RUN npm install --prod
