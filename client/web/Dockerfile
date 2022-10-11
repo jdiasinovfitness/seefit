@@ -20,7 +20,7 @@ RUN npm install
 
 COPY ./cypress ./cypress
 COPY ./src ./src
-COPY angular.json transloco.config.js cypress.config.ts tsconfig.json .prettierignore .prettierrc.json ./
+COPY angular.json transloco.config.js cypress.config.ts tsconfig.app.json tsconfig.json .prettierignore .prettierrc.json ./
 
 
 #FROM cypress/base:12 as cypress
