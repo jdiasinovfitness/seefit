@@ -6,14 +6,15 @@
         unit tests must be defined to the new screen
     -->
 
-<h1>SEEFIT Dummy Initial Example</h1>
+<h1 class="text-center">InovFitness</h1>
 <div class="login h-100">
-	<h2 class="login-header">{{ 'login.welcome' | transloco }}</h2>
-	<form [formGroup]="authForm" class="login-container" (ngSubmit)="signIn()">
+	<form [formGroup]="authForm" class="login-container d-flex flex-column" (ngSubmit)="signIn()">
 		<input type="email" placeholder="Email" formControlName="email" />
 
 		<input type="password" placeholder="Password" formControlName="password" />
+		<div class="d-flex flex-row">
 		<span>{{ 'login.forgot_link' | transloco }}</span>
-		<input type="submit" value="Log in" />
+		<input type="submit" value="Login" />
+			</div>
 	</form>
 </div>

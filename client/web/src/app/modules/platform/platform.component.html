@@ -1,0 +1,70 @@
+<!--TODO: 
+	Based on:
+	https://material.angular.io/components/sidenav/examples
+	(Responsive sidenav)
+	- mobile with 100% of all screen
+	- desktop wuith 100% height - width: responsive
+	- toogle to close /open integrated in the header
+	- menu opens over the page in desktop
+	- over menu effect
+-->
+
+<div class="i9r-container">
+	<mat-toolbar class="example-header">
+		<mat-toolbar-row>
+			<mat-icon
+				*ngIf="opened"
+				aria-hidden="false"
+				(click)="sideNavVisibily()"
+				aria-label="Close"
+				fontIcon="close"
+			></mat-icon>
+			<mat-icon
+				*ngIf="!opened"
+				aria-hidden="false"
+				(click)="sideNavVisibily()"
+				aria-label="Menu"
+				fontIcon="reorder"
+			></mat-icon>
+			<h1>InovFitness</h1>
+		</mat-toolbar-row>
+	</mat-toolbar>
+	<mat-sidenav-container class="w-100 h-100">
+		<mat-sidenav
+			class="sidenav-container"
+			#sidenav
+			[opened]="opened"
+			[mode]="'over'"
+			(openedChange)="setSidenavStatus($event)"
+		>
+			<!--DUMMY DATA & TODO:
+				username: .ts hardcoded
+				origin: .ts hardcoded && replace it with a list element
+			-->
+			<p (click)="usernameClick()">
+				{{ 'plt.welcomeUser' | transloco: { userName: userName } }}
+			</p>
+			<p (click)="originClick()">
+				{{ 'origin' | transloco: { originName: originName } }}
+			</p>
+			<!--DUMMY DATA
+				menus: ts hardcoded
+			-->
+			<ul>
+				<li *ngFor="let m of menus">
+					<span>{{ m }}</span>
+				</li>
+			</ul>
+		</mat-sidenav>
+		<!--Sidenav Content
+		The right side content of the main screen goes to here
+		-->
+		<mat-sidenav-content>
+			<app-home *ngIf="!childActivated"></app-home>
+			<router-outlet
+				(deactivate)="onDeactivateChild()"
+				(activate)="onActivateChild()"
+			></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-login',
@@ -10,11 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 	authForm: FormGroup;
 	isSubmitted = false;
+	production = environment.production;
 
 	constructor(
 		private router: Router,
 		private activatedRoute: ActivatedRoute,
-		private formBuilder: FormBuilder
+		private formBuilder: FormBuilder,
+		private auth: AuthService
 	) {
 		this.authForm = this.formBuilder.group({
 			email: ['', Validators.required],
@@ -24,13 +28,18 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {}
 
+	
 	signIn() {
 		this.isSubmitted = true;
 		if (this.authForm.invalid) {
 			return;
 		}
 
-		this.router.navigate(['../../platform/home'], {
+		if (!this.production) {
+			this.auth.login(this.authForm.value);
+		}
+
+		this.router.navigate(['../../platform'], {
 			relativeTo: this.activatedRoute,
 		});
 	}

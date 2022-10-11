@@ -1,5 +1,13 @@
 import { Route } from "../../utils";
 
-const routes: Route[] = [];
+import Auth from "./actions/auth";
+
+const routes: Route[] = [
+	{
+		path: "/auth/login",
+		method: "POST",
+		handler: [Auth],
+	},
+];
 
 export default routes;

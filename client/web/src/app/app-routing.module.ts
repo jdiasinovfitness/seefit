@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
+import { UnAuthGuardGuard } from './core/guards/un-auth-guard.guard';
 
 const routes: Routes = [
 	{
@@ -16,6 +18,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'platform',
+		canActivateChild: [AuthGuardGuard],
 		loadChildren: () =>
 			import('./modules/platform/platform.module').then(m => m.PlatformModule),
 	},

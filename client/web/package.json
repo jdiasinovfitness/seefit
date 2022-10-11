@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --poll=2000",
+    "start": "ng serve --configuration development --poll=2000",
+    "start:tst": "ng serve --configuration tst --poll=2000",
+    "start:no:prd": "ng serve --disable-host-check --proxy-config src/proxy.conf.json",
     "build": "ng build",
+    "build:tst": "ng build --configuration tst",
     "watch": "ng build --watch --configuration development",
     "test": "npm run cypress:run",
     "cypress:open": "npx cypress open",
@@ -16,6 +19,7 @@
     "format": "prettier --write src/**/*.{js,ts,css,scss,html,json}",
     "i18n:extract": "transloco-keys-manager extract",
     "i18n:find": "transloco-keys-manager find"
+    
   },
   "private": true,
   "dependencies": {

@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { AuthGuardGuard } from 'src/app/core/guards/auth-guard.guard';
+import { PlatformComponent } from './platform.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'home',
-		pathMatch: 'full',
-	},
-	{
-		path: 'home',
-		component: HomeComponent,
+		component: PlatformComponent,
+		canActivateChild: [AuthGuardGuard],
+
+		children: [
+			{
+				path: 'user_profile/:id',
+				loadChildren: () =>
+					import('./user-profile/user-profile.module').then(
+						m => m.UserProfileModule
+					),
+				//interactions
+				//health&nutrition
+			},
+		],
 	},
 ];
 

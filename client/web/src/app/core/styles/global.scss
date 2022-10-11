@@ -1,2 +1,13 @@
 @import './fonts.scss';
 @import './base.scss';
+
+html,
+body {
+	height: 100%;
+}
+
+.i9r-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}

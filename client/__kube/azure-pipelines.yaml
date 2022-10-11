@@ -27,3 +27,4 @@ stages:
           App: $(App)
           ServiceList:
             - "client"
+  

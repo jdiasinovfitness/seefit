@@ -1,0 +1,19 @@
+@import '../../core/styles/base.scss';
+
+mat-sidenav {
+	width: 100%;
+	background-color: $mainBackground !important;
+}
+
+mat-sidenav-container {
+	background-color: transparent !important ;
+}
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+	background-color: rgba($mainBackground, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+	mat-sidenav {
+		width: 400px;
+	}
+}

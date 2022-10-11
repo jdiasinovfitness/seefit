@@ -1,5 +1,7 @@
-import { Router, Request, Response, NextFunction } from "express";
+import express, { Router, Request, Response, NextFunction } from "express";
 import * as Err from "./httpErrors";
+
+const app = express();
 
 export const error = Err;
 type Wrapper = (router: Router) => void;
@@ -8,7 +10,9 @@ export const applyMiddleware = (
 	middlewareWrappers: Wrapper[],
 	router: Router,
 ): void => {
+	console.log("routerrrr2");
 	for (const wrapper of middlewareWrappers) {
+		console.log("routerrrr", router, middlewareWrappers[0]);
 		wrapper(router);
 	}
 };
@@ -33,19 +37,20 @@ export const applyRoutes = (routes: Route[], router: Router): void => {
 
 		switch (method) {
 			case "GET":
-				router.get(path, handler);
+				app.get(path, handler);
 				break;
 			case "POST":
-				router.post(path, handler);
+				console.log("PATH", path, handler);
+				app.post(path, handler);
 				break;
 			case "PUT":
-				router.put(path, handler);
+				app.put(path, handler);
 				break;
 			case "DELETE":
-				router.delete(path, handler);
+				app.delete(path, handler);
 				break;
 			case "PATCH":
-				router.patch(path, handler);
+				app.patch(path, handler);
 				break;
 		}
 	}
@@ -53,7 +58,7 @@ export const applyRoutes = (routes: Route[], router: Router): void => {
 
 export const parseParam = {
 	date: (req: Request, name: string): Date => {
-		const value = req.query[name] as string;
+		const value = req.query.name as string;
 		try {
 			const val = new Date(value);
 			if (!isNaN(val.getTime())) {

@@ -24,5 +24,7 @@ const { PORT = 80 } = process.env;
 const server = http.createServer(router);
 
 server.listen(PORT, () =>
-	console.info({ message: `Server is running on port: ${PORT}` }),
+	console.info({
+		message: `Server is running on port: ${PORT} at ${process.env.NODE_ENV}`,
+	}),
 );

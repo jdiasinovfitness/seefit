@@ -97,9 +97,7 @@ export const processAPIError = (err: unknown) => {
 				err.response.data?.error?.value || "Undefined",
 			);
 		} else if (err.response.status == 400) {
-			return new RequestError(
-				err.response.data?.error?.message || "Undefined",
-			);
+			return new RequestError(err.response.data?.error?.message || "Undefined");
 		} else {
 			return new RequestError(err.response.data);
 		}

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class GlobalStorage  {
-
+export class GlobalStorage {
 	constructor() {}
 
 	clear(): void {

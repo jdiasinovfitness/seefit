@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { PlatformRoutingModule } from './platform-routing.module';
 import { TranslocoModule, TRANSLOCO_SCOPE } from '@ngneat/transloco';
-import { NavigationComponent } from './navigation/navigation.component';
-import { loader } from 'src/app/core/services/i18n/transloco-loader';
+import { loader } from 'src/app/core/i18n/transloco-loader';
+import { PlatformComponent } from './platform.component';
+import { MaterialExampleModule } from 'src/app/material.module';
 
 @NgModule({
-	declarations: [HomeComponent, NavigationComponent],
-	imports: [CommonModule, PlatformRoutingModule, TranslocoModule],
+	declarations: [HomeComponent, PlatformComponent],
+	imports: [
+		CommonModule,
+		PlatformRoutingModule,
+		TranslocoModule,
+		MaterialExampleModule,
+	],
 	providers: [
 		{
 			provide: TRANSLOCO_SCOPE,
