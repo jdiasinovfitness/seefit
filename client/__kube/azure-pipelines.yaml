@@ -26,7 +26,7 @@ stages:
         parameters:
           App: seefit
           ServiceList:
-            - "web"
+            - "client/web"
 
   - stage: Deploy_tst
     displayName: "Deploy: Testing"
@@ -38,7 +38,7 @@ stages:
           Dir: "client"
           Namespace: "seefit"
           InstallList:
-            - "web"
+            - "client"
           EnsureDeployments:
             - "web"
 
@@ -52,6 +52,6 @@ stages:
           Dir: "client"
           Namespace: "seefit"
           InstallList:
-            - "web"
+            - "client"
           EnsureDeployments:
             - "web"
