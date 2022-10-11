@@ -1,5 +1,5 @@
 #Build
-FROM node:15 as build
+FROM node:16 as build
 ARG DEVOPS_FEED_READ_TOKEN
 WORKDIR /app
 
@@ -30,7 +30,7 @@ COPY angular.json transloco.config.js cypress.config.ts tsconfig.json .prettieri
 RUN npm run build
 
 #Deploy
-FROM nginx:1.17.1-alpine
+FROM nginx:1.23-alpine
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY dist/seefit /usr/share/nginx/html
