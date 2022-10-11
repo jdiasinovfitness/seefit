@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: client
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app : web  
+        app : client  
     spec:
       containers:
-        - name: web
-          image: inovretail.azurecr.io/seefit/web:${TAG}
+        - name: client
+          image: inovretail.azurecr.io/seefit/client:${TAG}
           imagePullPolicy: Always
           ports:
           - containerPort: 80

@@ -137,7 +137,7 @@ export class PlatformComponent implements OnInit {
 		this.setSidenavStatus(false);
 		this.childActivated = true;
 	}
-	
+
 	/**
 	 * on route child desactivated
 	 */

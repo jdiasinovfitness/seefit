@@ -71,7 +71,5 @@ export class AuthService {
 		}
 	}
 
-	refreshToken() {
-		
-	}
+	refreshToken() {}
 }

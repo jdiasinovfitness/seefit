@@ -1,4 +1,5 @@
 name: $(date:yyyyMMdd)$(rev:.rr)
+
 trigger:
   branches:
     include:
@@ -6,25 +7,51 @@ trigger:
   paths:
     include:
       - client
+
 pool: "devops-agent"
+
 resources:
   repositories:
     - repository: templates
       type: git
       name: PRODUCT_DEVELOPMENT/PRODUCT_DEVELOPMENT
+
 variables:
   - group: Deploy
-  - name: App
-    value: seefit
+
 stages:
   - stage: Build
     jobs:
-      - template: azure-pipelines/prepare-manifest.yml@templates
-        parameters:
-          App: $(App)
       - template: azure-pipelines/build-docker-many.yml@templates
         parameters:
-          App: $(App)
+          App: seefit
           ServiceList:
-            - "client"
-  
+            - "web"
+
+  - stage: Deploy_tst
+    displayName: "Deploy: Testing"
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - template: azure-pipelines-v2/deploy-tst.yml@templates
+        parameters:
+          Dir: "client"
+          Namespace: "seefit"
+          InstallList:
+            - "web"
+          EnsureDeployments:
+            - "web"
+
+  - stage: Deploy_prd
+    displayName: "Deploy: Production"
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'IndividualCI'))
+    jobs:
+      - template: azure-pipelines-v2/deploy-prd.yml@templates
+        parameters:
+          Dir: "client"
+          Namespace: "seefit"
+          InstallList:
+            - "web"
+          EnsureDeployments:
+            - "web"

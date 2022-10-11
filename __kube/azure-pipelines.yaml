@@ -5,20 +5,46 @@ trigger:
       - main
   paths:
     include:
-      - __kube/*
+      - __kube
+
 pool: "devops-agent"
+
 resources:
   repositories:
     - repository: templates
       type: git
       name: PRODUCT_DEVELOPMENT/PRODUCT_DEVELOPMENT
+
 variables:
   - group: Deploy
-  - name: App
-    value: seefit
+
 stages:
-  - stage: Build
+  - stage: Deploy_tst
+    displayName: "Deploy: Testing"
+    condition: eq(variables['Build.Reason'], 'PullRequest')
     jobs:
-      - template: azure-pipelines/prepare-manifest.yml@templates
+      - template: azure-pipelines-v2/deploy-tst.yml@templates
         parameters:
-          App: $(App)
+          Namespace: "seefit"
+          InstallNamespace: true
+          InstallSecret: false
+          InstallList:
+            - "ingress"
+            - "gateway"
+          EnsureDeployments:
+            - "gateway"
+
+  - stage: Deploy_prd
+    displayName: "Deploy: Production"
+    condition: eq(variables['Build.Reason'], 'IndividualCI')
+    jobs:
+      - template: azure-pipelines-v2/deploy-prd.yml@templates
+        parameters:
+          Namespace: "seefit"
+          InstallNamespace: true
+          InstallSecret: false
+          InstallList:
+            - "ingress"
+            - "gateway"
+          EnsureDeployments:
+            - "gateway"

@@ -8,14 +8,11 @@ import { dropRight } from 'cypress/types/lodash';
 	styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-	
-  constructor(private router: Router) {}
+	constructor(private router: Router) {}
 
-  
 	ngOnInit(): void {}
 
-
-  logout() {
-      this.router.navigate(['/']);
-  }
+	logout() {
+		this.router.navigate(['/']);
+	}
 }

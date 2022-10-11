@@ -8,13 +8,17 @@
 
 <h1 class="text-center">InovFitness</h1>
 <div class="login h-100">
-	<form [formGroup]="authForm" class="login-container d-flex flex-column" (ngSubmit)="signIn()">
+	<form
+		[formGroup]="authForm"
+		class="login-container d-flex flex-column"
+		(ngSubmit)="signIn()"
+	>
 		<input type="email" placeholder="Email" formControlName="email" />
-
-		<input type="password" placeholder="Password" formControlName="password" />
+		<input type="password" placeholder="Password" formControlName="password"/>
 		<div class="d-flex flex-row">
-		<span>{{ 'login.forgot_link' | transloco }}</span>
-		<input type="submit" value="Login" />
-			</div>
+			
+			<span>{{ 'login.forgot_link' | transloco }}</span>
+			<input type="submit" value="Login" />
+		</div>
 	</form>
 </div>
