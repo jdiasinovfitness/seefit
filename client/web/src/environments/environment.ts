@@ -1,5 +1,9 @@
 export const environment = {
-	baseUrl: 'http://localhost:4200',
-	baseAPIUrl: 'http://localhost:80',
+	baseUrl: 'https://dev-jld-seefit.inovfitness.com',
+	baseAPIUrl: 'https://dev-jld-seefit.inovfitness.com/middleware',
 	production: false,
 };
+
+//hr
+//scripts
+//seefit

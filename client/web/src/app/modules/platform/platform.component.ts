@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AuthService, UserEntity } from 'src/app/core/services/auth.service';
 
 @Component({
 	selector: 'app-platform',
@@ -9,104 +10,111 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class PlatformComponent implements OnInit {
 	@ViewChild('sidenav') sidenav: MatSidenav | undefined;
-	menus = [
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
-		'MENU',
+
+	permissions = [
+		{
+			appCode: 'Interactions',
+			icon: 'connect_without_contact',
+			desc: [
+				{
+					lang: 'pt',
+					text: 'Interações',
+				},
+				{
+					lang: 'en',
+					text: 'Interactions',
+				},
+			],
+			permissions: [
+				{
+					permissionCode: 'ICI',
+					desc: [
+						{
+							lang: 'pt',
+							text: 'Interações em Ginásio',
+						},
+						{
+							lang: 'en',
+							text: 'In club interactions',
+						},
+					],
+				},
+				{
+					permissionCode: 'OCI',
+					desc: [
+						{
+							lang: 'pt',
+							text: 'Interações fora Ginásio',
+						},
+						{
+							lang: 'en',
+							text: 'Off club interactions',
+						},
+					],
+				},
+				{
+					permissionCode: 'POWER_BI',
+				},
+			],
+		},
+		{
+			appCode: 'Trainning',
+			icon: 'fitness_center',
+			desc: [
+				{
+					lang: 'pt',
+					text: 'Plano de treino',
+				},
+				{
+					lang: 'en',
+					text: 'Training Plan',
+				},
+			],
+			permissions: [
+				{
+					permissionCode: 'AF',
+					desc: [
+						{
+							lang: 'pt',
+							text: 'Interações em Ginásio',
+						},
+						{
+							lang: 'en',
+							text: 'In club interactions',
+						},
+					],
+				},
+				{
+					permissionCode: 'PT',
+					desc: [
+						{
+							lang: 'pt',
+							text: 'Interações fora Ginásio',
+						},
+						{
+							lang: 'en',
+							text: 'Off club interactions',
+						},
+					],
+				},
+				{
+					permissionCode: 'POWER_BI',
+				},
+			],
+		},
 	];
 	opened = false;
 	childActivated = false;
-	userName = 'Jose Dias';
-	userId = '00001';
 	originName = 'Solinca';
 
-	constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+	user: UserEntity | undefined;
 
-	ngOnInit(): void {}
+	constructor(private router: Router, private activatedRoute: ActivatedRoute, private auth: AuthService) {}
+
+	ngOnInit(): void {
+		this.user = this.auth.getUserInfo();
+		console.log("User", this.user);
+	}
 
 	sideNavVisibily() {
 		this.sidenav?.toggle();
@@ -120,7 +128,7 @@ export class PlatformComponent implements OnInit {
 	 * on username dropdown click
 	 */
 	usernameClick() {
-		this.router.navigate([`./user_profile/${this.userId}`], {
+		this.router.navigate([`./user_profile/${this.user?.userId}`], {
 			relativeTo: this.activatedRoute,
 		});
 	}

@@ -1,5 +1,5 @@
 export const environment = {
-	baseUrl: 'https://seefit.inovfitness.com',
-	baseAPIUrl: 'https://api.seeplus.inovretail.com',
-	production: true,
+	baseUrl: 'https://dev-jld-seefit.inovfitness.com',
+	baseAPIUrl: 'https://dev-jld-seefit.inovfitness.com/middleware',
+	production: false,
 };

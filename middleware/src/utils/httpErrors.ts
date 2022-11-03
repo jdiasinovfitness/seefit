@@ -61,6 +61,17 @@ export class NotFoundError extends HTTPClientError {
 	}
 }
 
+export class NotFoundResourceError extends HTTPClientError {
+	readonly statusCode = 404;
+
+	constructor(resource: string, value: string | undefined) {
+		super({
+			type: "NotFoundResourceError",
+			error: { resource, value },
+		});
+	}
+}
+
 export class ConflictError extends HTTPClientError {
 	readonly statusCode = 409;
 
@@ -83,14 +94,21 @@ export class ServerError extends HTTPClientError {
 	}
 }
 
-export const processAPIError = (err: unknown) => {
+export const processAPIError = (
+	err: unknown,
+	data?: { resource: string; value: string },
+) => {
 	if (axios.isAxiosError(err) && err.response) {
 		if (err.response.status == 401) {
 			return new UnauthorizedError();
 		} else if (err.response.status == 403) {
 			return new ForbiddenError();
 		} else if (err.response.status == 404) {
-			return new NotFoundError();
+			if (data) {
+				return new NotFoundResourceError(data.resource, data.value);
+			} else {
+				return new NotFoundError();
+			}
 		} else if (err.response.status == 409) {
 			return new ConflictError(
 				err.response.data?.error?.resource || "Undefined",

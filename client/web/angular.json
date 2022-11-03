@@ -70,7 +70,9 @@
             "development": {
               "buildOptimizer": false,
               "optimization": false,
-              "extractLicenses": false
+              "extractLicenses": false,
+              "sourceMap": true
+              
             }
           },
           "defaultConfiguration": "development"

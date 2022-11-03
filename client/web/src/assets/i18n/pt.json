@@ -1,5 +1,7 @@
 {
 	"pt": "portugues",
 	"en": "ingles",
-	"origin": "Origin {{originName}}"
+	"origin": "Origin {{originName}}",
+	"email": "Email",
+	"password": "Password"
 }

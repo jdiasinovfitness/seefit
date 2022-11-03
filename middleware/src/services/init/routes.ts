@@ -1,6 +1,6 @@
 import { Route } from "../../utils";
 
-import Auth from "./actions/auth";
+import Auth from "./actions/Auth";
 
 const routes: Route[] = [
 	{

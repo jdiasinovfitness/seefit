@@ -10,9 +10,9 @@ spec:
   tls:
     - secretName: seefit-cert
       hosts:
-        - client.${HOST}
+        - ${SEEFIT_PREFIX}seefit.inovfitness.com
   rules:
-    - host: client${HOST}
+    - host: ${SEEFIT_PREFIX}seefit.inovfitness.com
       http:
         paths:
           - path: /
@@ -33,7 +33,7 @@ spec:
   duration: 2160h # 90d
   renewBefore: 360h # 15d
   dnsNames:
-    - client.${HOST}
+    - ${SEEFIT_PREFIX}seefit.inovfitness.com
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-prod

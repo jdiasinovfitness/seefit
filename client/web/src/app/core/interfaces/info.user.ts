@@ -1,5 +1,7 @@
 export interface authInfo {
-	accessToken: string;
-	user: string;
+	acessToken: string;
+	id: string;
 	refreshToken: string;
+	name: string;
+	email: string;
 }

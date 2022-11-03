@@ -40,7 +40,7 @@ data:
               - /middleware
             strip_path: true
       - name: seefit_ui
-        url: http://web
+        url: http://client-web
         routes:
           - name: base_seefit_ui
             methods:

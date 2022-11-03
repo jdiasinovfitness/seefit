@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "ver": "node scripts/versioning.js && cordova prepare",
+    "dev:browser": "cordova build browser && cd ./platforms/browser && npm run dev",
+    "dev:android": "cordova build android && cordova emulate android",
+    "run:android": "cordova build android && cordova run android --device",
+    "dist:browser": "cordova build browser && cd ./platforms/browser && npm run dist",
+    "postdist:browser": "ncp ./platforms/browser/dist ./dist",
+    "dist:android": "cordova build android --release --buildConfig ./build.json -- --packageType apk",
+    "postdist:android": "ncp ./platforms/android/app/build/outputs/apk/release/app-release.apk ./dist/seeplus.aab",
+    "dist:ios": "cordova build ios --device --release --buildConfig ./build.json",
+    "postdist:ios": "ncp ./platforms/ios/build/device/seemobile.ipa ./dist/seeplus.ipa",
+    "dist:android-debug": "cordova build android --debug --buildConfig ./build.json",
+    "postdist:android-debug": "ncp ./platforms/android/app/build/outputs/apk/debug/app-debug.apk ./dist/seeplus.aab"
+  },
+  "dependencies": {
+    "cordova": "^11.0.0",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "cordova-android": "^10.1.2",
+    "cordova-ios": "^6.2.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}

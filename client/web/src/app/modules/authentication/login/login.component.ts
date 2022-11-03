@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 	authForm: FormGroup;
 	isSubmitted = false;
 	production = environment.production;
+	hide = false;
 
 	constructor(
 		private router: Router,
@@ -28,18 +29,27 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	signIn() {
+	// sign in to plataform
+	async signIn() {
+		try {
 		this.isSubmitted = true;
 		if (this.authForm.invalid) {
 			return;
 		}
-
+		
 		if (!this.production) {
-			this.auth.login(this.authForm.value);
+			await this.auth.login(this.authForm.value);
 		}
 
 		this.router.navigate(['../../platform'], {
 			relativeTo: this.activatedRoute,
 		});
+
+
+	}catch(err) {
+		console.log("Errr");
+	}
+
+		
 	}
 }

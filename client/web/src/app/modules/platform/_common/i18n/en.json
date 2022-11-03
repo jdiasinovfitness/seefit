@@ -1,3 +1,4 @@
 {
-	"welcomeUser": "Welcome {{userName}}"
+	"welcomeUser": "Hi",
+	"welcomeBack": "Welcome back!"
 }

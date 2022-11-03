@@ -26,7 +26,7 @@
 				aria-label="Menu"
 				fontIcon="reorder"
 			></mat-icon>
-			<h1>InovFitness</h1>
+			<img class="h-100" src="../../../assets/images/core/logoBlack.png" />
 		</mat-toolbar-row>
 	</mat-toolbar>
 	<mat-sidenav-container class="w-100 h-100">
@@ -41,20 +41,46 @@
 				username: .ts hardcoded
 				origin: .ts hardcoded && replace it with a list element
 			-->
-			<p (click)="usernameClick()">
-				{{ 'plt.welcomeUser' | transloco: { userName: userName } }}
-			</p>
-			<p (click)="originClick()">
-				{{ 'origin' | transloco: { originName: originName } }}
+			<div class="d-flex w-100">
+				<div class="profile-rounded">
+					<div class="profile-picture female1"></div>
+				</div>
+
+				<p (click)="originClick()">
+					{{ 'origin' | transloco: { originName: originName } }}
+				</p>
+			</div>
+
+			<p class="text-center">
+				{{ 'plt.welcomeUser' | transloco }}
+				<span class="highlight" (click)="usernameClick()">{{ user?.userName }}</span
+				>,<br />
+				{{ 'plt.welcomeBack' | transloco }}
 			</p>
 			<!--DUMMY DATA
 				menus: ts hardcoded
 			-->
-			<ul>
-				<li *ngFor="let m of menus">
-					<span>{{ m }}</span>
-				</li>
-			</ul>
+			<mat-accordion class="example-headers-align" multi>
+				<mat-expansion-panel *ngFor="let p of permissions">
+					<mat-expansion-panel-header>
+						<mat-panel-title>
+							<mat-icon aria-hidden="false" aria-label="Menu">{{ p.icon }}</mat-icon>
+							{{ p.appCode }}
+						</mat-panel-title>
+					</mat-expansion-panel-header>
+
+					<p class="sub-menu" *ngFor="let sp of p.permissions">
+						<mat-icon
+							class="sub-menu"
+							aria-hidden="false"
+							aria-label="Menu"
+							fontIcon="crop_din"
+						>
+						</mat-icon>
+						{{ sp.permissionCode }}
+					</p>
+				</mat-expansion-panel>
+			</mat-accordion>
 		</mat-sidenav>
 		<!--Sidenav Content
 		The right side content of the main screen goes to here

@@ -18,7 +18,7 @@ import { CoreModule } from './core/core.module';
 		BrowserAnimationsModule,
 		HttpClientModule,
 		TranslocoRootModule,
-		CoreModule.forRoot(),
+		CoreModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

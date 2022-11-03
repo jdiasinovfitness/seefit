@@ -6,6 +6,7 @@ import { TranslocoModule, TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { loader } from 'src/app/core/i18n/transloco-loader';
 import { PlatformComponent } from './platform.component';
 import { MaterialExampleModule } from 'src/app/material.module';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @NgModule({
 	declarations: [HomeComponent, PlatformComponent],
@@ -23,7 +24,7 @@ import { MaterialExampleModule } from 'src/app/material.module';
 				alias: 'plt',
 				loader: loader((lang: any) => import(`./_common/i18n/${lang}.json`)),
 			},
-		},
+		}
 	],
 })
 export class PlatformModule {}

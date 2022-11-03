@@ -1,38 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: client
+  name: client-web
   labels:
-    app: client
+    app: client-web
 spec:
   ports:
     - name: http
       port: 80
   selector:
-    app: client
+    app: client-web
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client
+  name: client-web
   labels:
-    app: client
+    app: client-web
 spec:
   selector:
     matchLabels:
-      app: client
+      app: client-web
   template:
     metadata:
       labels:
-        app: client
+        app: client-web
     spec:
       imagePullSecrets:
         - name: azurecr
       restartPolicy: Always
       containers:
-        - name: client
-          image: inovretail.azurecr.io/seefit/client:${TAG}
+        - name: client-web
+          image: inovretail.azurecr.io/seefit/client/web:${TAG}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -43,16 +43,17 @@ spec:
             limits:
               memory: 128Mi
               cpu: "0.1"
+
 ---
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: client
+  name: client-web
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: client
+    name: client-web
   minReplicas: 1
   maxReplicas: 3
   metrics:
