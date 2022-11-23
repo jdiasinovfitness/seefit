@@ -6,17 +6,14 @@ import { authInfo } from '../interfaces/info.user';
 import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
 
-
 export class UserEntity {
-	
 	private id: string | undefined;
 	private email: string | undefined;
 	private name: string | undefined;
 
 	constructor(id?: string, email?: string, name?: string) {
 		this.id = id;
-		this.email = email,
-		this.name = name;
+		(this.email = email), (this.name = name);
 	}
 
 	get userId() {
@@ -28,7 +25,6 @@ export class UserEntity {
 	get userEmail() {
 		return this.email;
 	}
-
 }
 @Injectable()
 export class AuthService {
@@ -59,31 +55,33 @@ export class AuthService {
 
 	/* - Functions - */
 
-	async login(formValue: { email: string; password: string }): Promise<authInfo> {
+	async login(formValue: {
+		email: string;
+		password: string;
+	}): Promise<authInfo> {
 		//TODO: api call to authentication in order to retrieve the access token
-			const authString = Buffer.from(
-				`${formValue.email}:${formValue.password}`
-			).toString('base64');
-			const headers = {
-				headers: new HttpHeaders().append('authorization', `Basic ${authString}`),
-				params: {
-					'api-version': '1',
-				},
-			};
-			const r = await firstValueFrom(
-				this.http.post<authInfo>(
-					`${this.config.getApiUrl()}/auth/login`,
-					{},
-					headers
-				)).catch(err => {
-					return Promise.reject(err);
-				});
+		const authString = Buffer.from(
+			`${formValue.email}:${formValue.password}`
+		).toString('base64');
+		const headers = {
+			headers: new HttpHeaders().append('authorization', `Basic ${authString}`),
+			params: {
+				'api-version': '1',
+			},
+		};
+		const r = await firstValueFrom(
+			this.http.post<authInfo>(
+				`${this.config.getApiUrl()}/auth/login`,
+				{},
+				headers
+			)
+		).catch(err => {
+			return Promise.reject(err);
+		});
 
-			this.setStorageItem('t', r.acessToken);
-			this.setUserInfo(r);
-			return r;
-
-		
+		this.setStorageItem('t', r.acessToken);
+		this.setUserInfo(r);
+		return r;
 	}
 
 	logOut() {
@@ -106,12 +104,11 @@ export class AuthService {
 
 	setUserInfo(loginInfo: authInfo) {
 		this.user = new UserEntity(loginInfo.id, loginInfo.email, loginInfo.email);
-		console.log("USERRR", this.user);
+		console.log('USERRR', this.user);
 	}
 
-
-	getUserInfo() : UserEntity | undefined {
-		console.log("THISUSSSSSER", this.user);
+	getUserInfo(): UserEntity | undefined {
+		console.log('THISUSSSSSER', this.user);
 		return this.user;
 	}
 }

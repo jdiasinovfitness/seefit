@@ -10,8 +10,13 @@
 
 <ng-container>
 	<mat-toolbar class="example-header">
-		<mat-icon aria-hidden="false" (click)="toogleStatus()" aria-label="Example home icon" fontIcon="reorder"></mat-icon>
-		</mat-toolbar>
+		<mat-icon
+			aria-hidden="false"
+			(click)="toogleStatus()"
+			aria-label="Example home icon"
+			fontIcon="reorder"
+		></mat-icon>
+	</mat-toolbar>
 	<mat-sidenav-container [hasBackdrop]="true" class="example-container">
 		<!--TODO: sidebar/menu rectangle-->
 		<mat-sidenav
@@ -23,7 +28,7 @@
 			(closed)="events.push('close!')"
 		>
 		</mat-sidenav>
-<!--TODO: sidebar/menu right side content-->
+		<!--TODO: sidebar/menu right side content-->
 		<mat-sidenav-content>
 			<app-home></app-home>
 		</mat-sidenav-content>

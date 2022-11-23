@@ -1,11 +1,35 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.inovfitness.seefit" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>SeeFit</name>
-    <description>Sample Apache Cordova App</description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.inovfitness.seefit" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" ios-CFBundleVersion="10" android-versionCode="10">
+  <name>SeeFit</name>
+  <description>Sample Apache Cordova App</description>
+  <author email="info@inovfitness.com" href="https://inovfitness.com">
+        Inovfitness
     </author>
-    <content src="index.html" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+  <content src="index.html"/>
+  <platform name="android">
+    <allow-intent href="market:*"/>
+    <preference name="android-minSdkVersion" value="22"/>
+    <preference name="android-targetSdkVersion" value="30"/>
+    <preference name="loadUrlTimeoutValue" value="30000"/>
+    <preference name="hostname" value="localhost"/>
+    <preference name="AndroidInsecureFileModeEnabled" value="true"/>
+    <resource-file src="res/values/styles.xml" target="/app/src/main/res/values/styles.xml"/>
+    <icon density="ldpi" src="res/icon/Icon-36.png"/>
+    <icon density="mdpi" src="res/icon/Icon-48.png"/>
+    <icon density="hdpi" src="res/icon/Icon-72.png"/>
+    <icon density="xhdpi" src="res/icon/Icon-96.png"/>
+    <icon density="xxhdpi" src="res/icon/Icon-144.png"/>
+    <icon density="xxxhdpi" src="res/icon/Icon-192.png"/>
+    <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
+      <application android:theme="@style/Seefit"/>
+    </edit-config>
+  </platform>
+  <allow-navigation href="*"/>
+  <allow-intent href="*"/>
+  <hook src="scripts/env_setup.js" type="after_prepare"/>
+  <origin href="*" subdomains="true"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="StatusBarOverlaysWebView" value="false"/>
+  <preference name="StatusBarStyle" value="default"/>
+  <preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
 </widget>

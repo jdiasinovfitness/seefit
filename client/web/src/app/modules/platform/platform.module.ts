@@ -24,7 +24,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 				alias: 'plt',
 				loader: loader((lang: any) => import(`./_common/i18n/${lang}.json`)),
 			},
-		}
+		},
 	],
 })
 export class PlatformModule {}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseefit=self.webpackChunkseefit||[]).push([[592],{2326:(d,u,n)=>{n.d(u,{_:()=>r});const t=["en","pt"],r=(a,c="i18n")=>t.reduce((e,s)=>(e[s]=()=>a(s,c),e),{})}}]);

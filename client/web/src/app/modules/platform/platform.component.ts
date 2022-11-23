@@ -12,8 +12,9 @@ export class PlatformComponent implements OnInit {
 	@ViewChild('sidenav') sidenav: MatSidenav | undefined;
 
 	permissions = [
+		// object structure should represent the actual menu (menu/page)
 		{
-			appCode: 'Interactions',
+			appCode: 'Interactions', // this block has no connection to the app structure
 			icon: 'connect_without_contact',
 			desc: [
 				{
@@ -27,6 +28,8 @@ export class PlatformComponent implements OnInit {
 			],
 			permissions: [
 				{
+					// permissions: [A, B, C] - check if user has permission
+					// app: X - check if origin has access to app
 					permissionCode: 'ICI',
 					desc: [
 						{
@@ -109,11 +112,15 @@ export class PlatformComponent implements OnInit {
 
 	user: UserEntity | undefined;
 
-	constructor(private router: Router, private activatedRoute: ActivatedRoute, private auth: AuthService) {}
+	constructor(
+		private router: Router,
+		private activatedRoute: ActivatedRoute,
+		private auth: AuthService
+	) {}
 
 	ngOnInit(): void {
 		this.user = this.auth.getUserInfo();
-		console.log("User", this.user);
+		console.log('User', this.user);
 	}
 
 	sideNavVisibily() {
