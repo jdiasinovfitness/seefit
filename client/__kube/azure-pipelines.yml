@@ -55,3 +55,43 @@ stages:
             - "client"
           EnsureDeployments:
             - "web"
+
+  - stage: Native
+    displayName: "Cordova"
+    dependsOn: Build
+    jobs:
+      - job: Prepare
+        steps:
+          - task: Docker@2
+            displayName: Login
+            inputs:
+              command: login
+              containerRegistry: azurecr
+
+          - bash: |
+              CONTAINER=$(docker run -d --rm inovretail.azurecr.io/seefit/client/web:${BUILD_BUILDNUMBER})
+              docker cp ${CONTAINER}:/usr/share/nginx/html www
+              tar -czf www.tar.gz www
+            workingDirectory: "$(Build.ArtifactStagingDirectory)"
+            displayName: "Web package"
+
+          - publish: $(Build.ArtifactStagingDirectory)/www.tar.gz
+            artifact: www
+              
+      - job: Android
+        steps:
+          - checkout: self
+
+          - download: current
+            artifact: www
+
+          - task: Docker@2
+            displayName: Login
+            inputs:
+              command: login
+              containerRegistry: azurecr
+
+          - bash: |
+              tar -xzf ${PIPELINE_WORKSPACE}/www.tar.gz www
+              ls -l
+            workingDirectory: $(Build.SourcesDirectory)/client/native
