@@ -77,7 +77,7 @@ stages:
 
           - publish: $(Build.ArtifactStagingDirectory)/www.tar.gz
             artifact: www
-              
+
       - job: Android
         steps:
           - checkout: self
