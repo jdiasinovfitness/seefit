@@ -79,15 +79,13 @@ stages:
             artifact: web
 
           - bash: |
+              echo "TST=$TST"
+              echo "PRD=$PRD"
               echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]tst"
-            displayName: "Set $ENV=tst"
-            condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
-            name: setenv
-
-          - bash: |
-              echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]prd"
-            displayName: "Set $ENV=prd"
-            condition: and(succeeded(), eq(variables['Build.Reason'], 'IndividualCI'))
+            displayName: "Set $ENV"
+            env:
+              TST: eq(variables['Build.Reason'], 'PullRequest')
+              PRD: eq(variables['Build.Reason'], 'IndividualCI')
             name: setenv
 
       - job: Android
