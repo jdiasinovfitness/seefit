@@ -79,6 +79,7 @@ stages:
             artifact: www
 
       - job: Android
+        dependsOn: Prepare
         steps:
           - checkout: self
 
