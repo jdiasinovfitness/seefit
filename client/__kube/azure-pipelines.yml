@@ -96,6 +96,12 @@ stages:
           - download: current
             artifact: web
 
+          - task: Docker@2
+            displayName: Login
+            inputs:
+              command: login
+              containerRegistry: azurecr
+
           - bash: |
               rm -rf dist
               rm -rf www
@@ -119,6 +125,8 @@ stages:
               ls -l dist
               
             workingDirectory: $(Build.SourcesDirectory)/client/native
+            env:
+              ENV: $(env)
             displayName: "Create Package"
 
           - publish: $(Build.SourcesDirectory)/client/native/dist
