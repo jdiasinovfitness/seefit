@@ -90,6 +90,8 @@ stages:
 
       - job: Android
         dependsOn: Prepare
+        variables:
+          env: $[ dependencies.Prepare.outputs['setenv.env'] ]
         steps:
           - checkout: self
 
@@ -125,8 +127,6 @@ stages:
               ls -l dist
               
             workingDirectory: $(Build.SourcesDirectory)/client/native
-            env:
-              ENV: $[ dependencies.Prepare.outputs['setenv.env'] ]  
             displayName: "Create Package"
 
           - publish: $(Build.SourcesDirectory)/client/native/dist
