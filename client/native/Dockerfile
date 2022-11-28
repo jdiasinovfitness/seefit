@@ -1,5 +1,6 @@
 FROM inovretail.azurecr.io/android-build:3
 
+ARG ENV
 ARG DEVOPS_FEED_READ_TOKEN
 ARG BUILD_BUILDNUMBER
 ARG BUILD_BUILDID
@@ -23,5 +24,5 @@ COPY . .
 
 ENV MAVEN_OPTS=-Dmaven.wagon.http.pool=false
 
-RUN npm config set env tst && npm run ver android && \
+RUN npm config set env ${ENV} && npm run ver android && \
     npm run dist:android && mv ./dist/seeplus.apk /dist/seeplus-tst.apk

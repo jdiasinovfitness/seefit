@@ -76,7 +76,17 @@ stages:
             displayName: "Web package"
 
           - publish: $(Build.ArtifactStagingDirectory)/www.tar.gz
-            artifact: client-web
+            artifact: web
+
+          - bash: |
+              echo "##vso[task.setvariable variable=env]tst"
+            displayName: "Set $ENV=tst"
+            condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+
+          - bash: |
+              echo "##vso[task.setvariable variable=env]prd"
+            displayName: "Set $ENV=prd"
+            condition: and(succeeded(), eq(variables['Build.Reason'], 'IndividualCI'))
 
       - job: Android
         dependsOn: Prepare
@@ -84,11 +94,32 @@ stages:
           - checkout: self
 
           - download: current
-            artifact: client-web
+            artifact: web
 
           - bash: |
-              tar -xzf ${PIPELINE_WORKSPACE}/client-web/www.tar.gz
+              rm -rf dist
+              rm -rf www
+              tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
+
+              echo "ENV=$ENV"
+
+              docker build \
+                --build-arg DEVOPS_FEED_READ_TOKEN=ZzdnemoybXlkb2Vnc2pjZmx2bW8zdjZkYmo3bWN0NnZ6NTZsam1pbmRtcmg0aHN6eW9tcQ== \
+                --build-arg BUILD_BUILDID=${BUILD_BUILDID} \
+                --build-arg BUILD_BUILDNUMBER=${BUILD_BUILDNUMBER} \
+                --build-arg ENV=${ENV} \
+                -t seefit .
+              CONTAINER=$(docker run -d seefit)
+
+              echo "Get build artifacts"
+              docker cp $CONTAINER:/dist .
+
               ls -l
-              echo "www -->"
-              ls -l www
+              echo "-- dist --"
+              ls -l dist
+              
             workingDirectory: $(Build.SourcesDirectory)/client/native
+            displayName: "Create Package"
+
+          - publish: $(Build.SourcesDirectory)/client/native/dist
+            artifact: native-android
