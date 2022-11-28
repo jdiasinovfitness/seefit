@@ -126,7 +126,7 @@ stages:
               
             workingDirectory: $(Build.SourcesDirectory)/client/native
             env:
-              ENV: $(env)
+              ENV: $(Prepare.env)
             displayName: "Create Package"
 
           - publish: $(Build.SourcesDirectory)/client/native/dist
