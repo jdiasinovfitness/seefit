@@ -76,7 +76,7 @@ stages:
             displayName: "Web package"
 
           - publish: $(Build.ArtifactStagingDirectory)/www.tar.gz
-            artifact: www
+            artifact: client-web
 
       - job: Android
         dependsOn: Prepare
@@ -84,15 +84,11 @@ stages:
           - checkout: self
 
           - download: current
-            artifact: www
-
-          - task: Docker@2
-            displayName: Login
-            inputs:
-              command: login
-              containerRegistry: azurecr
+            artifact: client-web
 
           - bash: |
-              tar -xzf ${PIPELINE_WORKSPACE}/www.tar.gz www
+              tar -xzf ${PIPELINE_WORKSPACE}/client-web/www.tar.gz
               ls -l
+              echo "www -->"
+              ls -l www
             workingDirectory: $(Build.SourcesDirectory)/client/native
