@@ -109,8 +109,6 @@ stages:
               rm -rf www
               tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
 
-              echo "ENV=$ENV"
-
               docker build \
                 --build-arg DEVOPS_FEED_READ_TOKEN=ZzdnemoybXlkb2Vnc2pjZmx2bW8zdjZkYmo3bWN0NnZ6NTZsam1pbmRtcmg0aHN6eW9tcQ== \
                 --build-arg BUILD_BUILDID=${BUILD_BUILDID} \

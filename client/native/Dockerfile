@@ -8,6 +8,7 @@ ARG BUILD_BUILDID
 ENV BUILD_BUILDID=${BUILD_BUILDID}
 ENV BUILD_BUILDNUMBER=${BUILD_BUILDNUMBER}
 
+
 ## Install required dependencies
 RUN echo \; begin auth token > /root/.npmrc && \
 echo //pkgs.dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_packaging/npd/npm/registry/:username=inovretail >> /root/.npmrc && \
