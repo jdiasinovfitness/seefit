@@ -26,4 +26,4 @@ COPY . .
 ENV MAVEN_OPTS=-Dmaven.wagon.http.pool=false
 
 RUN npm config set env ${ENV} && npm run ver android && \
-    npm run dist:android && mv ./dist/seeplus.apk /dist/seeplus-tst.apk
+    npm run dist:android

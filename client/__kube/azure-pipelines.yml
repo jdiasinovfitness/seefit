@@ -42,20 +42,6 @@ stages:
           EnsureDeployments:
             - "web"
 
-  - stage: Deploy_prd
-    displayName: "Deploy: Production"
-    dependsOn: Build
-    condition: and(succeeded(), eq(variables['Build.Reason'], 'IndividualCI'))
-    jobs:
-      - template: azure-pipelines-v2/deploy-prd.yml@templates
-        parameters:
-          Dir: "client"
-          Namespace: "seefit"
-          InstallList:
-            - "client"
-          EnsureDeployments:
-            - "web"
-
   - stage: Native
     displayName: "Cordova"
     dependsOn: Build
@@ -79,13 +65,19 @@ stages:
             artifact: web
 
           - bash: |
-              echo "TST=$TST"
-              echo "PRD=$PRD"
-              echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]tst"
+              if [ $BUILD_REASON -eq 'PullRequest' ];
+              then
+                echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]tst"
+                exit 0
+              fi
+
+              if [ $BUILD_REASON -eq 'IndividualCI' ];
+              then
+                echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]prd"
+              fi
+
+              exit 1
             displayName: "Set $ENV"
-            env:
-              TST: eq(variables['Build.Reason'], 'PullRequest')
-              PRD: eq(variables['Build.Reason'], 'IndividualCI')
             name: setenv
 
       - job: Android
@@ -109,12 +101,14 @@ stages:
               rm -rf www
               tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
 
+              echo "ENV=$ENV"
+
               docker build \
                 --build-arg DEVOPS_FEED_READ_TOKEN=ZzdnemoybXlkb2Vnc2pjZmx2bW8zdjZkYmo3bWN0NnZ6NTZsam1pbmRtcmg0aHN6eW9tcQ== \
                 --build-arg BUILD_BUILDID=${BUILD_BUILDID} \
                 --build-arg BUILD_BUILDNUMBER=${BUILD_BUILDNUMBER} \
                 --build-arg ENV=${ENV} \
-                -t seefit .
+                -t seefit . || exit 1
               CONTAINER=$(docker run -d seefit)
 
               echo "Get build artifacts"
@@ -129,3 +123,17 @@ stages:
 
           - publish: $(Build.SourcesDirectory)/client/native/dist
             artifact: native-android
+
+  - stage: Deploy_prd
+    displayName: "Deploy: Production"
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'IndividualCI'))
+    jobs:
+      - template: azure-pipelines-v2/deploy-prd.yml@templates
+        parameters:
+          Dir: "client"
+          Namespace: "seefit"
+          InstallList:
+            - "client"
+          EnsureDeployments:
+            - "web"
