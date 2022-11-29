@@ -65,13 +65,13 @@ stages:
             artifact: web
 
           - bash: |
-              if [ $BUILD_REASON -eq 'PullRequest' ];
+              if [ $BUILD_REASON == 'PullRequest' ];
               then
                 echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]tst"
                 exit 0
               fi
 
-              if [ $BUILD_REASON -eq 'IndividualCI' ];
+              if [ $BUILD_REASON == 'IndividualCI' ];
               then
                 echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]prd"
               fi
