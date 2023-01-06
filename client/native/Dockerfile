@@ -1,10 +1,11 @@
-FROM inovretail.azurecr.io/android-build:3
+FROM inovretail.azurecr.io/android-build:4
 
 ARG ENV
 ARG DEVOPS_FEED_READ_TOKEN
 ARG BUILD_BUILDNUMBER
 ARG BUILD_BUILDID
 
+ENV ENV=${ENV:-dev}
 ENV BUILD_BUILDID=${BUILD_BUILDID}
 ENV BUILD_BUILDNUMBER=${BUILD_BUILDNUMBER}
 
@@ -23,7 +24,6 @@ COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 
-ENV MAVEN_OPTS=-Dmaven.wagon.http.pool=false
-
-RUN npm config set env ${ENV} && npm run ver android && \
-    npm run dist:android
+RUN npm config set env $ENV
+RUN npm run ver android
+RUN npm run dist:android

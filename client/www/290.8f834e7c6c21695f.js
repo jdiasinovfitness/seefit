@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseefit=self.webpackChunkseefit||[]).push([[290],{5290:e=>{e.exports=JSON.parse('{"welcome":"Welcome to login page","forgot_link":"Forgot your password?","login":"LOGIN"}')}}]);
