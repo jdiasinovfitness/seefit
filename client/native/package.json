@@ -5,7 +5,7 @@
     "run:android": "cordova build android && cordova run android --device",
     "dist:android": "npm run dist:android-${npm_config_env}",
     "dist:android-tst": "cordova build android --release --buildConfig ./build.json -- --packageType apk",
-    "postdist:android-tst": "ncp /build/platforms/android/app/build/outputs/bundle/release/app-release.apk /dist/seefit.apk",
+    "postdist:android-tst": "ncp /build/platforms/android/app/build/outputs/apk/release/app-release.apk /dist/seefit.apk",
     "dist:android-prd": "cordova build android --release --buildConfig ./build.json",
     "postdist:android-prd": "ncp /build/platforms/android/app/build/outputs/bundle/release/app-release.aab /dist/seefit.aab",
     "dist:ios": "cordova build ios --device --release --buildConfig ./build.json",
