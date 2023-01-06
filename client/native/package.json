@@ -3,8 +3,10 @@
     "ver": "node scripts/versioning.js && cordova prepare",
     "dev:android": "cordova build android && cordova emulate android",
     "run:android": "cordova build android && cordova run android --device",
-    "dist:android": "cordova build android --verbose --release --buildConfig ./build.json",
-    "postdist:android": "ncp ./platforms/android/app/build/outputs/bundle/release/app-release.aab ./dist/seefit.aab",
+    "dist:android-tst": "cordova build android --release --buildConfig ./build.json -- --packageType apk",
+    "postdist:android-tst": "ncp /build/platforms/android/app/build/outputs/bundle/release/app-release.apk /dist/seefit.apk",
+    "dist:android-prd": "cordova build android --release --buildConfig ./build.json",
+    "postdist:android-prd": "ncp /build/platforms/android/app/build/outputs/bundle/release/app-release.aab /dist/seefit.aab",
     "dist:ios": "cordova build ios --device --release --buildConfig ./build.json",
     "postdist:ios": "ncp ./platforms/ios/build/device/seemobile.ipa ./dist/seeplus.ipa"
   },
