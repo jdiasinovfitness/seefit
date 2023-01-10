@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import AuthProvider from "../../provider/Auth";
+import AuthProvider from "../../provider/Authentication";
 import UserProvider from "../../provider/User";
 
 interface UserInitialInfo {
