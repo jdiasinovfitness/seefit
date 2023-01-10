@@ -1,17 +1,17 @@
-import http from "http";
-import express from "express";
-import { applyMiddleware, applyRoutes } from "./utils";
-import activationMiddleware from "./middleware/common";
-import errorHandlers from "./middleware/errorHandlers";
-import routes from "./services";
+import http from 'http';
+import express from 'express';
+import { applyMiddleware, applyRoutes } from './utils';
+import activationMiddleware from './middleware/common';
+import errorHandlers from './middleware/errorHandlers';
+import routes from './services';
 
-process.on("uncaughtException", (e) => {
-	console.log({ message: "uncaughtException", error: e });
+process.on('uncaughtException', e => {
+	console.log({ message: 'uncaughtException', error: e });
 	process.exit(1);
 });
 
-process.on("unhandledRejection", (e) => {
-	console.log({ message: "unhandledRejection", error: e });
+process.on('unhandledRejection', e => {
+	console.log({ message: 'unhandledRejection', error: e });
 	process.exit(1);
 });
 
@@ -26,5 +26,5 @@ const server = http.createServer(router);
 server.listen(PORT, () =>
 	console.info({
 		message: `Server is running on port: ${PORT} at ${process.env.NODE_ENV}`,
-	}),
+	})
 );

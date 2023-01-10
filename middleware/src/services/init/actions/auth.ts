@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from "express";
-import AuthProvider from "../../provider/Authentication";
-import UserProvider from "../../provider/User";
+import { NextFunction, Request, Response } from 'express';
+import AuthProvider from '../../provider/Authentication';
+import UserProvider from '../../provider/User';
 
 interface UserInitialInfo {
 	id: string;
@@ -12,13 +12,13 @@ interface UserInitialInfo {
 export default async (
 	req: Request,
 	res: Response,
-	next: NextFunction,
+	next: NextFunction
 ): Promise<void> => {
 	try {
-		const authorization = req.headers["authorization"] as string;
+		const authorization = req.headers['authorization'] as string;
 		const loginResponse = await AuthProvider.login(req, authorization);
 
-		const authToken = "Bearer " + loginResponse.accessToken;
+		const authToken = 'Bearer ' + loginResponse.accessToken;
 
 		const userInfo = await UserProvider.userProfile(authToken);
 

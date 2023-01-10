@@ -1,5 +1,5 @@
-import axios from "axios";
-import { processAPIError } from "../../utils/httpErrors";
+import axios from 'axios';
+import { processAPIError } from '../../utils/httpErrors';
 
 interface SearchUserResponse {
 	id: string;
@@ -23,16 +23,16 @@ interface UserRole {
 
 const searchUser = async (
 	auth: string,
-	origin: string,
+	origin: string
 ): Promise<SearchUserResponse[]> => {
 	try {
 		const response = await axios.request({
-			method: "GET",
+			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user`,
 			headers: {
 				Authorization: auth,
 			},
-			responseType: "json",
+			responseType: 'json',
 			params: {
 				origin: origin,
 			},
@@ -47,16 +47,16 @@ const searchUser = async (
 const getUserLocations = async (
 	auth: string,
 	user_id: string,
-	origin: string,
+	origin: string
 ): Promise<UserLocation[]> => {
 	try {
 		const response = await axios.request({
-			method: "GET",
+			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user/${user_id}/locations`,
 			headers: {
 				Authorization: auth,
 			},
-			responseType: "json",
+			responseType: 'json',
 			params: {
 				origin: origin,
 			},
@@ -71,16 +71,16 @@ const getUserRoles = async (
 	log_id: string,
 	auth: string,
 	user_id: string,
-	origin: string,
+	origin: string
 ): Promise<UserRole[]> => {
 	try {
 		const response = await axios.request({
-			method: "GET",
+			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user/${user_id}/roles`,
 			headers: {
 				Authorization: auth,
 			},
-			responseType: "json",
+			responseType: 'json',
 			params: {
 				origin: origin,
 			},
@@ -94,15 +94,15 @@ const getUserRoles = async (
 
 const inactiveUser = async (
 	auth: string,
-	user_id: string,
+	user_id: string
 ): Promise<unknown> => {
 	const response = await axios.request({
-		method: "POST",
+		method: 'POST',
 		url: `${process.env.API_GATEWAY}/user/${user_id}/inactive`,
 		headers: {
 			Authorization: auth,
 		},
-		responseType: "json",
+		responseType: 'json',
 	});
 
 	return response.data;
@@ -110,12 +110,12 @@ const inactiveUser = async (
 
 const unblockUser = async (auth: string, user_id: string): Promise<unknown> => {
 	const response = await axios.request({
-		method: "POST",
+		method: 'POST',
 		url: `${process.env.API_GATEWAY}/user/${user_id}/unblock`,
 		headers: {
 			Authorization: auth,
 		},
-		responseType: "json",
+		responseType: 'json',
 	});
 
 	return response.data;
@@ -123,15 +123,15 @@ const unblockUser = async (auth: string, user_id: string): Promise<unknown> => {
 
 const startActivationUser = async (
 	auth: string,
-	user_id: string,
+	user_id: string
 ): Promise<unknown> => {
 	const response = await axios.request({
-		method: "POST",
+		method: 'POST',
 		url: `${process.env.API_GATEWAY}/user/${user_id}/start_activation`,
 		headers: {
 			Authorization: auth,
 		},
-		responseType: "json",
+		responseType: 'json',
 	});
 
 	return response.data;
@@ -139,16 +139,16 @@ const startActivationUser = async (
 
 const searchUserById = async (
 	auth: string,
-	id: string,
+	id: string
 ): Promise<SearchUserResponse> => {
 	try {
 		const response = await axios.request({
-			method: "GET",
+			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user`,
 			headers: {
 				Authorization: auth,
 			},
-			responseType: "json",
+			responseType: 'json',
 			params: {
 				id: id,
 			},
@@ -162,12 +162,12 @@ const searchUserById = async (
 
 const unlockUser = async (auth: string, user_id: string): Promise<unknown> => {
 	const response = await axios.request({
-		method: "POST",
+		method: 'POST',
 		url: `${process.env.API_GATEWAY}/user/${user_id}/unlock`,
 		headers: {
 			Authorization: auth,
 		},
-		responseType: "json",
+		responseType: 'json',
 	});
 
 	return response.data;
@@ -180,13 +180,13 @@ export interface UserProfileBasic {
 const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 	try {
 		const response = await axios.request({
-			method: "GET",
+			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user/my_profile
 			`,
 			headers: {
 				Authorization: auth,
 			},
-			responseType: "json",
+			responseType: 'json',
 		});
 
 		return response.data;

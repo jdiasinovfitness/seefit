@@ -1,3 +1,3 @@
-import initRoutes from "./init/routes";
+import initRoutes from './init/routes';
 
 export default [...initRoutes];

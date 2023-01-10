@@ -1,11 +1,11 @@
-import { apiVersionError } from "utils/ErrorHandler";
-import { Route } from "../../utils";
-import Auth from "./Actions/Auth";
+import { apiVersionError } from 'utils/ErrorHandler';
+import { Route } from '../../utils';
+import Auth from './Actions/Auth';
 
 const routes: Route[] = [
 	{
-		path: "/auth/login",
-		method: "POST",
+		path: '/auth/login',
+		method: 'POST',
 		handler: [Auth, apiVersionError],
 	},
 ];

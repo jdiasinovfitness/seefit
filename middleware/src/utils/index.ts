@@ -1,24 +1,24 @@
-import { Router, Request, Response, NextFunction } from "express";
-import * as Err from "./httpErrors";
+import { Router, Request, Response, NextFunction } from 'express';
+import * as Err from './httpErrors';
 
 export const error = Err;
 type Wrapper = (router: Router) => void;
 
 export const applyMiddleware = (
 	middlewareWrappers: Wrapper[],
-	router: Router,
+	router: Router
 ): void => {
 	for (const wrapper of middlewareWrappers) {
 		wrapper(router);
 	}
 };
 
-export type HTTPMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+export type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 
 export type Handler = (
 	req: Request,
 	res: Response,
-	next: NextFunction,
+	next: NextFunction
 ) => Promise<void> | void;
 
 export type Route = {
@@ -32,19 +32,19 @@ export const applyRoutes = (routes: Route[], router: Router): void => {
 		const { method, path, handler } = route;
 
 		switch (method) {
-			case "GET":
+			case 'GET':
 				router.get(path, handler);
 				break;
-			case "POST":
+			case 'POST':
 				router.post(path, handler);
 				break;
-			case "PUT":
+			case 'PUT':
 				router.put(path, handler);
 				break;
-			case "DELETE":
+			case 'DELETE':
 				router.delete(path, handler);
 				break;
-			case "PATCH":
+			case 'PATCH':
 				router.patch(path, handler);
 				break;
 		}
@@ -59,7 +59,7 @@ export const parseParam = {
 			if (!isNaN(val.getTime())) {
 				return val;
 			} else {
-				throw "";
+				throw '';
 			}
 		} catch {
 			throw new Err.RequestError(`Invalid parameter ${name}: ${value}`);
@@ -72,7 +72,7 @@ export const parseParam = {
 			if (!isNaN(val)) {
 				return val;
 			} else {
-				throw "";
+				throw '';
 			}
 		} catch {
 			throw new Err.RequestError(`Invalid parameter ${name}: ${value}`);

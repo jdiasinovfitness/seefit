@@ -1,12 +1,12 @@
-import { Router, Request, Response, NextFunction } from "express";
-import cors from "cors";
-import express from "express";
-import compression from "compression";
-import { parseParam } from "../utils";
+import { Router, Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import express from 'express';
+import compression from 'compression';
+import { parseParam } from '../utils';
 
 const i9r = (req: Request, res: Response, next: NextFunction): void => {
 	try {
-		const apiVersion = parseParam.number(req, "api-version");
+		const apiVersion = parseParam.number(req, 'api-version');
 		req.i9r = {
 			apiVersion,
 		};
@@ -30,8 +30,8 @@ const handleCors = (router: Router): void => {
 };
 
 const handleBodyRequestParsing = (router: Router): void => {
-	router.use(express.json({ limit: "10mb" }));
-	router.use(express.urlencoded({ extended: true, limit: "10mb" }));
+	router.use(express.json({ limit: '10mb' }));
+	router.use(express.urlencoded({ extended: true, limit: '10mb' }));
 };
 
 const handleCompression = (router: Router): void => {

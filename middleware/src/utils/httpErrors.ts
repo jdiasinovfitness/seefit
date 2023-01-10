@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export abstract class HTTPClientError extends Error {
 	readonly statusCode!: number;
@@ -20,7 +20,7 @@ export class RequestError extends HTTPClientError {
 
 	constructor(message: string) {
 		super({
-			type: "RequestError",
+			type: 'RequestError',
 			error: { message },
 		});
 	}
@@ -31,7 +31,7 @@ export class UnauthorizedResourceError extends HTTPClientError {
 
 	constructor(resource: string, value: string) {
 		super({
-			type: "UnauthorizedResourceError",
+			type: 'UnauthorizedResourceError',
 			error: { resource, value },
 		});
 	}
@@ -66,7 +66,7 @@ export class NotFoundResourceError extends HTTPClientError {
 
 	constructor(resource: string, value: string | undefined) {
 		super({
-			type: "NotFoundResourceError",
+			type: 'NotFoundResourceError',
 			error: { resource, value },
 		});
 	}
@@ -77,7 +77,7 @@ export class ConflictError extends HTTPClientError {
 
 	constructor(resource: string, value: string) {
 		super({
-			type: "ConflictError",
+			type: 'ConflictError',
 			error: { resource, value },
 		});
 	}
@@ -88,7 +88,7 @@ export class ServerError extends HTTPClientError {
 
 	constructor(message: string) {
 		super({
-			type: "ServerError",
+			type: 'ServerError',
 			error: { message },
 		});
 	}
@@ -96,7 +96,7 @@ export class ServerError extends HTTPClientError {
 
 export const processAPIError = (
 	err: unknown,
-	data?: { resource: string; value: string },
+	data?: { resource: string; value: string }
 ) => {
 	if (axios.isAxiosError(err) && err.response) {
 		if (err.response.status == 401) {
@@ -111,11 +111,11 @@ export const processAPIError = (
 			}
 		} else if (err.response.status == 409) {
 			return new ConflictError(
-				err.response.data?.error?.resource || "Undefined",
-				err.response.data?.error?.value || "Undefined",
+				err.response.data?.error?.resource || 'Undefined',
+				err.response.data?.error?.value || 'Undefined'
 			);
 		} else if (err.response.status == 400) {
-			return new RequestError(err.response.data?.error?.message || "Undefined");
+			return new RequestError(err.response.data?.error?.message || 'Undefined');
 		} else {
 			return new RequestError(err.response.data);
 		}
