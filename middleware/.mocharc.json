@@ -1,0 +1,18 @@
+{
+    "allow-uncaught": true,
+    "check-leaks": true,
+    "exit": true,
+    "extension": [
+        "ts"
+    ],
+    "spec": "src/**/*.spec.ts",
+    "require": [
+        "ts-node/register",
+        "fixtures.ts"
+    ],
+    "bail": true,
+    "watch": false,
+    "parallel": true,
+    "jobs": 2,
+    "reporter": "spec"
+}
