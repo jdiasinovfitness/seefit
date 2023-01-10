@@ -1,6 +1,6 @@
 import { apiVersionError } from "utils/ErrorHandler";
 import { Route } from "../../utils";
-import Auth from "./actions/Auth";
+import Auth from "../init/actions/Auth";
 
 const routes: Route[] = [
 	{
