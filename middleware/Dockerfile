@@ -1,4 +1,4 @@
-FROM node:16 as base
+FROM node:15 as base
 ARG DEVOPS_FEED_READ_TOKEN
 WORKDIR /app
 
@@ -14,7 +14,7 @@ echo \; end auth token >> /root/.npmrc
 COPY package.json package-lock.json .npmrc ./
 RUN npm install --prod
 
-FROM node:16 as test
+FROM node:15 as test
 
 WORKDIR /app
 COPY --from=base /app /app
@@ -25,7 +25,7 @@ COPY . ./
 RUN npm run build
 
 
-FROM node:16-alpine
+FROM node:15-alpine
 
 WORKDIR /i9r/seefit/middleware
 
