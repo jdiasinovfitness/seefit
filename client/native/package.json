@@ -21,10 +21,12 @@
   },
   "cordova": {
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "devDependencies": {
-    "cordova-android": "^11.0.0"
+    "cordova-android": "^11.0.0",
+    "cordova-ios": "^6.2.0"
   }
 }
