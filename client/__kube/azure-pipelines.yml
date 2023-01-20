@@ -165,7 +165,7 @@ stages:
           - task: Npm@1
             displayName: "npm install"
             inputs:
-              workingDir: native
+              workingDir: $(Build.SourcesDirectory)/client/native
               verbose: false
               customRegistry: useFeed
               customFeed: "6509ad65-c91d-438a-9714-d063289fe7c2/1de3df63-7ada-4109-9b8d-e4c39b016a4c"
