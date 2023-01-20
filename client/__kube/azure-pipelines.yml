@@ -122,6 +122,8 @@ stages:
               
             workingDirectory: $(Build.SourcesDirectory)/client/native
             displayName: "Create Package"
+            env:
+              DEVOPS_FEED_READ_TOKEN: $(DEVOPS_FEED_READ_TOKEN)
 
           - publish: $(Build.SourcesDirectory)/client/native/dist
             artifact: native-android
@@ -182,6 +184,8 @@ stages:
 
             workingDirectory: "$(Build.SourcesDirectory)/native/dist"
             displayName: "Publish package"
+            env:
+              IOS_PUB_PWD: $(IOS_PUB_PWD)
 
           - publish: $(Build.SourcesDirectory)/client/native/dist
             artifact: native-ios
