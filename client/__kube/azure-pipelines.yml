@@ -105,10 +105,6 @@ stages:
 
               tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
 
-              echo "DEVOPS_FEED_READ_TOKEN=$DEVOPS_FEED_READ_TOKEN"
-              echo "----"
-              printenv
-
               docker build \
                 --build-arg DEVOPS_FEED_READ_TOKEN=${DEVOPS_FEED_READ_TOKEN} \
                 --build-arg BUILD_BUILDID=${BUILD_BUILDID} \
