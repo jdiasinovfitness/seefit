@@ -20,7 +20,7 @@
       "developmentTeam": "7FFY3KKSB8",
       "codeSignIdentity": "iPhone Distribution: Inovretail, Lda",
       "packageType": "app-store",
-      "provisioningProfile": "3a2d12d0-5d1e-4598-be4d-a8b662a01051",
+      "provisioningProfile": "3b7caf3c-7d99-42d2-872a-bc0ebb36a83e",
       "buildFlag": ["-UseModernBuildSystem=1"]
     }
   }
