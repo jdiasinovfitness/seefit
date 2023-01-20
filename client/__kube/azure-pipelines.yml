@@ -124,7 +124,8 @@ stages:
 
       - job: iOS
         dependsOn: Prepare
-        pool: 'macOS-latest'
+        pool:
+          vmImage: "macOS-latest"
         variables:
           env: $[ dependencies.Prepare.outputs['setenv.env'] ]
         steps:
