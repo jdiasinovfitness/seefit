@@ -180,7 +180,7 @@ stages:
             displayName: "Create package"
 
           - bash: |
-              ${XCODE_14_DEVELOPER_DIR}/usr/bin/altool --upload-app -f seeplus.ipa -t ios -u $IOS_PUB_USER -p $IOS_PUB_PWD
+              ${XCODE_14_DEVELOPER_DIR}/usr/bin/altool --upload-app -f seefit.ipa -t ios -u $IOS_PUB_USER -p $IOS_PUB_PWD
 
             workingDirectory: "$(Build.SourcesDirectory)/client/native/dist"
             displayName: "Publish package"
