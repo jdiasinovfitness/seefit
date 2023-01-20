@@ -1,5 +1,5 @@
 #Build
-FROM node:16 as build
+FROM node:18 as build
 ARG DEVOPS_FEED_READ_TOKEN
 WORKDIR /app
 

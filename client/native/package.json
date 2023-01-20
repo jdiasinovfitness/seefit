@@ -9,7 +9,7 @@
     "dist:android-prd": "cordova build android --release --buildConfig ./build.json",
     "postdist:android-prd": "ncp /build/platforms/android/app/build/outputs/bundle/release/app-release.aab /dist/seefit.aab",
     "dist:ios": "cordova build ios --device --release --buildConfig ./build.json",
-    "postdist:ios": "ncp ./platforms/ios/build/device/seemobile.ipa ./dist/seeplus.ipa"
+    "postdist:ios": "ncp ./platforms/ios/build/device/seefit.ipa ./dist/seefit.ipa"
   },
   "dependencies": {
     "cordova": "^11.0.0",

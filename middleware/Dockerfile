@@ -1,4 +1,4 @@
-FROM node:16 as base
+FROM node:18 as base
 ARG DEVOPS_FEED_READ_TOKEN
 WORKDIR /app
 
