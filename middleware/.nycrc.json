@@ -1,0 +1,15 @@
+{
+    "all": false,
+    "check-coverage": false,
+    "extension": [
+        ".ts"
+    ],
+    "reporter": [
+        "text"
+    ],
+    "exclude": [
+        "src/utils/**",
+        "src/**/*.spec.ts",
+        "fixtures.ts"
+    ]
+}

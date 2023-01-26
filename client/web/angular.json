@@ -1,0 +1,111 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"seefit": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "",
+			"sourceRoot": "src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": ["src/favicon.ico", "src/assets"],
+						"styles": [
+							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+							"src/app/core/styles/global.scss"
+						],
+						"scripts": [
+							"./node_modules/jquery/dist/jquery.min.js",
+							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+						]
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								},
+								{
+									"type": "anyScript",
+									"maximumWarning": "1mb",
+									"maximumError": "2mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "seefit:build:production"
+						},
+						"development": {
+							"browserTarget": "seefit:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "seefit:build"
+					}
+				},
+				"test": {
+					"builder": "@cypress/schematic:cypress",
+					"options": {
+						"watch": true,
+						"headless": false,
+						"browser": "chrome",
+						"devServerTarget": "seefit:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "seefit:serve:production"
+						}
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"analytics": "192b802e-c4a2-4ed6-877d-a424b431b2f3"
+	}
+}

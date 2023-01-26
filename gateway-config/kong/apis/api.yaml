@@ -1,0 +1,41 @@
+apis:
+  - name: ViewSettingss
+    ensure: present
+    attributes:
+      uris: /seefit/settings
+      methods: ["GET"]
+      upstream_url: http://api.${NS_PREFIX}seefit
+      strip_uri: false
+    plugins:
+      - name: jwt
+        attributes:
+          enabled: true
+          config:
+            uri_param_names: "jwt"
+            key_claim_name: "iss"
+            claims_to_verify: "exp"
+      - name: acl
+        attributes:
+          enabled: true
+          config:
+            whitelist: SYSADMIN, SEEFIT
+  - name: ManageSeefitSettings
+    ensure: present
+    attributes:
+      uris: /seefit/settings
+      methods: ["POST", "PUT", "DELETE"]
+      upstream_url: http://api.${NS_PREFIX}seefit
+      strip_uri: false
+    plugins:
+      - name: jwt
+        attributes:
+          enabled: true
+          config:
+            uri_param_names: "jwt"
+            key_claim_name: "iss"
+            claims_to_verify: "exp"
+      - name: acl
+        attributes:
+          enabled: true
+          config:
+            whitelist: SYSADMIN, SEEFIT.MANAGER

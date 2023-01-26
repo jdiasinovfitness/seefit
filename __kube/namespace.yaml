@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ${NS_PREFIX}seefit
+  labels:
+    name: seefit
+    application: seeplus
+    environment: ${RELEASE_ENV}

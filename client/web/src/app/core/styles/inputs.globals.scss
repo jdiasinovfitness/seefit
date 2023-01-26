@@ -1,0 +1,29 @@
+@import 'variables.scss';
+
+mat-form-field {
+	background-color: $white;
+}
+mat-label {
+	color: $black;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+	background-color: $white;
+}
+
+.mat-form-field-label {
+	color: $mainPrimary;
+}
+.mat-form-field-underline {
+	background-color: $mainPrimary;
+}
+.mat-form-field-ripple {
+	background-color: $mainPrimary;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+}

@@ -1,0 +1,58 @@
+@import '../../core/styles/base.scss';
+
+mat-sidenav {
+	width: 100%;
+	background-color: $mainBackground !important;
+	padding: 16px 16px;
+}
+
+mat-sidenav-container {
+	background-color: transparent !important ;
+}
+
+mat-expansion-panel {
+	background-color: $mainBackground;
+}
+
+mat-panel-title {
+	color: $mainPrimary;
+	font-weight: bold;
+}
+
+.sub-menu {
+	color: $blackOpacity;
+	font-weight: bold;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.mat-accordion .mat-expansion-panel {
+	box-shadow: none;
+	border-bottom: 1px $mainPrimary solid;
+	border-radius: 0;
+}
+
+.mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+::ng-deep .mat-expansion-indicator:after {
+	color: $mainPrimary;
+	font-weight: bold;
+}
+
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+	background-color: rgba($mainBackground, 0.2);
+}
+
+.highlight {
+	color: $mainPrimary;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+	mat-sidenav {
+		width: 400px;
+	}
+}
