@@ -12,7 +12,19 @@
 <div class="i9r-container">
 	<mat-toolbar class="example-header">
 		<mat-toolbar-row>
-			<mat-icon
+			<img
+				class="menu_icon"
+				*ngIf="!opened"
+				(click)="sideNavVisibily()"
+				src="../../../assets/icons/core/menu.svg"
+			/>
+			<img
+				class="menu_icon"
+				*ngIf="opened"
+				(click)="sideNavVisibily()"
+				src="../../../assets/icons/core/close.svg"
+			/>
+			<!-- <mat-icon
 				*ngIf="opened"
 				aria-hidden="false"
 				(click)="sideNavVisibily()"
@@ -25,7 +37,8 @@
 				(click)="sideNavVisibily()"
 				aria-label="Menu"
 				fontIcon="reorder"
-			></mat-icon>
+			></mat-icon> -->
+			<img />
 			<img class="h-100" src="../../../assets/images/core/logoBlack.png" />
 		</mat-toolbar-row>
 	</mat-toolbar>
@@ -64,19 +77,16 @@
 				<mat-expansion-panel *ngFor="let p of permissions">
 					<mat-expansion-panel-header>
 						<mat-panel-title>
-							<mat-icon aria-hidden="false" aria-label="Menu">{{ p.icon }}</mat-icon>
+							<img class="menu_icon" src="../../../assets/icons/menu/{{ p.icon }}" />
 							{{ p.appCode }}
 						</mat-panel-title>
 					</mat-expansion-panel-header>
 
 					<p class="sub-menu" *ngFor="let sp of p.permissions">
-						<mat-icon
-							class="sub-menu"
-							aria-hidden="false"
-							aria-label="Menu"
-							fontIcon="crop_din"
-						>
-						</mat-icon>
+						<img
+							class="menu_icon sub-menu-icon"
+							src="../../../assets/icons/core/sub-menu2.svg"
+						/>
 						{{ sp.permissionCode }}
 					</p>
 				</mat-expansion-panel>

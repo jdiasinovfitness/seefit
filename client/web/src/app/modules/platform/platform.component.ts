@@ -15,7 +15,7 @@ export class PlatformComponent implements OnInit {
 		// object structure should represent the actual menu (menu/page)
 		{
 			appCode: 'Interactions', // this block has no connection to the app structure
-			icon: 'connect_without_contact',
+			icon: 'interaction.svg',
 			desc: [
 				{
 					lang: 'pt',
@@ -62,7 +62,7 @@ export class PlatformComponent implements OnInit {
 		},
 		{
 			appCode: 'Trainning',
-			icon: 'fitness_center',
+			icon: 'training.svg',
 			desc: [
 				{
 					lang: 'pt',
