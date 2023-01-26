@@ -21,41 +21,34 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: gateway-kong-config
+  name: kong-config
 data:
   kong.yaml: |
-    _format_version: "2.1"
+    _format_version: "1.1"
     services:
       - name: middleware
-        url: http://middleware
+        url: http://middleware:80/
         routes:
-          - name: base_middleware
-            methods:
-              - GET
-              - POST
-              - PUT
-              - PATCH
-              - DELETE
+          - name: middleware_base
             paths:
               - /middleware
-            strip_path: true
-      - name: seefit_ui
-        url: http://client-web
+      - name: client-web
+        url: http://client-web:80/
         routes:
-          - name: base_seefit_ui
-            methods:
-              - GET
-              - HEAD
+          - name: client-web
             paths:
               - /
     plugins:
-      - name: bot-detection
-
       - name: request-size-limiting
         config:
-          allowed_payload_size: 1
+          allowed_payload_size: 10
           size_unit: megabytes
-
+      - name: bot-detection
+      - name: correlation-id
+        config:
+          header_name: x-log-id
+          generator: uuid
+          echo_downstream: false
 ---
 
 apiVersion: v1
