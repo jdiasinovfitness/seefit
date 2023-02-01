@@ -86,4 +86,7 @@
   <hook src="scripts/env_setup.js" type="after_prepare"/>
   <origin href="*" subdomains="true"/>
   <preference name="DisallowOverscroll" value="true"/>
+  <preference name="StatusBarOverlaysWebView" value="false"/>
+  <preference name="StatusBarStyle" value="default"/>
+  <preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
 </widget>
