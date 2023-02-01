@@ -17,16 +17,21 @@
     "fs-extra": "^10.1.0",
     "ncp": "^2.0.0",
     "replace": "^1.2.2",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "@ahovakimyan/cordova-plugin-wkwebviewxhrfix": "^1.0.1",
+    "cordova-android": "^11.0.0",
+    "cordova-ios": "^6.2.0"
   },
   "cordova": {
     "platforms": [
       "android",
       "ios"
-    ]
+    ],
+    "plugins": {
+      "@ahovakimyan/cordova-plugin-wkwebviewxhrfix": {}
+    }
   },
   "devDependencies": {
-    "cordova-android": "^11.0.0",
-    "cordova-ios": "^6.2.0"
+    
   }
 }

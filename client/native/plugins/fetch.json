@@ -1,0 +1,10 @@
+{
+  "@ahovakimyan/cordova-plugin-wkwebviewxhrfix": {
+    "source": {
+      "type": "registry",
+      "id": "@ahovakimyan/cordova-plugin-wkwebviewxhrfix@1.0.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
