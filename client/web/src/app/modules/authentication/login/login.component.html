@@ -30,10 +30,9 @@
 			></app-input>
 			<app-input
 				formControlName="password"
-				[text]="'password'"
+				[text]="'password' | transloco"
 				[type]="'password'"
 			></app-input>
-			<span>teste</span>
 			<div class="align-self-center w-100">
 				<span class="align-self-center">{{ 'login.forgot_link' | transloco }}</span>
 				<input
