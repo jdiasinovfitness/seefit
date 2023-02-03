@@ -6,12 +6,11 @@ import { ConfigService } from './services/config.service';
 import { MaterialExampleModule } from '../material.module';
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
-import { ThemeService } from './services/config-services/theme.service';
 
 @NgModule({
 	declarations: [InputComponent, ButtonComponent],
 	imports: [CommonModule, MaterialExampleModule],
 	exports: [InputComponent, ButtonComponent],
-	providers: [AuthService, GlobalStorage, ConfigService, ThemeService],
+	providers: [AuthService, GlobalStorage, ConfigService],
 })
 export class CoreModule {}
