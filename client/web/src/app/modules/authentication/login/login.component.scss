@@ -1,7 +1,6 @@
 @import '../../../core/styles/base.scss';
 
 .lg-left {
-	background-color: $mainBackground;
 	width: 0%;
 }
 
@@ -17,8 +16,6 @@
 .submit-button {
 	border: 0;
 	border-radius: 0.5rem;
-	background-color: $mainPrimary;
-	color: $white;
 	width: 70%;
 	font-weight: bold;
 }

@@ -1,8 +1,9 @@
-<mat-form-field class="container-full w-100" appearance="fill">
-	<mat-label class="bold">{{ text }}</mat-label>
+<mat-form-field color="primary" class="container-full w-100" appearance="fill">
+	<mat-label color="primary" class="bold">{{ text }}</mat-label>
 	<input
 		formControlName="formControlName"
 		(keyup)="onChange($event)"
+		color="primary"
 		matInput
 		autocomplete="off"
 		type="{{ type }}"

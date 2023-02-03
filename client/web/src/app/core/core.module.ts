@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { GlobalStorage } from './storage/global.storage';
@@ -6,11 +6,12 @@ import { ConfigService } from './services/config.service';
 import { MaterialExampleModule } from '../material.module';
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
+import { ThemeService } from './services/config-services/theme.service';
 
 @NgModule({
 	declarations: [InputComponent, ButtonComponent],
 	imports: [CommonModule, MaterialExampleModule],
 	exports: [InputComponent, ButtonComponent],
-	providers: [AuthService, GlobalStorage, ConfigService],
+	providers: [AuthService, GlobalStorage, ConfigService, ThemeService],
 })
 export class CoreModule {}

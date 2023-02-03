@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -47,5 +47,9 @@ export class LoginComponent implements OnInit {
 		} catch (err) {
 			console.log('Errr');
 		}
+	}
+
+	get dark() {
+		return document.body.classList.contains('dark-theme');
 	}
 }

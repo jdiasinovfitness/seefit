@@ -1,11 +1,17 @@
 @use '@angular/material' as mat;
+@import '@angular/material/theming';
+
 @import 'palette/general-pallete.scss';
 
 @include mat.core();
 
 $primary-color: #f17a59;
-$accent-color: #fafafa;
+$accent-color: #f17a59;
 $warn-color: #ff0000;
+
+$primary-color_black: #f17a59;
+$accent-color_black: #f17a59;
+$warn-color_black: #ff0000;
 
 $primary-p: createPalette($primary-color);
 $accent-p: createPalette($accent-color);
@@ -14,6 +20,14 @@ $warn-p: createPalette($warn-color);
 $primary-palette: mat.define-palette($primary-p);
 $accent-palette: mat.define-palette($accent-p);
 $warn-palette: mat.define-palette($warn-p);
+
+//black theme
+
+$primary-p-black: createPalette($primary-color_black);
+$accent-p-black: createPalette($accent-color_black);
+
+$primary-palette-dark: mat.define-palette($primary-p-black);
+$accent-palette-dark: mat.define-palette($accent-p-black);
 
 $my-theme: mat.define-light-theme(
 	(
@@ -28,4 +42,39 @@ $my-theme: mat.define-light-theme(
 @include mat.core();
 @include mat.core-theme($my-theme);
 @include mat.all-component-themes($my-theme);
-@include mat.input-themes($my-theme);
+@include mat.button-theme($my-theme);
+@include angular-material-theme($my-theme);
+
+.dark-theme {
+	$dark-theme: mat.define-dark-theme(
+		(
+			color: (
+				primary: $primary-palette,
+				accent: $accent-palette,
+				warn: $warn-palette,
+			),
+		)
+	);
+
+	.mat-form-field-label {
+		color: $primary-color !important;
+	}
+	@include mat-button-theme($dark-theme);
+	@include mat-form-field-theme($dark-theme);
+	@include angular-material-theme($dark-theme);
+}
+
+.light-theme {
+	$my-theme: mat.define-light-theme(
+		(
+			color: (
+				primary: $primary-palette,
+				accent: $accent-palette,
+				warn: $warn-palette,
+			),
+		)
+	);
+
+	@include mat-form-field-theme($my-theme);
+	@include angular-material-theme($my-theme);
+}

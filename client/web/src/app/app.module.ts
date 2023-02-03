@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { CoreModule } from './core/core.module';
+import { MaterialExampleModule } from './material.module';
 
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
 		FormsModule,
+		MaterialExampleModule,
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
