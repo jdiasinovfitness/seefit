@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule, TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { LoginComponent } from './login.component';
 import { loader } from 'src/app/core/i18n/transloco-loader';
-import { CoreModule } from 'src/app/core/core.module';
+import { SharedModule } from 'src/app/core/shared.module';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 		FormsModule,
 		ReactiveFormsModule,
 		TranslocoModule,
-		CoreModule,
+		SharedModule,
 	],
 	providers: [
 		{
