@@ -1,4 +1,4 @@
-<!--TODO: 
+<!--TODO:
 	Based on:
 	https://material.angular.io/components/sidenav/examples
 	(Responsive sidenav)
@@ -8,23 +8,18 @@
 	- menu opens over the page in desktop
 	- over menu effect
 -->
-
 <div class="i9r-container">
-	<mat-toolbar class="example-header">
-		<mat-toolbar-row>
-			<img
-				class="menu_icon"
-				*ngIf="!opened"
-				(click)="sideNavVisibily()"
-				src="../../../assets/icons/core/menu.svg"
-			/>
-			<img
-				class="menu_icon"
-				*ngIf="opened"
-				(click)="sideNavVisibily()"
-				src="../../../assets/icons/core/close.svg"
-			/>
-			<!-- <mat-icon
+  <mat-toolbar class="example-header">
+    <mat-toolbar-row>
+      <img class="menu_icon"
+           *ngIf="!opened"
+           (click)="sideNavVisibily()"
+           src="../../../assets/icons/core/menu.svg" />
+      <img class="menu_icon"
+           *ngIf="opened"
+           (click)="sideNavVisibily()"
+           src="../../../assets/icons/core/close.svg" />
+      <!-- <mat-icon
 				*ngIf="opened"
 				aria-hidden="false"
 				(click)="sideNavVisibily()"
@@ -38,69 +33,67 @@
 				aria-label="Menu"
 				fontIcon="reorder"
 			></mat-icon> -->
-			<img />
-			<img class="h-100" src="../../../assets/images/core/logoBlack.png" />
-		</mat-toolbar-row>
-	</mat-toolbar>
-	<mat-sidenav-container class="w-100 h-100">
-		<mat-sidenav
-			class="sidenav-container"
-			#sidenav
-			[opened]="opened"
-			[mode]="'over'"
-			(openedChange)="setSidenavStatus($event)"
-		>
-			<!--DUMMY DATA & TODO:
+      <img />
+      <img class="h-100"
+           src="../../../assets/images/core/logoBlack.png" />
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="w-100 h-100">
+    <mat-sidenav class="sidenav-container"
+                 #sidenav
+                 [opened]="opened"
+                 [mode]="'over'"
+                 (openedChange)="setSidenavStatus($event)">
+      <!--DUMMY DATA & TODO:
 				username: .ts hardcoded
 				origin: .ts hardcoded && replace it with a list element
 			-->
-			<div class="d-flex w-100">
-				<div class="profile-rounded">
-					<div class="profile-picture female1"></div>
-				</div>
+      <div class="d-flex w-100">
+        <div class="profile-rounded">
+          <div class="profile-picture female1"></div>
+        </div>
 
-				<p (click)="originClick()">
-					{{ 'origin' | transloco: { originName: originName } }}
-				</p>
-			</div>
+        <p (click)="originClick()">
+          {{ 'origin' | transloco: { originName: originName } }}
+        </p>
+      </div>
 
-			<p class="text-center">
-				{{ 'plt.welcomeUser' | transloco }}
-				<span class="highlight" (click)="usernameClick()">{{ user?.userName }}</span
-				>,<br />
-				{{ 'plt.welcomeBack' | transloco }}
-			</p>
-			<!--DUMMY DATA
+      <p class="text-center">
+        {{ 'plt.welcomeUser' | transloco }}
+        <span class="highlight"
+              (click)="usernameClick()">{{ user?.userName }}</span>,<br />
+        {{ 'plt.welcomeBack' | transloco }}
+      </p>
+      <!--DUMMY DATA
 				menus: ts hardcoded
 			-->
-			<mat-accordion class="example-headers-align" multi>
-				<mat-expansion-panel *ngFor="let p of permissions">
-					<mat-expansion-panel-header>
-						<mat-panel-title>
-							<img class="menu_icon" src="../../../assets/icons/menu/{{ p.icon }}" />
-							{{ p.appCode }}
-						</mat-panel-title>
-					</mat-expansion-panel-header>
+      <mat-accordion class="example-headers-align"
+                     multi>
+        <mat-expansion-panel *ngFor="let p of permissions">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <img class="menu_icon"
+                   src="../../../assets/icons/menu/{{ p.icon }}" />
+              {{ p.appCode }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-					<p class="sub-menu" *ngFor="let sp of p.permissions">
-						<img
-							class="menu_icon sub-menu-icon"
-							src="../../../assets/icons/core/sub-menu2.svg"
-						/>
-						{{ sp.permissionCode }}
-					</p>
-				</mat-expansion-panel>
-			</mat-accordion>
-		</mat-sidenav>
-		<!--Sidenav Content
+          <p class="sub-menu"
+             *ngFor="let sp of p.permissions">
+            <img class="menu_icon sub-menu-icon"
+                 src="../../../assets/icons/core/sub-menu2.svg" />
+            {{ sp.permissionCode }}
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-sidenav>
+    <!--Sidenav Content
 		The right side content of the main screen goes to here
 		-->
-		<mat-sidenav-content>
-			<app-home *ngIf="!childActivated"></app-home>
-			<router-outlet
-				(deactivate)="onDeactivateChild()"
-				(activate)="onActivateChild()"
-			></router-outlet>
-		</mat-sidenav-content>
-	</mat-sidenav-container>
+    <mat-sidenav-content>
+      <app-home *ngIf="!childActivated"></app-home>
+      <router-outlet (deactivate)="onDeactivateChild()"
+                     (activate)="onActivateChild()"></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

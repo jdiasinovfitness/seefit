@@ -7,14 +7,15 @@ import { loader } from 'src/app/core/i18n/transloco-loader';
 import { PlatformComponent } from './platform.component';
 import { MaterialExampleModule } from 'src/app/material.module';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { SharedModule } from 'src/app/core/shared.module';
 
 @NgModule({
 	declarations: [HomeComponent, PlatformComponent],
 	imports: [
 		CommonModule,
 		PlatformRoutingModule,
-		TranslocoModule,
 		MaterialExampleModule,
+		SharedModule,
 	],
 	providers: [
 		{

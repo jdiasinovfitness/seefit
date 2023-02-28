@@ -16,9 +16,13 @@ const routes: Routes = [
 					import('./user-profile/user-profile.module').then(
 						m => m.UserProfileModule
 					),
-				//interactions
-				//health&nutrition
 			},
+			{
+				path: 'interaction',
+				loadChildren: () =>
+					import('./interaction/interaction.module').then(m => m.InteractionModule),
+			},
+			//health&nutrition
 		],
 	},
 ];

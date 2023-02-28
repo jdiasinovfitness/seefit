@@ -6,11 +6,18 @@ import { ConfigService } from './services/config.service';
 import { MaterialExampleModule } from '../material.module';
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
+import { UiComponentsModule } from '@i9r/ui-components';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
 	declarations: [InputComponent, ButtonComponent],
-	imports: [CommonModule, MaterialExampleModule],
-	exports: [InputComponent, ButtonComponent],
+	imports: [
+		CommonModule,
+		MaterialExampleModule,
+		UiComponentsModule,
+		TranslocoModule,
+	],
+	exports: [InputComponent, ButtonComponent, TranslocoModule],
 	providers: [AuthService, GlobalStorage, ConfigService],
 })
-export class CoreModule {}
+export class SharedModule {}

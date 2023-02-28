@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
-import { CoreModule } from './core/core.module';
 import { MaterialExampleModule } from './material.module';
+import { SharedModule } from './core/shared.module';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -20,7 +20,7 @@ import { MaterialExampleModule } from './material.module';
 		BrowserAnimationsModule,
 		HttpClientModule,
 		TranslocoRootModule,
-		CoreModule,
+		SharedModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
