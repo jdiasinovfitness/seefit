@@ -6,6 +6,7 @@ import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { LoginComponent } from './login.component';
 import { loader } from 'src/app/core/i18n/transloco-loader';
 import { SharedModule } from 'src/app/core/shared.module';
+import { UiComponentsModule } from '@i9r/ui-components';
 
 @NgModule({
 	declarations: [LoginComponent],
@@ -14,6 +15,7 @@ import { SharedModule } from 'src/app/core/shared.module';
 		LoginRoutingModule,
 		FormsModule,
 		ReactiveFormsModule,
+		UiComponentsModule,
 		SharedModule,
 	],
 	providers: [

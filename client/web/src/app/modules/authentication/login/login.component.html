@@ -10,13 +10,14 @@
     </div>
     <form [formGroup]="authForm"
           class="login-container d-flex flex-column text-center m-5"
-          (ngSubmit)="signIn()">
+          >
+      <lib-input [label]="'Email'" [type]="'email'"></lib-input>
+      <lib-input [label]="'Password'" [type]="'password'"></lib-input>
       <div class="align-self-center w-100">
         <span class="align-self-center">{{ 'login.forgot_link' | transloco }}</span>
-        <input type="submit"
-               class="submit-button p-2"
-               value="{{ 'login.login' | transloco }}" />
+       
       </div>
     </form>
+    <lib-button [text]="'LOGIN'" (stageChange)="signIn()"></lib-button>
   </div>
 </div>

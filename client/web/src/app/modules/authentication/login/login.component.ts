@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 	// sign in to plataform
 	async signIn() {
 		try {
-			this.isSubmitted = true;
+			/*this.isSubmitted = true;
 			if (this.authForm.invalid) {
 				return;
 			}
@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
 			if (!this.production) {
 				await this.auth.login(this.authForm.value);
 			}
-
+*/
+console.log("stateChangeeeeee");
 			this.router.navigate(['../../platform'], {
 				relativeTo: this.activatedRoute,
 			});
