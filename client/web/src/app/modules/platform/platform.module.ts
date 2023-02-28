@@ -14,7 +14,6 @@ import { SharedModule } from 'src/app/core/shared.module';
 	imports: [
 		CommonModule,
 		PlatformRoutingModule,
-		TranslocoModule,
 		MaterialExampleModule,
 		SharedModule,
 	],
