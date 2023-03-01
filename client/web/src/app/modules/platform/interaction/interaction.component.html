@@ -1,8 +1,81 @@
-<!-- <lib-button [primary]="true"
-            [text]="'Primary'"
-            [disabled]="!true">
-</lib-button> -->
-
 <div class="interaction-wrapper">
-  <lib-search-bar [filter]="false"></lib-search-bar>
+
+  <!-- Header Row -->
+  <div class="header-row">
+
+    <!-- Search Bar -->
+    <span class="search-wrp">
+      <lib-search-bar style="width: -webkit-fill-available;"
+                      [filter]="false">
+      </lib-search-bar>
+    </span>
+
+    <!-- Filters -->
+    <span class="filters">
+      <div class="switch-wrp"
+           *ngFor="let filter of filterList; let i = index">
+        <!-- TODO: add translations -->
+        <label>{{filter.label | transloco}}</label>
+        <lib-switch (stateChange)="handleFilterToggle($event, i)"
+                    [checked]="filter.checked"
+                    [disabled]="filter.disabled"></lib-switch>
+      </div>
+    </span>
+  </div>
+
+  <!-- Table -->
+  <div class="table-row">
+    <ng-container [ngSwitch]="currentPhase">
+      <!-- Loading Template -->
+      <div *ngSwitchCase="phaseEnum.loading">
+        <!-- TODO: build loading template -->
+      </div>
+
+      <!-- Empty Template -->
+      <div *ngSwitchCase="phaseEnum.empty">
+        <!-- TODO: build empty state && Search NoResults template -->
+      </div>
+
+      <!-- Error Template -->
+      <div *ngSwitchCase="phaseEnum.error">
+        <!-- TODO: build error template -->
+      </div>
+
+      <!-- Success Template -->
+      <div *ngSwitchCase="phaseEnum.success">
+        <ng-container *ngIf="list && list.length > 0">
+          <lib-accordion *ngFor="let item of list"
+                         [title]="item.title"
+                         [userId]="item.userId"
+                         [date]="item.date"
+                         [interaction]="item.interaction"
+                         [primary]="item.primary"
+                         [secondary]="item.secondary"
+                         [imageUrl]="item.imageUrl">
+            <div style="margin-top: 16px;">
+              <lib-tabs [tabs]="tabs"
+                        [activeTab]="activeTab"
+                        (tabChanged)="onTabChange($event)">
+                <div *ngIf="activeTab === '0'">
+                  TODO: Add sub element here
+                  Tab 1
+                </div>
+                <div *ngIf="activeTab === '1'">
+                  Tab 2
+                </div>
+                <div *ngIf="activeTab === '2'">
+                  Tab 3
+                </div>
+              </lib-tabs>
+            </div>
+          </lib-accordion>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-row">
+    <label>{{'0 clientes encontrados'}}</label>
+  </div>
 </div>
