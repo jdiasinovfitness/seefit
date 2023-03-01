@@ -7,11 +7,6 @@ import { SharedModule } from 'src/app/core/shared.module';
 
 @NgModule({
 	declarations: [InteractionComponent],
-	imports: [
-		CommonModule,
-		InteractionRoutingModule,
-		UiComponentsModule,
-		SharedModule,
-	],
+	imports: [CommonModule, InteractionRoutingModule, SharedModule],
 })
 export class InteractionModule {}

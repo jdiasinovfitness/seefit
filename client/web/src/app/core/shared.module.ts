@@ -15,7 +15,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 		UiComponentsModule,
 		TranslocoModule,
 	],
-	exports: [TranslocoModule],
+	exports: [TranslocoModule, UiComponentsModule],
 	providers: [AuthService, GlobalStorage, ConfigService],
 })
 export class SharedModule {}
