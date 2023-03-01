@@ -1,23 +1,25 @@
 <div class="d-flex h-100">
-  <!--Left section-->
-  <div class="lg-left"></div>
-  <!--Right section-->
-  <div class="lg-right">
-    <div class="text-center mt-5">
-      <img class="logo"
-           [alt]="'InovFitness'"
-           src="../../../../assets/images/core/logoBlack.png" />
-    </div>
-    <form [formGroup]="authForm"
-          class="login-container d-flex flex-column text-center m-5"
-          >
-      <lib-input [label]="'Email'" [type]="'email'"></lib-input>
-      <lib-input [label]="'Password'" [type]="'password'"></lib-input>
-      <div class="align-self-center w-100">
-        <span class="align-self-center">{{ 'login.forgot_link' | transloco }}</span>
-       
-      </div>
-    </form>
-    <lib-button [text]="'LOGIN'" (stageChange)="signIn()"></lib-button>
-  </div>
+	<!--Left section-->
+	<div class="lg-left"></div>
+	<!--Right section-->
+	<div class="lg-right">
+		<div class="text-center mt-5">
+			<img
+				class="logo"
+				[alt]="'InovFitness'"
+				src="../../../../assets/images/core/logoBlack.png"
+			/>
+		</div>
+		<form
+			[formGroup]="authForm"
+			class="login-container d-flex flex-column text-center m-5"
+		>
+			<lib-input [label]="'Email'" [type]="'email'"></lib-input>
+			<lib-input [label]="'Password'" [type]="'password'"></lib-input>
+			<div class="align-self-center w-100">
+				<span class="align-self-center">{{ 'login.forgot_link' | transloco }}</span>
+        <lib-button [text]="'LOGIN'" (stateChange)="signIn()"></lib-button>
+			</div>
+		</form>
+	</div>
 </div>

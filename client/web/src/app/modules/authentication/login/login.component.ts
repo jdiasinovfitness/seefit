@@ -29,24 +29,14 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	// sign in to plataform
-	async signIn() {
+	// sign in to platform
+	signIn() {
 		try {
-			/*this.isSubmitted = true;
-			if (this.authForm.invalid) {
-				return;
-			}
-
-			if (!this.production) {
-				await this.auth.login(this.authForm.value);
-			}
-*/
-console.log("stateChangeeeeee");
 			this.router.navigate(['../../platform'], {
 				relativeTo: this.activatedRoute,
 			});
 		} catch (err) {
-			console.log('Errr');
+			console.error('Error');
 		}
 	}
 
