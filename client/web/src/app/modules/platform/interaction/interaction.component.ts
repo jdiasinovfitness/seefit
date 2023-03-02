@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ICIData } from 'src/app/core/interfaces/icidata';
+import { DataService } from 'src/app/core/services/data.service';
+
+export enum Phases {
+	loading,
+	empty,
+	error,
+	success,
+}
 
 @Component({
 	selector: 'app-interaction',
@@ -6,7 +15,66 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./interaction.component.scss'],
 })
 export class InteractionComponent implements OnInit {
-	constructor() {}
+	phaseEnum = Phases;
+	currentPhase = Phases.loading;
 
-	ngOnInit(): void {}
+	// FIXME: refactor to sub component
+	activeTab = '0';
+	tabs = [
+		{ title: 'Consumer Info', id: 0, active: true },
+		{ title: 'Interaction Info', id: 1, active: false },
+		{ title: 'History', id: 2, active: false },
+	];
+	// FIXME: refactor to sub component
+
+	list: Array<ICIData> = [];
+	filterList = [
+		{
+			label: 'EM CLUBE',
+			checked: true,
+			disabled: false,
+		},
+		{
+			label: 'EXCLUIR AG',
+			checked: !true,
+			disabled: !false,
+		},
+		{
+			label: 'EM ATRASO',
+			checked: !true,
+			disabled: !false,
+		},
+	];
+
+	constructor(private dataService: DataService) {}
+
+	ngOnInit(): void {
+		this.loadData();
+		this.currentPhase = Phases.success;
+	}
+
+	// FIXME: refactor to sub component
+	onTabChange(tab: string) {
+		this.activeTab = tab;
+	}
+	// FIXME: refactor to sub component
+
+	loadData() {
+		this.currentPhase = Phases.loading;
+		this.dataService
+			.getICIData()
+			.then(res => {
+				console.log('ewwres', res); // TODO: Remove on PR!
+				this.list = res?.length > 0 ? res : [];
+				this.currentPhase = Phases.success;
+			})
+			.catch(err => {
+				console.error(err);
+				this.currentPhase = Phases.error;
+			});
+	}
+
+	handleFilterToggle(newState: boolean, index: number) {
+		this.filterList[index].checked = newState;
+	}
 }
