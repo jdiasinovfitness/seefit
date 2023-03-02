@@ -47,6 +47,7 @@
           <lib-accordion *ngFor="let item of list"
                          [title]="item.title"
                          [userId]="item.userId"
+                         [isOpen]="true"
                          [date]="item.date"
                          [interaction]="item.interaction"
                          [primary]="item.primary"
@@ -57,14 +58,16 @@
                         [activeTab]="activeTab"
                         (tabChanged)="onTabChange($event)">
                 <div *ngIf="activeTab === '0'">
-                  TODO: Add sub element here
-                  Tab 1
+                  <!-- Tab Customer Info -->
+                  <app-customer-info [info]="item"></app-customer-info>
                 </div>
                 <div *ngIf="activeTab === '1'">
-                  Tab 2
+                  <!-- Tab Interaction Info -->
+                  <app-interaction-info [info]="item"></app-interaction-info>
                 </div>
                 <div *ngIf="activeTab === '2'">
-                  Tab 3
+                  <!-- Tab History -->
+                  <app-history [info]="item"></app-history>
                 </div>
               </lib-tabs>
             </div>
@@ -76,6 +79,6 @@
 
   <!-- Footer -->
   <div class="footer-row">
-    <label>{{'0 clientes encontrados'}}</label>
+    <label>{{list && list.length}}{{' clientes encontrados'}}</label>
   </div>
 </div>
