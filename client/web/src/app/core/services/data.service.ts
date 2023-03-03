@@ -22,7 +22,7 @@ export class DataService {
 					primary: { label: 'HRU', color: 'red', value: '' },
 					secondary: { label: 'SLP', value: '35%', color: 'bl2e' },
 					imageUrl: '../../assets/icons/no-avatar.svg',
-					consumerInfo: {
+					customerInfo: {
 						customerRecord: {
 							title: 'CUSTOMER RECORD:',
 							content: [
@@ -51,6 +51,21 @@ export class DataService {
 							lifeCycle: {
 								key: 'LIFE CYCLE: Iniciado em:',
 								value: '08/04/2021',
+								progress: 25,
+								topLabels: [
+									{ label: '0', position: 0 },
+									{ label: '45', position: 25 },
+									{ label: '90', position: 50 },
+									{ label: '135', position: 75 },
+									{ label: '180', position: 95 },
+								],
+								bottomLabels: [
+									{ label: 'CYG', position: 0 },
+									{ label: 'CYG', position: 25 },
+									{ label: 'WYL', position: 50 },
+									{ label: 'WYL', position: 75 },
+									{ label: 'WYL', position: 95 },
+								],
 							},
 						},
 					},

@@ -6,7 +6,7 @@ export interface ICIData {
 	primary: ICILabel;
 	secondary: ICILabel;
 	imageUrl: string;
-	consumerInfo: ICIConsumerInfo;
+	customerInfo: ICIConsumerInfo;
 }
 
 export interface ICILabel {
@@ -25,13 +25,20 @@ export interface ICICustomerRecord {
 	content: Array<ICIKeyVal>;
 }
 
+export interface ICIAdditionalInfo {
+	title: string;
+	lifeCycle: ICILifecycle;
+	icons: Array<string>;
+}
+
+export interface ICILifecycle {
+	key: string;
+	value: string;
+	progress: number;
+	topLabels: Array<any>;
+	bottomLabels: Array<any>;
+}
 export interface ICIKeyVal {
 	key: string;
 	value: string;
-}
-
-export interface ICIAdditionalInfo {
-	title: string;
-	lifeCycle: ICIKeyVal;
-	icons: Array<string>;
 }
