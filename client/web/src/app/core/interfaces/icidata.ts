@@ -19,6 +19,7 @@ export interface ICIConsumerInfo {
 	customerRecord: ICICustomerRecord;
 	contractType: ICICustomerRecord;
 	additionalInfo: ICIAdditionalInfo;
+	observation: string;
 }
 export interface ICICustomerRecord {
 	title: string;
