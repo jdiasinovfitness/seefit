@@ -1,7 +1,16 @@
 {
-	"pt": "portuguese",
-	"en": "english",
-	"origin": "Origin {{originName}}",
-	"email": "Email",
-	"password": "Password"
+  "pt": "portuguese",
+  "en": "english",
+  "origin": "Origin {{originName}}",
+  "email": "Email",
+  "password": "Password",
+  "interaction": {
+    "empty": {
+      "empty-title": "No <b>Customers</b> Found",
+      "empty-footer": "Consider using <b>other</b> filter options</div>",
+      "empty-search-title": "No Search Result Found For: <b>{{query}}</b>",
+      "empty-search-footer": "Consider another <b>search</b> criteria"
+    },
+    "footer": "cliente(s) encontrados"
+  }
 }
