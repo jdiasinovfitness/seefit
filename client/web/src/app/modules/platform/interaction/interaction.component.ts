@@ -21,11 +21,13 @@ export class InteractionComponent implements OnInit {
 	// FIXME: refactor to sub component
 	activeTab = '0';
 	tabs = [
-		{ title: 'Consumer Info', id: 0, active: true },
-		{ title: 'Interaction Info', id: 1, active: false },
+		{ title: 'Customer', id: 0, active: true },
+		{ title: 'Interaction', id: 1, active: false },
 		{ title: 'History', id: 2, active: false },
 	];
 	// FIXME: refactor to sub component
+
+	searchValue = '';
 
 	list: Array<ICIData> = [];
 	filterList = [
@@ -49,8 +51,8 @@ export class InteractionComponent implements OnInit {
 	constructor(private dataService: DataService) {}
 
 	ngOnInit(): void {
+		// this.currentPhase = Phases.loading;
 		this.loadData();
-		this.currentPhase = Phases.success;
 	}
 
 	// FIXME: refactor to sub component
@@ -64,14 +66,19 @@ export class InteractionComponent implements OnInit {
 		this.dataService
 			.getICIData()
 			.then(res => {
-				console.log('ewwres', res); // TODO: Remove on PR!
 				this.list = res?.length > 0 ? res : [];
-				this.currentPhase = Phases.success;
+				this.currentPhase = this.list?.length === 0 ? Phases.empty : Phases.success;
 			})
 			.catch(err => {
 				console.error(err);
 				this.currentPhase = Phases.error;
 			});
+	}
+
+	handleSearch(newVal: string) {
+		console.log('newBa', newVal); // TODO: Remove on PR!
+		this.searchValue = newVal;
+		// TODO: implement array search for demo
 	}
 
 	handleFilterToggle(newState: boolean, index: number) {

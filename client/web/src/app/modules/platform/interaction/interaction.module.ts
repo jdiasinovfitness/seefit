@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/core/shared.module';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { InteractionInfoComponent } from './interaction-info/interaction-info.component';
 import { HistoryComponent } from './history/history.component';
+import { EmptyStateComponent } from './empty-state/empty-state.component';
 
 @NgModule({
 	declarations: [
@@ -13,6 +14,7 @@ import { HistoryComponent } from './history/history.component';
 		CustomerInfoComponent,
 		InteractionInfoComponent,
 		HistoryComponent,
+		EmptyStateComponent,
 	],
 	imports: [CommonModule, InteractionRoutingModule, SharedModule],
 })

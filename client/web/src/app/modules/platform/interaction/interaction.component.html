@@ -6,6 +6,8 @@
     <!-- Search Bar -->
     <span class="search-wrp">
       <lib-search-bar style="width: -webkit-fill-available;"
+                      [value]="searchValue"
+                      (stateChange)="handleSearch($event)"
                       [filter]="false">
       </lib-search-bar>
     </span>
@@ -24,16 +26,19 @@
   </div>
 
   <!-- Table -->
-  <div class="table-row">
+  <div class="table-row"
+       [ngClass]="{'tbl-center' : currentPhase !== phaseEnum.success}">
     <ng-container [ngSwitch]="currentPhase">
       <!-- Loading Template -->
       <div *ngSwitchCase="phaseEnum.loading">
-        <!-- TODO: build loading template -->
+        <lib-spinner></lib-spinner>
       </div>
 
       <!-- Empty Template -->
       <div *ngSwitchCase="phaseEnum.empty">
-        <!-- TODO: build empty state && Search NoResults template -->
+        <app-empty-state [title]="(searchValue && 'interaction.empty.empty-search-title' | transloco:{query: searchValue}) || ('interaction.empty.empty-title' | transloco)"
+                         [footer]="(searchValue && 'interaction.empty.empty-search-footer' | transloco:{query: searchValue}) || ('interaction.empty.empty-footer' | transloco)">
+        </app-empty-state>
       </div>
 
       <!-- Error Template -->
@@ -58,11 +63,11 @@
                         [activeTab]="activeTab"
                         (tabChanged)="onTabChange($event)">
                 <div *ngIf="activeTab === '0'">
-                  <!-- Tab Customer Info -->
+                  <!-- Tab Customer -->
                   <app-customer-info [info]="item"></app-customer-info>
                 </div>
                 <div *ngIf="activeTab === '1'">
-                  <!-- Tab Interaction Info -->
+                  <!-- Tab Interaction -->
                   <app-interaction-info [info]="item"></app-interaction-info>
                 </div>
                 <div *ngIf="activeTab === '2'">
@@ -79,6 +84,7 @@
 
   <!-- Footer -->
   <div class="footer-row">
-    <label>{{list && list.length}}{{' clientes encontrados'}}</label>
+    <div>{{list && list.length}}</div>
+    <div>{{'interaction.footer' | transloco}}</div>
   </div>
 </div>
