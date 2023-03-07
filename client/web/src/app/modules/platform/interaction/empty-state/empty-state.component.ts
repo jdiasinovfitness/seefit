@@ -12,6 +12,7 @@ export class EmptyStateComponent {
 
 	constructor() {}
 
+	// TODO: Refactor to get "src" from CDN as an Input
 	getImage() {
 		let src =
 			this.type === 'error'

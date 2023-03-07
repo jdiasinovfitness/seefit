@@ -37,13 +37,17 @@
       <!-- Empty Template -->
       <div *ngSwitchCase="phaseEnum.empty">
         <app-empty-state [title]="(searchValue && 'interaction.empty.empty-search-title' | transloco:{query: searchValue}) || ('interaction.empty.empty-title' | transloco)"
-                         [footer]="(searchValue && 'interaction.empty.empty-search-footer' | transloco:{query: searchValue}) || ('interaction.empty.empty-footer' | transloco)">
+                         [footer]="(searchValue && 'interaction.empty.empty-search-footer' | transloco:{query: searchValue}) || ('interaction.empty.empty-footer' | transloco)"
+                         [type]="'empty'">
         </app-empty-state>
       </div>
 
       <!-- Error Template -->
       <div *ngSwitchCase="phaseEnum.error">
-        <!-- TODO: build error template -->
+        <app-empty-state [title]="(searchValue && 'interaction.error.error-title' | transloco:{query: searchValue}) || ('interaction.empty.empty-title' | transloco)"
+                         [footer]="(searchValue && 'interaction.error.error-footer' | transloco:{query: searchValue}) || ('interaction.empty.empty-footer' | transloco)"
+                         [type]="'error'">
+        </app-empty-state>
       </div>
 
       <!-- Success Template -->
