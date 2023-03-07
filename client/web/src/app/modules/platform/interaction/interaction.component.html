@@ -16,7 +16,6 @@
     <span class="filters">
       <div class="switch-wrp"
            *ngFor="let filter of filterList; let i = index">
-        <!-- TODO: add translations -->
         <label>{{filter.label | transloco}}</label>
         <lib-switch (stateChange)="handleFilterToggle($event, i)"
                     [checked]="filter.checked"
@@ -52,11 +51,11 @@
 
       <!-- Success Template -->
       <div *ngSwitchCase="phaseEnum.success">
-        <ng-container *ngIf="list && list.length > 0">
+        <ng-container *ngIf="list && list.length > 0 && tabs">
           <lib-accordion *ngFor="let item of list"
                          [title]="item.title"
                          [userId]="item.userId"
-                         [isOpen]="true"
+                         [isOpen]="!true"
                          [date]="item.date"
                          [interaction]="item.interaction"
                          [primary]="item.primary"
