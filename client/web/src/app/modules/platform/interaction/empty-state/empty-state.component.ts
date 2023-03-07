@@ -8,6 +8,15 @@ import { Component, Input } from '@angular/core';
 export class EmptyStateComponent {
 	@Input() title!: string;
 	@Input() footer!: string;
+	@Input() type!: string;
 
 	constructor() {}
+
+	getImage() {
+		let src =
+			this.type === 'error'
+				? '../../../../../assets/images/errorState.png'
+				: '../../../../../assets/images/emptyState.png';
+		return src;
+	}
 }

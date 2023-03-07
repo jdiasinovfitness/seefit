@@ -4,13 +4,11 @@
   "origin": "Origin {{originName}}",
   "email": "Email",
   "password": "Password",
-  "interaction": {
-    "empty": {
-      "empty-title": "No <b>Customers</b> Found",
-      "empty-footer": "Consider using <b>other</b> filter options</div>",
-      "empty-search-title": "No Search Result Found For: <b>{{query}}</b>",
-      "empty-search-footer": "Consider another <b>search</b> criteria"
-    },
-    "footer": "cliente(s) encontrados"
-  }
+  "interaction.empty.empty-title": "No <b>Customers</b> Found",
+  "interaction.empty.empty-footer": "Consider using <b>other</b> filter options</div>",
+  "interaction.empty.empty-search-title": "No Search Result Found For: <b>{{query}}</b>",
+  "interaction.empty.empty-search-footer": "Consider another <b>search</b> criteria",
+  "interaction.error.error-title": "Unable to full-fill request",
+  "interaction.error.error-footer": "Please check your internet connection and try again later",
+  "footer": "cliente(s) encontrados"
 }

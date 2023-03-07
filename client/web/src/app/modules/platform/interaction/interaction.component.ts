@@ -51,7 +51,7 @@ export class InteractionComponent implements OnInit {
 	constructor(private dataService: DataService) {}
 
 	ngOnInit(): void {
-		// this.currentPhase = Phases.loading;
+		this.currentPhase = Phases.loading;
 		this.loadData();
 	}
 
