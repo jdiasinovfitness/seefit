@@ -14,11 +14,11 @@
       <img class="menu_icon"
            *ngIf="!opened"
            (click)="sideNavVisibily()"
-           src="../../../assets/icons/core/menu.svg" />
+           src="../../../assets/icons2/core/menu.svg" />
       <img class="menu_icon"
            *ngIf="opened"
            (click)="sideNavVisibily()"
-           src="../../../assets/icons/core/close.svg" />
+           src="../../../assets/icons2/core/close.svg" />
       <!-- <mat-icon
 				*ngIf="opened"
 				aria-hidden="false"
@@ -73,7 +73,7 @@
           <mat-expansion-panel-header>
             <mat-panel-title>
               <img class="menu_icon"
-                   src="../../../assets/icons/menu/{{ p.icon }}" />
+                   src="../../../assets/icons2/menu/{{ p.icon }}" />
               {{ p.appCode }}
             </mat-panel-title>
           </mat-expansion-panel-header>
@@ -81,7 +81,7 @@
           <p class="sub-menu"
              *ngFor="let sp of p.permissions">
             <img class="menu_icon sub-menu-icon"
-                 src="../../../assets/icons/core/sub-menu2.svg" />
+                 src="../../../assets/icons2/core/sub-menu2.svg" />
             {{ sp.permissionCode }}
           </p>
         </mat-expansion-panel>
