@@ -112,9 +112,54 @@
 		</ng-container>
 	</div>
 
-	<!-- Footer -->
-	<div class="footer-row">
-		<div>{{ list && list.length }}</div>
-		<div>{{ 'interaction.footer' | transloco }}</div>
-	</div>
+      <!-- Error Template -->
+      <div *ngSwitchCase="phaseEnum.error">
+        <app-empty-state [title]="('interaction.error.error-title' | transloco)"
+                         [footer]="('interaction.error.error-footer' | transloco)"
+                         [type]="'error'">
+        </app-empty-state>
+      </div>
+
+      <!-- Success Template -->
+      <div *ngSwitchCase="phaseEnum.success">
+        <ng-container *ngIf="list && list.length > 0 && tabs">
+          <lib-accordion *ngFor="let item of list"
+                         [title]="item.title"
+                         [userId]="item.userId"
+                         [isOpen]="!true"
+                         [date]="item.date"
+                         [icons]="item.customerInfo.additionalInfo.icons"
+                         [status]="item.status"
+                         [interaction]="item.interaction"
+                         [primary]="item.primary"
+                         [secondary]="item.secondary"
+                         [imageUrl]="item.imageUrl">
+            <div style="margin-top: 16px;">
+              <lib-tabs [tabs]="tabs"
+                        [activeTab]="activeTab"
+                        (tabChanged)="onTabChange($event)">
+                <div *ngIf="activeTab === '0'">
+                  <!-- Tab Customer -->
+                  <app-customer-info [info]="item"></app-customer-info>
+                </div>
+                <div *ngIf="activeTab === '1'">
+                  <!-- Tab Interaction -->
+                  <app-interaction-info [info]="item"></app-interaction-info>
+                </div>
+                <div *ngIf="activeTab === '2'">
+                  <!-- Tab History -->
+                  <app-history [info]="item"></app-history>
+                </div>
+              </lib-tabs>
+            </div>
+          </lib-accordion>
+        </ng-container>
+      </div>
+
+
+  <!-- Footer -->
+  <div class="footer-row">
+    <div>{{list && list.length}}</div>
+    <div>{{'interaction.footer' | transloco}}</div>
+  </div>
 </div>

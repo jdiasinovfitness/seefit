@@ -48,6 +48,7 @@ export class DataService {
 			{
 				title: 'Augusto Santillan',
 				userId: 'N#3929',
+				status: 'Planned',
 				inClub: true,
 				excludeAG: false,
 				expired: false,
@@ -60,34 +61,42 @@ export class DataService {
 				primary: { label: 'HRU', color: 'red', value: '' },
 				secondary: { label: 'SLP', value: '35%', color: 'bl2e' },
 				imageUrl: '../../assets/icons/no-avatar.svg',
+				interactionInfo:
+					"<label style='color: #f17a59;'><b>Augusto Santillan</b></label><br> Grade our service a <label style='color: #f17a59;'><b>5</b></label> (1-10 scale), which puts him as a detractor. Relate to gym floor satisfaction, the evaluation is <label style='color: #f17a59;'><b>3</b></label> (1-10 scale).",
 				customerInfo: {
 					customerRecord: {
 						title: 'CUSTOMER RECORD:',
 						content: [
-							{ key: 'DATE OF BIRTH (AGE):', value: '02 de Fevereiro de (41)' },
-							{ key: 'OBJECTIVE:', value: 'Perda de Peso' },
-							{ key: 'ACCESS (7 / 30 / 60 DAYS):', value: '1/4/9' },
+							{ key: 'interaction.data.birth-date', value: '02 de Fevereiro de (41)' },
+							{ key: 'interaction.data.objective', value: 'Perda de Peso' },
+							{ key: 'interaction.data.access', value: '1/4/9' },
 							{
-								key: 'MEMBERSHIP DATE (MONTHS TILL RENEWAL):',
+								key: 'interaction.data.membership',
 								value: '30/04/2017',
 							},
-							{ key: 'LAST AF:', value: 'Não Existe' },
-							{ key: 'LENGTH OF VISIT:', value: '75 minutes' },
+							{ key: 'interaction.data.last-af', value: 'Não Existe' },
+							{ key: 'interaction.data.visit-length', value: '75 minutes' },
 						],
 					},
 					contractType: {
 						title: 'TYPE OF CONTRACT:',
 						content: [
-							{ key: 'TYPE OF SUBSCRIPTION:', value: '6,99€ / Semanal' },
-							{ key: 'SCHEDULE:', value: '07:00 até 18:00 - 20:30 até 22:00' },
-							{ key: 'ADDITIONAL SERVICES:', value: 'n/a' },
+							{
+								key: 'interaction.data.subscription-type',
+								value: '6,99€ / Semanal',
+							},
+							{
+								key: 'interaction.data.schedule',
+								value: '07:00 até 18:00 - 20:30 até 22:00',
+							},
+							{ key: 'interaction.data.additional-services', value: 'n/a' },
 						],
 					},
 					additionalInfo: {
-						title: 'ADDITIONAL INFORMATION:',
-						icons: ['apple', 'refresh', 'chevron-down'],
+						title: 'interaction.data.additional-info',
+						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
-							key: 'LIFE CYCLE: Iniciado em:',
+							key: 'interaction.data.lifecycle',
 							value: '08/04/2021',
 							progress: 25,
 							topLabels: [

@@ -1,13 +1,14 @@
 export interface ICIData {
 	title: string;
 	userId: string;
+	status: string;
 	date: string;
 	interaction: ICILabel;
 	primary: ICILabel;
 	secondary: ICILabel;
 	imageUrl: string;
 	customerInfo: ICIConsumerInfo;
-
+	interactionInfo: string;
 	inClub: boolean;
 	excludeAG: boolean;
 	expired: boolean;

@@ -107,7 +107,7 @@ export class PlatformComponent implements OnInit {
 		},
 	];
 	opened = false;
-	childActivated = false;
+	childActivated = true;
 	originName = 'Solinca';
 
 	user: UserEntity | undefined;
@@ -124,6 +124,7 @@ export class PlatformComponent implements OnInit {
 	}
 
 	sideNavVisibily() {
+		return;
 		this.sidenav?.toggle();
 	}
 

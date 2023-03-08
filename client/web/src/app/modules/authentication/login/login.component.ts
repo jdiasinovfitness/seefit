@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 	// sign in to platform
 	signIn() {
 		try {
-			this.router.navigate(['../../platform'], {
+			this.router.navigate(['../../platform/interaction'], {
 				relativeTo: this.activatedRoute,
 			});
 		} catch (err) {
