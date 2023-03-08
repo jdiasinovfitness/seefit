@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ICIData } from '../interfaces/icidata';
+import { ICIData, ICIFilter } from '../interfaces/icidata';
 
 @Injectable({
 	providedIn: 'root',
@@ -22,9 +22,24 @@ export class DataService {
 		this.data[index].customerInfo.observation = newState;
 	}
 
-	getICIData(): Promise<Array<ICIData>> {
+	getICIData(filter?: ICIFilter): Promise<Array<ICIData>> {
 		return new Promise((resolve, reject) => {
-			resolve(this.data);
+			if (!filter) {
+				resolve(this.data);
+				return;
+			}
+
+			// With filter for inClub, excludeAG, expired, name, id, date, interaction.
+			const res = this.data.filter(
+				el =>
+					el.inClub === filter.inClub &&
+					el.excludeAG === filter.excludeAG &&
+					el.expired === filter.expired &&
+					JSON.stringify(el)
+						.toLocaleLowerCase()
+						.includes(filter.search.toLocaleLowerCase())
+			);
+			resolve(res);
 		});
 	}
 
@@ -33,6 +48,9 @@ export class DataService {
 			{
 				title: 'Augusto Santillan',
 				userId: 'N#3929',
+				inClub: true,
+				excludeAG: false,
+				expired: false,
 				date: '03-03-2021',
 				interaction: {
 					label: 'LAST INTERACTION:',

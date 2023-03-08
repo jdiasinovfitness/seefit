@@ -7,6 +7,10 @@ export interface ICIData {
 	secondary: ICILabel;
 	imageUrl: string;
 	customerInfo: ICIConsumerInfo;
+
+	inClub: boolean;
+	excludeAG: boolean;
+	expired: boolean;
 }
 
 export interface ICILabel {
@@ -42,4 +46,11 @@ export interface ICILifecycle {
 export interface ICIKeyVal {
 	key: string;
 	value: string;
+}
+
+export interface ICIFilter {
+	search: string;
+	inClub: boolean;
+	excludeAG: boolean;
+	expired: boolean;
 }

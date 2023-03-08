@@ -1,0 +1,9 @@
+<div class="empty-wrapper">
+  <label class="title"
+         *ngIf="title"
+         [innerHtml]="title"></label>
+  <img [src]="getImage()">
+  <label class="footer"
+         *ngIf="footer"
+         [innerHtml]="footer"></label>
+</div>
