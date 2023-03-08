@@ -7,7 +7,7 @@
       <h4>{{cRecord?.title || '' | uppercase}}</h4>
       <span class="line"
             *ngFor="let record of cRecord?.content">
-        <label class="line-key">{{record?.key || '' | uppercase}}</label>
+        <label class="line-key">{{record?.key | transloco}}</label>
         <label class="line-value">{{record?.value || ''}}</label>
       </span>
     </div>
@@ -17,7 +17,7 @@
       <h4>{{conType?.title || '' | uppercase}}</h4>
       <span class="line"
             *ngFor="let contract of conType?.content">
-        <label class="line-key">{{contract?.key || '' | uppercase}}</label>
+        <label class="line-key">{{contract?.key | transloco}}</label>
         <label class="line-value">{{contract?.value || ''}}</label>
       </span>
     </div>
@@ -32,10 +32,10 @@
   <div class="hole-line">
     <div class="info-col"
          *ngIf="data?.additionalInfo as addInfo">
-      <h4>{{addInfo?.title || '' | uppercase}}</h4>
+      <h4>{{addInfo?.title | transloco}}</h4>
       <span class="line"
             *ngIf="addInfo?.lifeCycle as aInfo">
-        <label class="line-key">{{aInfo?.key || '' | uppercase}}</label>
+        <label class="line-key">{{aInfo?.key | transloco}}</label>
         <label class="line-value">{{aInfo?.value || ''}}</label>
       </span>
     </div>
