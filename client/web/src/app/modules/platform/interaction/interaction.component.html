@@ -43,8 +43,8 @@
 
       <!-- Error Template -->
       <div *ngSwitchCase="phaseEnum.error">
-        <app-empty-state [title]="(searchValue && 'interaction.error.error-title' | transloco:{query: searchValue}) || ('interaction.empty.empty-title' | transloco)"
-                         [footer]="(searchValue && 'interaction.error.error-footer' | transloco:{query: searchValue}) || ('interaction.empty.empty-footer' | transloco)"
+        <app-empty-state [title]="('interaction.error.error-title' | transloco)"
+                         [footer]="('interaction.error.error-footer' | transloco)"
                          [type]="'error'">
         </app-empty-state>
       </div>
@@ -57,6 +57,8 @@
                          [userId]="item.userId"
                          [isOpen]="!true"
                          [date]="item.date"
+                         [icons]="item.customerInfo.additionalInfo.icons"
+                         [status]="item.status"
                          [interaction]="item.interaction"
                          [primary]="item.primary"
                          [secondary]="item.secondary"

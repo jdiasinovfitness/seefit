@@ -11,9 +11,9 @@
       "history": "History"
     },
     "filters": {
-      "in-club": "Em Clube",
-      "exclude-ag": "Excluir AG",
-      "expired": "Em Atraso"
+      "in-club": "In Club",
+      "exclude-ag": "Exclude AG",
+      "expired": "Expired"
     },
     "empty": {
       "empty-title": "No <b>Customers</b> Found",
@@ -25,6 +25,19 @@
       "error-title": "Unable to full-fill request",
       "error-footer": "Please check your internet connection and try again later"
     },
-    "footer": "cliente(s) encontrados"
+    "footer": "client(s) found",
+    "data": {
+      "birth-date": "DATE OF BIRTH (AGE):",
+      "objective": "OBJECTIVE",
+      "access": "ACCESS (7 / 30 / 60 DAYS):",
+      "membership": "MEMBERSHIP DATE (MONTHS TILL RENEWAL):",
+      "last-af": "LAST AF:",
+      "visit-length": "LENGTH OF VISIT:",
+      "subscription-type": "TYPE OF SUBSCRIPTION:",
+      "schedule": "SCHEDULE:",
+      "additional-services": "ADDITIONAL SERVICES:",
+      "additional-info": "ADDITIONAL INFORMATION:",
+      "lifecycle": "LIFE CYCLE: Iniciado em:"
+    }
   }
 }
