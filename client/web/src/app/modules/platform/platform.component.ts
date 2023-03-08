@@ -124,6 +124,7 @@ export class PlatformComponent implements OnInit {
 	}
 
 	sideNavVisibily() {
+		return;
 		this.sidenav?.toggle();
 	}
 
