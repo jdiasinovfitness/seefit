@@ -1,1 +1,4 @@
-<p>interaction-info works!</p>
+<div class="interaction-info-wrapper"
+     *ngIf="info"
+     [innerHTML]="info?.interactionInfo | safeHtml">
+</div>
