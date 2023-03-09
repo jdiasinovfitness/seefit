@@ -2,6 +2,8 @@
 
 .lg-left {
 	width: 0%;
+	text-align: center;
+	
 }
 
 .lg-right {
@@ -20,11 +22,35 @@
 	font-weight: bold;
 }
 
+.background-shape {
+	border-bottom-left-radius: 96px;
+    border-top-right-radius: 118px;
+    border-bottom-right-radius: 23px;
+    border-top-left-radius: 62px;
+	background: #f17a59;
+	box-shadow: inset -46px -46px 92px #be6046,
+            inset 46px 46px 92px #ff946c;
+}
+
+.orage {
+	display: flex;
+	margin-top: 30px;
+}
+
+.forgot-label {
+	text-align: left;
+}
+
+lib-button {
+	text-align: end;
+}
+
 @media screen and (min-width: 768px) {
 	.lg-left {
 		width: 50%;
 	}
 	.lg-right {
+		align-self: center;
 		width: 50%;
 	}
 }

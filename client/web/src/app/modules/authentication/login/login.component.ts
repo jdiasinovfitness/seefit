@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	// sign in to platform
+
 	signIn() {
 		try {
 			this.router.navigate(['../../platform/interaction'], {
