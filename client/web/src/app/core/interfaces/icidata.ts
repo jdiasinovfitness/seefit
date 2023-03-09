@@ -11,13 +11,13 @@ export interface ICIData {
 	interactionInfo: string;
 	inClub: boolean;
 	excludeAG: boolean;
-	expired: boolean;
 }
 
 export interface ICILabel {
 	label: string;
 	value: string;
 	color: string;
+	isBold?: boolean;
 }
 
 export interface ICIConsumerInfo {
