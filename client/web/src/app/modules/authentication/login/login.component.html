@@ -33,11 +33,16 @@
 				<span class="align-self-center col-6 forgot-label"
 					><b>{{ 'login.forgot_link' | transloco }}</b></span
 				>
-				<lib-button
-					class="col-6"
-					[text]="'LOGIN'"
-					(stateChange)="signIn()"
-				></lib-button>
+				<ng-container [ngSwitch]="currentPhase">
+					<lib-button
+						*ngSwitchCase="phaseEnum.empty"
+						class="col-6"
+						[text]="'LOGIN'"
+						(stateChange)="signIn()"
+					></lib-button>
+
+					<lib-spinner *ngSwitchCase="phaseEnum.loading"></lib-spinner>
+				</ng-container>
 			</div>
 		</form>
 	</div>
