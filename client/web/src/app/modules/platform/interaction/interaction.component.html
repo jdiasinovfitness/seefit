@@ -41,12 +41,12 @@
 				<app-empty-state
 					[title]="
 						(searchValue && 'interaction.empty.empty-search-title'
-							| transloco: { query: searchValue }) ||
+							| transloco : { query: searchValue }) ||
 						('interaction.empty.empty-title' | transloco)
 					"
 					[footer]="
 						(searchValue && 'interaction.empty.empty-search-footer'
-							| transloco: { query: searchValue }) ||
+							| transloco : { query: searchValue }) ||
 						('interaction.empty.empty-footer' | transloco)
 					"
 					[type]="'empty'"
