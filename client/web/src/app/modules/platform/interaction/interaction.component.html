@@ -19,7 +19,7 @@
         <label>{{filter.label | transloco}}</label>
         <lib-switch (stateChange)="handleFilterToggle($event, i)"
                     [checked]="filter.checked"
-                    [disabled]="filter.disabled"></lib-switch>
+                    [disabled]="filter.disabled || (i !== 0 && !filterList?.[0]?.checked)"></lib-switch>
       </div>
     </span>
   </div>
