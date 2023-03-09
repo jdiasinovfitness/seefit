@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-
 	signIn() {
 		try {
 			this.router.navigate(['../../platform/interaction'], {

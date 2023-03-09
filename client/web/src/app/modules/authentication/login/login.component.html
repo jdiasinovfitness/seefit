@@ -1,8 +1,10 @@
 <div class="d-flex h-100 flex-column-mobile">
 	<!--Left section-->
 	<div class="lg-left align-self-center">
-		<img  class="w-75"src="assets/images/modules/authentication/login/loginBackground.png">
-	
+		<img
+			class="w-75"
+			src="assets/images/modules/authentication/login/loginBackground.png"
+		/>
 	</div>
 	<!--Right section-->
 	<div class="lg-right">
@@ -17,11 +19,25 @@
 			[formGroup]="authForm"
 			class="login-container d-flex flex-column text-center m-5"
 		>
-			<lib-input [label]="'Email'" [type]="'email'" [value]="'admin@inovfitness.com'"></lib-input>
-			<lib-input [label]="'Password'" [type]="'password'" [value]="'admin'"></lib-input>
-			<div class="align-self-center w-100 d-flex orage ">
-				<span class="align-self-center col-6 forgot-label"><b>{{ 'login.forgot_link' | transloco }}</b></span>
-				<lib-button class="col-6"  [text]="'LOGIN'" (stateChange)="signIn()"></lib-button>
+			<lib-input
+				[label]="'Email'"
+				[type]="'email'"
+				[value]="'admin@inovfitness.com'"
+			></lib-input>
+			<lib-input
+				[label]="'Password'"
+				[type]="'password'"
+				[value]="'admin'"
+			></lib-input>
+			<div class="align-self-center w-100 d-flex orage">
+				<span class="align-self-center col-6 forgot-label"
+					><b>{{ 'login.forgot_link' | transloco }}</b></span
+				>
+				<lib-button
+					class="col-6"
+					[text]="'LOGIN'"
+					(stateChange)="signIn()"
+				></lib-button>
 			</div>
 		</form>
 	</div>
