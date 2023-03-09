@@ -4,7 +4,7 @@
   <div class="split-line">
     <div class="info-col"
          *ngIf="data?.customerRecord as cRecord">
-      <h4>{{cRecord?.title || '' | uppercase}}</h4>
+      <h4>{{cRecord?.title | transloco}}</h4>
       <span class="line"
             *ngFor="let record of cRecord?.content">
         <label class="line-key">{{record?.key | transloco}}</label>
@@ -14,7 +14,7 @@
 
     <div class="info-col"
          *ngIf="data?.contractType as conType">
-      <h4>{{conType?.title || '' | uppercase}}</h4>
+      <h4>{{conType?.title | transloco}}</h4>
       <span class="line"
             *ngFor="let contract of conType?.content">
         <label class="line-key">{{contract?.key | transloco}}</label>
