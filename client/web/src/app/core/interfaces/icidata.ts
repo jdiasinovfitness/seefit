@@ -39,7 +39,6 @@ export interface ICIAdditionalInfo {
 
 export interface ICILifecycle {
 	key: string;
-	value: string;
 	progress: number;
 	topLabels: Array<any>;
 	bottomLabels: Array<any>;

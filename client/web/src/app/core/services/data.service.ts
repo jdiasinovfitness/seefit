@@ -72,7 +72,7 @@ export class DataService {
 				},
 				imageUrl: '../../assets/icons/no-avatar.svg',
 				interactionInfo:
-					'Sarah Holloway grade our service 5 (1-10 scale), which puts him as a detractor. Related to gym floor satisfaction, the evaluation is 8',
+					'Sarah Holloway grade our service 5 (1-10 scale), which puts him as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
 				customerInfo: {
 					customerRecord: {
 						title: 'interaction.data.customer-info',
@@ -112,7 +112,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2020-11-30 (2)',
+								value: '2020-11-30 (28)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -133,8 +133,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -159,23 +158,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -251,7 +250,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2023-03-08 (12)',
+								value: '2023-03-08 (1)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -272,8 +271,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 0,
 							topLabels: [
 								{
 									label: '0',
@@ -298,23 +296,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -390,7 +388,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2021-01-30 (4)',
+								value: '2021-01-30 (26)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -411,8 +409,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-04-08',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -437,23 +434,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -529,7 +526,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '30-03-2021 (1)',
+								value: '2021-03-30 (24)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -550,8 +547,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-04-08',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -576,23 +572,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -666,7 +662,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2021-07-08 (5)',
+								value: '2021-07-08 (20)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -687,8 +683,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-04-08',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -713,23 +708,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -804,7 +799,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2022-03-17 (12)',
+								value: '2023-03-17 (1)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -825,8 +820,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 0,
 							topLabels: [
 								{
 									label: '0',
@@ -851,23 +845,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -942,7 +936,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2018-09-23 (0)',
+								value: '2018-09-23 (54)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -963,8 +957,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -989,23 +982,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -1080,7 +1073,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2022-09-01 (1)',
+								value: '2022-09-01 (7)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -1101,8 +1094,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -1127,23 +1119,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -1239,8 +1231,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -1265,23 +1256,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
@@ -1356,7 +1347,7 @@ export class DataService {
 						content: [
 							{
 								key: 'interaction.data.membership',
-								value: '2021-01-30 (4)',
+								value: '2021-01-30 (26)',
 							},
 							{
 								key: 'interaction.data.subscription-type',
@@ -1377,8 +1368,7 @@ export class DataService {
 						icons: ['apple', 'bell', 'calendar', 'refresh', 'chevron-down'],
 						lifeCycle: {
 							key: 'interaction.data.lifecycle',
-							value: '2021-08-04',
-							progress: 25,
+							progress: 75,
 							topLabels: [
 								{
 									label: '0',
@@ -1403,23 +1393,23 @@ export class DataService {
 							],
 							bottomLabels: [
 								{
-									label: 'CYG',
+									label: 'ONB1',
 									position: 0,
 								},
 								{
-									label: 'CYG',
+									label: 'REP1',
 									position: 25,
 								},
 								{
-									label: 'WYL',
+									label: 'REP2',
 									position: 50,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT1',
 									position: 75,
 								},
 								{
-									label: 'WYL',
+									label: 'AUT2',
 									position: 95,
 								},
 							],
