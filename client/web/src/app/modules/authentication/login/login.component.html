@@ -12,18 +12,26 @@
   <!--Right section-->
   <div class="lg-right">
     <div class="text-center mt-5">
-      <img class="logo"
-           [alt]="'InovFitness'"
-           src="../../../../assets/images/core/logoBlack.png" />
+      <img
+        class="logo"
+        [alt]="'InovFitness'"
+        src="../../../../assets/images/core/logoBlack.png"
+      />
     </div>
-    <form [formGroup]="authForm"
-          class="login-container d-flex flex-column text-center m-5"
-          (ngSubmit)="signIn()">
+    <form
+      [formGroup]="authForm"
+      class="login-container d-flex flex-column text-center m-5"
+      (ngSubmit)="signIn()"
+    >
       <div class="align-self-center w-100">
-        <span class="align-self-center">{{ 'login.forgot_link' | transloco }}</span>
-        <input type="submit"
-               class="submit-button p-2"
-               value="{{ 'login.login' | transloco }}" />
+        <span class="align-self-center">{{
+          'login.forgot_link' | transloco
+        }}</span>
+        <input
+          type="submit"
+          class="submit-button p-2"
+          value="{{ 'login.login' | transloco }}"
+        />
       </div>
     </form>
   </div>

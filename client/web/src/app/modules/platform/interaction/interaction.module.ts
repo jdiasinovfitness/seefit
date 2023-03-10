@@ -10,14 +10,14 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { ObservationComponent } from './observation/observation.component';
 
 @NgModule({
-	declarations: [
-		InteractionComponent,
-		CustomerInfoComponent,
-		InteractionInfoComponent,
-		HistoryComponent,
-		EmptyStateComponent,
-		ObservationComponent,
-	],
-	imports: [CommonModule, InteractionRoutingModule, SharedModule],
+  declarations: [
+    InteractionComponent,
+    CustomerInfoComponent,
+    InteractionInfoComponent,
+    HistoryComponent,
+    EmptyStateComponent,
+    ObservationComponent,
+  ],
+  imports: [CommonModule, InteractionRoutingModule, SharedModule],
 })
 export class InteractionModule {}

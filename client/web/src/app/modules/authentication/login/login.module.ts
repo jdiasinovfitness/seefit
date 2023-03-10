@@ -8,22 +8,22 @@ import { loader } from 'src/app/core/i18n/transloco-loader';
 import { SharedModule } from 'src/app/core/shared.module';
 
 @NgModule({
-	declarations: [LoginComponent],
-	imports: [
-		CommonModule,
-		LoginRoutingModule,
-		FormsModule,
-		ReactiveFormsModule,
-		SharedModule,
-	],
-	providers: [
-		{
-			provide: TRANSLOCO_SCOPE,
-			useValue: {
-				scope: 'login',
-				loader: loader((lang: any) => import(`./_common/i18n/${lang}.json`)),
-			},
-		},
-	],
+  declarations: [LoginComponent],
+  imports: [
+    CommonModule,
+    LoginRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
+  providers: [
+    {
+      provide: TRANSLOCO_SCOPE,
+      useValue: {
+        scope: 'login',
+        loader: loader((lang: any) => import(`./_common/i18n/${lang}.json`)),
+      },
+    },
+  ],
 })
 export class LoginModule {}

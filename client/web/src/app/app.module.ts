@@ -10,17 +10,17 @@ import { TranslocoRootModule } from './transloco-root.module';
 import { SharedModule } from './core/shared.module';
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		FormsModule,
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		HttpClientModule,
-		TranslocoRootModule,
-		SharedModule,
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    TranslocoRootModule,
+    SharedModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

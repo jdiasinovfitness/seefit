@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/core/shared.module';
 
 @NgModule({
-	declarations: [],
-	imports: [CommonModule, SharedModule],
+  declarations: [],
+  imports: [CommonModule, SharedModule],
 })
 export class ResetModule {}

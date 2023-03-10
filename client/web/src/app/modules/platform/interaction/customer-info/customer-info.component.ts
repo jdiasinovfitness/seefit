@@ -2,17 +2,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICIData } from 'src/app/core/interfaces/icidata';
 
 @Component({
-	selector: 'app-customer-info',
-	templateUrl: './customer-info.component.html',
-	styleUrls: ['./customer-info.component.scss'],
+  selector: 'app-customer-info',
+  templateUrl: './customer-info.component.html',
+  styleUrls: ['./customer-info.component.scss'],
 })
 export class CustomerInfoComponent {
-	@Input() info!: ICIData; // TODO: set correct model type after API available
-	@Output() handleClick = new EventEmitter();
+  @Input() info!: ICIData; // TODO: set correct model type after API available
+  @Output() handleClick = new EventEmitter();
 
-	constructor() {}
+  constructor() {}
 
-	onButtonClick(event: any) {
-		this.handleClick.emit(event);
-	}
+  onButtonClick(event: any) {
+    this.handleClick.emit(event);
+  }
 }

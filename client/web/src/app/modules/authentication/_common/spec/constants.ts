@@ -1,4 +1,4 @@
 export const paths = {
-	loginInput: 'form > :nth-child(1)',
-	passwordInput: 'form > :nth-child(2)',
+  loginInput: 'form > :nth-child(1)',
+  passwordInput: 'form > :nth-child(2)',
 };

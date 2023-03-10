@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { InteractionComponent } from './interaction.component';
 
 const routes: Routes = [
-	{
-		path: '',
-		component: InteractionComponent,
-	},
+  {
+    path: '',
+    component: InteractionComponent,
+  },
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class InteractionRoutingModule {}

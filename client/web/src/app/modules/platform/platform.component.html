@@ -11,14 +11,18 @@
 <div class="i9r-container">
   <mat-toolbar class="example-header">
     <mat-toolbar-row>
-      <img class="menu_icon"
-           *ngIf="!opened"
-           (click)="sideNavVisibily()"
-           src="../../../assets/icons2/core/menu.svg" />
-      <img class="menu_icon"
-           *ngIf="opened"
-           (click)="sideNavVisibily()"
-           src="../../../assets/icons2/core/close.svg" />
+      <img
+        class="menu_icon"
+        *ngIf="!opened"
+        (click)="sideNavVisibily()"
+        src="../../../assets/icons2/core/menu.svg"
+      />
+      <img
+        class="menu_icon"
+        *ngIf="opened"
+        (click)="sideNavVisibily()"
+        src="../../../assets/icons2/core/close.svg"
+      />
       <!-- <mat-icon
 				*ngIf="opened"
 				aria-hidden="false"
@@ -34,16 +38,17 @@
 				fontIcon="reorder"
 			></mat-icon> -->
       <img />
-      <img class="h-100"
-           src="../../../assets/images/core/logoBlack.png" />
+      <img class="h-100" src="../../../assets/images/core/logoBlack.png" />
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container class="w-100 h-100">
-    <mat-sidenav class="sidenav-container"
-                 #sidenav
-                 [opened]="opened"
-                 [mode]="'over'"
-                 (openedChange)="setSidenavStatus($event)">
+    <mat-sidenav
+      class="sidenav-container"
+      #sidenav
+      [opened]="opened"
+      [mode]="'over'"
+      (openedChange)="setSidenavStatus($event)"
+    >
       <!--DUMMY DATA & TODO:
 				username: .ts hardcoded
 				origin: .ts hardcoded && replace it with a list element
@@ -54,34 +59,38 @@
         </div>
 
         <p (click)="originClick()">
-          {{ 'origin' | transloco: { originName: originName } }}
+          {{ 'origin' | transloco : { originName: originName } }}
         </p>
       </div>
 
       <p class="text-center">
         {{ 'plt.welcomeUser' | transloco }}
-        <span class="highlight"
-              (click)="usernameClick()">{{ user?.userName }}</span>,<br />
+        <span class="highlight" (click)="usernameClick()">{{
+          user?.userName
+        }}</span
+        >,<br />
         {{ 'plt.welcomeBack' | transloco }}
       </p>
       <!--DUMMY DATA
 				menus: ts hardcoded
 			-->
-      <mat-accordion class="example-headers-align"
-                     multi>
+      <mat-accordion class="example-headers-align" multi>
         <mat-expansion-panel *ngFor="let p of permissions">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <img class="menu_icon"
-                   src="../../../assets/icons2/menu/{{ p.icon }}" />
+              <img
+                class="menu_icon"
+                src="../../../assets/icons2/menu/{{ p.icon }}"
+              />
               {{ p.appCode }}
             </mat-panel-title>
           </mat-expansion-panel-header>
 
-          <p class="sub-menu"
-             *ngFor="let sp of p.permissions">
-            <img class="menu_icon sub-menu-icon"
-                 src="../../../assets/icons2/core/sub-menu2.svg" />
+          <p class="sub-menu" *ngFor="let sp of p.permissions">
+            <img
+              class="menu_icon sub-menu-icon"
+              src="../../../assets/icons2/core/sub-menu2.svg"
+            />
             {{ sp.permissionCode }}
           </p>
         </mat-expansion-panel>
@@ -92,8 +101,10 @@
 		-->
     <mat-sidenav-content>
       <app-home *ngIf="!childActivated"></app-home>
-      <router-outlet (deactivate)="onDeactivateChild()"
-                     (activate)="onActivateChild()"></router-outlet>
+      <router-outlet
+        (deactivate)="onDeactivateChild()"
+        (activate)="onActivateChild()"
+      ></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

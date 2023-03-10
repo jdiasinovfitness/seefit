@@ -1,17 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-	selector: 'app-history',
-	templateUrl: './history.component.html',
-	styleUrls: ['./history.component.scss'],
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.scss'],
 })
 export class HistoryComponent {
-	@Input() info!: any; // TODO: set correct model type after API available
-	@Output() handleClick = new EventEmitter();
+  @Input() info!: any; // TODO: set correct model type after API available
+  @Output() handleClick = new EventEmitter();
 
-	constructor() {}
+  constructor() {}
 
-	onButtonClick(event: any) {
-		this.handleClick.emit(event);
-	}
+  onButtonClick(event: any) {
+    this.handleClick.emit(event);
+  }
 }
