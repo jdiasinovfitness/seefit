@@ -30,13 +30,13 @@ $primary-palette-dark: mat.define-palette($primary-p-black);
 $accent-palette-dark: mat.define-palette($accent-p-black);
 
 $my-theme: mat.define-light-theme(
-	(
-		color: (
-			primary: $primary-palette,
-			accent: $accent-palette,
-			warn: $warn-palette,
-		),
-	)
+  (
+    color: (
+      primary: $primary-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+  )
 );
 
 @include mat.core();
@@ -46,35 +46,35 @@ $my-theme: mat.define-light-theme(
 @include angular-material-theme($my-theme);
 
 .dark-theme {
-	$dark-theme: mat.define-dark-theme(
-		(
-			color: (
-				primary: $primary-palette,
-				accent: $accent-palette,
-				warn: $warn-palette,
-			),
-		)
-	);
+  $dark-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $primary-palette,
+        accent: $accent-palette,
+        warn: $warn-palette,
+      ),
+    )
+  );
 
-	.mat-form-field-label {
-		color: $primary-color !important;
-	}
-	@include mat-button-theme($dark-theme);
-	@include mat-form-field-theme($dark-theme);
-	@include angular-material-theme($dark-theme);
+  .mat-form-field-label {
+    color: $primary-color !important;
+  }
+  @include mat-button-theme($dark-theme);
+  @include mat-form-field-theme($dark-theme);
+  @include angular-material-theme($dark-theme);
 }
 
 .light-theme {
-	$my-theme: mat.define-light-theme(
-		(
-			color: (
-				primary: $primary-palette,
-				accent: $accent-palette,
-				warn: $warn-palette,
-			),
-		)
-	);
+  $my-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $primary-palette,
+        accent: $accent-palette,
+        warn: $warn-palette,
+      ),
+    )
+  );
 
-	@include mat-form-field-theme($my-theme);
-	@include angular-material-theme($my-theme);
+  @include mat-form-field-theme($my-theme);
+  @include angular-material-theme($my-theme);
 }

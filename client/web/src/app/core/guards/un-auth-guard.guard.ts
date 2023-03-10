@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class UnAuthGuardGuard implements CanLoad {
-	constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) {}
 
-	canLoad(): boolean {
-		return this.auth.isAuthenticated();
-	}
+  canLoad(): boolean {
+    return this.auth.isAuthenticated();
+  }
 }

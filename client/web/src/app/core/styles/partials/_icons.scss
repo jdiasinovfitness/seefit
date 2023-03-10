@@ -1,150 +1,207 @@
 .see-icon {
-	width: 148px;
-	height: 148px;
-	display: block;
-	background-image: url('../../../../assets/icons/close.svg');
-	background-size: 48px;
+  width: 148px;
+  height: 148px;
+  display: block;
+  background-image: url('../../../../assets/icons/close.svg');
+  background-size: 48px;
 
-	&.xl {
-		width: 80px;
-		height: 80px;
-		background-size: 80px;
-	}
+  &.xl {
+    width: 80px;
+    height: 80px;
+    background-size: 80px;
+  }
 
-	&.lg {
-		width: 32px;
-		height: 32px;
-		background-size: 32px;
-	}
+  &.lg {
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+  }
 
-	&.md {
-		width: 24px;
-		height: 24px;
-		background-size: 24px;
-	}
+  &.md {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+  }
 
-	&.sm {
-		width: 18px;
-		height: 18px;
-		background-size: 18px;
-	}
+  &.sm {
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+  }
 
-	&.apple {
-		background-image: url('../../../../assets/icons/apple.svg');
-	}
+  &.apple {
+    background-image: url('../../../../assets/icons/apple.svg');
+  }
 
-	&.bell {
-		background-image: url('../../../../assets/icons/bell.svg');
-	}
+  &.bell {
+    background-image: url('../../../../assets/icons/bell.svg');
+  }
 
-	&.calculator {
-		background-image: url('../../../../assets/icons/calculator.svg');
-	}
+  &.calculator {
+    background-image: url('../../../../assets/icons/calculator.svg');
+  }
 
-	&.calendar {
-		background-image: url('../../../../assets/icons/calendar.svg');
-	}
+  &.calendar {
+    background-image: url('../../../../assets/icons/calendar.svg');
+  }
 
-	&.chevron-down {
-		background-image: url('../../../../assets/icons/chevron-down.svg');
-	}
-	&.chevron-up {
-		background-image: url('../../../../assets/icons/chevron-up.svg');
-	}
+  &.chevron-down {
+    background-image: url('../../../../assets/icons/chevron-down.svg');
+  }
 
-	&.clock {
-		background-image: url('../../../../assets/icons/clock.svg');
-	}
+  &.chevron-up {
+    background-image: url('../../../../assets/icons/chevron-up.svg');
+  }
 
-	&.close {
-		background-image: url('../../../../assets/icons/close.svg');
-	}
+  &.clock {
+    background-image: url('../../../../assets/icons/clock.svg');
+  }
 
-	&.dashboard {
-		background-image: url('../../../../assets/icons/dashboard.svg');
-	}
+  &.close {
+    background-image: url('../../../../assets/icons/close.svg');
+  }
 
-	&.date {
-		background-image: url('../../../../assets/icons/date.svg');
-	}
+  &.dashboard {
+    background-image: url('../../../../assets/icons/dashboard.svg');
+  }
 
-	&.dumbbell {
-		background-image: url('../../../../assets/icons/dumbbell.svg');
-	}
+  &.date {
+    background-image: url('../../../../assets/icons/date.svg');
+  }
 
-	&.edit {
-		background-image: url('../../../../assets/icons/edit.svg');
-	}
+  &.dumbbell {
+    background-image: url('../../../../assets/icons/dumbbell.svg');
+  }
 
-	&.expand {
-		background-image: url('../../../../assets/icons/expand.svg');
-	}
+  &.edit {
+    background-image: url('../../../../assets/icons/edit.svg');
+  }
 
-	&.filter {
-		background-image: url('../../../../assets/icons/filter.svg');
-	}
+  &.expand {
+    background-image: url('../../../../assets/icons/expand.svg');
+  }
 
-	&.graph {
-		background-image: url('../../../../assets/icons/graph.svg');
-	}
+  &.filter {
+    background-image: url('../../../../assets/icons/filter.svg');
+  }
 
-	&.interaction {
-		background-image: url('../../../../assets/icons/interaction.svg');
-	}
+  &.graph {
+    background-image: url('../../../../assets/icons/graph.svg');
+  }
 
-	&.invisibility {
-		background-image: url('../../../../assets/icons/invisibility.svg');
-	}
+  &.interaction {
+    background-image: url('../../../../assets/icons/interaction.svg');
+  }
 
-	&.loading {
-		background-image: url('../../../../assets/icons/loading.svg');
-	}
+  &.invisibility {
+    background-image: url('../../../../assets/icons/invisibility.svg');
+  }
 
-	&.menu {
-		background-image: url('../../../../assets/icons/menu.svg');
-	}
+  &.loading {
+    background-image: url('../../../../assets/icons/loading.svg');
+  }
 
-	&.molecule {
-		background-image: url('../../../../assets/icons/molecule.svg');
-	}
+  &.menu {
+    background-image: url('../../../../assets/icons/menu.svg');
+  }
 
-	&.origin {
-		background-image: url('../../../../assets/icons/origin.svg');
-	}
+  &.molecule {
+    background-image: url('../../../../assets/icons/molecule.svg');
+  }
 
-	&.refresh {
-		background-image: url('../../../../assets/icons/refresh.svg');
-	}
+  &.origin {
+    background-image: url('../../../../assets/icons/origin.svg');
+  }
 
-	&.retract {
-		background-image: url('../../../../assets/icons/retract.svg');
-	}
+  &.refresh {
+    background-image: url('../../../../assets/icons/refresh.svg');
+  }
 
-	&.search {
-		background-image: url('../../../../assets/icons/search.svg');
-	}
+  &.retract {
+    background-image: url('../../../../assets/icons/retract.svg');
+  }
 
-	&.square {
-		background-image: url('../../../../assets/icons/square.svg');
-	}
+  &.search {
+    background-image: url('../../../../assets/icons/search.svg');
+  }
 
-	&.target {
-		background-image: url('../../../../assets/icons/target.svg');
-	}
+  &.square {
+    background-image: url('../../../../assets/icons/square.svg');
+  }
 
-	&.triangle {
-		background-image: url('../../../../assets/icons/triangle.svg');
-	}
+  &.target {
+    background-image: url('../../../../assets/icons/target.svg');
+  }
 
-	&.user {
-		background-image: url('../../../../assets/icons/user.svg');
-	}
+  &.triangle {
+    background-image: url('../../../../assets/icons/triangle.svg');
+  }
 
-	&.user-check {
-		background-image: url('../../../../assets/icons/user-check.svg');
-	}
+  &.user {
+    background-image: url('../../../../assets/icons/user.svg');
+  }
 
-	&.user-circle {
-		background-image: url('../../../../assets/icons/no-avatar.svg');
-	}
+  &.user-check {
+    background-image: url('../../../../assets/icons/user-check.svg');
+  }
+
+  &.user-circle {
+    background-image: url('../../../../assets/icons/no-avatar.svg');
+  }
+
+  &.ic-1_1 {
+    background-image: url('../../../../assets/icons/interaction/1_1.svg');
+  }
+
+  &.ic-1_2 {
+    background-image: url('../../../../assets/icons/interaction/1_2.svg');
+  }
+
+  &.ic-1_3 {
+    background-image: url('../../../../assets/icons/interaction/1_3.svg');
+  }
+
+  &.ic-1_4 {
+    background-image: url('../../../../assets/icons/interaction/1_4.svg');
+  }
+
+  &.ic-2_1 {
+    background-image: url('../../../../assets/icons/interaction/2_1.svg');
+  }
+
+  &.ic-3_1 {
+    background-image: url('../../../../assets/icons/interaction/3_1.svg');
+  }
+
+  &.ic-3_2 {
+    background-image: url('../../../../assets/icons/interaction/3_2.svg');
+  }
+
+  &.ic-3_3 {
+    background-image: url('../../../../assets/icons/interaction/3_3.svg');
+  }
+
+  &.ic-3_4 {
+    background-image: url('../../../../assets/icons/interaction/3_4.svg');
+  }
+
+  &.ic-4_1 {
+    background-image: url('../../../../assets/icons/interaction/4_1.svg');
+  }
+
+  &.ic-4_2 {
+    background-image: url('../../../../assets/icons/interaction/4_2.svg');
+  }
+
+  &.ic-4_3 {
+    background-image: url('../../../../assets/icons/interaction/4_3.svg');
+  }
+
+  &.ic-4_4 {
+    background-image: url('../../../../assets/icons/interaction/4_4.svg');
+  }
+
+  &.ic-4_5 {
+    background-image: url('../../../../assets/icons/interaction/4_5.svg');
+  }
 }

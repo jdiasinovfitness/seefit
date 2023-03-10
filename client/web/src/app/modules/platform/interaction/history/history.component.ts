@@ -1,14 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-	selector: 'app-history',
-	templateUrl: './history.component.html',
-	styleUrls: ['./history.component.scss'],
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.scss'],
 })
-export class HistoryComponent implements OnInit {
-	@Input() info!: any; // TODO: set correct model type after API available
+export class HistoryComponent {
+  @Input() info!: any; // TODO: set correct model type after API available
+  @Output() handleClick = new EventEmitter();
 
-	constructor() {}
+  constructor() {}
 
-	ngOnInit(): void {}
+  onButtonClick(event: any) {
+    this.handleClick.emit(event);
+  }
 }

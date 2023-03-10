@@ -5,54 +5,54 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { environment } from 'src/environments/environment';
 
 export enum Phases {
-	loading,
-	empty,
-	error,
-	success,
+  loading,
+  empty,
+  error,
+  success,
 }
 @Component({
-	selector: 'app-login',
-	templateUrl: './login.component.html',
-	styleUrls: ['./login.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-	phaseEnum = Phases;
-	currentPhase = Phases.empty;
+  phaseEnum = Phases;
+  currentPhase = Phases.empty;
 
-	authForm: FormGroup;
-	isSubmitted = false;
-	production = environment.production;
-	hide = false;
+  authForm: FormGroup;
+  isSubmitted = false;
+  production = environment.production;
+  hide = false;
 
-	constructor(
-		private router: Router,
-		private activatedRoute: ActivatedRoute,
-		private formBuilder: FormBuilder
-	) {
-		this.authForm = this.formBuilder.group({
-			email: ['', Validators.required],
-			password: ['', Validators.required],
-		});
-	}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {
+    this.authForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
 
-	ngOnInit(): void {}
+  ngOnInit(): void {}
 
-	signIn() {
-		this.currentPhase = Phases.loading;
+  signIn() {
+    this.currentPhase = Phases.loading;
 
-		setTimeout(() => {
-			this.currentPhase = Phases.empty;
-		}, 50000);
-		try {
-			this.router.navigate(['../../platform/interaction'], {
-				relativeTo: this.activatedRoute,
-			});
-		} catch (err) {
-			console.error('Error');
-		}
-	}
+    setTimeout(() => {
+      this.currentPhase = Phases.empty;
+    }, 50000);
+    try {
+      this.router.navigate(['../../platform/interaction'], {
+        relativeTo: this.activatedRoute,
+      });
+    } catch (err) {
+      console.error('Error');
+    }
+  }
 
-	get dark() {
-		return document.body.classList.contains('dark-theme');
-	}
+  get dark() {
+    return document.body.classList.contains('dark-theme');
+  }
 }

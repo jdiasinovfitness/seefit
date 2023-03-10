@@ -11,18 +11,18 @@ import { MaterialExampleModule } from './material.module';
 import { SharedModule } from './core/shared.module';
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		FormsModule,
-		MaterialExampleModule,
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		HttpClientModule,
-		TranslocoRootModule,
-		SharedModule,
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    FormsModule,
+    MaterialExampleModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    TranslocoRootModule,
+    SharedModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

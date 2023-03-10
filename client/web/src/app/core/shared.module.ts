@@ -9,14 +9,14 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
-	declarations: [SafeHtmlPipe],
-	imports: [
-		CommonModule,
-		MaterialExampleModule,
-		UiComponentsModule,
-		TranslocoModule,
-	],
-	exports: [TranslocoModule, UiComponentsModule, SafeHtmlPipe],
-	providers: [AuthService, GlobalStorage, ConfigService],
+  declarations: [SafeHtmlPipe],
+  imports: [
+    CommonModule,
+    MaterialExampleModule,
+    UiComponentsModule,
+    TranslocoModule,
+  ],
+  exports: [TranslocoModule, UiComponentsModule, SafeHtmlPipe],
+  providers: [AuthService, GlobalStorage, ConfigService],
 })
 export class SharedModule {}

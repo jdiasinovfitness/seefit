@@ -1,81 +1,68 @@
 @import '../../../../core/styles/styles.scss';
 
 .c-info-wrapper {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	.split-line {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: stretch;
-	}
-	.hole-line {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		align-items: stretch;
+  .split-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .hole-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
 
-		margin-left: 4px;
-		margin-top: 12px;
-	}
+    margin-left: 4px;
+    margin-top: 12px;
+  }
 
-	.base-line {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
+  .base-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 
-		span {
-			display: flex;
-			flex-wrap: nowrap;
-			// flex-shrink: 1;
-			// flex-grow: 1;
-		}
-	}
-}
-
-// FIXME: update original component and republish than remove here and ViewEncapsulation
-.input-wrp {
-	input {
-		font-size: 16px !important;
-		background-color: transparent;
-		border-bottom-width: 1px !important;
-	}
+    span {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
 }
 
 .see-icon {
-	margin-right: 8px;
+  margin-right: 8px;
 }
 
 .info-col {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	// flex-basis: 50%;
-	// break-before: avoid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 
-	margin: 0px 4px;
+  margin: 0px 4px;
 
-	h4 {
-		margin-bottom: 8px;
-		margin-top: 12px;
+  h4 {
+    margin-bottom: 8px;
+    margin-top: 12px;
 
-		font-weight: 800;
-		font-size: 16px;
-	}
+    font-weight: 800;
+    font-size: 16px;
+  }
 
-	.line {
-		.line-key {
-			font-size: 16px;
-			font-weight: 500;
-			padding-right: 8px;
-		}
-		.line-value {
-			font-size: 16px;
-			font-weight: 800;
-		}
-	}
+  .line {
+    .line-key {
+      font-size: 16px;
+      font-weight: 500;
+      padding-right: 8px;
+    }
+    .line-value {
+      font-size: 16px;
+      font-weight: 800;
+    }
+  }
 }

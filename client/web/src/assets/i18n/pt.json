@@ -1,43 +1,50 @@
 {
-	"pt": "portuguese",
-	"en": "english",
-	"origin": "Origin {{originName}}",
-	"email": "Email",
-	"password": "Password",
-	"interaction": {
-		"tabs": {
-			"customer": "Customer",
-			"interaction": "Interaction",
-			"history": "History"
-		},
-		"filters": {
-			"in-club": "In Club",
-			"exclude-ag": "Exclude AG",
-			"expired": "Expired"
-		},
-		"empty": {
-			"empty-title": "No <b>Customers</b> Found",
-			"empty-footer": "Consider using <b>other</b> filter options</div>",
-			"empty-search-title": "No Search Result Found For: <b>{{query}}</b>",
-			"empty-search-footer": "Consider another <b>search</b> criteria"
-		},
-		"error": {
-			"error-title": "Unable to full-fill request",
-			"error-footer": "Please check your internet connection and try again later"
-		},
-		"footer": "client(s) found",
-		"data": {
-			"birth-date": "DATE OF BIRTH (AGE):",
-			"objective": "OBJECTIVE",
-			"access": "ACCESS (7 / 30 / 60 DAYS):",
-			"membership": "MEMBERSHIP DATE (MONTHS TILL RENEWAL):",
-			"last-af": "LAST AF:",
-			"visit-length": "LENGTH OF VISIT:",
-			"subscription-type": "TYPE OF SUBSCRIPTION:",
-			"schedule": "SCHEDULE:",
-			"additional-services": "ADDITIONAL SERVICES:",
-			"additional-info": "ADDITIONAL INFORMATION:",
-			"lifecycle": "LIFE CYCLE: Iniciado em:"
-		}
-	}
+  "pt": "portuguese",
+  "en": "english",
+  "origin": "Origin {{originName}}",
+  "email": "Email",
+  "password": "Password",
+  "interaction": {
+    "tabs": {
+      "customer": "Cliente",
+      "interaction": "Interação",
+      "history": "Histórico"
+    },
+    "filters": {
+      "in-club": "Em Clube",
+      "exclude-ag": "Em AG",
+      "expired": "Planeado"
+    },
+    "empty": {
+      "empty-title": "Nenhum <b>Cliente</b> Encontrado",
+      "empty-footer": "Considera usar <b>outras</b> opções de filtro</div>",
+      "empty-search-title": "Sem resultados para: <b>{{query}}</b>",
+      "empty-search-footer": "Considera outro critério de <b>pesquisa</b>"
+    },
+    "error": {
+      "error-title": "Incapaz de completar o pedido",
+      "error-footer": "Verifique a conexão com a Internet e tente novamente mais tarde"
+    },
+    "footer": "cliente(s) encontrados",
+    "data": {
+      "birth-date": "DATA NASCIMENTO (IDADE):",
+      "objective": "OBJECTIVO:",
+      "access": "VISITAS (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
+      "ag": "AULAS DE GRUPO (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
+      "shareAG": "% DE AG:",
+      "last-af": "ÚLTIMA AVALIAÇÃO (EM DIAS):",
+      "visit-length": "MÉDIA DE PERMANÊNCIA:",
+      "membership": "DATA DE ADESÃO (EM MESES):",
+      "subscription-type": "PREÇO DO PLANO:",
+      "schedule": "HORÁRIO:",
+      "observation": "Comentários",
+      "btn-discard": "Eliminar",
+      "btn-submit": "Concluir",
+      "customer-info": "CLIENTE INFO:",
+      "contract-info": "INTERAÇÃO INFO:",
+      "additional-services": "SERVIÇOS ADICIONAIS:",
+      "additional-info": "INFORMAÇÃO ADICIONAL:",
+      "lifecycle": "CICLO DE VIDA:"
+    }
+  }
 }

@@ -5,7 +5,7 @@ import { UserProfileRoutingModule } from './user-profile-routing.module';
 import { SharedModule } from 'src/app/core/shared.module';
 
 @NgModule({
-	declarations: [UserProfileComponent],
-	imports: [CommonModule, UserProfileRoutingModule, SharedModule],
+  declarations: [UserProfileComponent],
+  imports: [CommonModule, UserProfileRoutingModule, SharedModule],
 })
 export class UserProfileModule {}

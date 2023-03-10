@@ -1,0 +1,34 @@
+<div class="base-line">
+  <span style="flex-grow: 2">
+    <lib-input
+      style="margin: 16px 4px; width: 100%; color: black !important"
+      [type]="'text'"
+      [value]="observation"
+      [placeholder]="''"
+      [label]="'interaction.data.observation' | transloco"
+      [error]="''"
+      [inputName]="'observation'"
+      [disabled]="!displayBtn"
+      (stateChange)="onKeyUp($event)"
+    >
+    </lib-input>
+  </span>
+
+  <span style="justify-content: flex-end; flex-grow: 1">
+    <lib-button
+      style="margin-right: 16px"
+      [primary]="!true"
+      *ngIf="displayBtn"
+      [text]="'interaction.data.btn-discard' | transloco"
+      (stateChange)="onButtonClick(false)"
+    >
+    </lib-button>
+    <lib-button
+      [primary]="true"
+      *ngIf="displayBtn"
+      [text]="'interaction.data.btn-submit' | transloco"
+      (stateChange)="onButtonClick(true)"
+    >
+    </lib-button>
+  </span>
+</div>

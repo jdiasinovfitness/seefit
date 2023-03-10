@@ -1,1 +1,13 @@
-<p>history works!</p>
+<div class="interaction-wrapper">
+  <img
+    [src]="'../../../../../assets/mockData/images/history.png'"
+    height="100px"
+  />
+
+  <app-observation
+    [userId]="info.userId"
+    [displayBtn]="info.status !== 'COMPLETED'"
+    (handleClick)="onButtonClick($event)"
+  >
+  </app-observation>
+</div>
