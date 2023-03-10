@@ -11,8 +11,8 @@
       "history": "History"
     },
     "filters": {
-      "in-club": "In-Club",
-      "exclude-ag": "In-GC",
+      "in-club": "In Club",
+      "exclude-ag": "In GC",
       "expired": "Planned"
     },
     "empty": {
@@ -34,14 +34,17 @@
       "shareAG": "% OF GC:",
       "last-af": "LAST APPOINTMENT (IN DAYS):",
       "visit-length": "AVERAGE STAY:",
-      "membership": "MEMBERSHIP DATE (MONTHS UNTIL RENEWAL):",
+      "membership": "MEMBERSHIP DATE (MONTHS):",
       "subscription-type": "MEMBERSHIP PRICE:",
       "schedule": "AVAILABLE SCHEDULE:",
+      "observation": "Comments",
+      "btn-discard": "Discard",
+      "btn-submit": "Submit",
       "customer-info": "CUSTOMER INFO:",
       "contract-info": "CONTRACT INFO:",
       "additional-services": "ADDITIONAL SERVICES:",
       "additional-info": "ADDITIONAL INFORMATION:",
-      "lifecycle": "LIFE CYCLE: Iniciado em:"
+      "lifecycle": "LIFECYCLE:"
     }
   }
 }
