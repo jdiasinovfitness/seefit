@@ -11,10 +11,24 @@ export class DataService {
 		this.setDummyData();
 	}
 
+	removeData(userId: string) {
+		const index = this.data.findIndex(el => el.userId === userId);
+		if (index === -1) {
+			return;
+		}
+		this.data.splice(index, 1);
+	}
+
+	updateData(userId: string) {
+		const index = this.data.findIndex(el => el.userId === userId);
+		if (index === -1) {
+			return;
+		}
+		this.data[index].status = 'COMPLETED';
+	}
+
 	updateObservation(newState: string, id: string) {
-		const index = this.data.findIndex(el => {
-			el.userId === id;
-		});
+		const index = this.data.findIndex(el => el.userId === id);
 		if (index === -1) {
 			return;
 		}
