@@ -54,7 +54,9 @@ export class DataService {
               .toLocaleLowerCase()
               .includes(filter.search.toLocaleLowerCase()))
       );
-      resolve(res);
+      setTimeout(() => {
+        resolve(res);
+      }, 200);
     });
   }
 
