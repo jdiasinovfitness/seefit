@@ -36,7 +36,6 @@
       <span class="line"
             *ngIf="addInfo?.lifeCycle as aInfo">
         <label class="line-key">{{aInfo?.key | transloco}}</label>
-        <label class="line-value">{{aInfo?.value || ''}}</label>
       </span>
     </div>
   </div>
@@ -51,31 +50,9 @@
     </div>
   </div>
 
-  <div class="base-line">
-    <span style="flex-grow: 2;">
-      <lib-input style="margin: 16px 4px; width: 100%"
-                 [type]="'text'"
-                 [value]="observation"
-                 [placeholder]="'placeholder'"
-                 [label]="'Observação'"
-                 [error]="''"
-                 [inputName]="'observation'"
-                 [disabled]="false"
-                 (stateChange)="onKeyUp($event)">
-      </lib-input>
-    </span>
-
-    <span style="justify-content: flex-end; flex-grow: 1;">
-      <lib-button style="margin-right: 16px"
-                  [primary]="!true"
-                  [text]="'DIscard'"
-                  (stateChange)="onButtonClick($event)">
-      </lib-button>
-      <lib-button [primary]="true"
-                  [text]="'Submit'"
-                  (stateChange)="onButtonClick($event)">
-      </lib-button>
-    </span>
-  </div>
+  <app-observation [userId]="info.userId"
+                   [displayBtn]="info.status !== 'COMPLETED'"
+                   (handleClick)="onButtonClick($event)">
+  </app-observation>
 
 </div>
