@@ -1,6 +1,10 @@
 <div class="interaction-wrapper">
-  <img [src]="'../../../../../assets/mockData/images/history.png'"
-       height="100px" />
+  <div class="img-wrapper">
+    <img [src]="'../../../../../assets/mockData/images/history_1.jpeg'"
+         height="100px" />
+    <img [src]="'../../../../../assets/mockData/images/history_2.jpeg'"
+         height="100px" />
+  </div>
 
   <app-observation [userId]="info.userId"
                    [displayBtn]="info.status !== 'COMPLETED'"
