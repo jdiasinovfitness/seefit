@@ -22,7 +22,7 @@ export class InteractionComponent implements OnInit {
 
 	list: Array<ICIData> = [];
 	searchValue = '';
-	activeTab = '0';
+	activeTabList!: Array<string>;
 	tabs!: Array<any>;
 
 	filterList!: Array<any>;
@@ -84,8 +84,8 @@ export class InteractionComponent implements OnInit {
 		this.loadData();
 	}
 
-	onTabChange(tab: string) {
-		this.activeTab = tab;
+	onTabChange(tab: string, index: number) {
+		this.activeTabList[index] = tab;
 	}
 
 	loadData() {
@@ -99,12 +99,23 @@ export class InteractionComponent implements OnInit {
 			.getICIData(filter)
 			.then(res => {
 				this.list = res?.length > 0 ? res : [];
+				this.activeTabList = Array.from({ length: this.list.length }, () => '0');
 				this.currentPhase = this.list?.length === 0 ? Phases.empty : Phases.success;
 			})
 			.catch(err => {
 				console.error(err);
 				this.currentPhase = Phases.error;
 			});
+	}
+
+	onButtonClick(event: any) {
+		const { isSubmit, userId } = event;
+		if (isSubmit) {
+			this.dataService.updateData(userId);
+		} else {
+			this.dataService.removeData(userId);
+		}
+		this.loadData();
 	}
 
 	handleSearch(newVal: string) {
