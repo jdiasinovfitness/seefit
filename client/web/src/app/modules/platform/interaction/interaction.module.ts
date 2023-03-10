@@ -7,6 +7,7 @@ import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { InteractionInfoComponent } from './interaction-info/interaction-info.component';
 import { HistoryComponent } from './history/history.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { ObservationComponent } from './observation/observation.component';
 
 @NgModule({
 	declarations: [
@@ -15,6 +16,7 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
 		InteractionInfoComponent,
 		HistoryComponent,
 		EmptyStateComponent,
+		ObservationComponent,
 	],
 	imports: [CommonModule, InteractionRoutingModule, SharedModule],
 })
