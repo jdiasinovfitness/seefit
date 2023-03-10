@@ -8,6 +8,7 @@ import { DataService } from 'src/app/core/services/data.service';
 })
 export class ObservationComponent implements OnInit {
 	@Input() userId!: string;
+	@Input() displayBtn: boolean = true;
 	@Output() handleClick = new EventEmitter();
 
 	observation: string = '';
@@ -30,12 +31,15 @@ export class ObservationComponent implements OnInit {
 	}
 
 	onKeyUp(event: string) {
+		if (!this.displayBtn) {
+			return;
+		}
 		// Persisting observation in localStorage for demo only
 		this.dataService.updateObservation(event, this.userId);
 		localStorage.setItem(this.userId, event);
 	}
 
-	onButtonClick(event: any) {
-		console.log('ENENENEN', event); // TODO: Remove on PR!
+	onButtonClick(isSubmit: boolean) {
+		this.handleClick.emit({ isSubmit, userId: this.userId });
 	}
 }

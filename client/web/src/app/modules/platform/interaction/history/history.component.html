@@ -1,1 +1,9 @@
-<p>history works!</p>
+<div class="interaction-wrapper">
+
+  <img src="">
+
+  <app-observation [userId]="info.userId"
+                   [displayBtn]="info.status !== 'COMPLETED'"
+                   (handleClick)="onButtonClick($event)">
+  </app-observation>
+</div>
