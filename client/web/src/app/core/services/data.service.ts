@@ -586,7 +586,7 @@ export class DataService {
             ],
           },
           contractType: {
-            title: 'CONTRACT INFO:',
+            title: 'interaction.data.contract-info',
             content: [
               {
                 key: 'interaction.data.membership',
