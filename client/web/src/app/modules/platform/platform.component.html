@@ -1,7 +1,4 @@
 <!--TODO:
-	Based on:
-	https://material.angular.io/components/sidenav/examples
-	(Responsive sidenav)
 	- mobile with 100% of all screen
 	- desktop wuith 100% height - width: responsive
 	- toogle to close /open integrated in the header
@@ -15,13 +12,13 @@
         class="menu_icon"
         *ngIf="!opened"
         (click)="sideNavVisibily()"
-        src="../../../assets/icons2/core/menu.svg"
+        src="./assets/icons2/core/menu.svg"
       />
       <img
         class="menu_icon"
         *ngIf="opened"
         (click)="sideNavVisibily()"
-        src="../../../assets/icons2/core/close.svg"
+        src="./assets/icons2/core/close.svg"
       />
       <!-- <mat-icon
 				*ngIf="opened"
@@ -38,7 +35,7 @@
 				fontIcon="reorder"
 			></mat-icon> -->
       <img />
-      <img class="h-100" src="../../../assets/images/core/logoBlack.png" />
+      <img class="h-100" src="./assets/images/core/logoBlack.png" />
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container class="w-100 h-100">
@@ -78,10 +75,7 @@
         <mat-expansion-panel *ngFor="let p of permissions">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <img
-                class="menu_icon"
-                src="../../../assets/icons2/menu/{{ p.icon }}"
-              />
+              <img class="menu_icon" src="./assets/icons2/menu/{{ p.icon }}" />
               {{ p.appCode }}
             </mat-panel-title>
           </mat-expansion-panel-header>
@@ -89,7 +83,7 @@
           <p class="sub-menu" *ngFor="let sp of p.permissions">
             <img
               class="menu_icon sub-menu-icon"
-              src="../../../assets/icons2/core/sub-menu2.svg"
+              src=".assets/icons2/core/sub-menu2.svg"
             />
             {{ sp.permissionCode }}
           </p>
