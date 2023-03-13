@@ -16,8 +16,8 @@ export class EmptyStateComponent {
   getImage() {
     let src =
       this.type === 'error'
-        ? './assets/images/errorState.png'
-        : './assets/images/emptyState.png';
+        ? 'assets/images/errorState.png'
+        : 'assets/images/emptyState.png';
     return src;
   }
 }
