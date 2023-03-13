@@ -84,6 +84,11 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
+  resetData() {
+    this.dataService.resetData();
+    this.init();
+  }
+
   onTabChange(tab: string, index: number) {
     this.activeTabList[index] = tab;
   }

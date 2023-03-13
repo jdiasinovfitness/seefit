@@ -11,6 +11,10 @@ export class DataService {
     this.setDummyData();
   }
 
+  resetData() {
+    this.setDummyData();
+  }
+
   removeData(userId: string) {
     const index = this.data.findIndex(el => el.userId === userId);
     if (index === -1) {
