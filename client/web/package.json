@@ -1,6 +1,6 @@
 {
   "name": "seefit",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start:dev": "ng serve --proxy-config ./src/proxy.conf.js --poll=2000",
