@@ -46,13 +46,14 @@ export class DataService {
       // With filter for inClub, excludeAG, expired, name, id, date, interaction.
       const res = this.data.filter(
         el =>
-          !filter.inClub ||
-          (((filter.inClub && !!el.inClub) || !filter.inClub) &&
-            filter.excludeAG === el.excludeAG &&
-            ((filter.expired && el.status === 'PLANNED') || !filter.expired) &&
-            JSON.stringify(el)
-              .toLocaleLowerCase()
-              .includes(filter.search.toLocaleLowerCase()))
+          (!filter.inClub ||
+            (((filter.inClub && !!el.inClub) || !filter.inClub) &&
+              filter.excludeAG === el.excludeAG &&
+              ((filter.expired && el.status === 'PLANNED') ||
+                !filter.expired))) &&
+          JSON.stringify(el)
+            .toLocaleLowerCase()
+            .includes(filter.search.toLocaleLowerCase())
       );
       setTimeout(() => {
         resolve(res);
