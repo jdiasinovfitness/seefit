@@ -16,7 +16,7 @@
       "expired": "Planned"
     },
     "empty": {
-      "empty-title": "No <b>Customers</b> Found",
+      "empty-title": "No <b>Customer</b> Found",
       "empty-footer": "Consider using <b>other</b> filter options</div>",
       "empty-search-title": "No Search Result Found For: <b>{{query}}</b>",
       "empty-search-footer": "Consider another <b>search</b> criteria"
@@ -25,7 +25,7 @@
       "error-title": "Unable to fulfill the request",
       "error-footer": "Please check your internet connection and try again later"
     },
-    "footer": "client(s) found",
+    "footer": "customer(s) found",
     "data": {
       "birth-date": "BIRTHDATE (AGE):",
       "objective": "OBJECTIVE:",

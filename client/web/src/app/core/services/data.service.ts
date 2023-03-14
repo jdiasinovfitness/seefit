@@ -93,7 +93,7 @@ export class DataService {
         },
         imageUrl: 'assets/icons/no-avatar.svg',
         interactionInfo:
-          'Sarah Holloway grade our service 5 (1-10 scale), which puts him as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
+          'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -104,7 +104,7 @@ export class DataService {
               },
               {
                 key: 'interaction.data.objective',
-                value: 'Weight Lose',
+                value: 'Weight Loss',
               },
               {
                 key: 'interaction.data.access',
@@ -247,7 +247,7 @@ export class DataService {
         },
         imageUrl: 'assets/icons/no-avatar.svg',
         interactionInfo:
-          "Edmund Jacobson started their membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
+          "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -1024,7 +1024,7 @@ export class DataService {
               },
               {
                 key: 'interaction.data.objective',
-                value: 'Weight Lose',
+                value: 'Weight Loss',
               },
               {
                 key: 'interaction.data.access',
