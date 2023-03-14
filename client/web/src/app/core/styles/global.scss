@@ -3,47 +3,47 @@
 
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 .i9r-container {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .profile-rounded {
-	border-radius: 10rem;
-	width: 60px;
-	height: 60px;
-	overflow: hidden;
-	& .profile-picture {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		width: 100%;
-		height: 100%;
-		transform: scale(1.2);
-	}
-	& .female1 {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_female1.jpg');
-	}
-	& .female2 {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_female2.jpg');
-	}
-	& .female3 {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_female3.jpg');
-	}
-	& .male1 {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_male1.jpg');
-	}
-	& .male2 {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_male2.jpg');
-	}
-	& .male3 {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_male3.jpg');
-	}
-	& .blank {
-		background-image: url('../../../assets/mockData/images/userPhotos/profile_blank.jpg');
-	}
+  border-radius: 10rem;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  & .profile-picture {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+  }
+  & .female1 {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_female1.jpg');
+  }
+  & .female2 {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_female2.jpg');
+  }
+  & .female3 {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_female3.jpg');
+  }
+  & .male1 {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_male1.jpg');
+  }
+  & .male2 {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_male2.jpg');
+  }
+  & .male3 {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_male3.jpg');
+  }
+  & .blank {
+    background-image: url('../../../assets/mockData/images/userPhotos/profile_blank.jpg');
+  }
 }

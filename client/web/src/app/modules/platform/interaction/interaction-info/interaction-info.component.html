@@ -1,0 +1,14 @@
+<div class="interaction-wrapper">
+  <div
+    class="inner-wrapper"
+    *ngIf="info"
+    [innerHTML]="info?.interactionInfo | safeHtml"
+  ></div>
+
+  <app-observation
+    [userId]="info.userId"
+    [displayBtn]="info.status !== 'COMPLETED'"
+    (handleClick)="onButtonClick($event)"
+  >
+  </app-observation>
+</div>

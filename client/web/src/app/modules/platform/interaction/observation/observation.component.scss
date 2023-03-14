@@ -1,0 +1,13 @@
+.base-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  span {
+    display: flex;
+    flex-wrap: nowrap;
+    // flex-shrink: 1;
+    // flex-grow: 1;
+  }
+}

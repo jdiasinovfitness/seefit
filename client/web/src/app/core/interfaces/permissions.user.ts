@@ -4,7 +4,7 @@
  * @property permissions: indicate the string values for app permissions - this will determinate if the user has access to particular actions inside the screens
  */
 interface userPermissions {
-	app: string;
-	appCode: string;
-	permissions: Array<string>;
+  app: string;
+  appCode: string;
+  permissions: Array<string>;
 }

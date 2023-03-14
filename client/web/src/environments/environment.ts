@@ -1,4 +1,4 @@
 export const environment = {
-	endpoint: '/middleware',
-	production: false,
+  endpoint: '/middleware',
+  production: false,
 };

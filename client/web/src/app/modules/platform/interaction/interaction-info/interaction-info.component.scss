@@ -1,0 +1,10 @@
+@import '../../../../core/styles/styles.scss';
+
+.interaction-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .inner-wrapper {
+    padding: 12px 4px;
+  }
+}
