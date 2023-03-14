@@ -124,6 +124,7 @@ export class PlatformComponent implements OnInit {
   }
 
   sideNavVisibily() {
+    this.router.navigate(['/']);
     return;
     this.sidenav?.toggle();
   }

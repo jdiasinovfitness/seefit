@@ -1,37 +1,48 @@
-<!--
-  WARNING:
-  This is a dummy HTML code in order to test the login and the main structure such as bootstrap or cypress testing
-  TODO:
-        this code must be reviewed in order to meet the mockups requirements
-        unit tests must be defined to the new screen
-    -->
-
-<div class="d-flex h-100">
+<div class="d-flex h-100 flex-column-mobile">
   <!--Left section-->
-  <div class="lg-left"></div>
+  <div class="lg-left align-self-center">
+    <img
+      class="w-75"
+      src="assets/images/modules/authentication/login/loginBackground.png"
+    />
+  </div>
   <!--Right section-->
   <div class="lg-right">
-    <div class="text-center mt-5">
+    <div class="text-center">
       <img
         class="logo"
         [alt]="'InovFitness'"
-        src="../../../../assets/images/core/logoBlack.png"
+        src="assets/images/core/logoBlack.png"
       />
     </div>
     <form
       [formGroup]="authForm"
       class="login-container d-flex flex-column text-center m-5"
-      (ngSubmit)="signIn()"
     >
-      <div class="align-self-center w-100">
-        <span class="align-self-center">{{
-          'login.forgot_link' | transloco
-        }}</span>
-        <input
-          type="submit"
-          class="submit-button p-2"
-          value="{{ 'login.login' | transloco }}"
-        />
+      <lib-input
+        [label]="'Email'"
+        [type]="'email'"
+        [value]="'admin@inovfitness.com'"
+      ></lib-input>
+      <lib-input
+        [label]="'Password'"
+        [type]="'password'"
+        [value]="'admin'"
+      ></lib-input>
+      <div class="align-self-center w-100 d-flex orage">
+        <span class="align-self-center col-6 forgot-label"
+          ><b>{{ 'login.forgot_link' | transloco }}</b></span
+        >
+        <ng-container [ngSwitch]="currentPhase">
+          <lib-button
+            *ngSwitchCase="phaseEnum.empty"
+            class="col-6"
+            [text]="'LOGIN'"
+            (stateChange)="signIn()"
+          ></lib-button>
+
+          <lib-spinner *ngSwitchCase="phaseEnum.loading"></lib-spinner>
+        </ng-container>
       </div>
     </form>
   </div>

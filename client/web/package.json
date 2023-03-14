@@ -17,7 +17,7 @@
     "cypress:run:test:e2e": "npx cypress run --e2e",
     "cypress:chrome": "npx cypress run --browser chrome",
     "lint:check": "prettier --check src/**/*.{js,ts,scss,html,json}",
-    "lint:format": "prettier --write src/**/*.{js,ts,scss,html,json}",
+    "lint:format": "prettier --write src/**/*.{js,ts,css,scss,html,json}",
     "i18n:extract": "transloco-keys-manager extract",
     "i18n:find": "transloco-keys-manager find"
   },
