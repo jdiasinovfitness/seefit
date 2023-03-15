@@ -25,7 +25,27 @@
       "error-title": "Incapaz de completar o pedido",
       "error-footer": "Verifique a conexão com a Internet e tente novamente mais tarde"
     },
-    "footer": "cliente(s) encontrados",
+    "type": {
+      "unplanned": "Unplanned Interaction",
+      "future": "Future Interaction",
+      "planned": "Planned Interaction",
+      "label": "Type",
+      "default": "Select the interaction Type"
+    },
+    "label": {
+      "next_visit": "Scheduled Next Visit",
+      "group_class": "Recommended Group Class",
+      "execution_support": "Technical Execution Support",
+      "monthly_challenge": "Monthly Challenge",
+      "reprogramming": "Prescription Reprogramming",
+      "label": "Interaction",
+      "default": "Specify an interaction"
+    },
+    "details": {
+      "placeholder": "Add a brief description of the interaction",
+      "label": "Details",
+      "create": "Create"
+    },
     "data": {
       "birth-date": "DATA NASCIMENTO (IDADE):",
       "objective": "OBJECTIVO:",
@@ -45,6 +65,7 @@
       "additional-services": "SERVIÇOS ADICIONAIS:",
       "additional-info": "INFORMAÇÃO ADICIONAL:",
       "lifecycle": "CICLO DE VIDA:"
-    }
+    },
+    "footer": "cliente(s) encontrados"
   }
 }

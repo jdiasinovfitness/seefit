@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
-import { ICIData, ICIFilter } from '../interfaces/icidata';
+import { INTERACTION, INTERACTION_STATUS } from '../constants/status.constants';
+import { ICIData, ICIFilter } from '../interfaces/icidata.model';
+import { IITypeData } from '../interfaces/interaction.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   data!: Array<ICIData>;
+  interactionList!: Array<IITypeData>;
 
   constructor() {
     this.setDummyData();
+    this.setDummyInteractionData();
   }
 
   resetData() {
     this.setDummyData();
   }
 
-  removeData(userId: string) {
+  getInteractionList(): Array<IITypeData> {
+    return this.interactionList ? this.interactionList : [];
+  }
+
+  addInteraction(newInteraction: ICIData) {
+    this.data.unshift(newInteraction);
+  }
+
+  removeInteraction(userId: string) {
     const index = this.data.findIndex(el => el.userId === userId);
     if (index === -1) {
       return;
@@ -28,7 +40,7 @@ export class DataService {
     if (index === -1) {
       return;
     }
-    this.data[index].status = 'COMPLETED';
+    this.data[index].status = INTERACTION_STATUS.COMPLETED;
   }
 
   updateObservation(newState: string, id: string) {
@@ -61,8 +73,49 @@ export class DataService {
       );
       setTimeout(() => {
         resolve(res);
-      }, 200);
+      }, 400);
     });
+  }
+
+  setDummyInteractionData() {
+    this.interactionList = [
+      {
+        label: 'interaction.type.unplanned',
+        value: 'unplanned',
+        interaction: [
+          {
+            label: 'interaction.label.next_visit',
+            value: INTERACTION.NEXT_VISIT,
+          },
+          {
+            label: 'interaction.label.group_class',
+            value: INTERACTION.GROUP_CLASS,
+          },
+          {
+            label: 'interaction.label.execution_support',
+            value: INTERACTION.EXECUTION_SUPPORT,
+          },
+          {
+            label: 'interaction.label.monthly_challenge',
+            value: INTERACTION.MONTHLY_CHALLENGE,
+          },
+          {
+            label: 'interaction.label.reprogramming',
+            value: INTERACTION.REPROGRAMMING,
+          },
+        ],
+      },
+      {
+        label: 'interaction.type.unplanned',
+        value: 'planned',
+        interaction: [
+          {
+            label: 'interaction.label.next_visit',
+            value: INTERACTION.NEXT_VISIT,
+          },
+        ],
+      },
+    ];
   }
 
   setDummyData() {
@@ -70,7 +123,7 @@ export class DataService {
       {
         title: 'Sarah Holloway',
         userId: 'N#3929',
-        status: 'PLANNED',
+        status: INTERACTION_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
 
@@ -224,7 +277,7 @@ export class DataService {
       {
         title: 'Edmund Jacobson',
         userId: 'N#8629',
-        status: 'PLANNED',
+        status: INTERACTION_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
 
@@ -378,7 +431,7 @@ export class DataService {
       {
         title: 'Alan Rivers',
         userId: 'N#3203',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
 
@@ -532,7 +585,7 @@ export class DataService {
       {
         title: 'Jana Miller',
         userId: 'N#3203',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
 
@@ -686,7 +739,7 @@ export class DataService {
       {
         title: 'Rupert Horton',
         userId: 'N#2390',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
         date: '2023-02-04',
@@ -838,7 +891,7 @@ export class DataService {
       {
         title: 'Abby Cannon',
         userId: 'N#7187',
-        status: 'PLANNED',
+        status: INTERACTION_STATUS.PLANNED,
         inClub: true,
         excludeAG: true,
 
@@ -991,7 +1044,7 @@ export class DataService {
       {
         title: 'Alice Williamson',
         userId: 'N#4812',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1144,7 +1197,7 @@ export class DataService {
       {
         title: 'Tim Shepard',
         userId: 'N#9027',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1297,7 +1350,7 @@ export class DataService {
       {
         title: 'Helena Saunders',
         userId: 'N#5653',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1450,7 +1503,7 @@ export class DataService {
       {
         title: 'Walter Wiggins',
         userId: 'N#1903',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
