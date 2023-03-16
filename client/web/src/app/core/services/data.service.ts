@@ -11,12 +11,12 @@ export class DataService {
   interactionList!: Array<IITypeData>;
 
   constructor() {
-    this.setDummyData();
-    this.setDummyInteractionData();
+    this.data = this.getDummyData();
+    this.interactionList = this.getDummyInteractionData();
   }
 
   resetData() {
-    this.setDummyData();
+    this.getDummyData();
   }
 
   getInteractionList(): Array<IITypeData> {
@@ -59,26 +59,33 @@ export class DataService {
         return;
       }
 
-      // With filter for inClub, excludeAG, expired, name, id, date, interaction.
-      const res = this.data.filter(
-        el =>
-          (!filter.inClub ||
-            (((filter.inClub && !!el.inClub) || !filter.inClub) &&
-              filter.excludeAG === el.excludeAG &&
-              ((filter.expired && el.status === 'PLANNED') ||
-                !filter.expired))) &&
-          JSON.stringify(el)
-            .toLocaleLowerCase()
-            .includes(filter.search.toLocaleLowerCase())
-      );
+      const res = this.data
+        // Remove duplicates
+        .filter(
+          (value, index, self) =>
+            index === self.findIndex(e => e.userId === value.userId)
+        )
+        // With filter for inClub, excludeAG, expired, name, id, date, interaction.
+        .filter(
+          el =>
+            (!filter.inClub ||
+              (((filter.inClub && !!el.inClub) || !filter.inClub) &&
+                filter.excludeAG === el.excludeAG &&
+                ((filter.expired && el.status === 'PLANNED') ||
+                  !filter.expired))) &&
+            JSON.stringify(el)
+              .toLocaleLowerCase()
+              .includes(filter.search.toLocaleLowerCase())
+        );
+
       setTimeout(() => {
         resolve(res);
       }, 400);
     });
   }
 
-  setDummyInteractionData() {
-    this.interactionList = [
+  getDummyInteractionData() {
+    return [
       {
         label: 'interaction.type.unplanned',
         value: 'unplanned',
@@ -105,21 +112,11 @@ export class DataService {
           },
         ],
       },
-      {
-        label: 'interaction.type.unplanned',
-        value: 'planned',
-        interaction: [
-          {
-            label: 'interaction.label.next_visit',
-            value: INTERACTION.NEXT_VISIT,
-          },
-        ],
-      },
     ];
   }
 
-  setDummyData() {
-    this.data = [
+  getDummyData(): Array<ICIData> {
+    return [
       {
         title: 'Sarah Holloway',
         userId: 'N#3929',
@@ -127,7 +124,7 @@ export class DataService {
         inClub: true,
         excludeAG: false,
 
-        date: '2023-03-21',
+        date: '2023-03-20',
         interaction: {
           label: 'INTERACTION:',
           value: 'NPS Detractor',
@@ -584,7 +581,7 @@ export class DataService {
 
       {
         title: 'Jana Miller',
-        userId: 'N#3203',
+        userId: 'N#3204',
         status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
@@ -1652,6 +1649,16 @@ export class DataService {
           observation: '',
         },
       },
-    ];
+    ] as Array<ICIData>;
+
+    // return iciData;
+    // .sort((a: any, b: any) =>
+    // a.date < b.date ? 1 : b.date < a.date ? -1 : 0
+    // )
+    // Remove duplicates by id
+    // .filter(
+    //   (value, index, self) =>
+    //     index === self.findIndex(e => e.userId === value.userId)
+    // )
   }
 }
