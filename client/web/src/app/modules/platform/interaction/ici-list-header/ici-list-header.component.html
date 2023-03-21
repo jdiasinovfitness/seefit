@@ -1,0 +1,76 @@
+<div class="accordion-wrapper">
+
+  <!-- Accordion Header -->
+  <div class="accordion-header"
+       (click)="toggle()">
+
+    <!-- Left Col -->
+    <div class="accordion-col"
+         *ngIf="data">
+      <!-- Icons Col -->
+      <div class="icon-col">
+        <div class="see-icon md"
+             *ngFor="let icon of data?.customerInfo?.additionalInfo?.icons |  slice:0:3;"
+             [ngClass]="icon"></div>
+      </div>
+      <!-- Profile Photo -->
+      <img [src]="data.imageUrl"
+           alt="User Photo">
+      <!-- Title Col -->
+      <div class="item-col lft">
+        <span class="title">
+          <label *ngIf="data.title">{{data.title | uppercase}}</label>
+          <label class="user-id"
+                 *ngIf="data.userId">({{data.userId}})</label>
+        </span>
+        <label class="line">
+          {{data.primary.label || 'N/A'}}
+          <span class="percentage"
+                [ngStyle]="{color: data.primary.color}"
+                *ngIf="data.primary?.value">{{data.primary.value}}</span>
+        </label>
+        <label class="line"
+               *ngIf="data.secondary">
+          <span>{{data.secondary.label || 'N/A'}}</span>
+          <span class="percentage"
+                [ngStyle]="{color: data.secondary.color}"
+                *ngIf="data.secondary?.value">{{data.secondary.value}}</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Center Col TODO: Re-Activate after DEMO -->
+    <!-- <div class="accordion-col cnt">
+      <div class="icon-col">
+        <label style="display:inline-block"
+               *ngIf="interaction">{{interactionLabel}}</label>
+        <label style="display:inline-block"
+               *ngIf="interaction">&nbsp; {{interaction}}</label>
+      </div>
+    </div> -->
+
+    <!-- Right Col -->
+    <div class="accordion-col rgh">
+      <div class="item-col rgh">
+        <span class="line">
+          <label *ngIf="data.date">{{data.date}}</label>
+          <div class="see-icon sm date"
+               style="margin-left: 6px;"></div>
+        </span>
+        <lib-label style="margin-bottom: 6px"
+                   *ngIf="data.status"
+                   [label]="data.status"></lib-label>
+        <span class="interaction"
+              *ngIf="data.interaction">
+          <label style="font-weight: 500;"
+                 *ngIf="data.interaction.label">{{data.interaction.label}}</label>
+          <label class="inter-label"
+                 [ngStyle]="{color: data.interaction.color}"
+                 [ngClass]="data.interaction.isBold ? 'bold':'inter-label'"
+                 *ngIf="data.interaction">&nbsp; {{data.interaction.value}}</label>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -120,7 +120,6 @@ export class PlatformComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.auth.getUserInfo();
-    console.log('User', this.user);
   }
 
   sideNavVisibily() {
@@ -156,7 +155,7 @@ export class PlatformComponent implements OnInit {
   }
 
   /**
-   * on route child desactivated
+   * on route child deactivated
    */
   onDeactivateChild() {
     this.childActivated = false;

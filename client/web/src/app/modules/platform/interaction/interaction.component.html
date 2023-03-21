@@ -54,8 +54,43 @@
       </div>
       <!-- Success Template -->
       <div *ngSwitchCase="phaseEnum.success">
-        <ng-container *ngIf="list && list.length > 0 && tabs">
-          <lib-accordion *ngFor="let item of list; let i = index"
+        <ng-container *ngIf="list && list.length > 0 ">
+
+          <lib-expansion-panel *ngFor="let item of list; let i = index"
+                               [isOpen]="false">
+
+            <!-- Accordion Header -->
+            <ng-template #accHeader>
+              <app-ici-list-header ngClass="exp-panel"
+                                   [data]="item"></app-ici-list-header>
+            </ng-template>
+
+            <!-- Accordion Body -->
+            <ng-template #accBody>
+              <!-- <app-ici-list-body ngClass="exp-panel"
+                                 [data]="item"> -->
+              <!-- </app-ici-list-body> -->
+              <lib-tabs [tabs]="tabs"
+                        [activeTab]="activeTabList[i]"
+                        (tabChanged)="onTabChange($event, i)">
+                <div *ngIf="activeTabList[i] === '0'">
+                  <app-customer-info [info]="item"
+                                     (handleClick)="onButtonClick($event)"></app-customer-info>
+                </div>
+                <div *ngIf="activeTabList[i] === '1'">
+                  <app-interaction-info [info]="item"
+                                        (handleClick)="onButtonClick($event)"></app-interaction-info>
+                </div>
+                <div *ngIf="activeTabList[i] === '2'">
+                  <app-history [info]="item"
+                               (handleClick)="onButtonClick($event)"></app-history>
+                </div>
+              </lib-tabs>
+            </ng-template>
+
+          </lib-expansion-panel>
+
+          <!-- <lib-accordion *ngFor="let item of list; let i = index"
                          [title]="item.title"
                          [userId]="item.userId"
                          [isOpen]="!true"
@@ -71,23 +106,20 @@
                         [activeTab]="activeTabList[i]"
                         (tabChanged)="onTabChange($event, i)">
                 <div *ngIf="activeTabList[i] === '0'">
-                  <!-- Tab Customer -->
                   <app-customer-info [info]="item"
                                      (handleClick)="onButtonClick($event)"></app-customer-info>
                 </div>
                 <div *ngIf="activeTabList[i] === '1'">
-                  <!-- Tab Interaction -->
                   <app-interaction-info [info]="item"
                                         (handleClick)="onButtonClick($event)"></app-interaction-info>
                 </div>
                 <div *ngIf="activeTabList[i] === '2'">
-                  <!-- Tab History -->
                   <app-history [info]="item"
                                (handleClick)="onButtonClick($event)"></app-history>
                 </div>
               </lib-tabs>
             </div>
-          </lib-accordion>
+          </lib-accordion> -->
         </ng-container>
       </div>
     </ng-container>

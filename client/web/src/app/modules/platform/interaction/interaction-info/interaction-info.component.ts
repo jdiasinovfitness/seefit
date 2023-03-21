@@ -58,7 +58,6 @@ export class InteractionInfoComponent {
     const index = this.typeList?.findIndex(el => {
       return el.value === newSelection;
     });
-    console.log('NNNNN', index); // TODO: Remove on PR!
 
     this.selectedType = newSelection;
     this.selectedInteraction = undefined;
