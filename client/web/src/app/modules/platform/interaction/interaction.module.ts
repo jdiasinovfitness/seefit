@@ -9,7 +9,6 @@ import { HistoryComponent } from './history/history.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { ObservationComponent } from './observation/observation.component';
 import { IciListHeaderComponent } from './ici-list-header/ici-list-header.component';
-import { IciListBodyComponent } from './ici-list-body/ici-list-body.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { IciListBodyComponent } from './ici-list-body/ici-list-body.component';
     EmptyStateComponent,
     ObservationComponent,
     IciListHeaderComponent,
-    IciListBodyComponent,
   ],
   imports: [CommonModule, InteractionRoutingModule, SharedModule],
 })
