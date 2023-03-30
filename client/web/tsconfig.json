@@ -25,13 +25,13 @@
       "node_modules/@types"
     ],
     "resolveJsonModule": true,
+    "useDefineForClassFields": false,
     "types": [
       "cypress",
       "node"
     ]
   },
   "angularCompilerOptions": {
-    "enableIvy": true,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

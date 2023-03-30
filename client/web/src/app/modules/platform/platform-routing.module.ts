@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { PlatformComponent } from './platform.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PlatformComponent,
-    canActivateChild: [AuthGuard],
-
     children: [
       {
         path: 'user_profile/:id',

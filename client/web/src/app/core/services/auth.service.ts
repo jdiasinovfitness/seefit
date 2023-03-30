@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { basename } from 'path';
 import { firstValueFrom } from 'rxjs';
-import { authInfo } from '../interfaces/info.user';
+import { authInfo } from '../interfaces/info.user.model';
 import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
 

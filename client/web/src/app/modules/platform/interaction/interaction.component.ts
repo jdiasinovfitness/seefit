@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData, ICIFilter } from 'src/app/core/interfaces/icidata';
+import { ICIData } from 'src/app/core/interfaces/icidata.model';
 import { DataService } from 'src/app/core/services/data.service';
 
 export enum Phases {
@@ -122,7 +122,7 @@ export class InteractionComponent implements OnInit {
     if (isSubmit) {
       this.dataService.updateData(userId);
     } else {
-      this.dataService.removeData(userId);
+      this.dataService.removeInteraction(userId);
     }
     this.loadData();
   }
