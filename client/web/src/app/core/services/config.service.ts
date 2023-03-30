@@ -3,6 +3,6 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class ConfigService {
   getApiUrl(): string {
-    return environment.endpoint;
+    return environment.baseUrl;
   }
 }

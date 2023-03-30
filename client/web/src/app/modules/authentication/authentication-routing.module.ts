@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardGuard } from 'src/app/core/guards/auth-guard.guard';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ResetRequestComponent } from './reset-request/reset-request.component';
 
 const routes: Routes = [
   {
@@ -10,7 +12,15 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+    component: LoginComponent,
+  },
+  {
+    path: 'reset-pwd',
+    component: ResetPasswordComponent,
+  },
+  {
+    path: 'reset-request',
+    component: ResetRequestComponent,
   },
 ];
 

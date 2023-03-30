@@ -11,11 +11,11 @@ export enum Phases {
 }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-reset-request',
+  templateUrl: './reset-request.component.html',
+  styleUrls: ['./reset-request.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class ResetRequestComponent implements OnInit {
   phaseEnum = Phases;
   currentPhase = Phases.empty;
 
@@ -24,7 +24,11 @@ export class LoginComponent implements OnInit {
   production = environment.production;
   hide = false;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {
     this.authForm = this.formBuilder.group({
       email: ['admin@inovfitness.com', [Validators.required, Validators.email]],
       password: ['admin', [Validators.required]],
@@ -41,15 +45,14 @@ export class LoginComponent implements OnInit {
     this.currentPhase = Phases.loading;
 
     setTimeout(() => {
-      const error = !true;
-      this.authForm
-        .get('password')
-        ?.setErrors(error ? { wrongPassword: true } : null);
-
-      this.currentPhase = error ? Phases.error : Phases.success;
-
-      // TODO: handle navigation error when permission claims available
-      this.router.navigate(['platform/interaction']);
-    }, 2000);
+      this.currentPhase = Phases.empty;
+    }, 50000);
+    try {
+      this.router.navigate(['../../platform/interaction'], {
+        relativeTo: this.activatedRoute,
+      });
+    } catch (err) {
+      console.error('Error');
+    }
   }
 }

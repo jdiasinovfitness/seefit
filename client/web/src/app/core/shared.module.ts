@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from './services/auth.service';
 import { GlobalStorage } from './storage/global.storage';
 import { ConfigService } from './services/config.service';
-import { MaterialExampleModule } from '../material.module';
 import { UiComponentsModule } from '@i9r/ui-components';
-import { TranslocoModule } from '@ngneat/transloco';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { TranslateModule } from '@ngx-translate/core';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [SafeHtmlPipe],
   imports: [
     CommonModule,
-    MaterialExampleModule,
+    TranslateModule.forChild({ extend: true }),
     UiComponentsModule,
-    TranslocoModule,
+    IonicModule,
   ],
-  exports: [TranslocoModule, UiComponentsModule, SafeHtmlPipe],
+  exports: [TranslateModule, UiComponentsModule, SafeHtmlPipe, IonicModule],
   providers: [AuthService, GlobalStorage, ConfigService],
 })
 export class SharedModule {}

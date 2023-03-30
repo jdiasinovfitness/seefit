@@ -4,6 +4,68 @@
   "origin": "Origin {{originName}}",
   "email": "Email",
   "password": "Password",
+  "auth": {
+    "login": {
+      "btn-submit": "LOGIN",
+      "welcome": "Welcome to login page",
+      "register-link": "Forgot your password?",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter a valid email",
+          "errors": {
+            "invalid": "Invalid email",
+            "required": "Enter your email"
+          }
+        },
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "invalid": "Invalid password",
+            "required": "Enter your password"
+          }
+        }
+      }
+    },
+    "reset-pwd": {
+      "header": "Your new password has to be different to previously used passwords.",
+      "btn-submit": "Reset Password",
+      "login-link": "Back to login",
+      "form": {
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "required": "Password required"
+          }
+        },
+        "pwd-confirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter your password again",
+          "errors": {
+            "required": "Password required",
+            "miss-match": "Passwords do not match"
+          }
+        }
+      }
+    },
+    "reset-request": {
+      "header": "If you forgot your password we can help you reset it by sending you an email with the reset instructions. For that we need you to provide us your email address",
+      "btn-submit": "Reset Password",
+      "login-link": "Back to login",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter a valid email",
+          "errors": {
+            "invalid": "Invalid email",
+            "required": "Enter your email"
+          }
+        }
+      }
+    }
+  },
   "interaction": {
     "tabs": {
       "customer": "Customer",

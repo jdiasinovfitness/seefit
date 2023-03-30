@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslocoService } from '@ngneat/transloco';
+import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
 import { ICIData, ICIFilter } from 'src/app/core/interfaces/icidata';
 import { DataService } from 'src/app/core/services/data.service';
@@ -29,7 +29,7 @@ export class InteractionComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private translocoService: TranslocoService
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -42,19 +42,19 @@ export class InteractionComponent implements OnInit {
     this.tabs = [
       {
         title: await firstValueFrom(
-          this.translocoService.selectTranslate('interaction.tabs.customer')
+          this.translateService.get('interaction.tabs.customer')
         ),
         id: 0,
       },
       {
         title: await firstValueFrom(
-          this.translocoService.selectTranslate('interaction.tabs.interaction')
+          this.translateService.get('interaction.tabs.interaction')
         ),
         id: 1,
       },
       {
         title: await firstValueFrom(
-          this.translocoService.selectTranslate('interaction.tabs.history')
+          this.translateService.get('interaction.tabs.history')
         ),
         id: 2,
       },
