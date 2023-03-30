@@ -21,7 +21,7 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kong-config
+  name: gateway-kong-config
 data:
   kong.yaml: |
     _format_version: "1.1"
@@ -50,7 +50,6 @@ data:
           generator: uuid
           echo_downstream: false
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -69,7 +68,6 @@ spec:
     app: gateway
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
