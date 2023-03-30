@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
-import { ICIData, ICIFilter } from '../interfaces/icidata';
+import { INTERACTION, INTERACTION_STATUS } from '../constants/status.constants';
+import { ICIData, ICIFilter } from '../interfaces/icidata.model';
+import { IITypeData } from '../interfaces/interaction.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   data!: Array<ICIData>;
+  interactionList!: Array<IITypeData>;
 
   constructor() {
-    this.setDummyData();
+    this.data = this.getDummyData();
+    this.interactionList = this.getDummyInteractionData();
   }
 
   resetData() {
-    this.setDummyData();
+    this.getDummyData();
   }
 
-  removeData(userId: string) {
+  getInteractionList(): Array<IITypeData> {
+    return this.interactionList ? this.interactionList : [];
+  }
+
+  addInteraction(newInteraction: ICIData) {
+    this.data.unshift(newInteraction);
+  }
+
+  removeInteraction(userId: string) {
     const index = this.data.findIndex(el => el.userId === userId);
     if (index === -1) {
       return;
@@ -28,7 +40,7 @@ export class DataService {
     if (index === -1) {
       return;
     }
-    this.data[index].status = 'COMPLETED';
+    this.data[index].status = INTERACTION_STATUS.COMPLETED;
   }
 
   updateObservation(newState: string, id: string) {
@@ -47,34 +59,72 @@ export class DataService {
         return;
       }
 
-      // With filter for inClub, excludeAG, expired, name, id, date, interaction.
-      const res = this.data.filter(
-        el =>
-          (!filter.inClub ||
-            (((filter.inClub && !!el.inClub) || !filter.inClub) &&
-              filter.excludeAG === el.excludeAG &&
-              ((filter.expired && el.status === 'PLANNED') ||
-                !filter.expired))) &&
-          JSON.stringify(el)
-            .toLocaleLowerCase()
-            .includes(filter.search.toLocaleLowerCase())
-      );
+      const res = this.data
+        // Remove duplicates
+        .filter(
+          (value, index, self) =>
+            index === self.findIndex(e => e.userId === value.userId)
+        )
+        // With filter for inClub, excludeAG, expired, name, id, date, interaction.
+        .filter(
+          el =>
+            (!filter.inClub ||
+              (((filter.inClub && !!el.inClub) || !filter.inClub) &&
+                filter.excludeAG === el.excludeAG &&
+                ((filter.expired && el.status === 'PLANNED') ||
+                  !filter.expired))) &&
+            JSON.stringify(el)
+              .toLocaleLowerCase()
+              .includes(filter.search.toLocaleLowerCase())
+        );
+
       setTimeout(() => {
         resolve(res);
-      }, 200);
+      }, 400);
     });
   }
 
-  setDummyData() {
-    this.data = [
+  getDummyInteractionData() {
+    return [
+      {
+        label: 'interaction.type.unplanned',
+        value: 'unplanned',
+        interaction: [
+          {
+            label: 'interaction.label.next_visit',
+            value: INTERACTION.NEXT_VISIT,
+          },
+          {
+            label: 'interaction.label.group_class',
+            value: INTERACTION.GROUP_CLASS,
+          },
+          {
+            label: 'interaction.label.execution_support',
+            value: INTERACTION.EXECUTION_SUPPORT,
+          },
+          {
+            label: 'interaction.label.monthly_challenge',
+            value: INTERACTION.MONTHLY_CHALLENGE,
+          },
+          {
+            label: 'interaction.label.reprogramming',
+            value: INTERACTION.REPROGRAMMING,
+          },
+        ],
+      },
+    ];
+  }
+
+  getDummyData(): Array<ICIData> {
+    return [
       {
         title: 'Sarah Holloway',
         userId: 'N#3929',
-        status: 'PLANNED',
+        status: INTERACTION_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
 
-        date: '2023-03-21',
+        date: '2023-03-20',
         interaction: {
           label: 'INTERACTION:',
           value: 'NPS Detractor',
@@ -91,7 +141,7 @@ export class DataService {
           value: 'C+',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/mockData/images/userPhotos/profile_female1.jpg',
         interactionInfo:
           'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
         customerInfo: {
@@ -224,7 +274,7 @@ export class DataService {
       {
         title: 'Edmund Jacobson',
         userId: 'N#8629',
-        status: 'PLANNED',
+        status: INTERACTION_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
 
@@ -245,7 +295,7 @@ export class DataService {
           value: 'n/a',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/mockData/images/userPhotos/profile_male1.jpg',
         interactionInfo:
           "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
         customerInfo: {
@@ -378,7 +428,7 @@ export class DataService {
       {
         title: 'Alan Rivers',
         userId: 'N#3203',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
 
@@ -399,7 +449,7 @@ export class DataService {
           value: 'A++',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/mockData/images/userPhotos/profile_male2.jpg',
         interactionInfo:
           "Alan Rivers has completed the REP_2 program with 13 visits on 4 weeks. It's time to congratulate the member, pushing for even higher usage in the following weeks.",
         customerInfo: {
@@ -531,8 +581,8 @@ export class DataService {
 
       {
         title: 'Jana Miller',
-        userId: 'N#3203',
-        status: 'COMPLETED',
+        userId: 'N#3204',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
 
@@ -553,7 +603,7 @@ export class DataService {
           value: 'C-',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/mockData/images/userPhotos/profile_female2.jpg',
         interactionInfo:
           'Jana Miller had an increase of risk in 8pp in the last 14 days (currently at 26%). As this is generated by an algorithm, check the customer tab for deep-diving purposes',
         customerInfo: {
@@ -686,7 +736,7 @@ export class DataService {
       {
         title: 'Rupert Horton',
         userId: 'N#2390',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
         date: '2023-02-04',
@@ -706,7 +756,7 @@ export class DataService {
           value: 'B',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/mockData/images/userPhotos/profile_male3.jpg',
         interactionInfo: '',
         customerInfo: {
           customerRecord: {
@@ -838,7 +888,7 @@ export class DataService {
       {
         title: 'Abby Cannon',
         userId: 'N#7187',
-        status: 'PLANNED',
+        status: INTERACTION_STATUS.PLANNED,
         inClub: true,
         excludeAG: true,
 
@@ -859,7 +909,7 @@ export class DataService {
           value: 'n/a',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/mockData/images/userPhotos/profile_female3.jpg',
         interactionInfo: '',
         customerInfo: {
           customerRecord: {
@@ -991,7 +1041,7 @@ export class DataService {
       {
         title: 'Alice Williamson',
         userId: 'N#4812',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1144,7 +1194,7 @@ export class DataService {
       {
         title: 'Tim Shepard',
         userId: 'N#9027',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1297,7 +1347,7 @@ export class DataService {
       {
         title: 'Helena Saunders',
         userId: 'N#5653',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1450,7 +1500,7 @@ export class DataService {
       {
         title: 'Walter Wiggins',
         userId: 'N#1903',
-        status: 'COMPLETED',
+        status: INTERACTION_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
 
@@ -1599,6 +1649,16 @@ export class DataService {
           observation: '',
         },
       },
-    ];
+    ] as Array<ICIData>;
+
+    // return iciData;
+    // .sort((a: any, b: any) =>
+    // a.date < b.date ? 1 : b.date < a.date ? -1 : 0
+    // )
+    // Remove duplicates by id
+    // .filter(
+    //   (value, index, self) =>
+    //     index === self.findIndex(e => e.userId === value.userId)
+    // )
   }
 }

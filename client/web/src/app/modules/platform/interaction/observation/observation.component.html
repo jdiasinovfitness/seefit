@@ -1,7 +1,7 @@
 <div class="base-line">
-  <span style="flex-grow: 2">
+  <span *ngIf="!!observation">
     <lib-input
-      style="margin: 16px 4px; width: 100%; color: black !important"
+      class="lib-input"
       [type]="'text'"
       [value]="observation"
       [placeholder]="''"
@@ -14,7 +14,7 @@
     </lib-input>
   </span>
 
-  <span style="justify-content: flex-end; flex-grow: 1">
+  <span class="btn-group">
     <lib-button
       style="margin-right: 16px"
       [primary]="!true"

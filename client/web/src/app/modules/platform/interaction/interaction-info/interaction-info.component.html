@@ -5,10 +5,63 @@
     [innerHTML]="info?.interactionInfo | safeHtml"
   ></div>
 
+  <ng-container
+    *ngIf="
+      currentPhase === phaseEnum.success &&
+      info?.status === statusTypes.COMPLETED
+    "
+  >
+    <lib-select
+      style="margin-bottom: 16px"
+      *ngIf="typeList"
+      [id]="'type'"
+      [options]="typeList"
+      [defaultValue]="'interaction.type.default' | transloco"
+      [label]="'interaction.type.label' | transloco"
+      [disabled]="!true"
+      (stateChange)="onTypeChange($event)"
+    >
+    </lib-select>
+
+    <lib-select
+      style="margin-bottom: 16px"
+      [id]="'interaction'"
+      [options]="interactionList || []"
+      [defaultValue]="'interaction.label.default' | transloco"
+      [label]="'interaction.label.label' | transloco"
+      [disabled]="!this.selectedType"
+      (stateChange)="onInteractionChange($event)"
+    >
+    </lib-select>
+
+    <div class="details-group">
+      <lib-input
+        class="lib-input"
+        [type]="'text'"
+        [value]="details"
+        [placeholder]="'interaction.details.placeholder' | transloco"
+        [label]="'interaction.details.label' | transloco"
+        [error]="''"
+        [inputName]="'details'"
+        [disabled]="!selectedInteraction"
+        (stateChange)="onDetailsKeyup($event)"
+      >
+      </lib-input>
+      <lib-button
+        class="lib-btn"
+        [primary]="true"
+        [disabled]="!details"
+        [text]="'interaction.details.create' | transloco"
+        (stateChange)="createInteraction(true)"
+      >
+      </lib-button>
+    </div>
+  </ng-container>
+
   <app-observation
     [userId]="info.userId"
-    [displayBtn]="info.status !== 'COMPLETED'"
-    (handleClick)="onButtonClick($event)"
+    [displayBtn]="info.status !== statusTypes.COMPLETED"
+    (handleClick)="updateObservation($event)"
   >
   </app-observation>
 </div>

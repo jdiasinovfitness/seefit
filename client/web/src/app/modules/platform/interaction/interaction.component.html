@@ -11,11 +11,14 @@
       >
       </lib-search-bar>
       <lib-round-button
-        [icon]="'refresh'"
         style="margin-left: 16px"
         [disabled]="currentPhase === phaseEnum.loading"
         (stateChange)="resetData()"
-      ></lib-round-button>
+      >
+        <ng-template #btnIcon>
+          <div class="see-icon sm refresh"></div>
+        </ng-template>
+      </lib-round-button>
     </span>
     <!-- Filters -->
     <span class="filters">
@@ -65,50 +68,47 @@
       </div>
       <!-- Success Template -->
       <div *ngSwitchCase="phaseEnum.success">
-        <ng-container *ngIf="list && list.length > 0 && tabs">
-          <lib-accordion
+        <ng-container *ngIf="list && list.length > 0">
+          <lib-expansion-panel
             *ngFor="let item of list; let i = index"
-            [title]="item.title"
-            [userId]="item.userId"
-            [isOpen]="!true"
-            [date]="item.date"
-            [icons]="item.customerInfo.additionalInfo.icons"
-            [status]="item.status"
-            [interaction]="item.interaction"
-            [primary]="item.primary"
-            [secondary]="item.secondary"
-            [imageUrl]="item.imageUrl"
+            [isOpen]="false"
           >
-            <div style="margin-top: 16px">
+            <!-- Accordion Header -->
+            <ng-template #accHeader>
+              <app-ici-list-header
+                ngClass="exp-panel"
+                [data]="item"
+              ></app-ici-list-header>
+            </ng-template>
+
+            <!-- Accordion Body -->
+            <ng-template #accBody>
               <lib-tabs
                 [tabs]="tabs"
                 [activeTab]="activeTabList[i]"
                 (tabChanged)="onTabChange($event, i)"
               >
                 <div *ngIf="activeTabList[i] === '0'">
-                  <!-- Tab Customer -->
                   <app-customer-info
                     [info]="item"
                     (handleClick)="onButtonClick($event)"
                   ></app-customer-info>
                 </div>
                 <div *ngIf="activeTabList[i] === '1'">
-                  <!-- Tab Interaction -->
                   <app-interaction-info
                     [info]="item"
                     (handleClick)="onButtonClick($event)"
                   ></app-interaction-info>
                 </div>
                 <div *ngIf="activeTabList[i] === '2'">
-                  <!-- Tab History -->
                   <app-history
                     [info]="item"
                     (handleClick)="onButtonClick($event)"
                   ></app-history>
                 </div>
               </lib-tabs>
-            </div>
-          </lib-accordion>
+            </ng-template>
+          </lib-expansion-panel>
         </ng-container>
       </div>
     </ng-container>
