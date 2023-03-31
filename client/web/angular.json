@@ -8,6 +8,10 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        },
+        "@ionic/angular-toolkit:page": {
+          "styleext": "scss",
+          "standalone": true
         }
       },
       "root": "",
@@ -75,6 +79,9 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "ci": {
+              "progress": false
             }
           },
           "defaultConfiguration": "production"
@@ -87,6 +94,9 @@
             },
             "development": {
               "browserTarget": "seefit:build:development"
+            },
+            "ci": {
+              "progress": false
             }
           },
           "defaultConfiguration": "development"

@@ -9,6 +9,8 @@
         "*.ts"
       ],
       "parserOptions": {
+        "tsconfigRootDir": "client/web",
+        "sourceType": "module",
         "project": [
           "tsconfig.json"
         ],
