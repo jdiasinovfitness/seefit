@@ -1,0 +1,56 @@
+<div class="c-info-wrapper"
+     *ngIf="info?.customerInfo as data">
+  <div class="split-line">
+    <div class="info-col"
+         *ngIf="data?.customerRecord as cRecord">
+      <h4>{{ cRecord.title | translate }}</h4>
+      <span class="line"
+            *ngFor="let record of cRecord?.content">
+        <label class="line-key">{{ record.key | translate }}</label>
+        <label class="line-value">{{ record?.value || '' }}</label>
+      </span>
+    </div>
+
+    <div class="info-col"
+         *ngIf="data?.contractType as conType">
+      <h4>{{ conType.title | translate }}</h4>
+      <span class="line"
+            *ngFor="let contract of conType?.content">
+        <label class="line-key">{{ contract.key | translate }}</label>
+        <label class="line-value">{{ contract?.value || '' }}</label>
+      </span>
+    </div>
+  </div>
+
+  <div class="hole-line">
+    <div class="see-icon md"
+         *ngFor="let icon of data?.additionalInfo?.icons"
+         [ngClass]="[icon]"></div>
+  </div>
+
+  <div class="hole-line">
+    <div class="info-col"
+         *ngIf="data?.additionalInfo as addInfo">
+      <h4>{{ addInfo.title | translate }}</h4>
+      <span class="line"
+            *ngIf="addInfo?.lifeCycle as aInfo">
+        <label class="line-key">{{ aInfo.key | translate }}</label>
+      </span>
+    </div>
+  </div>
+
+  <div class="hole-line"
+       *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle">
+    <div style="width: 100%">
+      <lib-progress-bar [progress]="lifeCycle.progress"
+                        [topLabels]="lifeCycle.topLabels"
+                        [bottomLabels]="lifeCycle.bottomLabels">
+      </lib-progress-bar>
+    </div>
+  </div>
+
+  <app-observation [userId]="info.userId"
+                   [displayBtn]="info.status !== statusTypes.COMPLETED"
+                   (handleClick)="onButtonClick($event)">
+  </app-observation>
+</div>

@@ -1,0 +1,30 @@
+@import "../../../../../global.scss";
+
+.base-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  span {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 2;
+
+    .lib-input {
+      border-radius: 0px;
+      margin: 16px 4px;
+      width: 100%;
+      color: black !important;
+    }
+  }
+
+  .btn-group {
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+}
+
+input {
+  border-radius: 0px !important;
+}
