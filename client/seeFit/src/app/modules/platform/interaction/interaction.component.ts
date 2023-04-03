@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
 import { ICIData } from 'src/app/core/interfaces/icidata.model';
@@ -29,11 +30,16 @@ export class InteractionComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.init();
+  }
+
+  asLink() {
+    this.router.navigate(['auth/login']);
   }
 
   async init() {
