@@ -5,6 +5,7 @@ import { authInfo } from 'src/app/core/interfaces/info-user.model';
 import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
 import { Buffer } from 'buffer';
+import { Router } from '@angular/router';
 
 export class UserEntity {
   private id: string | undefined;
@@ -38,7 +39,8 @@ export class AuthService {
   constructor(
     @Inject(GlobalStorage) private appStorage: Storage,
     private http: HttpClient,
-    private config: ConfigService
+    private config: ConfigService,
+    private router: Router
   ) {
     this.authToken = this.initialData[0];
   }
@@ -91,7 +93,7 @@ export class AuthService {
   logOut() {
     this.token = '';
     this.appStorage.clear();
-    //TODO: mi2ssing route navigation ( here or the caller component)
+    this.router.navigate(['/auth/login']);
   }
   private getStorageItem(key: string): any {
     return this.appStorage.getItem(key);
