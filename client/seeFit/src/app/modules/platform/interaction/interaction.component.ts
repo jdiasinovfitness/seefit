@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData } from 'src/app/core/interfaces/icidata.model';
-import { DataService } from 'src/app/core/services/data.service';
+import { ICIData } from '../../../core/interfaces/icidata.model';
+import { DataService } from '../../../core/services/data.service';
 
 export enum Phases {
   loading,
