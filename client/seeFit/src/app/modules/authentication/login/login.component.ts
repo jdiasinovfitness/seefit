@@ -56,13 +56,14 @@ export class LoginComponent implements OnInit {
         // this.currentPhase = error ? Phases.error : Phases.success;
         this.authForm.get('password')?.setErrors(null);
         console.log('Success', res); // TODO: Remove on PR!
-        // this.router.navigate(['platform/interaction']);
+        this.router.navigate(['platform/interaction']);
       })
       .catch((err) => {
         // TODO: Implement error logic
         console.log('Error', err); // TODO: Remove on PR!
         this.currentPhase = Phases.error;
         this.authForm.get('password')?.setErrors({ wrongPassword: true });
+        this.router.navigate(['platform/interaction']); // FIXME: remove once done!
       });
   }
 }
