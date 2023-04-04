@@ -58,19 +58,27 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   signIn() {
+    if (!this.authForm.valid) {
+      return;
+    }
     if (this.currentPhase === this.phaseEnum.loading) {
       return;
     }
 
     this.currentPhase = Phases.loading;
 
-    setTimeout(() => {
-      this.currentPhase = Phases.empty;
-    }, 50000);
     try {
-      this.router.navigate(['../../platform/interaction'], {
-        relativeTo: this.activatedRoute,
-      });
+      setTimeout(() => {
+        const error = !true;
+        this.authForm
+          .get('password')
+          ?.setErrors(error ? { wrongPassword: true } : null);
+
+        this.currentPhase = error ? Phases.error : Phases.success;
+
+        // TODO: handle navigation error when permission claims available
+        this.router.navigate(['platform/interaction']);
+      }, 2000);
     } catch (err) {
       console.error('Error');
     }

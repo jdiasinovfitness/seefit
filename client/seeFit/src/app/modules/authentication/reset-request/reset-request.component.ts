@@ -38,19 +38,20 @@ export class ResetRequestComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn() {
+    if (!this.authForm.valid) {
+      return;
+    }
     if (this.currentPhase === this.phaseEnum.loading) {
       return;
     }
 
     this.currentPhase = Phases.loading;
 
-    setTimeout(() => {
-      this.currentPhase = Phases.empty;
-    }, 50000);
     try {
-      this.router.navigate(['../../platform/interaction'], {
-        relativeTo: this.activatedRoute,
-      });
+      setTimeout(() => {
+        this.currentPhase = Phases.empty;
+        this.router.navigate(['platform/interaction']);
+      }, 2000);
     } catch (err) {
       console.error('Error');
     }

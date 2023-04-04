@@ -41,7 +41,9 @@
 
 
         <div class="btn-row">
-          <ion-button fill="clear">
+          <ion-button fill="clear"
+                      [routerLink]="['/auth/login']"
+                      routerDirection="back">
             {{ 'auth.reset-request.login-link' | translate }}
           </ion-button>
           <ng-container [ngSwitch]="currentPhase">
