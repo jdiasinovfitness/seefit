@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-platform',
@@ -6,13 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./platform.component.scss'],
 })
 export class PlatformComponent implements OnInit {
-  public appPages = [
+  profilePhoto = 'https://ionicframework.com/docs/img/demos/avatar.svg';
+  userName = 'John Doe';
+
+  public menuItems = [
     //TODO: refactor menu options get from service
+    { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
     { title: 'Logout', url: '/auth/login', icon: 'log-out' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  constructor(private menu: MenuController, private authService: AuthService) {}
 
   ngOnInit(): void {}
+
+  toggleMenu() {
+    this.menu.open();
+  }
+
+  logOut() {
+    this.authService.logOut();
+  }
 }

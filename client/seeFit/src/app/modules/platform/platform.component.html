@@ -1,40 +1,77 @@
-<ion-split-pane contentId="main-content">
-  <ion-menu contentId="main-content"
-            type="overlay">
-    <ion-content>
-      <ion-list id="inbox-list">
-        <ion-list-header>MUDOU 22</ion-list-header>
-        <ion-note>hi@ionicframework.com</ion-note>
+<!-- SideBar Closed -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only"
+                    name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
 
-        <ion-menu-toggle auto-hide="false"
-                         *ngFor="let p of appPages; let i = index">
-          <ion-item routerDirection="root"
-                    [routerLink]="[p.url]"
-                    lines="none"
-                    detail="false"
-                    routerLinkActive="selected">
-            <ion-icon aria-hidden="true"
-                      slot="start"
-                      [ios]="p.icon + '-outline'"
-                      [md]="p.icon + '-sharp'"></ion-icon>
-            <ion-label>{{ p.title }}</ion-label>
-          </ion-item>
+    <div class="logo"
+         id="inov-fitness-logo"></div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- SideBar Opened -->
+<ion-menu contentId="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-button>
+            <ion-icon slot="icon-only"
+                      name="close"></ion-icon>
+          </ion-button>
         </ion-menu-toggle>
-      </ion-list>
+      </ion-buttons>
 
-      <ion-list id="labels-list">
-        <ion-list-header>Labels</ion-list-header>
+      <div class="logo"
+           id="inov-fitness-logo"></div>
+    </ion-toolbar>
+  </ion-header>
 
-        <ion-item *ngFor="let label of labels"
-                  lines="none">
-          <ion-icon aria-hidden="true"
-                    slot="start"
-                    ios="bookmark-outline"
-                    md="bookmark-sharp"></ion-icon>
-          <ion-label>{{ label }}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
+  <!-- User Section -->
+  <ion-avatar class="menu-avatar">
+    <img alt="Silhouette of a person's head"
+         [src]="profilePhoto" />
+  </ion-avatar>
+  <div class="avatar-name">
+    <ion-label>{{userName}}</ion-label>
+  </div>
+
+  <!-- Menu Section -->
+  <ion-content>
+    <ion-menu-toggle>
+      <ion-item button
+                *ngFor="let item of menuItems"
+                [routerLink]="[item?.url]"
+                routerLinkActive="router-link-active">
+        <ion-icon slot="start"
+                  [name]='item?.icon'></ion-icon>
+        <ion-label slot="start">{{item?.title}}</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-content>
+
+  <!-- Footer Section -->
+  <ion-item button
+            (click)="logOut()">
+    <ion-icon slot="end"
+              name='power'></ion-icon>
+    <ion-label slot="end">Logout</ion-label>
+  </ion-item>
+
+</ion-menu>
+
+<!-- Page section -->
+<div class="ion-page"
+     id="mainContent"
+     main>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
   <ion-router-outlet id="main-content"></ion-router-outlet>
-</ion-split-pane>
+</div>
