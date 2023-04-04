@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { AuthService } from '../../../core/services/auth.service';
+import { environment } from '../../../../environments/environment';
+import { Router } from '@angular/router';
 
 export enum Phases {
   loading,
@@ -24,7 +25,11 @@ export class LoginComponent implements OnInit {
   production = environment.production;
   hide = false;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
     this.authForm = this.formBuilder.group({
       email: ['admin@inovfitness.com', [Validators.required, Validators.email]],
       password: ['admin', [Validators.required]],
@@ -34,22 +39,30 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn() {
+    if (!this.authForm.valid) {
+      return;
+    }
     if (this.currentPhase === this.phaseEnum.loading) {
       return;
     }
 
     this.currentPhase = Phases.loading;
-
-    setTimeout(() => {
-      const error = !true;
-      this.authForm
-        .get('password')
-        ?.setErrors(error ? { wrongPassword: true } : null);
-
-      this.currentPhase = error ? Phases.error : Phases.success;
-
-      // TODO: handle navigation error when permission claims available
-      this.router.navigate(['platform/interaction']);
-    }, 2000);
+    console.log('this.authForm?.value)', this.authForm?.value); // TODO: Remove on PR!
+    this.authService
+      .login(this.authForm?.value)
+      .then((res) => {
+        // TODO: Implement success logic
+        // res.
+        // this.currentPhase = error ? Phases.error : Phases.success;
+        this.authForm.get('password')?.setErrors(null);
+        console.log('Success', res); // TODO: Remove on PR!
+        // this.router.navigate(['platform/interaction']);
+      })
+      .catch((err) => {
+        // TODO: Implement error logic
+        console.log('Error', err); // TODO: Remove on PR!
+        this.currentPhase = Phases.error;
+        this.authForm.get('password')?.setErrors({ wrongPassword: true });
+      });
   }
 }

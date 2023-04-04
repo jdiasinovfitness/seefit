@@ -4,6 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import { authInfo } from 'src/app/core/interfaces/info-user.model';
 import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
+import { Buffer } from 'buffer';
 
 export class UserEntity {
   private id: string | undefined;
@@ -65,6 +66,7 @@ export class AuthService {
     const authString = Buffer.from(
       `${formValue.email}:${formValue.password}`
     ).toString('base64');
+
     const headers = {
       headers: new HttpHeaders().append('authorization', `Basic ${authString}`),
       params: {
