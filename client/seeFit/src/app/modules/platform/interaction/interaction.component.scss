@@ -1,98 +1,33 @@
 @import "../../../../global.scss";
 
-.interaction-wrapper {
+.filter-bar {
   display: flex;
-  flex-direction: column;
-
-  height: 100%; // Needed for table scroll
-
-  .header-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    padding: 16px;
-
-    .search-wrp {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 40%;
-    }
-
-    .filters {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 50%;
-
-      min-height: 44px;
-
-      .switch-wrp {
-        display: flex;
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-        align-items: center;
-
-        margin-left: 8px;
-
-        white-space: nowrap;
-
-        font-size: 14px;
-        font-weight: 600;
-
-        label {
-          line-break: strict;
-        }
-
-        :first-child {
-          margin-right: 8px;
-        }
-      }
-    }
-  }
-
-  .table-row {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-
-    padding: 16px;
-    overflow-y: auto;
-  }
-
-  .footer-row {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    height: 64px;
-    padding: 16px;
-
-    div {
-      display: flex;
-      align-items: center;
-
-      font-size: 14px;
-
-      &:first-child {
-        margin-right: 8px;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.tbl-center {
-  justify-content: center !important;
   align-items: center;
+
+  margin-top: 20px;
+  margin-right: 8px;
+
+  ion-searchbar {}
+
+  ion-button {
+    min-height: 36px;
+
+    // width: 170px;
+  }
+
 }
 
-.exp-panel {
-  width: 100%;
+ion-content {
+  // padding-top: 144px;
+
+  .filter-bar {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+
+}
+
+ion-footer {
+  padding-bottom: 20px;
 }

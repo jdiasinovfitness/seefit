@@ -1,15 +1,49 @@
-<div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <h1>
-    Platform
-  </h1>
-  <ion-button expand="block"
-              (click)="asLink()">
-    Back to Login
+<!-- Page Header -->
+<ion-header>
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+
+<div class="filter-bar">
+  <!-- Search -->
+  <ion-searchbar [debounce]="500"
+                 (ionChange)="handleSearch($event)"
+                 [value]="searchValue"></ion-searchbar>
+  <!-- Filter -->
+  <ion-button shape="round"
+              color="light"
+              size="small"
+              id="filter-trigger">
+    <ion-icon slot="icon-only"
+              name="refresh"></ion-icon>
   </ion-button>
+  <ion-popover trigger="filter-trigger"
+               triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding">Hello World!</ion-content>
+    </ng-template>
+  </ion-popover>
 </div>
+
+<!-- Page Content -->
+<ion-content>
+  <!-- List -->
+  <ion-accordion-group>
+    <ion-accordion [value]="i"
+                   *ngFor="let item of list; let i = index">
+      <ion-item slot="header"
+                color="light">
+        <ion-label>{{item?.title}}</ion-label>
+      </ion-item>
+      <div class="ion-padding"
+           slot="content">Second Content</div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+
+<!-- Page Footer -->
+<ion-footer>
+  <ion-chip>
+    Some Footer
+  </ion-chip>
+</ion-footer>

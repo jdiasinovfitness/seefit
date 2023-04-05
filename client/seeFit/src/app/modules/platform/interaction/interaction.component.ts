@@ -28,6 +28,29 @@ export class InteractionComponent implements OnInit {
 
   filterList!: Array<any>;
 
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
   constructor(
     private dataService: DataService,
     private translateService: TranslateService,
@@ -36,6 +59,7 @@ export class InteractionComponent implements OnInit {
 
   ngOnInit(): void {
     this.init();
+    this.list[0]?.title;
   }
 
   asLink() {
@@ -133,8 +157,9 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
-  handleSearch(newVal: string) {
-    this.searchValue = newVal;
+  handleSearch(newVal: any) {
+    console.log('MMMM', newVal?.target?.value); // TODO: Remove on PR!
+    this.searchValue = newVal?.target?.value;
     this.loadData();
   }
 
