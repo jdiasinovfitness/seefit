@@ -13,9 +13,9 @@ export class PlatformComponent implements OnInit {
 
   public menuItems = [
     //TODO: refactor menu options get from service
-    { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Logout', url: '/auth/login', icon: 'log-out' },
+    { title: 'Interaction', url: '/platform/interaction', icon: 'home' },
+    { title: 'Notifications', url: '/platform/', icon: 'notifications' },
+    { title: 'Profile', url: '/user/profile', icon: 'settings' },
   ];
 
   constructor(private menu: MenuController, private authService: AuthService) {}

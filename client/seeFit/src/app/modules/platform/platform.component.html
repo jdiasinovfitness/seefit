@@ -45,14 +45,16 @@
   <!-- Menu Section -->
   <ion-content>
     <ion-menu-toggle>
-      <ion-item button
-                *ngFor="let item of menuItems"
-                [routerLink]="[item?.url]"
-                routerLinkActive="router-link-active">
-        <ion-icon slot="start"
-                  [name]='item?.icon'></ion-icon>
-        <ion-label slot="start">{{item?.title}}</ion-label>
-      </ion-item>
+      <ion-list lines="none">
+        <ion-item button
+                  *ngFor="let item of menuItems"
+                  [routerLink]="[item?.url]"
+                  routerLinkActive="router-link-active">
+          <ion-icon slot="start"
+                    [name]='item?.icon'></ion-icon>
+          <ion-label slot="start">{{item?.title}}</ion-label>
+        </ion-item>
+      </ion-list>
     </ion-menu-toggle>
   </ion-content>
 
@@ -72,8 +74,5 @@
 <div class="ion-page"
      id="mainContent"
      main>
-  <ion-buttons slot="start">
-    <ion-menu-button></ion-menu-button>
-  </ion-buttons>
   <ion-router-outlet id="main-content"></ion-router-outlet>
 </div>
