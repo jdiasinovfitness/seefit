@@ -6,14 +6,18 @@
   align-items: center;
   justify-content: space-evenly;
 
+  padding-top: 40px;
+
   .left-section {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .pic {
       max-width: 40vw;
     }
   }
+
   .right-section {
     display: flex;
     flex-direction: column;
@@ -50,6 +54,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     .left-section {
       .pic {
         max-width: 70vw;

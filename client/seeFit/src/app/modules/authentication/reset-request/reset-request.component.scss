@@ -6,11 +6,14 @@
   align-items: center;
   justify-content: space-evenly;
 
+  padding-top: 40px;
+
   .left-section {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .right-section {
     display: flex;
     flex-direction: column;
