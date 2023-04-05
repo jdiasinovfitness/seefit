@@ -8,20 +8,21 @@
 .menu-avatar {
   align-self: center;
 
+  width: 40%;
+  height: auto;
+
   margin-top: 32px;
 
-  // ion-avatar {
-  //   width: 30%;
-  //   height: auto;
-  // }
   img {
     border: solid 1px $primary;
-    margin-bottom: 8px;
   }
+
   ion-label {
+    margin-top: 8px;
     width: auto;
   }
 }
+
 .avatar-name {
   // width: 100%;
   margin-top: 8px;
@@ -48,4 +49,9 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+// TODO: Add/Remove as needed if margin does (not) appear on iOS device
+ion-footer {
+  margin-bottom: 20px;
 }
