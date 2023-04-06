@@ -32,6 +32,14 @@ ion-content {
             display: flex;
             justify-content: center;
             flex-direction: column;
+
+            ion-icon {
+              margin-bottom: 4px;
+            }
+
+            :last-child {
+              margin-bottom: 0px;
+            }
           }
 
           ion-avatar {
@@ -78,6 +86,15 @@ ion-footer {
       display: flex;
       justify-content: center;
       flex-direction: row !important;
+
+      ion-icon {
+        margin-right: 4px;
+
+      }
+
+      :last-child {
+        margin-right: 0px;
+      }
     }
 
     ion-avatar {
