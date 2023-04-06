@@ -3,26 +3,53 @@
   <ion-toolbar></ion-toolbar>
 </ion-header>
 
+<!-- <ion-content [fullscreen]="true"> -->
 
 <div class="filter-bar">
+
+  <!-- TODO: Group all in one action Sheet for small devices -->
+
   <!-- Search -->
   <ion-searchbar [debounce]="500"
                  (ionChange)="handleSearch($event)"
                  [value]="searchValue"></ion-searchbar>
+
+  <!-- Refresh -->
+  <!-- <ion-button shape="round"
+        color="light"
+        size="small"
+        (click)="onSort($event)"
+        id="sort-trigger">
+        <ion-icon slot="icon-only"
+        name="refresh"></ion-icon>
+      </ion-button> -->
+
+  <!-- Sort -->
+  <!-- <ion-button shape="round"
+        color="light"
+        size="small"
+        (click)="onSort($event)"
+        id="sort-trigger">
+        <ion-icon slot="icon-only"
+        name="refresh"></ion-icon>
+      </ion-button> -->
+
   <!-- Filter -->
   <ion-button shape="round"
               color="light"
               size="small"
               id="filter-trigger">
     <ion-icon slot="icon-only"
-              name="refresh"></ion-icon>
+              name="funnel"></ion-icon>
   </ion-button>
+
   <ion-popover trigger="filter-trigger"
                triggerAction="click">
     <ng-template>
-      <ion-content class="ion-padding">Hello World!</ion-content>
+      <ion-content class="ion-padding">Insert Filters Here</ion-content>
     </ng-template>
   </ion-popover>
+
 </div>
 
 <!-- Page Content -->
@@ -33,16 +60,99 @@
                    *ngFor="let item of list; let i = index">
       <ion-item slot="header"
                 color="light">
-        <ion-label>{{item?.title}}</ion-label>
+
+        <div class="icon-avatar">
+
+          <div class="col-icons">
+            <ion-icon slot="icon-only"
+                      *ngFor="let icon of item?.customerInfo?.additionalInfo?.icons | slice:0:3"
+                      [name]="icon"
+                      color="medium">
+            </ion-icon>
+          </div>
+
+          <!-- Avatar -->
+          <ion-avatar>
+            <img alt="Silhouette of a person's head"
+                 [src]="item?.imageUrl" />
+          </ion-avatar>
+
+        </div>
+
+        <div class="col-wrapper">
+
+          <!-- Left Column -->
+          <div class="column">
+            <!-- Title -->
+            <ion-label>
+              <ion-text color="primary">
+                <b>{{item?.title}}</b>
+              </ion-text>
+            </ion-label>
+            <!-- Risk -->
+            <ion-label>
+              <ion-text color="medium">
+                {{item?.primary?.label}}
+              </ion-text>
+              <ion-text color="secondary">
+                {{item?.primary?.value}}
+              </ion-text>
+            </ion-label>
+            <!-- Usage -->
+            <ion-label>
+              <ion-text color="medium">
+                {{item?.secondary?.label}}
+              </ion-text>
+              <ion-text color="secondary">
+                {{item?.secondary?.value}}
+              </ion-text>
+            </ion-label>
+          </div>
+
+          <!-- Right Column -->
+          <div class="column right"
+               slot="end">
+            <!-- Interaction Type -->
+            <ion-label class="right">
+              <ion-text color="secondary">
+                {{item?.interaction?.value}}
+              </ion-text>
+            </ion-label>
+            <!-- Date -->
+            <ion-label class="right">
+              <ion-text color="medium">
+                {{item?.date}}
+              </ion-text>
+            </ion-label>
+            <!-- Status -->
+            <div class="right">
+              <ion-chip color="medium">
+                <ion-text color="primary"
+                          style="font-size: smaller;">
+                  {{item?.status}}
+                </ion-text>
+              </ion-chip>
+            </div>
+
+
+          </div>
+        </div>
+
       </ion-item>
+
+
+      <!-- Expanded Content -->
       <div class="ion-padding"
-           slot="content">Second Content</div>
+           slot="content">
+        Expanded content here
+      </div>
+
     </ion-accordion>
   </ion-accordion-group>
 </ion-content>
 
 <!-- Page Footer -->
-<ion-footer>
+<ion-footer color="transparent">
   <ion-chip>
     Some Footer
   </ion-chip>

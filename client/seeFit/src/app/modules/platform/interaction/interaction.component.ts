@@ -117,10 +117,15 @@ export class InteractionComponent implements OnInit {
   resetData() {
     this.dataService.resetData();
     this.init();
+    // this.list[0].
   }
 
   onTabChange(tab: string, index: number) {
     this.activeTabList[index] = tab;
+  }
+
+  onSort(event: any) {
+    console.log('event', event); // TODO: Remove on PR!
   }
 
   loadData() {
@@ -134,6 +139,8 @@ export class InteractionComponent implements OnInit {
       .getICIData(filter)
       .then((res) => {
         this.list = res?.length > 0 ? res : [];
+        console.log('thi', this.list[0]); // TODO: Remove on PR!
+
         this.activeTabList = Array.from(
           { length: this.list.length },
           () => '0'
@@ -158,7 +165,6 @@ export class InteractionComponent implements OnInit {
   }
 
   handleSearch(newVal: any) {
-    console.log('MMMM', newVal?.target?.value); // TODO: Remove on PR!
     this.searchValue = newVal?.target?.value;
     this.loadData();
   }
