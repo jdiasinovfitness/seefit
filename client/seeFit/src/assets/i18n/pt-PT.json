@@ -60,5 +60,48 @@
         }
       }
     }
+  },
+  "interaction": {
+    "tabs": {
+      "customer": "Cliente",
+      "interaction": "Interação",
+      "history": "Histórico"
+    },
+    "filters": {
+      "in-club": "Em Clube",
+      "exclude-ag": "Em AG",
+      "expired": "Planeado"
+    },
+    "empty": {
+      "empty-title": "Nenhum <b>Cliente</b> Encontrado",
+      "empty-footer": "Considera usar <b>outras</b> opções de filtro</div>",
+      "empty-search-title": "Sem resultados para: <b>{{query}}</b>",
+      "empty-search-footer": "Considera outro critério de <b>pesquisa</b>"
+    },
+    "error": {
+      "error-title": "Incapaz de completar o pedido",
+      "error-footer": "Verifique a conexão com a Internet e tente novamente mais tarde"
+    },
+    "footer": "cliente(s) encontrados",
+    "data": {
+      "birth-date": "DATA NASCIMENTO (IDADE):",
+      "objective": "OBJECTIVO:",
+      "access": "VISITAS (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
+      "ag": "AULAS DE GRUPO (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
+      "shareAG": "% DE AG:",
+      "last-af": "ÚLTIMA AVALIAÇÃO (EM DIAS):",
+      "visit-length": "MÉDIA DE PERMANÊNCIA:",
+      "membership": "DATA DE ADESÃO (EM MESES):",
+      "subscription-type": "PREÇO DO PLANO:",
+      "schedule": "HORÁRIO:",
+      "observation": "Comentários",
+      "btn-discard": "Eliminar",
+      "btn-submit": "Concluir",
+      "customer-info": "INFO DE CLIENTE:",
+      "contract-info": "INFO DE CONTRACTO:",
+      "additional-services": "SERVIÇOS ADICIONAIS:",
+      "additional-info": "INFORMAÇÃO ADICIONAL:",
+      "lifecycle": "CICLO DE VIDA:"
+    }
   }
 }
