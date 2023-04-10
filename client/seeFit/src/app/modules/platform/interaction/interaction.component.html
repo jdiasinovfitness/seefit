@@ -3,26 +3,12 @@
   <ion-toolbar></ion-toolbar>
 </ion-header>
 
-<!-- <ion-content [fullscreen]="true"> -->
-
 <div class="filter-bar">
-
   <!-- TODO: Group all in one action Sheet for small devices -->
-
   <!-- Search -->
   <ion-searchbar [debounce]="500"
                  (ionChange)="handleSearch($event)"
                  [value]="searchValue"></ion-searchbar>
-
-  <!-- Refresh -->
-  <!-- <ion-button shape="round"
-        color="light"
-        size="small"
-        (click)="onSort($event)"
-        id="sort-trigger">
-        <ion-icon slot="icon-only"
-        name="refresh"></ion-icon>
-      </ion-button> -->
 
   <!-- Sort -->
   <!-- <ion-button shape="round"
@@ -54,10 +40,20 @@
 
 <!-- Page Content -->
 <ion-content>
+  <!-- Refresher -->
+  <ion-refresher slot="fixed"
+                 (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
   <!-- List -->
   <ion-accordion-group>
     <ion-accordion [value]="i"
                    *ngFor="let item of list; let i = index">
+
+      <!-- TODO: refactor the ion-item to ici-list-header -->
+      <!-- <app-ici-list-header item></app-ici-list-header> -->
       <ion-item slot="header"
                 color="light">
 
@@ -134,7 +130,6 @@
               </ion-chip>
             </div>
 
-
           </div>
         </div>
 
@@ -142,14 +137,39 @@
 
 
       <!-- Expanded Content -->
-      <div class="ion-padding"
+      <div class="expanded-content"
            slot="content">
-        Expanded content here
+
+        <!-- Tab List -->
+        <ion-segment [value]="activeTabList[i]"
+                     (ionChange)="onTabChange($event, i)"
+                     mode="md">
+          <ion-segment-button *ngFor="let tab of tabs; let i = index"
+                              [value]="tab.id">
+            <ion-label>{{tab.title}}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <!-- Tab Content -->
+        <div *ngIf="activeTabList[i] === '0'">
+          <app-customer-info [info]="item"
+                             (handleClick)="onButtonClick($event)"></app-customer-info>
+        </div>
+        <div *ngIf="activeTabList[i] === '1'">
+          <app-interaction-info [info]="item"
+                                (handleClick)="onButtonClick($event)"></app-interaction-info>
+        </div>
+        <div *ngIf="activeTabList[i] === '2'">
+          <app-history [info]="item"
+                       (handleClick)="onButtonClick($event)"></app-history>
+        </div>
+
       </div>
 
     </ion-accordion>
   </ion-accordion-group>
 </ion-content>
+
 
 <!-- Page Footer -->
 <ion-footer color="transparent">

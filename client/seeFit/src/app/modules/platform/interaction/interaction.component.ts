@@ -120,38 +120,47 @@ export class InteractionComponent implements OnInit {
     // this.list[0].
   }
 
-  onTabChange(tab: string, index: number) {
-    this.activeTabList[index] = tab;
+  async handleRefresh(event: any) {
+    await this.loadData();
+    event.target.complete();
+  }
+
+  onTabChange(event: any, index: number) {
+    this.activeTabList[index] = event?.target?.value;
   }
 
   onSort(event: any) {
     console.log('event', event); // TODO: Remove on PR!
   }
 
-  loadData() {
-    const filter = {
-      search: this.searchValue,
-    } as any;
-    this.filterList.forEach((f: any) => (filter[f.id] = f.checked));
+  async loadData() {
+    return new Promise((resolve, reject) => {
+      const filter = {
+        search: this.searchValue,
+      } as any;
+      this.filterList.forEach((f: any) => (filter[f.id] = f.checked));
 
-    this.currentPhase = Phases.loading;
-    this.dataService
-      .getICIData(filter)
-      .then((res) => {
-        this.list = res?.length > 0 ? res : [];
-        console.log('thi', this.list[0]); // TODO: Remove on PR!
+      this.currentPhase = Phases.loading;
+      this.dataService
+        .getICIData(filter)
+        .then((res) => {
+          this.list = res?.length > 0 ? res : [];
+          console.log('thi', this.list[0]); // TODO: Remove on PR!
 
-        this.activeTabList = Array.from(
-          { length: this.list.length },
-          () => '0'
-        );
-        this.currentPhase =
-          this.list?.length === 0 ? Phases.empty : Phases.success;
-      })
-      .catch((err) => {
-        console.error(err);
-        this.currentPhase = Phases.error;
-      });
+          this.activeTabList = Array.from(
+            { length: this.list.length },
+            () => '0'
+          );
+          this.currentPhase =
+            this.list?.length === 0 ? Phases.empty : Phases.success;
+          resolve(res);
+        })
+        .catch((err) => {
+          console.error(err);
+          this.currentPhase = Phases.error;
+          reject(err);
+        });
+    });
   }
 
   onButtonClick(event: any) {

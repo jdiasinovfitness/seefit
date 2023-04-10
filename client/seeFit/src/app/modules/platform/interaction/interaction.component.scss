@@ -23,7 +23,6 @@ ion-content {
       flex-direction: column;
 
       ion-item {
-
         .icon-avatar {
           display: flex;
           flex-direction: row;
@@ -67,6 +66,12 @@ ion-content {
             align-self: flex-start;
           }
         }
+      }
+
+      .expanded-content {
+        display: flex;
+        flex-direction: column;
+
       }
     }
   }
