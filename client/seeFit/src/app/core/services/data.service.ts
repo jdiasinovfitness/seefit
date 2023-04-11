@@ -211,7 +211,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -503,7 +503,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -657,7 +657,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -809,7 +809,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -1115,7 +1115,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -1268,7 +1268,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -1421,7 +1421,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',
@@ -1574,7 +1574,7 @@ export class DataService {
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 75,
+              progress: 0.75,
               topLabels: [
                 {
                   label: '0',

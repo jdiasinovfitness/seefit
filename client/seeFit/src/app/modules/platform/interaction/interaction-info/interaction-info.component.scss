@@ -7,8 +7,9 @@
   .inner-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 12px 4px;
+    padding: 12px 8px;
   }
+
   .details-group {
     display: flex;
     justify-content: flex-end;
@@ -22,6 +23,7 @@
       width: 100%;
       color: black !important;
     }
+
     .lib-btn {
       margin: 8px 0px 0px 8px;
     }
