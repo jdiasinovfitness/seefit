@@ -30,13 +30,15 @@ export class ObservationComponent implements OnInit {
     this.observation = obs;
   }
 
-  onKeyUp(event: string) {
+  onKeyUp(event: any) {
     if (!this.displayBtn) {
       return;
     }
+    const val: string = event.detail.value;
+
     // Persisting observation in localStorage for demo only
-    this.dataService.updateObservation(event, this.userId);
-    localStorage.setItem(this.userId, event);
+    this.dataService.updateObservation(val, this.userId);
+    localStorage.setItem(this.userId, val);
   }
 
   onButtonClick(isSubmit: boolean) {

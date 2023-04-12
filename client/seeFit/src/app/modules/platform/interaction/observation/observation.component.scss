@@ -8,8 +8,16 @@
 
   span {
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
     flex-grow: 2;
+
+    min-height: 68px;
+    margin-bottom: 12px;
+
+    ion-item {
+      flex-grow: 1;
+    }
 
     .lib-input {
       border-radius: 0px;
@@ -22,9 +30,20 @@
   .btn-group {
     justify-content: flex-end;
     flex-grow: 1;
+
+    margin-bottom: 12px;
+
+    :first-child {
+      margin-right: 12px;
+    }
   }
+
 }
 
-input {
-  border-radius: 0px !important;
+// input {
+//   border-radius: 0px !important;
+// }
+
+ion-input.custom {
+  --padding-start: 0px !important;
 }
