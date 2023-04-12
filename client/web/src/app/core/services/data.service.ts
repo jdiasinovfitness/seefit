@@ -416,7 +416,7 @@ export class DataService {
 
         date: '2023-04-02',
         interaction: {
-          label: 'INTERACTION:',
+          label: 'LAST INTERACTION:',
           value: 'First Week - +3 visits',
           color: '#000000',
           isBold: true,
@@ -837,10 +837,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Sleeper User',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -1262,10 +1262,10 @@ export class DataService {
         excludeAG: false,
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Medium Churn Risk',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -1415,10 +1415,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Churn Risk Increase',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -1691,10 +1691,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Low Motivation',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -2141,7 +2141,7 @@ export class DataService {
         excludeAG: false,
         date: '2023-04-05',
         interaction: {
-          label: 'INTERACTION:',
+          label: 'LAST INTERACTION:',
           value: 'Monthly Challenge',
           color: '#000000',
           isBold: true,
@@ -2286,10 +2286,10 @@ export class DataService {
         excludeAG: false,
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Usage Very Active -> Active',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -2559,10 +2559,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Cycle 75% Under',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -2712,10 +2712,10 @@ export class DataService {
 
         date: '2023-02-28',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'NPS Promoter',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -2865,10 +2865,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Cycle Completed',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -3429,7 +3429,7 @@ export class DataService {
 
         date: '2023-04-02',
         interaction: {
-          label: 'INTERACTION:',
+          label: 'LAST INTERACTION:',
           value: 'First Week - +3 visits',
           color: '#000000',
           isBold: true,
@@ -3850,10 +3850,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Sleeper User',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -4307,10 +4307,10 @@ export class DataService {
         excludeAG: false,
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Medium Churn Risk',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -4460,10 +4460,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Churn Risk Increase',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -4736,10 +4736,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Low Motivation',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -4891,7 +4891,7 @@ export class DataService {
           label: 'LAST INTERACTION:',
           value: 'Planned Next Visit',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -5185,7 +5185,7 @@ export class DataService {
         excludeAG: false,
         date: '2023-04-05',
         interaction: {
-          label: 'INTERACTION:',
+          label: 'LAST INTERACTION:',
           value: 'Monthly Challenge',
           color: '#000000',
           isBold: true,
@@ -5330,10 +5330,10 @@ export class DataService {
         excludeAG: false,
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Usage Very Active -> Active',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -5603,10 +5603,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Cycle 75% Under',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -5756,10 +5756,10 @@ export class DataService {
 
         date: '2023-02-28',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'NPS Promoter',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
@@ -5909,10 +5909,10 @@ export class DataService {
 
         date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
+          label: 'INTERACTION:',
           value: 'Cycle Completed',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
