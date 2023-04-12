@@ -146,7 +146,7 @@
                      mode="md">
           <ion-segment-button *ngFor="let tab of tabs; let i = index"
                               [value]="tab.id">
-            <ion-label>{{tab.title}}</ion-label>
+            <ion-label>{{tab.title | translate}}</ion-label>
           </ion-segment-button>
         </ion-segment>
 
