@@ -40,134 +40,156 @@
 
 <!-- Page Content -->
 <ion-content>
-  <!-- Refresher -->
-  <ion-refresher slot="fixed"
-                 (ionRefresh)="handleRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
+  <ng-container [ngSwitch]="currentPhase">
+
+    <!-- Empty Template -->
+    <div *ngSwitchCase="phaseEnum.empty">
+      <app-empty-state [title]="(searchValue && 'interaction.empty.empty-search-title' | translate : { query: searchValue }) || ('interaction.empty.empty-title' | translate)"
+                       [footer]="(searchValue && 'interaction.empty.empty-search-footer' | translate : { query: searchValue }) || ('interaction.empty.empty-footer' | translate)"
+                       [type]="'empty'">
+      </app-empty-state>
+    </div>
+
+    <!-- Error Template -->
+    <div *ngSwitchCase="phaseEnum.error">
+      <app-empty-state [title]="'interaction.error.error-title' | translate"
+                       [footer]="'interaction.error.error-footer' | translate"
+                       [type]="'error'">
+      </app-empty-state>
+    </div>
+
+    <!-- Success Template -->
+    <div *ngSwitchCase="phaseEnum.success">
+      <!-- Refresher -->
+      <ion-refresher slot="fixed"
+                     (ionRefresh)="handleRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
 
 
-  <!-- List -->
-  <ion-accordion-group>
-    <ion-accordion [value]="i"
-                   *ngFor="let item of list; let i = index">
+      <!-- List -->
+      <ion-accordion-group>
+        <ion-accordion [value]="i"
+                       *ngFor="let item of list; let i = index">
 
-      <!-- TODO: refactor the ion-item to ici-list-header -->
-      <!-- <app-ici-list-header item></app-ici-list-header> -->
-      <ion-item slot="header"
-                color="light">
+          <!-- TODO: refactor the ion-item to ici-list-header -->
+          <!-- <app-ici-list-header item></app-ici-list-header> -->
+          <ion-item slot="header"
+                    color="light">
 
-        <div class="icon-avatar">
+            <div class="icon-avatar">
 
-          <div class="col-icons">
-            <ion-icon slot="icon-only"
-                      *ngFor="let icon of item?.customerInfo?.additionalInfo?.icons | slice:0:3"
-                      [name]="icon"
-                      color="medium">
-            </ion-icon>
-          </div>
+              <div class="col-icons">
+                <ion-icon slot="icon-only"
+                          *ngFor="let icon of item?.customerInfo?.additionalInfo?.icons | slice:0:3"
+                          [name]="icon"
+                          color="medium">
+                </ion-icon>
+              </div>
 
-          <!-- Avatar -->
-          <ion-avatar>
-            <img alt="Silhouette of a person's head"
-                 [src]="item?.imageUrl" />
-          </ion-avatar>
+              <!-- Avatar -->
+              <ion-avatar>
+                <img alt="Silhouette of a person's head"
+                     [src]="item?.imageUrl" />
+              </ion-avatar>
 
-        </div>
+            </div>
 
-        <div class="col-wrapper">
+            <div class="col-wrapper">
 
-          <!-- Left Column -->
-          <div class="column">
-            <!-- Title -->
-            <ion-label>
-              <ion-text color="primary">
-                <b>{{item?.title}}</b>
-              </ion-text>
-            </ion-label>
-            <!-- Risk -->
-            <ion-label>
-              <ion-text color="medium">
-                {{item?.primary?.label}}
-              </ion-text>
-              <ion-text color="secondary">
-                {{item?.primary?.value}}
-              </ion-text>
-            </ion-label>
-            <!-- Usage -->
-            <ion-label>
-              <ion-text color="medium">
-                {{item?.secondary?.label}}
-              </ion-text>
-              <ion-text color="secondary">
-                {{item?.secondary?.value}}
-              </ion-text>
-            </ion-label>
-          </div>
+              <!-- Left Column -->
+              <div class="column">
+                <!-- Title -->
+                <ion-label>
+                  <ion-text color="primary">
+                    <b>{{item?.title}}</b>
+                  </ion-text>
+                </ion-label>
+                <!-- Risk -->
+                <ion-label>
+                  <ion-text color="medium">
+                    {{item?.primary?.label}}
+                  </ion-text>
+                  <ion-text color="secondary">
+                    {{item?.primary?.value}}
+                  </ion-text>
+                </ion-label>
+                <!-- Usage -->
+                <ion-label>
+                  <ion-text color="medium">
+                    {{item?.secondary?.label}}
+                  </ion-text>
+                  <ion-text color="secondary">
+                    {{item?.secondary?.value}}
+                  </ion-text>
+                </ion-label>
+              </div>
 
-          <!-- Right Column -->
-          <div class="column right"
-               slot="end">
-            <!-- Interaction Type -->
-            <ion-label class="right">
-              <ion-text color="secondary">
-                {{item?.interaction?.value}}
-              </ion-text>
-            </ion-label>
-            <!-- Date -->
-            <ion-label class="right">
-              <ion-text color="medium">
-                {{item?.date}}
-              </ion-text>
-            </ion-label>
-            <!-- Status -->
-            <div class="right">
-              <ion-chip color="medium">
-                <ion-text color="primary"
-                          style="font-size: smaller;">
-                  {{item?.status}}
-                </ion-text>
-              </ion-chip>
+              <!-- Right Column -->
+              <div class="column right"
+                   slot="end">
+                <!-- Interaction Type -->
+                <ion-label class="right">
+                  <ion-text color="secondary">
+                    {{item?.interaction?.value}}
+                  </ion-text>
+                </ion-label>
+                <!-- Date -->
+                <ion-label class="right">
+                  <ion-text color="medium">
+                    {{item?.date}}
+                  </ion-text>
+                </ion-label>
+                <!-- Status -->
+                <div class="right">
+                  <ion-chip color="medium">
+                    <ion-text color="primary"
+                              style="font-size: smaller;">
+                      {{item?.status}}
+                    </ion-text>
+                  </ion-chip>
+                </div>
+
+              </div>
+            </div>
+
+          </ion-item>
+
+
+          <!-- Expanded Content -->
+          <div class="expanded-content"
+               slot="content">
+
+            <!-- Tab List -->
+            <ion-segment [value]="activeTabList[i]"
+                         (ionChange)="onTabChange($event, i)"
+                         mode="md">
+              <ion-segment-button *ngFor="let tab of tabs; let i = index"
+                                  [value]="tab.id">
+                <ion-label>{{tab.title | translate}}</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+
+            <!-- Tab Content -->
+            <div *ngIf="activeTabList[i] === '0'">
+              <app-customer-info [info]="item"
+                                 (handleClick)="onButtonClick($event)"></app-customer-info>
+            </div>
+            <div *ngIf="activeTabList[i] === '1'">
+              <app-interaction-info [info]="item"
+                                    (handleClick)="onButtonClick($event)"></app-interaction-info>
+            </div>
+            <div *ngIf="activeTabList[i] === '2'">
+              <app-history [info]="item"
+                           (handleClick)="onButtonClick($event)"></app-history>
             </div>
 
           </div>
-        </div>
 
-      </ion-item>
-
-
-      <!-- Expanded Content -->
-      <div class="expanded-content"
-           slot="content">
-
-        <!-- Tab List -->
-        <ion-segment [value]="activeTabList[i]"
-                     (ionChange)="onTabChange($event, i)"
-                     mode="md">
-          <ion-segment-button *ngFor="let tab of tabs; let i = index"
-                              [value]="tab.id">
-            <ion-label>{{tab.title | translate}}</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-
-        <!-- Tab Content -->
-        <div *ngIf="activeTabList[i] === '0'">
-          <app-customer-info [info]="item"
-                             (handleClick)="onButtonClick($event)"></app-customer-info>
-        </div>
-        <div *ngIf="activeTabList[i] === '1'">
-          <app-interaction-info [info]="item"
-                                (handleClick)="onButtonClick($event)"></app-interaction-info>
-        </div>
-        <div *ngIf="activeTabList[i] === '2'">
-          <app-history [info]="item"
-                       (handleClick)="onButtonClick($event)"></app-history>
-        </div>
-
-      </div>
-
-    </ion-accordion>
-  </ion-accordion-group>
+        </ion-accordion>
+      </ion-accordion-group>
+    </div>
+  </ng-container>
 </ion-content>
 
 
