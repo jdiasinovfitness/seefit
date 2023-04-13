@@ -68,6 +68,8 @@
       "history": "History"
     },
     "filters": {
+      "title": "Filters",
+      "ok": "Ok",
       "in-club": "In Club",
       "exclude-ag": "In GC",
       "expired": "Planned"

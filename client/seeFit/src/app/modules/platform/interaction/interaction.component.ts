@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
 import { ICIData } from '../../../core/interfaces/icidata.model';
 import { DataService } from '../../../core/services/data.service';
+import { IonModal } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 export enum Phases {
   loading,
@@ -20,6 +22,7 @@ export enum Phases {
 export class InteractionComponent implements OnInit {
   phaseEnum = Phases;
   currentPhase = Phases.loading;
+  @ViewChild(IonModal) modal!: IonModal;
 
   list: Array<ICIData> = [];
   searchValue = '';
@@ -60,6 +63,17 @@ export class InteractionComponent implements OnInit {
   ngOnInit(): void {
     this.init();
     this.list[0]?.title;
+  }
+
+  confirm() {
+    this.modal.dismiss('', 'confirm');
+  }
+
+  onWillDismiss(event: Event) {
+    // const ev = event as CustomEvent<OverlayEventDetail<string>>;
+    // if (ev.detail.role === 'confirm') {
+    // this.message = `Hello, ${ev.detail.data}!`;
+    // }
   }
 
   asLink() {

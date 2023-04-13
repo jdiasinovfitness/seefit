@@ -11,21 +11,30 @@
                  [value]="searchValue">
   </ion-searchbar>
 
-  <!-- Filter -->
+  <!-- Filters -->
   <!-- Filter on small device -->
   <ion-button class="hidden-small-device"
               shape="round"
               color="light"
               size="small"
-              id="filter-trigger">
+              id="open-modal">
     <ion-icon slot="icon-only"
               name="funnel"></ion-icon>
   </ion-button>
 
-  <!-- For small device -->
-  <ion-popover trigger="filter-trigger"
-               triggerAction="click">
+  <!-- Filter - Action Sheet (small device) -->
+  <ion-modal trigger="open-modal"
+             (willDismiss)="onWillDismiss($event)">
     <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{ 'interaction.filters.title' | translate }}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()"
+                        [strong]="true">{{ 'interaction.filters.ok' | translate }}</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
       <ion-content class="ion-padding">
         <span class="filters">
           <div class="switch-wrp-popup"
@@ -38,11 +47,9 @@
             </ion-toggle>
           </div>
         </span>
-
       </ion-content>
     </ng-template>
-  </ion-popover>
-
+  </ion-modal>
 
   <!-- Filter on large device -->
   <span class="lg-filters hidden-big-device">
@@ -56,8 +63,9 @@
       <label>{{ filter.label | translate }}</label>
     </div>
   </span>
-
 </div>
+
+
 
 <!-- Page Content -->
 <ion-content>
@@ -215,8 +223,8 @@
 
 
 <!-- Page Footer -->
-<ion-footer color="transparent">
+<!-- <ion-footer color="transparent">
   <ion-chip>
     Some Footer
   </ion-chip>
-</ion-footer>
+</ion-footer> -->

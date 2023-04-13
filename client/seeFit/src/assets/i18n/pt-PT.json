@@ -68,6 +68,8 @@
       "history": "Histórico"
     },
     "filters": {
+      "title": "Filtros",
+      "ok": "Fechar",
       "in-club": "Em Clube",
       "exclude-ag": "Em AG",
       "expired": "Planeado"
