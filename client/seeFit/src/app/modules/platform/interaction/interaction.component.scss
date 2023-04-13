@@ -15,6 +15,35 @@
 
 }
 
+.switch-wrp-popup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8px;
+}
+
+.lg-filters {
+  display: flex;
+  flex-direction: row;
+
+  margin-right: 20px;
+
+  .switch-wrp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    min-width: fit-content;
+    margin-left: 12px;
+
+    label {
+      margin-top: 4px;
+    }
+  }
+}
+
 ion-content {
 
   ion-accordion-group {
@@ -82,7 +111,7 @@ ion-footer {
   padding-bottom: 20px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 580px) {
   .icon-avatar {
     display: flex;
     flex-direction: column-reverse !important;

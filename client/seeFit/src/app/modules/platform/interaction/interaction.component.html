@@ -8,20 +8,13 @@
   <!-- Search -->
   <ion-searchbar [debounce]="500"
                  (ionChange)="handleSearch($event)"
-                 [value]="searchValue"></ion-searchbar>
-
-  <!-- Sort -->
-  <!-- <ion-button shape="round"
-        color="light"
-        size="small"
-        (click)="onSort($event)"
-        id="sort-trigger">
-        <ion-icon slot="icon-only"
-        name="refresh"></ion-icon>
-      </ion-button> -->
+                 [value]="searchValue">
+  </ion-searchbar>
 
   <!-- Filter -->
-  <ion-button shape="round"
+  <!-- Filter on small device -->
+  <ion-button class="hidden-small-device"
+              shape="round"
               color="light"
               size="small"
               id="filter-trigger">
@@ -29,12 +22,40 @@
               name="funnel"></ion-icon>
   </ion-button>
 
+  <!-- For small device -->
   <ion-popover trigger="filter-trigger"
                triggerAction="click">
     <ng-template>
-      <ion-content class="ion-padding">Insert Filters Here</ion-content>
+      <ion-content class="ion-padding">
+        <span class="filters">
+          <div class="switch-wrp-popup"
+               *ngFor="let filter of filterList; let i = index">
+            <label>{{ filter.label | translate }}</label>
+            <ion-toggle mode="ios"
+                        (ionChange)="onFilterToggle($event, i)"
+                        [checked]="filter.checked"
+                        [disabled]="filter.disabled || (i !== 0 && !filterList[0]?.checked)">
+            </ion-toggle>
+          </div>
+        </span>
+
+      </ion-content>
     </ng-template>
   </ion-popover>
+
+
+  <!-- Filter on large device -->
+  <span class="lg-filters hidden-big-device">
+    <div class="switch-wrp"
+         *ngFor="let filter of filterList; let i = index">
+      <ion-toggle mode="ios"
+                  (ionChange)="onFilterToggle($event, i)"
+                  [checked]="filter.checked"
+                  [disabled]="filter.disabled || (i !== 0 && !filterList[0]?.checked)">
+      </ion-toggle>
+      <label>{{ filter.label | translate }}</label>
+    </div>
+  </span>
 
 </div>
 

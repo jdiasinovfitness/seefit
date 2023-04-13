@@ -178,7 +178,8 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
-  handleFilterToggle(newState: boolean, index: number) {
+  onFilterToggle(event: any, index: number) {
+    const newState = event.detail.checked;
     this.filterList[index].checked = newState;
     this.loadData();
   }

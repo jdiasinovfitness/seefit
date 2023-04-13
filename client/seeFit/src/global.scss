@@ -42,3 +42,17 @@
 * {
   outline: none;
 }
+
+// Hidden for tablets
+@media (min-width: 580px) {
+  .hidden-small-device {
+    display: none !important;
+  }
+}
+
+// Hidden for phones
+@media (max-width: 580px) {
+  .hidden-big-device {
+    display: none !important;
+  }
+}
