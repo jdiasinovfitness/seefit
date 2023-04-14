@@ -63,9 +63,38 @@
   },
   "interaction": {
     "tabs": {
-      "customer": "Cliente",
-      "interaction": "Interação",
-      "history": "Histórico"
+      "customer": {
+        "title": "Cliente"
+      },
+      "interaction": {
+        "title": "Interação",
+        "type": {
+          "default": "Selecione o tipo",
+          "label": "Tipo",
+          "types": {
+            "unplanned": "Não Planeada"
+          }
+        },
+        "label": {
+          "default": "Selecione a interação",
+          "label": "Interação",
+          "types": {
+            "next_visit": "Próxima visita",
+            "group_class": "Aula de Grupo",
+            "execution_support": "Suporte",
+            "monthly_challenge": "Desafio mensal",
+            "reprogramming": "Reprogramada"
+          }
+        },
+        "details": {
+          "placeholder": "Adicione uma descrição da interação",
+          "create": "Criar",
+          "label": "Detalhes"
+        }
+      },
+      "history": {
+        "title": "Histórico"
+      }
     },
     "filters": {
       "title": "Filtros",

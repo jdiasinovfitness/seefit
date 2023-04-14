@@ -42,19 +42,19 @@ export class InteractionComponent implements OnInit {
     this.tabs = [
       {
         title: await firstValueFrom(
-          this.translateService.get('interaction.tabs.customer')
+          this.translateService.get('interaction.tabs.customer.title')
         ),
         id: 0,
       },
       {
         title: await firstValueFrom(
-          this.translateService.get('interaction.tabs.interaction')
+          this.translateService.get('interaction.tabs.interaction.title')
         ),
         id: 1,
       },
       {
         title: await firstValueFrom(
-          this.translateService.get('interaction.tabs.history')
+          this.translateService.get('interaction.tabs.history.title')
         ),
         id: 2,
       },
