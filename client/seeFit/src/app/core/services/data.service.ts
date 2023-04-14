@@ -87,27 +87,27 @@ export class DataService {
   getDummyInteractionData() {
     return [
       {
-        label: 'interaction.type.unplanned',
+        label: 'interaction.tabs.interaction.type.types.unplanned',
         value: 'unplanned',
         interaction: [
           {
-            label: 'interaction.label.next_visit',
+            label: 'interaction.tabs.interaction.label.types.next_visit',
             value: INTERACTION.NEXT_VISIT,
           },
           {
-            label: 'interaction.label.group_class',
+            label: 'interaction.tabs.interaction.label.types.group_class',
             value: INTERACTION.GROUP_CLASS,
           },
           {
-            label: 'interaction.label.execution_support',
+            label: 'interaction.tabs.interaction.label.types.execution_support',
             value: INTERACTION.EXECUTION_SUPPORT,
           },
           {
-            label: 'interaction.label.monthly_challenge',
+            label: 'interaction.tabs.interaction.label.types.monthly_challenge',
             value: INTERACTION.MONTHLY_CHALLENGE,
           },
           {
-            label: 'interaction.label.reprogramming',
+            label: 'interaction.tabs.interaction.label.types.reprogramming',
             value: INTERACTION.REPROGRAMMING,
           },
         ],

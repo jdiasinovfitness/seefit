@@ -63,9 +63,38 @@
   },
   "interaction": {
     "tabs": {
-      "customer": "Customer",
-      "interaction": "Interaction",
-      "history": "History"
+      "customer": {
+        "title": "Client"
+      },
+      "interaction": {
+        "title": "Interaction",
+        "type": {
+          "default": "Select the interaction type",
+          "label": "Type",
+          "types": {
+            "unplanned": "Unplanned"
+          }
+        },
+        "label": {
+          "default": "Select the interaction",
+          "label": "Interaction",
+          "types": {
+            "next_visit": "Next Visit",
+            "group_class": "Group Class",
+            "execution_support": "Execution Support",
+            "monthly_challenge": "Monthly challenge",
+            "reprogramming": "Re-scheduled"
+          }
+        },
+        "details": {
+          "placeholder": "Add a description",
+          "create": "Create",
+          "label": "Details"
+        }
+      },
+      "history": {
+        "title": "History"
+      }
     },
     "filters": {
       "title": "Filters",
