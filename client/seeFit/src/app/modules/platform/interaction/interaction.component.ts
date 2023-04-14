@@ -86,19 +86,19 @@ export class InteractionComponent implements OnInit {
     this.tabs = [
       {
         title: await firstValueFrom(
-          this.translateService.get('interaction.tabs.customer')
+          this.translateService.get('interaction.tabs.customer.title')
         ),
         id: 0,
       },
       {
         title: await firstValueFrom(
-          this.translateService.get('interaction.tabs.interaction')
+          this.translateService.get('interaction.tabs.interaction.title')
         ),
         id: 1,
       },
       {
         title: await firstValueFrom(
-          this.translateService.get('interaction.tabs.history')
+          this.translateService.get('interaction.tabs.history.title')
         ),
         id: 2,
       },
@@ -159,8 +159,6 @@ export class InteractionComponent implements OnInit {
         .getICIData(filter)
         .then((res) => {
           this.list = res?.length > 0 ? res : [];
-          console.log('thi', this.list[0]); // TODO: Remove on PR!
-
           this.activeTabList = Array.from(
             { length: this.list.length },
             () => '0'

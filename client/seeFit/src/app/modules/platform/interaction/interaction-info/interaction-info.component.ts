@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData } from 'src/app/core/interfaces/icidata.model';
-import { DataService } from 'src/app/core/services/data.service';
+import { ICIData } from '../../../../core/interfaces/icidata.model';
+import { DataService } from '../../../../core/services/data.service';
 import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
 import {
   IInteraction,
@@ -53,11 +53,13 @@ export class InteractionInfoComponent {
   }
 
   async onTypeChange(newSelection: any) {
+    const newVal = newSelection?.detail?.value;
+
     const index = this.typeList?.findIndex((el) => {
-      return el.value === newSelection;
+      return el.value === newVal;
     });
 
-    this.selectedType = newSelection;
+    this.selectedType = newVal;
     this.selectedInteraction = undefined;
     this.selectedInteractionValue = '';
     this.interactionList = undefined;
@@ -72,22 +74,23 @@ export class InteractionInfoComponent {
   }
 
   onInteractionChange(newSelection: any) {
+    const newVal = newSelection?.detail?.value;
+
     this.selectedInteractionValue = '';
     this.selectedInteraction = undefined;
-    const index = this.interactionList?.findIndex(
-      (el) => el.value === newSelection
-    );
+    const index = this.interactionList?.findIndex((el) => el.value === newVal);
 
     if (typeof index === 'number' && index != -1) {
       this.selectedInteractionValue = this.interactionList?.[index].label || '';
     }
 
-    this.selectedInteraction = newSelection;
+    this.selectedInteraction = newVal;
     this.details = '';
   }
 
-  onDetailsKeyup(event: string) {
-    this.details = event;
+  onDetailsKeyup(event: any) {
+    const val = event?.detail?.value;
+    this.details = val;
   }
 
   createInteraction(event: any) {
