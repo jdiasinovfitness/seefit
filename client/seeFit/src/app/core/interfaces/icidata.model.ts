@@ -34,9 +34,13 @@ export interface ICICustomerRecord {
 export interface ICIAdditionalInfo {
   title: string;
   lifeCycle: ICILifecycle;
-  icons: Array<string>;
+  icons: Array<ICIIcons>;
 }
 
+export interface ICIIcons {
+  icon: string;
+  isDisabled: boolean;
+}
 export interface ICILifecycle {
   key: string;
   progress: number;
