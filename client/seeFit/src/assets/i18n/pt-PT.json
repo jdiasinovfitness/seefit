@@ -1,4 +1,7 @@
 {
+  "menu": {
+    "logout": "Sair"
+  },
   "auth": {
     "login": {
       "btn-submit": "LOGIN",
