@@ -1,58 +1,71 @@
-@import '../../../core/styles/base.scss';
+@import "../../../../global.scss";
 
-.lg-left {
-  width: 0%;
-  text-align: center;
-}
+.login-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 
-.lg-right {
-  width: 100%;
+  .left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .right-section {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      align-self: center;
+      width: -webkit-fill-available;
+    }
+  }
 }
 
 .logo {
-  width: 420px;
-  height: 160px;
+  min-width: 375px;
+  min-height: 160px;
 }
 
-.submit-button {
-  border: 0;
-  border-radius: 0.5rem;
-  width: 70%;
-  font-weight: bold;
-}
-
-.background-shape {
-  border-bottom-left-radius: 96px;
-  border-top-right-radius: 118px;
-  border-bottom-right-radius: 23px;
-  border-top-left-radius: 62px;
-  background: #f17a59;
-  box-shadow: inset -46px -46px 92px #be6046, inset 46px 46px 92px #ff946c;
-}
-
-.orage {
+.btn-row {
   display: flex;
-  margin-top: 30px;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 32px;
 }
 
-.forgot-label {
-  text-align: left;
+form {
+  margin: 0px 16px;
+  // .email-group {}
+  // .pwd-group {}
 }
 
-lib-button {
-  text-align: end;
-}
-
-lib-spinner {
-  background-color: white;
-}
-
-@media screen and (min-width: 768px) {
-  .lg-left {
-    width: 50%;
+@media screen and (max-width: 768px) {
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .lg-right {
-    align-self: center;
-    width: 50%;
+}
+
+@media (prefers-color-scheme: light) {
+  #inov-fitness-logo {
+    background-image: url("../../../../assets/images/logoBlack.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #inov-fitness-logo {
+    background-image: url("../../../../assets/images/logoWhite.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

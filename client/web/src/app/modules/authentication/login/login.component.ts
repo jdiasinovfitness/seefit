@@ -1,7 +1,6 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 export enum Phases {
@@ -10,6 +9,7 @@ export enum Phases {
   error,
   success,
 }
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,35 +24,32 @@ export class LoginComponent implements OnInit {
   production = environment.production;
   hide = false;
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder
-  ) {
+  constructor(private router: Router, private formBuilder: FormBuilder) {
     this.authForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['admin@inovfitness.com', [Validators.required, Validators.email]],
+      password: ['admin', [Validators.required]],
     });
   }
 
   ngOnInit(): void {}
 
   signIn() {
+    if (this.currentPhase === this.phaseEnum.loading) {
+      return;
+    }
+
     this.currentPhase = Phases.loading;
 
     setTimeout(() => {
-      this.currentPhase = Phases.empty;
-    }, 50000);
-    try {
-      this.router.navigate(['../../platform/interaction'], {
-        relativeTo: this.activatedRoute,
-      });
-    } catch (err) {
-      console.error('Error');
-    }
-  }
+      const error = !true;
+      this.authForm
+        .get('password')
+        ?.setErrors(error ? { wrongPassword: true } : null);
 
-  get dark() {
-    return document.body.classList.contains('dark-theme');
+      this.currentPhase = error ? Phases.error : Phases.success;
+
+      // TODO: handle navigation error when permission claims available
+      this.router.navigate(['platform/interaction']);
+    }, 2000);
   }
 }

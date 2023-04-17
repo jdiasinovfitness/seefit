@@ -1,0 +1,13 @@
+<div class="interaction-wrapper">
+  <div class="img-wrapper">
+    <img [src]="'assets/temp_images/history_1.jpeg'"
+         height="100px" />
+    <img [src]="'assets/temp_images/history_2.jpeg'"
+         height="100px" />
+  </div>
+
+  <app-observation [userId]="info.userId"
+                   [displayBtn]="info.status !== statusTypes.COMPLETED"
+                   (handleClick)="onButtonClick($event)">
+  </app-observation>
+</div>

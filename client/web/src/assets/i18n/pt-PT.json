@@ -1,0 +1,112 @@
+{
+  "pt": "portuguese",
+  "en": "english",
+  "origin": "Origin {{originName}}",
+  "email": "Email",
+  "password": "Password",
+  "auth": {
+    "login": {
+      "btn-submit": "LOGIN",
+      "welcome": "Welcome to login page",
+      "register-link": "Forgot your password?",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter a valid email",
+          "errors": {
+            "invalid": "Invalid email",
+            "required": "Enter your email"
+          }
+        },
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "invalid": "Invalid password",
+            "required": "Enter your password"
+          }
+        }
+      }
+    },
+    "reset-pwd": {
+      "header": "Your new password has to be different to previously used passwords.",
+      "btn-submit": "Reset Password",
+      "login-link": "Back to login",
+      "form": {
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "required": "Password required"
+          }
+        },
+        "pwd-confirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter your password again",
+          "errors": {
+            "required": "Password required",
+            "miss-match": "Passwords do not match"
+          }
+        }
+      }
+    },
+    "reset-request": {
+      "header": "If you forgot your password we can help you reset it by sending you an email with the reset instructions. For that we need you to provide us your email address",
+      "btn-submit": "Reset Password",
+      "login-link": "Back to login",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter a valid email",
+          "errors": {
+            "invalid": "Invalid email",
+            "required": "Enter your email"
+          }
+        }
+      }
+    }
+  },
+  "interaction": {
+    "tabs": {
+      "customer": "Cliente",
+      "interaction": "Interação",
+      "history": "Histórico"
+    },
+    "filters": {
+      "in-club": "Em Clube",
+      "exclude-ag": "Em AG",
+      "expired": "Planeado"
+    },
+    "empty": {
+      "empty-title": "Nenhum <b>Cliente</b> Encontrado",
+      "empty-footer": "Considera usar <b>outras</b> opções de filtro</div>",
+      "empty-search-title": "Sem resultados para: <b>{{query}}</b>",
+      "empty-search-footer": "Considera outro critério de <b>pesquisa</b>"
+    },
+    "error": {
+      "error-title": "Incapaz de completar o pedido",
+      "error-footer": "Verifique a conexão com a Internet e tente novamente mais tarde"
+    },
+    "footer": "cliente(s) encontrados",
+    "data": {
+      "birth-date": "DATA NASCIMENTO (IDADE):",
+      "objective": "OBJECTIVO:",
+      "access": "VISITAS (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
+      "ag": "AULAS DE GRUPO (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
+      "shareAG": "% DE AG:",
+      "last-af": "ÚLTIMA AVALIAÇÃO (EM DIAS):",
+      "visit-length": "MÉDIA DE PERMANÊNCIA:",
+      "membership": "DATA DE ADESÃO (EM MESES):",
+      "subscription-type": "PREÇO DO PLANO:",
+      "schedule": "HORÁRIO:",
+      "observation": "Comentários",
+      "btn-discard": "Eliminar",
+      "btn-submit": "Concluir",
+      "customer-info": "INFO DE CLIENTE:",
+      "contract-info": "INFO DE CONTRACTO:",
+      "additional-services": "SERVIÇOS ADICIONAIS:",
+      "additional-info": "INFORMAÇÃO ADICIONAL:",
+      "lifecycle": "CICLO DE VIDA:"
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { dropRight } from 'cypress/types/lodash';
 
 @Component({
   selector: 'app-user-profile',

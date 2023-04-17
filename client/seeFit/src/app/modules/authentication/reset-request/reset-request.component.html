@@ -1,0 +1,63 @@
+<ion-content class="ion-padding">
+  <div class="login-wrapper">
+    <!--Left section-->
+    <div class="left-section">
+      <img class="w-75"
+           src="../../../../assets/images/loginBackground.png" />
+    </div>
+
+    <!--Right section-->
+    <div class="right-section">
+      <div class="logo"
+           id="inov-fitness-logo"></div>
+      <form [formGroup]="authForm"
+            class="">
+
+        <ion-text color="black">
+          <p>{{ 'auth.reset-request.header' | translate }}</p>
+        </ion-text>
+
+
+        <!-- Email -->
+        <ion-item class="email-group">
+          <ion-label position="floating">{{ 'auth.reset-request.form.email.label' | translate }}</ion-label>
+          <ion-input type="email"
+                     formControlName="email"
+                     inputmode="email"
+                     placeholder="{{ 'auth.reset-request.form.email.placeholder' | translate }}"></ion-input>
+          <ion-note slot="error"
+                    *ngIf="authForm.get('email')?.getError('required')
+                    && authForm.get('email')?.value === ''
+                    && authForm.get('email')?.touched">
+            {{ 'auth.reset-request.form.email.errors.required' | translate }}
+          </ion-note>
+          <ion-note slot="error"
+                    *ngIf="authForm.get('email')?.getError('email')
+                    && authForm.get('email')?.value !== ''
+                    && authForm.get('email')?.touched">
+            {{ 'auth.reset-request.form.email.errors.invalid' | translate }}
+          </ion-note>
+        </ion-item>
+
+
+        <div class="btn-row">
+          <ion-button fill="clear"
+                      [routerLink]="['/auth/login']"
+                      routerDirection="back">
+            {{ 'auth.reset-request.login-link' | translate }}
+          </ion-button>
+          <ng-container [ngSwitch]="currentPhase">
+            <ion-button expand="block"
+                        (stateChange)="signIn()">
+              <label *ngSwitchCase="phaseEnum.empty">
+                {{ 'auth.reset-request.btn-submit' | translate }}
+              </label>
+              <ion-spinner *ngSwitchCase="phaseEnum.loading"
+                           name="dots"></ion-spinner>
+            </ion-button>
+          </ng-container>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

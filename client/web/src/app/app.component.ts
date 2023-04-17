@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  public isDarkTheme = false;
-  title = 'seefit';
-
-  constructor() {}
-  ngOnInit(): void {}
+export class AppComponent {
+  constructor(translate: TranslateService) {}
 }

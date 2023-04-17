@@ -1,0 +1,138 @@
+{
+  "auth": {
+    "login": {
+      "btn-submit": "LOGIN",
+      "welcome": "Welcome to login page",
+      "register-link": "Forgot your password?",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter a valid email",
+          "errors": {
+            "invalid": "Invalid email",
+            "required": "Enter your email"
+          }
+        },
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "invalid": "Invalid password",
+            "required": "Enter your password"
+          }
+        }
+      }
+    },
+    "reset-pwd": {
+      "header": "Your new password has to be different to previously used passwords.",
+      "btn-submit": "Reset Password",
+      "login-link": "Back to login",
+      "form": {
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "required": "Password required"
+          }
+        },
+        "pwd-confirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter your password again",
+          "errors": {
+            "required": "Password required",
+            "miss-match": "Passwords do not match"
+          }
+        }
+      }
+    },
+    "reset-request": {
+      "header": "If you forgot your password we can help you reset it by sending you an email with the reset instructions. For that we need you to provide us your email address",
+      "btn-submit": "Reset Password",
+      "login-link": "Back to login",
+      "form": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter a valid email",
+          "errors": {
+            "invalid": "Invalid email",
+            "required": "Enter your email"
+          }
+        }
+      }
+    }
+  },
+  "interaction": {
+    "tabs": {
+      "customer": {
+        "title": "Client"
+      },
+      "interaction": {
+        "title": "Interaction",
+        "type": {
+          "default": "Select the interaction type",
+          "label": "Type",
+          "types": {
+            "unplanned": "Unplanned"
+          }
+        },
+        "label": {
+          "default": "Select the interaction",
+          "label": "Interaction",
+          "types": {
+            "next_visit": "Next Visit",
+            "group_class": "Group Class",
+            "execution_support": "Execution Support",
+            "monthly_challenge": "Monthly challenge",
+            "reprogramming": "Re-scheduled"
+          }
+        },
+        "details": {
+          "placeholder": "Add a description",
+          "create": "Create",
+          "label": "Details"
+        }
+      },
+      "history": {
+        "title": "History"
+      }
+    },
+    "filters": {
+      "title": "Filters",
+      "ok": "Ok",
+      "in-club": "In Club",
+      "exclude-ag": "In GC",
+      "expired": "Planned"
+    },
+    "empty": {
+      "empty-title": "No <b>Customer</b> Found",
+      "empty-footer": "Consider using <b>other</b> filter options</div>",
+      "empty-search-title": "No Search Result Found For: <b>{{query}}</b>",
+      "empty-search-footer": "Consider another <b>search</b> criteria"
+    },
+    "error": {
+      "error-title": "Unable to fulfill the request",
+      "error-footer": "Please check your internet connection and try again later"
+    },
+    "footer": "customer(s) found",
+    "data": {
+      "birth-date": "BIRTHDATE (AGE):",
+      "objective": "OBJECTIVE:",
+      "access": "VISITS (7 / 28 / 56 / ∞ DAYS):",
+      "ag": "GROUP CLASSES (7 / 28 / 56 / ∞ DAYS):",
+      "shareAG": "% OF GC:",
+      "last-af": "LAST APPOINTMENT (IN DAYS):",
+      "visit-length": "AVERAGE STAY:",
+      "membership": "MEMBERSHIP DATE (MONTHS):",
+      "subscription-type": "MEMBERSHIP PRICE:",
+      "schedule": "AVAILABLE SCHEDULE:",
+      "observation": "Comments",
+      "btn-discard": "Discard",
+      "btn-submit": "Submit",
+      "customer-info": "CUSTOMER INFO:",
+      "contract-info": "CONTRACT INFO:",
+      "additional-services": "ADDITIONAL SERVICES:",
+      "additional-info": "ADDITIONAL INFORMATION:",
+      "lifecycle": "LIFECYCLE:"
+    }
+  }
+}
