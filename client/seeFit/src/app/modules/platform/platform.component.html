@@ -1,0 +1,112 @@
+<!-- SideBar Closed -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only"
+                    name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+
+    <div class="logo"
+         id="inov-fitness-logo"></div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- SideBar Opened -->
+<ion-menu contentId="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-button>
+            <ion-icon slot="icon-only"
+                      name="close"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+
+      <div class="logo"
+           id="inov-fitness-logo"></div>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- User Section -->
+  <ion-avatar class="menu-avatar">
+    <img alt="Silhouette of a person's head"
+         [src]="profilePhoto" />
+  </ion-avatar>
+  <div class="avatar-name">
+    <ion-label color="primary">{{userName}}</ion-label>
+  </div>
+
+  <!-- Menu Section -->
+  <ion-content>
+    <ion-accordion-group [multiple]="!true">
+      <!-- (ionChange)="accordionGroupChange($event)" -->
+      <ion-accordion [value]="i"
+                     color="primary"
+                     *ngFor="let item of menuItems; let i = index">
+        <!-- toggleIconSlot="none" -->
+        <ion-item slot="header"
+                  [routerLink]="item?.url ? [item?.url] : null"
+                  routerLinkActive="router-link-active">
+          <ion-icon slot="start"
+                    color="primary"
+                    [name]='item?.icon'>
+          </ion-icon>
+          <ion-label slot="start"
+                     color="primary">
+            {{item?.title}}
+          </ion-label>
+          <!-- <ion-icon [name]="!true ? 'chevron-down':'chevron-up'"
+                    size="small"
+                    color="primary"
+                    slot="end"></ion-icon> -->
+        </ion-item>
+        <ion-item *ngFor="let subItem of item.subMenu"
+                  [routerLink]="subItem?.url ? [subItem?.url] : null"
+                  detail="false"
+                  lines="none"
+                  (click)="toggleMenu()"
+                  slot="content">
+          <ion-icon slot="start"
+                    color="dark"
+                    [name]='subItem?.icon'>
+          </ion-icon>
+          <ion-label color="dark">
+            {{subItem.title}}
+          </ion-label>
+        </ion-item>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-content>
+
+  <!-- Footer Section -->
+  <ion-footer>
+    <ion-item button
+              color="light"
+              (click)="logOut()">
+      <div style="display: flex; flex-direction: column; align-items: center; padding: 12px 8px"
+           slot="end">
+        <ion-icon slot="end"
+                  color="primary"
+                  name='power'></ion-icon>
+        <ion-label slot="end"
+                   color="primary">
+          {{ 'menu.logout' | translate }}
+        </ion-label>
+      </div>
+    </ion-item>
+  </ion-footer>
+
+</ion-menu>
+
+<!-- Page section -->
+<div class="ion-page"
+     id="mainContent"
+     main>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</div>

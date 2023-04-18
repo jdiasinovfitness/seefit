@@ -1,0 +1,158 @@
+@import "../../../../global.scss";
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+
+  margin-top: 27px;
+  margin-right: 8px;
+
+  ion-searchbar {}
+
+  ion-button {
+    min-height: 36px;
+  }
+
+}
+
+.switch-wrp-popup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8px;
+}
+
+.lg-filters {
+  display: flex;
+  flex-direction: row;
+
+  margin-right: 20px;
+
+  .switch-wrp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    min-width: fit-content;
+    margin-left: 12px;
+
+    label {
+      margin-top: 4px;
+    }
+  }
+}
+
+ion-content {
+
+  ion-accordion-group {
+    ion-accordion {
+      display: flex;
+      flex-direction: column;
+
+      ion-item {
+        .icon-avatar {
+          display: flex;
+          flex-direction: row;
+
+          .col-icons {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            ion-icon {
+              margin-bottom: 4px;
+            }
+
+            :last-child {
+              margin-bottom: 0px;
+            }
+          }
+
+          ion-avatar {
+            min-height: 50px;
+            min-width: 50px;
+            max-height: 150px;
+            max-width: 150px;
+            margin: 8px;
+          }
+        }
+
+        .col-wrapper {
+          display: flex;
+          flex-direction: row;
+          flex-shrink: 0;
+          flex-grow: 1;
+          flex-wrap: 1;
+          justify-content: space-between;
+
+          margin: 8px 0px;
+
+          .column {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+          }
+        }
+      }
+
+      .expanded-content {
+        display: flex;
+        flex-direction: column;
+
+      }
+    }
+  }
+}
+
+
+ion-footer {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 580px) {
+  .icon-avatar {
+    display: flex;
+    flex-direction: column-reverse !important;
+
+    .col-icons {
+      display: flex;
+      justify-content: center;
+      flex-direction: row !important;
+
+      ion-icon {
+        margin-right: 4px;
+
+      }
+
+      :last-child {
+        margin-right: 0px;
+      }
+    }
+
+    ion-avatar {
+      min-height: 50px;
+      min-width: 50px;
+      max-height: 150px;
+      max-width: 150px;
+      margin: 8px;
+    }
+  }
+
+  .col-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-wrap: 1;
+  }
+
+  .right {
+    align-self: flex-start !important;
+  }
+}
+
+.right {
+  align-self: flex-end;
+}

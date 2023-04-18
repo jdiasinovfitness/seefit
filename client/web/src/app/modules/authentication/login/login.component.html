@@ -1,49 +1,100 @@
-<div class="d-flex h-100 flex-column-mobile">
-  <!--Left section-->
-  <div class="lg-left align-self-center">
-    <img
-      class="w-75"
-      src="assets/images/modules/authentication/login/loginBackground.png"
-    />
-  </div>
-  <!--Right section-->
-  <div class="lg-right">
-    <div class="text-center">
-      <img
-        class="logo"
-        [alt]="'InovFitness'"
-        src="assets/images/core/logoBlack.png"
-      />
+<ion-content class="ion-padding">
+  <div class="login-wrapper">
+    <!--Left section-->
+    <div class="left-section">
+      <img class="w-75" src="../../../../assets/images/loginBackground.png" />
     </div>
-    <form
-      [formGroup]="authForm"
-      class="login-container d-flex flex-column text-center m-5"
-    >
-      <lib-input
-        [label]="'Email'"
-        [type]="'email'"
-        [value]="'admin@inovfitness.com'"
-      ></lib-input>
-      <lib-input
-        [label]="'Password'"
-        [type]="'password'"
-        [value]="'admin'"
-      ></lib-input>
-      <div class="align-self-center w-100 d-flex orage">
-        <span class="align-self-center col-6 forgot-label"
-          ><b>{{ 'login.forgot_link' | transloco }}</b></span
-        >
-        <ng-container [ngSwitch]="currentPhase">
-          <lib-button
-            *ngSwitchCase="phaseEnum.empty"
-            class="col-6"
-            [text]="'LOGIN'"
-            (stateChange)="signIn()"
-          ></lib-button>
 
-          <lib-spinner *ngSwitchCase="phaseEnum.loading"></lib-spinner>
-        </ng-container>
-      </div>
-    </form>
+    <!--Right section-->
+    <div class="right-section">
+      <div class="logo" id="inov-fitness-logo"></div>
+      <form [formGroup]="authForm" class="">
+        <!-- Email -->
+        <ion-item class="email-group">
+          <ion-label position="floating">{{
+            'auth.login.form.email.label' | translate
+          }}</ion-label>
+          <ion-input
+            type="email"
+            formControlName="email"
+            inputmode="email"
+            placeholder="{{ 'auth.login.form.email.placeholder' | translate }}"
+          ></ion-input>
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('email')?.getError('required') &&
+              authForm.get('email')?.value === '' &&
+              authForm.get('email')?.touched
+            "
+          >
+            {{ 'auth.login.form.email.errors.required' | translate }}
+          </ion-note>
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('email')?.getError('email') &&
+              authForm.get('email')?.value !== '' &&
+              authForm.get('email')?.touched
+            "
+          >
+            {{ 'auth.login.form.email.errors.invalid' | translate }}
+          </ion-note>
+        </ion-item>
+
+        <!-- Password -->
+        <ion-item class="pwd-group">
+          <ion-label position="floating">{{
+            'auth.login.form.pwd.label' | translate
+          }}</ion-label>
+          <ion-input
+            type="password"
+            formControlName="password"
+            placeholder="{{ 'auth.login.form.pwd.placeholder' | translate }}"
+          ></ion-input>
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('password')?.getError('required') &&
+              authForm.get('password')?.value === '' &&
+              authForm.get('password')?.touched
+            "
+          >
+            {{ 'auth.login.form.pwd.errors.required' | translate }}
+          </ion-note>
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('password')?.getError('wrongPassword') &&
+              authForm.get('password')?.value !== '' &&
+              authForm.get('password')?.touched
+            "
+          >
+            {{ 'auth.login.form.pwd.errors.invalid' | translate }}
+          </ion-note>
+        </ion-item>
+
+        <div class="btn-row">
+          <ion-button fill="clear">
+            {{ 'auth.login.register-link' | translate }}
+          </ion-button>
+          <ng-container [ngSwitch]="currentPhase">
+            <ion-button
+              expand="block"
+              *ngIf="currentPhase !== phaseEnum.success"
+              (click)="signIn()"
+            >
+              <label *ngSwitchCase="phaseEnum.empty || phaseEnum.error">
+                {{ 'auth.login.btn-submit' | translate }}
+              </label>
+              <ion-spinner
+                *ngSwitchCase="phaseEnum.loading"
+                name="dots"
+              ></ion-spinner>
+            </ion-button>
+          </ng-container>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+</ion-content>

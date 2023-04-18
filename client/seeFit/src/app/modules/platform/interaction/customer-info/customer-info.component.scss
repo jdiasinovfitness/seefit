@@ -1,0 +1,92 @@
+@import "../../../../../global.scss";
+
+.c-info-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0px 4px;
+
+  .split-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .hole-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    margin: 12px 4px;
+
+    .p-bars {
+      width: 100%;
+    }
+
+    ion-icon {
+      margin-right: 4px;
+    }
+
+    .disabled {
+      filter: opacity(0.4);
+    }
+  }
+
+  .base-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    span {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.see-icon {
+  margin-right: 8px;
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  margin: 0px 4px;
+
+  h4 {
+    margin-bottom: 8px;
+    margin-top: 12px;
+
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  .line {
+    .line-key {
+      font-size: 16px;
+      font-weight: 500;
+      padding-right: 8px;
+    }
+
+    .line-value {
+      font-size: 16px;
+      font-weight: 800;
+    }
+  }
+}
+
+.progress-labels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 8px 0px;
+}

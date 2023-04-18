@@ -1,4 +1,4 @@
-@import '../../../../core/styles/styles.scss';
+@import '../../../../../global.scss';
 
 .accordion-wrapper {
   display: flex;
@@ -73,6 +73,7 @@
 
         .title {
           margin-bottom: 6px;
+
           label {
             display: inline-block;
 
@@ -132,15 +133,18 @@
             color: $error;
             font-weight: 800;
           }
+
           .slp {
             color: $purple;
             font-weight: 600;
           }
+
           .percentage {
             margin-left: 6px;
             font-weight: 800;
           }
         }
+
         label {
           width: fit-content;
           font-weight: 900;

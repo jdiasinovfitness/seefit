@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TranslocoService } from '@ngneat/transloco';
+import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
 import { ICIData } from 'src/app/core/interfaces/icidata.model';
 import { DataService } from 'src/app/core/services/data.service';
@@ -37,7 +37,7 @@ export class InteractionInfoComponent {
 
   constructor(
     private dataService: DataService,
-    private translocoService: TranslocoService
+    private translateService: TranslateService
   ) {
     this.init();
   }
@@ -45,9 +45,7 @@ export class InteractionInfoComponent {
   async init() {
     this.typeList = await Promise.all(
       this.dataService.getInteractionList()?.map(async el => {
-        el.label = await firstValueFrom(
-          this.translocoService.selectTranslate(el.label)
-        );
+        el.label = await firstValueFrom(this.translateService.get(el.label));
         return el;
       })
     );
@@ -67,9 +65,7 @@ export class InteractionInfoComponent {
 
     this.interactionList = await Promise.all(
       this.typeList?.[index]?.interaction?.map(async el => {
-        el.label = await firstValueFrom(
-          this.translocoService.selectTranslate(el.label)
-        );
+        el.label = await firstValueFrom(this.translateService.get(el.label));
         return el;
       })
     );

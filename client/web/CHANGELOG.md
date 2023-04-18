@@ -5,3 +5,4 @@
 #### 1.1.0
 
 - [Develop the interaction form for COMPLETED interactions](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15330)
+- [Adding Ionic](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15403)

@@ -1,0 +1,7 @@
+{
+  "name": "seefit",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

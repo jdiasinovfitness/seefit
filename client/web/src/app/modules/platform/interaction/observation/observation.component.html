@@ -1,34 +1,28 @@
 <div class="base-line">
-  <span *ngIf="!!observation || displayBtn">
-    <lib-input
-      class="lib-input"
-      [type]="'text'"
-      [value]="observation"
-      [placeholder]="''"
-      [label]="'interaction.data.observation' | transloco"
-      [error]="''"
-      [inputName]="'observation'"
-      [disabled]="!displayBtn"
-      (stateChange)="onKeyUp($event)"
-    >
+  <!-- <span *ngIf="!!observation">
+    <lib-input class="lib-input"
+               [type]="'text'"
+               [value]="observation"
+               [placeholder]="''"
+               [label]="'interaction.data.observation' | translate"
+               [error]="''"
+               [inputName]="'observation'"
+               [disabled]="!displayBtn"
+               (stateChange)="onKeyUp($event)">
     </lib-input>
   </span>
 
   <span class="btn-group">
-    <lib-button
-      style="margin-right: 16px"
-      [primary]="!true"
-      *ngIf="displayBtn"
-      [text]="'interaction.data.btn-discard' | transloco"
-      (stateChange)="onButtonClick(false)"
-    >
+    <lib-button style="margin-right: 16px"
+                [primary]="!true"
+                *ngIf="displayBtn"
+                [text]="'interaction.data.btn-discard' | translate"
+                (stateChange)="onButtonClick(false)">
     </lib-button>
-    <lib-button
-      [primary]="true"
-      *ngIf="displayBtn"
-      [text]="'interaction.data.btn-submit' | transloco"
-      (stateChange)="onButtonClick(true)"
-    >
+    <lib-button [primary]="true"
+                *ngIf="displayBtn"
+                [text]="'interaction.data.btn-submit' | translate"
+                (stateChange)="onButtonClick(true)">
     </lib-button>
-  </span>
+  </span> -->
 </div>

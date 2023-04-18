@@ -1,8 +1,8 @@
-@import '../../core/styles/base.scss';
+@import '../../../global.scss';
 
 mat-sidenav {
   width: 100%;
-  background-color: $mainBackground !important;
+  background-color: $light-grey !important;
   padding: 16px 16px;
 }
 
@@ -11,11 +11,11 @@ mat-sidenav-container {
 }
 
 mat-expansion-panel {
-  background-color: $mainBackground;
+  background-color: $light-grey;
 }
 
 mat-panel-title {
-  color: $mainPrimary;
+  color: $primary;
   font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ mat-panel-title {
 
 .mat-accordion .mat-expansion-panel {
   box-shadow: none;
-  border-bottom: 1px $mainPrimary solid;
+  border-bottom: 1px $primary solid;
   border-radius: 0;
 }
 
@@ -51,16 +51,16 @@ mat-panel-title {
 }
 
 ::ng-deep .mat-expansion-indicator:after {
-  color: $mainPrimary;
+  color: $primary;
   font-weight: bold;
 }
 
 ::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
-  background-color: rgba($mainBackground, 0.2);
+  background-color: rgba($light-grey, 0.2);
 }
 
 .highlight {
-  color: $mainPrimary;
+  color: $primary;
   cursor: pointer;
 }
 

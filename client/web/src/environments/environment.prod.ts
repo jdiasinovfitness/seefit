@@ -1,4 +1,5 @@
 export const environment = {
-  endpoint: '/middleware',
+  baseUrl: '/middleware',
+  i18nURL: `../assets/i18n`, // FIXME: replace with service url
   production: true,
 };

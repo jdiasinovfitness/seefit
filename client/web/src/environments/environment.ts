@@ -1,4 +1,5 @@
 export const environment = {
-  endpoint: '/middleware',
+  baseUrl: '/middleware',
+  i18nURL: `../assets/i18n`, // `../assets/i18n`
   production: false,
 };

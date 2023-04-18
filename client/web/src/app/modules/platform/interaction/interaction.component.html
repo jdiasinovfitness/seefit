@@ -3,32 +3,26 @@
   <div class="header-row">
     <!-- Search Bar -->
     <span class="search-wrp">
-      <lib-search-bar
-        style="width: -webkit-fill-available"
-        [value]="searchValue"
-        (stateChange)="handleSearch($event)"
-        [filter]="false"
-      >
+      <!-- <lib-search-bar style="width: -webkit-fill-available"
+                      [value]="searchValue"
+                      (stateChange)="handleSearch($event)"
+                      [filter]="false">
       </lib-search-bar>
-      <lib-round-button
-        style="margin-left: 16px"
-        [disabled]="currentPhase === phaseEnum.loading"
-        (stateChange)="resetData()"
-      >
-        <ng-template #btnIcon>
-          <div class="refresh see-icon sm"></div>
+      <lib-round-button style="margin-left: 16px"
+                        [disabled]="currentPhase === phaseEnum.loading"
+                        (stateChange)="resetData()"> -->
+      <!-- <ng-template #btnIcon>
+          <div class="see-icon sm refresh"></div>
         </ng-template>
-      </lib-round-button>
+      </lib-round-button> -->
     </span>
     <!-- Filters -->
     <span class="filters">
       <div class="switch-wrp" *ngFor="let filter of filterList; let i = index">
-        <label>{{ filter.label | transloco }}</label>
-        <lib-switch
-          (stateChange)="handleFilterToggle($event, i)"
-          [checked]="filter.checked"
-          [disabled]="filter.disabled || (i !== 0 && !filterList[0]?.checked)"
-        ></lib-switch>
+        <label>{{ filter.label | translate }}</label>
+        <!-- <lib-switch (stateChange)="handleFilterToggle($event, i)"
+                    [checked]="filter.checked"
+                    [disabled]="filter.disabled || (i !== 0 && !filterList[0]?.checked)"></lib-switch> -->
       </div>
     </span>
   </div>
@@ -39,19 +33,19 @@
   >
     <ng-container [ngSwitch]="currentPhase">
       <!-- Loading Template -->
-      <div *ngSwitchCase="phaseEnum.loading"><lib-spinner></lib-spinner></div>
+      <!-- <div *ngSwitchCase="phaseEnum.loading"><lib-spinner></lib-spinner></div> -->
       <!-- Empty Template -->
       <div *ngSwitchCase="phaseEnum.empty">
         <app-empty-state
           [title]="
             (searchValue && 'interaction.empty.empty-search-title'
-              | transloco : { query: searchValue }) ||
-            ('interaction.empty.empty-title' | transloco)
+              | translate : { query: searchValue }) ||
+            ('interaction.empty.empty-title' | translate)
           "
           [footer]="
             (searchValue && 'interaction.empty.empty-search-footer'
-              | transloco : { query: searchValue }) ||
-            ('interaction.empty.empty-footer' | transloco)
+              | translate : { query: searchValue }) ||
+            ('interaction.empty.empty-footer' | translate)
           "
           [type]="'empty'"
         >
@@ -60,8 +54,8 @@
       <!-- Error Template -->
       <div *ngSwitchCase="phaseEnum.error">
         <app-empty-state
-          [title]="'interaction.error.error-title' | transloco"
-          [footer]="'interaction.error.error-footer' | transloco"
+          [title]="'interaction.error.error-title' | translate"
+          [footer]="'interaction.error.error-footer' | translate"
           [type]="'error'"
         >
         </app-empty-state>
@@ -69,46 +63,36 @@
       <!-- Success Template -->
       <div *ngSwitchCase="phaseEnum.success">
         <ng-container *ngIf="list && list.length > 0">
-          <lib-expansion-panel
-            *ngFor="let item of list; let i = index"
-            [isOpen]="false"
-          >
-            <!-- Accordion Header -->
+          <!-- <lib-expansion-panel *ngFor="let item of list; let i = index"
+                               [isOpen]="false">
+
+            <! -- Accordion Header -- >
             <ng-template #accHeader>
-              <app-ici-list-header
-                ngClass="exp-panel"
-                [data]="item"
-              ></app-ici-list-header>
+              <app-ici-list-header ngClass="exp-panel"
+                                   [data]="item"></app-ici-list-header>
             </ng-template>
 
-            <!-- Accordion Body -->
+            <! -- Accordion Body -- >
             <ng-template #accBody>
-              <lib-tabs
-                [tabs]="tabs"
-                [activeTab]="activeTabList[i]"
-                (tabChanged)="onTabChange($event, i)"
-              >
+              <lib-tabs [tabs]="tabs"
+                        [activeTab]="activeTabList[i]"
+                        (tabChanged)="onTabChange($event, i)">
                 <div *ngIf="activeTabList[i] === '0'">
-                  <app-customer-info
-                    [info]="item"
-                    (handleClick)="onButtonClick($event)"
-                  ></app-customer-info>
+                  <app-customer-info [info]="item"
+                                     (handleClick)="onButtonClick($event)"></app-customer-info>
                 </div>
                 <div *ngIf="activeTabList[i] === '1'">
-                  <app-interaction-info
-                    [info]="item"
-                    (handleClick)="onButtonClick($event)"
-                  ></app-interaction-info>
+                  <app-interaction-info [info]="item"
+                                        (handleClick)="onButtonClick($event)"></app-interaction-info>
                 </div>
                 <div *ngIf="activeTabList[i] === '2'">
-                  <app-history
-                    [info]="item"
-                    (handleClick)="onButtonClick($event)"
-                  ></app-history>
+                  <app-history [info]="item"
+                               (handleClick)="onButtonClick($event)"></app-history>
                 </div>
               </lib-tabs>
             </ng-template>
-          </lib-expansion-panel>
+
+          </lib-expansion-panel> -->
         </ng-container>
       </div>
     </ng-container>
@@ -116,6 +100,6 @@
   <!-- Footer -->
   <div class="footer-row">
     <div>{{ list && list.length }}</div>
-    <div>{{ 'interaction.footer' | transloco }}</div>
+    <div>{{ 'interaction.footer' | translate }}</div>
   </div>
 </div>

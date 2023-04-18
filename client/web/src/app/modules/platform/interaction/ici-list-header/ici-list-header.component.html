@@ -6,11 +6,12 @@
       <!-- Icons Col -->
       <div class="icon-col">
         <div
-          class="{{ icon }} see-icon md"
+          class="see-icon md"
           *ngFor="
             let icon of data?.customerInfo?.additionalInfo?.icons
               | slice : 0 : 3
           "
+          [ngClass]="icon"
         ></div>
       </div>
       <!-- Profile Photo -->
@@ -57,13 +58,11 @@
       <div class="item-col rgh">
         <span class="line">
           <label *ngIf="data.date">{{ data.date }}</label>
-          <div class="date see-icon sm" style="margin-left: 6px"></div>
+          <div class="see-icon sm date" style="margin-left: 6px"></div>
         </span>
-        <lib-label
-          style="margin-bottom: 6px"
-          *ngIf="data.status"
-          [label]="data.status"
-        ></lib-label>
+        <!-- <lib-label style="margin-bottom: 6px"
+                   *ngIf="data.status"
+                   [label]="data.status"></lib-label> -->
         <span class="interaction" *ngIf="data.interaction">
           <label style="font-weight: 500" *ngIf="data.interaction.label">{{
             data.interaction.label
