@@ -8,13 +8,13 @@
 .menu-avatar {
   align-self: center;
 
-  width: 40%;
+  width: 25%;
   height: auto;
 
   margin-top: 32px;
 
   img {
-    border: solid 1px $primary;
+    border: solid 1px var(--ion-color-primary);
   }
 
   ion-label {
@@ -62,4 +62,8 @@ ion-footer {
     // Makes side menu width 100% for sm devices (phones)
     --min-width: 100%;
   }
+}
+
+ion-item {
+  --border-color: var(--ion-color-primary);
 }
