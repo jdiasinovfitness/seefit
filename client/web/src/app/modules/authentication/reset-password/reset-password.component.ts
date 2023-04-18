@@ -41,7 +41,7 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params) => {
+    this.activatedRoute.queryParams.subscribe(params => {
       // TODO: get query param
       console.log('params', params); // TODO: Remove on PR!
     });

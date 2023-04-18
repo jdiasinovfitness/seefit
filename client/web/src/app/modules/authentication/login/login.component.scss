@@ -1,4 +1,4 @@
-@import "../../../../global.scss";
+@import '../../../../global.scss';
 
 .login-wrapper {
   display: flex;
@@ -52,7 +52,7 @@ form {
 
 @media (prefers-color-scheme: light) {
   #inov-fitness-logo {
-    background-image: url("../../../../assets/images/logoBlack.png");
+    background-image: url('../../../../assets/images/logoBlack.png');
     background-repeat: no-repeat, repeat;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@ form {
 
 @media (prefers-color-scheme: dark) {
   #inov-fitness-logo {
-    background-image: url("../../../../assets/images/logoWhite.png");
+    background-image: url('../../../../assets/images/logoWhite.png');
     background-repeat: no-repeat, repeat;
     background-position: center;
     background-repeat: no-repeat;

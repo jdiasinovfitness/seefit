@@ -18,8 +18,7 @@
     </span>
     <!-- Filters -->
     <span class="filters">
-      <div class="switch-wrp"
-           *ngFor="let filter of filterList; let i = index">
+      <div class="switch-wrp" *ngFor="let filter of filterList; let i = index">
         <label>{{ filter.label | translate }}</label>
         <!-- <lib-switch (stateChange)="handleFilterToggle($event, i)"
                     [checked]="filter.checked"
@@ -28,37 +27,42 @@
     </span>
   </div>
   <!-- Table -->
-  <div class="table-row"
-       [ngClass]="{ 'tbl-center': currentPhase !== phaseEnum.success }">
+  <div
+    class="table-row"
+    [ngClass]="{ 'tbl-center': currentPhase !== phaseEnum.success }"
+  >
     <ng-container [ngSwitch]="currentPhase">
       <!-- Loading Template -->
       <!-- <div *ngSwitchCase="phaseEnum.loading"><lib-spinner></lib-spinner></div> -->
       <!-- Empty Template -->
       <div *ngSwitchCase="phaseEnum.empty">
-        <app-empty-state [title]="
+        <app-empty-state
+          [title]="
             (searchValue && 'interaction.empty.empty-search-title'
               | translate : { query: searchValue }) ||
             ('interaction.empty.empty-title' | translate)
           "
-                         [footer]="
+          [footer]="
             (searchValue && 'interaction.empty.empty-search-footer'
               | translate : { query: searchValue }) ||
             ('interaction.empty.empty-footer' | translate)
           "
-                         [type]="'empty'">
+          [type]="'empty'"
+        >
         </app-empty-state>
       </div>
       <!-- Error Template -->
       <div *ngSwitchCase="phaseEnum.error">
-        <app-empty-state [title]="'interaction.error.error-title' | translate"
-                         [footer]="'interaction.error.error-footer' | translate"
-                         [type]="'error'">
+        <app-empty-state
+          [title]="'interaction.error.error-title' | translate"
+          [footer]="'interaction.error.error-footer' | translate"
+          [type]="'error'"
+        >
         </app-empty-state>
       </div>
       <!-- Success Template -->
       <div *ngSwitchCase="phaseEnum.success">
-        <ng-container *ngIf="list && list.length > 0 ">
-
+        <ng-container *ngIf="list && list.length > 0">
           <!-- <lib-expansion-panel *ngFor="let item of list; let i = index"
                                [isOpen]="false">
 
@@ -89,7 +93,6 @@
             </ng-template>
 
           </lib-expansion-panel> -->
-
         </ng-container>
       </div>
     </ng-container>

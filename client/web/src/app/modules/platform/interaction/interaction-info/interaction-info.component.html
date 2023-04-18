@@ -1,10 +1,16 @@
 <div class="interaction-wrapper">
+  <div
+    class="inner-wrapper"
+    *ngIf="info"
+    [innerHTML]="info?.interactionInfo | safeHtml"
+  ></div>
 
-  <div class="inner-wrapper"
-       *ngIf="info"
-       [innerHTML]="info?.interactionInfo | safeHtml"></div>
-
-  <ng-container *ngIf="currentPhase === phaseEnum.success && info?.status === statusTypes.COMPLETED">
+  <ng-container
+    *ngIf="
+      currentPhase === phaseEnum.success &&
+      info?.status === statusTypes.COMPLETED
+    "
+  >
     <!-- <lib-select style="margin-bottom: 16px"
                 *ngIf="typeList"
                 [id]="'type'"
@@ -44,8 +50,10 @@
     </div> -->
   </ng-container>
 
-  <app-observation [userId]="info.userId"
-                   [displayBtn]="info.status !== statusTypes.COMPLETED"
-                   (handleClick)="updateObservation($event)">
+  <app-observation
+    [userId]="info.userId"
+    [displayBtn]="info.status !== statusTypes.COMPLETED"
+    (handleClick)="updateObservation($event)"
+  >
   </app-observation>
 </div>
