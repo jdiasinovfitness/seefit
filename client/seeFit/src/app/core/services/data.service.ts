@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { INTERACTION, INTERACTION_STATUS } from '../constants/status.constants';
 import { ICIData, ICIFilter } from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
+import { MenuData } from '../interfaces/menu.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +10,12 @@ import { IITypeData } from '../interfaces/interaction.model';
 export class DataService {
   data!: Array<ICIData>;
   interactionList!: Array<IITypeData>;
+  menuItems!: Array<MenuData>;
 
   constructor() {
     this.data = this.getDummyData();
     this.interactionList = this.getDummyInteractionData();
+    this.menuItems = this.getDummyMenuData();
   }
 
   resetData() {
@@ -82,6 +85,46 @@ export class DataService {
         resolve(res);
       }, 400);
     });
+  }
+
+  getDummyMenuData() {
+    return [
+      //TODO: refactor menu options get from service
+      {
+        title: 'Interaction',
+        url: '/platform/interaction',
+        icon: 'home',
+        subMenu: [
+          { title: 'opcao 1', url: '/platform/interaction', icon: 'heart' },
+          { title: 'opcao 2', url: '/platform/interaction', icon: 'scale' },
+          { title: 'opcao 3', url: '/platform/interaction', icon: 'barbell' },
+        ],
+      },
+      {
+        title: 'Notifications',
+        url: '/platform/',
+        icon: 'notifications',
+        subMenu: [
+          {
+            title: 'opcao 1',
+            url: '/platform/interaction',
+            icon: 'apple-logo',
+          },
+        ],
+      },
+      {
+        title: 'Profile',
+        url: '/user/profile',
+        icon: 'settings',
+        subMenu: [
+          {
+            title: 'opcao 1',
+            url: '/platform/interaction',
+            icon: 'apple-logo',
+          },
+        ],
+      },
+    ];
   }
 
   getDummyInteractionData() {

@@ -39,13 +39,53 @@
          [src]="profilePhoto" />
   </ion-avatar>
   <div class="avatar-name">
-    <ion-label>{{userName}}</ion-label>
+    <ion-label color="primary">{{userName}}</ion-label>
   </div>
 
   <!-- Menu Section -->
   <ion-content>
     <ion-menu-toggle>
-      <ion-list lines="none">
+      <ion-accordion-group [multiple]="true">
+        <ion-accordion [value]="i"
+                       color="primary"
+                       toggleIconSlot="none"
+                       *ngFor="let item of menuItems; let i = index">
+          <ion-item slot="header"
+                    [routerLink]="item?.url ? [item?.url] : null"
+                    routerLinkActive="router-link-active">
+            <ion-icon slot="start"
+                      color="primary"
+                      [name]='item?.icon'>
+            </ion-icon>
+            <ion-label slot="start"
+                       color="primary">
+              {{item?.title}}
+            </ion-label>
+            <ion-icon [name]="!true ? 'chevron-down':'chevron-up'"
+                      size="small"
+                      color="primary"
+                      slot="end"></ion-icon>
+          </ion-item>
+          <!-- <div class="ion-padding"
+               *ngFor="let subItem of item.subMenu"> -->
+          <ion-item *ngFor="let subItem of item.subMenu"
+                    [routerLink]="subItem?.url ? [subItem?.url] : null"
+                    detail="false"
+                    lines="none"
+                    slot="content">
+            <ion-icon slot="start"
+                      color="dark"
+                      [name]='subItem?.icon'>
+            </ion-icon>
+            <ion-label color="dark">
+              {{subItem.title}}
+            </ion-label>
+          </ion-item>
+          <!-- </div> -->
+        </ion-accordion>
+      </ion-accordion-group>
+
+      <!-- <ion-list lines="none">
         <ion-item button
                   *ngFor="let item of menuItems"
                   [routerLink]="[item?.url]"
@@ -54,17 +94,22 @@
                     [name]='item?.icon'></ion-icon>
           <ion-label slot="start">{{item?.title}}</ion-label>
         </ion-item>
-      </ion-list>
+      </ion-list> -->
     </ion-menu-toggle>
   </ion-content>
 
   <!-- Footer Section -->
   <ion-footer>
     <ion-item button
+              color="light"
               (click)="logOut()">
       <ion-icon slot="end"
+                color="primary"
                 name='power'></ion-icon>
-      <ion-label slot="end">Logout</ion-label>
+      <ion-label slot="end"
+                 color="primary">
+        {{ 'menu.logout' | translate }}
+      </ion-label>
     </ion-item>
   </ion-footer>
 
