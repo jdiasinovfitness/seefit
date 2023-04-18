@@ -92,7 +92,6 @@ export class DataService {
       //TODO: refactor menu options get from service
       {
         title: 'Interaction',
-        url: '/platform/interaction',
         icon: 'home',
         subMenu: [
           { title: 'opcao 1', url: '/platform/interaction', icon: 'heart' },

@@ -12,7 +12,6 @@ import { MenuData } from '../../core/interfaces/menu.model';
 export class PlatformComponent implements OnInit {
   profilePhoto = 'https://ionicframework.com/docs/img/demos/avatar.svg';
   userName = 'John Doe';
-
   public menuItems!: Array<MenuData>;
 
   constructor(
@@ -25,11 +24,12 @@ export class PlatformComponent implements OnInit {
     this.menuItems = this.dataService.menuItems;
   }
 
-  // toggleMenu() {
-  // this.menu.open();
-  // }
+  toggleMenu() {
+    this.menu.toggle();
+  }
 
   logOut() {
+    this.menu.close();
     this.authService.logOut();
   }
 }
