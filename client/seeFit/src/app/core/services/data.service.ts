@@ -11,11 +11,15 @@ export class DataService {
   data!: Array<ICIData>;
   interactionList!: Array<IITypeData>;
   menuItems!: Array<MenuData>;
+  originList!: Array<any>;
+  selectedOrigin!: number;
 
   constructor() {
     this.data = this.getDummyData();
     this.interactionList = this.getDummyInteractionData();
     this.menuItems = this.getDummyMenuData();
+    this.originList = this.getDummyOriginData();
+    this.selectedOrigin = this.originList[0].id;
   }
 
   resetData() {
@@ -87,41 +91,47 @@ export class DataService {
     });
   }
 
+  getDummyOriginData() {
+    return [
+      { id: 1, name: 'Solinca Gaia' },
+      { id: 2, name: 'Solinca Dragão' },
+      { id: 3, name: 'Solinca Porto' },
+    ];
+  }
+
   getDummyMenuData() {
     return [
       //TODO: refactor menu options get from service
       {
-        title: 'Interaction',
-        icon: 'home',
+        title: 'menu.items.interaction.title',
+        icon: 'people',
         subMenu: [
-          { title: 'opcao 1', url: '/platform/interaction', icon: 'heart' },
-          { title: 'opcao 2', url: '/platform/interaction', icon: 'scale' },
-          { title: 'opcao 3', url: '/platform/interaction', icon: 'barbell' },
+          {
+            title: 'menu.items.interaction.live-club',
+            url: '/platform/interaction',
+            icon: 'square-outline',
+          },
+          {
+            title: 'menu.items.interaction.data-report',
+            url: '/platform/interaction',
+            icon: 'podium-outline',
+          },
         ],
       },
       {
-        title: 'Notifications',
+        title: 'menu.items.health.title',
         url: '/platform/',
-        icon: 'notifications',
-        subMenu: [
-          {
-            title: 'opcao 1',
-            url: '/platform/interaction',
-            icon: 'apple-logo',
-          },
-        ],
+        icon: 'medkit',
       },
       {
-        title: 'Profile',
+        title: 'menu.items.training.title',
         url: '/user/profile',
-        icon: 'settings',
-        subMenu: [
-          {
-            title: 'opcao 1',
-            url: '/platform/interaction',
-            icon: 'apple-logo',
-          },
-        ],
+        icon: 'barbell',
+      },
+      {
+        title: 'menu.items.feed.title',
+        url: '/user/profile',
+        icon: 'logo-rss',
       },
     ];
   }
