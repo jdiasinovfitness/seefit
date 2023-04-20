@@ -1,6 +1,36 @@
 {
   "menu": {
-    "logout": "Logout"
+    "items": {
+      "interaction": {
+        "title": "Interactions",
+        "live-club": "Live Club",
+        "data-report": "Data Reports"
+      },
+      "health": {
+        "title": "Health & Nutrition",
+        "": ""
+      },
+      "training": {
+        "title": "Training",
+        "evaluation": "Physical Evaluation"
+      },
+      "feed": {
+        "title": "Insights & Feed"
+      }
+    },
+    "footer": {
+      "origin": {
+        "title": "Orígem",
+        "close": "close",
+        "save": "save"
+      },
+      "profile": {
+        "title": "Perfil"
+      },
+      "logout": {
+        "title": "Sair"
+      }
+    }
   },
   "auth": {
     "login": {
