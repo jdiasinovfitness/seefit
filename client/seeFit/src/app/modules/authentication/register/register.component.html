@@ -1,0 +1,73 @@
+<ion-content class="ion-padding">
+  <div class="login-wrapper">
+
+    <!--Left section-->
+    <div class="left-section">
+      <img class="w-75"
+           src="../../../../assets/images/loginBackground.png" />
+    </div>
+
+    <!--Right section-->
+    <div class="right-section">
+      <div class="logo"
+           id="inov-fitness-logo"></div>
+      <form [formGroup]="authForm"
+            class="">
+
+        <ion-text color="black">
+          <p [innerHTML]="'auth.register.header' | translate | safeHtml"></p>
+        </ion-text>
+
+        <!-- Password -->
+        <ion-item class="pwd-group">
+          <ion-label position="floating">{{ 'auth.register.form.pwd.label' | translate }}</ion-label>
+          <ion-input type="password"
+                     formControlName="password"
+                     placeholder="{{ 'auth.register.form.pwd.placeholder' | translate }}"></ion-input>
+          <ion-note slot="error"
+                    *ngIf="authForm.get('password')?.invalid
+                    && authForm.get('password')?.touched">
+            {{ 'auth.register.form.pwd.errors.required' | translate }}
+          </ion-note>
+        </ion-item>
+
+        <!-- Password Confirmation -->
+        <ion-item class="pwd-group">
+          <ion-label position="floating">{{ 'auth.register.form.pwd-confirmation.label' | translate }}</ion-label>
+          <ion-input type="password"
+                     formControlName="passwordConfirmation"
+                     placeholder="{{ 'auth.register.form.pwd-confirmation.placeholder' | translate }}"></ion-input>
+          <ion-note slot="error"
+                    *ngIf="authForm.get('passwordConfirmation')?.value === ''
+                    && authForm.get('passwordConfirmation')?.touched
+                    && authForm.get('passwordConfirmation')?.getError('required')">
+            {{ 'auth.register.form.pwd-confirmation.errors.required' | translate }}
+          </ion-note>
+          <ion-note slot="error"
+                    *ngIf="authForm.get('passwordConfirmation')?.value !== ''
+                    && authForm.get('passwordConfirmation')?.touched
+                    && authForm.get('passwordConfirmation')?.getError('mustMatch')">
+            {{ 'auth.register.form.pwd-confirmation.errors.miss-match' | translate }}
+          </ion-note>
+        </ion-item>
+
+        <div class="btn-row">
+          <ion-button fill="clear"
+                      (click)="clearForm()">
+            {{ 'auth.register.clear-form' | translate }}
+          </ion-button>
+          <ng-container [ngSwitch]="currentPhase">
+            <ion-button expand="block"
+                        (stateChange)="register()">
+              <label *ngSwitchCase="phaseEnum.empty">
+                {{ 'auth.register.btn-submit' | translate }}
+              </label>
+              <ion-spinner *ngSwitchCase="phaseEnum.loading"
+                           name="dots"></ion-spinner>
+            </ion-button>
+          </ng-container>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
