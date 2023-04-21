@@ -78,6 +78,28 @@
         }
       }
     },
+    "register": {
+      "header": "In the following form you can set your password. The requirements are as follows:<br/><br/>- 8 characters or more<br/>- Mix of uppercase abd lowercase<br/>- Use of a special character",
+      "btn-submit": "Submit",
+      "clear-form": "Clear form",
+      "form": {
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "required": "Password required"
+          }
+        },
+        "pwd-confirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter your password again",
+          "errors": {
+            "required": "Password required",
+            "miss-match": "Passwords do not match"
+          }
+        }
+      }
+    },
     "reset-request": {
       "header": "If you forgot your password we can help you reset it by sending you an email with the reset instructions. For that we need you to provide us your email address",
       "btn-submit": "Reset Password",
