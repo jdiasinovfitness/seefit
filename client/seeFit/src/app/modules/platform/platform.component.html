@@ -44,62 +44,152 @@
 
   <!-- Menu Section -->
   <ion-content>
-    <ion-accordion-group [multiple]="!true">
-      <!-- (ionChange)="accordionGroupChange($event)" -->
-      <ion-accordion [value]="i"
-                     color="primary"
-                     *ngFor="let item of menuItems; let i = index">
-        <!-- toggleIconSlot="none" -->
-        <ion-item slot="header"
-                  [routerLink]="item?.url ? [item?.url] : null"
-                  routerLinkActive="router-link-active">
-          <ion-icon slot="start"
-                    color="primary"
-                    [name]='item?.icon'>
-          </ion-icon>
-          <ion-label slot="start"
-                     color="primary">
-            {{item?.title}}
-          </ion-label>
-          <!-- <ion-icon [name]="!true ? 'chevron-down':'chevron-up'"
-                    size="small"
-                    color="primary"
-                    slot="end"></ion-icon> -->
-        </ion-item>
-        <ion-item *ngFor="let subItem of item.subMenu"
-                  [routerLink]="subItem?.url ? [subItem?.url] : null"
-                  detail="false"
-                  lines="none"
-                  (click)="toggleMenu()"
-                  slot="content">
-          <ion-icon slot="start"
-                    color="dark"
-                    [name]='subItem?.icon'>
-          </ion-icon>
-          <ion-label color="dark">
-            {{subItem.title}}
-          </ion-label>
-        </ion-item>
-      </ion-accordion>
-    </ion-accordion-group>
+    <ng-container *ngFor="let item of menuItems; let i = index">
+
+      <!-- Menu Item -->
+      <ion-item *ngIf="!item.subMenu"
+                lines="full"
+                button
+                detail="false">
+        <ion-icon slot="start"
+                  color="primary"
+                  [name]='item?.icon'>
+        </ion-icon>
+        <ion-label slot="start"
+                   color="primary">
+          {{item.title | translate}}
+        </ion-label>
+      </ion-item>
+
+      <!-- Menu Item with SubItems -->
+      <ion-accordion-group [multiple]="true"
+                           *ngIf="item.subMenu">
+        <ion-accordion [value]="i"
+                       color="primary">
+          <ion-item slot="header"
+                    lines="full"
+                    [routerLink]="item?.url ? [item?.url] : null"
+                    routerLinkActive="router-link-active">
+            <ion-icon slot="start"
+                      color="primary"
+                      [name]='item?.icon'>
+            </ion-icon>
+            <ion-label slot="start"
+                       color="primary">
+              {{item.title | translate}}
+            </ion-label>
+          </ion-item>
+
+          <!-- Sub Menu Item -->
+          <ion-item *ngFor="let subItem of item.subMenu"
+                    [routerLink]="subItem?.url ? [subItem?.url] : null"
+                    detail="false"
+                    lines="none"
+                    (click)="toggleMenu()"
+                    slot="content">
+            <ion-icon slot="start"
+                      color="dark"
+                      [name]='subItem?.icon'>
+            </ion-icon>
+            <ion-label color="dark">
+              {{subItem.title | translate}}
+            </ion-label>
+          </ion-item>
+        </ion-accordion>
+      </ion-accordion-group>
+
+    </ng-container>
   </ion-content>
 
   <!-- Footer Section -->
   <ion-footer>
-    <ion-item button
-              color="light"
-              (click)="logOut()">
-      <div style="display: flex; flex-direction: column; align-items: center; padding: 12px 8px"
-           slot="end">
-        <ion-icon slot="end"
-                  color="primary"
-                  name='power'></ion-icon>
-        <ion-label slot="end"
-                   color="primary">
-          {{ 'menu.logout' | translate }}
-        </ion-label>
+    <ion-toolbar>
+      <div class="footer"
+           color="light">
+
+        <!-- Origin -->
+        <div class="footer-item"
+             id="origin-modal">
+          <ion-icon slot="end"
+                    color="primary"
+                    name='locate'></ion-icon>
+          <ion-label slot="end"
+                     color="primary">
+            {{ 'menu.footer.origin.title' | translate }}
+          </ion-label>
+        </div>
+
+        <!-- Origin Modal -->
+        <ion-modal trigger="origin-modal"
+                   id="origin-modal"
+                   (willDismiss)="onWillDismiss($event)">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-buttons slot="start">
+                  <ion-button (click)="cancel()">
+                    {{ 'menu.footer.origin.close' | translate }}
+                  </ion-button>
+                </ion-buttons>
+
+                <ion-title>
+                  {{ 'menu.footer.origin.modal-title' | translate }}
+                </ion-title>
+
+                <ion-buttons slot="end">
+                  <ion-button (click)="confirm()"
+                              [strong]="true">
+                    {{ 'menu.footer.origin.save' | translate }}
+                  </ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content>
+              <ion-list>
+                <ion-radio-group [value]="selectedOrigin"
+                                 (ionChange)="onOriginSelect($event)">
+                  <ion-item *ngFor="let org of originList; let i = index"
+                            lines="none">
+                    <ion-radio [value]="org.id"
+                               labelPlacement="end"
+                               slot="start">
+                      {{org.name}}
+                    </ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+
+        <!-- Profile -->
+        <div class="footer-item"
+             (click)="logOut()">
+          <ion-icon slot="end"
+                    color="primary"
+                    name='person'></ion-icon>
+          <ion-label slot="end"
+                     color="primary">
+            {{ 'menu.footer.profile.title' | translate }}
+          </ion-label>
+        </div>
+
+        <!-- Logout -->
+        <div class="footer-item"
+             slot="end"
+             (click)="logOut()">
+          <ion-icon slot="end"
+                    color="primary"
+                    name='power'></ion-icon>
+          <ion-label slot="end"
+                     color="primary">
+            {{ 'menu.footer.logout.title' | translate }}
+          </ion-label>
+        </div>
       </div>
-    </ion-item>
+    </ion-toolbar>
   </ion-footer>
 
 </ion-menu>
