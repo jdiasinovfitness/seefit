@@ -1,8 +1,8 @@
 {
   "name": "seeFit",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "version": "1.1.0",
+  "author": "i9r",
+  "homepage": "",
   "scripts": {
     "ng": "ng",
     "sync": "ng build && ionic capacitor build android && capacitor build android && ionic sync && npx cap sync && cd electron && npm run electron:pack && cd ..",
@@ -35,11 +35,11 @@
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
     "@i9r/ui-components": "^2.0.0",
-    "@ionic/angular": "^6.1.9",
+    "@ionic/angular": "^7.0.3",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "ionicons": "^6.0.3",
-    "rxjs": "~7.5.0",
+    "rxjs": "^7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
