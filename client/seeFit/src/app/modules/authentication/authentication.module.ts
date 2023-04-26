@@ -7,9 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResetRequestComponent } from './reset-request/reset-request.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [LoginComponent, ResetRequestComponent, ResetPasswordComponent],
+  declarations: [
+    LoginComponent,
+    ResetRequestComponent,
+    ResetPasswordComponent,
+    RegisterComponent,
+  ],
   imports: [
     CommonModule,
     IonicModule,
