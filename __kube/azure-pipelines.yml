@@ -7,7 +7,7 @@ trigger:
     include:
       - __kube
 
-pool: "devops-agent"
+pool: "cicd-agent"
 
 resources:
   repositories:
