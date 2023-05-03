@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData } from '../../../../core/interfaces/icidata.model';
+import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 import { DataService } from '../../../../core/services/data.service';
-import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
 import {
   IInteraction,
   IITypeData,
@@ -21,7 +20,7 @@ export enum Phases {
   styleUrls: ['./interaction-info.component.scss'],
 })
 export class InteractionInfoComponent {
-  statusTypes = INTERACTION_STATUS;
+  statusTypes = ICI_STATUS;
   phaseEnum = Phases;
   currentPhase = Phases.loading;
 
@@ -30,7 +29,7 @@ export class InteractionInfoComponent {
 
   typeList!: Array<IITypeData>;
   interactionList: Array<IInteraction> | undefined;
-  selectedType: string | undefined;
+  selectedType: ICI_STATUS | undefined;
   selectedInteraction: string | undefined;
   selectedInteractionValue: string | undefined;
   details: string = '';
@@ -95,7 +94,7 @@ export class InteractionInfoComponent {
 
   createInteraction(event: any) {
     const newInteraction = JSON.parse(JSON.stringify(this.info)) as ICIData;
-    newInteraction.status = this.selectedType || INTERACTION_STATUS.UNPLANNED;
+    newInteraction.status = this.selectedType || ICI_STATUS.UNPLANNED;
     newInteraction.interaction.value = this.selectedInteractionValue || '';
     newInteraction.interaction.isBold = true;
     newInteraction.interaction.label = 'INTERACTION:';
