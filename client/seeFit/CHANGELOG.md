@@ -17,3 +17,7 @@
 #### 1.3.0
 
 - [[ui] implement questions group view](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_workitems/edit/15549/)
+
+#### 1.3.0
+
+- [Impl History Component](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15545)

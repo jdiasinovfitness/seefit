@@ -9,10 +9,10 @@
         "*.ts"
       ],
       "parserOptions": {
-        "tsconfigRootDir": "client/web",
+        "tsconfigRootDir": "client/seeFit",
         "sourceType": "module",
         "project": [
-          "tsconfig.json"
+          "**/tsconfig.json"
         ],
         "createDefaultProgram": true
       },

@@ -28,7 +28,7 @@ export function CustomLoaderFactory() {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    IonicModule.forRoot({ menuType: 'overlay' }),
+    IonicModule.forRoot({ menuType: 'overlay', animated: false }),
     HttpClientModule,
     AppRoutingModule,
     TranslateModule.forRoot({
