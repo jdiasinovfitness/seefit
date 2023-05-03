@@ -27,6 +27,17 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/platform',
   },
+  {
+    path: 'physical-evaluation',
+    loadChildren: () =>
+      import('./modules/physical-evaluation.module').then(
+        (m) => m.PhysicalEvaluationModule
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: '/physical-evaluation',
+  },
 ];
 
 @NgModule({

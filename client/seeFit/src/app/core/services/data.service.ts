@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { INTERACTION, INTERACTION_STATUS } from '../constants/status.constants';
 import { ICIData, ICIFilter } from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
+import { PEdata, PromptType, Prompts } from '../interfaces/pedata.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export class DataService {
   menuItems!: Array<MenuData>;
   originList!: Array<any>;
   selectedOrigin!: number;
+  pEData!: Array<any>;
 
   constructor() {
     this.data = this.getDummyData();
@@ -20,6 +22,7 @@ export class DataService {
     this.menuItems = this.getDummyMenuData();
     this.originList = this.getDummyOriginData();
     this.selectedOrigin = this.originList[0].id;
+    this.pEData;
   }
 
   resetData() {
@@ -1692,5 +1695,572 @@ export class DataService {
     //   (value, index, self) =>
     //     index === self.findIndex(e => e.userId === value.userId)
     // )
+  }
+
+  getDummyPEData(): Array<PEdata> {
+    return [
+      {
+        // step 1
+        id: '1',
+        steps: [
+          {
+            number: '1',
+            title: 'ANÁLISE COMPORTAMENTAL',
+            group: [
+              {
+                title: '1. Nível de actividade e experiência em Ginásio',
+                prompts: [
+                  {
+                    title:
+                      'Actualmente, realiza actividade física estruturada, planeada, 3 dias por semana, durante pelo menos 30 minutos, a uma intensidade moderada pelo menos há 3 meses?',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '1',
+                          label: 'Sim',
+                        },
+                        {
+                          id: '2',
+                          label: 'Não',
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    title: 'É a primeira vez que frequenta um ginásio?',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '5',
+                          label: 'sim',
+                        },
+                        {
+                          id: '6',
+                          label: 'não',
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    title:
+                      'Caso tenha frequentado, quantos ginásios frequentou nos últimos 2 anos?',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '3',
+                          label: '0',
+                        },
+                        {
+                          id: '4',
+                          label: '1',
+                        },
+                        {
+                          id: '5',
+                          label: '2 ou mais',
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              {
+                title: '2. Qual o seu objetivo?',
+                prompts: [
+                  {
+                    title: 'Foco do treino. *',
+                    type: PromptType.Select,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '1',
+                          label: 'Tonificar',
+                        },
+                        {
+                          id: '2',
+                          label: 'Definir',
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    title: 'Que zona do corpo? *',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '3',
+                          label: 'Pernas',
+                        },
+                        {
+                          id: '4',
+                          label: 'Coxas',
+                        },
+                        {
+                          id: '5',
+                          label: 'Glúteos',
+                        },
+                        {
+                          id: '5',
+                          label: 'Braços',
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              {
+                title: '3. No contexto de exercício físico...',
+                prompts: [
+                  {
+                    title: 'O que gosta mais de fazer?',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '1',
+                          label: 'Cardio',
+                        },
+                        {
+                          id: '2',
+                          label: 'Musculação',
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          // step 2
+          {
+            number: '2',
+            title: 'ANÁLISE TÉCNICA',
+            group: [
+              {
+                title: '1. Anamnese Médica',
+                prompts: [
+                  {
+                    title: 'Alguma lesão antiga?',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '7', label: 'sim' },
+                        { id: '8', label: 'não' },
+                      ],
+                    },
+                  },
+                  {
+                    // title: 'História Pessoal - Comorbidades',
+                    title: '- Doença Cardíaca',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '10', label: 'Angina Instável' },
+                        { id: '11', label: 'Insuficiencia Cardiaca' },
+                        { id: '13', label: 'Doença Valvula' },
+                        { id: '14', label: 'Doença Vascular' },
+                        { id: '15', label: 'AVC' },
+                        { id: '16', label: 'Outro' },
+                        { id: '17', label: 'Nenhuma' },
+                      ],
+                    },
+                  },
+                  {
+                    title: '- Doença Pulmonar',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '18', label: 'Asma' },
+                        { id: '19', label: 'Bronquite' },
+                        {
+                          id: '20',
+                          label: 'Doença Pulmonar Obstrutiva Cronica',
+                        },
+                        { id: '21', label: 'Enfisema Pulmonar' },
+                        { id: '22', label: 'AVC' },
+                        { id: '23', label: 'Outro' },
+                        { id: '24', label: 'Nenhuma' },
+                      ],
+                    },
+                  },
+                  {
+                    title: '- Doença Renal',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '18', label: 'Insuficiência Renal' },
+                        { id: '19', label: 'Pedra nos Rins' },
+                        { id: '20', label: 'Infecção Renal' },
+                        { id: '21', label: 'Cistos Renais' },
+                        { id: '23', label: 'Outro' },
+                        { id: '17', label: 'Nenhuma' },
+                      ],
+                    },
+                  },
+                  {
+                    title: '- Cancro',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '18', label: 'Mama' },
+                        { id: '19', label: 'Colon-Rectal' },
+                        { id: '20', label: 'Próstata' },
+                        { id: '21', label: 'Pulmão' },
+                        { id: '23', label: 'Estômago' },
+                        { id: '23', label: 'Outro' },
+                        { id: '17', label: 'Nenhum' },
+                      ],
+                    },
+                  },
+                  {
+                    title: '- Outra',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '1', label: 'sim' },
+                        { id: '2', label: 'não' },
+                      ],
+                    },
+                  },
+                  {
+                    title: '- Outra',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '1', label: 'sim' },
+                        { id: '2', label: 'não' },
+                      ],
+                    },
+                  },
+                  {
+                    title:
+                      'Sinais ou Sintomas de Doença Cardiovascular, Metabólica e Renal',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '1',
+                          label:
+                            'Dor ou desconforto no peito, pescoço ou braços, resultantes de possível isquemia do miocárdio',
+                        },
+                        {
+                          id: '2',
+                          label:
+                            'Dificuldades respiratórias em repouso ou em esforço leve',
+                        },
+                      ],
+                    },
+                  },
+
+                  {
+                    title: 'Factores de Risco Cardiovascular - negativos',
+                    type: PromptType.Checkbox,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: false,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '1', label: 'Colesterol' },
+                        { id: '2', label: 'Nenhuma' },
+                        // Observação Input??
+                      ],
+                    },
+                  },
+
+                  {
+                    title: 'Está a tomar alguma medicação? *',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        { id: '7', label: 'sim' },
+                        { id: '8', label: 'não' },
+                      ],
+                    },
+                  },
+                ],
+              },
+              {
+                title: '2. Covid 19',
+                prompts: [
+                  {
+                    title: 'Teve Covid 19?*',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '1',
+                          label: 'sim',
+                        },
+                        {
+                          id: '2',
+                          label: 'não',
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              {
+                title:
+                  '4. Estratificação de Risco, Intensidade e Progressão de treino recomendada',
+                prompts: [
+                  {
+                    title:
+                      'Apresenta um Baixo Risco de doença cardiovascular (Indivíduos assintomáticos e que não tenham mais do que um factor de risco.)',
+                    type: PromptType.Radio,
+                    validations: [
+                      {
+                        name: 'required',
+                        value: true,
+                      },
+                    ],
+                    prompt: {
+                      options: [
+                        {
+                          id: '1',
+                          label: 'sim',
+                        },
+                        {
+                          id: '2',
+                          label: 'não',
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          // step 3
+          {
+            number: '3',
+            title: 'ANÁLISE FÍSICA',
+            group: [
+              {
+                title: 'Medidas',
+                prompts: [
+                  {
+                    title: 'Altura',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-9,0-90-9]',
+                      },
+                    ],
+                    prompt: { label: 'Altura', placeholder: 'cm' },
+                  },
+                  {
+                    title: 'Peso',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-9]',
+                      },
+                    ],
+                    prompt: { label: 'Peso', placeholder: 'Kg' },
+                  },
+                  {
+                    title: '% Massa Gorda',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-9]',
+                      },
+                    ],
+                    prompt: { label: 'M.G.', placeholder: '%' },
+                  },
+                  {
+                    title: '% Massa Magra',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-9]',
+                      },
+                    ],
+                    prompt: { label: 'M.M.', placeholder: '%' },
+                  },
+                  {
+                    title: 'Gordura Visceral',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-9]',
+                      },
+                    ],
+                    prompt: { label: '', placeholder: '' },
+                  },
+                  {
+                    title: 'Tx Metabólica Basal',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-90-9.0-9]',
+                      },
+                    ],
+                    prompt: { label: '', placeholder: '%' },
+                  },
+                  {
+                    title: 'Perímetro Anca:',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-90-9.0-9]',
+                      },
+                    ],
+                    prompt: { label: '', placeholder: 'cm' },
+                  },
+                  {
+                    title: 'Índice Anca / Cintura:',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: 'pattern',
+                        value: '[0-90-90-9.0-9]',
+                      },
+                    ],
+                    prompt: {
+                      label: '',
+                      placeholder: 'Índice Anca / Cintura:',
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          // step 4
+          {
+            number: '4',
+            title: 'FINALIZAR',
+            group: [
+              {
+                title: '',
+                prompts: [
+                  {
+                    title: '',
+                    type: PromptType.Input,
+                    validations: [
+                      {
+                        name: '',
+                        value: false,
+                      },
+                    ],
+                    prompt: { label: '', placeholder: '' },
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ];
   }
 }
