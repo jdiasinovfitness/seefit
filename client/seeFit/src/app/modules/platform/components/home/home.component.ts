@@ -1,6 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { DataService } from 'src/app/core/services/data.service';
-import { PEdata } from 'src/app/core/interfaces/pedata.model';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +6,7 @@ import { PEdata } from 'src/app/core/interfaces/pedata.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  data = Inject(DataService);
   constructor() {}
-
-  getDummyPEData(): Array<PEdata> {
-    return this.data.getDummyData();
-  }
 
   ngOnInit(): void {}
 }
