@@ -4,6 +4,7 @@ import { AuthService } from '../../core/services/auth.service';
 import { DataService } from '../../core/services/data.service';
 import { MenuData } from '../../core/interfaces/menu.model';
 import { ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-platform',
@@ -18,6 +19,7 @@ export class PlatformComponent implements OnInit {
   selectedOrigin!: number;
 
   constructor(
+    private router: Router,
     private menu: MenuController,
     private authService: AuthService,
     public dataService: DataService,
@@ -43,6 +45,11 @@ export class PlatformComponent implements OnInit {
   confirm() {
     this.modalCtrl.dismiss();
     this.dataService.selectedOrigin = this.selectedOrigin;
+  }
+
+  navigate(path: string) {
+    this.router.navigate([path]);
+    this.menu.close();
   }
 
   onWillDismiss(event: Event) {
