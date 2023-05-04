@@ -4,9 +4,10 @@ import { UserRoutingModule } from './user-routin.module';
 import { SharedModule } from '../../../core/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user.component';
+import { UserMenuComponent } from './user-menu/user-menu.component';
 
 @NgModule({
-  declarations: [UserComponent],
+  declarations: [UserComponent, UserMenuComponent],
   imports: [CommonModule, UserRoutingModule, SharedModule, FormsModule],
 })
 export class UserModule {}

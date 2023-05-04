@@ -1,14 +1,26 @@
-.filter-bar {
+@import "../../../../global.scss";
+
+.user-content-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  width: -webkit-fill-available;
 
-  margin-top: 27px;
-  margin-right: 8px;
-
-  ion-searchbar {}
-
-  ion-button {
-    min-height: 36px;
+  app-user-menu {
+    width: 100%;
   }
+}
 
+@media screen and (min-width: 580px) {
+  .user-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    width: -webkit-fill-available;
+
+    app-user-menu {
+      width: -webkit-fill-available;
+      max-width: 300px;
+    }
+  }
 }
