@@ -23,15 +23,16 @@ const routes: Routes = [
           ),
       },
       //health&nutrition
+      {
+        path: 'physical-evaluation',
+        loadChildren: () =>
+          import('./physical-evaluation/physical-evaluation.module').then(
+            (m) => m.PhysicalEvaluationModule
+          ),
+      },
     ],
   },
-  {
-    path: 'physical-evaluation',
-    loadChildren: () =>
-      import('../physical-evaluation.module').then(
-        (m) => m.PhysicalEvaluationModule
-      ),
-  },
+
   {
     path: '**',
     redirectTo: '/physical-evaluation',

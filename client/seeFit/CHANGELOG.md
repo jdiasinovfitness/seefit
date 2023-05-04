@@ -18,10 +18,6 @@
 
 - [Impl History Component](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15545)
 
-#### 1.3.0
+#### 1.4.0
 
 - [[ui] implement questions group view](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15549)
-
-#### 1.3.1
-
-- [Component Minor Fix](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_git/seefit/pullrequest/10002)
