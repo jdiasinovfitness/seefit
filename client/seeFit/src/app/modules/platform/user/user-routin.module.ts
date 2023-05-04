@@ -12,6 +12,25 @@ const routes: Routes = [
         loadChildren: () =>
           import('./profile/profile.module').then((m) => m.ProfileModule),
       },
+      {
+        path: 'activity',
+        loadChildren: () =>
+          import('./activity/activity.module').then((m) => m.ActivityModule),
+      },
+      {
+        path: 'customer',
+        loadChildren: () =>
+          import('./customer/customer-routing.module').then(
+            (m) => m.CustomerRoutingModule
+          ),
+      },
+      {
+        path: 'notification',
+        loadChildren: () =>
+          import('./notifications/notifications-routing.module').then(
+            (m) => m.NotificationsRoutingModule
+          ),
+      },
     ],
   },
 ];
