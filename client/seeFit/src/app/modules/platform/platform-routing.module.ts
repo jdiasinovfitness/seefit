@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../../core/guards/auth.guard';
 import { PlatformComponent } from './platform.component';
 
 const routes: Routes = [
@@ -9,11 +8,9 @@ const routes: Routes = [
     component: PlatformComponent,
     children: [
       {
-        path: 'user_profile/:id',
+        path: 'user',
         loadChildren: () =>
-          import('./user-profile/user-profile.module').then(
-            (m) => m.UserProfileModule
-          ),
+          import('./user/user.module').then((m) => m.UserModule),
       },
       {
         path: 'interaction',

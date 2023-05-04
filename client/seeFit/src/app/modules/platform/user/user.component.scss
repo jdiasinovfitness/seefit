@@ -1,0 +1,14 @@
+.filter-bar {
+  display: flex;
+  align-items: center;
+
+  margin-top: 27px;
+  margin-right: 8px;
+
+  ion-searchbar {}
+
+  ion-button {
+    min-height: 36px;
+  }
+
+}
