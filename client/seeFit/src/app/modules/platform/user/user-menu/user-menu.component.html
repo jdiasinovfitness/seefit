@@ -1,0 +1,47 @@
+<div class="user-menu-wrapper">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-button>
+            <ion-icon slot="icon-only"
+                      name="close"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+
+      <div class="logo"
+           id="inov-fitness-logo"></div>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- User Section -->
+  <ion-avatar class="menu-avatar">
+    <img alt="Silhouette of a person's head"
+         [src]="profilePhoto" />
+  </ion-avatar>
+  <div class="avatar-name">
+    <ion-label color="primary">{{'userName'}}</ion-label>
+  </div>
+
+  <ion-list>
+    <ng-container *ngFor="let item of userMenuItems; let i = index">
+      <ion-item slot="header"
+                button
+                lines="full"
+                [routerLink]="item.route"
+                routerLinkActive="router-link-active">
+        <ion-icon slot="start"
+                  color="primary"
+                  [name]='item?.icon'>
+        </ion-icon>
+        <ion-label color="primary">
+          {{item.title | translate}}
+        </ion-label>
+        <ion-icon slot="end"
+                  name="caret-forward"
+                  *ngIf="currentRoute === item.route"></ion-icon>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</div>
