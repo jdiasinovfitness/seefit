@@ -11,6 +11,13 @@ import { DataService } from 'src/app/core/services/data.service';
 export class UserMenuComponent implements OnDestroy {
   routeSub$!: Subscription;
   currentRoute: string = `${window.location.pathname}`;
+  // TODO: create interface and refactor to data service
+  user = {
+    name: 'Usain Bolt',
+    email: 'usain.bolt@inovfitness.com',
+    role: 'Instructor',
+    language: 'PT',
+  };
   profilePhoto =
     '../../../../../assets/temp_images/userPhotos/profile_blank.jpg';
   userMenuItems!: any; // TODO: create interface and refactor to data service

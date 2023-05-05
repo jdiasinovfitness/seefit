@@ -1,34 +1,46 @@
 <div class="user-menu-wrapper">
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-toggle>
-          <ion-button>
-            <ion-icon slot="icon-only"
-                      name="close"></ion-icon>
-          </ion-button>
-        </ion-menu-toggle>
-      </ion-buttons>
-
-      <div class="logo"
-           id="inov-fitness-logo"></div>
-    </ion-toolbar>
-  </ion-header>
 
   <!-- User Section -->
-  <ion-avatar class="menu-avatar">
-    <img alt="Silhouette of a person's head"
-         [src]="profilePhoto" />
-  </ion-avatar>
-  <div class="avatar-name">
-    <ion-label color="primary">{{'userName'}}</ion-label>
+  <ion-label><b>{{ 'user.user-menu.profile' | translate }}</b></ion-label>
+
+  <div class="profile-wrapper">
+    <ion-avatar class="menu-avatar">
+      <img alt="Silhouette of a person's head"
+           [src]="profilePhoto" />
+    </ion-avatar>
+
+    <div class="avatar-name">
+      <ion-label class="user-name"
+                 color="primary">
+        <b>{{user.name}}</b>
+      </ion-label>
+      <ion-label class="user-info"
+                 color="dark">
+        {{'user.user-menu.email' | translate}}
+        <b>{{user.email}}</b>
+      </ion-label>
+      <ion-label class="user-info"
+                 color="dark">
+        {{'user.user-menu.role' | translate}}
+        <b>{{user.role}}</b>
+      </ion-label>
+      <ion-label class="user-info"
+                 color="dark">
+        {{'user.user-menu.language' | translate}}
+        <b>{{user.language}}</b>
+      </ion-label>
+    </div>
   </div>
 
+  <!-- User Menu Section -->
+  <ion-label><b>{{ 'user.user-menu.configurations' | translate }}</b></ion-label>
   <ion-list>
     <ng-container *ngFor="let item of userMenuItems; let i = index">
       <ion-item slot="header"
                 button
                 lines="full"
+                [color]="currentRoute === item.route ? 'light' : null"
+                [disabled]="!item.active"
                 [routerLink]="item.route"
                 routerLinkActive="router-link-active">
         <ion-icon slot="start"
@@ -39,6 +51,7 @@
           {{item.title | translate}}
         </ion-label>
         <ion-icon slot="end"
+                  color="primary"
                   name="caret-forward"
                   *ngIf="currentRoute === item.route"></ion-icon>
       </ion-item>

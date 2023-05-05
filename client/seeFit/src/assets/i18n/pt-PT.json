@@ -190,5 +190,14 @@
       "additional-info": "INFORMAÇÃO ADICIONAL:",
       "lifecycle": "CICLO DE VIDA:"
     }
+  },
+  "user": {
+    "user-menu": {
+      "profile": "Perfil",
+      "configurations": "Configurações",
+      "email": "Email:",
+      "role": "Role:",
+      "language": "Language:"
+    }
   }
 }

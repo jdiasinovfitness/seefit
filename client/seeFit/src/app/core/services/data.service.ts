@@ -150,21 +150,25 @@ export class DataService {
         title: 'Edit Profile',
         icon: 'pencil',
         route: '/platform/user/profile',
+        active: true,
       },
       {
         title: 'My Activity',
         icon: 'calendar',
         route: '/platform/user/activity',
+        active: false,
       },
       {
         title: 'My Customers',
         icon: 'people',
         route: '/platform/user/customer',
+        active: false,
       },
       {
         title: 'Notifications',
         icon: 'notifications',
         route: '/platform/user/notification',
+        active: true,
       },
     ];
   }
