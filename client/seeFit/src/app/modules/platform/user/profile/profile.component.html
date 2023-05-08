@@ -2,16 +2,93 @@
 
   <ion-label><b>{{ 'user.profile.title' | translate }}</b></ion-label>
 
-  <ion-item class="input-wrapper">
-    <!-- <ion-label position="floating"> {{'user.profile.form.name' | translate}} </ion-label> -->
-    <ion-input class="custom"
-               mode="md"
-               type="text"
-               [value]=""
-               [placeholder]="''"
-               label="{{'user.profile.form.name' | translate}}"
-               labelPlacement="floating"
-               [disabled]="!true"
-               (ionChange)="onNameKeyUp($event)"></ion-input>
-  </ion-item>
+  <form [formGroup]="userForm"
+        class="">
+
+    <!-- Display Name -->
+    <ion-item class="input-wrapper">
+      <!-- <ion-input class="custom"
+                 mode="md"
+                 type="text"
+                 [value]="newName"
+                 [placeholder]=""
+                 label="{{'user.profile.form.name' | translate}}"
+                 labelPlacement="floating"
+                 [disabled]="!true"
+                 (ionChange)="onNameKeyUp($event)">
+      </ion-input> -->
+      <ion-label position="floating">{{ 'user.profile.form.name.placeholder' | translate }}</ion-label>
+      <ion-input type="text"
+                 formControlName="name"
+                 inputmode="text"
+                 placeholder="{{ 'user.profile.form.name.placeholder' | translate }}"></ion-input>
+      <ion-note slot="error"
+                *ngIf="userForm.get('name')?.getError('required')
+                          && userForm.get('name')?.value === ''
+                          && userForm.get('name')?.touched">
+        {{ 'user.profile.form.name.errors.required' | translate }}
+      </ion-note>
+    </ion-item>
+
+    <!-- Email -->
+    <ion-item class="input-wrapper">
+      <ion-input class="custom"
+                 mode="md"
+                 type="text"
+                 [value]="userData.email"
+                 [placeholder]="''"
+                 label="{{'user.profile.form.email' | translate}}"
+                 labelPlacement="floating"
+                 [disabled]="true">
+      </ion-input>
+    </ion-item>
+
+    <!-- Role -->
+    <ion-item class="input-wrapper">
+      <ion-input class="custom"
+                 mode="md"
+                 type="text"
+                 [value]="userData.role"
+                 [placeholder]="''"
+                 label="{{'user.profile.form.role' | translate}}"
+                 labelPlacement="floating"
+                 [disabled]="true">
+      </ion-input>
+    </ion-item>
+
+    <!-- Language -->
+    <ion-item class="input-wrapper">
+      <ion-label position="floating"> {{'user.profile.form.language.label' | translate}} </ion-label>
+      <ion-select [placeholder]="'user.profile.form.language.placeholder' | translate"
+                  [disabled]="!true"
+                  label-placement="floating"
+                  fill="solid"
+                  formControlName="lang">
+        <ion-select-option *ngFor="let typeOpt of langList"
+                           [value]="typeOpt.id">{{typeOpt.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Password -->
+    <ion-item class="input-wrapper">
+      <ion-label position="floating">{{ 'user.profile.form.password.label' | translate }}</ion-label>
+      <ion-input type="password"
+                 formControlName="password"
+                 inputmode="text"
+                 placeholder="{{ 'user.profile.form.password.placeholder' | translate }}"></ion-input>
+      <ion-note slot="error"
+                *ngIf="userForm.get('name')?.getError('required')
+                                  && userForm.get('name')?.value === ''
+                                  && userForm.get('name')?.touched">
+        {{ 'user.profile.form.password.errors.required' | translate }}
+      </ion-note>
+    </ion-item>
+
+    <!-- Submit -->
+    <div class="submit-wrapper">
+
+      <ion-button color="primary">{{ 'user.profile.form.confirm' | translate }}</ion-button>
+    </div>
+  </form>
+
 </div>

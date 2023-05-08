@@ -11,10 +11,18 @@
   }
 
   .input-wrapper {
+    margin-bottom: 16px;
 
     .custom {
       display: flex;
       flex-grow: 1;
     }
+  }
+
+  .submit-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0px 4px;
   }
 }
