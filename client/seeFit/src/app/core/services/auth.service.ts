@@ -1,11 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { authInfo } from 'src/app/core/interfaces/info-user.model';
 import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
 import { Buffer } from 'buffer';
 import { Router } from '@angular/router';
+import { AuthInfo } from '../interfaces/auth-info.model';
 
 export class UserEntity {
   private id: string | undefined;
@@ -63,7 +63,7 @@ export class AuthService {
   async login(formValue: {
     email: string;
     password: string;
-  }): Promise<authInfo> {
+  }): Promise<AuthInfo> {
     //TODO: api call to authentication in order to retrieve the access token
     const authString = Buffer.from(
       `${formValue.email}:${formValue.password}`
@@ -76,7 +76,7 @@ export class AuthService {
       },
     };
     const r = await firstValueFrom(
-      this.http.post<authInfo>(
+      this.http.post<AuthInfo>(
         `${this.config.getApiUrl()}/auth/login`,
         {},
         headers
@@ -108,7 +108,7 @@ export class AuthService {
 
   refreshToken() {}
 
-  setUserInfo(loginInfo: authInfo) {
+  setUserInfo(loginInfo: AuthInfo) {
     this.user = new UserEntity(loginInfo.id, loginInfo.email, loginInfo.email);
     console.log('USERRR', this.user);
   }
