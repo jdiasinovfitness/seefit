@@ -195,19 +195,43 @@
     "user-menu": {
       "profile": "Perfil",
       "configurations": "Configurações",
-      "email": "Email:",
-      "role": "Role:",
-      "language": "Language:"
+      "form": {
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Please select a language"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter a valid password"
+        }
+      }
     },
     "profile": {
       "title": "Editar Informação de Perfil",
       "form": {
-        "name": "Display Name",
+        "name": {
+          "label": "Display Name",
+          "placeholder": "This field is required",
+          "errors": {
+            "required": "Display Name"
+          }
+        },
         "email": "Email",
         "role": "Role",
-        "language": "Language",
-        "Password": "Password",
-        "Confirm": "Confirmar"
+        "language": {
+          "label": "Language",
+          "placeholder": "Select a Language"
+        },
+        "password": {
+          "label": "New Password",
+          "placeholder": "New Password",
+          "errors": {
+            "required": "This field is required"
+          }
+        },
+        "confirm": "Confirmar"
       }
     }
   }

@@ -194,9 +194,18 @@
     "user-menu": {
       "profile": "Profile",
       "configurations": "Configurations",
-      "email": "Email:",
-      "role": "Role:",
-      "language": "Language:"
+      "form": {
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Please select a language"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter a valid password"
+        }
+      }
     },
     "profile": {
       "title": "Edit Profile Information",
