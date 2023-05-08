@@ -198,6 +198,17 @@
       "email": "Email:",
       "role": "Role:",
       "language": "Language:"
+    },
+    "profile": {
+      "title": "Editar Informação de Perfil",
+      "form": {
+        "name": "Display Name",
+        "email": "Email",
+        "role": "Role",
+        "language": "Language",
+        "Password": "Password",
+        "Confirm": "Confirmar"
+      }
     }
   }
 }

@@ -1,3 +1,17 @@
-<p>
-  profile works!
-</p>
+<div class="profile-wrapper">
+
+  <ion-label><b>{{ 'user.profile.title' | translate }}</b></ion-label>
+
+  <ion-item class="input-wrapper">
+    <!-- <ion-label position="floating"> {{'user.profile.form.name' | translate}} </ion-label> -->
+    <ion-input class="custom"
+               mode="md"
+               type="text"
+               [value]=""
+               [placeholder]="''"
+               label="{{'user.profile.form.name' | translate}}"
+               labelPlacement="floating"
+               [disabled]="!true"
+               (ionChange)="onNameKeyUp($event)"></ion-input>
+  </ion-item>
+</div>

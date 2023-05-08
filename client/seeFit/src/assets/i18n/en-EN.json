@@ -197,6 +197,17 @@
       "email": "Email:",
       "role": "Role:",
       "language": "Language:"
+    },
+    "profile": {
+      "title": "Edit Profile Information",
+      "form": {
+        "name": "Display Name",
+        "email": "Email",
+        "role": "Role",
+        "language": "Language",
+        "Password": "Password",
+        "Confirm": "Confirm"
+      }
     }
   }
 }

@@ -9,6 +9,12 @@
   app-user-menu {
     width: 100%;
   }
+
+  .router-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+  }
 }
 
 @media screen and (min-width: 580px) {

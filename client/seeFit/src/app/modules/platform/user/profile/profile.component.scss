@@ -1,0 +1,20 @@
+@import "../../../../../global.scss";
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  ion-label {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .input-wrapper {
+
+    .custom {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+}
