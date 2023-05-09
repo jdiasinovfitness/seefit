@@ -10,12 +10,37 @@ export class UserService {
   languages!: Array<LangInfo>;
 
   constructor(private langService: TranslateService) {
-    this.user = this.getDummyAuthData();
+    this.getUserInfo();
     this.languages = this.getDummyLangData();
   }
 
   getCurrentLang() {
     return this.langService.currentLang;
+  }
+
+  updateUserName(name: string) {
+    if (!name) {
+      return;
+    }
+    // TODO: implement API request
+    this.user.name = name;
+  }
+
+  updateUserPassword(name: string) {
+    if (!name) {
+      return;
+    }
+    // TODO: implement API request
+    this.user.name = name;
+  }
+
+  getUserInfo() {
+    // TODO: implement API request
+    this.user = this.getDummyAuthData();
+  }
+
+  useLang(lang: string) {
+    this.langService.use(lang);
   }
 
   getDummyAuthData() {
