@@ -7,18 +7,9 @@
 
     <!-- Display Name -->
     <ion-item class="input-wrapper">
-      <!-- <ion-input class="custom"
-                 mode="md"
-                 type="text"
-                 [value]="newName"
-                 [placeholder]=""
-                 label="{{'user.profile.form.name' | translate}}"
-                 labelPlacement="floating"
-                 [disabled]="!true"
-                 (ionChange)="onNameKeyUp($event)">
-      </ion-input> -->
-      <ion-label position="floating">{{ 'user.profile.form.name.placeholder' | translate }}</ion-label>
       <ion-input type="text"
+                 label="{{'user.profile.form.name.label' | translate}}"
+                 labelPlacement="floating"
                  formControlName="name"
                  inputmode="text"
                  placeholder="{{ 'user.profile.form.name.placeholder' | translate }}"></ion-input>
@@ -57,10 +48,9 @@
     </ion-item>
 
     <!-- Language -->
-    <ion-item class="input-wrapper">
-      <ion-label position="floating"> {{'user.profile.form.language.label' | translate}} </ion-label>
+    <ion-item class="input-wrapper ion-no-padding">
       <ion-select [placeholder]="'user.profile.form.language.placeholder' | translate"
-                  [disabled]="!true"
+                  label="{{'user.profile.form.language.label' | translate}}"
                   label-placement="floating"
                   fill="solid"
                   formControlName="lang">
@@ -71,23 +61,20 @@
 
     <!-- Password -->
     <ion-item class="input-wrapper">
-      <ion-label position="floating">{{ 'user.profile.form.password.label' | translate }}</ion-label>
       <ion-input type="password"
                  formControlName="password"
                  inputmode="text"
+                 label="{{ 'user.profile.form.password.label' | translate }}"
+                 labelPlacement="stacked"
                  placeholder="{{ 'user.profile.form.password.placeholder' | translate }}"></ion-input>
-      <ion-note slot="error"
-                *ngIf="userForm.get('name')?.getError('required')
-                                  && userForm.get('name')?.value === ''
-                                  && userForm.get('name')?.touched">
-        {{ 'user.profile.form.password.errors.required' | translate }}
-      </ion-note>
     </ion-item>
 
     <!-- Submit -->
     <div class="submit-wrapper">
-
-      <ion-button color="primary">{{ 'user.profile.form.confirm' | translate }}</ion-button>
+      <ion-button color="primary"
+                  (click)="onSubmit($event)">
+        {{ 'user.profile.form.confirm.submit' | translate }}
+      </ion-button>
     </div>
   </form>
 

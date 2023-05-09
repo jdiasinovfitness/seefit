@@ -5,6 +5,8 @@ import {
 } from '../../../../core/interfaces/auth-info.model';
 import { UserService } from '../../../../core/services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -12,41 +14,63 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  userData: AuthInfo;
+  userData!: AuthInfo;
   newName!: string;
   langList!: Array<LangInfo>;
-  userForm: FormGroup;
+  userForm!: FormGroup;
 
   constructor(
     private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastService: ToastService,
+    private translateService: TranslateService
   ) {
-    this.userData = userService.user;
+    this.resetForm();
+  }
+
+  ngOnInit() {}
+
+  resetForm() {
+    this.userData = this.userService.user;
     this.langList = [
       { id: 'pt-PT', name: 'Portugues' },
       { id: 'en-EN', name: 'English' },
     ];
     this.userForm = this.formBuilder.group({
-      name: [userService.user.name, [Validators.required]],
-      lang: [userService.getCurrentLang(), [Validators.required]],
-      password: ['', [Validators.required]],
+      name: [this.userService.user.name, [Validators.required]],
+      lang: [this.userService.getCurrentLang(), [Validators.required]],
+      password: [''],
     });
-    setTimeout(() => {
-      console.log(
-        'userService.getCurrentLang()',
-        this.userService.getCurrentLang()
-      ); // TODO: Remove on PR!
-    }, 2000);
   }
 
-  ngOnInit() {}
+  onSubmit(event: any) {
+    const { name, lang, password } = this.userForm.value;
+    const hasNewName = name && name !== this.userService.user.name;
+    const hasNewLang = lang && lang !== this.userService.getCurrentLang();
+    const hasNewPassword = password && password !== '';
 
-  onNameKeyUp(event: any) {
-    console.log('NNNN', event); // TODO: Remove on PR!
-  }
+    if (hasNewName) {
+      const instLang = this.translateService.instant(
+        'user.profile.form.confirm.name'
+      );
+      this.toastService.presentToast({ message: instLang });
+    }
 
-  onPwdKeyUp(event: any) {
-    const a = event.target.value;
-    console.log('NNNN', event, a, a.trim()); // TODO: Remove on PR!
+    if (hasNewLang) {
+      this.userService.useLang(lang);
+      const instLang = this.translateService.instant(
+        'user.profile.form.confirm.lang'
+      );
+      this.toastService.presentToast({ message: instLang });
+    }
+
+    if (hasNewPassword) {
+      const instLang = this.translateService.instant(
+        'user.profile.form.confirm.password'
+      );
+      this.toastService.presentToast({ message: instLang });
+    }
+
+    this.resetForm();
   }
 }
