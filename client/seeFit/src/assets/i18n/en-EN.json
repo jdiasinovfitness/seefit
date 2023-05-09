@@ -210,12 +210,32 @@
     "profile": {
       "title": "Edit Profile Information",
       "form": {
-        "name": "Display Name",
+        "name": {
+          "label": "Display Name",
+          "placeholder": "This field is required",
+          "errors": {
+            "required": "Display Name"
+          }
+        },
         "email": "Email",
         "role": "Role",
-        "language": "Language",
-        "Password": "Password",
-        "Confirm": "Confirm"
+        "language": {
+          "label": "Language",
+          "placeholder": "Select a Language"
+        },
+        "password": {
+          "label": "New Password",
+          "placeholder": "*******",
+          "errors": {
+            "required": "This field is required"
+          }
+        },
+        "confirm": {
+          "submit": "Confirm",
+          "name": "Your Name was updated",
+          "lang": "The Language was updated",
+          "password": "Your password was updated"
+        }
       }
     }
   }

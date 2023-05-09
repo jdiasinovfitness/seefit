@@ -212,8 +212,8 @@
       "title": "Editar Informação de Perfil",
       "form": {
         "name": {
-          "label": "Display Name",
-          "placeholder": "This field is required",
+          "label": "Nome de Ecrã",
+          "placeholder": "Este campo é obrigatório",
           "errors": {
             "required": "Display Name"
           }
@@ -222,16 +222,21 @@
         "role": "Role",
         "language": {
           "label": "Language",
-          "placeholder": "Select a Language"
+          "placeholder": "Selecione uma opção"
         },
         "password": {
-          "label": "New Password",
-          "placeholder": "New Password",
+          "label": "Nova Password",
+          "placeholder": "********",
           "errors": {
-            "required": "This field is required"
+            "required": "Este campo é obrigatório"
           }
         },
-        "confirm": "Confirmar"
+        "confirm": {
+          "submit": "Confirmar",
+          "name": "O seu nome foi Nome alterado",
+          "lang": "A Lingua foi alterada",
+          "password": "A sua Password foi alterada"
+        }
       }
     }
   }
