@@ -1,46 +1,41 @@
 import { Injectable } from '@angular/core';
-import { AuthInfo, LangInfo } from '../interfaces/auth-info.model';
-import { TranslateService } from '@ngx-translate/core';
+import { AuthInfo } from '../interfaces/auth-info.model';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  user!: AuthInfo;
-  languages!: Array<LangInfo>;
+  userSubject = new BehaviorSubject<AuthInfo | undefined>(undefined);
+  user$ = this.userSubject?.asObservable();
 
-  constructor(private langService: TranslateService) {
-    this.getUserInfo();
-    this.languages = this.getDummyLangData();
+  constructor() {
+    this.fetchUserInfo();
   }
 
-  getCurrentLang() {
-    return this.langService.currentLang;
-  }
-
-  updateUserName(name: string) {
+  // FIXME: implement API request
+  async updateUserName(name: string) {
     if (!name) {
       return;
     }
-    // TODO: implement API request
-    this.user.name = name;
-  }
-
-  updateUserPassword(name: string) {
-    if (!name) {
+    const usr = await firstValueFrom(this.user$);
+    if (!usr) {
       return;
     }
-    // TODO: implement API request
-    this.user.name = name;
+    usr.name = name;
   }
 
-  getUserInfo() {
-    // TODO: implement API request
-    this.user = this.getDummyAuthData();
+  // FIXME: implement API request
+  updateUserPassword(password: string) {
+    if (!password) {
+      return;
+    }
+    // this.user.name = name;
   }
 
-  useLang(lang: string) {
-    this.langService.use(lang);
+  // FIXME: implement API request
+  fetchUserInfo() {
+    this.userSubject.next(this.getDummyAuthData());
   }
 
   getDummyAuthData() {
@@ -49,24 +44,10 @@ export class UserService {
       acessToken: '',
       refreshToken: '',
       role: 'Instructor',
+      avatar: '../../../../../assets/temp_images/userPhotos/profile_blank.jpg',
       name: 'Usain Bolt',
       email: 'usain.bolt@inovfitness.com',
     };
     return authInfo;
-  }
-
-  getDummyLangData() {
-    // return this.langService.getLangs();
-    const langs: Array<LangInfo> = [
-      {
-        id: 'pt-PT',
-        name: 'Português',
-      },
-      {
-        id: 'en-EN',
-        name: 'English',
-      },
-    ];
-    return langs;
   }
 }

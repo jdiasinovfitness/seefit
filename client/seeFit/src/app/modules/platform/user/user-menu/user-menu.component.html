@@ -3,31 +3,33 @@
   <!-- User Section -->
   <ion-label><b>{{ 'user.user-menu.profile' | translate }}</b></ion-label>
 
-  <div class="profile-wrapper">
+  <div class="profile-wrapper"
+       *ngIf="userService.user$ | async as user">
     <ion-avatar class="menu-avatar">
       <img alt="Silhouette of a person's head"
-           [src]="profilePhoto" />
+           [src]="user.avatar" />
     </ion-avatar>
 
     <div class="avatar-name">
       <ion-label class="user-name"
                  color="primary">
-        <b>{{user.name}}</b>
+        <b>{{user?.name}}</b>
       </ion-label>
       <ion-label class="user-info"
                  color="dark">
-        {{'user.user-menu.email' | translate}}
-        <b>{{user.email}}</b>
+        {{'user.user-menu.form.email' | translate}}
+        <b>{{user?.email}}</b>
       </ion-label>
       <ion-label class="user-info"
                  color="dark">
-        {{'user.user-menu.role' | translate}}
-        <b>{{user.role}}</b>
+        {{'user.user-menu.form.role' | translate}}
+        <b>{{user?.role}}</b>
       </ion-label>
       <ion-label class="user-info"
+                 *ngIf="langService.lang$ | async as lang"
                  color="dark">
-        {{'user.user-menu.language' | translate}}
-        <b>{{user.language}}</b>
+        {{'user.user-menu.form.language.label' | translate}}
+        <b>{{'lang.' + lang | translate}}</b>
       </ion-label>
     </div>
   </div>
