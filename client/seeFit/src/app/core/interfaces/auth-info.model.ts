@@ -3,6 +3,7 @@ export interface AuthInfo {
   role: string;
   acessToken: string;
   refreshToken?: string;
+  avatar?: string;
   name: string;
   email: string;
 }
