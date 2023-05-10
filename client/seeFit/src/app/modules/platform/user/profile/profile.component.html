@@ -55,7 +55,7 @@
                   fill="solid"
                   formControlName="lang">
         <ion-select-option *ngFor="let typeOpt of langList"
-                           [value]="typeOpt.id">{{typeOpt.name }}</ion-select-option>
+                           [value]="typeOpt.id">{{ 'lang.' + typeOpt.id | translate}}</ion-select-option>
       </ion-select>
     </ion-item>
 

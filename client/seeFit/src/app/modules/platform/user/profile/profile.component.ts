@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../../../core/services/user.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { firstValueFrom } from 'rxjs';
+import { LangService } from 'src/app/core/services/lang.service';
 import {
   AuthInfo,
   LangInfo,
 } from '../../../../core/interfaces/auth-info.model';
-import { UserService } from '../../../../core/services/user.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastService } from 'src/app/core/services/toast.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -20,52 +21,58 @@ export class ProfileComponent implements OnInit {
   userForm!: FormGroup;
 
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private formBuilder: FormBuilder,
     private toastService: ToastService,
-    private translateService: TranslateService
+    private langService: LangService
   ) {
     this.resetForm();
   }
 
   ngOnInit() {}
 
-  resetForm() {
-    this.userData = this.userService.user;
-    this.langList = [
-      { id: 'pt-PT', name: 'Portugues' },
-      { id: 'en-EN', name: 'English' },
-    ];
+  async resetForm() {
+    const usr = await firstValueFrom(this.userService.user$);
+    const lang = await this.langService.getCurrentLang();
+    if (!usr || !lang) {
+      return;
+    }
+
+    this.userData = usr;
+    this.langList = await this.langService.getLangList();
     this.userForm = this.formBuilder.group({
-      name: [this.userService.user.name, [Validators.required]],
-      lang: [this.userService.getCurrentLang(), [Validators.required]],
+      name: [usr?.name, [Validators.required]],
+      lang: [lang, [Validators.required]],
       password: [''],
     });
   }
 
-  onSubmit(event: any) {
+  async onSubmit(event: any) {
+    const usr = await firstValueFrom(this.userService.user$);
     const { name, lang, password } = this.userForm.value;
-    const hasNewName = name && name !== this.userService.user.name;
-    const hasNewLang = lang && lang !== this.userService.getCurrentLang();
+    const hasNewName = name && name !== usr?.name;
+    const hasNewLang = lang && lang !== this.langService.getCurrentLang();
     const hasNewPassword = password && password !== '';
 
     if (hasNewName) {
-      const instLang = this.translateService.instant(
+      await this.userService.updateUserName(name);
+      const instLang = this.langService.translate(
         'user.profile.form.confirm.name'
       );
       this.toastService.presentToast({ message: instLang });
     }
 
     if (hasNewLang) {
-      this.userService.useLang(lang);
-      const instLang = this.translateService.instant(
+      await this.langService.useLang(lang);
+      const instLang = this.langService.translate(
         'user.profile.form.confirm.lang'
       );
       this.toastService.presentToast({ message: instLang });
     }
 
     if (hasNewPassword) {
-      const instLang = this.translateService.instant(
+      await this.userService.updateUserPassword(password);
+      const instLang = this.langService.translate(
         'user.profile.form.confirm.password'
       );
       this.toastService.presentToast({ message: instLang });
