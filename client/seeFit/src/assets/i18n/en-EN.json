@@ -1,4 +1,8 @@
 {
+  "lang": {
+    "pt-PT": "Portuguese",
+    "en-EN": "English"
+  },
   "menu": {
     "items": {
       "interaction": {
