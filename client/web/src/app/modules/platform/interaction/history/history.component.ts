@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { INTERACTION_STATUS } from 'src/app/core/constants/status.constants';
+import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
 
 @Component({
   selector: 'app-history',

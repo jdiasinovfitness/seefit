@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DataService } from 'src/app/core/services/data.service';
+import { DataService } from '../../../../core/services/data.service';
 
 @Component({
   selector: 'app-observation',

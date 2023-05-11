@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData } from 'src/app/core/interfaces/icidata.model';
-import { DataService } from 'src/app/core/services/data.service';
+import { ICIData } from '../../../../core/interfaces/icidata.model';
+import { DataService } from '../../../../core/services/data.service';
 import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
 import {
   IInteraction,

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../../core/services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastService } from 'src/app/core/services/toast.service';
+import { UserService } from '../../../../core/services/user.service';
+import { ToastService } from '../../../../core/services/toast.service';
+import { LangService } from '../../../../core/services/lang.service';
 import { firstValueFrom } from 'rxjs';
-import { LangService } from 'src/app/core/services/lang.service';
 import {
   AuthInfo,
   LangInfo,

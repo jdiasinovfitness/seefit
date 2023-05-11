@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ICIData } from 'src/app/core/interfaces/icidata.model';
+import { ICIData } from '../../../../core/interfaces/icidata.model';
 
 @Component({
   selector: 'app-ici-list-header',

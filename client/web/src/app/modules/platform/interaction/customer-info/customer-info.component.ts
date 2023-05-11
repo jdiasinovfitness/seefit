@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { INTERACTION_STATUS } from 'src/app/core/constants/status.constants';
-import { ICIData } from 'src/app/core/interfaces/icidata.model';
+import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
+import { ICIData } from '../../../../core/interfaces/icidata.model';
 
 @Component({
   selector: 'app-customer-info',

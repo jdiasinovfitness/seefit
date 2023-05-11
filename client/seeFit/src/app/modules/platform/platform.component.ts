@@ -5,7 +5,7 @@ import { DataService } from '../../core/services/data.service';
 import { MenuData } from '../../core/interfaces/menu.model';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/core/services/user.service';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-platform',
