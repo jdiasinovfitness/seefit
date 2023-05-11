@@ -147,25 +147,25 @@ export class DataService {
     return [
       //TODO: refactor menu options get from service
       {
-        title: 'Edit Profile',
+        title: 'user.user-menu.menu-items.edit-profile',
         icon: 'pencil',
         route: '/platform/user/profile',
         active: true,
       },
       {
-        title: 'My Activity',
+        title: 'user.user-menu.menu-items.activity',
         icon: 'calendar',
         route: '/platform/user/activity',
         active: false,
       },
       {
-        title: 'My Customers',
+        title: 'user.user-menu.menu-items.customers',
         icon: 'people',
         route: '/platform/user/customer',
         active: false,
       },
       {
-        title: 'Notifications',
+        title: 'user.user-menu.menu-items.notifications',
         icon: 'notifications',
         route: '/platform/user/notification',
         active: true,

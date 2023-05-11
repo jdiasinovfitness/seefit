@@ -198,6 +198,12 @@
     "user-menu": {
       "profile": "Profile",
       "configurations": "Configurations",
+      "menu-items": {
+        "edit-profile": "Edit Profile",
+        "activity": "My Activity",
+        "customers": "My Customers",
+        "notifications": "Notifications"
+      },
       "form": {
         "email": "Email",
         "role": "Role",

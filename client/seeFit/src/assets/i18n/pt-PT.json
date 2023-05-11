@@ -199,6 +199,12 @@
     "user-menu": {
       "profile": "Perfil",
       "configurations": "Configurações",
+      "menu-items": {
+        "edit-profile": "Editar Perfil",
+        "activity": "A Minha Atividade",
+        "customers": "Os Meus Clientes",
+        "notifications": "Notificações"
+      },
       "form": {
         "email": "Email",
         "role": "Role",
