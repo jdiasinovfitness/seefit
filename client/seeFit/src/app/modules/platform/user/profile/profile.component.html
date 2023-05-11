@@ -49,11 +49,10 @@
     </ion-item>
 
     <!-- Language -->
-    <ion-item class="input-wrapper ion-no-padding">
+    <ion-item class="input-wrapper">
       <ion-select [placeholder]="'user.profile.form.language.placeholder' | translate"
                   label="{{'user.profile.form.language.label' | translate}}"
                   label-placement="floating"
-                  fill="solid"
                   formControlName="lang">
         <ion-select-option *ngFor="let typeOpt of langList"
                            [value]="typeOpt.id">{{ 'lang.' + typeOpt.id | translate}}</ion-select-option>
