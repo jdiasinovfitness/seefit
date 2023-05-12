@@ -1,17 +1,25 @@
-import { Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { AuthInfo } from '../../../../core/interfaces/auth-info.model';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from '../../../../core/services/data.service';
 import { UserService } from '../../../../core/services/user.service';
-import { LangService } from 'src/app/core/services/lang.service';
+import { LangService } from '../../../../core/services/lang.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-menu',
   templateUrl: './user-menu.component.html',
   styleUrls: ['./user-menu.component.scss'],
 })
-export class UserMenuComponent implements OnDestroy {
+export class UserMenuComponent implements OnInit, OnDestroy {
+  @Input() isOpen!: boolean;
+  @Output() onOpen = new EventEmitter<any>();
   routeSub$!: Subscription;
   currentRoute: string = `${window.location.pathname}`;
   userMenuItems!: any; // TODO: create interface and refactor to data service
@@ -31,7 +39,15 @@ export class UserMenuComponent implements OnDestroy {
     this.userMenuItems = this.dataService.userMenuItems;
   }
 
+  ngOnInit(): void {
+    this.isOpen;
+  }
+
   ngOnDestroy() {
     this.routeSub$.unsubscribe();
+  }
+
+  onClick() {
+    this.onOpen.emit();
   }
 }

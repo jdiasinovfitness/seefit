@@ -3,6 +3,7 @@
 .user-menu-wrapper {
   display: flex;
   flex-direction: column;
+  width: -webkit-fill-available;
 
   ion-label {
     margin-top: 16px;
@@ -73,4 +74,20 @@
 
 .highlight {
   background-color: $coral !important;
+}
+
+.chev-icon {
+  display: none;
+}
+
+@media screen and (max-width: 580px) {
+  ion-item::part(native) {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .chev-icon {
+    display: block;
+  }
 }
