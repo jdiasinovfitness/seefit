@@ -21,3 +21,7 @@
 #### 1.5.0
 
 - [](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15546)
+
+#### 1.6.0
+
+- [Upgrade Angular Version 16](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15603)
