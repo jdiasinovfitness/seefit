@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ICIData, ICI_STATUS } from 'src/app/core/interfaces/icidata.model';
+import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 
 @Component({
   selector: 'app-customer-info',

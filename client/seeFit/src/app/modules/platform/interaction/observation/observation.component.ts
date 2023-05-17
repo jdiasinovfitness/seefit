@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DataService } from 'src/app/core/services/data.service';
+import { DataService } from '../../../../core/services/data.service';
 
 @Component({
   selector: 'app-observation',
@@ -8,10 +8,10 @@ import { DataService } from 'src/app/core/services/data.service';
 })
 export class ObservationComponent implements OnInit {
   @Input() userId!: string;
-  @Input() displayBtn: boolean = true;
+  @Input() displayBtn = true;
   @Output() handleClick = new EventEmitter();
 
-  observation: string = '';
+  observation = '';
 
   constructor(private dataService: DataService) {}
 

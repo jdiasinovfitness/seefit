@@ -1,4 +1,8 @@
 {
+  "lang": {
+    "pt-PT": "Português",
+    "en-EN": "Inglês"
+  },
   "menu": {
     "items": {
       "interaction": {
@@ -189,6 +193,61 @@
       "additional-services": "SERVIÇOS ADICIONAIS:",
       "additional-info": "INFORMAÇÃO ADICIONAL:",
       "lifecycle": "CICLO DE VIDA:"
+    }
+  },
+  "user": {
+    "user-menu": {
+      "profile": "Perfil",
+      "configurations": "Configurações",
+      "menu-items": {
+        "edit-profile": "Editar Perfil",
+        "activity": "A Minha Atividade",
+        "customers": "Os Meus Clientes",
+        "notifications": "Notificações"
+      },
+      "form": {
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Please select a language"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter a valid password"
+        }
+      }
+    },
+    "profile": {
+      "title": "Editar Informação de Perfil",
+      "form": {
+        "name": {
+          "label": "Nome de Ecrã",
+          "placeholder": "Este campo é obrigatório",
+          "errors": {
+            "required": "Display Name"
+          }
+        },
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Selecione uma opção"
+        },
+        "password": {
+          "label": "Nova Password",
+          "placeholder": "********",
+          "errors": {
+            "required": "Este campo é obrigatório"
+          }
+        },
+        "confirm": {
+          "submit": "Confirmar",
+          "name": "O seu nome foi Nome alterado",
+          "lang": "A Lingua foi alterada",
+          "password": "A sua Password foi alterada"
+        }
+      }
     }
   }
 }

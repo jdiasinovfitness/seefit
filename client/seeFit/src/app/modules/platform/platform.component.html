@@ -34,11 +34,13 @@
   </ion-header>
 
   <!-- User Section -->
-  <ion-avatar class="menu-avatar">
+  <ion-avatar class="menu-avatar"
+              (click)="navigate('/platform/user/profile')">
     <img alt="Silhouette of a person's head"
          [src]="profilePhoto" />
   </ion-avatar>
-  <div class="avatar-name">
+  <div class="avatar-name"
+       (click)="navigate('/platform/user/profile')">
     <ion-label color="primary">{{userName}}</ion-label>
   </div>
 
@@ -166,7 +168,7 @@
 
         <!-- Profile -->
         <div class="footer-item"
-             (click)="logOut()">
+             (click)="navigate('/platform/user/profile')">
           <ion-icon slot="end"
                     color="primary"
                     name='person'></ion-icon>

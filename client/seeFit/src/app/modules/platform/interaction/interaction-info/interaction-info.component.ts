@@ -32,7 +32,7 @@ export class InteractionInfoComponent {
   selectedType: ICI_STATUS | undefined;
   selectedInteraction: string | undefined;
   selectedInteractionValue: string | undefined;
-  details: string = '';
+  details = '';
 
   constructor(
     private dataService: DataService,

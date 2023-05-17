@@ -15,6 +15,7 @@ import { MenuData } from '../interfaces/menu.model';
 export class DataService {
   data!: Array<ICIData>;
   interactionList!: Array<IITypeData>;
+  userMenuItems!: Array<MenuData>;
   menuItems!: Array<MenuData>;
   originList!: Array<any>;
   selectedOrigin!: number;
@@ -22,6 +23,7 @@ export class DataService {
   constructor() {
     this.data = this.getDummyData();
     this.interactionList = this.getDummyInteractionData();
+    this.userMenuItems = this.getDummyUserMenuData();
     this.menuItems = this.getDummyMenuData();
     this.originList = this.getDummyOriginData();
     this.selectedOrigin = this.originList[0].id;
@@ -137,6 +139,36 @@ export class DataService {
         title: 'menu.items.feed.title',
         url: '/user/profile',
         icon: 'logo-rss',
+      },
+    ];
+  }
+
+  getDummyUserMenuData() {
+    return [
+      //TODO: refactor menu options get from service
+      {
+        title: 'user.user-menu.menu-items.edit-profile',
+        icon: 'pencil',
+        route: '/platform/user/profile',
+        active: true,
+      },
+      {
+        title: 'user.user-menu.menu-items.activity',
+        icon: 'calendar',
+        route: '/platform/user/activity',
+        active: false,
+      },
+      {
+        title: 'user.user-menu.menu-items.customers',
+        icon: 'people',
+        route: '/platform/user/customer',
+        active: false,
+      },
+      {
+        title: 'user.user-menu.menu-items.notifications',
+        icon: 'notifications',
+        route: '/platform/user/notification',
+        active: true,
       },
     ];
   }

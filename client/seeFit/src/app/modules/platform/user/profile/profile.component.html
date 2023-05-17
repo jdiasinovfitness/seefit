@@ -1,0 +1,81 @@
+<div class="profile-wrapper"
+     *ngIf="userForm">
+
+  <ion-label><b>{{ 'user.profile.title' | translate }}</b></ion-label>
+
+  <form [formGroup]="userForm"
+        class="">
+
+    <!-- Display Name -->
+    <ion-item class="input-wrapper">
+      <ion-input type="text"
+                 label="{{'user.profile.form.name.label' | translate}}"
+                 labelPlacement="floating"
+                 formControlName="name"
+                 inputmode="text"
+                 placeholder="{{ 'user.profile.form.name.placeholder' | translate }}"></ion-input>
+      <ion-note slot="error"
+                *ngIf="userForm.get('name')?.getError('required')
+                          && userForm.get('name')?.value === ''
+                          && userForm.get('name')?.touched">
+        {{ 'user.profile.form.name.errors.required' | translate }}
+      </ion-note>
+    </ion-item>
+
+    <!-- Email -->
+    <ion-item class="input-wrapper">
+      <ion-input class="custom"
+                 mode="md"
+                 type="text"
+                 [value]="userData.email"
+                 [placeholder]="''"
+                 label="{{'user.profile.form.email' | translate}}"
+                 labelPlacement="floating"
+                 [disabled]="true">
+      </ion-input>
+    </ion-item>
+
+    <!-- Role -->
+    <ion-item class="input-wrapper">
+      <ion-input class="custom"
+                 mode="md"
+                 type="text"
+                 [value]="userData.role"
+                 [placeholder]="''"
+                 label="{{'user.profile.form.role' | translate}}"
+                 labelPlacement="floating"
+                 [disabled]="true">
+      </ion-input>
+    </ion-item>
+
+    <!-- Language -->
+    <ion-item class="input-wrapper">
+      <ion-select [placeholder]="'user.profile.form.language.placeholder' | translate"
+                  label="{{'user.profile.form.language.label' | translate}}"
+                  label-placement="floating"
+                  formControlName="lang">
+        <ion-select-option *ngFor="let typeOpt of langList"
+                           [value]="typeOpt.id">{{ 'lang.' + typeOpt.id | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Password -->
+    <ion-item class="input-wrapper">
+      <ion-input type="password"
+                 formControlName="password"
+                 inputmode="text"
+                 label="{{ 'user.profile.form.password.label' | translate }}"
+                 labelPlacement="stacked"
+                 placeholder="{{ 'user.profile.form.password.placeholder' | translate }}"></ion-input>
+    </ion-item>
+
+    <!-- Submit -->
+    <div class="submit-wrapper">
+      <ion-button color="primary"
+                  (click)="onSubmit($event)">
+        {{ 'user.profile.form.confirm.submit' | translate }}
+      </ion-button>
+    </div>
+  </form>
+
+</div>

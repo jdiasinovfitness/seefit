@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   // i18nURL: `../assets/i18n`,
+  defaultLang: `pt-PT`,
   i18nURL: `http://127.0.0.1:8080`,
   baseUrl: 'https://api.seeplus.inovretail.com',
   // baseUrl: '/middleware',

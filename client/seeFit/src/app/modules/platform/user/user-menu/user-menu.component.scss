@@ -1,0 +1,93 @@
+@import "../../../../../global.scss";
+
+.user-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+
+  ion-label {
+    margin-top: 16px;
+    margin-left: 8px;
+    margin-bottom: 16px;
+  }
+
+  .profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-left: 8px;
+
+    ion-avatar {
+      margin-top: 0px;
+      --border-radius: 8px;
+    }
+
+    .avatar-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      align-self: flex-start;
+
+      .user-name {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 14px;
+      }
+
+      .user-info {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+.logo {
+  height: 64px;
+  width: 150px;
+}
+
+.menu-avatar {
+  align-self: center;
+
+  width: 25%;
+  max-width: 100px;
+  min-width: 75px;
+  height: auto;
+
+  margin-top: 32px;
+
+  img {
+    border: solid 1px var(--ion-color-primary);
+  }
+
+  ion-label {
+    margin-top: 8px;
+    width: auto;
+  }
+}
+
+.highlight {
+  background-color: $coral !important;
+}
+
+.chev-icon {
+  display: none;
+}
+
+@media screen and (max-width: 580px) {
+  ion-item::part(native) {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .chev-icon {
+    display: block;
+  }
+}

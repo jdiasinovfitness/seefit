@@ -1,4 +1,8 @@
 {
+  "lang": {
+    "pt-PT": "Portuguese",
+    "en-EN": "English"
+  },
   "menu": {
     "items": {
       "interaction": {
@@ -188,6 +192,61 @@
       "additional-services": "ADDITIONAL SERVICES:",
       "additional-info": "ADDITIONAL INFORMATION:",
       "lifecycle": "LIFECYCLE:"
+    }
+  },
+  "user": {
+    "user-menu": {
+      "profile": "Profile",
+      "configurations": "Configurations",
+      "menu-items": {
+        "edit-profile": "Edit Profile",
+        "activity": "My Activity",
+        "customers": "My Customers",
+        "notifications": "Notifications"
+      },
+      "form": {
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Please select a language"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter a valid password"
+        }
+      }
+    },
+    "profile": {
+      "title": "Edit Profile Information",
+      "form": {
+        "name": {
+          "label": "Display Name",
+          "placeholder": "This field is required",
+          "errors": {
+            "required": "Display Name"
+          }
+        },
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Select a Language"
+        },
+        "password": {
+          "label": "New Password",
+          "placeholder": "*******",
+          "errors": {
+            "required": "This field is required"
+          }
+        },
+        "confirm": {
+          "submit": "Confirm",
+          "name": "Your Name was updated",
+          "lang": "The Language was updated",
+          "password": "Your password was updated"
+        }
+      }
     }
   }
 }

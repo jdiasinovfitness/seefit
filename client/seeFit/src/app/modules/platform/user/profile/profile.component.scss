@@ -1,0 +1,29 @@
+@import "../../../../../global.scss";
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  ion-label {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+
+  .input-wrapper {
+    margin-bottom: 16px;
+
+    .custom {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  .submit-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0px 4px;
+  }
+}
