@@ -13,6 +13,8 @@
     "start:desktop": "ionic cap run electron -l --external",
     "start:desktop2": "cd electron && npm run electron:start-live",
     "start:desktop:build": "cd electron && npm run electron:pack",
+    "gen:android": "ionic capacitor copy android && cd android && ./gradlew assembleDebug && cd ..",
+    "gen:ios": "ionic cap build ios",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
