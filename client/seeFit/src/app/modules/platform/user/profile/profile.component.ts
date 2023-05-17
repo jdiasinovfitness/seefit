@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../../core/services/user.service';
 import { ToastService } from '../../../../core/services/toast.service';
@@ -14,7 +14,7 @@ import {
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
   userData!: AuthInfo;
   newName!: string;
   langList!: Array<LangInfo>;
@@ -28,8 +28,6 @@ export class ProfileComponent implements OnInit {
   ) {
     this.resetForm();
   }
-
-  ngOnInit() {}
 
   async resetForm() {
     const usr = await firstValueFrom(this.userService.user$);

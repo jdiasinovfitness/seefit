@@ -14,7 +14,7 @@ export class EmptyStateComponent {
 
   // TODO: Refactor to get "src" from CDN as an Input
   getImage() {
-    let src =
+    const src =
       this.type === 'error'
         ? 'assets/images/errorState.png'
         : 'assets/images/emptyState.png';

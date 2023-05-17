@@ -19,9 +19,9 @@ import { Subscription } from 'rxjs';
 })
 export class UserMenuComponent implements OnInit, OnDestroy {
   @Input() isOpen!: boolean;
-  @Output() onOpen = new EventEmitter<any>();
+  @Output() itemClicked = new EventEmitter<any>();
   routeSub$!: Subscription;
-  currentRoute: string = `${window.location.pathname}`;
+  currentRoute = `${window.location.pathname}`;
   userMenuItems!: any; // TODO: create interface and refactor to data service
 
   constructor(
@@ -47,7 +47,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
     this.routeSub$.unsubscribe();
   }
 
-  onClick() {
-    this.onOpen.emit();
+  itemClick() {
+    this.itemClicked.emit();
   }
 }

@@ -32,7 +32,7 @@ export class UserEntity {
   providedIn: 'root',
 })
 export class AuthService {
-  private authToken: string = '';
+  private authToken = '';
   private initialData: string[] = ['t'];
   private user: UserEntity | undefined;
 

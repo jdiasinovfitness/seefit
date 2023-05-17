@@ -14,7 +14,7 @@ export class UserComponent {
     this.isOpen = false;
   }
 
-  onOpen() {
+  itemClicked() {
     this.isOpen = true;
   }
 }

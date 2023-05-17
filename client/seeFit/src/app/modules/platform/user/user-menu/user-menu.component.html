@@ -43,7 +43,7 @@
                 lines="full"
                 [color]="currentRoute === item.route ? 'light' : null"
                 [disabled]="!item.active"
-                (click)="onClick()"
+                (click)="itemClick()"
                 [routerLink]="item.route"
                 routerLinkActive="router-link-active">
         <ion-icon slot="start"

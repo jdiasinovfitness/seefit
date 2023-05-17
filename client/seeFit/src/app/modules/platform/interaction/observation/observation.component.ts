@@ -8,10 +8,10 @@ import { DataService } from '../../../../core/services/data.service';
 })
 export class ObservationComponent implements OnInit {
   @Input() userId!: string;
-  @Input() displayBtn: boolean = true;
+  @Input() displayBtn = true;
   @Output() handleClick = new EventEmitter();
 
-  observation: string = '';
+  observation = '';
 
   constructor(private dataService: DataService) {}
 

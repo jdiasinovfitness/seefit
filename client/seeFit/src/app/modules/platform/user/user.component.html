@@ -4,7 +4,7 @@
     <app-user-menu class="user-menu"
                    [ngClass]="!isOpen ? 'user-menu': 'user-menu-hide'"
                    [isOpen]="isOpen"
-                   (onOpen)="onOpen()"></app-user-menu>
+                   (itemClicked)="itemClicked()"></app-user-menu>
 
     <!-- Menu routes outlet -->
     <div class="router-wrapper"
