@@ -20,15 +20,13 @@ const routes: Routes = [
       {
         path: 'customer',
         loadChildren: () =>
-          import('./customer/customer-routing.module').then(
-            (m) => m.CustomerRoutingModule
-          ),
+          import('./customer/customer.module').then((m) => m.CustomerModule),
       },
       {
         path: 'notification',
         loadChildren: () =>
-          import('./notifications/notifications-routing.module').then(
-            (m) => m.NotificationsRoutingModule
+          import('./notifications/notifications.module').then(
+            (m) => m.NotificationsModule
           ),
       },
     ],
