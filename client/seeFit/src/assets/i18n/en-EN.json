@@ -247,6 +247,9 @@
           "password": "Your password was updated"
         }
       }
+    },
+    "notification": {
+      "title": "Notifications"
     }
   }
 }

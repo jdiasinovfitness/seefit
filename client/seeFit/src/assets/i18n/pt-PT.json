@@ -248,6 +248,9 @@
           "password": "A sua Password foi alterada"
         }
       }
+    },
+    "notification": {
+      "title": "Notificações"
     }
   }
 }
