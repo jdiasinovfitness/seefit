@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NotificationData } from '../../../../core/interfaces/notification.model';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NotificationsComponent implements OnInit {
-  notification: any;
-  constructor() {
-    this.notification = true;
-  }
+  // notificationList: Array<NotificationData>;
+
+  constructor(public userService: UserService) {}
 
   ngOnInit() {}
 }
