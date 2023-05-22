@@ -70,7 +70,8 @@ export class UserService {
           'Customer <em>Debora Gomes</em> has an <em>AF</em> due for today. Please finish it and contact the customer!',
         description: '',
         date: '2023-05-20T14:38:40.261Z',
-        icon: '',
+        icon: '../../../../assets/icon/favicon.png',
+        isRead: false,
         type: 'TRAINING',
       },
       {
@@ -80,7 +81,8 @@ export class UserService {
         description:
           '<em>Debora Gomes</em> grade our services a <em>5</em> (1-10 scale), which puts her as a detractor.<p>Relate to gym floor satisfaction, the evaluation is <em>3</em> 0-1 scale)</p>',
         date: '2023-05-19T14:38:40.261Z',
-        icon: '',
+        icon: '../../../../assets/icon/favicon.png',
+        isRead: true,
         type: 'INTERACTIONS',
       },
       {
@@ -89,7 +91,8 @@ export class UserService {
           'The <em>AF</em> for the customer <em>Paulo Azevedo</em> is completed.',
         description: '',
         date: '2023-05-18T14:38:40.261Z',
-        icon: '',
+        icon: '../../../../assets/icon/favicon.png',
+        isRead: true,
         type: 'TRAINING',
       },
     ];

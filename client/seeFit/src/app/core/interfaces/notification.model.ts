@@ -5,4 +5,6 @@ export interface NotificationData {
   type?: string;
   date?: string;
   icon?: string;
+  isRead: boolean;
+  isOpen?: boolean;
 }
