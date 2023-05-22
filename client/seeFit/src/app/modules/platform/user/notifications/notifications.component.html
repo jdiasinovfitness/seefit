@@ -1,44 +1,32 @@
 <div class="profile-wrapper"
-     *ngIf="userService.notification$ | async as notifications">
+     *ngIf="notificationList as notifications">
 
   <ion-label><b>{{ 'user.notification.title' | translate }}</b></ion-label>
 
-  <ion-card *ngFor="let item of notifications">
+  <ion-card *ngFor="let item of notifications; let i = index"
+            [ngClass]="{'unread': !item.isRead}">
+
+    <!-- <ion-icon class="exc-icon"
+              name="alert-circle-outline"
+              size="large"
+              *ngIf="!item.isRead"></ion-icon> -->
+
+    <!-- Header -->
     <ion-card-header>
-
+      <!-- Icon -->
       <div class="left">
-        <!-- <div class="hex-wrapper">
-          <ion-icon class="text-icon"
-                    name="barbell-outline"></ion-icon>
-          <svg viewBox="
-          40
-          30
-          250
-          250">
-            <defs>
-              <g id="pod">
-                <polygon stroke="#f17a59"
-                         class="poly-fill"
-                         stroke-width="0.5"
-                         points="5,-9 -5,-9 -10,0 -5,9 5,9 10,0" />
-
-              </g>
-            </defs>
-
-            <g class="pod-wrap">
-              <use xlink:href="#pod"
-                   transform="translate(50, 41)" />
-            </g>
-          </svg>
-        </div> -->
+        <img width="50px"
+             height="50px"
+             [ngStyle]="{backgroundImage: 'url(' + item.icon + ')'}">
       </div>
 
+      <!-- Title -->
       <div class="center">
         <ion-card-title [innerHTML]="item.title | safeHtml">
         </ion-card-title>
-
       </div>
 
+      <!-- Date -->
       <div class="right-col">
         <div class="emph"
              [innerHTML]="item.date | date: 'dd/MM/yyyy'"></div>
@@ -49,11 +37,25 @@
       </div>
     </ion-card-header>
 
+    <!-- Subtitle -->
     <ion-card-content>
       <ion-card-subtitle [innerHTML]="item.subtitle | safeHtml">
       </ion-card-subtitle>
-      Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
-  </ion-card>
 
+    <!-- According -->
+    <div class="padded"
+         [innerHTML]="item.description | safeHtml"
+         *ngIf="item.isOpen"
+         (click)="expand(i)">
+    </div>
+    <div class="bottom-bar"
+         *ngIf="item.description"
+         (click)="expand(i)">
+      <ion-icon [name]="item.isOpen ? 'caret-up-outline': 'caret-down-outline'"
+                color="primary">
+      </ion-icon>
+    </div>
+
+  </ion-card>
 </div>
