@@ -1,13 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../../core/services/user.service';
 import { ToastService } from '../../../../core/services/toast.service';
 import { LangService } from '../../../../core/services/lang.service';
+import { AuthInfo, LangInfo, } from '../../../../core/interfaces/auth-info.model';
 import { firstValueFrom } from 'rxjs';
-import {
-  AuthInfo,
-  LangInfo,
-} from '../../../../core/interfaces/auth-info.model';
 
 @Component({
   selector: 'app-profile',
@@ -20,13 +17,37 @@ export class ProfileComponent {
   langList!: Array<LangInfo>;
   userForm!: FormGroup;
 
+  isAlertOpen = false;
+  public alertButtons;
+
   constructor(
     public userService: UserService,
     private formBuilder: FormBuilder,
     private toastService: ToastService,
-    private langService: LangService
+    private langService: LangService,
   ) {
     this.resetForm();
+    this.alertButtons = [
+      {
+        text: this.langService.translate('user.profile.form.confirm.cancel'),
+        role: 'cancel',
+      },
+      {
+        text: this.langService.translate('user.profile.form.confirm.submit'),
+        role: 'confirm',
+      },
+    ];
+  }
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+
+  setAlert(event: any) {
+    this.isAlertOpen = false;
+    if (event.detail.role === 'cancel') { return; }
+
+    this.onSubmit();
   }
 
   async resetForm() {
@@ -45,7 +66,7 @@ export class ProfileComponent {
     });
   }
 
-  async onSubmit(event: any) {
+  async onSubmit() {
     const usr = await firstValueFrom(this.userService.user$);
     const { name, lang, password } = this.userForm.value;
     const hasNewName = name && name !== usr?.name;
@@ -76,6 +97,7 @@ export class ProfileComponent {
       this.toastService.presentToast({ message: instLang });
     }
 
+    this.userService.isUserMenuOpen = false;
     this.resetForm();
   }
 }

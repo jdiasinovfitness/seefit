@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -6,15 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
-  isOpen = true;
-
-  constructor() {}
+  constructor(public userService: UserService,) { }
 
   close() {
-    this.isOpen = false;
+    this.userService.isUserMenuOpen = false;
   }
 
   itemClicked() {
-    this.isOpen = true;
+    this.userService.isUserMenuOpen = true;
   }
 }

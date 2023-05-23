@@ -29,3 +29,7 @@
 #### 1.6.1
 
 - [Fix iOS header Overlap](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15618)
+
+#### 1.7.0
+
+- [[UI] Implement Confirmation Modal for profile close](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15617)
