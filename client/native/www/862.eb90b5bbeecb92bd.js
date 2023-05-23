@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseefit=self.webpackChunkseefit||[]).push([[862],{862:e=>{e.exports=JSON.parse('{"welcomeUser":"Ol\xe1","welcomeBack":"Bem vindo de volta!"}')}}]);

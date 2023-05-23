@@ -1,46 +1,204 @@
-<ion-split-pane contentId="main-content">
-  <ion-menu contentId="main-content" type="overlay">
-    <ion-content>
-      <ion-list id="inbox-list">
-        <ion-list-header>Inbox</ion-list-header>
-        <ion-note>hi@ionicframework.com</ion-note>
+<!-- SideBar Closed -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only"
+                    name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
 
-        <ion-menu-toggle
-          auto-hide="false"
-          *ngFor="let p of appPages; let i = index"
-        >
-          <ion-item
-            routerDirection="root"
-            [routerLink]="[p.url]"
-            lines="none"
-            detail="false"
-            routerLinkActive="selected"
-          >
-            <ion-icon
-              aria-hidden="true"
-              slot="start"
-              [ios]="p.icon + '-outline'"
-              [md]="p.icon + '-sharp'"
-            ></ion-icon>
-            <ion-label>{{ p.title }}</ion-label>
-          </ion-item>
+    <div class="logo"
+         id="inov-fitness-logo"></div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- SideBar Opened -->
+<ion-menu contentId="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-button>
+            <ion-icon slot="icon-only"
+                      name="close"></ion-icon>
+          </ion-button>
         </ion-menu-toggle>
-      </ion-list>
+      </ion-buttons>
 
-      <ion-list id="labels-list">
-        <ion-list-header>Labels</ion-list-header>
+      <div class="logo"
+           id="inov-fitness-logo"></div>
+    </ion-toolbar>
+  </ion-header>
 
-        <ion-item *ngFor="let label of labels" lines="none">
-          <ion-icon
-            aria-hidden="true"
-            slot="start"
-            ios="bookmark-outline"
-            md="bookmark-sharp"
-          ></ion-icon>
-          <ion-label>{{ label }}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
+  <!-- User Section -->
+  <ion-avatar class="menu-avatar"
+              (click)="navigate('/platform/user/profile')">
+    <img alt="Silhouette of a person's head"
+         [src]="profilePhoto" />
+  </ion-avatar>
+  <div class="avatar-name"
+       (click)="navigate('/platform/user/profile')">
+    <ion-label color="primary">{{userName}}</ion-label>
+  </div>
+
+  <!-- Menu Section -->
+  <ion-content>
+    <ng-container *ngFor="let item of menuItems; let i = index">
+
+      <!-- Menu Item -->
+      <ion-item *ngIf="!item.subMenu"
+                lines="full"
+                button
+                detail="false">
+        <ion-icon slot="start"
+                  color="primary"
+                  [name]='item?.icon'>
+        </ion-icon>
+        <ion-label slot="start"
+                   color="primary">
+          {{item.title | translate}}
+        </ion-label>
+      </ion-item>
+
+      <!-- Menu Item with SubItems -->
+      <ion-accordion-group [multiple]="true"
+                           *ngIf="item.subMenu">
+        <ion-accordion [value]="i"
+                       color="primary">
+          <ion-item slot="header"
+                    lines="full"
+                    [routerLink]="item?.url ? [item?.url] : null"
+                    routerLinkActive="router-link-active">
+            <ion-icon slot="start"
+                      color="primary"
+                      [name]='item?.icon'>
+            </ion-icon>
+            <ion-label slot="start"
+                       color="primary">
+              {{item.title | translate}}
+            </ion-label>
+          </ion-item>
+
+          <!-- Sub Menu Item -->
+          <ion-item *ngFor="let subItem of item.subMenu"
+                    [routerLink]="subItem?.url ? [subItem?.url] : null"
+                    detail="false"
+                    lines="none"
+                    (click)="toggleMenu()"
+                    slot="content">
+            <ion-icon slot="start"
+                      color="dark"
+                      [name]='subItem?.icon'>
+            </ion-icon>
+            <ion-label color="dark">
+              {{subItem.title | translate}}
+            </ion-label>
+          </ion-item>
+        </ion-accordion>
+      </ion-accordion-group>
+
+    </ng-container>
+  </ion-content>
+
+  <!-- Footer Section -->
+  <ion-footer>
+    <ion-toolbar>
+      <div class="footer"
+           color="light">
+
+        <!-- Origin -->
+        <div class="footer-item"
+             id="origin-modal">
+          <ion-icon slot="end"
+                    color="primary"
+                    name='locate'></ion-icon>
+          <ion-label slot="end"
+                     color="primary">
+            {{ 'menu.footer.origin.title' | translate }}
+          </ion-label>
+        </div>
+
+        <!-- Origin Modal -->
+        <ion-modal trigger="origin-modal"
+                   id="origin-modal"
+                   (willDismiss)="onWillDismiss($event)">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-buttons slot="start">
+                  <ion-button (click)="cancel()">
+                    {{ 'menu.footer.origin.close' | translate }}
+                  </ion-button>
+                </ion-buttons>
+
+                <ion-title>
+                  {{ 'menu.footer.origin.modal-title' | translate }}
+                </ion-title>
+
+                <ion-buttons slot="end">
+                  <ion-button (click)="confirm()"
+                              [strong]="true">
+                    {{ 'menu.footer.origin.save' | translate }}
+                  </ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content>
+              <ion-list>
+                <ion-radio-group [value]="selectedOrigin"
+                                 (ionChange)="onOriginSelect($event)">
+                  <ion-item *ngFor="let org of originList; let i = index"
+                            lines="none">
+                    <ion-radio [value]="org.id"
+                               labelPlacement="end"
+                               slot="start">
+                      {{org.name}}
+                    </ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+
+        <!-- Profile -->
+        <div class="footer-item"
+             (click)="navigate('/platform/user/profile')">
+          <ion-icon slot="end"
+                    color="primary"
+                    name='person'></ion-icon>
+          <ion-label slot="end"
+                     color="primary">
+            {{ 'menu.footer.profile.title' | translate }}
+          </ion-label>
+        </div>
+
+        <!-- Logout -->
+        <div class="footer-item"
+             slot="end"
+             (click)="logOut()">
+          <ion-icon slot="end"
+                    color="primary"
+                    name='power'></ion-icon>
+          <ion-label slot="end"
+                     color="primary">
+            {{ 'menu.footer.logout.title' | translate }}
+          </ion-label>
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-menu>
+
+<!-- Page section -->
+<div class="ion-page"
+     id="mainContent"
+     main>
   <ion-router-outlet id="main-content"></ion-router-outlet>
-</ion-split-pane>
+</div>

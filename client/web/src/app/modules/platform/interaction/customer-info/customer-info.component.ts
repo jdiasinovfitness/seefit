@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
-import { ICIData } from '../../../../core/interfaces/icidata.model';
+import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 
 @Component({
   selector: 'app-customer-info',
@@ -8,7 +7,7 @@ import { ICIData } from '../../../../core/interfaces/icidata.model';
   styleUrls: ['./customer-info.component.scss'],
 })
 export class CustomerInfoComponent {
-  statusTypes = INTERACTION_STATUS;
+  statusTypes = ICI_STATUS;
 
   @Input() info!: ICIData; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();

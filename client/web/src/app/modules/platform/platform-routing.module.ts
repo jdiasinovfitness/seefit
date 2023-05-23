@@ -8,17 +8,15 @@ const routes: Routes = [
     component: PlatformComponent,
     children: [
       {
-        path: 'user_profile/:id',
+        path: 'user',
         loadChildren: () =>
-          import('./user-profile/user-profile.module').then(
-            m => m.UserProfileModule
-          ),
+          import('./user/user.module').then((m) => m.UserModule),
       },
       {
         path: 'interaction',
         loadChildren: () =>
           import('./interaction/interaction.module').then(
-            m => m.InteractionModule
+            (m) => m.InteractionModule
           ),
       },
       //health&nutrition

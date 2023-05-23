@@ -12,14 +12,16 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () =>
       import('./modules/authentication/authentication.module').then(
-        m => m.AuthenticationModule
+        (m) => m.AuthenticationModule
       ),
   },
   {
     path: 'platform',
     canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./modules/platform/platform.module').then(m => m.PlatformModule),
+      import('./modules/platform/platform.module').then(
+        (m) => m.PlatformModule
+      ),
   },
   {
     path: '**',

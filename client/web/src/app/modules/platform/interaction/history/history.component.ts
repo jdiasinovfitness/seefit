@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
+import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +7,9 @@ import { INTERACTION_STATUS } from '../../../../core/constants/status.constants'
   styleUrls: ['./history.component.scss'],
 })
 export class HistoryComponent {
-  statusTypes = INTERACTION_STATUS;
+  statusTypes = ICI_STATUS;
 
-  @Input() info!: any; // TODO: set correct model type after API available
+  @Input() info!: ICIData; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
   constructor() {}

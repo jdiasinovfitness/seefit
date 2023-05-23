@@ -8,7 +8,8 @@ import { HistoryComponent } from './history/history.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { ObservationComponent } from './observation/observation.component';
 import { IciListHeaderComponent } from './ici-list-header/ici-list-header.component';
-import { SharedModule } from '../../../core/shared.module';
+import { SharedModule } from '../../../core/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import { SharedModule } from '../../../core/shared.module';
     ObservationComponent,
     IciListHeaderComponent,
   ],
-  imports: [CommonModule, InteractionRoutingModule, SharedModule],
+  imports: [CommonModule, InteractionRoutingModule, SharedModule, FormsModule],
 })
 export class InteractionModule {}

@@ -1,7 +1,7 @@
 export interface ICIData {
   title: string;
   userId: string;
-  status: string;
+  status: ICI_STATUS;
   date: string;
   interaction: ICILabel;
   primary: ICILabel;
@@ -9,8 +9,20 @@ export interface ICIData {
   imageUrl: string;
   customerInfo: ICIConsumerInfo;
   interactionInfo: string;
+  historyInfo: Array<ICIHistoryInfo>;
   inClub: boolean;
   excludeAG: boolean;
+}
+
+export enum ICI_STATUS {
+  COMPLETED = 'COMPLETED',
+  PLANNED = 'PLANNED',
+  UNPLANNED = 'UNPLANNED',
+}
+export enum ICI_TYPE {
+  IN_CLUB = 'In-Club',
+  NPS = 'NPS',
+  SMS = 'SMS',
 }
 
 export interface ICILabel {
@@ -18,6 +30,15 @@ export interface ICILabel {
   value: string;
   color: string;
   isBold?: boolean;
+}
+
+export interface ICIHistoryInfo {
+  id: string;
+  date: string;
+  status: ICI_STATUS;
+  type: ICI_TYPE;
+  title: string;
+  description: string;
 }
 
 export interface ICIConsumerInfo {
@@ -34,9 +55,13 @@ export interface ICICustomerRecord {
 export interface ICIAdditionalInfo {
   title: string;
   lifeCycle: ICILifecycle;
-  icons: Array<string>;
+  icons: Array<ICIIcons>;
 }
 
+export interface ICIIcons {
+  icon: string;
+  isDisabled: boolean;
+}
 export interface ICILifecycle {
   key: string;
   progress: number;

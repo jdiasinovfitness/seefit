@@ -1,98 +1,156 @@
-@import '../../../../global.scss';
+@import "../../../../global.scss";
 
-.interaction-wrapper {
+.filter-bar {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
-  height: 100%; // Needed for table scroll
+  margin-top: 27px;
+  margin-right: 8px;
 
-  .header-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    padding: 16px;
-
-    .search-wrp {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 40%;
-    }
-
-    .filters {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 50%;
-
-      min-height: 44px;
-
-      .switch-wrp {
-        display: flex;
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-        align-items: center;
-
-        margin-left: 8px;
-
-        white-space: nowrap;
-
-        font-size: 14px;
-        font-weight: 600;
-
-        label {
-          line-break: strict;
-        }
-
-        :first-child {
-          margin-right: 8px;
-        }
-      }
-    }
+  ion-button {
+    min-height: 36px;
   }
 
-  .table-row {
+}
+
+.switch-wrp-popup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8px;
+}
+
+.lg-filters {
+  display: flex;
+  flex-direction: row;
+
+  margin-right: 20px;
+
+  .switch-wrp {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-
-    padding: 16px;
-    overflow-y: auto;
-  }
-
-  .footer-row {
-    display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 
-    height: 64px;
-    padding: 16px;
+    min-width: fit-content;
+    margin-left: 12px;
 
-    div {
+    label {
+      margin-top: 4px;
+    }
+  }
+}
+
+ion-content {
+
+  ion-accordion-group {
+    ion-accordion {
       display: flex;
-      align-items: center;
+      flex-direction: column;
 
-      font-size: 14px;
+      ion-item {
+        .icon-avatar {
+          display: flex;
+          flex-direction: row;
 
-      &:first-child {
-        margin-right: 8px;
-        font-weight: bold;
+          .col-icons {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            ion-icon {
+              margin-bottom: 4px;
+            }
+
+            :last-child {
+              margin-bottom: 0px;
+            }
+          }
+
+          ion-avatar {
+            min-height: 50px;
+            min-width: 50px;
+            max-height: 150px;
+            max-width: 150px;
+            margin: 8px;
+          }
+        }
+
+        .col-wrapper {
+          display: flex;
+          flex-direction: row;
+          flex-shrink: 0;
+          flex-grow: 1;
+          flex-wrap: 1;
+          justify-content: space-between;
+
+          margin: 8px 0px;
+
+          .column {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+          }
+        }
+      }
+
+      .expanded-content {
+        display: flex;
+        flex-direction: column;
+
       }
     }
   }
 }
 
-.tbl-center {
-  justify-content: center !important;
-  align-items: center;
+
+ion-footer {
+  padding-bottom: 20px;
 }
 
-.exp-panel {
-  width: 100%;
+@media screen and (max-width: 580px) {
+  .icon-avatar {
+    display: flex;
+    flex-direction: column-reverse !important;
+
+    .col-icons {
+      display: flex;
+      justify-content: center;
+      flex-direction: row !important;
+
+      ion-icon {
+        margin-right: 4px;
+
+      }
+
+      :last-child {
+        margin-right: 0px;
+      }
+    }
+
+    ion-avatar {
+      min-height: 50px;
+      min-width: 50px;
+      max-height: 150px;
+      max-width: 150px;
+      margin: 8px;
+    }
+  }
+
+  .col-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-wrap: 1;
+  }
+
+  .right {
+    align-self: flex-start !important;
+  }
+}
+
+.right {
+  align-self: flex-end;
 }

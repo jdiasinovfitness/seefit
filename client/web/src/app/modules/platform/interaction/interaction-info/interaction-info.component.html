@@ -1,59 +1,60 @@
 <div class="interaction-wrapper">
-  <div
-    class="inner-wrapper"
-    *ngIf="info"
-    [innerHTML]="info?.interactionInfo | safeHtml"
-  ></div>
 
-  <ng-container
-    *ngIf="
-      currentPhase === phaseEnum.success &&
-      info?.status === statusTypes.COMPLETED
-    "
-  >
-    <!-- <lib-select style="margin-bottom: 16px"
-                *ngIf="typeList"
-                [id]="'type'"
-                [options]="typeList"
-                [defaultValue]="'interaction.type.default' | translate"
-                [label]="'interaction.type.label' | translate"
-                [disabled]="!true"
-                (stateChange)="onTypeChange($event)">
-    </lib-select>
+  <div class="inner-wrapper"
+       *ngIf="info"
+       [innerHTML]="info?.interactionInfo | safeHtml"></div>
 
-    <lib-select style="margin-bottom: 16px"
-                [id]="'interaction'"
-                [options]="interactionList || []"
-                [defaultValue]="'interaction.label.default' | translate"
-                [label]="'interaction.label.label' | translate"
-                [disabled]="!this.selectedType"
-                (stateChange)="onInteractionChange($event)">
-    </lib-select>
+  <ng-container *ngIf="currentPhase === phaseEnum.success && info?.status === statusTypes.COMPLETED">
+    <ion-item>
+      <ion-label position="floating"> {{'interaction.tabs.interaction.type.label' | translate}} </ion-label>
+      <ion-select [placeholder]="'interaction.tabs.interaction.type.default' | translate"
+                  [disabled]="!true"
+                  label-placement="floating"
+                  fill="solid"
+                  (ionChange)="onTypeChange($event)">
+        <ion-select-option *ngFor="let typeOpt of typeList"
+                           [value]="typeOpt.value">{{typeOpt.label | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-    <div class="details-group">
-      <lib-input class="lib-input"
-                 [type]="'text'"
+    <ion-item>
+      <ion-label position="floating"> {{'interaction.tabs.interaction.label.label' | translate}} </ion-label>
+      <ion-select [placeholder]="'interaction.tabs.interaction.label.default' | translate"
+                  [disabled]="!this.selectedType"
+                  label-placement="floating"
+                  fill="solid"
+                  (ionChange)="onInteractionChange($event)">
+        <ion-select-option *ngFor="let interactionOpt of interactionList"
+                           [value]="interactionOpt.value">{{interactionOpt.label | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> {{'interaction.tabs.interaction.details.label' | translate}} </ion-label>
+      <ion-input class="custom"
+                 mode="md"
+                 type="text"
                  [value]="details"
-                 [placeholder]="'interaction.details.placeholder' | translate"
-                 [label]="'interaction.details.label' | translate"
-                 [error]="''"
-                 [inputName]="'details'"
+                 [placeholder]="'interaction.tabs.interaction.details.placeholder' | translate"
+                 label="Floating label"
+                 labelPlacement="floating"
                  [disabled]="!selectedInteraction"
-                 (stateChange)="onDetailsKeyup($event)">
-      </lib-input>
-      <lib-button class="lib-btn"
-                  [primary]="true"
-                  [disabled]="!details"
-                  [text]="'interaction.details.create' | translate"
-                  (stateChange)="createInteraction(true)">
-      </lib-button>
-    </div> -->
+                 (ionChange)="onDetailsKeyup($event)">
+      </ion-input>
+    </ion-item>
+
+    <ion-button fill="solid"
+                size="default"
+                [disabled]="!details"
+                (click)="createInteraction(true)">
+      {{'interaction.tabs.interaction.details.create' | translate}}
+    </ion-button>
+
   </ng-container>
 
-  <app-observation
-    [userId]="info.userId"
-    [displayBtn]="info.status !== statusTypes.COMPLETED"
-    (handleClick)="updateObservation($event)"
-  >
+  <app-observation *ngIf="info.status !== statusTypes.COMPLETED"
+                   [userId]="info.userId"
+                   [displayBtn]="info.status !== statusTypes.COMPLETED"
+                   (handleClick)="updateObservation($event)">
   </app-observation>
 </div>

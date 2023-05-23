@@ -1,13 +1,36 @@
 <div class="interaction-wrapper">
-  <div class="img-wrapper">
-    <img [src]="'assets/mockData/images/history_1.jpeg'" height="100px" />
-    <img [src]="'assets/mockData/images/history_2.jpeg'" height="100px" />
-  </div>
+  <ion-grid>
+    <ion-row *ngFor="let item of info?.historyInfo">
+      <ion-col size="2"
+               size-lg="1"
+               size-md="2"
+               size-sm="2">
+        {{item.date | date:'yyyy dd/MMM'}}
+      </ion-col>
 
-  <app-observation
-    [userId]="info.userId"
-    [displayBtn]="info.status !== statusTypes.COMPLETED"
-    (handleClick)="onButtonClick($event)"
-  >
+      <ion-col size="1"
+               size-lg="1"
+               size-md="1"
+               size-sm="1"
+               style="display: flex;  justify-content: center;">
+        <div class="logo"
+             id="history-icon"></div>
+      </ion-col>
+
+      <ion-col size="4"
+               size-lg="3"
+               size-md="3"
+               size-sm="3">{{item.title}}</ion-col>
+      <ion-col size="5"
+               size-lg="7"
+               size-md="4"
+               size-sm="4">{{item.description}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <app-observation [userId]="info.userId"
+                   [displayBtn]="info.status !== statusTypes.COMPLETED"
+                   (handleClick)="onButtonClick($event)">
   </app-observation>
 </div>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 
 export enum Phases {
@@ -15,7 +15,7 @@ export enum Phases {
   templateUrl: './reset-request.component.html',
   styleUrls: ['./reset-request.component.scss'],
 })
-export class ResetRequestComponent implements OnInit {
+export class ResetRequestComponent {
   phaseEnum = Phases;
   currentPhase = Phases.empty;
 
@@ -24,33 +24,28 @@ export class ResetRequestComponent implements OnInit {
   production = environment.production;
   hide = false;
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder
-  ) {
+  constructor(private router: Router, private formBuilder: FormBuilder) {
     this.authForm = this.formBuilder.group({
       email: ['admin@inovfitness.com', [Validators.required, Validators.email]],
       password: ['admin', [Validators.required]],
     });
   }
 
-  ngOnInit(): void {}
-
   signIn() {
+    if (!this.authForm.valid) {
+      return;
+    }
     if (this.currentPhase === this.phaseEnum.loading) {
       return;
     }
 
     this.currentPhase = Phases.loading;
 
-    setTimeout(() => {
-      this.currentPhase = Phases.empty;
-    }, 50000);
     try {
-      this.router.navigate(['../../platform/interaction'], {
-        relativeTo: this.activatedRoute,
-      });
+      setTimeout(() => {
+        this.currentPhase = Phases.empty;
+        this.router.navigate(['platform/interaction']);
+      }, 2000);
     } catch (err) {
       console.error('Error');
     }

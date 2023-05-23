@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { RouteReuseStrategy } from '@angular/router';
-import { IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { from, Observable } from 'rxjs';
-import { SharedModule } from './core/shared.module';
+import { SharedModule } from './core/shared/shared.module';
 
 export class CustomTranslateLoader implements TranslateLoader {
   constructor() {}
@@ -28,10 +27,10 @@ export function CustomLoaderFactory() {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    FormsModule,
     BrowserModule,
-    AppRoutingModule,
+    IonicModule.forRoot({ menuType: 'overlay', animated: false }),
     HttpClientModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
       defaultLanguage: 'pt-PT',
       loader: {

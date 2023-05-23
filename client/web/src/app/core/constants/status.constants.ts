@@ -1,9 +1,3 @@
-export const INTERACTION_STATUS = {
-  COMPLETED: 'COMPLETED',
-  PLANNED: 'PLANNED',
-  UNPLANNED: 'UNPLANNED',
-};
-
 export const INTERACTION = {
   NEXT_VISIT: 'next_visit',
   GROUP_CLASS: 'group_class',

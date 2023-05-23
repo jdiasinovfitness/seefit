@@ -1,54 +1,81 @@
-<div class="c-info-wrapper" *ngIf="info?.customerInfo as data">
+<div class="c-info-wrapper"
+     *ngIf="info?.customerInfo as data">
+
   <div class="split-line">
-    <div class="info-col" *ngIf="data?.customerRecord as cRecord">
+    <div class="info-col"
+         *ngIf="data?.customerRecord as cRecord">
       <h4>{{ cRecord.title | translate }}</h4>
-      <span class="line" *ngFor="let record of cRecord?.content">
-        <label class="line-key">{{ record.key | translate }}</label>
-        <label class="line-value">{{ record?.value || '' }}</label>
+      <span class="line"
+            *ngFor="let record of cRecord?.content">
+        <ion-text color="medium">
+          {{ record.key | translate }}
+        </ion-text>
+        <ion-text color="secondary">
+          {{ record.value | translate }}
+        </ion-text>
       </span>
     </div>
 
-    <div class="info-col" *ngIf="data?.contractType as conType">
+    <div class="info-col"
+         *ngIf="data?.contractType as conType">
       <h4>{{ conType.title | translate }}</h4>
-      <span class="line" *ngFor="let contract of conType?.content">
-        <label class="line-key">{{ contract.key | translate }}</label>
-        <label class="line-value">{{ contract?.value || '' }}</label>
+      <span class="line"
+            *ngFor="let contract of conType?.content">
+        <ion-text color="medium">
+          {{ contract.key | translate }}
+        </ion-text>
+        <ion-text color="secondary">
+          {{ contract.value | translate }}
+        </ion-text>
       </span>
     </div>
   </div>
 
+  <!-- Icons -->
   <div class="hole-line">
-    <div
-      class="see-icon md"
-      *ngFor="let icon of data?.additionalInfo?.icons"
-      [ngClass]="[icon]"
-    ></div>
+    <ion-icon *ngFor="let icon of data?.additionalInfo?.icons; let i = index"
+              [ngClass]="{'disabled': icon.isDisabled}"
+              [name]="icon.icon"
+              size="large"
+              color="primary">
+    </ion-icon>
   </div>
 
+  <!-- Additional Info -->
   <div class="hole-line">
-    <div class="info-col" *ngIf="data?.additionalInfo as addInfo">
+    <div class="info-col"
+         *ngIf="data?.additionalInfo as addInfo">
       <h4>{{ addInfo.title | translate }}</h4>
-      <span class="line" *ngIf="addInfo?.lifeCycle as aInfo">
-        <label class="line-key">{{ aInfo.key | translate }}</label>
+      <span class="line"
+            *ngIf="addInfo?.lifeCycle as aInfo">
+        <ion-text color="medium">
+          {{ aInfo.key | translate }}
+        </ion-text>
       </span>
     </div>
   </div>
 
-  <div class="hole-line" *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle">
-    <div style="width: 100%">
-      <lib-progress-bar
-        [progress]="lifeCycle.progress"
-        [topLabels]="lifeCycle.topLabels"
-        [bottomLabels]="lifeCycle.bottomLabels"
-      >
-      </lib-progress-bar>
+  <!-- Lifecycle -->
+  <div class="hole-line"
+       *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle">
+    <div class="p-bars">
+      <div class="progress-labels">
+        <div *ngFor="let tLabel of lifeCycle.topLabels">
+          {{tLabel?.label}}
+        </div>
+      </div>
+      <ion-progress-bar [value]="lifeCycle.progress"></ion-progress-bar>
+      <div class="progress-labels">
+        <div *ngFor="let bLabel of lifeCycle.bottomLabels">
+          {{bLabel?.label}}
+        </div>
+      </div>
     </div>
   </div>
 
-  <app-observation
-    [userId]="info.userId"
-    [displayBtn]="info.status !== statusTypes.COMPLETED"
-    (handleClick)="onButtonClick($event)"
-  >
+  <!-- Observation -->
+  <app-observation [userId]="info.userId"
+                   [displayBtn]="info.status !== statusTypes.COMPLETED"
+                   (handleClick)="onButtonClick($event)">
   </app-observation>
 </div>

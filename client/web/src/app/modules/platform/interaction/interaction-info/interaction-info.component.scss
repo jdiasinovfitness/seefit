@@ -1,4 +1,4 @@
-@import '../../../../../global.scss';
+@import "../../../../../global.scss";
 
 .interaction-wrapper {
   display: flex;
@@ -7,23 +7,12 @@
   .inner-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 12px 4px;
+    padding: 12px 8px;
   }
-  .details-group {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-grow: 2;
 
-    .lib-input {
-      border-radius: 0px;
-      margin: 16px 4px;
-      width: 100%;
-      color: black !important;
-    }
-    .lib-btn {
-      margin: 8px 0px 0px 8px;
-    }
+  ion-button {
+    display: flex;
+    align-self: flex-end;
+    margin: 24px 12px;
   }
 }

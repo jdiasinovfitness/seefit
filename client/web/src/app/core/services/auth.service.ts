@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { authInfo } from '../interfaces/info.user.model';
 import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
+import { Buffer } from 'buffer';
+import { Router } from '@angular/router';
+import { AuthInfo } from '../interfaces/auth-info.model';
 
 export class UserEntity {
   private id: string | undefined;
@@ -25,16 +27,20 @@ export class UserEntity {
     return this.email;
   }
 }
-@Injectable()
+
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
-  private authToken: string = '';
+  private authToken = '';
   private initialData: string[] = ['t'];
   private user: UserEntity | undefined;
 
   constructor(
     @Inject(GlobalStorage) private appStorage: Storage,
     private http: HttpClient,
-    private config: ConfigService
+    private config: ConfigService,
+    private router: Router
   ) {
     this.authToken = this.initialData[0];
   }
@@ -57,11 +63,12 @@ export class AuthService {
   async login(formValue: {
     email: string;
     password: string;
-  }): Promise<authInfo> {
+  }): Promise<AuthInfo> {
     //TODO: api call to authentication in order to retrieve the access token
     const authString = Buffer.from(
       `${formValue.email}:${formValue.password}`
     ).toString('base64');
+
     const headers = {
       headers: new HttpHeaders().append('authorization', `Basic ${authString}`),
       params: {
@@ -69,12 +76,12 @@ export class AuthService {
       },
     };
     const r = await firstValueFrom(
-      this.http.post<authInfo>(
+      this.http.post<AuthInfo>(
         `${this.config.getApiUrl()}/auth/login`,
         {},
         headers
       )
-    ).catch(err => {
+    ).catch((err) => {
       return Promise.reject(err);
     });
 
@@ -86,7 +93,7 @@ export class AuthService {
   logOut() {
     this.token = '';
     this.appStorage.clear();
-    //TODO: mi2ssing route navigation ( here or the caller component)
+    this.router.navigate(['/auth/login']);
   }
   private getStorageItem(key: string): any {
     return this.appStorage.getItem(key);
@@ -101,7 +108,7 @@ export class AuthService {
 
   refreshToken() {}
 
-  setUserInfo(loginInfo: authInfo) {
+  setUserInfo(loginInfo: AuthInfo) {
     this.user = new UserEntity(loginInfo.id, loginInfo.email, loginInfo.email);
     console.log('USERRR', this.user);
   }
