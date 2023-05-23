@@ -1,17 +1,61 @@
 <div class="profile-wrapper"
-     *ngIf="notification">
+     *ngIf="notificationList as notifications">
 
   <ion-label><b>{{ 'user.notification.title' | translate }}</b></ion-label>
 
-  <ion-card>
+  <ion-card *ngFor="let item of notifications; let i = index"
+            [ngClass]="{'unread': !item.isRead}">
+
+    <!-- <ion-icon class="exc-icon"
+              name="alert-circle-outline"
+              size="large"
+              *ngIf="!item.isRead"></ion-icon> -->
+
+    <!-- Header -->
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <!-- Icon -->
+      <div class="left">
+        <img width="50px"
+             height="50px"
+             [ngStyle]="{backgroundImage: 'url(' + item.icon + ')'}">
+      </div>
+
+      <!-- Title -->
+      <div class="center">
+        <ion-card-title [innerHTML]="item.title | safeHtml">
+        </ion-card-title>
+      </div>
+
+      <!-- Date -->
+      <div class="right-col">
+        <div class="emph"
+             [innerHTML]="item.date | date: 'dd/MM/yyyy'"></div>
+        <div class="emph"
+             [innerHTML]="item.date | date: 'hh:mm'"></div>
+        <div class="emph"
+             [innerHTML]="item.type"></div>
+      </div>
     </ion-card-header>
 
+    <!-- Subtitle -->
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      <ion-card-subtitle [innerHTML]="item.subtitle | safeHtml">
+      </ion-card-subtitle>
     </ion-card-content>
-  </ion-card>
 
+    <!-- According -->
+    <div class="padded"
+         [innerHTML]="item.description | safeHtml"
+         *ngIf="item.isOpen"
+         (click)="expand(i)">
+    </div>
+    <div class="bottom-bar"
+         *ngIf="item.description"
+         (click)="expand(i)">
+      <ion-icon [name]="item.isOpen ? 'caret-up-outline': 'caret-down-outline'"
+                color="primary">
+      </ion-icon>
+    </div>
+
+  </ion-card>
 </div>
