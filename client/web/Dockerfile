@@ -18,9 +18,8 @@ ENV NODE_OPTIONS="--max-old-space-size=8192"
 
 RUN npm install
 
-COPY ./cypress ./cypress
 COPY ./src ./src
-COPY angular.json transloco.config.js cypress.config.ts tsconfig.app.json tsconfig.json .prettierignore .prettierrc.json ./
+COPY angular.json  tsconfig.app.json tsconfig.json ./
 
 
 #FROM cypress/base:12 as cypress

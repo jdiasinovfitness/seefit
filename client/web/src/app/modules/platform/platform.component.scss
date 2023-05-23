@@ -1,71 +1,96 @@
-@import '../../../global.scss';
+@import "../../../global.scss";
 
-mat-sidenav {
-  width: 100%;
-  background-color: $light-grey !important;
-  padding: 16px 16px;
+.logo {
+  height: 64px;
+  width: 150px;
 }
 
-mat-sidenav-container {
-  background-color: transparent !important ;
-}
+.menu-avatar {
+  align-self: center;
 
-mat-expansion-panel {
-  background-color: $light-grey;
-}
+  width: 25%;
+  height: auto;
 
-mat-panel-title {
-  color: $primary;
-  font-weight: bold;
-}
+  margin-top: 32px;
 
-.menu_icon {
-  user-select: none;
-  background-repeat: no-repeat;
-  display: inline-block;
-  fill: currentColor;
-  height: 24px;
-  width: 24px;
-}
-
-.sub-menu-icon {
-  fill: red;
-}
-
-.sub-menu {
-  color: $blackOpacity;
-  font-weight: bold;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.mat-accordion .mat-expansion-panel {
-  box-shadow: none;
-  border-bottom: 1px $primary solid;
-  border-radius: 0;
-}
-
-.mat-accordion .mat-expansion-panel .mat-expansion-panel-header {
-  padding-left: 0;
-  padding-right: 20px;
-}
-
-::ng-deep .mat-expansion-indicator:after {
-  color: $primary;
-  font-weight: bold;
-}
-
-::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
-  background-color: rgba($light-grey, 0.2);
-}
-
-.highlight {
-  color: $primary;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 768px) {
-  mat-sidenav {
-    width: 400px;
+  img {
+    border: solid 1px var(--ion-color-primary);
   }
+
+  ion-label {
+    margin-top: 8px;
+    width: auto;
+  }
+}
+
+.avatar-name {
+  // width: 100%;
+  margin-top: 8px;
+  margin-bottom: 32px;
+
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  #inov-fitness-logo {
+    background-image: url("../../../assets/images/logoBlack.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #inov-fitness-logo {
+    background-image: url("../../../assets/images/logoWhite.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      background-color: var(--ion-color-light);
+
+      .footer-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 8px;
+
+        ion-icon {
+          margin-bottom: 8px;
+          font-size: 24px;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 580px) {
+  ion-menu {
+    // Makes side menu width 100% for sm devices (phones)
+    --min-width: 100%;
+  }
+}
+
+ion-item {
+  --border-color: var(--ion-color-primary);
+}
+
+ion-accordion {
+  border-bottom: solid 1px var(--ion-color-primary);
+}
+
+.ion-page {
+  margin-top: 26px;
 }

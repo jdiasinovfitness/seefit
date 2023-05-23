@@ -116,7 +116,7 @@ stages:
 
               echo "Get build artifacts"
               docker cp $CONTAINER:/dist .
-              
+
             workingDirectory: $(Build.SourcesDirectory)/client/native
             displayName: "Create Package"
             env:

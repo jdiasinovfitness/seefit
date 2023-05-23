@@ -3,17 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "seefit": {
+    "app": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        },
-        "@ionic/angular-toolkit:page": {
-          "styleext": "scss",
-          "standalone": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -39,10 +31,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": [
-              "src/theme/variables.scss",
-              "src/global.scss"
-            ],
+            "styles": ["src/theme/variables.scss", "src/global.scss"],
             "scripts": []
           },
           "configurations": {
@@ -90,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "seefit:build:production"
+              "browserTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "seefit:build:development"
+              "browserTarget": "app:build:development"
             },
             "ci": {
               "progress": false
@@ -104,40 +93,50 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "seefit:build"
+            "browserTarget": "app:build"
           }
         },
         "test": {
-          "builder": "@cypress/schematic:cypress",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "watch": true,
-            "headless": false,
-            "browser": "chrome",
-            "devServerTarget": "seefit:serve"
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "scripts": []
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "seefit:serve:production"
+            "ci": {
+              "progress": false,
+              "watch": false
             }
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "192b802e-c4a2-4ed6-877d-a424b431b2f3",
-    "schematicCollections": [
-      "@ionic/angular-toolkit"
-    ]
+    "schematicCollections": ["@ionic/angular-toolkit"]
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

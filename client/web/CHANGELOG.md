@@ -1,8 +1,31 @@
 #### 1.0.0
 
-- [Improvements](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_workitems/edit/15321)
+- [Refactor to Ionic](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15403)
+
+#### 1.0.1
+
+- [Updating ionic to v7](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15403)
 
 #### 1.1.0
 
-- [Develop the interaction form for COMPLETED interactions](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15330)
-- [Adding Ionic](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15403)
+- [Impl Side Menu](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15507)
+
+#### 1.2.0
+
+- [Impl Side Menu](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15402)
+
+#### 1.3.0
+
+- [Impl History Component](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15545)
+
+#### 1.5.0
+
+- [](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15546)
+
+#### 1.6.0
+
+- [Upgrade Angular Version 16](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15603)
+
+#### 1.6.1
+
+- [Fix iOS header Overlap](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15618)

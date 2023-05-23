@@ -1,25 +1,33 @@
-@import '../../../../../global.scss';
+@import "../../../../../global.scss";
 
 .interaction-wrapper {
   display: flex;
   flex-direction: column;
+}
 
-  .img-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.logo {
+  display: flex;
+  justify-self: center;
+  height: 16px;
+  width: 16px;
+}
 
-    img {
-      display: flex;
-      align-self: center;
-      height: fit-content;
-      width: 100%;
-      max-width: 800px;
+@media (prefers-color-scheme: light) {
+  #history-icon {
+    background-image: url("../../../../../assets/icon/history_radio.svg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
 
-      max-height: 400px;
-      width: fit-content;
-
-      overflow: hidden;
-    }
+@media (prefers-color-scheme: dark) {
+  #history-icon {
+    background-image: url("../../../../../assets/icon/history_radio_dark.svg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

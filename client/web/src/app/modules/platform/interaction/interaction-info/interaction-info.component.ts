@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData } from '../../../../core/interfaces/icidata.model';
+import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 import { DataService } from '../../../../core/services/data.service';
-import { INTERACTION_STATUS } from '../../../../core/constants/status.constants';
 import {
   IInteraction,
   IITypeData,
@@ -21,7 +20,7 @@ export enum Phases {
   styleUrls: ['./interaction-info.component.scss'],
 })
 export class InteractionInfoComponent {
-  statusTypes = INTERACTION_STATUS;
+  statusTypes = ICI_STATUS;
   phaseEnum = Phases;
   currentPhase = Phases.loading;
 
@@ -30,10 +29,10 @@ export class InteractionInfoComponent {
 
   typeList!: Array<IITypeData>;
   interactionList: Array<IInteraction> | undefined;
-  selectedType: string | undefined;
+  selectedType: ICI_STATUS | undefined;
   selectedInteraction: string | undefined;
   selectedInteractionValue: string | undefined;
-  details: string = '';
+  details = '';
 
   constructor(
     private dataService: DataService,
@@ -44,7 +43,7 @@ export class InteractionInfoComponent {
 
   async init() {
     this.typeList = await Promise.all(
-      this.dataService.getInteractionList()?.map(async el => {
+      this.dataService.getInteractionList()?.map(async (el) => {
         el.label = await firstValueFrom(this.translateService.get(el.label));
         return el;
       })
@@ -53,18 +52,20 @@ export class InteractionInfoComponent {
   }
 
   async onTypeChange(newSelection: any) {
-    const index = this.typeList?.findIndex(el => {
-      return el.value === newSelection;
+    const newVal = newSelection?.detail?.value;
+
+    const index = this.typeList?.findIndex((el) => {
+      return el.value === newVal;
     });
 
-    this.selectedType = newSelection;
+    this.selectedType = newVal;
     this.selectedInteraction = undefined;
     this.selectedInteractionValue = '';
     this.interactionList = undefined;
     this.details = '';
 
     this.interactionList = await Promise.all(
-      this.typeList?.[index]?.interaction?.map(async el => {
+      this.typeList?.[index]?.interaction?.map(async (el) => {
         el.label = await firstValueFrom(this.translateService.get(el.label));
         return el;
       })
@@ -72,27 +73,28 @@ export class InteractionInfoComponent {
   }
 
   onInteractionChange(newSelection: any) {
+    const newVal = newSelection?.detail?.value;
+
     this.selectedInteractionValue = '';
     this.selectedInteraction = undefined;
-    const index = this.interactionList?.findIndex(
-      el => el.value === newSelection
-    );
+    const index = this.interactionList?.findIndex((el) => el.value === newVal);
 
     if (typeof index === 'number' && index != -1) {
       this.selectedInteractionValue = this.interactionList?.[index].label || '';
     }
 
-    this.selectedInteraction = newSelection;
+    this.selectedInteraction = newVal;
     this.details = '';
   }
 
-  onDetailsKeyup(event: string) {
-    this.details = event;
+  onDetailsKeyup(event: any) {
+    const val = event?.detail?.value;
+    this.details = val;
   }
 
   createInteraction(event: any) {
     const newInteraction = JSON.parse(JSON.stringify(this.info)) as ICIData;
-    newInteraction.status = this.selectedType || INTERACTION_STATUS.UNPLANNED;
+    newInteraction.status = this.selectedType || ICI_STATUS.UNPLANNED;
     newInteraction.interaction.value = this.selectedInteractionValue || '';
     newInteraction.interaction.isBold = true;
     newInteraction.interaction.label = 'INTERACTION:';

@@ -1,9 +1,41 @@
 {
-  "pt": "portuguese",
-  "en": "english",
-  "origin": "Origin {{originName}}",
-  "email": "Email",
-  "password": "Password",
+  "lang": {
+    "pt-PT": "Portuguese",
+    "en-EN": "English"
+  },
+  "menu": {
+    "items": {
+      "interaction": {
+        "title": "Interactions",
+        "live-club": "Live Club",
+        "data-report": "Data Reports"
+      },
+      "health": {
+        "title": "Health & Nutrition",
+        "": ""
+      },
+      "training": {
+        "title": "Training",
+        "evaluation": "Physical Evaluation"
+      },
+      "feed": {
+        "title": "Insights & Feed"
+      }
+    },
+    "footer": {
+      "origin": {
+        "title": "Orígem",
+        "close": "close",
+        "save": "save"
+      },
+      "profile": {
+        "title": "Perfil"
+      },
+      "logout": {
+        "title": "Sair"
+      }
+    }
+  },
   "auth": {
     "login": {
       "btn-submit": "LOGIN",
@@ -50,6 +82,28 @@
         }
       }
     },
+    "register": {
+      "header": "In the following form you can set your password. The requirements are as follows:<br/><br/>- 8 characters or more<br/>- Mix of uppercase abd lowercase<br/>- Use of a special character",
+      "btn-submit": "Submit",
+      "clear-form": "Clear form",
+      "form": {
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "required": "Password required"
+          }
+        },
+        "pwd-confirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter your password again",
+          "errors": {
+            "required": "Password required",
+            "miss-match": "Passwords do not match"
+          }
+        }
+      }
+    },
     "reset-request": {
       "header": "If you forgot your password we can help you reset it by sending you an email with the reset instructions. For that we need you to provide us your email address",
       "btn-submit": "Reset Password",
@@ -68,11 +122,42 @@
   },
   "interaction": {
     "tabs": {
-      "customer": "Customer",
-      "interaction": "Interaction",
-      "history": "History"
+      "customer": {
+        "title": "Client"
+      },
+      "interaction": {
+        "title": "Interaction",
+        "type": {
+          "default": "Select the interaction type",
+          "label": "Type",
+          "types": {
+            "unplanned": "Unplanned"
+          }
+        },
+        "label": {
+          "default": "Select the interaction",
+          "label": "Interaction",
+          "types": {
+            "next_visit": "Next Visit",
+            "group_class": "Group Class",
+            "execution_support": "Execution Support",
+            "monthly_challenge": "Monthly challenge",
+            "reprogramming": "Re-scheduled"
+          }
+        },
+        "details": {
+          "placeholder": "Add a description",
+          "create": "Create",
+          "label": "Details"
+        }
+      },
+      "history": {
+        "title": "History"
+      }
     },
     "filters": {
+      "title": "Filters",
+      "ok": "Ok",
       "in-club": "In Club",
       "exclude-ag": "In GC",
       "expired": "Planned"
@@ -107,6 +192,64 @@
       "additional-services": "ADDITIONAL SERVICES:",
       "additional-info": "ADDITIONAL INFORMATION:",
       "lifecycle": "LIFECYCLE:"
+    }
+  },
+  "user": {
+    "user-menu": {
+      "profile": "Profile",
+      "configurations": "Configurations",
+      "menu-items": {
+        "edit-profile": "Edit Profile",
+        "activity": "My Activity",
+        "customers": "My Customers",
+        "notifications": "Notifications"
+      },
+      "form": {
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Please select a language"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter a valid password"
+        }
+      }
+    },
+    "profile": {
+      "title": "Edit Profile Information",
+      "form": {
+        "name": {
+          "label": "Display Name",
+          "placeholder": "This field is required",
+          "errors": {
+            "required": "Display Name"
+          }
+        },
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Select a Language"
+        },
+        "password": {
+          "label": "New Password",
+          "placeholder": "*******",
+          "errors": {
+            "required": "This field is required"
+          }
+        },
+        "confirm": {
+          "submit": "Confirm",
+          "name": "Your Name was updated",
+          "lang": "The Language was updated",
+          "password": "Your password was updated"
+        }
+      }
+    },
+    "notification": {
+      "title": "Notifications"
     }
   }
 }

@@ -1,9 +1,42 @@
 {
-  "pt": "portuguese",
-  "en": "english",
-  "origin": "Origin {{originName}}",
-  "email": "Email",
-  "password": "Password",
+  "lang": {
+    "pt-PT": "Português",
+    "en-EN": "Inglês"
+  },
+  "menu": {
+    "items": {
+      "interaction": {
+        "title": "Interações",
+        "live-club": "Live Club",
+        "data-report": "Data Reports"
+      },
+      "health": {
+        "title": "Saúde e Nutrição",
+        "": ""
+      },
+      "training": {
+        "title": "Treino",
+        "evaluation": "Avaliação Física"
+      },
+      "feed": {
+        "title": "Insights & Feed"
+      }
+    },
+    "footer": {
+      "origin": {
+        "title": "Orígem",
+        "modal-title": "Orígens",
+        "close": "Cancelar",
+        "save": "Alterar"
+      },
+      "profile": {
+        "title": "Perfil"
+      },
+      "logout": {
+        "title": "Sair"
+      }
+    }
+  },
   "auth": {
     "login": {
       "btn-submit": "LOGIN",
@@ -50,6 +83,28 @@
         }
       }
     },
+    "register": {
+      "header": "In the following form you can set your password. The requirements are as follows:<br/><br/>- 8 characters or more<br/>- Mix of uppercase abd lowercase<br/>- Use of a special character",
+      "btn-submit": "Confirmar",
+      "clear-form": "Limpar Formulário",
+      "form": {
+        "pwd": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "errors": {
+            "required": "Password required"
+          }
+        },
+        "pwd-confirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter your password again",
+          "errors": {
+            "required": "Password required",
+            "miss-match": "Passwords do not match"
+          }
+        }
+      }
+    },
     "reset-request": {
       "header": "If you forgot your password we can help you reset it by sending you an email with the reset instructions. For that we need you to provide us your email address",
       "btn-submit": "Reset Password",
@@ -68,11 +123,42 @@
   },
   "interaction": {
     "tabs": {
-      "customer": "Cliente",
-      "interaction": "Interação",
-      "history": "Histórico"
+      "customer": {
+        "title": "Cliente"
+      },
+      "interaction": {
+        "title": "Interação",
+        "type": {
+          "default": "Selecione o tipo",
+          "label": "Tipo",
+          "types": {
+            "unplanned": "Não Planeada"
+          }
+        },
+        "label": {
+          "default": "Selecione a interação",
+          "label": "Interação",
+          "types": {
+            "next_visit": "Próxima visita",
+            "group_class": "Aula de Grupo",
+            "execution_support": "Suporte",
+            "monthly_challenge": "Desafio mensal",
+            "reprogramming": "Reprogramada"
+          }
+        },
+        "details": {
+          "placeholder": "Adicione uma descrição da interação",
+          "create": "Criar",
+          "label": "Detalhes"
+        }
+      },
+      "history": {
+        "title": "Histórico"
+      }
     },
     "filters": {
+      "title": "Filtros",
+      "ok": "Fechar",
       "in-club": "Em Clube",
       "exclude-ag": "Em AG",
       "expired": "Planeado"
@@ -107,6 +193,64 @@
       "additional-services": "SERVIÇOS ADICIONAIS:",
       "additional-info": "INFORMAÇÃO ADICIONAL:",
       "lifecycle": "CICLO DE VIDA:"
+    }
+  },
+  "user": {
+    "user-menu": {
+      "profile": "Perfil",
+      "configurations": "Configurações",
+      "menu-items": {
+        "edit-profile": "Editar Perfil",
+        "activity": "A Minha Atividade",
+        "customers": "Os Meus Clientes",
+        "notifications": "Notificações"
+      },
+      "form": {
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Please select a language"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter a valid password"
+        }
+      }
+    },
+    "profile": {
+      "title": "Editar Informação de Perfil",
+      "form": {
+        "name": {
+          "label": "Nome de Ecrã",
+          "placeholder": "Este campo é obrigatório",
+          "errors": {
+            "required": "Display Name"
+          }
+        },
+        "email": "Email",
+        "role": "Role",
+        "language": {
+          "label": "Language",
+          "placeholder": "Selecione uma opção"
+        },
+        "password": {
+          "label": "Nova Password",
+          "placeholder": "********",
+          "errors": {
+            "required": "Este campo é obrigatório"
+          }
+        },
+        "confirm": {
+          "submit": "Confirmar",
+          "name": "O seu nome foi Nome alterado",
+          "lang": "A Lingua foi alterada",
+          "password": "A sua Password foi alterada"
+        }
+      }
+    },
+    "notification": {
+      "title": "Notificações"
     }
   }
 }

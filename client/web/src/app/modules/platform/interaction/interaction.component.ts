@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
 import { ICIData } from '../../../core/interfaces/icidata.model';
 import { DataService } from '../../../core/services/data.service';
+import { IonModal } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 export enum Phases {
   loading,
@@ -19,6 +22,7 @@ export enum Phases {
 export class InteractionComponent implements OnInit {
   phaseEnum = Phases;
   currentPhase = Phases.loading;
+  @ViewChild(IonModal) modal!: IonModal;
 
   list: Array<ICIData> = [];
   searchValue = '';
@@ -27,13 +31,53 @@ export class InteractionComponent implements OnInit {
 
   filterList!: Array<any>;
 
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
   constructor(
     private dataService: DataService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.init();
+    this.list[0]?.title;
+  }
+
+  confirm() {
+    this.modal.dismiss('', 'confirm');
+  }
+
+  onWillDismiss(event: Event) {
+    // const ev = event as CustomEvent<OverlayEventDetail<string>>;
+    // if (ev.detail.role === 'confirm') {
+    // this.message = `Hello, ${ev.detail.data}!`;
+    // }
+  }
+
+  asLink() {
+    this.router.navigate(['auth/login']);
   }
 
   async init() {
@@ -87,34 +131,48 @@ export class InteractionComponent implements OnInit {
   resetData() {
     this.dataService.resetData();
     this.init();
+    // this.list[0].
   }
 
-  onTabChange(tab: string, index: number) {
-    this.activeTabList[index] = tab;
+  async handleRefresh(event: any) {
+    await this.loadData();
+    event.target.complete();
   }
 
-  loadData() {
-    const filter = {
-      search: this.searchValue,
-    } as any;
-    this.filterList.forEach((f: any) => (filter[f.id] = f.checked));
+  onTabChange(event: any, index: number) {
+    this.activeTabList[index] = event?.target?.value;
+  }
 
-    this.currentPhase = Phases.loading;
-    this.dataService
-      .getICIData(filter)
-      .then(res => {
-        this.list = res?.length > 0 ? res : [];
-        this.activeTabList = Array.from(
-          { length: this.list.length },
-          () => '0'
-        );
-        this.currentPhase =
-          this.list?.length === 0 ? Phases.empty : Phases.success;
-      })
-      .catch(err => {
-        console.error(err);
-        this.currentPhase = Phases.error;
-      });
+  onSort(event: any) {
+    console.log('event', event); // TODO: Remove on PR!
+  }
+
+  async loadData() {
+    return new Promise((resolve, reject) => {
+      const filter = {
+        search: this.searchValue,
+      } as any;
+      this.filterList.forEach((f: any) => (filter[f.id] = f.checked));
+
+      this.currentPhase = Phases.loading;
+      this.dataService
+        .getICIData(filter)
+        .then((res) => {
+          this.list = res?.length > 0 ? res : [];
+          this.activeTabList = Array.from(
+            { length: this.list.length },
+            () => '0'
+          );
+          this.currentPhase =
+            this.list?.length === 0 ? Phases.empty : Phases.success;
+          resolve(res);
+        })
+        .catch((err) => {
+          console.error(err);
+          this.currentPhase = Phases.error;
+          reject(err);
+        });
+    });
   }
 
   onButtonClick(event: any) {
@@ -127,12 +185,13 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
-  handleSearch(newVal: string) {
-    this.searchValue = newVal;
+  handleSearch(newVal: any) {
+    this.searchValue = newVal?.target?.value;
     this.loadData();
   }
 
-  handleFilterToggle(newState: boolean, index: number) {
+  onFilterToggle(event: any, index: number) {
+    const newState = event.detail.checked;
     this.filterList[index].checked = newState;
     this.loadData();
   }
