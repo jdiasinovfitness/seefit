@@ -7,13 +7,13 @@
   <!-- Insert second menu here -->
   <div class="user-content-wrapper">
     <app-user-menu class="user-menu"
-                   [ngClass]="!isOpen ? 'user-menu': 'user-menu-hide'"
-                   [isOpen]="isOpen"
+                   [ngClass]="!userService.isUserMenuOpen ? 'user-menu': 'user-menu-hide'"
+                   [isOpen]="userService.isUserMenuOpen"
                    (itemClicked)="itemClicked()"></app-user-menu>
 
     <!-- Menu routes outlet -->
     <div class="router-wrapper"
-         [ngClass]="isOpen ? '': 'hidden'">
+         [ngClass]="userService.isUserMenuOpen ? '': 'hidden'">
       <ion-icon name="close-outline"
                 size="large"
                 (click)="close()"></ion-icon>

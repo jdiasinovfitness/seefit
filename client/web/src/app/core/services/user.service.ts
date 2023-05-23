@@ -10,9 +10,9 @@ export class UserService {
   userSubject = new BehaviorSubject<AuthInfo | undefined>(undefined);
   user$ = this.userSubject?.asObservable();
 
-  notificationSubject = new BehaviorSubject<
-    Array<NotificationData> | undefined
-  >(undefined);
+  isUserMenuOpen = false;
+
+  notificationSubject = new BehaviorSubject<Array<NotificationData> | undefined>(undefined);
   notification$ = this.notificationSubject?.asObservable();
 
   constructor() {

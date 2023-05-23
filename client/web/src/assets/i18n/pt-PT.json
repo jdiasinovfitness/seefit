@@ -243,6 +243,7 @@
         },
         "confirm": {
           "submit": "Confirmar",
+          "cancel": "Cancelar",
           "name": "O seu nome foi Nome alterado",
           "lang": "A Lingua foi alterada",
           "password": "A sua Password foi alterada"

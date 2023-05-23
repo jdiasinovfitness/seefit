@@ -242,6 +242,7 @@
         },
         "confirm": {
           "submit": "Confirm",
+          "cancel": "Cancel",
           "name": "Your Name was updated",
           "lang": "The Language was updated",
           "password": "Your password was updated"
