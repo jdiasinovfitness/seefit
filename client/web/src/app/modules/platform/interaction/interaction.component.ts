@@ -5,7 +5,6 @@ import { firstValueFrom } from 'rxjs';
 import { ICIData } from '../../../core/interfaces/icidata.model';
 import { DataService } from '../../../core/services/data.service';
 import { IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
 
 export enum Phases {
   loading,
@@ -58,7 +57,7 @@ export class InteractionComponent implements OnInit {
     private dataService: DataService,
     private translateService: TranslateService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.init();

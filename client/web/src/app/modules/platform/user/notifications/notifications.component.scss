@@ -100,3 +100,11 @@ em {
   background-color: var(--ion-color-light);
   z-index: 1;
 }
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 24px;
+}

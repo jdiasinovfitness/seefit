@@ -6,15 +6,28 @@ import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from '../services/config.service';
 import { SafeHtmlPipe } from '../pipes/safe-html.pipe';
 import { IonicModule } from '@ionic/angular';
+import { EmptyStateComponent } from '../../modules/platform/interaction/empty-state/empty-state.component';
 
 @NgModule({
-  declarations: [SafeHtmlPipe],
+  declarations: [
+    SafeHtmlPipe,
+    EmptyStateComponent,
+  ],
   imports: [
     CommonModule,
     TranslateModule.forChild({ extend: true }),
     IonicModule,
   ],
-  exports: [TranslateModule, SafeHtmlPipe, IonicModule],
-  providers: [AuthService, GlobalStorage, ConfigService],
+  exports: [
+    TranslateModule,
+    SafeHtmlPipe,
+    EmptyStateComponent,
+    IonicModule,
+  ],
+  providers: [
+    AuthService,
+    GlobalStorage,
+    ConfigService,
+  ],
 })
-export class SharedModule {}
+export class SharedModule { }
