@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { INTERACTION } from '../constants/status.constants';
-import {
-  ICIData,
-  ICIFilter,
-  ICI_STATUS,
-  ICI_TYPE,
-} from '../interfaces/icidata.model';
+import { ICIData, ICIFilter, ICI_STATUS, ICI_TYPE } from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 
@@ -15,6 +10,7 @@ import { MenuData } from '../interfaces/menu.model';
 export class DataService {
   data!: Array<ICIData>;
   interactionList!: Array<IITypeData>;
+  reportMenuItems!: Array<MenuData>;
   userMenuItems!: Array<MenuData>;
   menuItems!: Array<MenuData>;
   originList!: Array<any>;
@@ -24,6 +20,7 @@ export class DataService {
     this.data = this.getDummyData();
     this.interactionList = this.getDummyInteractionData();
     this.userMenuItems = this.getDummyUserMenuData();
+    this.reportMenuItems = this.getDummyReportMenuData();
     this.menuItems = this.getDummyMenuData();
     this.originList = this.getDummyOriginData();
     this.selectedOrigin = this.originList[0].id;
@@ -120,7 +117,7 @@ export class DataService {
           },
           {
             title: 'menu.items.interaction.data-report',
-            url: '/platform/interaction',
+            url: '/platform/report',
             icon: 'podium-outline',
           },
         ],
@@ -169,6 +166,29 @@ export class DataService {
         icon: 'notifications',
         route: '/platform/user/notification',
         active: true,
+      },
+    ];
+  }
+  getDummyReportMenuData() {
+    return [
+      //TODO: refactor menu options get from service
+      {
+        title: 'user.report-menu.menu-items.usage',
+        icon: 'analytics',
+        route: '/platform/report/usage',
+        active: true,
+      },
+      {
+        title: 'user.report-menu.menu-items.survey',
+        icon: 'star',
+        route: '/platform/report/survey',
+        active: false,
+      },
+      {
+        title: 'user.report-menu.menu-items.status',
+        icon: 'id-card',
+        route: '/platform/report/status',
+        active: false,
       },
     ];
   }
