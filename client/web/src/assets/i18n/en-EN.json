@@ -195,6 +195,14 @@
     }
   },
   "user": {
+    "report-menu": {
+      "report": "Reports",
+      "menu-items": {
+        "usage": "Usage Control",
+        "survey": "NPS & Surveys",
+        "status": "Interaction Status"
+      }
+    },
     "user-menu": {
       "profile": "Profile",
       "configurations": "Configurations",

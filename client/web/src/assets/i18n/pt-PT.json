@@ -196,6 +196,14 @@
     }
   },
   "user": {
+    "report-menu": {
+      "report": "Relatórios",
+      "menu-items": {
+        "usage": "Usage Control",
+        "survey": "NPS & Surveys",
+        "status": "Interaction Status"
+      }
+    },
     "user-menu": {
       "profile": "Perfil",
       "configurations": "Configurações",
