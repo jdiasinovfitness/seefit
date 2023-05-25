@@ -261,8 +261,8 @@
     "notification": {
       "title": "Notificações",
       "empty": {
-        "title": "De momento não tem notificações",
-        "subtitle": "As notificaçãoes podem ser consultadas nesta área"
+        "title": "You have no notifications right now!",
+        "subtitle": "We'll let you know when something arrives"
       }
     }
   }
