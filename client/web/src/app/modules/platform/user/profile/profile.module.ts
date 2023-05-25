@@ -6,7 +6,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileRoutingModule } from './profile-routing.module';
 
 @NgModule({
-  declarations: [ProfileComponent],
+  declarations: [
+    ProfileComponent,
+  ],
   imports: [
     CommonModule,
     ProfileRoutingModule,
@@ -14,4 +16,4 @@ import { ProfileRoutingModule } from './profile-routing.module';
     ReactiveFormsModule,
   ],
 })
-export class ProfileModule {}
+export class ProfileModule { }

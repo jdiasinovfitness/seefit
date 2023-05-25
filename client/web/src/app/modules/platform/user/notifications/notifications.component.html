@@ -1,61 +1,73 @@
-<div class="profile-wrapper"
-     *ngIf="notificationList as notifications">
+<div class="profile-wrapper">
 
   <ion-label><b>{{ 'user.notification.title' | translate }}</b></ion-label>
 
-  <ion-card *ngFor="let item of notifications; let i = index"
-            [ngClass]="{'unread': !item.isRead}">
+  <ng-container [ngSwitch]="currentPhase">
 
-    <!-- <ion-icon class="exc-icon"
-              name="alert-circle-outline"
-              size="large"
-              *ngIf="!item.isRead"></ion-icon> -->
-
-    <!-- Header -->
-    <ion-card-header>
-      <!-- Icon -->
-      <div class="left">
-        <img width="50px"
-             height="50px"
-             [ngStyle]="{backgroundImage: 'url(' + item.icon + ')'}">
-      </div>
-
-      <!-- Title -->
-      <div class="center">
-        <ion-card-title [innerHTML]="item.title | safeHtml">
-        </ion-card-title>
-      </div>
-
-      <!-- Date -->
-      <div class="right-col">
-        <div class="emph"
-             [innerHTML]="item.date | date: 'dd/MM/yyyy'"></div>
-        <div class="emph"
-             [innerHTML]="item.date | date: 'hh:mm'"></div>
-        <div class="emph"
-             [innerHTML]="item.type"></div>
-      </div>
-    </ion-card-header>
-
-    <!-- Subtitle -->
-    <ion-card-content>
-      <ion-card-subtitle [innerHTML]="item.subtitle | safeHtml">
-      </ion-card-subtitle>
-    </ion-card-content>
-
-    <!-- According -->
-    <div class="padded"
-         [innerHTML]="item.description | safeHtml"
-         *ngIf="item.isOpen"
-         (click)="expand(i)">
-    </div>
-    <div class="bottom-bar"
-         *ngIf="item.description"
-         (click)="expand(i)">
-      <ion-icon [name]="item.isOpen ? 'caret-up-outline': 'caret-down-outline'"
-                color="primary">
-      </ion-icon>
+    <!-- Empty Template -->
+    <div class="empty"
+         *ngSwitchCase="phaseEnum.empty">
+      <app-empty-state [title]="('user.notification.empty.title' | translate)"
+                       [footer]="('user.notification.empty.subtitle' | translate)"
+                       [type]="'empty'">
+      </app-empty-state>
     </div>
 
-  </ion-card>
+    <!-- Success Template -->
+    <div *ngSwitchCase="phaseEnum.success">
+
+      <ion-card *ngFor="let item of notificationList; let i = index"
+                [ngClass]="{'unread': !item.isRead}">
+
+        <!-- Header -->
+        <ion-card-header>
+          <!-- Icon -->
+          <div class="left">
+            <img width="50px"
+                 height="50px"
+                 [ngStyle]="{backgroundImage: 'url(' + item.icon + ')'}">
+          </div>
+
+          <!-- Title -->
+          <div class="center">
+            <ion-card-title [innerHTML]="item.title | safeHtml">
+            </ion-card-title>
+          </div>
+
+          <!-- Date -->
+          <div class="right-col">
+            <div class="emph"
+                 [innerHTML]="item.date | date: 'dd/MM/yyyy'"></div>
+            <div class="emph"
+                 [innerHTML]="item.date | date: 'hh:mm'"></div>
+            <div class="emph"
+                 [innerHTML]="item.type"></div>
+          </div>
+        </ion-card-header>
+
+        <!-- Subtitle -->
+        <ion-card-content>
+          <ion-card-subtitle [innerHTML]="item.subtitle | safeHtml">
+          </ion-card-subtitle>
+        </ion-card-content>
+
+        <!-- According -->
+        <div class="padded"
+             [innerHTML]="item.description | safeHtml"
+             *ngIf="item.isOpen"
+             (click)="expand(i)">
+        </div>
+        <div class="bottom-bar"
+             *ngIf="item.description"
+             (click)="expand(i)">
+          <ion-icon [name]="item.isOpen ? 'caret-up-outline': 'caret-down-outline'"
+                    color="primary">
+          </ion-icon>
+        </div>
+
+      </ion-card>
+    </div>
+
+  </ng-container>
+
 </div>

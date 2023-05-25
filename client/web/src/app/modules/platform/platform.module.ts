@@ -6,7 +6,14 @@ import { SharedModule } from '../../core/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PlatformComponent],
-  imports: [CommonModule, PlatformRoutingModule, SharedModule, FormsModule],
+  declarations: [
+    PlatformComponent,
+  ],
+  imports: [
+    CommonModule,
+    PlatformRoutingModule,
+    SharedModule,
+    FormsModule,
+  ],
 })
-export class PlatformModule {}
+export class PlatformModule { }

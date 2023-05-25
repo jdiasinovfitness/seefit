@@ -5,7 +5,6 @@ import { InteractionRoutingModule } from './interaction-routing.module';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 import { InteractionInfoComponent } from './interaction-info/interaction-info.component';
 import { HistoryComponent } from './history/history.component';
-import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { ObservationComponent } from './observation/observation.component';
 import { IciListHeaderComponent } from './ici-list-header/ici-list-header.component';
 import { SharedModule } from '../../../core/shared/shared.module';
@@ -17,10 +16,14 @@ import { FormsModule } from '@angular/forms';
     CustomerInfoComponent,
     InteractionInfoComponent,
     HistoryComponent,
-    EmptyStateComponent,
     ObservationComponent,
     IciListHeaderComponent,
   ],
-  imports: [CommonModule, InteractionRoutingModule, SharedModule, FormsModule],
+  imports: [
+    CommonModule,
+    InteractionRoutingModule,
+    SharedModule,
+    FormsModule
+  ],
 })
-export class InteractionModule {}
+export class InteractionModule { }

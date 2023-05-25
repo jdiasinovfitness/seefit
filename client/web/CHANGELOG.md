@@ -33,3 +33,7 @@
 #### 1.7.0
 
 - [[UI] Implement Confirmation Modal for profile close](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15617)
+
+#### 1.8.0
+
+- [[ui] Implement empty screen to notification list](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15652)
