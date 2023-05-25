@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from '../../../../core/services/data.service';
 import { UserService } from '../../../../core/services/user.service';
@@ -28,7 +21,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
     private dataService: DataService,
     private router: Router,
     public userService: UserService,
-    public langService: LangService
+    public langService: LangService,
   ) {
     this.routeSub$ = this.router.events.subscribe((el) => {
       if (el instanceof NavigationEnd) {
