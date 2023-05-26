@@ -1,23 +1,25 @@
 <!-- Page Header -->
-<ion-header>
+<ion-header type="ios">
   <ion-toolbar></ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- Insert second menu here -->
-  <div class="user-content-wrapper">
-    <app-user-menu class="user-menu"
-                   [ngClass]="!userService.isUserMenuOpen ? 'user-menu': 'user-menu-hide'"
-                   [isOpen]="userService.isUserMenuOpen"
-                   (itemClicked)="itemClicked()"></app-user-menu>
+  <div class="filter-bar">
+    <!-- Insert second menu here -->
+    <div class="user-content-wrapper">
+      <app-user-menu class="user-menu"
+                     [ngClass]="!userService.isUserMenuOpen ? 'user-menu': 'user-menu-hide'"
+                     [isOpen]="userService.isUserMenuOpen"
+                     (itemClicked)="itemClicked()"></app-user-menu>
 
-    <!-- Menu routes outlet -->
-    <div class="router-wrapper"
-         [ngClass]="userService.isUserMenuOpen ? '': 'hidden'">
-      <ion-icon name="close-outline"
-                size="large"
-                (click)="close()"></ion-icon>
-      <router-outlet></router-outlet>
+      <!-- Menu routes outlet -->
+      <div class="router-wrapper"
+           [ngClass]="userService.isUserMenuOpen ? '': 'hidden'">
+        <ion-icon name="close-outline"
+                  size="large"
+                  (click)="close()"></ion-icon>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </ion-content>

@@ -1,5 +1,17 @@
 @import "../../../../global.scss";
 
+.filter-bar {
+  display: flex;
+  align-items: center;
+
+  margin-top: 27px;
+  margin-right: 8px;
+
+  ion-button {
+    min-height: 36px;
+  }
+}
+
 .user-content-wrapper {
   display: flex;
   flex-direction: column;
