@@ -12,6 +12,13 @@
   width: 16px;
 }
 
+.highlight {
+  background-color: var(--ion-color-light);
+  // background-color: var(--ion-color-primary);
+  // background-color: var(--ion-color-primary-shade);
+  // background-color: var(--ion-color-primary-tint);
+}
+
 @media (prefers-color-scheme: light) {
   #history-icon {
     background-image: url("../../../../../assets/icon/history_radio.svg");
