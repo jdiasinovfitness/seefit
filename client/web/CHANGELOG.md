@@ -42,6 +42,10 @@
 
 - [[ui] Implement reports dashboard](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15547)
 
-#### 1.10.0
+#### 1.9.1
 
 -[[ICI] Missing customers total count](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15682)
+
+#### 1.9.2
+
+-[[ICI] Observation field to Planned Interactions not visible](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15674)
