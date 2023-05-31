@@ -222,8 +222,11 @@
 
 
 <!-- Page Footer -->
-<!-- <ion-footer color="transparent">
-  <ion-chip>
-    Some Footer
-  </ion-chip>
-</ion-footer> -->
+<ion-footer mode="ios"
+            collapse="fade">
+  <ion-toolbar>
+    <div class="counter">
+      {{ 'interaction.footer.label' | translate: {total: list.length} }}
+    </div>
+  </ion-toolbar>
+</ion-footer>

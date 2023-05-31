@@ -172,7 +172,9 @@
       "error-title": "Unable to fulfill the request",
       "error-footer": "Please check your internet connection and try again later"
     },
-    "footer": "customer(s) found",
+    "footer": {
+      "label": "{{total}} customer(s) found"
+    },
     "data": {
       "birth-date": "BIRTHDATE (AGE):",
       "objective": "OBJECTIVE:",

@@ -41,3 +41,7 @@
 #### 1.9.0
 
 - [[ui] Implement reports dashboard](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15547)
+
+#### 1.10.0
+
+-[[ICI] Missing customers total count](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15682)
