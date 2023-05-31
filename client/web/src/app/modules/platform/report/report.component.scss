@@ -1,0 +1,87 @@
+@import "../../../../global.scss";
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+
+  margin-top: 27px;
+  margin-right: 8px;
+
+  ion-button {
+    min-height: 36px;
+  }
+}
+
+.report-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: -webkit-fill-available;
+
+  .report-menu {
+    display: flex;
+    width: -webkit-fill-available;
+  }
+
+  .report-menu-hide {
+    display: none;
+  }
+
+  app-report-menu {
+    width: 100%;
+  }
+
+  .router-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+
+    ion-icon {
+      display: flex;
+      align-self: flex-end;
+
+      position: absolute;
+      right: 12px;
+      top: 38px;
+
+      cursor: pointer;
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .report-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    width: -webkit-fill-available;
+
+    .report-menu {
+      display: flex;
+    }
+
+    app-report-menu {
+      width: -webkit-fill-available;
+      max-width: 300px;
+    }
+
+    .router-wrapper {
+      ion-icon {
+        display: none;
+      }
+    }
+
+    .hidden {
+      visibility: visible;
+    }
+  }
+}
+
+ion-icon {
+  margin-bottom: 8px;
+  font-size: 24px;
+}

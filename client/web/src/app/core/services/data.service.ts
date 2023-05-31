@@ -109,16 +109,20 @@ export class DataService {
       {
         title: 'menu.items.interaction.title',
         icon: 'people',
+
+        disabled: false,
         subMenu: [
           {
             title: 'menu.items.interaction.live-club',
             url: '/platform/interaction',
             icon: 'square-outline',
+            disabled: false,
           },
           {
             title: 'menu.items.interaction.data-report',
             url: '/platform/report',
             icon: 'podium-outline',
+            disabled: false,
           },
         ],
       },
@@ -126,16 +130,19 @@ export class DataService {
         title: 'menu.items.health.title',
         url: '/platform/',
         icon: 'medkit',
+        disabled: false,
       },
       {
         title: 'menu.items.training.title',
         url: '/user/profile',
         icon: 'barbell',
+        disabled: false,
       },
       {
         title: 'menu.items.feed.title',
         url: '/user/profile',
         icon: 'logo-rss',
+        disabled: false,
       },
     ];
   }
@@ -147,25 +154,25 @@ export class DataService {
         title: 'user.user-menu.menu-items.edit-profile',
         icon: 'pencil',
         route: '/platform/user/profile',
-        active: true,
+        disabled: false,
       },
       {
         title: 'user.user-menu.menu-items.activity',
         icon: 'calendar',
         route: '/platform/user/activity',
-        active: false,
+        disabled: true,
       },
       {
         title: 'user.user-menu.menu-items.customers',
         icon: 'people',
         route: '/platform/user/customer',
-        active: false,
+        disabled: true,
       },
       {
         title: 'user.user-menu.menu-items.notifications',
         icon: 'notifications',
         route: '/platform/user/notification',
-        active: true,
+        disabled: false,
       },
     ];
   }
@@ -175,20 +182,23 @@ export class DataService {
       {
         title: 'user.report-menu.menu-items.usage',
         icon: 'analytics',
-        route: '/platform/report/usage',
+        url: 'https://www.youtube.com/embed/xvFZjo5PgG0',
         active: true,
+        disabled: false,
       },
       {
         title: 'user.report-menu.menu-items.survey',
         icon: 'star',
-        route: '/platform/report/survey',
+        url: 'https://www.africau.edu/images/default/sample.pdf',
         active: false,
+        disabled: false,
       },
       {
         title: 'user.report-menu.menu-items.status',
         icon: 'id-card',
-        route: '/platform/report/status',
+        url: 'https://web.seeplus.inovretail.com/application/br/BR_ANALYSIS_CARTEIRA_RPT_001',
         active: false,
+        disabled: false,
       },
     ];
   }

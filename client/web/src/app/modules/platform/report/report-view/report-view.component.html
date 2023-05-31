@@ -1,0 +1,13 @@
+<div class="report-wrapper"
+     *ngIf="true">
+
+  <ion-label><b>{{ item.title | translate }}</b></ion-label>
+
+  <iframe frameBorder="0"
+          [width]="'100%'"
+          [height]="'100%'"
+          allowfullscreen="true"
+          autoplay
+          [src]="item.url | safeIFrame">
+  </iframe>
+</div>

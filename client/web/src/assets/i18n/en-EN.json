@@ -196,7 +196,7 @@
   },
   "user": {
     "report-menu": {
-      "report": "Reports",
+      "reports": "Reports",
       "menu-items": {
         "usage": "Usage Control",
         "survey": "NPS & Surveys",

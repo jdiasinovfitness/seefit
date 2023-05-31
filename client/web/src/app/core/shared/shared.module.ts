@@ -7,10 +7,12 @@ import { ConfigService } from '../services/config.service';
 import { SafeHtmlPipe } from '../pipes/safe-html.pipe';
 import { IonicModule } from '@ionic/angular';
 import { EmptyStateComponent } from '../../modules/platform/interaction/empty-state/empty-state.component';
+import { SafeIFramePipe } from '../pipes/safe-iframe.pipe';
 
 @NgModule({
   declarations: [
     SafeHtmlPipe,
+    SafeIFramePipe,
     EmptyStateComponent,
   ],
   imports: [
@@ -21,6 +23,7 @@ import { EmptyStateComponent } from '../../modules/platform/interaction/empty-st
   exports: [
     TranslateModule,
     SafeHtmlPipe,
+    SafeIFramePipe,
     EmptyStateComponent,
     IonicModule,
   ],

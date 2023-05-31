@@ -25,9 +25,7 @@ const routes: Routes = [
       {
         path: 'notification',
         loadChildren: () =>
-          import('./notifications/notifications.module').then(
-            (m) => m.NotificationsModule
-          ),
+          import('./notifications/notifications.module').then((m) => m.NotificationsModule),
       },
     ],
   },
@@ -37,4 +35,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class UserRoutingModule {}
+export class UserRoutingModule { }
