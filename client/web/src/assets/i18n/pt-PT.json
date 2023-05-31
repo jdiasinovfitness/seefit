@@ -173,7 +173,9 @@
       "error-title": "Incapaz de completar o pedido",
       "error-footer": "Verifique a conexão com a Internet e tente novamente mais tarde"
     },
-    "footer": "cliente(s) encontrados",
+    "footer": {
+      "label": "{{total}} cliente(s) encontrados"
+    },
     "data": {
       "birth-date": "DATA NASCIMENTO (IDADE):",
       "objective": "OBJECTIVO:",
