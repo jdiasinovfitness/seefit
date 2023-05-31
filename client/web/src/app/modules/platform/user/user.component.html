@@ -15,8 +15,7 @@
       <!-- Menu routes outlet -->
       <div class="router-wrapper"
            [ngClass]="userService.isUserMenuOpen ? '': 'hidden'">
-        <ion-icon name="close-outline"
-                  size="large"
+        <ion-icon name="close"
                   (click)="close()"></ion-icon>
         <router-outlet></router-outlet>
       </div>

@@ -42,7 +42,7 @@
 
       position: absolute;
       right: 12px;
-      top: 12px;
+      top: 38px;
 
       cursor: pointer;
     }
@@ -79,4 +79,9 @@
       visibility: visible;
     }
   }
+}
+
+ion-icon {
+  margin-bottom: 8px;
+  font-size: 24px;
 }
