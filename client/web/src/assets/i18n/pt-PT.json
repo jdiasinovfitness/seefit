@@ -196,6 +196,14 @@
     }
   },
   "user": {
+    "report-menu": {
+      "reports": "Relatórios",
+      "menu-items": {
+        "usage": "Usage Control",
+        "survey": "NPS & Surveys",
+        "status": "Interaction Status"
+      }
+    },
     "user-menu": {
       "profile": "Perfil",
       "configurations": "Configurações",
@@ -253,8 +261,8 @@
     "notification": {
       "title": "Notificações",
       "empty": {
-        "title": "De momento não tem notificações",
-        "subtitle": "As notificaçãoes podem ser consultadas nesta área"
+        "title": "You have no notifications right now!",
+        "subtitle": "We'll let you know when something arrives"
       }
     }
   }

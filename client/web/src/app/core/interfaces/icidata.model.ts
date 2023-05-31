@@ -38,6 +38,7 @@ export interface ICIHistoryInfo {
   status: ICI_STATUS;
   type: ICI_TYPE;
   title: string;
+  highlight?: boolean;
   description: string;
 }
 

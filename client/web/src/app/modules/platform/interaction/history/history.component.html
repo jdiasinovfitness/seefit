@@ -1,6 +1,7 @@
 <div class="interaction-wrapper">
   <ion-grid>
-    <ion-row *ngFor="let item of info?.historyInfo">
+    <ion-row *ngFor="let item of info?.historyInfo"
+             [ngClass]="item.highlight ? 'highlight': ''">
       <ion-col size="2"
                size-lg="1"
                size-md="2"

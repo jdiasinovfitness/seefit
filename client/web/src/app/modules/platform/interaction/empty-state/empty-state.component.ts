@@ -10,14 +10,25 @@ export class EmptyStateComponent {
   @Input() footer!: string;
   @Input() type!: string;
 
-  constructor() {}
+  constructor() { }
 
   // TODO: Refactor to get "src" from CDN as an Input
   getImage() {
-    const src =
-      this.type === 'error'
-        ? 'assets/images/errorState.png'
-        : 'assets/images/emptyState.png';
+    let src = '';
+
+    switch (this.type) {
+      case 'error':
+        src = 'assets/images/errorState.png';
+        break;
+      case 'notification':
+        src = 'assets/images/emptyNotification.png';
+        break;
+
+      default:
+        src = 'assets/images/emptyState.png';
+        break;
+    }
+
     return src;
   }
 }

@@ -1,0 +1,32 @@
+<div class="report-menu-wrapper">
+
+  <!-- Report Menu Section -->
+  <ion-label><b>{{ 'user.report-menu.reports' | translate }}</b></ion-label>
+
+  <ion-list>
+    <ng-container *ngFor="let item of reportMenuItems; let i = index">
+      <ion-item slot="header"
+                button
+                lines="full"
+                [color]="currentRoute === item.url ? 'light' : null"
+                [disabled]="item.disabled"
+                (click)="itemClick(item, i)">
+
+        <ion-icon slot="start"
+                  color="primary"
+                  [name]='item?.icon'>
+        </ion-icon>
+
+        <ion-label color="primary">
+          {{item.title | translate}}
+        </ion-label>
+
+        <ion-icon class="chev-icon"
+                  slot="end"
+                  color="primary"
+                  name="caret-forward"
+                  *ngIf="item.active"></ion-icon>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</div>

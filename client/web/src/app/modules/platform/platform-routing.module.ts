@@ -15,11 +15,13 @@ const routes: Routes = [
       {
         path: 'interaction',
         loadChildren: () =>
-          import('./interaction/interaction.module').then(
-            (m) => m.InteractionModule
-          ),
+          import('./interaction/interaction.module').then((m) => m.InteractionModule),
       },
-      //health&nutrition
+      {
+        path: 'report',
+        loadChildren: () =>
+          import('./report/report.module').then((m) => m.ReportModule),
+      }
     ],
   },
 ];
@@ -28,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PlatformRoutingModule {}
+export class PlatformRoutingModule { }

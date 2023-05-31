@@ -7,7 +7,8 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
-  constructor(public userService: UserService,) { }
+
+  constructor(public userService: UserService) { }
 
   close() {
     this.userService.isUserMenuOpen = false;

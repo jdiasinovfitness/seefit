@@ -11,7 +11,7 @@ import { from, Observable } from 'rxjs';
 import { SharedModule } from './core/shared/shared.module';
 
 export class CustomTranslateLoader implements TranslateLoader {
-  constructor() {}
+  constructor() { }
 
   getTranslation(lang: string): Observable<any> {
     const timestamp = new Date().getTime();
@@ -25,7 +25,9 @@ export function CustomLoaderFactory() {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot({ menuType: 'overlay', animated: false }),
@@ -41,8 +43,12 @@ export function CustomLoaderFactory() {
     }),
     SharedModule,
   ],
-  exports: [TranslateModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  exports: [
+    TranslateModule,
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

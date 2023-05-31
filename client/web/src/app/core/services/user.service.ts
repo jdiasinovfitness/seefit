@@ -11,6 +11,7 @@ export class UserService {
   user$ = this.userSubject?.asObservable();
 
   isUserMenuOpen = false;
+  isReportMenuOpen = false;
 
   notificationSubject = new BehaviorSubject<Array<NotificationData> | undefined>(undefined);
   notification$ = this.notificationSubject?.asObservable();

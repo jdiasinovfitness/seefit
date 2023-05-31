@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { INTERACTION } from '../constants/status.constants';
-import {
-  ICIData,
-  ICIFilter,
-  ICI_STATUS,
-  ICI_TYPE,
-} from '../interfaces/icidata.model';
+import { ICIData, ICIFilter, ICI_STATUS, ICI_TYPE } from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 
@@ -15,6 +10,7 @@ import { MenuData } from '../interfaces/menu.model';
 export class DataService {
   data!: Array<ICIData>;
   interactionList!: Array<IITypeData>;
+  reportMenuItems!: Array<MenuData>;
   userMenuItems!: Array<MenuData>;
   menuItems!: Array<MenuData>;
   originList!: Array<any>;
@@ -24,6 +20,7 @@ export class DataService {
     this.data = this.getDummyData();
     this.interactionList = this.getDummyInteractionData();
     this.userMenuItems = this.getDummyUserMenuData();
+    this.reportMenuItems = this.getDummyReportMenuData();
     this.menuItems = this.getDummyMenuData();
     this.originList = this.getDummyOriginData();
     this.selectedOrigin = this.originList[0].id;
@@ -112,16 +109,20 @@ export class DataService {
       {
         title: 'menu.items.interaction.title',
         icon: 'people',
+
+        disabled: false,
         subMenu: [
           {
             title: 'menu.items.interaction.live-club',
             url: '/platform/interaction',
             icon: 'square-outline',
+            disabled: false,
           },
           {
             title: 'menu.items.interaction.data-report',
-            url: '/platform/interaction',
+            url: '/platform/report',
             icon: 'podium-outline',
+            disabled: false,
           },
         ],
       },
@@ -129,16 +130,19 @@ export class DataService {
         title: 'menu.items.health.title',
         url: '/platform/',
         icon: 'medkit',
+        disabled: false,
       },
       {
         title: 'menu.items.training.title',
         url: '/user/profile',
         icon: 'barbell',
+        disabled: false,
       },
       {
         title: 'menu.items.feed.title',
         url: '/user/profile',
         icon: 'logo-rss',
+        disabled: false,
       },
     ];
   }
@@ -150,25 +154,51 @@ export class DataService {
         title: 'user.user-menu.menu-items.edit-profile',
         icon: 'pencil',
         route: '/platform/user/profile',
-        active: true,
+        disabled: false,
       },
       {
         title: 'user.user-menu.menu-items.activity',
         icon: 'calendar',
         route: '/platform/user/activity',
-        active: false,
+        disabled: true,
       },
       {
         title: 'user.user-menu.menu-items.customers',
         icon: 'people',
         route: '/platform/user/customer',
-        active: false,
+        disabled: true,
       },
       {
         title: 'user.user-menu.menu-items.notifications',
         icon: 'notifications',
         route: '/platform/user/notification',
+        disabled: false,
+      },
+    ];
+  }
+  getDummyReportMenuData() {
+    return [
+      //TODO: refactor menu options get from service
+      {
+        title: 'user.report-menu.menu-items.usage',
+        icon: 'analytics',
+        url: 'https://www.youtube.com/embed/xvFZjo5PgG0',
         active: true,
+        disabled: false,
+      },
+      {
+        title: 'user.report-menu.menu-items.survey',
+        icon: 'star',
+        url: 'https://www.africau.edu/images/default/sample.pdf',
+        active: false,
+        disabled: false,
+      },
+      {
+        title: 'user.report-menu.menu-items.status',
+        icon: 'id-card',
+        url: 'https://web.seeplus.inovretail.com/application/br/BR_ANALYSIS_CARTEIRA_RPT_001',
+        active: false,
+        disabled: false,
       },
     ];
   }
@@ -248,6 +278,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -438,6 +469,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -627,6 +659,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -827,6 +860,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -1024,6 +1058,7 @@ export class DataService {
             id: '2',
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
+            highlight: true,
             type: ICI_TYPE.NPS,
             title: 'NPS Promoter',
             description: 'No comment to display.',
@@ -1224,6 +1259,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -1423,6 +1459,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -1621,6 +1658,7 @@ export class DataService {
             id: '2',
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
+            highlight: true,
             type: ICI_TYPE.NPS,
             title: 'NPS Promoter',
             description: 'No comment to display.',
@@ -1821,6 +1859,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -2020,6 +2059,7 @@ export class DataService {
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },

@@ -1,0 +1,36 @@
+@import "../../../../../global.scss";
+
+.report-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  ion-label {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+
+}
+
+// iframe {
+// height: 100% !important;
+// height: -webkit-fill-available !important;
+// min-height: 600px;
+// }
+
+@media screen and (max-width: 580px) {
+  .report-wrapper {
+    ion-label {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .report-wrapper {
+    ion-label {
+      display: none;
+    }
+  }
+}

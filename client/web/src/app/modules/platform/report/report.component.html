@@ -1,0 +1,25 @@
+<!-- Page Header -->
+<ion-header type="ios">
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Insert second menu here -->
+  <div class="report-content-wrapper filter-bar">
+    <app-report-menu class="report-menu"
+                     [ngClass]="!userService.isReportMenuOpen ? 'report-menu': 'report-menu-hide'"
+                     [isOpen]="userService.isReportMenuOpen"
+                     (itemClicked)="itemClicked($event)"></app-report-menu>
+
+    <!-- Menu routes outlet -->
+    <div class="router-wrapper"
+         [ngClass]="userService.isReportMenuOpen ? '': 'hidden'">
+      <!-- <ion-icon slot="icon-only"
+                name="close"></ion-icon> -->
+      <ion-icon name="close"
+                slot="icon-only"
+                (click)="close()"></ion-icon>
+      <app-report-view [item]="selectedItem"></app-report-view>
+    </div>
+  </div>
+</ion-content>
