@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { firstValueFrom } from 'rxjs';
-import { ICIData } from '../../../core/interfaces/icidata.model';
 import { DataService } from '../../../core/services/data.service';
+import { ICIData } from '../../../core/interfaces/icidata.model';
+import { TranslateService } from '@ngx-translate/core';
 import { IonModal } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 
 export enum Phases {
   loading,
