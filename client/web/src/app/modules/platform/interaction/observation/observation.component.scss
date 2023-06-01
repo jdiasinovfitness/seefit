@@ -6,6 +6,7 @@
   align-items: center;
   flex-wrap: wrap;
 
+
   span {
     display: flex;
     align-items: center;
@@ -14,6 +15,8 @@
 
     min-height: 68px;
     margin-bottom: 12px;
+
+    background-color: transparent;
 
     ion-item {
       flex-grow: 1;
