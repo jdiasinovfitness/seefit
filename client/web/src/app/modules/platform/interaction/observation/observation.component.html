@@ -2,14 +2,13 @@
 
   <!-- Comments Input -->
   <span>
-    <ion-item>
-      <ion-label position="floating"> {{'interaction.data.observation' | translate}} </ion-label>
+    <ion-item color="light">
       <ion-input class="custom"
                  mode="md"
                  type="text"
                  [value]=observation
                  [placeholder]="''"
-                 label="Floating label"
+                 [label]="'interaction.data.observation' | translate"
                  labelPlacement="floating"
                  [disabled]="!displayBtn"
                  (ionChange)="onKeyUp($event)"></ion-input>
