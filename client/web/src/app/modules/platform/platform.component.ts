@@ -3,9 +3,9 @@ import { MenuController } from '@ionic/angular';
 import { AuthService } from '../../core/services/auth.service';
 import { DataService } from '../../core/services/data.service';
 import { MenuData } from '../../core/interfaces/menu.model';
+import { UserService } from '../../core/services/user.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-platform',
@@ -26,7 +26,7 @@ export class PlatformComponent implements OnInit {
     private userService: UserService,
     public dataService: DataService,
     private modalCtrl: ModalController
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.menuItems = this.dataService.menuItems;
@@ -50,6 +50,7 @@ export class PlatformComponent implements OnInit {
   }
 
   navigate(path: string) {
+    return; // FIXME: disabled on request of ticket #15683
     this.router.navigate([path]);
     this.menu.close();
   }
