@@ -8,13 +8,9 @@ import { ICIData } from '../../../../core/interfaces/icidata.model';
 })
 export class IciListHeaderComponent implements OnInit {
   @Input() item!: ICIData;
-  @Output() stateChange = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  headerClicked(event: any) {
-    this.stateChange.emit(event);
-  }
 }
