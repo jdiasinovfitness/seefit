@@ -118,12 +118,12 @@ export class DataService {
             icon: 'square-outline',
             disabled: false,
           },
-          {
-            title: 'menu.items.interaction.data-report',
-            url: '/platform/report',
-            icon: 'podium-outline',
-            disabled: false,
-          },
+          // {
+          //   title: 'menu.items.interaction.data-report',
+          //   url: '/platform/report',
+          //   icon: 'podium-outline',
+          //   disabled: false,
+          // },
         ],
       },
       {
