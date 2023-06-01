@@ -1,76 +1,79 @@
-<div class="accordion-wrapper">
+<ion-item slot="header"
+          color="light">
 
-  <!-- Accordion Header -->
-  <div class="accordion-header"
-       (click)="toggle()">
-
-    <!-- Left Col -->
-    <div class="accordion-col"
-         *ngIf="data">
-      <!-- Icons Col -->
-      <div class="icon-col">
-        <div class="see-icon md"
-             *ngFor="let icon of data?.customerInfo?.additionalInfo?.icons |  slice:0:3;"
-             [ngClass]="icon"></div>
-      </div>
-      <!-- Profile Photo -->
-      <img [src]="data.imageUrl"
-           alt="User Photo">
-      <!-- Title Col -->
-      <div class="item-col lft">
-        <span class="title">
-          <label *ngIf="data.title">{{data.title | uppercase}}</label>
-          <label class="user-id"
-                 *ngIf="data.userId">({{data.userId}})</label>
-        </span>
-        <label class="line">
-          {{data.primary.label || 'N/A'}}
-          <span class="percentage"
-                [ngStyle]="{color: data.primary.color}"
-                *ngIf="data.primary?.value">{{data.primary.value}}</span>
-        </label>
-        <label class="line"
-               *ngIf="data.secondary">
-          <span>{{data.secondary.label || 'N/A'}}</span>
-          <span class="percentage"
-                [ngStyle]="{color: data.secondary.color}"
-                *ngIf="data.secondary?.value">{{data.secondary.value}}</span>
-        </label>
-      </div>
+  <div class="icon-avatar">
+    <div class="col-icons">
+      <ion-icon slot="icon-only"
+                *ngFor="let icon of item?.customerInfo?.additionalInfo?.icons | slice:0:3"
+                [name]="icon.icon"
+                color="medium">
+      </ion-icon>
     </div>
 
-    <!-- Center Col TODO: Re-Activate after DEMO -->
-    <!-- <div class="accordion-col cnt">
-      <div class="icon-col">
-        <label style="display:inline-block"
-               *ngIf="interaction">{{interactionLabel}}</label>
-        <label style="display:inline-block"
-               *ngIf="interaction">&nbsp; {{interaction}}</label>
-      </div>
-    </div> -->
-
-    <!-- Right Col -->
-    <div class="accordion-col rgh">
-      <div class="item-col rgh">
-        <span class="line">
-          <label *ngIf="data.date">{{data.date}}</label>
-          <div class="see-icon sm date"
-               style="margin-left: 6px;"></div>
-        </span>
-        <!-- <lib-label style="margin-bottom: 6px"
-                   *ngIf="data.status"
-                   [label]="data.status"></lib-label> -->
-        <span class="interaction"
-              *ngIf="data.interaction">
-          <label style="font-weight: 500;"
-                 *ngIf="data.interaction.label">{{data.interaction.label}}</label>
-          <label class="inter-label"
-                 [ngStyle]="{color: data.interaction.color}"
-                 [ngClass]="data.interaction.isBold ? 'bold':'inter-label'"
-                 *ngIf="data.interaction">&nbsp; {{data.interaction.value}}</label>
-        </span>
-      </div>
-    </div>
+    <!-- Avatar -->
+    <ion-avatar>
+      <img alt="Silhouette of a person's head"
+           [src]="item.imageUrl" />
+    </ion-avatar>
 
   </div>
-</div>
+
+  <div class="col-wrapper">
+
+    <!-- Left Column -->
+    <div class="column">
+      <!-- Title -->
+      <ion-label>
+        <ion-text color="primary">
+          <b>{{item.title}}</b>
+        </ion-text>
+      </ion-label>
+      <!-- Risk -->
+      <ion-label>
+        <ion-text color="medium">
+          {{item.primary.label}}
+        </ion-text>
+        <ion-text color="secondary">
+          {{item.primary.value}}
+        </ion-text>
+      </ion-label>
+      <!-- Usage -->
+      <ion-label>
+        <ion-text color="medium">
+          {{item.secondary.label}}
+        </ion-text>
+        <ion-text color="secondary">
+          {{item.secondary.value}}
+        </ion-text>
+      </ion-label>
+    </div>
+
+    <!-- Right Column -->
+    <div class="column right"
+         slot="end">
+      <!-- Interaction Type -->
+      <ion-label class="right">
+        <ion-text color="secondary">
+          {{item.interaction.value}}
+        </ion-text>
+      </ion-label>
+      <!-- Date -->
+      <ion-label class="right">
+        <ion-text color="medium">
+          {{item.date}}
+        </ion-text>
+      </ion-label>
+      <!-- Status -->
+      <div class="right">
+        <ion-chip color="medium">
+          <ion-text color="primary"
+                    style="font-size: smaller;">
+            {{item.status}}
+          </ion-text>
+        </ion-chip>
+      </div>
+
+    </div>
+  </div>
+
+</ion-item>
