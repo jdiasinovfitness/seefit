@@ -1,5 +1,6 @@
-<ion-item slot="header">
-
+<ion-item slot="header"
+          mode="ios"
+          button>
   <div class="icon-avatar">
     <div class="col-icons">
       <ion-icon slot="icon-only"
@@ -50,12 +51,6 @@
     <!-- Right Column -->
     <div class="column right"
          slot="end">
-      <!-- Interaction Type -->
-      <ion-label class="right">
-        <ion-text color="secondary">
-          {{item.interaction.value}}
-        </ion-text>
-      </ion-label>
       <!-- Date -->
       <ion-label class="right">
         <ion-text color="medium">
@@ -71,6 +66,12 @@
           </ion-text>
         </ion-chip>
       </div>
+      <!-- Interaction Type -->
+      <ion-label class="right">
+        <ion-text color="secondary">
+          {{item.interaction.value}}
+        </ion-text>
+      </ion-label>
 
     </div>
   </div>
