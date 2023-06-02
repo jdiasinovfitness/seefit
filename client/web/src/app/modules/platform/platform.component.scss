@@ -56,15 +56,25 @@ ion-footer {
     .footer {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
 
       background-color: var(--ion-color-light);
+
+      &:first-child {
+        padding-left: 24px;
+      }
+
+      &:last-child {
+        padding-right: 24px;
+      }
 
       .footer-item {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         padding: 12px 8px;
+        min-width: 64px;
 
         ion-icon {
           margin-bottom: 8px;
