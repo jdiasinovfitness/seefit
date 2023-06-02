@@ -2,6 +2,7 @@
 
 
 ion-item {
+
   .icon-avatar {
     display: flex;
     flex-direction: row;
@@ -98,4 +99,12 @@ ion-item {
 
 .right {
   align-self: flex-end;
+}
+
+ion-chip {
+  height: 24px;
+  font-size: small;
+  margin-right: 0px;
+  padding-bottom: 4px;
+  padding-top: 4px;
 }
