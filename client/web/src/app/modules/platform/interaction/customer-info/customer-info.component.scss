@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 0px 4px;
+  padding: 0px 12px;
 
   .split-line {
     display: flex;
@@ -33,6 +33,10 @@
     .disabled {
       filter: opacity(0.4);
     }
+  }
+
+  .add-info {
+    margin-left: 0px;
   }
 
   .base-line {
