@@ -96,12 +96,13 @@
 
 
       <!-- List -->
-      <ion-accordion-group>
+      <ion-accordion-group mode="ios">
         <ion-accordion [value]="i"
+                       mode="ios"
                        *ngFor="let item of list; let i = index">
 
           <!-- Header -->
-          <app-ici-header [item]="list[0]"
+          <app-ici-header [item]="item"
                           slot="header">
           </app-ici-header>
 
@@ -120,15 +121,18 @@
             </ion-segment>
 
             <!-- Tab Content -->
-            <div *ngIf="activeTabList[i] === '0'">
+            <div class="expanded-area"
+                 *ngIf="activeTabList[i] === '0'">
               <app-customer-info [info]="item"
                                  (handleClick)="onButtonClick($event)"></app-customer-info>
             </div>
-            <div *ngIf="activeTabList[i] === '1'">
+            <div class="expanded-area"
+                 *ngIf="activeTabList[i] === '1'">
               <app-interaction-info [info]="item"
                                     (handleClick)="onButtonClick($event)"></app-interaction-info>
             </div>
-            <div *ngIf="activeTabList[i] === '2'">
+            <div class="expanded-area"
+                 *ngIf="activeTabList[i] === '2'">
               <app-history [info]="item"
                            (handleClick)="onButtonClick($event)"></app-history>
             </div>

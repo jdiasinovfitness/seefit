@@ -49,59 +49,18 @@ ion-content {
       display: flex;
       flex-direction: column;
 
-      ion-item {
-        .icon-avatar {
-          display: flex;
-          flex-direction: row;
-
-          .col-icons {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-
-            ion-icon {
-              margin-bottom: 4px;
-            }
-
-            :last-child {
-              margin-bottom: 0px;
-            }
-          }
-
-          ion-avatar {
-            min-height: 50px;
-            min-width: 50px;
-            max-height: 150px;
-            max-width: 150px;
-            margin: 8px;
-          }
-        }
-
-        .col-wrapper {
-          display: flex;
-          flex-direction: row;
-          flex-shrink: 0;
-          flex-grow: 1;
-          flex-wrap: 1;
-          justify-content: space-between;
-
-          margin: 8px 0px;
-
-          .column {
-            display: flex;
-            flex-direction: column;
-            align-self: flex-start;
-          }
-        }
-      }
-
       .expanded-content {
         display: flex;
         flex-direction: column;
 
+        // margin: 0px 16px;
       }
     }
   }
+}
+
+ion-segment {
+  padding: 0px 16px;
 }
 
 .counter {
@@ -112,48 +71,6 @@ ion-footer {
   padding-bottom: 20px;
 }
 
-@media screen and (max-width: 580px) {
-  .icon-avatar {
-    display: flex;
-    flex-direction: column-reverse !important;
-
-    .col-icons {
-      display: flex;
-      justify-content: center;
-      flex-direction: row !important;
-
-      ion-icon {
-        margin-right: 4px;
-
-      }
-
-      :last-child {
-        margin-right: 0px;
-      }
-    }
-
-    ion-avatar {
-      min-height: 50px;
-      min-width: 50px;
-      max-height: 150px;
-      max-width: 150px;
-      margin: 8px;
-    }
-  }
-
-  .col-wrapper {
-    display: flex;
-    flex-direction: column !important;
-    flex-shrink: 0;
-    flex-grow: 0;
-    flex-wrap: 1;
-  }
-
-  .right {
-    align-self: flex-start !important;
-  }
-}
-
-.right {
-  align-self: flex-end;
+.expanded-area {
+  background-color: var(--ion-color-light);
 }
