@@ -186,8 +186,10 @@
     --ion-card-background: #1c1c1d;
   }
 
+  // Sets ion-item border color;
   .ios ion-item {
-    --border-color: var(--ion-color-primary);
+    // --border-color: var(--ion-color-primary);
+    --border-color: var(--ion-color-light);
   }
 
   .ios ion-modal {
