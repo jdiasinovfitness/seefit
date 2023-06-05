@@ -29,9 +29,10 @@
     </ion-row>
   </ion-grid>
 
-
-  <app-observation [userId]="info.userId"
-                   [displayBtn]="info.status !== statusTypes.COMPLETED"
-                   (handleClick)="onButtonClick($event)">
-  </app-observation>
+  <div style="padding-left: 6px;">
+    <app-observation [userId]="info.userId"
+                     [displayBtn]="info.status !== statusTypes.COMPLETED"
+                     (handleClick)="onButtonClick($event)">
+    </app-observation>
+  </div>
 </div>

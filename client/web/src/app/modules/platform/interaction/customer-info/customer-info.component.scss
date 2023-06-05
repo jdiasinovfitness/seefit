@@ -4,13 +4,12 @@
   display: flex;
   flex-direction: column;
 
-  padding: 0px 4px;
+  padding: 0px 12px;
 
   .split-line {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: stretch;
   }
 
@@ -36,6 +35,10 @@
     }
   }
 
+  .add-info {
+    margin-left: 0px;
+  }
+
   .base-line {
     display: flex;
     justify-content: space-between;
@@ -57,6 +60,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  flex-grow: 1;
 
   margin: 0px 4px;
 
