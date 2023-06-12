@@ -53,3 +53,7 @@
 #### 1.10.0
 
 -[[ui] Live Club MS #1 improvements](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15683)
+
+#### 1.10.1
+
+-[Zoom on forgot password screen](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15727)
