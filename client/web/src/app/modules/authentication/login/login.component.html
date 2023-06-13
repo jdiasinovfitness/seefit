@@ -13,7 +13,8 @@
             class="">
 
         <!-- Email -->
-        <ion-item class="email-group">
+        <ion-item class="email-group"
+                  mode="md">
           <ion-label position="floating">{{ 'auth.login.form.email.label' | translate }}</ion-label>
           <ion-input type="email"
                      formControlName="email"
@@ -34,11 +35,19 @@
         </ion-item>
 
         <!-- Password -->
-        <ion-item class="pwd-group">
+        <ion-item class="pwd-group"
+                  mode="md">
           <ion-label position="floating">{{ 'auth.login.form.pwd.label' | translate }}</ion-label>
-          <ion-input type="password"
+          <ion-input [type]="passwordType"
                      formControlName="password"
-                     placeholder="{{ 'auth.login.form.pwd.placeholder' | translate }}"></ion-input>
+                     placeholder="{{ 'auth.login.form.pwd.placeholder' | translate }}">
+          </ion-input>
+          <ion-icon slot="end"
+                    [name]="passwordIcon"
+                    class="passwordIcon"
+                    (click)='hideShowPassword()'>
+          </ion-icon>
+
           <ion-note slot="error"
                     *ngIf="authForm.get('password')?.getError('required')
                     && authForm.get('password')?.value === ''
@@ -63,11 +72,12 @@
             <ion-button expand="block"
                         *ngIf="currentPhase !== phaseEnum.success"
                         (click)="signIn()">
-              <label *ngSwitchCase="phaseEnum.empty || phaseEnum.error">
+              <ion-spinner *ngSwitchCase="phaseEnum.loading"
+                           name="dots">
+              </ion-spinner>
+              <label *ngSwitchDefault>
                 {{ 'auth.login.btn-submit' | translate }}
               </label>
-              <ion-spinner *ngSwitchCase="phaseEnum.loading"
-                           name="dots"></ion-spinner>
             </ion-button>
           </ng-container>
         </div>
