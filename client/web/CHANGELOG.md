@@ -57,3 +57,7 @@
 #### 1.10.1
 
 -[Zoom on forgot password screen](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15727)
+
+#### 1.11.0
+
+-[Login improvements](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15732)
