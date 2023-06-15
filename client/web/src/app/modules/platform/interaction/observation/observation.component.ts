@@ -13,7 +13,9 @@ export class ObservationComponent implements OnInit {
 
   observation = '';
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+  ) { }
 
   ngOnInit(): void {
     this.fetchObsFromStorage();

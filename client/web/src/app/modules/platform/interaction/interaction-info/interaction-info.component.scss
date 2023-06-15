@@ -18,3 +18,12 @@
     margin: 24px 12px;
   }
 }
+
+// Input border bottom color on focus
+ion-item {
+  --background: transparent;
+
+  .has-focus {
+    border-bottom: solid 2px $primary;
+  }
+}

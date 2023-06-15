@@ -20,6 +20,9 @@ export class LoginComponent {
   phaseEnum = Phases;
   currentPhase = Phases.empty;
 
+  passwordType = 'password';
+  passwordIcon = 'eye-off';
+
   authForm: FormGroup;
   isSubmitted = false;
   production = environment.production;
@@ -28,12 +31,17 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {
     this.authForm = this.formBuilder.group({
       email: ['admin@inovfitness.com', [Validators.required, Validators.email]],
       password: ['admin', [Validators.required]],
     });
+  }
+
+  hideShowPassword() {
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
   signIn() {
@@ -49,17 +57,17 @@ export class LoginComponent {
     this.authService
       .login(this.authForm?.value)
       .then((res) => {
-        // TODO: Implement success logic
-        // res.
-        // this.currentPhase = error ? Phases.error : Phases.success;
+        this.currentPhase = Phases.success;
         this.authForm.get('password')?.setErrors(null);
-        console.log('Success', res); // TODO: Remove on PR!
+
+        this.currentPhase = Phases.empty;
         this.router.navigate(['platform/interaction']);
       })
       .catch((err) => {
         // TODO: Implement error logic
-        console.log('Error', err); // TODO: Remove on PR!
         this.currentPhase = Phases.error;
+        console.log('Error', err); // TODO: Remove on PR!
+
         this.authForm.get('password')?.setErrors({ wrongPassword: true });
         this.router.navigate(['platform/interaction']); // FIXME: remove once done!
       });

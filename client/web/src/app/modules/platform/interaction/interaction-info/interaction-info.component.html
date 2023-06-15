@@ -5,10 +5,11 @@
        [innerHTML]="info?.interactionInfo | safeHtml"></div>
 
   <ng-container *ngIf="currentPhase === phaseEnum.success && info?.status === statusTypes.COMPLETED">
-    <ion-item>
-      <ion-label position="floating"> {{'interaction.tabs.interaction.type.label' | translate}} </ion-label>
+    <ion-item mode="ios">
       <ion-select [placeholder]="'interaction.tabs.interaction.type.default' | translate"
                   [disabled]="!true"
+                  mode="ios"
+                  label="{{'interaction.tabs.interaction.type.label' | translate}}"
                   label-placement="floating"
                   fill="solid"
                   (ionChange)="onTypeChange($event)">
@@ -17,10 +18,11 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating"> {{'interaction.tabs.interaction.label.label' | translate}} </ion-label>
+    <ion-item mode="ios">
       <ion-select [placeholder]="'interaction.tabs.interaction.label.default' | translate"
                   [disabled]="!this.selectedType"
+                  mode="ios"
+                  label="{{'interaction.tabs.interaction.label.label' | translate}}"
                   label-placement="floating"
                   fill="solid"
                   (ionChange)="onInteractionChange($event)">
@@ -29,14 +31,13 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating"> {{'interaction.tabs.interaction.details.label' | translate}} </ion-label>
+    <ion-item mode="md">
       <ion-input class="custom"
                  mode="md"
                  type="text"
                  [value]="details"
                  [placeholder]="'interaction.tabs.interaction.details.placeholder' | translate"
-                 label="Floating label"
+                 label="{{'interaction.tabs.interaction.details.label' | translate}}"
                  labelPlacement="floating"
                  [disabled]="!selectedInteraction"
                  (ionChange)="onDetailsKeyup($event)">

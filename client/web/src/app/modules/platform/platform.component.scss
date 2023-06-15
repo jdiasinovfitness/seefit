@@ -29,6 +29,10 @@
   margin-bottom: 32px;
 
   text-align: center;
+
+  ion-label {
+    font-weight: 600;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -79,6 +83,10 @@ ion-footer {
         ion-icon {
           margin-bottom: 8px;
           font-size: 24px;
+        }
+
+        ion-label {
+          font-weight: 600;
         }
       }
     }
