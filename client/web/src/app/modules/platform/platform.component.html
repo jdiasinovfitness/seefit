@@ -1,5 +1,5 @@
 <!-- SideBar Closed -->
-<ion-header type="ios">
+<ion-header type="md">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-toggle>
@@ -57,7 +57,8 @@
                   color="primary"
                   [name]='item?.icon'>
         </ion-icon>
-        <ion-label slot="start"
+        <ion-label style="font-weight: 600;"
+                   slot="start"
                    color="primary">
           {{item.title | translate}}
         </ion-label>
@@ -76,7 +77,8 @@
                       color="primary"
                       [name]='item?.icon'>
             </ion-icon>
-            <ion-label slot="start"
+            <ion-label style="font-weight: 600;"
+                       slot="start"
                        color="primary">
               {{item.title | translate}}
             </ion-label>

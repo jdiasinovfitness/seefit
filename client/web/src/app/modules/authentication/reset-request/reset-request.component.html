@@ -1,5 +1,6 @@
 <ion-content class="ion-padding">
   <div class="login-wrapper">
+
     <!--Left section-->
     <div class="left-section">
       <img class="pic"
@@ -17,10 +18,9 @@
           <p>{{ 'auth.reset-request.header' | translate }}</p>
         </ion-text>
 
-
         <!-- Email -->
         <ion-item class="email-group"
-                  mode="ios">
+                  mode="md">
           <ion-label position="floating">{{ 'auth.reset-request.form.email.label' | translate }}</ion-label>
           <ion-input type="email"
                      formControlName="email"

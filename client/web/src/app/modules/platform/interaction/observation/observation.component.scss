@@ -45,10 +45,15 @@
 
 }
 
-// input {
-//   border-radius: 0px !important;
-// }
-
 ion-input.custom {
   --padding-start: 0px !important;
+}
+
+// Input border bottom color on focus
+ion-item {
+  --background: transparent;
+
+  .has-focus {
+    border-bottom: solid 2px $primary;
+  }
 }

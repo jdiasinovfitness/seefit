@@ -31,7 +31,7 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {
     this.authForm = this.formBuilder.group({
       email: ['admin@inovfitness.com', [Validators.required, Validators.email]],

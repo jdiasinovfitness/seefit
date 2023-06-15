@@ -30,7 +30,7 @@ export function CustomLoaderFactory() {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot({ menuType: 'overlay', animated: false }),
+    IonicModule.forRoot({ menuType: 'overlay', animated: false, mode: 'ios' }),
     HttpClientModule,
     AppRoutingModule,
     TranslateModule.forRoot({

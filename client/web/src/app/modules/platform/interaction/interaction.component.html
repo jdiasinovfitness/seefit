@@ -6,7 +6,8 @@
 <div class="filter-bar">
   <!-- TODO: Group all in one action Sheet for small devices -->
   <!-- Search -->
-  <ion-searchbar [debounce]="500"
+  <ion-searchbar color="light"
+                 [debounce]="500"
                  (ionChange)="handleSearch($event)"
                  [value]="searchValue">
   </ion-searchbar>

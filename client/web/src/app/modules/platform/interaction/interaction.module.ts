@@ -8,7 +8,7 @@ import { HistoryComponent } from './history/history.component';
 import { ObservationComponent } from './observation/observation.component';
 import { IciListHeaderComponent } from './ici-list-header/ici-list-header.component';
 import { SharedModule } from '../../../core/shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     InteractionRoutingModule,
     SharedModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class InteractionModule { }
