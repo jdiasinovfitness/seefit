@@ -61,3 +61,7 @@
 #### 1.11.0
 
 -[Login improvements](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15732)
+
+#### 1.12.0
+
+-[[Menu] Slide instead of overlap](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15743)
