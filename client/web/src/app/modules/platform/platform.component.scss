@@ -35,6 +35,10 @@
   }
 }
 
+ion-menu::part(backdrop) {
+  background-color: transparent;
+}
+
 @media (prefers-color-scheme: light) {
   #inov-fitness-logo {
     background-image: url("../../../assets/images/logoBlack.png");
