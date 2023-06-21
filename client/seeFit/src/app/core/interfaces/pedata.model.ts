@@ -27,13 +27,13 @@ export interface Validation {
 }
 
 export interface Radio {
-  options: Array<Option>;
+  options?: Array<Option>;
 }
 export interface Checkbox {
-  options: Array<Option>;
+  options?: Array<Option>;
 }
 export interface Select {
-  options: Array<Option>;
+  options?: Array<Option>;
 }
 export interface Input {
   label: string;
@@ -46,6 +46,7 @@ export interface TextArea {
 export interface Option {
   id: string;
   label: string;
+  selected?: boolean;
 }
 
 export enum PromptType {

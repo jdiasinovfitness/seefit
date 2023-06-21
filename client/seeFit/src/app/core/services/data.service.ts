@@ -27,7 +27,7 @@ export class DataService {
     this.menuItems = this.getDummyMenuData();
     this.originList = this.getDummyOriginData();
     this.selectedOrigin = this.originList[0].id;
-    this.pEData;
+    this.pEData = this.getDummyPEData();
   }
 
   resetData() {
@@ -2181,7 +2181,7 @@ export class DataService {
                     validations: [
                       {
                         name: 'required',
-                        value: true,
+                        value: false,
                       },
                     ],
                     prompt: {
@@ -2210,11 +2210,11 @@ export class DataService {
                       options: [
                         {
                           id: '5',
-                          label: 'sim',
+                          label: 'Sim',
                         },
                         {
                           id: '6',
-                          label: 'não',
+                          label: 'Não',
                         },
                       ],
                     },
@@ -2285,19 +2285,19 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '3',
+                          id: '1',
                           label: 'Pernas',
                         },
                         {
-                          id: '4',
+                          id: '2',
                           label: 'Coxas',
                         },
                         {
-                          id: '5',
+                          id: '3',
                           label: 'Glúteos',
                         },
                         {
-                          id: '5',
+                          id: '4',
                           label: 'Braços',
                         },
                       ],
@@ -2353,8 +2353,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '7', label: 'sim' },
-                        { id: '8', label: 'não' },
+                        { id: '7', label: 'Sim' },
+                        { id: '8', label: 'Não' },
                       ],
                     },
                   },
@@ -2456,8 +2456,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '1', label: 'sim' },
-                        { id: '2', label: 'não' },
+                        { id: '1', label: 'Sim' },
+                        { id: '2', label: 'Não' },
                       ],
                     },
                   },
@@ -2472,8 +2472,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '1', label: 'sim' },
-                        { id: '2', label: 'não' },
+                        { id: '1', label: 'Sim' },
+                        { id: '2', label: 'Não' },
                       ],
                     },
                   },
@@ -2532,8 +2532,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '7', label: 'sim' },
-                        { id: '8', label: 'não' },
+                        { id: '7', label: 'Sim' },
+                        { id: '8', label: 'Não' },
                       ],
                     },
                   },
@@ -2555,11 +2555,11 @@ export class DataService {
                       options: [
                         {
                           id: '1',
-                          label: 'sim',
+                          label: 'Sim',
                         },
                         {
                           id: '2',
-                          label: 'não',
+                          label: 'Não',
                         },
                       ],
                     },
@@ -2568,7 +2568,7 @@ export class DataService {
               },
               {
                 title:
-                  '4. Estratificação de Risco, Intensidade e Progressão de treino recomendada',
+                  '3. Estratificação de Risco, Intensidade e Progressão de treino recomendada',
                 prompts: [
                   {
                     title:
@@ -2584,11 +2584,11 @@ export class DataService {
                       options: [
                         {
                           id: '1',
-                          label: 'sim',
+                          label: 'Sim',
                         },
                         {
                           id: '2',
-                          label: 'não',
+                          label: 'Não',
                         },
                       ],
                     },
@@ -2603,7 +2603,7 @@ export class DataService {
             title: 'ANÁLISE FÍSICA',
             group: [
               {
-                title: 'Medidas',
+                title: '1. Medidas',
                 prompts: [
                   {
                     title: 'Altura',
@@ -2614,7 +2614,7 @@ export class DataService {
                         value: '[0-9,0-90-9]',
                       },
                     ],
-                    prompt: { label: 'Altura', placeholder: 'cm' },
+                    prompt: { label: 'Altura*', placeholder: 'cm' },
                   },
                   {
                     title: 'Peso',
@@ -2625,7 +2625,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'Peso', placeholder: 'Kg' },
+                    prompt: { label: 'Peso*', placeholder: 'Kg' },
                   },
                   {
                     title: '% Massa Gorda',
@@ -2661,7 +2661,7 @@ export class DataService {
                     prompt: { label: '', placeholder: '' },
                   },
                   {
-                    title: 'Tx Metabólica Basal',
+                    title: 'Taxa Metabólica Basal',
                     type: PromptType.Input,
                     validations: [
                       {
@@ -2680,7 +2680,7 @@ export class DataService {
                         value: '[0-90-90-9.0-9]',
                       },
                     ],
-                    prompt: { label: '', placeholder: 'cm' },
+                    prompt: { label: 'anca', placeholder: 'cm' },
                   },
                   {
                     title: 'Índice Anca / Cintura:',
@@ -2692,8 +2692,8 @@ export class DataService {
                       },
                     ],
                     prompt: {
-                      label: '',
-                      placeholder: 'Índice Anca / Cintura:',
+                      label: 'Índice Anca / Cintura:',
+                      placeholder: '',
                     },
                   },
                 ],
@@ -2706,18 +2706,21 @@ export class DataService {
             title: 'FINALIZAR',
             group: [
               {
-                title: '',
+                title: 'Submeter',
                 prompts: [
                   {
-                    title: '',
+                    title: 'Enviar',
                     type: PromptType.Input,
                     validations: [
                       {
-                        name: '',
+                        name: 'required',
                         value: false,
                       },
                     ],
-                    prompt: { label: '', placeholder: '' },
+                    prompt: {
+                      label: 'Submeter Resultados',
+                      placeholder: 'submit',
+                    },
                   },
                 ],
               },

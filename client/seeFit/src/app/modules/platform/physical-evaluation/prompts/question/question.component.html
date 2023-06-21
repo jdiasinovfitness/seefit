@@ -1,0 +1,20 @@
+<ng-container class="question" [ngSwitch]="question?.type">
+  <ng-container *ngSwitchCase="PromptType.Checkbox">
+    <app-checkbox [prompt]="question?.prompt"></app-checkbox>
+  </ng-container>
+  <ng-container *ngSwitchCase="PromptType.Radio">
+    <app-radio [prompt]="question?.prompt"></app-radio>
+  </ng-container>
+  <ng-container *ngSwitchCase="PromptType.Select">
+    <app-select [prompt]="question?.prompt"></app-select>
+  </ng-container>
+  <ng-container *ngSwitchCase="PromptType.TextArea">
+    <app-text-area [prompt]="question?.prompt"></app-text-area>
+  </ng-container>
+</ng-container>
+
+<!-- <div *ngIf="question?.type === PromptType.Checkbox || question?.type === PromptType.Radio || question?.type === PromptType.Select">
+  <div *ngFor="let option of question?.option>
+    {{ option.label }}
+  </div>
+</div> -->

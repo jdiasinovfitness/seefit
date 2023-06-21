@@ -1,8 +1,49 @@
-<br />
-<br />
-<br />
-<br />
-<br />
-laalal
-<br />
-{{ pEData | json }}
+<ion-content class="form" *ngIf="pEData && pEData.length > 0">
+  <div
+    style="display: flex; margin: 30px; padding-top: 40px; margin-inline: 15px"
+  >
+    <div *ngFor="let data of pEData">
+      <div *ngFor="let step of pEData[0].steps">
+        <ion-card-header>
+          <ion-card-title color="primary" class="step-title">
+            {{ step.title }}
+          </ion-card-title>
+        </ion-card-header>
+        <div class="group" *ngFor="let group of step.group">
+          <ion-text color="primary" class="group-title">
+            <h4>{{ group.title }}</h4>
+          </ion-text>
+
+          <ion-item-group class="question" *ngFor="let prompt of group.prompts">
+            <ion-text class="prompt-title">
+              {{ prompt.title }}
+            </ion-text>
+            <ng-container [ngSwitch]="prompt.type">
+              <div class="answer-options" *ngSwitchCase="PromptType.Radio">
+                <app-radio [prompt]="prompt.prompt"></app-radio>
+              </div>
+              <div class="answer-options" *ngSwitchCase="PromptType.Checkbox">
+                <app-checkbox [prompt]="prompt.prompt"></app-checkbox>
+              </div>
+              <div class="answer-options" *ngSwitchCase="PromptType.Select">
+                <app-select [prompt]="prompt.prompt"></app-select>
+              </div>
+              <div class="answer-options" *ngSwitchCase="PromptType.TextArea">
+                <app-text-area
+                  class="text-area-field"
+                  [prompt]="prompt.prompt"
+                ></app-text-area>
+              </div>
+              <div class="answer-options" *ngSwitchCase="PromptType.Input">
+                <app-input
+                  class="input-field"
+                  [prompt]="prompt.prompt"
+                ></app-input>
+              </div>
+            </ng-container>
+          </ion-item-group>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

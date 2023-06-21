@@ -35,7 +35,7 @@
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
     "@i9r/ui-components": "^2.0.0",
-    "@ionic/angular": "^7.0.3",
+    "@ionic/angular": "^7.0.5",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "ionicons": "^6.0.3",
