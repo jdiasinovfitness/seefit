@@ -1,0 +1,16 @@
+@import "../../../../../../global.scss";
+.checkbox-field {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.question-answer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.answer {
+  margin-left: 10px;
+}

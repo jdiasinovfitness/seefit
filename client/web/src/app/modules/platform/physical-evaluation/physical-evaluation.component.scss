@@ -1,0 +1,54 @@
+@import "../../../../global.scss";
+.form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-title {
+  margin-bottom: 20px;
+}
+
+.group-title {
+  display: flex;
+  flex-grow: 1;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.prompt-title {
+  flex-grow: 1;
+  margin-right: 50px;
+}
+
+.answer-options {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  flex-wrap: nowrap;
+}
+
+.question-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.question-group .question {
+  width: 50%;
+}
+
+.question-group .answer-options {
+  width: 50%;
+}
