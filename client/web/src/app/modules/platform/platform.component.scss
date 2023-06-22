@@ -123,3 +123,8 @@ ion-radio {
 .radio-item {
   --border-color: transparent;
 }
+
+ion-radio-group {
+  display: flex;
+  flex-direction: column;
+}
