@@ -1,0 +1,150 @@
+@import "../../../../../global.scss";
+
+.header-pe-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  width: -webkit-fill-available;
+
+  .items-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+
+    position: relative;
+
+
+    .items {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      flex-basis: 100px;
+
+      width: 160px;
+
+      z-index: 10;
+
+      .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 48px;
+        height: 48px;
+
+        padding: 8px;
+        margin-bottom: 16px;
+
+        font-size: 32px;
+        font-weight: 800;
+        border: solid 1px var(--ion-color-medium);
+        border-radius: 50%;
+      }
+
+      .title {
+        text-align: center;
+        font-weight: 700;
+        color: var(--ion-color-medium);
+      }
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  width: calc(50% + 32px);
+  border-top: solid 1px var(--ion-color-medium);
+  top: 24px;
+  left: calc(50% + 24px);
+
+  z-index: 9;
+}
+
+.selected {
+  color: var(--ion-color-primary);
+  border-color: var(--ion-color-primary) !important;
+}
+
+.single-line {
+  position: absolute;
+  width: 100%;
+
+  top: 24px;
+  left: 20px;
+
+  z-index: 9;
+  border-top: solid 1px var(--ion-color-medium);
+}
+
+
+.header-wrp {
+  display: flex;
+
+  .item-container {
+    display: flex;
+
+    width: -webkit-fill-available;
+
+    .box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      flex-grow: 1;
+      min-width: 64px;
+      width: fit-content;
+      width: -webkit-fill-available;
+
+      padding-bottom: 64px;
+
+      .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 48px;
+        height: 48px;
+
+        padding: 8px;
+
+        font-size: 32px;
+        font-weight: 800;
+        border: solid 1px var(--ion-color-medium);
+        border-radius: 50%;
+      }
+
+      .timeline {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+
+        height: 1px;
+        border-bottom: solid 1px var(--ion-color-medium);
+      }
+
+      .line-gone {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  top: 56px;
+
+  width: 100%;
+
+  word-wrap: break-word;
+  text-align: center;
+}
