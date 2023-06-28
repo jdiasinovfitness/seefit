@@ -3,12 +3,8 @@
     style="display: flex; margin: 30px; padding-top: 40px; margin-inline: 15px"
   >
     <div *ngFor="let data of pEData">
+      <app-pe-header [itemList]="pEData[0].steps"></app-pe-header>
       <div *ngFor="let step of pEData[0].steps">
-        <ion-card-header>
-          <ion-card-title color="primary" class="step-title">
-            {{ step.title }}
-          </ion-card-title>
-        </ion-card-header>
         <div class="group" *ngFor="let group of step.group">
           <ion-text color="primary" class="group-title">
             <h4>{{ group.title }}</h4>
