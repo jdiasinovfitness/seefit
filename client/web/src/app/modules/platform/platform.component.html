@@ -153,14 +153,15 @@
               <ion-list>
                 <ion-radio-group [value]="selectedOrigin"
                                  (ionChange)="onOriginSelect($event)">
-                  <ion-item *ngFor="let org of originList; let i = index"
-                            lines="none">
-                    <ion-radio [value]="org.id"
-                               labelPlacement="end"
-                               slot="start">
+                  <ion-radio [value]="org.id"
+                             *ngFor="let org of originList; let i = index"
+                             labelPlacement="end"
+                             justify="start"
+                             slot="end">
+                    <ion-item class="radio-item">
                       {{org.name}}
-                    </ion-radio>
-                  </ion-item>
+                    </ion-item>
+                  </ion-radio>
                 </ion-radio-group>
               </ion-list>
             </ion-content>
