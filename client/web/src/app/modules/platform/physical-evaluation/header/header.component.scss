@@ -7,7 +7,12 @@
 
   position: relative;
 
+  width: 100%;
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
   width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
 
   .items-wrapper {
     display: flex;
@@ -17,7 +22,6 @@
     align-self: flex-start;
 
     position: relative;
-
 
     .items {
       display: flex;
@@ -90,6 +94,7 @@
     display: flex;
 
     width: -webkit-fill-available;
+    width: -moz-available;
 
     .box {
       display: flex;
@@ -101,8 +106,6 @@
 
       flex-grow: 1;
       min-width: 64px;
-      width: fit-content;
-      width: -webkit-fill-available;
 
       padding-bottom: 64px;
 
