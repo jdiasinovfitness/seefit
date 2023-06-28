@@ -90,6 +90,8 @@
 .header-wrp {
   display: flex;
 
+  margin: 32px 16px;
+
   .item-container {
     display: flex;
 
@@ -107,7 +109,7 @@
       flex-grow: 1;
       min-width: 64px;
 
-      padding-bottom: 64px;
+      padding-bottom: 40px;
 
       .circle {
         display: flex;
