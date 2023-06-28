@@ -61,3 +61,12 @@ ion-note {
   color: var(--ion-color-danger-tint);
   font-weight: 300;
 }
+
+ion-radio {
+  --color: var(--ion-color-primary);
+}
+
+ion-checkbox {
+  --border-color: var(--ion-color-primary);
+  --size: 18px;
+}

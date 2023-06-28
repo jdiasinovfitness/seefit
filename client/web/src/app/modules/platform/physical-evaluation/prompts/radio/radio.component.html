@@ -1,17 +1,18 @@
-<ion-item class="radio-field">
-  <ion-label>{{ prompt.title }} </ion-label>
-  <ion-radio-group [(ngModel)]="optionSelected" style="display: flex">
-    <div class="question-answer" *ngFor="let option of prompt?.options">
-      <ion-item>
-        <ion-label>{{ option.label }} </ion-label>
-        <ion-radio
-          class="radio"
-          mode="md"
-          value="end"
-          justify="end"
-          [value]="option.label"
-        ></ion-radio>
-      </ion-item>
-    </div>
-  </ion-radio-group>
-</ion-item>
+<ion-radio-group
+  style="display: flex"
+  class="radio-field"
+  [(ngModel)]="optionSelected"
+>
+  <div class="question-answer" *ngFor="let option of prompt?.options">
+    <ion-item lines="none">
+      <ion-radio
+        class="radio"
+        mode="md"
+        value="end"
+        justify="end"
+        [value]="option.label"
+      ></ion-radio>
+      <ion-label>{{ option.label }} </ion-label>
+    </ion-item>
+  </div>
+</ion-radio-group>
