@@ -9,13 +9,13 @@
 
 .question-answer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin-top: 10px;
 }
-.c-label {
-  padding-left: 5px;
-  padding-right: 10px;
+.ion-text-wrap {
+  font-size: 16px;
 }
+
 .c-title {
   width: 50%;
 }

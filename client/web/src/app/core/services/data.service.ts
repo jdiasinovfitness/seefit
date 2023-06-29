@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { INTERACTION } from '../constants/status.constants';
-import { ICIData, ICIFilter, ICI_STATUS, ICI_TYPE } from '../interfaces/icidata.model';
+import {
+  ICIData,
+  ICIFilter,
+  ICI_STATUS,
+  ICI_TYPE,
+} from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
@@ -2413,7 +2418,7 @@ export class DataService {
                 title: '1. Anamnese Médica',
                 prompts: [
                   {
-                    title: 'Alguma lesão antiga?',
+                    title: ' Alguma lesão antiga?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2706,7 +2711,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'M.G.', placeholder: '%' },
+                    prompt: { label: 'M.G.', placeholder: '% M.G' },
                   },
                   {
                     title: '% Massa Magra',
@@ -2717,7 +2722,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'M.M.', placeholder: '%' },
+                    prompt: { label: 'M.M.', placeholder: '% M.M' },
                   },
                   {
                     title: 'Gordura Visceral',
@@ -2728,7 +2733,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: '', placeholder: '' },
+                    prompt: { label: '', placeholder: '1-59' },
                   },
                   {
                     title: 'Taxa Metabólica Basal',
@@ -2763,7 +2768,7 @@ export class DataService {
                     ],
                     prompt: {
                       label: 'Índice Anca / Cintura:',
-                      placeholder: '',
+                      placeholder: 'Anca / Cintura',
                     },
                   },
                 ],
@@ -2789,7 +2794,7 @@ export class DataService {
                     ],
                     prompt: {
                       label: 'Submeter Resultados',
-                      placeholder: 'submit',
+                      placeholder: 'Submeter Resultados',
                     },
                   },
                 ],

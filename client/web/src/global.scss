@@ -63,10 +63,13 @@ ion-note {
 }
 
 ion-radio {
+  margin-right: 5px;
   --color: var(--ion-color-primary);
 }
 
 ion-checkbox {
   --border-color: var(--ion-color-primary);
   --size: 18px;
+  margin-right: 5px;
+  padding-left: 16px;
 }

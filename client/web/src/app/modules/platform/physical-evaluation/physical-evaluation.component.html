@@ -1,15 +1,18 @@
-<ion-content class="form" *ngIf="pEData && pEData.length > 0">
+<ion-content type="md" class="form" *ngIf="pEData && pEData.length > 0">
   <div class="container">
     <div *ngFor="let data of pEData">
       <app-pe-header [itemList]="pEData[0].steps"></app-pe-header>
 
       <div *ngFor="let step of pEData[0].steps">
         <div class="group" *ngFor="let group of step.group">
+          <ion-item lines="full"></ion-item>
           <ion-text class="group-title">
             <h4>{{ group.title }}</h4>
           </ion-text>
           <div class="question" *ngFor="let prompt of group.prompts">
-            <ion-label class="prompt-title">{{ prompt.title }}</ion-label>
+            <ion-label class="ion-text-wrap" class="prompt-title">{{
+              prompt.title
+            }}</ion-label>
             <div class="answer-options" [ngSwitch]="prompt.type">
               <app-radio
                 *ngSwitchCase="PromptType.Radio"

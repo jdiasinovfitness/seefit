@@ -42,5 +42,7 @@
 .answer-options {
   align-content: center;
   width: 50%;
-  padding-left: 16px;
+}
+ion-item {
+  --border-color: var(--ion-color-primary);
 }
