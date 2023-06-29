@@ -1,16 +1,21 @@
 @import "../../../../../../global.scss";
+
 .checkbox-field {
   display: flex;
+  justify-content: flex-start;
   flex-direction: row;
-  align-items: flex-start;
+  padding-left: 16px;
 }
 
 .question-answer {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
 }
+.ion-text-wrap {
+  font-size: 16px;
+}
 
-.answer {
-  margin-left: 10px;
+.c-title {
+  width: 50%;
 }

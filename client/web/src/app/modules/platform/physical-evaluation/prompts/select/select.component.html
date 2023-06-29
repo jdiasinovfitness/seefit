@@ -1,8 +1,9 @@
 <ion-label>{{ prompt.prompt | json }}</ion-label>
-<ion-item>
+<ion-item lines="full">
   <ion-select
+    label-placement="fixed"
     color="primary"
-    placeholder="Selecione"
+    placeholder="Tonificar / Definir"
     [(ngModel)]="prompt.selectedOption"
   >
     <ion-select-option
