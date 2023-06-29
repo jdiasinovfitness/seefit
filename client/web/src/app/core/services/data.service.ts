@@ -130,12 +130,6 @@ export class DataService {
           //   icon: 'podium-outline',
           //   disabled: false,
           // },
-          {
-            title: 'menu.items.interaction.pe',
-            url: '/platform/pe',
-            icon: 'scale-outline',
-            disabled: false,
-          },
         ],
       },
       {
@@ -143,6 +137,14 @@ export class DataService {
         url: '/platform/pe',
         icon: 'medkit',
         disabled: false,
+        subMenu: [
+          {
+            title: 'menu.items.interaction.pe',
+            url: '/platform/pe',
+            icon: 'scale-outline',
+            disabled: false,
+          },
+        ],
       },
       {
         title: 'menu.items.training.title',
