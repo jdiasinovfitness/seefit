@@ -125,11 +125,17 @@ export class DataService {
           //   icon: 'podium-outline',
           //   disabled: false,
           // },
+          {
+            title: 'menu.items.interaction.pe',
+            url: '/platform/pe',
+            icon: 'scale-outline',
+            disabled: false,
+          },
         ],
       },
       {
         title: 'menu.items.health.title',
-        url: '/platform/',
+        url: '/platform/pe',
         icon: 'medkit',
         disabled: false,
       },
