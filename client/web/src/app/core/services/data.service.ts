@@ -64,6 +64,21 @@ export class DataService {
     this.data[index].customerInfo.observation = newState;
   }
 
+  getCustomer(id: string): Promise<ICIData> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const cIndex = this.data.findIndex(
+          (value, index, self) => {
+            return value.userId === id;
+          });
+
+        if (!cIndex) { reject(); }
+
+        resolve(this.data[cIndex || 0]);
+      }, 400);
+    })
+  }
+
   getICIData(filter?: ICIFilter): Promise<Array<ICIData>> {
     return new Promise((resolve, reject) => {
       if (!filter) {
@@ -119,12 +134,18 @@ export class DataService {
             icon: 'square-outline',
             disabled: false,
           },
-          // {
-          //   title: 'menu.items.interaction.data-report',
-          //   url: '/platform/report',
-          //   icon: 'podium-outline',
-          //   disabled: false,
-          // },
+          {
+            title: 'menu.items.interaction.data-report',
+            url: '/platform/report',
+            icon: 'podium-outline',
+            disabled: true,
+          },
+          {
+            title: 'menu.items.interaction.customer',
+            url: '/platform/customer/3',
+            icon: 'person-add-outline',
+            disabled: false,
+          },
           {
             title: 'menu.items.interaction.pe',
             url: '/platform/pe',
@@ -245,7 +266,7 @@ export class DataService {
     return [
       {
         title: 'Sarah Holloway',
-        userId: 'N#3929',
+        userId: 'N3929',
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
@@ -436,7 +457,7 @@ export class DataService {
       },
       {
         title: 'Edmund Jacobson',
-        userId: 'N#8629',
+        userId: 'N8629',
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
@@ -626,7 +647,7 @@ export class DataService {
 
       {
         title: 'Alan Rivers',
-        userId: 'N#3203',
+        userId: 'N3203',
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
@@ -827,7 +848,7 @@ export class DataService {
 
       {
         title: 'Jana Miller',
-        userId: 'N#3204',
+        userId: 'N3204',
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
@@ -1028,7 +1049,7 @@ export class DataService {
 
       {
         title: 'Rupert Horton',
-        userId: 'N#2390',
+        userId: 'N2390',
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
@@ -1227,7 +1248,7 @@ export class DataService {
 
       {
         title: 'Abby Cannon',
-        userId: 'N#7187',
+        userId: 'N7187',
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: true,
@@ -1427,7 +1448,7 @@ export class DataService {
 
       {
         title: 'Alice Williamson',
-        userId: 'N#4812',
+        userId: 'N4812',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
@@ -1627,7 +1648,7 @@ export class DataService {
 
       {
         title: 'Tim Shepard',
-        userId: 'N#9027',
+        userId: 'N9027',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
@@ -1827,7 +1848,7 @@ export class DataService {
 
       {
         title: 'Helena Saunders',
-        userId: 'N#5653',
+        userId: 'N5653',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
@@ -2027,7 +2048,7 @@ export class DataService {
 
       {
         title: 'Walter Wiggins',
-        userId: 'N#1903',
+        userId: 'N1903',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
