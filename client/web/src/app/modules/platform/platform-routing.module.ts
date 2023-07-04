@@ -23,6 +23,11 @@ const routes: Routes = [
           import('./report/report.module').then((m) => m.ReportModule),
       },
       {
+        path: 'customer/:id',
+        loadChildren: () =>
+          import('./customer/customer.module').then((m) => m.CustomerModule),
+      },
+      {
         path: 'pe',
         loadChildren: () =>
           import('./physical-evaluation/physical-evaluation.module').then(
