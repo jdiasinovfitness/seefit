@@ -69,6 +69,29 @@ ion-radio {
 
 ion-checkbox {
   --border-color: var(--ion-color-primary);
-  --size: 18px;
   margin-right: 5px;
+}
+
+//Select alert style
+
+.sc-ion-alert-md-h,
+.sc-ion-alert-ios-h {
+  --max-width: 40%;
+}
+
+.alert-checkbox-label.sc-ion-alert-md,
+.alert-checkbox-label.sc-ion-alert-ios {
+  white-space: normal;
+}
+.alert-tappable.alert-checkbox {
+  height: auto;
+  contain: content;
+}
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+  white-space: normal;
+}
+.alert-tappable.alert-radio {
+  height: auto;
+  contain: content;
 }

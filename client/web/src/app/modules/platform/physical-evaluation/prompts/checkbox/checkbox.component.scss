@@ -1,21 +1,20 @@
 @import "../../../../../../global.scss";
-
 .checkbox-field {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 16px;
+  padding-left: 15.5px;
 }
 
-.question-answer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.ion-checkbox {
+  margin-right: 8px;
+  align-self: flex-start;
 }
-.ion-text-wrap {
+
+.ion-label {
   font-size: 16px;
-}
-
-.c-title {
-  width: 50%;
+  white-space: normal;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }

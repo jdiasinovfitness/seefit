@@ -1,10 +1,8 @@
-<div style="display: flex" class="checkbox-field">
-  <ion-label>{{ prompt.title }}</ion-label>
-  <div
-    style="display: flex; align-items: center"
-    class="question-answer"
-    *ngFor="let option of prompt?.options"
-  >
+<div
+  style="display: flex; flex-direction: row; align-items: center"
+  class="checkbox-field"
+>
+  <div *ngFor="let option of prompt?.options">
     <ion-item lines="none">
       <ion-checkbox
         mode="md"
@@ -12,7 +10,7 @@
         labelPlacement="start"
         [value]="option.label"
       ></ion-checkbox>
-      <ion-label style="font-size: 16px" class="ion-text-wrap">{{
+      <ion-label style="width: 142px; font-size: 16px">{{
         option.label
       }}</ion-label>
     </ion-item>

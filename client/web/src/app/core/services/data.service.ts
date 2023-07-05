@@ -2354,6 +2354,7 @@ export class DataService {
                           label: 'Definir',
                         },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
@@ -2444,7 +2445,7 @@ export class DataService {
                   {
                     // title: 'História Pessoal - Comorbidades',
                     title: '- Doença Cardíaca',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2461,11 +2462,12 @@ export class DataService {
                         { id: '16', label: 'Outro' },
                         { id: '17', label: 'Nenhuma' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
                     title: '- Doença Pulmonar',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2478,18 +2480,19 @@ export class DataService {
                         { id: '19', label: 'Bronquite' },
                         {
                           id: '20',
-                          label: 'Doença Pulmonar Obstrutiva Cronica',
+                          label: 'Doença Pulmonar Obstrutiva Crónica',
                         },
                         { id: '21', label: 'Enfisema Pulmonar' },
                         { id: '22', label: 'AVC' },
                         { id: '23', label: 'Outro' },
                         { id: '24', label: 'Nenhuma' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
                     title: '- Doença Renal',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2505,11 +2508,12 @@ export class DataService {
                         { id: '23', label: 'Outro' },
                         { id: '17', label: 'Nenhuma' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
                     title: '- Cancro',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2526,6 +2530,7 @@ export class DataService {
                         { id: '23', label: 'Outro' },
                         { id: '17', label: 'Nenhum' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
@@ -2563,7 +2568,7 @@ export class DataService {
                   {
                     title:
                       'Sinais ou Sintomas de Doença Cardiovascular, Metabólica e Renal',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2583,12 +2588,13 @@ export class DataService {
                             'Dificuldades respiratórias em repouso ou em esforço leve',
                         },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
 
                   {
                     title: 'Factores de Risco Cardiovascular - negativos',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2601,6 +2607,7 @@ export class DataService {
                         { id: '2', label: 'Nenhuma' },
                         // Observação Input??
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
 

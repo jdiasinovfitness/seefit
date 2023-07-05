@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .container {
   display: flex;
   margin: 30px;
@@ -36,13 +37,14 @@
 }
 
 .prompt-title {
-  width: 50%;
+  width: 45%;
 }
 
 .answer-options {
   align-content: center;
-  width: 50%;
+  width: 55%;
 }
+
 ion-item {
   --border-color: var(--ion-color-primary);
 }
