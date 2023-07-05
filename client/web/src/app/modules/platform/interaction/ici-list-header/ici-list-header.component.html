@@ -23,7 +23,8 @@
     <!-- Left Column -->
     <div class="column">
       <!-- Title -->
-      <ion-label>
+      <ion-label [routerLink]="['/platform/customer/' + item.userId]"
+                 routerLinkActive="router-link-active">
         <ion-text color="primary">
           <b>{{item.title}}</b>
         </ion-text>
