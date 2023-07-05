@@ -72,9 +72,9 @@ export class DataService {
             return value.userId === id;
           });
 
-        if (!cIndex) { reject(); }
+        if (cIndex === -1) { reject(); return; }
 
-        resolve(this.data[cIndex || 0]);
+        resolve(this.data[cIndex]);
       }, 400);
     })
   }
@@ -140,12 +140,12 @@ export class DataService {
             icon: 'podium-outline',
             disabled: true,
           },
-          {
-            title: 'menu.items.interaction.customer',
-            url: '/platform/customer/3',
-            icon: 'person-add-outline',
-            disabled: false,
-          },
+          // {
+          //   title: 'menu.items.interaction.customer',
+          //   url: '/platform/customer',
+          //   icon: 'person-add-outline',
+          //   disabled: false,
+          // },
           {
             title: 'menu.items.interaction.pe',
             url: '/platform/pe',
