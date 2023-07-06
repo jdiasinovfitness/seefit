@@ -4,9 +4,51 @@
 </ion-header>
 
 <ion-content>
-  <div style="margin-top: 26px;">
+
+  <div class="profile-wrapper"
+       *ngIf="customer">
+
+    <div class="col1">
+      <ion-avatar class="menu-avatar">
+        <img alt="Silhouette of a person's head"
+             [src]="customer.imageUrl" />
+      </ion-avatar>
+
+      <div class="avatar-name">
+        <ion-label class="user-name"
+                   color="primary">
+          <b>{{customer.title}}</b>
+        </ion-label>
+        <ion-label class="user-info"
+                   color="dark">
+          <b>{{'# ' + customer.userId}}</b>
+        </ion-label>
+      </div>
+    </div>
 
 
+    <div class="avatar-name">
+      <div class="group">
+        <ion-icon name="call"></ion-icon>
+        <ion-label class="user-info">
+          <b>{{customer.title}}</b>
+        </ion-label>
+      </div>
+
+      <div class="group">
+        <ion-icon name="mail"></ion-icon>
+        <ion-label class="user-info"
+                   color="dark">
+          <b>{{'# ' + customer.userId}}</b>
+        </ion-label>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-wrapper">
 
   </div>
+
+
 </ion-content>

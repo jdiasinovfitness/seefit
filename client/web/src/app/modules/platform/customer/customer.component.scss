@@ -1,1 +1,72 @@
 @import "../../../../global.scss";
+
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-left: 8px;
+  margin-top: 26px;
+  padding: 16px;
+  padding-left: 16px;
+
+  .col1 {
+    display: flex;
+    flex-grow: 1;
+
+    ion-avatar {
+      width: 80px;
+      height: 80px;
+      margin-top: 0px;
+      margin-right: 16px;
+      --border-radius: 8px;
+    }
+
+    .avatar-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      align-self: flex-start;
+
+      .user-name {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 18px;
+      }
+
+      .user-info {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 16px;
+        color: var(--ion-color-dark);
+      }
+
+    }
+  }
+
+  .avatar-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-grow: 2;
+
+    .group {
+
+      ion-icon {
+        margin-right: 16px;
+      }
+
+      ion-label {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 16px;
+        color: var(--ion-color-dark);
+      }
+    }
+  }
+}
