@@ -34,6 +34,7 @@ export interface Checkbox {
 }
 export interface Select {
   options?: Array<Option>;
+  placeholder: string;
 }
 export interface Input {
   label: string;

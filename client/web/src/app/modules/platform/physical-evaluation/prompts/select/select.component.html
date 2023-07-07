@@ -1,15 +1,39 @@
 <ion-label>{{ prompt.prompt | json }}</ion-label>
-<ion-item>
-  <ion-select
-    color="primary"
-    placeholder="Selecione"
-    [(ngModel)]="prompt.selectedOption"
-  >
-    <ion-select-option
-      *ngFor="let option of prompt.options"
-      [value]="option.label"
+<div>
+  <ng-container *ngIf="isMultiSelect(); else singleSelect">
+    <ion-select
+      mode="md"
+      label-placement="fixed"
+      color="primary"
+      placeholder="
+      {{ prompt.placeholder }}"
+      [(ngModel)]="prompt.selectedOption"
+      [multiple]="true"
     >
-      {{ option.label }}
-    </ion-select-option>
-  </ion-select>
-</ion-item>
+      <ion-select-option
+        style="white-space: pre-wrap"
+        *ngFor="let option of prompt.options"
+        [value]="option.label"
+      >
+        {{ option.label }}
+      </ion-select-option>
+    </ion-select>
+  </ng-container>
+  <ng-template #singleSelect>
+    <ion-select
+      mode="md"
+      label-placement="fixed"
+      color="primary"
+      placeholder="
+      {{ prompt.placeholder }}"
+      [(ngModel)]="prompt.selectedOption"
+    >
+      <ion-select-option
+        *ngFor="let option of prompt.options"
+        [value]="option.label"
+      >
+        {{ option.label }}
+      </ion-select-option>
+    </ion-select>
+  </ng-template>
+</div>
