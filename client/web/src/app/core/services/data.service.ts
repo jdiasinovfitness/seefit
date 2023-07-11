@@ -270,7 +270,8 @@ export class DataService {
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
-
+        email: 'sholloway@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-20',
         interaction: {
           label: 'INTERACTION:',
@@ -461,7 +462,8 @@ export class DataService {
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
-
+        email: 'ejacobson@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-21',
         interaction: {
           label: 'INTERACTION:',
@@ -651,7 +653,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
-
+        email: 'arivers@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-21',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -852,7 +855,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
-
+        email: 'jmiller@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-16',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1053,6 +1057,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
+        email: 'rhorton@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-02-04',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1252,7 +1258,8 @@ export class DataService {
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: true,
-
+        email: 'acannon@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-21',
         interaction: {
           label: 'INTERACTION:',
@@ -1452,7 +1459,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'awilliamson@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-15',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1652,7 +1660,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'tshepard@gmail.com',
+        phone: '+351 912 345 678',
         date: '2023-02-23',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1852,7 +1861,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'hsaunders@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-01-19',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -2052,7 +2062,8 @@ export class DataService {
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'w2iggins@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2022-10-19',
         interaction: {
           label: 'LAST INTERACTION:',
