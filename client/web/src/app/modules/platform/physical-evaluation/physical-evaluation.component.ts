@@ -17,6 +17,9 @@ import { DataService } from 'src/app/core/services/data.service';
 export class PhysicalEvaluationComponent {
   pEData?: Array<PEdata>;
   PromptType = PromptType;
+  selectionIndex = 0;
+  accordionStates: boolean[] = [];
+  currentStep = 0;
 
   constructor(private dataService: DataService) {
     this.pEData = this.getDummyPEData();
@@ -52,5 +55,25 @@ export class PhysicalEvaluationComponent {
       return (prompt.prompt as Select)?.options || [];
     }
     return [];
+  }
+
+  previousStep() {
+    if (this.currentStep > 0) {
+      this.currentStep--;
+    }
+  }
+
+  getCurrentStep() {
+    return this.pEData && this.pEData.length > 0 ? this.pEData[0].steps : [];
+  }
+
+  nextStep() {
+    if (
+      this.pEData &&
+      this.pEData[0] &&
+      this.currentStep < this.pEData[0].steps.length - 1
+    ) {
+      this.currentStep++;
+    }
   }
 }

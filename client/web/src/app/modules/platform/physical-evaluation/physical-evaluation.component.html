@@ -1,16 +1,26 @@
-<ion-content type="md" class="form" *ngIf="pEData && pEData.length > 0">
+<ion-content
+  type="md"
+  class="form ng-container"
+  *ngIf="pEData && pEData.length > 0"
+>
   <div class="container">
-    <div *ngFor="let data of pEData">
-      <app-pe-header [itemList]="pEData[0].steps"></app-pe-header>
-
-      <div *ngFor="let step of pEData[0].steps">
-        <div class="group" *ngFor="let group of step.group">
+    <div
+      class="subcontainer"
+      *ngFor="let step of getCurrentStep(); let i = index"
+      [hidden]="currentStep !== i"
+    >
+      <app-pe-header
+        [itemList]="getCurrentStep()"
+        [selectionIndex]="currentStep"
+      ></app-pe-header>
+      <ion-list>
+        <ng-container *ngFor="let group of step.group">
           <ion-item lines="full"></ion-item>
           <ion-text class="group-title">
             <h4>{{ group.title }}</h4>
           </ion-text>
           <div class="question" *ngFor="let prompt of group.prompts">
-            <ion-label class="ion-text-wrap" class="prompt-title">{{
+            <ion-label class="ion-text-wrap prompt-title">{{
               prompt.title
             }}</ion-label>
             <div class="answer-options" [ngSwitch]="prompt.type">
@@ -38,8 +48,22 @@
               ></app-input>
             </div>
           </div>
-        </div>
-      </div>
+        </ng-container>
+      </ion-list>
     </div>
+  </div>
+  <div class="nav-buttons">
+    <ion-button
+      class="btn-before"
+      (click)="previousStep()"
+      [disabled]="currentStep === 0"
+      >ANTERIOR</ion-button
+    >
+    <ion-button
+      class="btn-next"
+      (click)="nextStep()"
+      [disabled]="currentStep === getCurrentStep().length - 1"
+      >PRÓXIMO</ion-button
+    >
   </div>
 </ion-content>
