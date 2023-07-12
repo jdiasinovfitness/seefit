@@ -16,12 +16,17 @@
     display: flex;
     flex-grow: 1;
 
-    ion-avatar {
-      width: 80px;
-      height: 80px;
-      margin-top: 0px;
-      margin-right: 16px;
-      --border-radius: 8px;
+    .img-lab-wrp {
+
+      ion-avatar {
+        width: 90px;
+        height: 90px;
+        margin-top: 0px;
+        margin-right: 16px;
+        margin-bottom: 8px;
+        --border-radius: 8px;
+
+      }
     }
 
     .avatar-name {
@@ -33,13 +38,12 @@
 
       .user-name {
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 16px;
         font-size: 18px;
       }
 
       .user-info {
         margin-top: 0px;
-        margin-bottom: 0px;
         font-size: 16px;
         color: var(--ion-color-dark);
       }
@@ -56,17 +60,70 @@
     flex-grow: 2;
 
     .group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
 
       ion-icon {
-        margin-right: 16px;
+        margin-right: 8px;
       }
 
       ion-label {
         margin-top: 0px;
         margin-bottom: 0px;
+
         font-size: 16px;
         color: var(--ion-color-dark);
       }
     }
   }
+}
+
+.labels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.lbl {
+  padding: 6px;
+  margin-right: 8px;
+
+  border-radius: 6px;
+  color: var(--ion-color-dark);
+  background-color: var(--ion-color-light);
+}
+
+:last-child {
+  margin-right: 0px;
+}
+
+.tab-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: inherit;
+
+  border-bottom: solid 1px var(--ion-color-primary);
+
+  .segment {
+    display: flex;
+    flex-grow: 1;
+    width: fit-content;
+  }
+
+  .filler {
+    display: flex;
+    flex-grow: 3;
+
+    width: -webkit-fill-available;
+
+    min-height: 1px;
+    min-width: 1px;
+  }
+}
+
+.mb-pwrp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
