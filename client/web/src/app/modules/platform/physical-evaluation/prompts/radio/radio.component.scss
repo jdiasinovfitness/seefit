@@ -5,20 +5,12 @@
   flex-direction: row;
   align-items: center;
 }
-.radio {
-  margin-right: 10px;
-  margin-left: 5px;
-}
-
-.question {
-  margin-right: 10px;
-}
 
 .question-answer {
-  display: flex;
-  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.answer {
-  margin-left: 10px;
+.radio {
+  margin-right: 5px;
 }

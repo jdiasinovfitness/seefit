@@ -7,11 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class SelectComponent {
   @Input() prompt?: any;
-  value: string = '';
+  value: any;
 
   constructor() {}
 
   onValueChange() {
     console.log('Value changed:', this.value);
+  }
+
+  isMultiSelect(): boolean {
+    return this.prompt?.options.length > 2;
   }
 }

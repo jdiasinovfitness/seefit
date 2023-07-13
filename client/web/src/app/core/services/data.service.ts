@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { INTERACTION } from '../constants/status.constants';
-import { ICIData, ICIFilter, ICI_STATUS, ICI_TYPE } from '../interfaces/icidata.model';
+import {
+  ICIData,
+  ICIFilter,
+  ICI_STATUS,
+  ICI_TYPE,
+} from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
@@ -146,12 +151,6 @@ export class DataService {
           //   icon: 'person-add-outline',
           //   disabled: false,
           // },
-          {
-            title: 'menu.items.interaction.pe',
-            url: '/platform/pe',
-            icon: 'scale-outline',
-            disabled: false,
-          },
         ],
       },
       {
@@ -159,6 +158,14 @@ export class DataService {
         url: '/platform/pe',
         icon: 'medkit',
         disabled: false,
+        subMenu: [
+          {
+            title: 'menu.items.interaction.pe',
+            url: '/platform/pe',
+            icon: 'scale-outline',
+            disabled: false,
+          },
+        ],
       },
       {
         title: 'menu.items.training.title',
@@ -2379,6 +2386,7 @@ export class DataService {
                           label: 'Definir',
                         },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
@@ -2451,7 +2459,7 @@ export class DataService {
                 title: '1. Anamnese Médica',
                 prompts: [
                   {
-                    title: 'Alguma lesão antiga?',
+                    title: ' Alguma lesão antiga?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2469,7 +2477,7 @@ export class DataService {
                   {
                     // title: 'História Pessoal - Comorbidades',
                     title: '- Doença Cardíaca',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2486,11 +2494,12 @@ export class DataService {
                         { id: '16', label: 'Outro' },
                         { id: '17', label: 'Nenhuma' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
                     title: '- Doença Pulmonar',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2503,18 +2512,19 @@ export class DataService {
                         { id: '19', label: 'Bronquite' },
                         {
                           id: '20',
-                          label: 'Doença Pulmonar Obstrutiva Cronica',
+                          label: 'Doença Pulmonar Obstrutiva Crónica',
                         },
                         { id: '21', label: 'Enfisema Pulmonar' },
                         { id: '22', label: 'AVC' },
                         { id: '23', label: 'Outro' },
                         { id: '24', label: 'Nenhuma' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
                     title: '- Doença Renal',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2530,11 +2540,12 @@ export class DataService {
                         { id: '23', label: 'Outro' },
                         { id: '17', label: 'Nenhuma' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
                     title: '- Cancro',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2551,6 +2562,7 @@ export class DataService {
                         { id: '23', label: 'Outro' },
                         { id: '17', label: 'Nenhum' },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
                   {
@@ -2588,7 +2600,7 @@ export class DataService {
                   {
                     title:
                       'Sinais ou Sintomas de Doença Cardiovascular, Metabólica e Renal',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2608,12 +2620,13 @@ export class DataService {
                             'Dificuldades respiratórias em repouso ou em esforço leve',
                         },
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
 
                   {
                     title: 'Factores de Risco Cardiovascular - negativos',
-                    type: PromptType.Checkbox,
+                    type: PromptType.Select,
                     validations: [
                       {
                         name: 'required',
@@ -2626,6 +2639,7 @@ export class DataService {
                         { id: '2', label: 'Nenhuma' },
                         // Observação Input??
                       ],
+                      placeholder: 'Selecione',
                     },
                   },
 
@@ -2744,7 +2758,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'M.G.', placeholder: '%' },
+                    prompt: { label: 'M.G.', placeholder: '% M.G' },
                   },
                   {
                     title: '% Massa Magra',
@@ -2755,7 +2769,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'M.M.', placeholder: '%' },
+                    prompt: { label: 'M.M.', placeholder: '% M.M' },
                   },
                   {
                     title: 'Gordura Visceral',
@@ -2766,7 +2780,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: '', placeholder: '' },
+                    prompt: { label: '', placeholder: '1-59' },
                   },
                   {
                     title: 'Taxa Metabólica Basal',
@@ -2801,7 +2815,7 @@ export class DataService {
                     ],
                     prompt: {
                       label: 'Índice Anca / Cintura:',
-                      placeholder: '',
+                      placeholder: 'Anca / Cintura',
                     },
                   },
                 ],
@@ -2827,7 +2841,7 @@ export class DataService {
                     ],
                     prompt: {
                       label: 'Submeter Resultados',
-                      placeholder: 'submit',
+                      placeholder: 'Submeter Resultados',
                     },
                   },
                 ],
