@@ -1,0 +1,105 @@
+<!-- Page Header -->
+<ion-header type="ios">
+  <ion-toolbar></ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="profile-wrapper"
+       [ngClass]="{'mb-pwrp': !isMobile}"
+       *ngIf="customer">
+
+    <div class="col1">
+      <div class="img-lab-wrp">
+        <ion-avatar class="menu-avatar">
+          <img alt="Silhouette of a person's head"
+               [src]="customer.imageUrl" />
+        </ion-avatar>
+        <div class="labels hidden-small-device">
+          <div class="lbl">{{customer.primary.value}}</div>
+          <div class="lbl">{{customer.secondary.value}}</div>
+        </div>
+      </div>
+
+      <div class="avatar-name">
+        <ion-label class="user-name"
+                   color="primary">
+          <b>{{customer.title}}</b>
+        </ion-label>
+
+        <div class="group">
+          <ion-icon name="id-card"></ion-icon>
+          <ion-label class="user-info">
+            <b>{{customer.userId}}</b>
+          </ion-label>
+        </div>
+
+        <div class="labels hidden-big-device">
+          <div class="lbl">{{customer.primary.value}}</div>
+          <div class="lbl">{{customer.secondary.value}}</div>
+        </div>
+
+        <div class="group hidden-small-device">
+          <ion-icon name="call"></ion-icon>
+          <ion-label class="user-info">
+            <b>{{customer.phone}}</b>
+          </ion-label>
+        </div>
+
+        <div class="group hidden-small-device">
+          <ion-icon name="mail"></ion-icon>
+          <ion-label class="user-info"
+                     color="dark">
+            <b>{{customer.email}}</b>
+          </ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="avatar-name hidden-big-device">
+      <div class="group">
+        <ion-icon name="call"></ion-icon>
+        <ion-label class="user-info">
+          <b>{{customer.phone}}</b>
+        </ion-label>
+      </div>
+
+      <div class="group">
+        <ion-icon name="mail"></ion-icon>
+        <ion-label class="user-info"
+                   color="dark">
+          <b>{{customer.email}}</b>
+        </ion-label>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-wrapper">
+    <ion-button class="hidden-small-device"
+                fill="clear"
+                (click)="prevTab($event)">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <ion-segment class="segment"
+                 [(ngModel)]="currentTab"
+                 [scrollable]="!isMobile"
+                 mode="md">
+      <ng-container *ngFor="let item of tabList; let i = index">
+        <ion-segment-button [value]="item.id">
+          <ion-label>{{item?.title}}</ion-label>
+        </ion-segment-button>
+      </ng-container>
+    </ion-segment>
+
+    <ion-button class="hidden-small-device"
+                fill="clear"
+                (click)="nextTab($event)">
+      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+    </ion-button>
+    <div class="filler"
+         ngClass="hidden-big-device"></div>
+  </div>
+
+</ion-content>

@@ -69,6 +69,21 @@ export class DataService {
     this.data[index].customerInfo.observation = newState;
   }
 
+  getCustomer(id: string): Promise<ICIData> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const cIndex = this.data.findIndex(
+          (value, index, self) => {
+            return value.userId === id;
+          });
+
+        if (cIndex === -1) { reject(); return; }
+
+        resolve(this.data[cIndex]);
+      }, 400);
+    })
+  }
+
   getICIData(filter?: ICIFilter): Promise<Array<ICIData>> {
     return new Promise((resolve, reject) => {
       if (!filter) {
@@ -124,10 +139,16 @@ export class DataService {
             icon: 'square-outline',
             disabled: false,
           },
+          {
+            title: 'menu.items.interaction.data-report',
+            url: '/platform/report',
+            icon: 'podium-outline',
+            disabled: true,
+          },
           // {
-          //   title: 'menu.items.interaction.data-report',
-          //   url: '/platform/report',
-          //   icon: 'podium-outline',
+          //   title: 'menu.items.interaction.customer',
+          //   url: '/platform/customer',
+          //   icon: 'person-add-outline',
           //   disabled: false,
           // },
         ],
@@ -252,11 +273,12 @@ export class DataService {
     return [
       {
         title: 'Sarah Holloway',
-        userId: 'N#3929',
+        userId: 'N3929',
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
-
+        email: 'sholloway@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-20',
         interaction: {
           label: 'INTERACTION:',
@@ -443,11 +465,12 @@ export class DataService {
       },
       {
         title: 'Edmund Jacobson',
-        userId: 'N#8629',
+        userId: 'N8629',
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: false,
-
+        email: 'ejacobson@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-21',
         interaction: {
           label: 'INTERACTION:',
@@ -633,11 +656,12 @@ export class DataService {
 
       {
         title: 'Alan Rivers',
-        userId: 'N#3203',
+        userId: 'N3203',
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
-
+        email: 'arivers@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-21',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -834,11 +858,12 @@ export class DataService {
 
       {
         title: 'Jana Miller',
-        userId: 'N#3204',
+        userId: 'N3204',
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
-
+        email: 'jmiller@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-16',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1035,10 +1060,12 @@ export class DataService {
 
       {
         title: 'Rupert Horton',
-        userId: 'N#2390',
+        userId: 'N2390',
         status: ICI_STATUS.COMPLETED,
         inClub: true,
         excludeAG: false,
+        email: 'rhorton@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-02-04',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1234,11 +1261,12 @@ export class DataService {
 
       {
         title: 'Abby Cannon',
-        userId: 'N#7187',
+        userId: 'N7187',
         status: ICI_STATUS.PLANNED,
         inClub: true,
         excludeAG: true,
-
+        email: 'acannon@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-21',
         interaction: {
           label: 'INTERACTION:',
@@ -1434,11 +1462,12 @@ export class DataService {
 
       {
         title: 'Alice Williamson',
-        userId: 'N#4812',
+        userId: 'N4812',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'awilliamson@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-03-15',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1634,11 +1663,12 @@ export class DataService {
 
       {
         title: 'Tim Shepard',
-        userId: 'N#9027',
+        userId: 'N9027',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'tshepard@gmail.com',
+        phone: '+351 912 345 678',
         date: '2023-02-23',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -1834,11 +1864,12 @@ export class DataService {
 
       {
         title: 'Helena Saunders',
-        userId: 'N#5653',
+        userId: 'N5653',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'hsaunders@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2023-01-19',
         interaction: {
           label: 'LAST INTERACTION:',
@@ -2034,11 +2065,12 @@ export class DataService {
 
       {
         title: 'Walter Wiggins',
-        userId: 'N#1903',
+        userId: 'N1903',
         status: ICI_STATUS.COMPLETED,
         inClub: false,
         excludeAG: false,
-
+        email: 'w2iggins@gmail.com',
+        phone: ' +351 912 345 678',
         date: '2022-10-19',
         interaction: {
           label: 'LAST INTERACTION:',
