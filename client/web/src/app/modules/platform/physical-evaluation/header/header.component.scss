@@ -75,6 +75,24 @@
   border-color: var(--ion-color-primary) !important;
 }
 
+.completed {
+  color: var(--ion-color-primary) !important;
+  border-color: var(--ion-color-primary) !important;
+  ion-text {
+    color: var(--ion-color-light) !important;
+  }
+  background-color: var(--ion-color-primary);
+}
+
+.inprogress {
+  color: var(--ion-color-primary);
+  border-color: var(--ion-color-primary) !important;
+  background-color: var(--ion-color-light);
+  ion-text {
+    color: var(--ion-color-primary) !important;
+  }
+}
+
 .single-line {
   position: absolute;
   width: 100%;
@@ -85,7 +103,6 @@
   z-index: 9;
   border-top: solid 1px var(--ion-color-medium);
 }
-
 
 .header-wrp {
   display: flex;

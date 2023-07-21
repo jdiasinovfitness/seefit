@@ -2398,7 +2398,7 @@ export class DataService {
                     validations: [
                       {
                         name: 'required',
-                        value: true,
+                        value: false,
                       },
                     ],
                     prompt: {
@@ -2700,8 +2700,8 @@ export class DataService {
                     type: PromptType.Input,
                     validations: [
                       {
-                        name: 'pattern',
-                        value: '[0-9,0-90-9]',
+                        name: 'required',
+                        value: true,
                       },
                     ],
                     prompt: { label: 'Altura*', placeholder: 'cm' },
@@ -2804,7 +2804,7 @@ export class DataService {
                     validations: [
                       {
                         name: 'required',
-                        value: false,
+                        value: true,
                       },
                     ],
                     prompt: {

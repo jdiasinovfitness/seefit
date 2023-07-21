@@ -9,6 +9,8 @@
         justify="start"
         labelPlacement="start"
         [value]="option.label"
+        [(ngModel)]="option.selected"
+        (ionChange)="optionSelected(option)"
       ></ion-checkbox>
       <ion-label style="width: 142px; font-size: 16px">{{
         option.label

@@ -12,14 +12,19 @@
       <app-pe-header
         [itemList]="getCurrentStep()"
         [selectionIndex]="currentStep"
+        [completedSteps]="completedSteps"
+        [isStepComplete]="isStepComplete.bind(this)"
       ></app-pe-header>
       <ion-list>
-        <ng-container *ngFor="let group of step.group">
+        <ng-container *ngFor="let group of step.group; let groupIndex = index">
           <ion-item lines="full"></ion-item>
           <ion-text class="group-title">
             <h4>{{ group.title }}</h4>
           </ion-text>
-          <div class="question" *ngFor="let prompt of group.prompts">
+          <div
+            class="question"
+            *ngFor="let prompt of group.prompts; let promptIndex = index"
+          >
             <ion-label class="ion-text-wrap prompt-title">{{
               prompt.title
             }}</ion-label>
@@ -27,14 +32,23 @@
               <app-radio
                 *ngSwitchCase="PromptType.Radio"
                 [prompt]="prompt.prompt"
+                (onOptionSelected)="
+                  handleOptionSelected($event, groupIndex, promptIndex)
+                "
               ></app-radio>
               <app-checkbox
                 *ngSwitchCase="PromptType.Checkbox"
                 [prompt]="prompt.prompt"
+                (onOptionsChange)="
+                  handleOptionSelected($event, groupIndex, promptIndex)
+                "
               ></app-checkbox>
               <app-select
                 *ngSwitchCase="PromptType.Select"
                 [prompt]="prompt.prompt"
+                (onOptionSelected)="
+                  handleOptionSelected($event, groupIndex, promptIndex)
+                "
               ></app-select>
               <app-text-area
                 *ngSwitchCase="PromptType.TextArea"
@@ -62,7 +76,10 @@
     <ion-button
       class="btn-next"
       (click)="nextStep()"
-      [disabled]="currentStep === getCurrentStep().length - 1"
+      [disabled]="
+        currentStep === getCurrentStep().length - 1 ||
+        !isStepComplete(currentStep)
+      "
       >PRÓXIMO</ion-button
     >
   </div>
