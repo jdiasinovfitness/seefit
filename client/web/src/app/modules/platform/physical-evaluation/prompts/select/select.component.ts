@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { every } from 'rxjs';
 
 @Component({
   selector: 'app-select',
@@ -7,12 +8,18 @@ import { Component, Input } from '@angular/core';
 })
 export class SelectComponent {
   @Input() prompt?: any;
+  @Output() onOptionSelected = new EventEmitter<any>();
   value: any;
 
   constructor() {}
 
-  onValueChange() {
-    console.log('Value changed:', this.value);
+  onValueChange(event: any) {
+    if (event) {
+      this.value = event.detail.value;
+      this.onOptionSelected.emit(this.value);
+    } else {
+      console.error('event undefined: ');
+    }
   }
 
   isMultiSelect(): boolean {

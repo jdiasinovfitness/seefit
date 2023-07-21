@@ -48,3 +48,31 @@
 ion-item {
   --border-color: var(--ion-color-primary);
 }
+
+.subcontainer {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.nav-buttons {
+  padding-right: 10px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.btn-before {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 560px) {
+  .question {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: -webkit-fill-available;
+  }
+  .prompt-title {
+    width: -webkit-fill-available;
+    font-size: 16px;
+  }
+}

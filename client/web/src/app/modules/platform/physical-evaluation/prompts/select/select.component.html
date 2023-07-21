@@ -1,4 +1,4 @@
-<ion-label>{{ prompt.prompt | json }}</ion-label>
+<ion-label>{{ prompt.prompt }}</ion-label>
 <div>
   <ng-container *ngIf="isMultiSelect(); else singleSelect">
     <ion-select
@@ -7,7 +7,8 @@
       color="primary"
       placeholder="
       {{ prompt.placeholder }}"
-      [(ngModel)]="prompt.selectedOption"
+      [value]="prompt.selectedOption"
+      (ionChange)="(onValueChange)"
       [multiple]="true"
     >
       <ion-select-option
@@ -27,6 +28,7 @@
       placeholder="
       {{ prompt.placeholder }}"
       [(ngModel)]="prompt.selectedOption"
+      (ionChange)="onValueChange($event)"
     >
       <ion-select-option
         *ngFor="let option of prompt.options"

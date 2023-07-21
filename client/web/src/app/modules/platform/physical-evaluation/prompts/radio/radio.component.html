@@ -2,7 +2,8 @@
   mode="md"
   style="display: flex"
   class="radio-field"
-  [(ngModel)]="optionSelected"
+  [(ngModel)]="prompt.selectedOption"
+  (ionChange)="optionSelected($event)"
 >
   <div class="question-answer" *ngFor="let option of prompt?.options">
     <ion-item lines="none">

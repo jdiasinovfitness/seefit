@@ -1,26 +1,38 @@
 <div class="header-wrp">
-  <div class="item-container"
-       *ngFor="let step of itemList; let i = index">
-
+  <div class="item-container" *ngFor="let step of itemList; let i = index">
     <div class="box">
-      <div class="timeline"
-           [ngClass]="{'line-gone': i === 0}">
-      </div>
+      <div
+        class="timeline"
+        [ngClass]="{
+          'line-gone': i === 0,
+          completed: isStepComplete(i) && i !== 0 && i !== itemList.length - 1
+        }"
+      ></div>
 
-      <div class="circle"
-           [ngClass]="{'selected': selectionIndex === i}">
-        <ion-text [color]="selectionIndex === i ? 'primary':'medium'">
-          {{step.number}}
+      <div
+        class="circle"
+        [ngClass]="{
+          selected: selectionIndex === i,
+          completed: isStepComplete(i),
+          inprogress: selectionIndex === i && !isStepComplete(i)
+        }"
+      >
+        <ion-text [color]="isStepComplete(i) ? 'light' : 'medium'">
+          {{ step.number }}
         </ion-text>
       </div>
 
       <div class="title">
-        {{step.title}}
+        {{ step.title }}
       </div>
 
-      <div class="timeline"
-           [ngClass]="{'line-gone': i === (itemList.length - 1)}">
-      </div>
+      <div
+        class="timeline"
+        [ngClass]="{
+          'line-gone': i === itemList.length - 1,
+          completed: isStepComplete(i) && i !== 0 && i !== itemList.length - 1
+        }"
+      ></div>
     </div>
   </div>
 </div>
