@@ -14,6 +14,7 @@
         [selectionIndex]="currentStep"
         [completedSteps]="completedSteps"
         [isStepComplete]="isStepComplete.bind(this)"
+        [nextStepClicked]="nextStepClicked"
       ></app-pe-header>
       <ion-list>
         <ng-container *ngFor="let group of step.group; let groupIndex = index">
@@ -78,7 +79,7 @@
       (click)="nextStep()"
       [disabled]="
         currentStep === getCurrentStep().length - 1 ||
-        !isStepComplete(currentStep)
+        !isRequiredAnswered(currentStep)
       "
       >PRÓXIMO</ion-button
     >

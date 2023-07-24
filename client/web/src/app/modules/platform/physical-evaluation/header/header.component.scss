@@ -106,8 +106,8 @@
 
 .header-wrp {
   display: flex;
-  width: 90vw;
-
+  width: -webkit-fill-available;
+  width: -moz-available;
   margin: 32px 0px;
 
   .item-container {
@@ -157,6 +157,14 @@
 
       .line-gone {
         border-color: transparent;
+      }
+
+      .line-completed {
+        border-color: var(--ion-color-primary);
+      }
+
+      .line-inprogress {
+        border-color: var(--ion-color-primary);
       }
     }
   }

@@ -5,7 +5,13 @@
         class="timeline"
         [ngClass]="{
           'line-gone': i === 0,
-          completed: isStepComplete(i) && i !== 0 && i !== itemList.length - 1
+          'line-completed':
+            i > 0 &&
+            isStepComplete(i - 1) &&
+            nextStepClicked &&
+            i !== itemList.length,
+          'line-inprogress':
+            i === selectionIndex && i !== 0 && !isStepComplete(i)
         }"
       ></div>
 
@@ -13,11 +19,19 @@
         class="circle"
         [ngClass]="{
           selected: selectionIndex === i,
-          completed: isStepComplete(i),
+          completed: isStepComplete(i) && nextStepClicked,
           inprogress: selectionIndex === i && !isStepComplete(i)
         }"
       >
-        <ion-text [color]="isStepComplete(i) ? 'light' : 'medium'">
+        <ion-text
+          [color]="
+            selectionIndex === i
+              ? 'primary'
+              : isStepComplete(i) && nextStepClicked
+              ? 'light'
+              : 'medium'
+          "
+        >
           {{ step.number }}
         </ion-text>
       </div>
@@ -30,7 +44,12 @@
         class="timeline"
         [ngClass]="{
           'line-gone': i === itemList.length - 1,
-          completed: isStepComplete(i) && i !== 0 && i !== itemList.length - 1
+          'line-completed':
+            i !== itemList.length - 1 && isStepComplete(i) && nextStepClicked,
+          'line-inprogress':
+            selectionIndex === i &&
+            !isStepComplete(i) &&
+            i !== itemList.length - 1
         }"
       ></div>
     </div>

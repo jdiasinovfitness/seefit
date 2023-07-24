@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {
   Checkbox,
-  GroupData,
   PEdata,
   Prompts,
   PromptType,
@@ -9,7 +8,6 @@ import {
   Select,
   StepData,
   Option,
-  Input,
 } from '../../../core/interfaces/pedata.model';
 import { DataService } from 'src/app/core/services/data.service';
 
@@ -24,9 +22,13 @@ export class PhysicalEvaluationComponent {
   currentStep = 0;
   selectionIndex = 0;
   completedSteps: boolean[] = [];
+  nextStepClicked = false;
+  nextClickedSteps: boolean[] = [];
 
   constructor(private dataService: DataService) {
     this.pEData = this.getDummyPEData();
+    this.completedSteps = new Array(this.pEData[0].steps.length).fill(false);
+    this.nextClickedSteps = new Array(this.pEData[0].steps.length).fill(false);
   }
 
   getDummyPEData(): Array<PEdata> {
@@ -151,28 +153,20 @@ export class PhysicalEvaluationComponent {
     if (
       this.pEData &&
       this.pEData[0] &&
-      this.isStepComplete(this.currentStep)
+      this.isRequiredAnswered(this.currentStep)
     ) {
       if (this.currentStep < this.pEData[0].steps.length - 1) {
-        this.currentStep++;
+        this.nextClickedSteps[this.currentStep] = true;
         this.completedSteps[this.currentStep] = true;
+        this.currentStep++;
+        this.nextStepClicked = true;
       }
     }
   }
 
   isStepComplete(index: number): boolean {
-    if (this.pEData && this.pEData.length > 0) {
-      const prompts = this.pEData[0].steps[index].group.reduce<Prompts[]>(
-        (acc, group) => [...acc, ...group.prompts],
-        []
-      );
-      const requiredPrompts = prompts.filter((prompt) => {
-        const requiredValidation = prompt.validations.find(
-          (validation) => validation.name === 'required'
-        );
-        return requiredValidation && requiredValidation.value;
-      });
-      return requiredPrompts.every((prompt) => this.isAnswered(prompt));
+    if (this.pEData && this.pEData.length > 0 && this.nextClickedSteps[index]) {
+      return this.isRequiredAnswered(index);
     }
 
     return false;
@@ -187,7 +181,23 @@ export class PhysicalEvaluationComponent {
       this.completedSteps = this.pEData[0].steps.map((_, index) =>
         this.isStepComplete(index)
       );
-      console.log('Completed Steps', this.completedSteps);
     }
+  }
+
+  isRequiredAnswered(index: number): boolean {
+    if (this.pEData && this.pEData.length > 0) {
+      const prompts = this.pEData[0].steps[index].group.reduce<Prompts[]>(
+        (acc, group) => [...acc, ...group.prompts],
+        []
+      );
+      const requiredPrompts = prompts.filter((prompt) => {
+        const requiredValidation = prompt.validations.find(
+          (validation) => validation.name == 'required'
+        );
+        return requiredValidation && requiredValidation.value;
+      });
+      return requiredPrompts.every((prompt) => this.isAnswered(prompt));
+    }
+    return false;
   }
 }

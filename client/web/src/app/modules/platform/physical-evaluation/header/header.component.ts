@@ -10,5 +10,6 @@ export class HeaderComponent {
   @Input() selectionIndex = 0;
   @Input() completedSteps!: boolean[];
   @Input() isStepComplete!: (index: number) => boolean;
+  @Input() nextStepClicked = false;
   constructor() {}
 }

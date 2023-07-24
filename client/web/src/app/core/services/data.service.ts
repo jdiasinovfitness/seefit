@@ -72,16 +72,18 @@ export class DataService {
   getCustomer(id: string): Promise<ICIData> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const cIndex = this.data.findIndex(
-          (value, index, self) => {
-            return value.userId === id;
-          });
+        const cIndex = this.data.findIndex((value, index, self) => {
+          return value.userId === id;
+        });
 
-        if (cIndex === -1) { reject(); return; }
+        if (cIndex === -1) {
+          reject();
+          return;
+        }
 
         resolve(this.data[cIndex]);
       }, 400);
-    })
+    });
   }
 
   getICIData(filter?: ICIFilter): Promise<Array<ICIData>> {
@@ -2732,8 +2734,8 @@ export class DataService {
                     type: PromptType.Input,
                     validations: [
                       {
-                        name: 'required',
-                        value: true,
+                        name: 'pattern',
+                        value: '[0-90-9]',
                       },
                     ],
                     prompt: { label: 'Altura*', placeholder: 'cm' },
@@ -2836,7 +2838,7 @@ export class DataService {
                     validations: [
                       {
                         name: 'required',
-                        value: true,
+                        value: false,
                       },
                     ],
                     prompt: {
