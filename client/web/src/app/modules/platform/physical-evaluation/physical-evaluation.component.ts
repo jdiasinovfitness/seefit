@@ -184,6 +184,12 @@ export class PhysicalEvaluationComponent {
     }
   }
 
+  isRequired(prompt: Prompts): boolean {
+    const requiredValidation = prompt.validations.find(
+      (validation) => validation.name == 'required'
+    );
+    return requiredValidation && requiredValidation.value;
+  }
   isRequiredAnswered(index: number): boolean {
     if (this.pEData && this.pEData.length > 0) {
       const prompts = this.pEData[0].steps[index].group.reduce<Prompts[]>(

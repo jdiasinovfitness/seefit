@@ -2369,7 +2369,7 @@ export class DataService {
                 title: '2. Qual o seu objetivo?',
                 prompts: [
                   {
-                    title: 'Foco do treino. *',
+                    title: 'Foco do treino ',
                     type: PromptType.Select,
                     validations: [
                       {
@@ -2392,7 +2392,7 @@ export class DataService {
                     },
                   },
                   {
-                    title: 'Que zona do corpo? *',
+                    title: 'Que zona do corpo? ',
                     type: PromptType.Checkbox,
                     validations: [
                       {
@@ -2646,7 +2646,7 @@ export class DataService {
                   },
 
                   {
-                    title: 'Está a tomar alguma medicação? *',
+                    title: 'Está a tomar alguma medicação?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2667,7 +2667,7 @@ export class DataService {
                 title: '2. Covid 19',
                 prompts: [
                   {
-                    title: 'Teve Covid 19?*',
+                    title: 'Teve Covid 19?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2738,7 +2738,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'Altura*', placeholder: 'cm' },
+                    prompt: { label: 'Altura', placeholder: 'cm' },
                   },
                   {
                     title: 'Peso',
@@ -2749,7 +2749,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'Peso*', placeholder: 'Kg' },
+                    prompt: { label: 'Peso', placeholder: 'Kg' },
                   },
                   {
                     title: '% Massa Gorda',

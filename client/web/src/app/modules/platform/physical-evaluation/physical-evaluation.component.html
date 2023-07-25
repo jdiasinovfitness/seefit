@@ -26,9 +26,12 @@
             class="question"
             *ngFor="let prompt of group.prompts; let promptIndex = index"
           >
-            <ion-label class="ion-text-wrap prompt-title">{{
-              prompt.title
-            }}</ion-label>
+            <ion-label class="ion-text-wrap prompt-title"
+              >{{ prompt.title }}
+              <span *ngIf="isRequired(prompt)" class="required-asterisk"
+                >*</span
+              >
+            </ion-label>
             <div class="answer-options" [ngSwitch]="prompt.type">
               <app-radio
                 *ngSwitchCase="PromptType.Radio"

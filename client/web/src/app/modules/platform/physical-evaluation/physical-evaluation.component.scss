@@ -64,6 +64,10 @@ ion-item {
   margin-right: 20px;
 }
 
+.required-asterisk {
+  color: var(--ion-color-primary);
+}
+
 @media screen and (max-width: 560px) {
   .question {
     display: flex;
