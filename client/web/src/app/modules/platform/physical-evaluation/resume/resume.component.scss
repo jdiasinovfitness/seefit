@@ -1,0 +1,119 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  width: -webkit-fill-available;
+  width: -moz-available;
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    flex-grow: 1;
+    min-width: 64px;
+
+    padding-top: 10px;
+    padding-bottom: 40px;
+
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 48px;
+      height: 48px;
+
+      padding: 8px;
+
+      font-size: 32px;
+      font-weight: 800;
+      border: solid 1px var(--ion-color-medium);
+      border-radius: 50%;
+    }
+
+    .timeline {
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+
+      height: 1px;
+      border-bottom: solid 1px var(--ion-color-medium);
+    }
+
+    .line-gone {
+      border-color: transparent;
+    }
+
+    .line-completed {
+      border-color: var(--ion-color-primary);
+    }
+
+    .line-inprogress {
+      border-color: var(--ion-color-primary);
+    }
+  }
+}
+
+.accordion-group {
+  padding: 20px;
+}
+
+.accordion {
+  margin: 10px;
+}
+
+.tp-buttons {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  .btn-start {
+    color: var(--ion-color-primary);
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 7px;
+  }
+  .btn-plan {
+    margin: 7px;
+    color: var(--ion-color-primary);
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 7px;
+  }
+}
+.nav-buttons {
+  position: relative;
+  margin-top: 2%;
+  padding: 20px;
+  text-align: right;
+}
+
+.btn-before {
+  margin-right: 20px;
+}
+ion-accordion-group {
+  ion-accordion.accordion-collapsing ion-item[slot="header"],
+  ion-accordion.accordion-collapsed ion-item[slot="header"] {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-light);
+  }
+
+  ion-accordion.accordion-expanding ion-item[slot="header"],
+  ion-accordion.accordion-expanded ion-item[slot="header"] {
+    --background: var(--ion-color-primary-contrast);
+    --color: var(--ion-color-primary);
+  }
+  ion-accordion.accordion-expanded {
+    border: solid 1px var(--ion-color-primary);
+  }
+}
+
+.title {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+}

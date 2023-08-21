@@ -24,6 +24,9 @@ export class PhysicalEvaluationComponent {
   completedSteps: boolean[] = [];
   nextStepClicked = false;
   nextClickedSteps: boolean[] = [];
+  showPe: boolean = false;
+  resumeScreen = 0;
+  resumeSelected = false;
 
   constructor(private dataService: DataService) {
     this.pEData = this.getDummyPEData();
@@ -64,9 +67,18 @@ export class PhysicalEvaluationComponent {
   }
 
   previousStep() {
-    if (this.currentStep > 0) {
-      this.currentStep--;
+    if (this.showPe) {
+      this.currentStep = this.resumeScreen;
+      this.showPe = false;
+    } else {
+      if (this.currentStep > 0) {
+        this.currentStep--;
+      }
+      if (!this.completedSteps[this.currentStep]) {
+        this.resumeScreen = this.currentStep;
+      }
     }
+    this.resumeSelected = false;
   }
 
   getCurrentStep(): StepData[] {
@@ -160,6 +172,12 @@ export class PhysicalEvaluationComponent {
         this.completedSteps[this.currentStep] = true;
         this.currentStep++;
         this.nextStepClicked = true;
+        if (!this.showPe) {
+          this.resumeScreen = this.currentStep;
+        }
+      } else {
+        this.showPe = true;
+        this.resumeSelected = true;
       }
     }
   }
@@ -167,6 +185,9 @@ export class PhysicalEvaluationComponent {
   isStepComplete(index: number): boolean {
     if (this.pEData && this.pEData.length > 0 && this.nextClickedSteps[index]) {
       return this.isRequiredAnswered(index);
+    }
+    if (this.resumeSelected) {
+      return true;
     }
 
     return false;
@@ -205,5 +226,9 @@ export class PhysicalEvaluationComponent {
       return requiredPrompts.every((prompt) => this.isAnswered(prompt));
     }
     return false;
+  }
+
+  finalize() {
+    this.completedSteps.fill(true);
   }
 }

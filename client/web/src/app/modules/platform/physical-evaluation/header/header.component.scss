@@ -112,7 +112,7 @@
 
   .item-container {
     display: flex;
-
+    justify-content: center;
     width: -webkit-fill-available;
     width: -moz-available;
 
@@ -123,8 +123,7 @@
       justify-content: center;
 
       position: relative;
-
-      flex-grow: 1;
+      width: 200px;
       min-width: 64px;
 
       padding-bottom: 40px;

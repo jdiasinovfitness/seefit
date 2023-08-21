@@ -1,0 +1,46 @@
+<div style="justify-content: center">
+  <strong style="display: flex; justify-content: center"
+    >A avaliação física está completa, nos quadros abaixo poderá ver um resumo
+    das respostas obtidas em cada uma das fases!
+  </strong>
+</div>
+
+<ion-accordion-group
+  class="accordion-group"
+  mode="md"
+  [multiple]="true"
+  (ionChange)="toggleAccordion($event)"
+>
+  <ion-accordion
+    class="accordion"
+    *ngFor="let step of itemList; let i = index"
+    [value]="'step' + i"
+  >
+    <ion-item lines="full" slot="header">
+      <ion-label
+        ><b>{{ step.title }} </b></ion-label
+      >
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <div *ngFor="let group of step.group">
+        <label class="title">{{ group.title }}</label>
+        <div *ngFor="let item of resumedAnswers(group)">
+          <strong>{{ item.question.title }}</strong>
+          : {{ item.answer }}
+        </div>
+      </div>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
+
+<div style="justify-content: center">
+  <strong style="display: flex; justify-content: center"
+    >Existe ainda a possibilidade de criação de plano de treino associado a esta
+    avaliação física.
+  </strong>
+</div>
+
+<div class="tp-buttons">
+  <ion-button color="primary-contrast" class="btn-start">COMEÇAR</ion-button>
+  <ion-button color="primary-contrast" class="btn-plan">PLANEAR</ion-button>
+</div>

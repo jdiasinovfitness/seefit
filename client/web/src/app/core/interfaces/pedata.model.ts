@@ -30,7 +30,7 @@ export interface Validation {
 
 export interface Radio {
   options?: Array<Option>;
-  selectedOption?: Option;
+  selectedOption?: Array<Option>;
 }
 
 export interface Checkbox {
@@ -47,11 +47,13 @@ export interface Select {
 export interface Input {
   label: string;
   placeholder: string;
+  value?: string;
 }
 
 export interface TextArea {
   label: string;
   placeholder: string;
+  value?: string;
 }
 
 export interface Option {

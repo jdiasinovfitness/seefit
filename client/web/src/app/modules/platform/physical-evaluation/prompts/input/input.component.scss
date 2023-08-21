@@ -1,5 +1,21 @@
 @import "../../../../../../global.scss";
 
-.input-field {
-  display: flex;
+.input-wrapper {
+  margin-bottom: 16px;
+
+  .custom {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+ion-input.custom {
+  --padding-start: 0px !important;
+}
+// Input border bottom color on focus
+ion-item {
+  --background: transparent;
+
+  .has-focus {
+    border-bottom: solid 2px $primary;
+  }
 }

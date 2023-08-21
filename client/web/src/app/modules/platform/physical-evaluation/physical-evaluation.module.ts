@@ -12,6 +12,7 @@ import { QuestionComponent } from './prompts/question/question.component';
 import { TextAreaComponent } from './prompts/text-area/text-area.component';
 import { InputComponent } from './prompts/input/input.component';
 import { HeaderComponent } from './header/header.component';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
     TextAreaComponent,
     InputComponent,
     HeaderComponent,
+    ResumeComponent,
   ],
   imports: [
     CommonModule,
@@ -33,4 +35,4 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [PhysicalEvaluationComponent, IonicModule],
 })
-export class PhysicalEvaluationModule { }
+export class PhysicalEvaluationModule {}

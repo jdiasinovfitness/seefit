@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { every } from 'rxjs';
 
 @Component({
   selector: 'app-select',

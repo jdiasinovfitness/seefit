@@ -15,8 +15,10 @@
         [completedSteps]="completedSteps"
         [isStepComplete]="isStepComplete.bind(this)"
         [nextStepClicked]="nextStepClicked"
+        [isResume]="showPe"
+        [resumeSelected]="resumeSelected"
       ></app-pe-header>
-      <ion-list>
+      <ion-list *ngIf="!showPe">
         <ng-container *ngFor="let group of step.group; let groupIndex = index">
           <ion-item lines="full"></ion-item>
           <ion-text class="group-title">
@@ -70,6 +72,11 @@
       </ion-list>
     </div>
   </div>
+  <app-resume
+    *ngIf="showPe"
+    [pEData]="pEData"
+    [itemList]="getCurrentStep()"
+  ></app-resume>
   <div class="nav-buttons">
     <ion-button
       class="btn-before"
@@ -79,12 +86,12 @@
     >
     <ion-button
       class="btn-next"
-      (click)="nextStep()"
+      (click)="showPe ? finalize() : nextStep()"
       [disabled]="
-        currentStep === getCurrentStep().length - 1 ||
+        currentStep === getCurrentStep().length - 0 ||
         !isRequiredAnswered(currentStep)
       "
-      >PRÓXIMO</ion-button
+      >{{ showPe ? "FINALIZAR" : "PRÓXIMO" }}</ion-button
     >
   </div>
 </ion-content>

@@ -8,7 +8,7 @@
       placeholder="
       {{ prompt.placeholder }}"
       [value]="prompt.selectedOption"
-      (ionChange)="(onValueChange)"
+      (ionChange)="onValueChange($event)"
       [multiple]="true"
     >
       <ion-select-option

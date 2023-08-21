@@ -2824,32 +2824,6 @@ export class DataService {
               },
             ],
           },
-          // step 4
-          {
-            number: '4',
-            title: 'FINALIZAR',
-            group: [
-              {
-                title: 'Submeter',
-                prompts: [
-                  {
-                    title: 'Enviar',
-                    type: PromptType.Input,
-                    validations: [
-                      {
-                        name: 'required',
-                        value: false,
-                      },
-                    ],
-                    prompt: {
-                      label: 'Submeter Resultados',
-                      placeholder: 'Submeter Resultados',
-                    },
-                  },
-                ],
-              },
-            ],
-          },
         ],
       },
     ];

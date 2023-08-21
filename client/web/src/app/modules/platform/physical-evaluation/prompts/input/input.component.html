@@ -1,11 +1,10 @@
-<ion-item lines="none">
-  <ion-label>{{ prompt.label }}</ion-label>
+<ion-item class="input-wrapper">
+  <ion-label position="floating">{{ prompt.label }}</ion-label>
   <ion-input
-    class="input-field"
+    class="custom"
+    type="text"
     mode="md"
-    label=""
-    color="primary"
+    label-placement="floating"
     [(ngModel)]="value"
-    [placeholder]="prompt.placeholder"
   ></ion-input>
 </ion-item>
