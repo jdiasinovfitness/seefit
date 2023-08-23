@@ -22,9 +22,11 @@
       >
     </ion-item>
     <div class="ion-padding" slot="content">
-      <div *ngFor="let group of step.group">
-        <label class="title">{{ group.title }}</label>
-        <div *ngFor="let item of resumedAnswers(group)">
+      <div class="group" *ngFor="let group of step.group">
+        <div class="title">
+          <ion-label>{{ group.title }}</ion-label>
+        </div>
+        <div class="q-group" *ngFor="let item of resumedAnswers(group)">
           <strong>{{ item.question.title }}</strong>
           : {{ item.answer }}
         </div>
