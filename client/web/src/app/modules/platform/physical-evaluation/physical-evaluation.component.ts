@@ -75,7 +75,6 @@ export class PhysicalEvaluationComponent {
         this.currentStep--;
       }
       if (!this.completedSteps[this.currentStep]) {
-        this.resumeScreen = this.currentStep;
       }
     }
     this.resumeSelected = false;
@@ -176,6 +175,7 @@ export class PhysicalEvaluationComponent {
           this.resumeScreen = this.currentStep;
         }
       } else {
+        this.completedSteps[this.currentStep] = true;
         this.showPe = true;
         this.resumeSelected = true;
       }
@@ -183,10 +183,17 @@ export class PhysicalEvaluationComponent {
   }
 
   isStepComplete(index: number): boolean {
-    if (this.pEData && this.pEData.length > 0 && this.nextClickedSteps[index]) {
-      return this.isRequiredAnswered(index);
+    if (this.pEData && this.pEData.length > 0) {
+      if (index === this.pEData[0].steps.length - 1) {
+        if (this.resumeSelected || this.completedSteps[index]) {
+          return true;
+        }
+      }
+      if (this.nextClickedSteps[index]) {
+        return this.isRequiredAnswered(index);
+      }
     }
-    if (this.resumeSelected) {
+    if (this.resumeSelected || this.showPe) {
       return true;
     }
 

@@ -30,7 +30,7 @@ export interface Validation {
 
 export interface Radio {
   options?: Array<Option>;
-  selectedOption?: Array<Option>;
+  selectedOption?: Option;
 }
 
 export interface Checkbox {
@@ -63,9 +63,9 @@ export interface Option {
 }
 
 export enum PromptType {
-  Radio,
-  Checkbox,
-  Select,
-  Input,
-  TextArea,
+  Radio = 'Radio',
+  Checkbox = 'Checkbox',
+  Select = 'Select',
+  Input = 'Input',
+  TextArea = 'TextArea',
 }

@@ -15,7 +15,10 @@
           class="circle"
           [ngClass]="{
             selected: selectionIndex === i,
-            completed: isStepComplete(i) && nextStepClicked,
+            completed:
+              (isStepComplete(i) && nextStepClicked) ||
+              (isResume && i === itemList.length - 1) ||
+              (i === itemList.length && completedSteps[i]),
             inprogress: selectionIndex === i && !isStepComplete(i)
           }"
         >
