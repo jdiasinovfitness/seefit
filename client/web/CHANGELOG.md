@@ -74,4 +74,4 @@
 
 - [Physical evaluation form design](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_workitems/edit/15753/)
 
-- [Divide content into available tabs](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15811)
+- [Divide content into available tabs & finalize](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15811)
