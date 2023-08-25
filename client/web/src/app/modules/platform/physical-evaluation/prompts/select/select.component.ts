@@ -16,8 +16,6 @@ export class SelectComponent {
     if (event) {
       this.value = event.detail.value;
       this.onOptionSelected.emit(this.value);
-    } else {
-      console.error('event undefined: ');
     }
   }
 

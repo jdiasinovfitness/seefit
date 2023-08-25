@@ -2313,7 +2313,7 @@ export class DataService {
                         },
                         {
                           id: '3',
-                          label: 'Não responder',
+                          label: 'Sem resposta',
                         },
                       ],
                     },
@@ -2339,7 +2339,7 @@ export class DataService {
                         },
                         {
                           id: '7',
-                          label: 'Não responder',
+                          label: 'Sem resposta',
                         },
                       ],
                     },
@@ -2368,6 +2368,7 @@ export class DataService {
                           id: '5',
                           label: '2 ou mais',
                         },
+                        { id: '6', label: 'Sem resposta' },
                       ],
                     },
                   },
@@ -2463,7 +2464,7 @@ export class DataService {
                         },
                         {
                           id: '3',
-                          label: 'Nenhum',
+                          label: 'Sem resposta',
                         },
                       ],
                     },
@@ -2493,7 +2494,6 @@ export class DataService {
                       options: [
                         { id: '7', label: 'Sim' },
                         { id: '8', label: 'Não' },
-                        { id: '9', label: 'Não responder' },
                       ],
                     },
                   },
