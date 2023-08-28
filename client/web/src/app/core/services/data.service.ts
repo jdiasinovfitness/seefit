@@ -72,16 +72,18 @@ export class DataService {
   getCustomer(id: string): Promise<ICIData> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const cIndex = this.data.findIndex(
-          (value, index, self) => {
-            return value.userId === id;
-          });
+        const cIndex = this.data.findIndex((value, index, self) => {
+          return value.userId === id;
+        });
 
-        if (cIndex === -1) { reject(); return; }
+        if (cIndex === -1) {
+          reject();
+          return;
+        }
 
         resolve(this.data[cIndex]);
       }, 400);
-    })
+    });
   }
 
   getICIData(filter?: ICIFilter): Promise<Array<ICIData>> {
@@ -155,7 +157,7 @@ export class DataService {
       },
       {
         title: 'menu.items.health.title',
-        url: '/platform/pe',
+        url: '/platform',
         icon: 'medkit',
         disabled: false,
         subMenu: [
@@ -2309,6 +2311,10 @@ export class DataService {
                           id: '2',
                           label: 'Não',
                         },
+                        {
+                          id: '3',
+                          label: 'Sem resposta',
+                        },
                       ],
                     },
                   },
@@ -2330,6 +2336,10 @@ export class DataService {
                         {
                           id: '6',
                           label: 'Não',
+                        },
+                        {
+                          id: '7',
+                          label: 'Sem resposta',
                         },
                       ],
                     },
@@ -2358,6 +2368,7 @@ export class DataService {
                           id: '5',
                           label: '2 ou mais',
                         },
+                        { id: '6', label: 'Sem resposta' },
                       ],
                     },
                   },
@@ -2367,7 +2378,7 @@ export class DataService {
                 title: '2. Qual o seu objetivo?',
                 prompts: [
                   {
-                    title: 'Foco do treino. *',
+                    title: 'Foco do treino ',
                     type: PromptType.Select,
                     validations: [
                       {
@@ -2385,12 +2396,16 @@ export class DataService {
                           id: '2',
                           label: 'Definir',
                         },
+                        {
+                          id: '3',
+                          label: 'Nenhum',
+                        },
                       ],
                       placeholder: 'Selecione',
                     },
                   },
                   {
-                    title: 'Que zona do corpo? *',
+                    title: 'Que zona do corpo? ',
                     type: PromptType.Checkbox,
                     validations: [
                       {
@@ -2416,6 +2431,10 @@ export class DataService {
                           id: '4',
                           label: 'Braços',
                         },
+                        {
+                          id: '5',
+                          label: 'Nenhum',
+                        },
                       ],
                     },
                   },
@@ -2430,7 +2449,7 @@ export class DataService {
                     validations: [
                       {
                         name: 'required',
-                        value: true,
+                        value: false,
                       },
                     ],
                     prompt: {
@@ -2442,6 +2461,10 @@ export class DataService {
                         {
                           id: '2',
                           label: 'Musculação',
+                        },
+                        {
+                          id: '3',
+                          label: 'Sem resposta',
                         },
                       ],
                     },
@@ -2459,7 +2482,7 @@ export class DataService {
                 title: '1. Anamnese Médica',
                 prompts: [
                   {
-                    title: ' Alguma lesão antiga?',
+                    title: 'Alguma lesão antiga?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2476,7 +2499,7 @@ export class DataService {
                   },
                   {
                     // title: 'História Pessoal - Comorbidades',
-                    title: '- Doença Cardíaca',
+                    title: 'Doença Cardíaca',
                     type: PromptType.Select,
                     validations: [
                       {
@@ -2498,7 +2521,7 @@ export class DataService {
                     },
                   },
                   {
-                    title: '- Doença Pulmonar',
+                    title: 'Doença Pulmonar',
                     type: PromptType.Select,
                     validations: [
                       {
@@ -2523,7 +2546,7 @@ export class DataService {
                     },
                   },
                   {
-                    title: '- Doença Renal',
+                    title: 'Doença Renal',
                     type: PromptType.Select,
                     validations: [
                       {
@@ -2544,7 +2567,7 @@ export class DataService {
                     },
                   },
                   {
-                    title: '- Cancro',
+                    title: 'Cancro',
                     type: PromptType.Select,
                     validations: [
                       {
@@ -2563,38 +2586,6 @@ export class DataService {
                         { id: '17', label: 'Nenhum' },
                       ],
                       placeholder: 'Selecione',
-                    },
-                  },
-                  {
-                    title: '- Outra',
-                    type: PromptType.Radio,
-                    validations: [
-                      {
-                        name: 'required',
-                        value: false,
-                      },
-                    ],
-                    prompt: {
-                      options: [
-                        { id: '1', label: 'Sim' },
-                        { id: '2', label: 'Não' },
-                      ],
-                    },
-                  },
-                  {
-                    title: '- Outra',
-                    type: PromptType.Radio,
-                    validations: [
-                      {
-                        name: 'required',
-                        value: false,
-                      },
-                    ],
-                    prompt: {
-                      options: [
-                        { id: '1', label: 'Sim' },
-                        { id: '2', label: 'Não' },
-                      ],
                     },
                   },
                   {
@@ -2619,6 +2610,10 @@ export class DataService {
                           label:
                             'Dificuldades respiratórias em repouso ou em esforço leve',
                         },
+                        {
+                          id: '3',
+                          label: 'Nenhum',
+                        },
                       ],
                       placeholder: 'Selecione',
                     },
@@ -2636,7 +2631,7 @@ export class DataService {
                     prompt: {
                       options: [
                         { id: '1', label: 'Colesterol' },
-                        { id: '2', label: 'Nenhuma' },
+                        { id: '2', label: 'Nenhum' },
                         // Observação Input??
                       ],
                       placeholder: 'Selecione',
@@ -2644,7 +2639,7 @@ export class DataService {
                   },
 
                   {
-                    title: 'Está a tomar alguma medicação? *',
+                    title: 'Está a tomar alguma medicação?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2665,7 +2660,7 @@ export class DataService {
                 title: '2. Covid 19',
                 prompts: [
                   {
-                    title: 'Teve Covid 19?*',
+                    title: 'Teve Covid 19?',
                     type: PromptType.Radio,
                     validations: [
                       {
@@ -2733,10 +2728,10 @@ export class DataService {
                     validations: [
                       {
                         name: 'pattern',
-                        value: '[0-9,0-90-9]',
+                        value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'Altura*', placeholder: 'cm' },
+                    prompt: { label: 'Altura (cm)', placeholder: 'cm' },
                   },
                   {
                     title: 'Peso',
@@ -2747,7 +2742,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'Peso*', placeholder: 'Kg' },
+                    prompt: { label: 'Peso (Kg)', placeholder: 'Kg' },
                   },
                   {
                     title: '% Massa Gorda',
@@ -2758,7 +2753,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'M.G.', placeholder: '% M.G' },
+                    prompt: { label: 'M.G. (%)', placeholder: '% M.G' },
                   },
                   {
                     title: '% Massa Magra',
@@ -2769,7 +2764,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: 'M.M.', placeholder: '% M.M' },
+                    prompt: { label: 'M.M. (%)', placeholder: '% M.M' },
                   },
                   {
                     title: 'Gordura Visceral',
@@ -2780,7 +2775,7 @@ export class DataService {
                         value: '[0-90-9]',
                       },
                     ],
-                    prompt: { label: '', placeholder: '1-59' },
+                    prompt: { label: 'G.V. (%)', placeholder: '1-59' },
                   },
                   {
                     title: 'Taxa Metabólica Basal',
@@ -2791,7 +2786,7 @@ export class DataService {
                         value: '[0-90-90-9.0-9]',
                       },
                     ],
-                    prompt: { label: '', placeholder: '%' },
+                    prompt: { label: 'T.M.B. (%)', placeholder: '%' },
                   },
                   {
                     title: 'Perímetro Anca:',
@@ -2802,7 +2797,7 @@ export class DataService {
                         value: '[0-90-90-9.0-9]',
                       },
                     ],
-                    prompt: { label: 'anca', placeholder: 'cm' },
+                    prompt: { label: 'Anca (cm)', placeholder: 'cm' },
                   },
                   {
                     title: 'Índice Anca / Cintura:',
@@ -2815,33 +2810,7 @@ export class DataService {
                     ],
                     prompt: {
                       label: 'Índice Anca / Cintura:',
-                      placeholder: 'Anca / Cintura',
-                    },
-                  },
-                ],
-              },
-            ],
-          },
-          // step 4
-          {
-            number: '4',
-            title: 'FINALIZAR',
-            group: [
-              {
-                title: 'Submeter',
-                prompts: [
-                  {
-                    title: 'Enviar',
-                    type: PromptType.Input,
-                    validations: [
-                      {
-                        name: 'required',
-                        value: false,
-                      },
-                    ],
-                    prompt: {
-                      label: 'Submeter Resultados',
-                      placeholder: 'Submeter Resultados',
+                      placeholder: 'Anca (cm) / Cintura (cm)',
                     },
                   },
                 ],

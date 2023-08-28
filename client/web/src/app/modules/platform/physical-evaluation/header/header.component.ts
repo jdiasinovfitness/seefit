@@ -8,6 +8,11 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
   @Input() itemList!: Array<any>;
   @Input() selectionIndex = 0;
+  @Input() completedSteps!: boolean[];
+  @Input() isStepComplete!: (index: number) => boolean;
+  @Input() nextStepClicked = false;
+  @Input() isResume: boolean = false;
+  @Input() resumeSelected = false;
 
-  constructor() { }
+  constructor() {}
 }
