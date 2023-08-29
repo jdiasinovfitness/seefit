@@ -58,7 +58,7 @@ export class ResumeComponent implements OnInit {
       }
       questionAnswer.push({ question: prompt, answer: answer });
     });
-    console.log('questionAnswer', questionAnswer);
+
     return questionAnswer;
   }
 
