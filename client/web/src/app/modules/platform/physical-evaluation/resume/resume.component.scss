@@ -1,6 +1,5 @@
 .accordion-group {
   padding: 20px;
-  position: relative;
 }
 
 .accordion {
@@ -91,6 +90,7 @@ ion-accordion-group {
 @media screen and (max-width: 560px) {
   .accordion-group {
     padding: 20px;
+    width: 96%;
   }
   .accordion {
     margin: 4px;
