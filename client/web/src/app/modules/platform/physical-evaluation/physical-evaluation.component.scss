@@ -12,6 +12,8 @@
   margin: 30px;
   padding-top: 40px;
   margin-inline: 16px;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .step-title {
@@ -37,7 +39,7 @@
 
 .prompt-title {
   width: 45%;
-  font-size: 16px;
+  font-size: 16px !important;
   padding-top: 16px;
   padding: 10px;
 }
@@ -48,6 +50,7 @@
 }
 
 ion-item {
+  display: flex;
   --border-color: var(--ion-color-primary);
 }
 
@@ -76,9 +79,19 @@ ion-item {
     align-items: flex-start;
     flex-direction: column;
     width: -webkit-fill-available;
+    width: -moz-available;
   }
   .prompt-title {
     width: -webkit-fill-available;
+    width: -moz-available;
     font-size: 16px;
+  }
+  .answer-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 16px;
+    width: -webkit-fill-available;
+    width: -moz-available;
   }
 }
