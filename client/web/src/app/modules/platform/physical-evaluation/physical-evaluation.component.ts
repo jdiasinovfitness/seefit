@@ -179,6 +179,7 @@ export class PhysicalEvaluationComponent {
         this.showPe = true;
         this.resumeSelected = true;
       }
+      window.scrollTo(0, 0);
     }
   }
 
