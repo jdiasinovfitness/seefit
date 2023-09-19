@@ -2286,7 +2286,7 @@ export class DataService {
         steps: [
           {
             number: '1',
-            title: 'ANÁLISE COMPORTAMENTAL',
+            title: 'Análise Comportamental',
             group: [
               {
                 title: '1. Nível de actividade e experiência em Ginásio',
@@ -2468,7 +2468,7 @@ export class DataService {
           // step 2
           {
             number: '2',
-            title: 'ANÁLISE TÉCNICA',
+            title: 'Análise Técnica',
             group: [
               {
                 title: '1. Anamnese Médica',
@@ -2709,7 +2709,7 @@ export class DataService {
           // step 3
           {
             number: '3',
-            title: 'ANÁLISE FÍSICA',
+            title: 'Análise Física',
             group: [
               {
                 title: '1. Medidas',
