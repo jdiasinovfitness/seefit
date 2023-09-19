@@ -34,6 +34,10 @@ export class ResumeComponent implements OnInit {
     );
   }
 
+  private noAnswer(): string {
+    return 'Sem Resposta';
+  }
+
   resumedAnswers(group: GroupData): { question: Prompts; answer: string }[] {
     let questionAnswer: { question: Prompts; answer: string }[] = [];
 
@@ -67,20 +71,33 @@ export class ResumeComponent implements OnInit {
     const options = (prompt.prompt as Radio).options || [];
     const selectedOptionId =
       selectedOption instanceof Option ? selectedOption.id : selectedOption;
-    return options
-      .map((option) => {
-        if (selectedOptionId === option.label) {
-          return option.label;
-        }
-        return;
-      })
-      .filter((label) => !!label)
-      .join(', ');
+
+    if (selectedOptionId) {
+      return options
+        .map((option) => {
+          if (selectedOptionId === option.label) {
+            return option.label;
+          }
+          return;
+        })
+        .filter((label) => !!label)
+        .join(', ');
+    } else {
+      return this.noAnswer();
+    }
   }
 
   showSelectAnswer(prompt: Prompts) {
     const selectedOptions = (prompt.prompt as Select).selectedOption;
     const options = (prompt.prompt as Select).options || [];
+
+    if (
+      !selectedOptions ||
+      (Array.isArray(selectedOptions) && selectedOptions.length === 0)
+    ) {
+      return this.noAnswer();
+    }
+
     const selectedLabels = Array.isArray(selectedOptions)
       ? selectedOptions.map((option) =>
           typeof option === 'string' ? option : option.label
@@ -98,15 +115,20 @@ export class ResumeComponent implements OnInit {
   }
 
   showCheckboxAnswer(prompt: Prompts) {
-    return (
-      (prompt.prompt as Checkbox).options
-        ?.filter((option) => option.selected)
-        .map((option) => option.label)
-        .join(', ') || ''
-    );
+    const selectedOptions = (prompt.prompt as Checkbox).options;
+    if (selectedOptions && selectedOptions.some((option) => option.selected)) {
+      return (
+        selectedOptions
+          ?.filter((option) => option.selected)
+          .map((option) => option.label)
+          .join(', ') || ''
+      );
+    } else {
+      return this.noAnswer();
+    }
   }
 
   showInputorTextAnswer(prompt: Prompts) {
-    return (prompt.prompt as TextArea).value || '';
+    return (prompt.prompt as TextArea).value || this.noAnswer();
   }
 }
