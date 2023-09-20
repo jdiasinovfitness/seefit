@@ -34,7 +34,7 @@ export class ResumeComponent implements OnInit {
     );
   }
 
-  private noAnswer(): string {
+  noAnswer(): string {
     return 'Sem Resposta';
   }
 
