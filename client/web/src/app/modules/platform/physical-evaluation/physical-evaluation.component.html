@@ -17,6 +17,8 @@
         [nextStepClicked]="nextStepClicked"
         [isResume]="showPe"
         [resumeSelected]="resumeSelected"
+        (previousStepClick)="previousStep()"
+        (nextStepClick)="nextStep()"
       ></app-pe-header>
       <ion-list *ngIf="!showPe">
         <ng-container *ngFor="let group of step.group; let groupIndex = index">
