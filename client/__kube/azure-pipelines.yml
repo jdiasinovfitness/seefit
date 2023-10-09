@@ -107,7 +107,7 @@ stages:
               tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
 
               docker build \
-                --build-arg DEVOPS_FEED_READ_TOKEN=${DEVOPS_FEED_READ_TOKEN} \
+                --build-arg DEVOPS_FEED_READ_TOKEN=ZXFibmU2N2NzanI2enRyemdrM3p4aXV6dzU2dzYyamdhZWVveTM0dGNteG9tbWRpYnBmcQ== \
                 --build-arg BUILD_BUILDID=${BUILD_BUILDID} \
                 --build-arg BUILD_BUILDNUMBER=${BUILD_BUILDNUMBER} \
                 --build-arg ENV=${ENV} \
