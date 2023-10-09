@@ -43,6 +43,150 @@ stages:
           EnsureDeployments:
             - "web"
 
+  - stage: Native
+    displayName: "Cordova"
+    dependsOn: Build
+    jobs:
+      - job: Prepare
+        steps:
+          - task: Docker@2
+            displayName: Login
+            inputs:
+              command: login
+              containerRegistry: azurecr
+
+          - bash: |
+              CONTAINER=$(docker run -d --rm inovretail.azurecr.io/seefit/client/web:${BUILD_BUILDNUMBER})
+              docker cp ${CONTAINER}:/usr/share/nginx/html www
+              tar -czf www.tar.gz www
+            workingDirectory: "$(Build.ArtifactStagingDirectory)"
+            displayName: "Web package"
+
+          - publish: $(Build.ArtifactStagingDirectory)/www.tar.gz
+            artifact: web
+
+          - bash: |
+              if [ $BUILD_REASON == 'PullRequest' ];
+              then
+                echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]tst"
+                exit 0
+              fi
+
+              if [ $BUILD_REASON == 'IndividualCI' ];
+              then
+                echo "##vso[task.setvariable variable=env;isreadonly=true;isoutput=true]prd"
+                exit 0
+              fi
+
+              exit 1
+            displayName: "Set $ENV"
+            name: setenv
+
+      - job: Android
+        dependsOn: Prepare
+        variables:
+          env: $[ dependencies.Prepare.outputs['setenv.env'] ]
+        steps:
+          - checkout: self
+
+          - download: current
+            artifact: web
+
+          - task: Docker@2
+            displayName: Login
+            inputs:
+              command: login
+              containerRegistry: azurecr
+
+          - bash: |
+              rm -rf dist
+              rm -rf www
+              rm -rf platforms
+              rm -rf node_modules
+
+              tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
+
+              docker build \
+                --build-arg DEVOPS_FEED_READ_TOKEN=${DEVOPS_FEED_READ_TOKEN} \
+                --build-arg BUILD_BUILDID=${BUILD_BUILDID} \
+                --build-arg BUILD_BUILDNUMBER=${BUILD_BUILDNUMBER} \
+                --build-arg ENV=${ENV} \
+                -t seefit . || exit 1
+              CONTAINER=$(docker run -d seefit)
+
+              echo "Get build artifacts"
+              docker cp $CONTAINER:/dist .
+
+            workingDirectory: $(Build.SourcesDirectory)/client/native
+            displayName: "Create Package"
+            env:
+              DEVOPS_FEED_READ_TOKEN: $(DEVOPS_FEED_READ_TOKEN)
+
+          - publish: $(Build.SourcesDirectory)/client/native/dist
+            artifact: native-android
+
+      - job: iOS
+        dependsOn: Prepare
+        pool:
+          vmImage: "macOS-latest"
+        variables:
+          env: $[ dependencies.Prepare.outputs['setenv.env'] ]
+        steps:
+          - checkout: self
+
+          - download: current
+            artifact: web
+
+          - task: InstallAppleCertificate@2
+            displayName: "Install an Apple certificate"
+            inputs:
+              certSecureFile: Certificate.p12
+              certPwd: Seeplus022018.
+
+          - task: InstallAppleProvisioningProfile@1
+            displayName: "Install an Apple provisioning profile - Seefit"
+            inputs:
+              provProfileSecureFile: Seefit.mobileprovision
+
+          - bash: |
+              rm -rf dist
+              rm -rf www
+              rm -rf platforms
+              rm -rf node_modules
+
+              tar -xzf ${PIPELINE_WORKSPACE}/web/www.tar.gz
+
+            workingDirectory: $(Build.SourcesDirectory)/client/native
+            displayName: "Content package"
+
+          - task: Npm@1
+            displayName: "npm install"
+            inputs:
+              workingDir: $(Build.SourcesDirectory)/client/native
+              verbose: false
+              customRegistry: useFeed
+              customFeed: "6509ad65-c91d-438a-9714-d063289fe7c2/1de3df63-7ada-4109-9b8d-e4c39b016a4c"
+
+          - bash: |
+              npm config set env $ENV
+              npm run ver ios
+
+              npm run dist:ios
+
+            workingDirectory: $(Build.SourcesDirectory)/client/native
+            displayName: "Create package"
+
+          - bash: |
+              ${XCODE_14_DEVELOPER_DIR}/usr/bin/altool --upload-app -f seefit.ipa -t ios -u $IOS_PUB_USER -p $IOS_PUB_PWD
+
+            workingDirectory: "$(Build.SourcesDirectory)/client/native/dist"
+            displayName: "Publish package"
+            env:
+              IOS_PUB_PWD: $(IOS_PUB_PWD)
+
+          - publish: $(Build.SourcesDirectory)/client/native/dist
+            artifact: native-ios
+
   - stage: Deploy_prd
     displayName: "Deploy: Production"
     dependsOn: Build

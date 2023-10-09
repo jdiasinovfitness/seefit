@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Seefit" parent="Theme.AppCompat.Light" tools:targetApi="q">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:isLightTheme" tools:targetApi="q">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
