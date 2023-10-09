@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pe-header',
@@ -13,6 +13,16 @@ export class HeaderComponent {
   @Input() nextStepClicked = false;
   @Input() isResume: boolean = false;
   @Input() resumeSelected = false;
+  @Output() previousStepClick = new EventEmitter<void>();
+  @Output() nextStepClick = new EventEmitter<void>();
 
   constructor() {}
+
+  goToPreviousStep() {
+    this.previousStepClick.emit();
+  }
+
+  goToNextStep() {
+    this.nextStepClick.emit();
+  }
 }
