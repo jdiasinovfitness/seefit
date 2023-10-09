@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 import {
   Checkbox,
   PEdata,
@@ -27,6 +28,8 @@ export class PhysicalEvaluationComponent {
   showPe: boolean = false;
   resumeScreen = 0;
   resumeSelected = false;
+
+  @ViewChild('content', { static: false }) content!: IonContent;
 
   constructor(private dataService: DataService) {
     this.pEData = this.getDummyPEData();
@@ -78,6 +81,7 @@ export class PhysicalEvaluationComponent {
       }
     }
     this.resumeSelected = false;
+    this.content.scrollToTop(200);
   }
 
   getCurrentStep(): StepData[] {
@@ -180,6 +184,7 @@ export class PhysicalEvaluationComponent {
         this.resumeSelected = true;
       }
     }
+    this.content.scrollToTop(200);
   }
 
   isStepComplete(index: number): boolean {

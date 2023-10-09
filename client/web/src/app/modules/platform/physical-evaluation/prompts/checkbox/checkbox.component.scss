@@ -1,9 +1,9 @@
 @import "../../../../../../global.scss";
+
 .checkbox-field {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   align-items: center;
-  padding-left: 15.5px;
 }
 
 .ion-checkbox {
@@ -17,4 +17,30 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+.ion-text-wrap.sc-ion-label-ios-h,
+[text-wrap].sc-ion-label-ios-h {
+  font-size: 16px !important;
+}
+
+.question-answer {
+  width: 142px;
+}
+
+@media screen and (max-width: 560px) {
+  .ion-label {
+    width: -webkit-fill-available !important;
+  }
+  .question-answer {
+    width: -webkit-fill-available !important;
+    max-width: 142px;
+  }
+
+  .ion-text-wrap .label-text-wrapper > .label-text {
+    white-space: normal;
+  }
+  .checkbox-field {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
 }

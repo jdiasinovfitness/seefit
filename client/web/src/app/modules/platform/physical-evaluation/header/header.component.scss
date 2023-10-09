@@ -178,3 +178,20 @@
   word-wrap: break-word;
   text-align: center;
 }
+
+@media screen and (max-width: 560px) {
+  .header-pe-wrapper {
+    .items-wrapper {
+      .items {
+        .title {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 561px) {
+  .title {
+    text-transform: uppercase;
+  }
+}

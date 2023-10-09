@@ -1,6 +1,6 @@
 <ion-radio-group
   mode="md"
-  style="display: flex"
+  style="display: flex; flex-wrap: wrap"
   class="radio-field"
   [(ngModel)]="prompt.selectedOption"
   (ionChange)="optionSelected($event)"
@@ -14,7 +14,9 @@
         justify="end"
         [value]="option.label"
       ></ion-radio>
-      <ion-label style="width: 146px">{{ option.label }} </ion-label>
+      <ion-label style="font-size: 16px" position="fixed" class="ion-text-wrap"
+        >{{ option.label }}
+      </ion-label>
     </ion-item>
   </div>
 </ion-radio-group>

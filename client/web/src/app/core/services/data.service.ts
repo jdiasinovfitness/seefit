@@ -2286,7 +2286,7 @@ export class DataService {
         steps: [
           {
             number: '1',
-            title: 'ANÁLISE COMPORTAMENTAL',
+            title: 'Análise Comportamental',
             group: [
               {
                 title: '1. Nível de actividade e experiência em Ginásio',
@@ -2330,15 +2330,15 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '5',
+                          id: '4',
                           label: 'Sim',
                         },
                         {
-                          id: '6',
+                          id: '5',
                           label: 'Não',
                         },
                         {
-                          id: '7',
+                          id: '6',
                           label: 'Sem resposta',
                         },
                       ],
@@ -2357,18 +2357,14 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '3',
-                          label: '0',
-                        },
-                        {
-                          id: '4',
+                          id: '7',
                           label: '1',
                         },
                         {
-                          id: '5',
+                          id: '8',
                           label: '2 ou mais',
                         },
-                        { id: '6', label: 'Sem resposta' },
+                        { id: '9', label: 'Sem resposta' },
                       ],
                     },
                   },
@@ -2389,15 +2385,15 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '1',
+                          id: '10',
                           label: 'Tonificar',
                         },
                         {
-                          id: '2',
+                          id: '11',
                           label: 'Definir',
                         },
                         {
-                          id: '3',
+                          id: '12',
                           label: 'Nenhum',
                         },
                       ],
@@ -2416,24 +2412,20 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '1',
+                          id: '13',
                           label: 'Pernas',
                         },
                         {
-                          id: '2',
+                          id: '14',
                           label: 'Coxas',
                         },
                         {
-                          id: '3',
+                          id: '15',
                           label: 'Glúteos',
                         },
                         {
-                          id: '4',
+                          id: '16',
                           label: 'Braços',
-                        },
-                        {
-                          id: '5',
-                          label: 'Nenhum',
                         },
                       ],
                     },
@@ -2455,15 +2447,15 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '1',
+                          id: '17',
                           label: 'Cardio',
                         },
                         {
-                          id: '2',
+                          id: '18',
                           label: 'Musculação',
                         },
                         {
-                          id: '3',
+                          id: '19',
                           label: 'Sem resposta',
                         },
                       ],
@@ -2476,7 +2468,7 @@ export class DataService {
           // step 2
           {
             number: '2',
-            title: 'ANÁLISE TÉCNICA',
+            title: 'Análise Técnica',
             group: [
               {
                 title: '1. Anamnese Médica',
@@ -2492,8 +2484,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '7', label: 'Sim' },
-                        { id: '8', label: 'Não' },
+                        { id: '20', label: 'Sim' },
+                        { id: '21', label: 'Não' },
                       ],
                     },
                   },
@@ -2509,13 +2501,13 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '10', label: 'Angina Instável' },
-                        { id: '11', label: 'Insuficiencia Cardiaca' },
-                        { id: '13', label: 'Doença Valvula' },
-                        { id: '14', label: 'Doença Vascular' },
-                        { id: '15', label: 'AVC' },
-                        { id: '16', label: 'Outro' },
-                        { id: '17', label: 'Nenhuma' },
+                        { id: '22', label: 'Angina Instável' },
+                        { id: '23', label: 'Insuficiencia Cardiaca' },
+                        { id: '24', label: 'Doença Valvula' },
+                        { id: '25', label: 'Doença Vascular' },
+                        { id: '26', label: 'AVC' },
+                        { id: '27', label: 'Outro' },
+                        { id: '28', label: 'Nenhuma' },
                       ],
                       placeholder: 'Selecione',
                     },
@@ -2531,16 +2523,16 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '18', label: 'Asma' },
-                        { id: '19', label: 'Bronquite' },
+                        { id: '29', label: 'Asma' },
+                        { id: '30', label: 'Bronquite' },
                         {
-                          id: '20',
+                          id: '31',
                           label: 'Doença Pulmonar Obstrutiva Crónica',
                         },
-                        { id: '21', label: 'Enfisema Pulmonar' },
-                        { id: '22', label: 'AVC' },
-                        { id: '23', label: 'Outro' },
-                        { id: '24', label: 'Nenhuma' },
+                        { id: '32', label: 'Enfisema Pulmonar' },
+                        { id: '33', label: 'AVC' },
+                        { id: '34', label: 'Outro' },
+                        { id: '35', label: 'Nenhuma' },
                       ],
                       placeholder: 'Selecione',
                     },
@@ -2556,12 +2548,12 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '18', label: 'Insuficiência Renal' },
-                        { id: '19', label: 'Pedra nos Rins' },
-                        { id: '20', label: 'Infecção Renal' },
-                        { id: '21', label: 'Cistos Renais' },
-                        { id: '23', label: 'Outro' },
-                        { id: '17', label: 'Nenhuma' },
+                        { id: '36', label: 'Insuficiência Renal' },
+                        { id: '37', label: 'Pedra nos Rins' },
+                        { id: '38', label: 'Infecção Renal' },
+                        { id: '39', label: 'Cistos Renais' },
+                        { id: '40', label: 'Outro' },
+                        { id: '41', label: 'Nenhuma' },
                       ],
                       placeholder: 'Selecione',
                     },
@@ -2577,13 +2569,13 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '18', label: 'Mama' },
-                        { id: '19', label: 'Colon-Rectal' },
-                        { id: '20', label: 'Próstata' },
-                        { id: '21', label: 'Pulmão' },
-                        { id: '23', label: 'Estômago' },
-                        { id: '23', label: 'Outro' },
-                        { id: '17', label: 'Nenhum' },
+                        { id: '42', label: 'Mama' },
+                        { id: '43', label: 'Colon-Rectal' },
+                        { id: '44', label: 'Próstata' },
+                        { id: '45', label: 'Pulmão' },
+                        { id: '46', label: 'Estômago' },
+                        { id: '47', label: 'Outro' },
+                        { id: '48', label: 'Nenhum' },
                       ],
                       placeholder: 'Selecione',
                     },
@@ -2601,17 +2593,17 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '1',
+                          id: '49',
                           label:
                             'Dor ou desconforto no peito, pescoço ou braços, resultantes de possível isquemia do miocárdio',
                         },
                         {
-                          id: '2',
+                          id: '50',
                           label:
                             'Dificuldades respiratórias em repouso ou em esforço leve',
                         },
                         {
-                          id: '3',
+                          id: '51',
                           label: 'Nenhum',
                         },
                       ],
@@ -2630,8 +2622,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '1', label: 'Colesterol' },
-                        { id: '2', label: 'Nenhum' },
+                        { id: '52', label: 'Colesterol' },
+                        { id: '53', label: 'Nenhum' },
                         // Observação Input??
                       ],
                       placeholder: 'Selecione',
@@ -2649,8 +2641,8 @@ export class DataService {
                     ],
                     prompt: {
                       options: [
-                        { id: '7', label: 'Sim' },
-                        { id: '8', label: 'Não' },
+                        { id: '54', label: 'Sim' },
+                        { id: '55', label: 'Não' },
                       ],
                     },
                   },
@@ -2671,11 +2663,11 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '1',
+                          id: '56',
                           label: 'Sim',
                         },
                         {
-                          id: '2',
+                          id: '57',
                           label: 'Não',
                         },
                       ],
@@ -2700,11 +2692,11 @@ export class DataService {
                     prompt: {
                       options: [
                         {
-                          id: '1',
+                          id: '58',
                           label: 'Sim',
                         },
                         {
-                          id: '2',
+                          id: '59',
                           label: 'Não',
                         },
                       ],
@@ -2717,7 +2709,7 @@ export class DataService {
           // step 3
           {
             number: '3',
-            title: 'ANÁLISE FÍSICA',
+            title: 'Análise Física',
             group: [
               {
                 title: '1. Medidas',
