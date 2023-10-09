@@ -1,0 +1,117 @@
+.accordion-group {
+  padding: 14px;
+  margin-right: 20px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+.tp-buttons {
+  display: flex;
+  justify-content: center;
+  .btn-start {
+    color: var(--ion-color-primary);
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 7px;
+  }
+  .btn-plan {
+    margin: 7px;
+    color: var(--ion-color-primary);
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 7px;
+  }
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.subtitle {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  margin: 10px;
+  margin-left: 24px;
+  margin-right: 26px;
+}
+
+.nav-buttons {
+  position: relative;
+  margin-top: 2%;
+  padding: 20px;
+  text-align: right;
+}
+
+.btn-before {
+  margin-right: 20px;
+}
+ion-accordion-group {
+  ion-accordion.accordion-collapsing ion-item[slot="header"],
+  ion-accordion.accordion-collapsed ion-item[slot="header"] {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-light);
+  }
+
+  ion-accordion.accordion-expanding ion-item[slot="header"],
+  ion-accordion.accordion-expanded ion-item[slot="header"] {
+    --background: var(--ion-color-primary-contrast);
+    --color: var(--ion-color-primary);
+  }
+  ion-accordion.accordion-expanded {
+    border: solid 1px var(--ion-color-primary);
+  }
+  ion-accordion {
+    .ion-accordion-toggle-icon {
+      font-size: 50px;
+      color: var(--ion-color-light);
+    }
+  }
+}
+
+.ion-padding {
+  .g-title {
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  .group {
+    margin-bottom: 24px;
+  }
+  .q-group {
+    margin-top: 12px;
+  }
+  .q-title {
+    align-content: center;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .accordion-group {
+    padding: 20px;
+    width: 98%;
+  }
+  .accordion {
+    margin: 4px;
+    flex-direction: column;
+  }
+  .tp-buttons {
+    padding-bottom: 6pc;
+  }
+  .nav-buttons {
+    padding-top: 32px;
+  }
+  .subtitle {
+    text-align: justify;
+  }
+  .ion-padding {
+    .group {
+      text-align: justify;
+    }
+  }
+}

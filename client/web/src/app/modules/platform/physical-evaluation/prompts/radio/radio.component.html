@@ -1,0 +1,22 @@
+<ion-radio-group
+  mode="md"
+  style="display: flex; flex-wrap: wrap"
+  class="radio-field"
+  [(ngModel)]="prompt.selectedOption"
+  (ionChange)="optionSelected($event)"
+>
+  <div class="question-answer" *ngFor="let option of prompt?.options">
+    <ion-item lines="none">
+      <ion-radio
+        class="radio"
+        mode="md"
+        value="end"
+        justify="end"
+        [value]="option.label"
+      ></ion-radio>
+      <ion-label style="font-size: 16px" position="fixed" class="ion-text-wrap"
+        >{{ option.label }}
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-radio-group>

@@ -1,0 +1,98 @@
+<ion-content
+  #content
+  type="md"
+  class="form ng-container"
+  *ngIf="pEData && pEData.length > 0"
+>
+  <div class="container">
+    <div
+      class="subcontainer"
+      *ngFor="let step of getCurrentStep(); let i = index"
+      [hidden]="currentStep !== i"
+    >
+      <app-pe-header
+        [itemList]="getCurrentStep()"
+        [selectionIndex]="currentStep"
+        [completedSteps]="completedSteps"
+        [isStepComplete]="isStepComplete.bind(this)"
+        [nextStepClicked]="nextStepClicked"
+        [isResume]="showPe"
+        [resumeSelected]="resumeSelected"
+      ></app-pe-header>
+      <ion-list *ngIf="!showPe">
+        <ng-container *ngFor="let group of step.group; let groupIndex = index">
+          <ion-item lines="full"></ion-item>
+          <ion-text class="group-title">
+            <h4>{{ group.title }}</h4>
+          </ion-text>
+          <div
+            class="question"
+            *ngFor="let prompt of group.prompts; let promptIndex = index"
+          >
+            <ion-label class="ion-text-wrap prompt-title"
+              >{{ prompt.title }}
+              <span *ngIf="isRequired(prompt)" class="required-asterisk"
+                >*</span
+              >
+            </ion-label>
+            <div class="answer-options" [ngSwitch]="prompt.type">
+              <app-radio
+                *ngSwitchCase="PromptType.Radio"
+                [prompt]="prompt.prompt"
+                (onOptionSelected)="
+                  handleOptionSelected($event, groupIndex, promptIndex)
+                "
+              ></app-radio>
+              <app-checkbox
+                *ngSwitchCase="PromptType.Checkbox"
+                [prompt]="prompt.prompt"
+                (onOptionsChange)="
+                  handleOptionSelected($event, groupIndex, promptIndex)
+                "
+              ></app-checkbox>
+              <app-select
+                *ngSwitchCase="PromptType.Select"
+                [prompt]="prompt.prompt"
+                (onOptionSelected)="
+                  handleOptionSelected($event, groupIndex, promptIndex)
+                "
+              ></app-select>
+              <app-text-area
+                *ngSwitchCase="PromptType.TextArea"
+                class="text-area-field"
+                [prompt]="prompt.prompt"
+              ></app-text-area>
+              <app-input
+                *ngSwitchCase="PromptType.Input"
+                class="input-field"
+                [prompt]="prompt.prompt"
+              ></app-input>
+            </div>
+          </div>
+        </ng-container>
+      </ion-list>
+    </div>
+  </div>
+  <app-resume
+    *ngIf="showPe"
+    [pEData]="pEData"
+    [itemList]="getCurrentStep()"
+  ></app-resume>
+  <div class="nav-buttons">
+    <ion-button
+      class="btn-before"
+      (click)="previousStep()"
+      [disabled]="currentStep === 0"
+      >ANTERIOR</ion-button
+    >
+    <ion-button
+      class="btn-next"
+      (click)="showPe ? finalize() : nextStep()"
+      [disabled]="
+        currentStep === getCurrentStep().length - 0 ||
+        !isRequiredAnswered(currentStep)
+      "
+      >{{ showPe ? "FINALIZAR" : "PRÓXIMO" }}</ion-button
+    >
+  </div>
+</ion-content>

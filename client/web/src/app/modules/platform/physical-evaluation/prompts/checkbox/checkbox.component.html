@@ -1,0 +1,20 @@
+<div class="checkbox-field" style="display: flex; flex-wrap: wrap">
+  <div class="question-answer" *ngFor="let option of prompt?.options">
+    <ion-item style="max-width: 162px" lines="none">
+      <ion-checkbox
+        mode="md"
+        justify="start"
+        labelPlacement="start"
+        [value]="option.label"
+        [(ngModel)]="option.selected"
+        (ionChange)="optionSelected(option)"
+      ></ion-checkbox>
+      <ion-label
+        position="fixed"
+        class="ion-text-wrap"
+        style="font-size: 16px"
+        >{{ option.label }}</ion-label
+      >
+    </ion-item>
+  </div>
+</div>

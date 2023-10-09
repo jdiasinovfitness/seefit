@@ -51,7 +51,7 @@
 }
 
 // Hidden for phones
-@media (max-width: 580px) {
+@media (max-width: 579px) {
   .hidden-big-device {
     display: none !important;
   }
@@ -60,4 +60,38 @@
 ion-note {
   color: var(--ion-color-danger-tint);
   font-weight: 300;
+}
+
+ion-radio {
+  margin-right: 5px;
+  --color: var(--ion-color-primary);
+}
+
+ion-checkbox {
+  --border-color: var(--ion-color-primary);
+  margin-right: 5px;
+}
+
+//Select alert style
+
+.sc-ion-alert-md-h,
+.sc-ion-alert-ios-h {
+  --max-width: 40%;
+}
+
+.alert-checkbox-label.sc-ion-alert-md,
+.alert-checkbox-label.sc-ion-alert-ios {
+  white-space: normal;
+}
+.alert-tappable.alert-checkbox {
+  height: auto;
+  contain: content;
+}
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+  white-space: normal;
+}
+.alert-tappable.alert-radio {
+  height: auto;
+  contain: content;
 }

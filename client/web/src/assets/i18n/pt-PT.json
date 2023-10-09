@@ -8,7 +8,9 @@
       "interaction": {
         "title": "Interações",
         "live-club": "Live Club",
-        "data-report": "Data Reports"
+        "data-report": "Data Reports",
+        "customer": "Cliente",
+        "pe": "Avaliação Física"
       },
       "health": {
         "title": "Saúde e Nutrição",
@@ -178,6 +180,8 @@
     },
     "data": {
       "birth-date": "DATA NASCIMENTO (IDADE):",
+      "email": "Email:",
+      "phone": "Phone:",
       "objective": "OBJECTIVO:",
       "access": "VISITAS (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
       "ag": "AULAS DE GRUPO (ÚLTIMOS 7 / 28 / 56 / ∞ DIAS):",
@@ -191,6 +195,7 @@
       "btn-discard": "Eliminar",
       "btn-submit": "Concluir",
       "customer-info": "INFO DE CLIENTE:",
+      "personal-info": "INFORMAÇÃO PESSOAL",
       "contract-info": "INFO DE CONTRACTO:",
       "additional-services": "SERVIÇOS ADICIONAIS:",
       "additional-info": "INFORMAÇÃO ADICIONAL:",
@@ -265,6 +270,22 @@
       "empty": {
         "title": "You have no notifications right now!",
         "subtitle": "We'll let you know when something arrives"
+      }
+    }
+  },
+  "customer": {
+    "tabs": {
+      "information": {
+        "title": "Informação"
+      },
+      "lifecycle": {
+        "title": "Ciclo de Vida"
+      },
+      "history": {
+        "title": "Histórico"
+      },
+      "metrics": {
+        "title": "Métricas"
       }
     }
   }

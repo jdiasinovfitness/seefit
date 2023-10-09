@@ -1,0 +1,41 @@
+<ion-label>{{ prompt.prompt }}</ion-label>
+<div>
+  <ng-container *ngIf="isMultiSelect(); else singleSelect">
+    <ion-select
+      mode="md"
+      label-placement="fixed"
+      color="primary"
+      placeholder="
+      {{ prompt.placeholder }}"
+      [value]="prompt.selectedOption"
+      (ionChange)="onValueChange($event)"
+      [multiple]="true"
+    >
+      <ion-select-option
+        style="white-space: pre-wrap"
+        *ngFor="let option of prompt.options"
+        [value]="option.label"
+      >
+        {{ option.label }}
+      </ion-select-option>
+    </ion-select>
+  </ng-container>
+  <ng-template #singleSelect>
+    <ion-select
+      mode="md"
+      label-placement="fixed"
+      color="primary"
+      placeholder="
+      {{ prompt.placeholder }}"
+      [(ngModel)]="prompt.selectedOption"
+      (ionChange)="onValueChange($event)"
+    >
+      <ion-select-option
+        *ngFor="let option of prompt.options"
+        [value]="option.label"
+      >
+        {{ option.label }}
+      </ion-select-option>
+    </ion-select>
+  </ng-template>
+</div>

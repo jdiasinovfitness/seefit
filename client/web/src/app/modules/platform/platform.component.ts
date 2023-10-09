@@ -50,7 +50,6 @@ export class PlatformComponent implements OnInit {
   }
 
   navigate(path: string) {
-    return; // FIXME: disabled on request of ticket #15683
     this.router.navigate([path]);
     this.menu.close();
   }

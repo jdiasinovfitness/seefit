@@ -8,7 +8,9 @@
       "interaction": {
         "title": "Interactions",
         "live-club": "Live Club",
-        "data-report": "Data Reports"
+        "data-report": "Data Reports",
+        "customer": "Customer",
+        "pe": "Physical Evaluation"
       },
       "health": {
         "title": "Health & Nutrition",
@@ -177,6 +179,8 @@
     },
     "data": {
       "birth-date": "BIRTHDATE (AGE):",
+      "email": "Email:",
+      "phone": "Phone:",
       "objective": "OBJECTIVE:",
       "access": "VISITS (7 / 28 / 56 / ∞ DAYS):",
       "ag": "GROUP CLASSES (7 / 28 / 56 / ∞ DAYS):",
@@ -190,6 +194,7 @@
       "btn-discard": "Discard",
       "btn-submit": "Submit",
       "customer-info": "CUSTOMER INFO:",
+      "personal-info": "PERSONAL INFO",
       "contract-info": "CONTRACT INFO:",
       "additional-services": "ADDITIONAL SERVICES:",
       "additional-info": "ADDITIONAL INFORMATION:",
@@ -265,6 +270,14 @@
         "title": "You have no notifications right now!",
         "subtitle": "We'll let you know when something arrives"
       }
+    }
+  },
+  "customer": {
+    "tabs": {
+      "information": "Information",
+      "lifecycle": "Lifecycle",
+      "history": "History",
+      "metrics": "Metrics"
     }
   }
 }

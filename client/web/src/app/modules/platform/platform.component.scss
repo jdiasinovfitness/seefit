@@ -113,6 +113,22 @@ ion-accordion {
   border-bottom: solid 0.25px var(--ion-color-primary);
 }
 
-// .ion-page {
-//   // margin-top: 26px;
-// }
+
+ion-radio {
+  width: -webkit-fill-available;
+
+  :host(label) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+}
+
+.radio-item {
+  --border-color: transparent;
+}
+
+ion-radio-group {
+  display: flex;
+  flex-direction: column;
+}
