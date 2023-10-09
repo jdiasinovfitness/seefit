@@ -35,6 +35,10 @@
   }
 }
 
+ion-menu::part(backdrop) {
+  background-color: transparent;
+}
+
 @media (prefers-color-scheme: light) {
   #inov-fitness-logo {
     background-image: url("../../../assets/images/logoBlack.png");
@@ -97,7 +101,7 @@ ion-footer {
 @media screen and (max-width: 580px) {
   ion-menu {
     // Makes side menu width 100% for sm devices (phones)
-    --min-width: 100%;
+    --min-width: 90%;
   }
 }
 
