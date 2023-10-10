@@ -298,6 +298,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female6.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -452,6 +499,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female3.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -606,6 +700,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male4.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -759,6 +900,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male1.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
         customerInfo: {
@@ -914,6 +1102,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male8.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
         customerInfo: {
@@ -1070,6 +1305,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male5.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -1224,6 +1506,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male6.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -1377,6 +1706,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female1.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -1530,6 +1906,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male1.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -1683,6 +2106,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female2.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           'Jana Miller had an increase of risk in 8pp in the last 14 days (currently at 26%). As this is generated by an algorithm, check the customer tab for deep-diving purposes',
         customerInfo: {
@@ -1838,6 +2308,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female8.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           'Jana Miller had an increase of risk in 8pp in the last 14 days (currently at 26%). As this is generated by an algorithm, check the customer tab for deep-diving purposes',
         customerInfo: {
@@ -1994,6 +2511,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female3.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -2148,6 +2712,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male4.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -2300,6 +2911,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female1.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
         customerInfo: {
@@ -2454,6 +3112,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female7.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
         customerInfo: {
@@ -2609,6 +3314,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male3.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -2762,6 +3514,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male6.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -2916,6 +3715,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female4.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -3070,6 +3916,53 @@ export class DataService {
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_female5.jpg',
         interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         customerInfo: {
           customerRecord: {
             title: 'interaction.data.customer-info',
@@ -3223,6 +4116,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male2.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           "Alan Rivers has completed the REP_2 program with 13 visits on 4 weeks. It's time to congratulate the member, pushing for even higher usage in the following weeks.",
         customerInfo: {
@@ -3378,6 +4318,53 @@ export class DataService {
           color: '#000000',
         },
         imageUrl: 'assets/temp_images/userPhotos/profile_male7.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
         interactionInfo:
           "Alan Rivers has completed the REP_2 program with 13 visits on 4 weeks. It's time to congratulate the member, pushing for even higher usage in the following weeks.",
         customerInfo: {
