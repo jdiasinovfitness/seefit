@@ -7,11 +7,11 @@ export interface ICIData {
   primary: ICILabel;
   secondary: ICILabel;
   imageUrl: string;
-  email: string;
-  phone: string;
+  email?: string;
+  phone?: string;
   customerInfo: ICIConsumerInfo;
   interactionInfo: string;
-  historyInfo: Array<ICIHistoryInfo>;
+  historyInfo?: Array<ICIHistoryInfo>;
   inClub: boolean;
   excludeAG: boolean;
 }
