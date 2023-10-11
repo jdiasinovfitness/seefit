@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  defaultLang: `pt-PT`,
+  defaultLang: `en-EN`,
   i18nURL: `/assets/i18n`, // TODO: replace it with the url to translations
   baseUrl: 'https://api.seeplus.inovretail.com',
   // baseUrl: '/middleware',
