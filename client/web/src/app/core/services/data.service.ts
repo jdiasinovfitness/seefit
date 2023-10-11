@@ -404,7 +404,11 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_5',
                 isDisabled: false,
               },
               {
@@ -412,11 +416,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
+                icon: 'ic-3_2',
                 isDisabled: false,
               },
             ],
@@ -605,19 +605,19 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
+                icon: 'ic-4_2',
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_1',
+                icon: 'ic-2_4',
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_1',
+                icon: 'ic-1_1',
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
+                icon: 'ic-3_2',
                 isDisabled: false,
               },
             ],
@@ -806,19 +806,19 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
+                icon: 'ic-1_4',
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_1',
+                icon: 'ic-4_1',
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_1',
+                icon: 'ic-5_1',
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
+                icon: 'ic-5_2',
                 isDisabled: false,
               },
             ],
@@ -1008,11 +1008,11 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
+                icon: 'ic-2_2',
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_1',
+                icon: 'ic-4_1',
                 isDisabled: false,
               },
               {
@@ -1222,7 +1222,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
+                icon: 'ic-3_2',
                 isDisabled: false,
               },
             ],
@@ -1411,11 +1411,7 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
+                icon: 'ic-1_4',
                 isDisabled: false,
               },
               {
@@ -1423,7 +1419,11 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
+                icon: 'ic-4_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_5',
                 isDisabled: false,
               },
             ],
@@ -2416,7 +2416,11 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
+                icon: 'ic-4_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_3',
                 isDisabled: false,
               },
               {
@@ -2424,11 +2428,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
+                icon: 'ic-3_5',
                 isDisabled: false,
               },
             ],
@@ -2617,7 +2617,11 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-1_2',
+                icon: 'ic-3_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_5',
                 isDisabled: false,
               },
               {
@@ -2625,11 +2629,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
+                icon: 'ic-4_2',
                 isDisabled: false,
               },
             ],
