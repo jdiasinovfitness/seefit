@@ -1,80 +1,75 @@
-<ion-item slot="header"
-          mode="ios"
-          button>
+<ion-item slot="header" mode="ios" button>
   <div class="icon-avatar">
     <div class="col-icons">
-      <ion-icon slot="icon-only"
-                *ngFor="let icon of item?.customerInfo?.additionalInfo?.icons | slice:0:3"
-                [name]="icon.icon"
-                color="medium">
-      </ion-icon>
+      <div
+        class="see-icon md {{ icon.icon }}"
+        [ngClass]="{ disabled: icon.isDisabled }"
+        *ngFor="
+          let icon of item?.customerInfo?.additionalInfo?.icons | slice : 0 : 3
+        "
+      ></div>
     </div>
 
     <!-- Avatar -->
     <ion-avatar>
-      <img alt="Silhouette of a person's head"
-           [src]="item.imageUrl" />
+      <img alt="Silhouette of a person's head" [src]="item.imageUrl" />
     </ion-avatar>
-
   </div>
 
   <div class="col-wrapper">
-
     <!-- Left Column -->
     <div class="column">
       <!-- Title -->
-      <ion-label [routerLink]="['/platform/customer/' + item.userId]"
-                 routerLinkActive="router-link-active">
+      <ion-label
+        [routerLink]="['/platform/customer/' + item.userId]"
+        routerLinkActive="router-link-active"
+      >
         <ion-text color="primary">
-          <b>{{item.title}}</b>
+          <b>{{ item.title }}</b>
         </ion-text>
       </ion-label>
       <!-- Risk -->
       <ion-label>
         <ion-text color="medium">
-          {{item.primary.label}}
+          {{ item.primary.label }}
         </ion-text>
         <ion-text color="secondary">
-          {{item.primary.value}}
+          {{ item.primary.value }}
         </ion-text>
       </ion-label>
       <!-- Usage -->
       <ion-label>
         <ion-text color="medium">
-          {{item.secondary.label}}
+          {{ item.secondary.label }}
         </ion-text>
         <ion-text color="secondary">
-          {{item.secondary.value}}
+          {{ item.secondary.value }}
         </ion-text>
       </ion-label>
     </div>
 
     <!-- Right Column -->
-    <div class="column right"
-         slot="end">
+    <div class="column right" slot="end">
       <!-- Date -->
       <ion-label class="right">
         <ion-text color="medium">
-          {{item.date}}
+          {{ item.date }}
         </ion-text>
       </ion-label>
       <!-- Status -->
       <div class="right">
         <ion-chip color="medium">
-          <ion-text color="primary"
-                    style="font-size: smaller;">
-            {{item.status}}
+          <ion-text color="primary" style="font-size: smaller">
+            {{ item.status }}
           </ion-text>
         </ion-chip>
       </div>
       <!-- Interaction Type -->
       <ion-label class="right">
         <ion-text color="secondary">
-          {{item.interaction.value}}
+          {{ item.interaction.value }}
         </ion-text>
       </ion-label>
-
     </div>
   </div>
-
 </ion-item>

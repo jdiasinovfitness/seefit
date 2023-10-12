@@ -1,84 +1,106 @@
 <ion-content class="ion-padding">
   <div class="login-wrapper">
-
     <!--Left section-->
     <div class="left-section">
-      <img class="pic"
-           src="../../../../assets/images/loginBackground.png" />
+      <img class="pic" src="assets/images/loginBackground.png" />
     </div>
 
     <!--Right section-->
     <div class="right-section">
-      <div class="logo"
-           id="inov-fitness-logo"></div>
-      <form [formGroup]="authForm"
-            class="">
-
+      <div class="logo" id="inov-fitness-logo"></div>
+      <form [formGroup]="authForm" class="">
         <!-- Email -->
-        <ion-item class="email-group"
-                  mode="md">
-          <ion-label position="floating">{{ 'auth.login.form.email.label' | translate }}</ion-label>
-          <ion-input type="email"
-                     formControlName="email"
-                     inputmode="email"
-                     placeholder="{{ 'auth.login.form.email.placeholder' | translate }}"></ion-input>
-          <ion-note slot="error"
-                    *ngIf="authForm.get('email')?.getError('required')
-                    && authForm.get('email')?.value === ''
-                    && authForm.get('email')?.touched">
-            {{ 'auth.login.form.email.errors.required' | translate }}
+        <ion-item class="email-group" mode="md">
+          <ion-label position="floating">{{
+            "auth.login.form.email.label" | translate
+          }}</ion-label>
+          <ion-input
+            type="email"
+            formControlName="email"
+            inputmode="email"
+            placeholder="{{ 'auth.login.form.email.placeholder' | translate }}"
+          ></ion-input>
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('email')?.getError('required') &&
+              authForm.get('email')?.value === '' &&
+              authForm.get('email')?.touched
+            "
+          >
+            {{ "auth.login.form.email.errors.required" | translate }}
           </ion-note>
-          <ion-note slot="error"
-                    *ngIf="authForm.get('email')?.getError('email')
-                    && authForm.get('email')?.value !== ''
-                    && authForm.get('email')?.touched">
-            {{ 'auth.login.form.email.errors.invalid' | translate }}
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('email')?.getError('email') &&
+              authForm.get('email')?.value !== '' &&
+              authForm.get('email')?.touched
+            "
+          >
+            {{ "auth.login.form.email.errors.invalid" | translate }}
           </ion-note>
         </ion-item>
 
         <!-- Password -->
-        <ion-item class="pwd-group"
-                  mode="md">
-          <ion-label position="floating">{{ 'auth.login.form.pwd.label' | translate }}</ion-label>
-          <ion-input [type]="passwordType"
-                     formControlName="password"
-                     placeholder="{{ 'auth.login.form.pwd.placeholder' | translate }}">
+        <ion-item class="pwd-group" mode="md">
+          <ion-label position="floating">{{
+            "auth.login.form.pwd.label" | translate
+          }}</ion-label>
+          <ion-input
+            [type]="passwordType"
+            formControlName="password"
+            placeholder="{{ 'auth.login.form.pwd.placeholder' | translate }}"
+          >
           </ion-input>
-          <ion-icon slot="end"
-                    [name]="passwordIcon"
-                    class="passwordIcon"
-                    (click)='hideShowPassword()'>
+          <ion-icon
+            slot="end"
+            [name]="passwordIcon"
+            class="passwordIcon"
+            (click)="hideShowPassword()"
+          >
           </ion-icon>
 
-          <ion-note slot="error"
-                    *ngIf="authForm.get('password')?.getError('required')
-                    && authForm.get('password')?.value === ''
-                    && authForm.get('password')?.touched">
-            {{ 'auth.login.form.pwd.errors.required' | translate }}
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('password')?.getError('required') &&
+              authForm.get('password')?.value === '' &&
+              authForm.get('password')?.touched
+            "
+          >
+            {{ "auth.login.form.pwd.errors.required" | translate }}
           </ion-note>
-          <ion-note slot="error"
-                    *ngIf="authForm.get('password')?.getError('wrongPassword')
-                    && authForm.get('password')?.value !== ''
-                    && authForm.get('password')?.touched">
-            {{ 'auth.login.form.pwd.errors.invalid' | translate }}
+          <ion-note
+            slot="error"
+            *ngIf="
+              authForm.get('password')?.getError('wrongPassword') &&
+              authForm.get('password')?.value !== '' &&
+              authForm.get('password')?.touched
+            "
+          >
+            {{ "auth.login.form.pwd.errors.invalid" | translate }}
           </ion-note>
         </ion-item>
 
         <div class="btn-row">
-          <ion-button fill="clear"
-                      [routerLink]="['/auth/reset-request']"
-                      routerDirection="forward">
-            {{ 'auth.login.register-link' | translate }}
+          <ion-button
+            fill="clear"
+            [routerLink]="['/auth/reset-request']"
+            routerDirection="forward"
+          >
+            {{ "auth.login.register-link" | translate }}
           </ion-button>
           <ng-container [ngSwitch]="currentPhase">
-            <ion-button expand="block"
-                        *ngIf="currentPhase !== phaseEnum.success"
-                        (click)="signIn()">
-              <ion-spinner *ngSwitchCase="phaseEnum.loading"
-                           name="dots">
+            <ion-button
+              expand="block"
+              *ngIf="currentPhase !== phaseEnum.success"
+              (click)="signIn()"
+            >
+              <ion-spinner *ngSwitchCase="phaseEnum.loading" name="dots">
               </ion-spinner>
               <label *ngSwitchDefault>
-                {{ 'auth.login.btn-submit' | translate }}
+                {{ "auth.login.btn-submit" | translate }}
               </label>
             </ion-button>
           </ng-container>

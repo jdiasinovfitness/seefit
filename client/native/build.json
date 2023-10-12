@@ -1,0 +1,27 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "./sign/android.keystore",
+      "storePassword": "Seeplus022012.",
+      "alias": "inovretail",
+      "password": "Seeplus022012.",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "./sign/android.keystore",
+      "storePassword": "Seeplus022012.",
+      "alias": "inovretail",
+      "password": "Seeplus022012.",
+      "keystoreType": ""
+    }
+  },
+  "ios": {
+    "release": {
+      "developmentTeam": "7FFY3KKSB8",
+      "codeSignIdentity": "Apple Distribution: Inovretail, Lda",
+      "packageType": "app-store",
+      "provisioningProfile": "97f8ce68-8a16-42ff-8786-acd8f44a9d78",
+      "buildFlag": ["-UseModernBuildSystem=1"]
+    }
+  }
+}

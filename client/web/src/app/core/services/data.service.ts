@@ -274,33 +274,30 @@ export class DataService {
   getDummyData(): Array<ICIData> {
     return [
       {
-        title: 'Sarah Holloway',
-        userId: 'N3929',
+        title: 'Abby Cannon',
+        userId: 'N#7187',
         status: ICI_STATUS.PLANNED,
         inClub: true,
-        excludeAG: false,
-        email: 'sholloway@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-03-20',
+        excludeAG: true,
+        date: '2023-04-13',
         interaction: {
           label: 'INTERACTION:',
-          value: 'NPS Detractor',
+          value: 'First Day',
           color: '#000000',
           isBold: true,
         },
         primary: {
           label: 'RISK:',
-          value: '19%',
-          color: '#cccc00',
+          value: 'n/a',
+          color: '#000000',
         },
         secondary: {
           label: 'USAGE:',
-          value: 'C+',
+          value: 'n/a',
           color: '#000000',
         },
-        imageUrl: 'assets/temp_images/userPhotos/profile_female1.jpg',
-        interactionInfo:
-          'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
+        imageUrl: 'assets/temp_images/userPhotos/profile_female6.jpg',
+        interactionInfo: '',
         historyInfo: [
           {
             id: '1',
@@ -341,993 +338,6 @@ export class DataService {
           {
             id: '1',
             date: '2023-07-02T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Medium Motivation',
-            description:
-              'A new training plan was provided, member seemed thrilled.',
-          },
-        ],
-        customerInfo: {
-          customerRecord: {
-            title: 'interaction.data.customer-info',
-            content: [
-              {
-                key: 'interaction.data.birth-date',
-                value: '1982-02-08 (41)',
-              },
-              {
-                key: 'interaction.data.objective',
-                value: 'Weight Loss',
-              },
-              {
-                key: 'interaction.data.access',
-                value: '2/7/19/97',
-              },
-              {
-                key: 'interaction.data.ag',
-                value: '0/0/1/3',
-              },
-              {
-                key: 'interaction.data.shareAG',
-                value: '3%',
-              },
-              {
-                key: 'interaction.data.last-af',
-                value: '2022-12-14 (97)',
-              },
-              {
-                key: 'interaction.data.visit-length',
-                value: '57 min',
-              },
-            ],
-          },
-          contractType: {
-            title: 'interaction.data.contract-info',
-            content: [
-              {
-                key: 'interaction.data.membership',
-                value: '2020-11-30 (28)',
-              },
-              {
-                key: 'interaction.data.subscription-type',
-                value: '29$ / Month',
-              },
-              {
-                key: 'interaction.data.schedule',
-                value: '07:00 - 18:00 | 20:30 - 22:00',
-              },
-              {
-                key: 'interaction.data.additional-services',
-                value: 'n/a',
-              },
-            ],
-          },
-          additionalInfo: {
-            title: 'interaction.data.additional-info',
-            icons: [
-              { icon: 'barbell', isDisabled: false },
-              { icon: 'scale', isDisabled: false },
-              { icon: 'heart', isDisabled: false },
-              { icon: 'medkit', isDisabled: true },
-              { icon: 'calendar', isDisabled: true },
-              { icon: 'logo-apple', isDisabled: false },
-            ],
-            lifeCycle: {
-              key: 'interaction.data.lifecycle',
-              progress: 0.75,
-              topLabels: [
-                {
-                  label: '0',
-                  position: 0,
-                },
-                {
-                  label: '45',
-                  position: 25,
-                },
-                {
-                  label: '90',
-                  position: 50,
-                },
-                {
-                  label: '135',
-                  position: 75,
-                },
-                {
-                  label: '180',
-                  position: 95,
-                },
-              ],
-              bottomLabels: [
-                {
-                  label: 'ONB1',
-                  position: 0,
-                },
-                {
-                  label: 'REP1',
-                  position: 25,
-                },
-                {
-                  label: 'REP2',
-                  position: 50,
-                },
-                {
-                  label: 'AUT1',
-                  position: 75,
-                },
-                {
-                  label: 'AUT2',
-                  position: 95,
-                },
-              ],
-            },
-          },
-          observation: '',
-        },
-      },
-      {
-        title: 'Edmund Jacobson',
-        userId: 'N8629',
-        status: ICI_STATUS.PLANNED,
-        inClub: true,
-        excludeAG: false,
-        email: 'ejacobson@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-03-21',
-        interaction: {
-          label: 'INTERACTION:',
-          value: 'First 2-weeks, 1 visit',
-          color: '#000000',
-          isBold: true,
-        },
-        primary: {
-          label: 'RISK:',
-          value: 'n/a',
-          color: '#000000',
-        },
-        secondary: {
-          label: 'USAGE:',
-          value: 'n/a',
-          color: '#000000',
-        },
-        imageUrl: 'assets/temp_images/userPhotos/profile_male1.jpg',
-        interactionInfo:
-          "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
-        historyInfo: [
-          {
-            id: '1',
-            date: '2023-04-20T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Low Motivation',
-            description:
-              'A new training plan to improve the customer motivation was provided.',
-          },
-          {
-            id: '2',
-            date: '2023-04-21T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.NPS,
-            highlight: true,
-            title: 'NPS Promoter',
-            description: 'No comment to display.',
-          },
-          {
-            id: '3',
-            date: '2023-04-28T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Cycle Not-Completed',
-            description:
-              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
-          },
-          {
-            id: '1',
-            date: '2023-04-29T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.SMS,
-            title: 'Inactive for 14 days',
-            description:
-              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
-          },
-          {
-            id: '1',
-            date: '2023-07-20T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Medium Motivation',
-            description:
-              'A new training plan was provided, member seemed thrilled.',
-          },
-        ],
-        customerInfo: {
-          customerRecord: {
-            title: 'interaction.data.customer-info',
-            content: [
-              {
-                key: 'interaction.data.birth-date',
-                value: '1996-07-01 (28)',
-              },
-              {
-                key: 'interaction.data.objective',
-                value: 'Toning',
-              },
-              {
-                key: 'interaction.data.access',
-                value: '0/1/1/1',
-              },
-              {
-                key: 'interaction.data.ag',
-                value: '0/0/0/0',
-              },
-              {
-                key: 'interaction.data.shareAG',
-                value: '0%',
-              },
-              {
-                key: 'interaction.data.last-af',
-                value: '2023-03-09 (12)',
-              },
-              {
-                key: 'interaction.data.visit-length',
-                value: '78 min',
-              },
-            ],
-          },
-          contractType: {
-            title: 'interaction.data.contract-info',
-            content: [
-              {
-                key: 'interaction.data.membership',
-                value: '2023-03-08 (1)',
-              },
-              {
-                key: 'interaction.data.subscription-type',
-                value: '39$ / Month',
-              },
-              {
-                key: 'interaction.data.schedule',
-                value: 'Unrestricted',
-              },
-              {
-                key: 'interaction.data.additional-services',
-                value: 'n/a',
-              },
-            ],
-          },
-          additionalInfo: {
-            title: 'interaction.data.additional-info',
-
-            icons: [
-              { icon: 'medkit', isDisabled: false },
-              { icon: 'calendar', isDisabled: false },
-              { icon: 'logo-apple', isDisabled: false },
-            ],
-            lifeCycle: {
-              key: 'interaction.data.lifecycle',
-              progress: 0,
-              topLabels: [
-                {
-                  label: '0',
-                  position: 0,
-                },
-                {
-                  label: '45',
-                  position: 25,
-                },
-                {
-                  label: '90',
-                  position: 50,
-                },
-                {
-                  label: '135',
-                  position: 75,
-                },
-                {
-                  label: '180',
-                  position: 95,
-                },
-              ],
-              bottomLabels: [
-                {
-                  label: 'ONB1',
-                  position: 0,
-                },
-                {
-                  label: 'REP1',
-                  position: 25,
-                },
-                {
-                  label: 'REP2',
-                  position: 50,
-                },
-                {
-                  label: 'AUT1',
-                  position: 75,
-                },
-                {
-                  label: 'AUT2',
-                  position: 95,
-                },
-              ],
-            },
-          },
-          observation: '',
-        },
-      },
-
-      {
-        title: 'Alan Rivers',
-        userId: 'N3203',
-        status: ICI_STATUS.COMPLETED,
-        inClub: true,
-        excludeAG: false,
-        email: 'arivers@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-03-21',
-        interaction: {
-          label: 'LAST INTERACTION:',
-          value: 'Cycle Completed',
-          color: '#000000',
-          isBold: false,
-        },
-        primary: {
-          label: 'RISK:',
-          value: '5%',
-          color: '#00FF00',
-        },
-        secondary: {
-          label: 'USAGE:',
-          value: 'A++',
-          color: '#000000',
-        },
-        imageUrl: 'assets/temp_images/userPhotos/profile_male2.jpg',
-        interactionInfo:
-          "Alan Rivers has completed the REP_2 program with 13 visits on 4 weeks. It's time to congratulate the member, pushing for even higher usage in the following weeks.",
-        historyInfo: [
-          {
-            id: '1',
-            date: '2023-04-20T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Low Motivation',
-            description:
-              'A new training plan to improve the customer motivation was provided.',
-          },
-          {
-            id: '2',
-            date: '2023-04-21T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.NPS,
-            highlight: true,
-            title: 'NPS Promoter',
-            description: 'No comment to display.',
-          },
-          {
-            id: '3',
-            date: '2023-04-28T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Cycle Not-Completed',
-            description:
-              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
-          },
-          {
-            id: '1',
-            date: '2023-04-29T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.SMS,
-            title: 'Inactive for 14 days',
-            description:
-              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
-          },
-          {
-            id: '1',
-            date: '2023-07-20T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Medium Motivation',
-            description:
-              'A new training plan was provided, member seemed thrilled.',
-          },
-        ],
-        customerInfo: {
-          customerRecord: {
-            title: 'interaction.data.customer-info',
-            content: [
-              {
-                key: 'interaction.data.birth-date',
-                value: '1966-10-22 (68)',
-              },
-              {
-                key: 'interaction.data.objective',
-                value: 'Improve well-being',
-              },
-              {
-                key: 'interaction.data.access',
-                value: '3/13/25/137',
-              },
-              {
-                key: 'interaction.data.ag',
-                value: '1/5/11/46',
-              },
-              {
-                key: 'interaction.data.shareAG',
-                value: '43%',
-              },
-              {
-                key: 'interaction.data.last-af',
-                value: '2023-01-17 (63)',
-              },
-              {
-                key: 'interaction.data.visit-length',
-                value: '62 min',
-              },
-            ],
-          },
-          contractType: {
-            title: 'interaction.data.contract-info',
-            content: [
-              {
-                key: 'interaction.data.membership',
-                value: '2021-01-30 (26)',
-              },
-              {
-                key: 'interaction.data.subscription-type',
-                value: '9.9$ / Week',
-              },
-              {
-                key: 'interaction.data.schedule',
-                value: 'Unrestricted',
-              },
-              {
-                key: 'interaction.data.additional-services',
-                value: '1 PT session / week',
-              },
-            ],
-          },
-          additionalInfo: {
-            title: 'interaction.data.additional-info',
-            icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: true },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: true },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: true },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: true },
-              { icon: 'ic-3_4', isDisabled: true },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: true },
-              { icon: 'ic-4_3', isDisabled: true },
-              { icon: 'ic-4_4', isDisabled: true },
-              { icon: 'ic-4_5', isDisabled: true },
-            ],
-            lifeCycle: {
-              key: 'interaction.data.lifecycle',
-              progress: 0.75,
-              topLabels: [
-                {
-                  label: '0',
-                  position: 0,
-                },
-                {
-                  label: '45',
-                  position: 25,
-                },
-                {
-                  label: '90',
-                  position: 50,
-                },
-                {
-                  label: '135',
-                  position: 75,
-                },
-                {
-                  label: '180',
-                  position: 95,
-                },
-              ],
-              bottomLabels: [
-                {
-                  label: 'ONB1',
-                  position: 0,
-                },
-                {
-                  label: 'REP1',
-                  position: 25,
-                },
-                {
-                  label: 'REP2',
-                  position: 50,
-                },
-                {
-                  label: 'AUT1',
-                  position: 75,
-                },
-                {
-                  label: 'AUT2',
-                  position: 95,
-                },
-              ],
-            },
-          },
-          observation: '',
-        },
-      },
-
-      {
-        title: 'Jana Miller',
-        userId: 'N3204',
-        status: ICI_STATUS.COMPLETED,
-        inClub: true,
-        excludeAG: false,
-        email: 'jmiller@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-03-16',
-        interaction: {
-          label: 'LAST INTERACTION:',
-          value: 'Churn Risk Increase',
-          color: '#000000',
-          isBold: !true,
-        },
-        primary: {
-          label: 'RISK:',
-          value: '26%',
-          color: '#FFA500',
-        },
-        secondary: {
-          label: 'USAGE:',
-          value: 'C-',
-          color: '#000000',
-        },
-        imageUrl: 'assets/temp_images/userPhotos/profile_female2.jpg',
-        interactionInfo:
-          'Jana Miller had an increase of risk in 8pp in the last 14 days (currently at 26%). As this is generated by an algorithm, check the customer tab for deep-diving purposes',
-        historyInfo: [
-          {
-            id: '1',
-            date: '2023-04-20T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Low Motivation',
-            description:
-              'A new training plan to improve the customer motivation was provided.',
-          },
-          {
-            id: '2',
-            date: '2023-04-21T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.NPS,
-            highlight: true,
-            title: 'NPS Promoter',
-            description: 'No comment to display.',
-          },
-          {
-            id: '3',
-            date: '2023-04-28T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Cycle Not-Completed',
-            description:
-              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
-          },
-          {
-            id: '1',
-            date: '2023-04-29T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.SMS,
-            title: 'Inactive for 14 days',
-            description:
-              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
-          },
-          {
-            id: '1',
-            date: '2023-07-20T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Medium Motivation',
-            description:
-              'A new training plan was provided, member seemed thrilled.',
-          },
-        ],
-        customerInfo: {
-          customerRecord: {
-            title: 'interaction.data.customer-info',
-            content: [
-              {
-                key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
-              },
-              {
-                key: 'interaction.data.objective',
-                value: 'Gain weight/muscle',
-              },
-              {
-                key: 'interaction.data.access',
-                value: '0/4/10/88',
-              },
-              {
-                key: 'interaction.data.ag',
-                value: '0/0/0/13',
-              },
-              {
-                key: 'interaction.data.shareAG',
-                value: '15%',
-              },
-              {
-                key: 'interaction.data.last-af',
-                value: 'n/a',
-              },
-              {
-                key: 'interaction.data.visit-length',
-                value: '53 min',
-              },
-            ],
-          },
-          contractType: {
-            title: 'interaction.data.contract-info',
-            content: [
-              {
-                key: 'interaction.data.membership',
-                value: '2021-03-30 (24)',
-              },
-              {
-                key: 'interaction.data.subscription-type',
-                value: '24$ / Month',
-              },
-              {
-                key: 'interaction.data.schedule',
-                value: '07:00 - 17:00',
-              },
-              {
-                key: 'interaction.data.additional-services',
-                value: 'n/a',
-              },
-            ],
-          },
-          additionalInfo: {
-            title: 'interaction.data.additional-info',
-            icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: !false },
-              { icon: 'ic-1_3', isDisabled: false },
-              { icon: 'ic-1_4', isDisabled: !false },
-              { icon: 'ic-1_5', isDisabled: false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: !false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
-            ],
-            lifeCycle: {
-              key: 'interaction.data.lifecycle',
-              progress: 0.75,
-              topLabels: [
-                {
-                  label: '0',
-                  position: 0,
-                },
-                {
-                  label: '45',
-                  position: 25,
-                },
-                {
-                  label: '90',
-                  position: 50,
-                },
-                {
-                  label: '135',
-                  position: 75,
-                },
-                {
-                  label: '180',
-                  position: 95,
-                },
-              ],
-              bottomLabels: [
-                {
-                  label: 'ONB1',
-                  position: 0,
-                },
-                {
-                  label: 'REP1',
-                  position: 25,
-                },
-                {
-                  label: 'REP2',
-                  position: 50,
-                },
-                {
-                  label: 'AUT1',
-                  position: 75,
-                },
-                {
-                  label: 'AUT2',
-                  position: 95,
-                },
-              ],
-            },
-          },
-          observation: '',
-        },
-      },
-
-      {
-        title: 'Rupert Horton',
-        userId: 'N2390',
-        status: ICI_STATUS.COMPLETED,
-        inClub: true,
-        excludeAG: false,
-        email: 'rhorton@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-02-04',
-        interaction: {
-          label: 'LAST INTERACTION:',
-          value: 'Usage A -> B',
-          color: '#000000',
-          isBold: !true,
-        },
-        primary: {
-          label: 'RISK:',
-          value: '11%',
-          color: '#000000',
-        },
-        secondary: {
-          label: 'USAGE:',
-          value: 'B',
-          color: '#000000',
-        },
-        imageUrl: 'assets/temp_images/userPhotos/profile_male3.jpg',
-        interactionInfo: '',
-        historyInfo: [
-          {
-            id: '1',
-            date: '2023-04-20T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Low Motivation',
-            description:
-              'A new training plan to improve the customer motivation was provided.',
-          },
-          {
-            id: '2',
-            date: '2023-04-21T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            highlight: true,
-            type: ICI_TYPE.NPS,
-            title: 'NPS Promoter',
-            description: 'No comment to display.',
-          },
-          {
-            id: '3',
-            date: '2023-04-28T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Cycle Not-Completed',
-            description:
-              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
-          },
-          {
-            id: '1',
-            date: '2023-04-29T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.SMS,
-            title: 'Inactive for 14 days',
-            description:
-              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
-          },
-          {
-            id: '1',
-            date: '2023-07-20T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Medium Motivation',
-            description:
-              'A new training plan was provided, member seemed thrilled.',
-          },
-        ],
-        customerInfo: {
-          customerRecord: {
-            title: 'interaction.data.customer-info',
-            content: [
-              {
-                key: 'interaction.data.birth-date',
-                value: '1982-06-29 (40)',
-              },
-              {
-                key: 'interaction.data.objective',
-                value: 'Improve well-being',
-              },
-              {
-                key: 'interaction.data.access',
-                value: '1/10/24/203',
-              },
-              {
-                key: 'interaction.data.ag',
-                value: '0/0/0/0',
-              },
-              {
-                key: 'interaction.data.shareAG',
-                value: '0%',
-              },
-              {
-                key: 'interaction.data.last-af',
-                value: '2022-10-03 (169)',
-              },
-              {
-                key: 'interaction.data.visit-length',
-                value: '58 min',
-              },
-            ],
-          },
-          contractType: {
-            title: 'interaction.data.contract-info',
-            content: [
-              {
-                key: 'interaction.data.membership',
-                value: '2021-07-08 (20)',
-              },
-              {
-                key: 'interaction.data.subscription-type',
-                value: '39$ / Month',
-              },
-              {
-                key: 'interaction.data.schedule',
-                value: 'Unrestricted',
-              },
-              {
-                key: 'interaction.data.additional-services',
-                value: 'n/a',
-              },
-            ],
-          },
-          additionalInfo: {
-            title: 'interaction.data.additional-info',
-            icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: !false },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: !false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
-            ],
-            lifeCycle: {
-              key: 'interaction.data.lifecycle',
-              progress: 0.75,
-              topLabels: [
-                {
-                  label: '0',
-                  position: 0,
-                },
-                {
-                  label: '45',
-                  position: 25,
-                },
-                {
-                  label: '90',
-                  position: 50,
-                },
-                {
-                  label: '135',
-                  position: 75,
-                },
-                {
-                  label: '180',
-                  position: 95,
-                },
-              ],
-              bottomLabels: [
-                {
-                  label: 'ONB1',
-                  position: 0,
-                },
-                {
-                  label: 'REP1',
-                  position: 25,
-                },
-                {
-                  label: 'REP2',
-                  position: 50,
-                },
-                {
-                  label: 'AUT1',
-                  position: 75,
-                },
-                {
-                  label: 'AUT2',
-                  position: 95,
-                },
-              ],
-            },
-          },
-          observation: '',
-        },
-      },
-
-      {
-        title: 'Abby Cannon',
-        userId: 'N7187',
-        status: ICI_STATUS.PLANNED,
-        inClub: true,
-        excludeAG: true,
-        email: 'acannon@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-03-21',
-        interaction: {
-          label: 'INTERACTION:',
-          value: 'First Day',
-          color: '#000000',
-          isBold: true,
-        },
-        primary: {
-          label: 'RISK:',
-          value: 'n/a',
-          color: '#000000',
-        },
-        secondary: {
-          label: 'USAGE:',
-          value: 'n/a',
-          color: '#000000',
-        },
-        imageUrl: 'assets/temp_images/userPhotos/profile_female3.jpg',
-        interactionInfo: '',
-        historyInfo: [
-          {
-            id: '1',
-            date: '2023-04-20T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Low Motivation',
-            description:
-              'A new training plan to improve the customer motivation was provided.',
-          },
-          {
-            id: '2',
-            date: '2023-04-21T14:31:33.456Z',
-            status: ICI_STATUS.COMPLETED,
-            type: ICI_TYPE.NPS,
-            highlight: true,
-            title: 'NPS Promoter',
-            description: 'No comment to display.',
-          },
-          {
-            id: '3',
-            date: '2023-04-28T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.IN_CLUB,
-            title: 'Cycle Not-Completed',
-            description:
-              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
-          },
-          {
-            id: '1',
-            date: '2023-04-29T14:31:33.456Z',
-            status: ICI_STATUS.PLANNED,
-            type: ICI_TYPE.SMS,
-            title: 'Inactive for 14 days',
-            description:
-              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
-          },
-          {
-            id: '1',
-            date: '2023-07-20T14:31:33.456Z',
             status: ICI_STATUS.PLANNED,
             type: ICI_TYPE.IN_CLUB,
             title: 'Medium Motivation',
@@ -1393,21 +403,22 @@ export class DataService {
           additionalInfo: {
             title: 'interaction.data.additional-info',
             icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: !false },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: !false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_5',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: false,
+              },
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
@@ -1463,31 +474,30 @@ export class DataService {
       },
 
       {
-        title: 'Alice Williamson',
-        userId: 'N4812',
-        status: ICI_STATUS.COMPLETED,
-        inClub: false,
+        title: 'Laura Ashley',
+        userId: 'N#4565',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
         excludeAG: false,
-        email: 'awilliamson@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-03-15',
+
+        date: '2023-04-13',
         interaction: {
-          label: 'LAST INTERACTION:',
-          value: 'Low Motivation',
+          label: 'INTERACTION:',
+          value: 'Second Visit',
           color: '#000000',
-          isBold: !true,
+          isBold: true,
         },
         primary: {
           label: 'RISK:',
-          value: '21%',
-          color: '#FFA500',
+          value: 'n/a',
+          color: '#000000',
         },
         secondary: {
           label: 'USAGE:',
-          value: 'C',
+          value: 'n/a',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/temp_images/userPhotos/profile_female3.jpg',
         interactionInfo: '',
         historyInfo: [
           {
@@ -1528,7 +538,7 @@ export class DataService {
           },
           {
             id: '1',
-            date: '2023-07-20T14:31:33.456Z',
+            date: '2023-07-02T14:31:33.456Z',
             status: ICI_STATUS.PLANNED,
             type: ICI_TYPE.IN_CLUB,
             title: 'Medium Motivation',
@@ -1542,31 +552,31 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1971-11-02 (51)',
+                value: '2000-04-22 (22)',
               },
               {
                 key: 'interaction.data.objective',
-                value: 'Weight Loss',
+                value: 'Gain weight/muscle',
               },
               {
                 key: 'interaction.data.access',
-                value: '1/5/9/85',
+                value: '0/0/0/0',
               },
               {
                 key: 'interaction.data.ag',
-                value: '0/0/0/1',
+                value: '0/0/0/0',
               },
               {
                 key: 'interaction.data.shareAG',
-                value: '1%',
+                value: '0%',
               },
               {
                 key: 'interaction.data.last-af',
-                value: '2022-08-09 (201)',
+                value: 'n/a',
               },
               {
                 key: 'interaction.data.visit-length',
-                value: '82 min',
+                value: 'n/a',
               },
             ],
           },
@@ -1575,11 +585,11 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.membership',
-                value: '2018-09-23 (54)',
+                value: '2023-03-17 (1)',
               },
               {
                 key: 'interaction.data.subscription-type',
-                value: '22.5$ / Month',
+                value: '9.9$ / Week',
               },
               {
                 key: 'interaction.data.schedule',
@@ -1587,32 +597,638 @@ export class DataService {
               },
               {
                 key: 'interaction.data.additional-services',
-                value: 'Nutrition Plan',
+                value: 'n/a',
               },
             ],
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
             icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: !false },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: !false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
+              {
+                icon: 'ic-4_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_4',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: false,
+              },
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 0.75,
+              progress: 0,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Ismail Sykes',
+        userId: 'N#7705',
+        status: ICI_STATUS.COMPLETED,
+        inClub: false,
+        excludeAG: true,
+
+        date: '2023-04-02',
+        interaction: {
+          label: 'INTERACTION:',
+          value: 'First Week - +3 visits',
+          color: '#000000',
+          isBold: true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: 'n/a',
+          color: '#000000',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'n/a',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male4.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '2000-04-22 (22)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Gain weight/muscle',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '0%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: 'n/a',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: 'n/a',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2023-03-17 (1)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '9.9$ / Week',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_4',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-5_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-5_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 0,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Edmund Jacobson',
+        userId: 'N#8629',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2024-04-13',
+        interaction: {
+          label: 'INTERACTION:',
+          value: 'First 2-weeks, 1 visit',
+          color: '#000000',
+          isBold: true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: 'n/a',
+          color: '#000000',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'n/a',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male1.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1996-07-01 (28)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Toning',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/1/1/1',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '0%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2023-03-09 (12)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '78 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2023-03-08 (1)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '39$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 0,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Elle Lawrence',
+        userId: 'N#4929',
+        status: ICI_STATUS.PLANNED,
+        inClub: false,
+        excludeAG: true,
+
+        date: '2024-04-13',
+        interaction: {
+          label: 'INTERACTION:',
+          value: 'First 4-weeks, under 2x week',
+          color: '#000000',
+          isBold: true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: 'n/a',
+          color: '#000000',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'n/a',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male8.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          "Edmund Jacobson started his membership on 2023-03-09, but only visit one time in the first 2 weeks. It's important to sensibilize the customer regarding the importance of the onboarding, namely by the definition of a weekly schedule of workouts (at least twice a week)",
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1996-07-01 (28)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Toning',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/1/1/1',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '0%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2023-03-09 (12)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '78 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2023-03-08 (1)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '39$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 0,
               topLabels: [
                 {
                   label: '0',
@@ -1665,13 +1281,12 @@ export class DataService {
 
       {
         title: 'Tim Shepard',
-        userId: 'N9027',
-        status: ICI_STATUS.COMPLETED,
-        inClub: false,
-        excludeAG: false,
-        email: 'tshepard@gmail.com',
-        phone: '+351 912 345 678',
-        date: '2023-02-23',
+        userId: 'N#9027',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2024-04-13',
         interaction: {
           label: 'LAST INTERACTION:',
           value: 'Sleeper User',
@@ -1685,10 +1300,10 @@ export class DataService {
         },
         secondary: {
           label: 'USAGE:',
-          value: 'D',
+          value: 'Low',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/temp_images/userPhotos/profile_male5.jpg',
         interactionInfo: '',
         historyInfo: [
           {
@@ -1704,8 +1319,8 @@ export class DataService {
             id: '2',
             date: '2023-04-21T14:31:33.456Z',
             status: ICI_STATUS.COMPLETED,
-            highlight: true,
             type: ICI_TYPE.NPS,
+            highlight: true,
             title: 'NPS Promoter',
             description: 'No comment to display.',
           },
@@ -1729,7 +1344,7 @@ export class DataService {
           },
           {
             id: '1',
-            date: '2023-07-20T14:31:33.456Z',
+            date: '2023-07-02T14:31:33.456Z',
             status: ICI_STATUS.PLANNED,
             type: ICI_TYPE.IN_CLUB,
             title: 'Medium Motivation',
@@ -1795,25 +1410,26 @@ export class DataService {
           additionalInfo: {
             title: 'interaction.data.additional-info',
             icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: !false },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: !false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
+              {
+                icon: 'ic-1_4',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_5',
+                isDisabled: false,
+              },
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 0.75,
+              progress: 75,
               topLabels: [
                 {
                   label: '0',
@@ -1865,31 +1481,30 @@ export class DataService {
       },
 
       {
-        title: 'Helena Saunders',
-        userId: 'N5653',
+        title: 'Josh Wolf',
+        userId: 'N#3701',
         status: ICI_STATUS.COMPLETED,
-        inClub: false,
-        excludeAG: false,
-        email: 'hsaunders@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2023-01-19',
+        inClub: true,
+        excludeAG: true,
+
+        date: '2023-09-29',
         interaction: {
           label: 'LAST INTERACTION:',
-          value: 'Cycle 75% Under',
+          value: 'New training plan',
           color: '#000000',
           isBold: !true,
         },
         primary: {
           label: 'RISK:',
-          value: '9%',
-          color: '#00FF00',
+          value: '33%',
+          color: '#FF0000',
         },
         secondary: {
           label: 'USAGE:',
-          value: 'B-',
+          value: 'Asleep',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/temp_images/userPhotos/profile_male6.jpg',
         interactionInfo: '',
         historyInfo: [
           {
@@ -1930,7 +1545,7 @@ export class DataService {
           },
           {
             id: '1',
-            date: '2023-07-20T14:31:33.456Z',
+            date: '2023-07-02T14:31:33.456Z',
             status: ICI_STATUS.PLANNED,
             type: ICI_TYPE.IN_CLUB,
             title: 'Medium Motivation',
@@ -1944,31 +1559,31 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1981-12-08 (41)',
+                value: '1990-08-05 (32)',
               },
               {
                 key: 'interaction.data.objective',
-                value: 'Improve well-being',
+                value: 'Toning',
               },
               {
                 key: 'interaction.data.access',
-                value: '0/9/19/118',
+                value: '1/1/1/9',
               },
               {
                 key: 'interaction.data.ag',
-                value: '0/9/19/116',
+                value: '0/0/0/0',
               },
               {
                 key: 'interaction.data.shareAG',
-                value: '99%',
+                value: '0%',
               },
               {
                 key: 'interaction.data.last-af',
-                value: '2023-01-29 (51)',
+                value: 'n/a',
               },
               {
                 key: 'interaction.data.visit-length',
-                value: '46 min',
+                value: '61 min',
               },
             ],
           },
@@ -1977,15 +1592,15 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.membership',
-                value: '2022-03-08 (12)',
+                value: '2022-09-01 (7)',
               },
               {
                 key: 'interaction.data.subscription-type',
-                value: '29$ / Month',
+                value: '39$ / Month',
               },
               {
                 key: 'interaction.data.schedule',
-                value: '07:00 - 18:00 | 20:30 - 22:00',
+                value: 'Unrestricted',
               },
               {
                 key: 'interaction.data.additional-services',
@@ -1996,25 +1611,26 @@ export class DataService {
           additionalInfo: {
             title: 'interaction.data.additional-info',
             icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: !false },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: !false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 0.75,
+              progress: 75,
               topLabels: [
                 {
                   label: '0',
@@ -2066,17 +1682,15 @@ export class DataService {
       },
 
       {
-        title: 'Walter Wiggins',
-        userId: 'N1903',
+        title: 'Lori Cabrera',
+        userId: 'N#4008',
         status: ICI_STATUS.COMPLETED,
-        inClub: false,
-        excludeAG: false,
-        email: 'w2iggins@gmail.com',
-        phone: ' +351 912 345 678',
-        date: '2022-10-19',
+        inClub: true,
+        excludeAG: true,
+        date: '2023-04-03',
         interaction: {
           label: 'LAST INTERACTION:',
-          value: 'Medium Churn Risk',
+          value: 'Email - PT Offer',
           color: '#000000',
           isBold: !true,
         },
@@ -2087,10 +1701,10 @@ export class DataService {
         },
         secondary: {
           label: 'USAGE:',
-          value: 'E',
+          value: 'Asleep',
           color: '#000000',
         },
-        imageUrl: 'assets/icons/no-avatar.svg',
+        imageUrl: 'assets/temp_images/userPhotos/profile_female1.jpg',
         interactionInfo: '',
         historyInfo: [
           {
@@ -2131,7 +1745,7 @@ export class DataService {
           },
           {
             id: '1',
-            date: '2023-07-20T14:31:33.456Z',
+            date: '2023-07-02T14:31:33.456Z',
             status: ICI_STATUS.PLANNED,
             type: ICI_TYPE.IN_CLUB,
             title: 'Medium Motivation',
@@ -2197,25 +1811,2640 @@ export class DataService {
           additionalInfo: {
             title: 'interaction.data.additional-info',
             icons: [
-              { icon: 'ic-1_1', isDisabled: false },
-              { icon: 'ic-1_2', isDisabled: false },
-              { icon: 'ic-1_3', isDisabled: !false },
-              { icon: 'ic-1_4', isDisabled: false },
-              { icon: 'ic-1_5', isDisabled: !false },
-              { icon: 'ic-2_1', isDisabled: false },
-              { icon: 'ic-3_1', isDisabled: false },
-              { icon: 'ic-3_2', isDisabled: false },
-              { icon: 'ic-3_3', isDisabled: false },
-              { icon: 'ic-3_4', isDisabled: false },
-              { icon: 'ic-4_1', isDisabled: false },
-              { icon: 'ic-4_2', isDisabled: false },
-              { icon: 'ic-4_3', isDisabled: false },
-              { icon: 'ic-4_4', isDisabled: false },
-              { icon: 'ic-4_5', isDisabled: false },
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
-              progress: 0.75,
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Walter Wiggins',
+        userId: 'N#1903',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+        date: '2023-04-13',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Medium Churn Risk',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '28%',
+          color: '#FFA500',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Low',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male1.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1960-04-22 (62)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/0/2/7',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '0%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: 'n/a',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '69 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-01-30 (26)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '24$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 17:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Jana Miller',
+        userId: 'N#3204',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2023-04-13',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Churn Risk Increase',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '26%',
+          color: '#FFA500',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Moderate',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female2.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          'Jana Miller had an increase of risk in 8pp in the last 14 days (currently at 26%). As this is generated by an algorithm, check the customer tab for deep-diving purposes',
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1990-08-05 (32)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Gain weight/muscle',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/4/10/88',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/13',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '15%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: 'n/a',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '53 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-03-30 (24)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '24$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 17:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Norma Rollins',
+        userId: 'N#1394',
+        status: ICI_STATUS.COMPLETED,
+        inClub: true,
+        excludeAG: false,
+
+        date: '2023-04-07',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'SMS - New Group Class',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '25%',
+          color: '#FFA500',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Moderate',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female8.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          'Jana Miller had an increase of risk in 8pp in the last 14 days (currently at 26%). As this is generated by an algorithm, check the customer tab for deep-diving purposes',
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1990-08-05 (32)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Gain weight/muscle',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/4/10/88',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/13',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '15%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: 'n/a',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '53 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-03-30 (24)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '24$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 17:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-4_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_5',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Alice Williamson',
+        userId: 'N#4812',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2023-04-13',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Low Motivation',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '21%',
+          color: '#FFA500',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Moderate',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female3.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1971-11-02 (51)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Weight Loss',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '1/5/9/85',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/1',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '1%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2022-08-09 (201)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '82 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2018-09-23 (54)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '22.5$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'Nutrition Plan',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-3_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_5',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Phillip Ponce',
+        userId: 'N#674',
+        status: ICI_STATUS.COMPLETED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2023-03-15',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Planned Next Visit',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '21%',
+          color: '#FFA500',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Moderate',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male4.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1971-11-02 (51)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Weight Loss',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '1/5/9/85',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/1',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '1%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2022-08-09 (201)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '82 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2018-09-23 (54)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '22.5$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'Nutrition Plan',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Sarah Holloway',
+        userId: 'N#3929',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+        date: '2023-04-13',
+        interaction: {
+          label: 'INTERACTION:',
+          value: 'NPS Detractor',
+          color: '#000000',
+          isBold: true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '19%',
+          color: '#cccc00',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female1.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1982-02-08 (41)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Weight Loss',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '2/7/19/97',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/1/3',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '3%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2022-12-14 (97)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '57 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2020-11-30 (28)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '29$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 18:00 | 20:30 - 22:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Marion Brewer',
+        userId: 'N#914',
+        status: ICI_STATUS.COMPLETED,
+        inClub: true,
+        excludeAG: true,
+        date: '2023-04-05',
+        interaction: {
+          label: 'INTERACTION:',
+          value: 'Monthly Challenge',
+          color: '#000000',
+          isBold: true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '17%',
+          color: '#cccc00',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Moderate',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female7.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          'Sarah Holloway grade our service 5 (1-10 scale), which puts her as a detractor. Related to gym floor satisfaction, the evaluation is 8.',
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1982-02-08 (41)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Weight Loss',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '2/7/19/97',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/1/3',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '3%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2022-12-14 (97)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '57 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2020-11-30 (28)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '29$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 18:00 | 20:30 - 22:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Rupert Horton',
+        userId: 'N#2390',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+        date: '2023-04-13',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Usage Very Active -> Active',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '11%',
+          color: '#000000',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male3.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1982-06-29 (40)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '1/10/24/203',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '0%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2022-10-03 (169)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '58 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-07-08 (20)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '39$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Rebecca Mcleod',
+        userId: 'N#994',
+        status: ICI_STATUS.COMPLETED,
+        inClub: true,
+        excludeAG: true,
+        date: '2023-04-08',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Email - 100 visits ',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '11%',
+          color: '#000000',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male6.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1982-06-29 (40)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '1/10/24/203',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/0/0/0',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '0%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2022-10-03 (169)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '58 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-07-08 (20)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '39$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Helena Saunders',
+        userId: 'N#5653',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2023-04-13',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Cycle 75% Under',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '9%',
+          color: '#00FF00',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female4.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1981-12-08 (41)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/9/19/118',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/9/19/116',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '99%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2023-01-29 (51)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '46 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2022-03-08 (12)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '29$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 18:00 | 20:30 - 22:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Sanaa Tyler',
+        userId: 'N#5653',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: false,
+
+        date: '2023-02-28',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'NPS Promoter',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '9%',
+          color: '#00FF00',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_female5.jpg',
+        interactionInfo: '',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1981-12-08 (41)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '0/9/19/118',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '0/9/19/116',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '99%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2023-01-29 (51)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '46 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2022-03-08 (12)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '29$ / Month',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: '07:00 - 18:00 | 20:30 - 22:00',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: 'n/a',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Alan Rivers',
+        userId: 'N#3203',
+        status: ICI_STATUS.PLANNED,
+        inClub: true,
+        excludeAG: true,
+
+        date: '2023-04-13',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'Cycle Completed',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '5%',
+          color: '#00FF00',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Very Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male2.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          "Alan Rivers has completed the REP_2 program with 13 visits on 4 weeks. It's time to congratulate the member, pushing for even higher usage in the following weeks.",
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1966-10-22 (68)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '3/13/25/137',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '1/5/11/46',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '43%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2023-01-17 (63)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '62 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-01-30 (26)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '9.9$ / Week',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: '1 PT session / week',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
+              topLabels: [
+                {
+                  label: '0',
+                  position: 0,
+                },
+                {
+                  label: '45',
+                  position: 25,
+                },
+                {
+                  label: '90',
+                  position: 50,
+                },
+                {
+                  label: '135',
+                  position: 75,
+                },
+                {
+                  label: '180',
+                  position: 95,
+                },
+              ],
+              bottomLabels: [
+                {
+                  label: 'ONB1',
+                  position: 0,
+                },
+                {
+                  label: 'REP1',
+                  position: 25,
+                },
+                {
+                  label: 'REP2',
+                  position: 50,
+                },
+                {
+                  label: 'AUT1',
+                  position: 75,
+                },
+                {
+                  label: 'AUT2',
+                  position: 95,
+                },
+              ],
+            },
+          },
+          observation: '',
+        },
+      },
+
+      {
+        title: 'Alan Rivers',
+        userId: 'N#3203',
+        status: ICI_STATUS.COMPLETED,
+        inClub: true,
+        excludeAG: false,
+
+        date: '2023-04-05',
+        interaction: {
+          label: 'LAST INTERACTION:',
+          value: 'High Motivation',
+          color: '#000000',
+          isBold: !true,
+        },
+        primary: {
+          label: 'RISK:',
+          value: '7%',
+          color: '#00FF00',
+        },
+        secondary: {
+          label: 'USAGE:',
+          value: 'Very Active',
+          color: '#000000',
+        },
+        imageUrl: 'assets/temp_images/userPhotos/profile_male7.jpg',
+        historyInfo: [
+          {
+            id: '1',
+            date: '2023-04-20T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Low Motivation',
+            description:
+              'A new training plan to improve the customer motivation was provided.',
+          },
+          {
+            id: '2',
+            date: '2023-04-21T14:31:33.456Z',
+            status: ICI_STATUS.COMPLETED,
+            type: ICI_TYPE.NPS,
+            highlight: true,
+            title: 'NPS Promoter',
+            description: 'No comment to display.',
+          },
+          {
+            id: '3',
+            date: '2023-04-28T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Cycle Not-Completed',
+            description:
+              'The customer was on vacation for 2 weeks in October; should maintain consistency of usage from now on.',
+          },
+          {
+            id: '1',
+            date: '2023-04-29T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.SMS,
+            title: 'Inactive for 14 days',
+            description:
+              "Hello! We noticed you haven't come to train in a few days. We know there are difficult weeks but it's essential to keep going! Don't waste your progress! We count on you!",
+          },
+          {
+            id: '1',
+            date: '2023-07-02T14:31:33.456Z',
+            status: ICI_STATUS.PLANNED,
+            type: ICI_TYPE.IN_CLUB,
+            title: 'Medium Motivation',
+            description:
+              'A new training plan was provided, member seemed thrilled.',
+          },
+        ],
+        interactionInfo:
+          "Alan Rivers has completed the REP_2 program with 13 visits on 4 weeks. It's time to congratulate the member, pushing for even higher usage in the following weeks.",
+        customerInfo: {
+          customerRecord: {
+            title: 'interaction.data.customer-info',
+            content: [
+              {
+                key: 'interaction.data.birth-date',
+                value: '1966-10-22 (68)',
+              },
+              {
+                key: 'interaction.data.objective',
+                value: 'Improve well-being',
+              },
+              {
+                key: 'interaction.data.access',
+                value: '3/13/25/137',
+              },
+              {
+                key: 'interaction.data.ag',
+                value: '1/5/11/46',
+              },
+              {
+                key: 'interaction.data.shareAG',
+                value: '43%',
+              },
+              {
+                key: 'interaction.data.last-af',
+                value: '2023-01-17 (63)',
+              },
+              {
+                key: 'interaction.data.visit-length',
+                value: '62 min',
+              },
+            ],
+          },
+          contractType: {
+            title: 'interaction.data.contract-info',
+            content: [
+              {
+                key: 'interaction.data.membership',
+                value: '2021-01-30 (26)',
+              },
+              {
+                key: 'interaction.data.subscription-type',
+                value: '9.9$ / Week',
+              },
+              {
+                key: 'interaction.data.schedule',
+                value: 'Unrestricted',
+              },
+              {
+                key: 'interaction.data.additional-services',
+                value: '1 PT session / week',
+              },
+            ],
+          },
+          additionalInfo: {
+            title: 'interaction.data.additional-info',
+            icons: [
+              {
+                icon: 'ic-1_2',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: false,
+              },
+              {
+                icon: 'ic-2_2',
+                isDisabled: false,
+              },
+            ],
+            lifeCycle: {
+              key: 'interaction.data.lifecycle',
+              progress: 75,
               topLabels: [
                 {
                   label: '0',
