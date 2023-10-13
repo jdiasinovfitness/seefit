@@ -29,23 +29,29 @@
         </ion-text>
       </ion-label>
       <!-- Risk -->
-      <ion-label>
+      <!-- <ion-label>
         <ion-text color="medium">
           {{ item.primary.label }}
         </ion-text>
         <ion-text color="secondary">
           {{ item.primary.value }}
         </ion-text>
-      </ion-label>
+      </ion-label> -->
       <!-- Usage -->
-      <ion-label>
+      <!-- <ion-label>
         <ion-text color="medium">
           {{ item.secondary.label }}
         </ion-text>
         <ion-text color="secondary">
           {{ item.secondary.value }}
         </ion-text>
-      </ion-label>
+      </ion-label> -->
+      <div class="labels hidden-big-device">
+        <div class="lbl">
+          {{ item.primary.value }}
+        </div>
+        <div class="lbl">{{ item.secondary.value }}</div>
+      </div>
     </div>
 
     <!-- Right Column -->
