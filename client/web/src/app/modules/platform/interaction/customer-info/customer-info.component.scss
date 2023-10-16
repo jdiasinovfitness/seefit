@@ -102,8 +102,9 @@
 }
 
 .content {
-  flex-grow: 1;
-  flex-shrink: 1;
-  color: var(--ion-color-dark);
   font-weight: bold;
+}
+
+.key {
+  flex-grow: 1;
 }

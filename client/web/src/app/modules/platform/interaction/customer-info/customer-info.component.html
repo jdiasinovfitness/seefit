@@ -12,10 +12,10 @@
         </ion-item>
         <div class="ion-padding" slot="content">
           <ion-item *ngFor="let record of cRecord.content">
-            <ion-text class="content">
+            <ion-text class="key" color="medium">
               {{ record.key | translate }}
             </ion-text>
-            <ion-text color="medium">
+            <ion-text class="content">
               {{ record.value | translate }}
             </ion-text>
           </ion-item>
@@ -31,8 +31,10 @@
         </ion-item>
         <div class="ion-padding" slot="content">
           <ion-item *ngFor="let contact of item.content">
-            <ion-text class="content">{{ contact.key | translate }}</ion-text>
-            <ion-text color="medium">{{ contact.value }}</ion-text>
+            <ion-text class="key" color="medium">{{
+              contact.key | translate
+            }}</ion-text>
+            <ion-text class="content">{{ contact.value }}</ion-text>
           </ion-item>
         </div>
       </ion-accordion>
@@ -48,10 +50,10 @@
         </ion-item>
         <div class="ion-padding" slot="content">
           <ion-item *ngFor="let contract of conType.content">
-            <ion-text class="content">
+            <ion-text class="key" color="medium">
               {{ contract.key | translate }}
             </ion-text>
-            <ion-text color="medium">
+            <ion-text class="content">
               {{ contract.value | translate }}
             </ion-text>
           </ion-item>
@@ -70,7 +72,7 @@
       </ion-item>
       <div class="ion-padding" slot="content">
         <ion-item *ngIf="addInfo?.lifeCycle as aInfo">
-          <ion-text color="medium">
+          <ion-text class="key" color="medium">
             {{ aInfo.key | translate }}
           </ion-text>
         </ion-item>
