@@ -97,7 +97,6 @@
 
 .side-by-side {
   display: flex;
-  gap: 20px;
   align-items: flex-start;
 }
 
@@ -110,11 +109,13 @@
 .key {
   width: 50%;
 }
-ion-padding {
-  background-color: var(--ion-color-light);
-}
+
 ion-item {
   --background-color: var(--ion-color-light);
+}
+
+ion-label {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 560px) {

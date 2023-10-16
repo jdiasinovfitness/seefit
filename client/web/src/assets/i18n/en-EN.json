@@ -178,14 +178,14 @@
       "label": "{{total}} customer(s) found"
     },
     "data": {
-      "birth-date": "Birthdate (Age):",
+      "birth-date": "Birthdate:",
       "email": "Email: ",
       "phone": "Phone: ",
       "objective": "Objective:",
-      "access": "Visits (7 / 28 / 56 / ∞ Days):",
-      "ag": "Group Classes (7 / 28 / 56 / ∞ Days):",
+      "access": "Visits:",
+      "ag": "Group Classes",
       "shareAG": "% Of GC:",
-      "last-af": "Last Appointment (Days):",
+      "last-af": "Last Appointment:",
       "visit-length": "Average Stay:",
       "membership": "Membership Date (Months):",
       "subscription-type": "Membership Prices:",
