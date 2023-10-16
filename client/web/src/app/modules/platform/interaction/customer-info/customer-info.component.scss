@@ -101,10 +101,14 @@
   align-items: flex-start;
 }
 
-.content {
+.content-text {
   font-weight: bold;
 }
 
 .key {
-  flex-grow: 1;
+  width: 50%;
+  margin-left: 20px;
+}
+ion-padding {
+  background-color: var(--ion-color-light);
 }

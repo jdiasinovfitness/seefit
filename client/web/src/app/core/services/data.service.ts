@@ -288,7 +288,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: 'Moderate',
           color: '#000000',
         },
         secondary: {
@@ -930,7 +930,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: 'Low',
           color: '#000000',
         },
         secondary: {
@@ -1145,7 +1145,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: 'Low',
           color: '#000000',
         },
         secondary: {
