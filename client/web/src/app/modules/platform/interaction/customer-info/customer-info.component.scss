@@ -94,3 +94,16 @@
 
   margin: 8px 0px;
 }
+
+.side-by-side {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  color: var(--ion-color-dark);
+  font-weight: bold;
+}

@@ -1,69 +1,118 @@
 <div class="c-info-wrapper" *ngIf="info?.customerInfo as data">
-  <div class="split-line">
-    <div class="info-col" *ngIf="data?.customerRecord as cRecord">
-      <h4>{{ cRecord.title | translate }}</h4>
-      <span class="line" *ngFor="let record of cRecord?.content">
-        <ion-text color="medium">
-          {{ record.key | translate }}
-        </ion-text>
-        <ion-text color="secondary">
-          {{ record.value | translate }}
-        </ion-text>
-      </span>
+  <ion-accordion-group [multiple]="true">
+    <div class="side-by-side">
+      <ion-accordion
+        toggleIconSlot="start"
+        *ngIf="data?.customerRecord as cRecord"
+      >
+        <ion-item slot="header" color="light">
+          <ion-label>
+            {{ cRecord.title | translate }}
+          </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-item *ngFor="let record of cRecord.content">
+            <ion-text class="content">
+              {{ record.key | translate }}
+            </ion-text>
+            <ion-text color="medium">
+              {{ record.value | translate }}
+            </ion-text>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion
+        *ngIf="data.customerContact as item"
+        toggleIconSlot="start"
+      >
+        <ion-item slot="header" color="light">
+          <ion-label>{{ item.title | translate }} </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-item *ngFor="let contact of item.content">
+            <ion-text class="content">{{ contact.key | translate }}</ion-text>
+            <ion-text color="medium">{{ contact.value }}</ion-text>
+          </ion-item>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion
+        toggleIconSlot="start"
+        *ngIf="data?.contractType as conType"
+      >
+        <ion-item slot="header" color="light">
+          <ion-label>
+            {{ conType.title | translate }}
+          </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-item *ngFor="let contract of conType.content">
+            <ion-text class="content">
+              {{ contract.key | translate }}
+            </ion-text>
+            <ion-text color="medium">
+              {{ contract.value | translate }}
+            </ion-text>
+          </ion-item>
+        </div>
+      </ion-accordion>
     </div>
-
-    <div class="info-col" *ngIf="data?.contractType as conType">
-      <h4>{{ conType.title | translate }}</h4>
-      <span class="line" *ngFor="let contract of conType?.content">
-        <ion-text color="medium">
-          {{ contract.key | translate }}
-        </ion-text>
-        <ion-text color="secondary">
-          {{ contract.value | translate }}
-        </ion-text>
-      </span>
-    </div>
-  </div>
-
-  <!-- Icons -->
-  <div class="hole-line">
-    <div
-      [ngClass]="{ disabled: icon.isDisabled }"
-      class="see-icon md {{ icon.icon }}"
-      *ngFor="
-        let icon of info?.customerInfo?.additionalInfo?.icons | slice : 0 : 3
-      "
-    ></div>
-  </div>
-
-  <!-- Additional Info -->
-  <div class="hole-line">
-    <div class="info-col add-info" *ngIf="data?.additionalInfo as addInfo">
-      <h4>{{ addInfo.title | translate }}</h4>
-      <span class="line" *ngIf="addInfo?.lifeCycle as aInfo">
-        <ion-text color="medium">
-          {{ aInfo.key | translate }}
-        </ion-text>
-      </span>
-    </div>
-  </div>
-
-  <!-- Lifecycle -->
-  <div class="hole-line" *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle">
-    <div class="p-bars">
-      <div class="progress-labels">
-        <div *ngFor="let tLabel of lifeCycle.topLabels">
-          {{ tLabel?.label }}
+    <!-- Additional Info -->
+    <ion-accordion
+      toggleIconSlot="start"
+      *ngIf="data?.additionalInfo as addInfo"
+    >
+      <ion-item slot="header" color="light">
+        <ion-label>
+          {{ addInfo.title | translate }}
+        </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item *ngIf="addInfo?.lifeCycle as aInfo">
+          <ion-text color="medium">
+            {{ aInfo.key | translate }}
+          </ion-text>
+        </ion-item>
+        <!-- Icons -->
+        <div class="hole-line">
+          <div
+            [ngClass]="{ disabled: icon.isDisabled }"
+            class="see-icon md {{ icon.icon }}"
+            *ngFor="
+              let icon of info?.customerInfo?.additionalInfo?.icons
+                | slice : 0 : 3
+            "
+          ></div>
         </div>
       </div>
-      <ion-progress-bar [value]="lifeCycle.progress"></ion-progress-bar>
-      <div class="progress-labels">
-        <div *ngFor="let bLabel of lifeCycle.bottomLabels">
-          {{ bLabel?.label }}
+    </ion-accordion>
+
+    <!-- Lifecycle -->
+    <ion-accordion
+      toggleIconSlot="start"
+      *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle"
+    >
+      <ion-item slot="header" color="light">
+        <ion-label> {{ lifeCycle.key | translate }} </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <div class="p-bars">
+          <div class="progress-labels">
+            <div *ngFor="let tLabel of lifeCycle.topLabels">
+              {{ tLabel?.label }}
+            </div>
+          </div>
+          <ion-progress-bar [value]="lifeCycle.progress"></ion-progress-bar>
+          <div class="progress-labels">
+            <div *ngFor="let bLabel of lifeCycle.bottomLabels">
+              {{ bLabel?.label }}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </ion-accordion>
+  </ion-accordion-group>
 
   <!-- Observation -->
   <app-observation

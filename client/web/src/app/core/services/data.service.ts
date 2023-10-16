@@ -379,6 +379,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -489,7 +502,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: '10',
           color: '#000000',
         },
         secondary: {
@@ -552,7 +565,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '2000-04-22 (22)',
+                value: '22 April | 23 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -577,6 +590,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: 'n/a',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'lauraashley@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -753,7 +779,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '2000-04-22 (22)',
+                value: '22 April | 23 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -778,6 +804,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: 'n/a',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'sykes@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -955,7 +994,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1996-07-01 (28)',
+                value: '22 June | 29 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -980,6 +1019,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '78 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -1157,7 +1209,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1996-07-01 (28)',
+                value: '21 March | 28 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1182,6 +1234,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '78 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -1358,7 +1423,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '12 August | 33 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1383,6 +1448,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '61 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -1559,7 +1637,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '17 May | 21 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1584,6 +1662,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '61 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -1759,7 +1850,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1960-04-22 (62)',
+                value: '29 January | 28 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1784,6 +1875,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '69 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -1959,7 +2063,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1960-04-22 (62)',
+                value: '5 April | 61 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1984,6 +2088,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '69 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -2161,7 +2278,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '28 September | 26 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2186,6 +2303,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '53 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -2363,7 +2493,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '03 April | 27 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2388,6 +2518,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '53 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -2564,7 +2707,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1971-11-02 (51)',
+                value: '2 January | 23 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2589,6 +2732,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '82 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -2765,7 +2921,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1971-11-02 (51)',
+                value: '17 April | 43 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2790,6 +2946,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '82 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.t@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -2966,7 +3135,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1982-02-08 (41)',
+                value: '22 August | 36 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2991,6 +3160,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '57 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -3167,7 +3349,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1982-02-08 (41)',
+                value: '9 April | 41 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -3192,6 +3374,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '57 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -3395,6 +3590,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3592,6 +3800,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '58 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -3796,6 +4017,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3994,6 +4228,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '46 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
@@ -4199,6 +4446,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -4398,6 +4658,19 @@ export class DataService {
               {
                 key: 'interaction.data.visit-length',
                 value: '62 min',
+              },
+            ],
+          },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
               },
             ],
           },
