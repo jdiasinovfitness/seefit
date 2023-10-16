@@ -194,12 +194,12 @@
       "observation": "Comentários",
       "btn-discard": "Eliminar",
       "btn-submit": "Concluir",
-      "customer-info": "INFO DE CLIENTE:",
-      "personal-info": "INFORMAÇÃO PESSOAL",
-      "contract-info": "INFO DE CONTRACTO:",
-      "additional-services": "SERVIÇOS ADICIONAIS:",
-      "additional-info": "INFORMAÇÃO ADICIONAL:",
-      "lifecycle": "CICLO DE VIDA:"
+      "customer-info": "Geral",
+      "personal-info": "Contatos",
+      "contract-info": "Contrato",
+      "additional-services": "Serviços Adicionais:",
+      "additional-info": "Informação Adicional",
+      "lifecycle": "Ciclo De Vida"
     }
   },
   "user": {
@@ -225,11 +225,11 @@
         "role": "Role",
         "language": {
           "label": "Language",
-          "placeholder": "Please select a language"
+          "placeholder": "Por favor selecione o idioma"
         },
         "password": {
           "label": "Password",
-          "placeholder": "Enter a valid password"
+          "placeholder": "Introduza uma password válida"
         }
       }
     },
@@ -268,8 +268,8 @@
     "notification": {
       "title": "Notificações",
       "empty": {
-        "title": "You have no notifications right now!",
-        "subtitle": "We'll let you know when something arrives"
+        "title": "Nã há notificações disponíveis!",
+        "subtitle": "Avisaremos quando receber alguma"
       }
     }
   },

@@ -125,7 +125,7 @@
   "interaction": {
     "tabs": {
       "customer": {
-        "title": "Client"
+        "title": "Customer"
       },
       "interaction": {
         "title": "Interaction",
@@ -154,7 +154,7 @@
         }
       },
       "history": {
-        "title": "History"
+        "title": "Activity"
       }
     },
     "filters": {
@@ -178,27 +178,27 @@
       "label": "{{total}} customer(s) found"
     },
     "data": {
-      "birth-date": "BIRTHDATE (AGE):",
+      "birth-date": "Birthdate (Age):",
       "email": "Email:",
       "phone": "Phone:",
-      "objective": "OBJECTIVE:",
-      "access": "VISITS (7 / 28 / 56 / ∞ DAYS):",
-      "ag": "GROUP CLASSES (7 / 28 / 56 / ∞ DAYS):",
+      "objective": "Objective:",
+      "access": "Visits (7 / 28 / 56 / ∞ DAYS):",
+      "ag": "Group Classes (7 / 28 / 56 / ∞ DAYS):",
       "shareAG": "% OF GC:",
       "last-af": "LAST APPOINTMENT (IN DAYS):",
       "visit-length": "AVERAGE STAY:",
-      "membership": "MEMBERSHIP DATE (MONTHS):",
+      "membership": "Mmembership Date (Months):",
       "subscription-type": "MEMBERSHIP PRICE:",
       "schedule": "AVAILABLE SCHEDULE:",
       "observation": "Comments",
       "btn-discard": "Discard",
       "btn-submit": "Submit",
-      "customer-info": "CUSTOMER INFO:",
-      "personal-info": "PERSONAL INFO",
-      "contract-info": "CONTRACT INFO:",
+      "customer-info": "General",
+      "personal-info": "Contact",
+      "contract-info": "Contract",
       "additional-services": "ADDITIONAL SERVICES:",
-      "additional-info": "ADDITIONAL INFORMATION:",
-      "lifecycle": "LIFECYCLE:"
+      "additional-info": "Additional Information:",
+      "lifecycle": "Life Cycle:"
     }
   },
   "user": {
@@ -274,10 +274,18 @@
   },
   "customer": {
     "tabs": {
-      "information": "Information",
-      "lifecycle": "Lifecycle",
-      "history": "History",
-      "metrics": "Metrics"
+      "information": {
+        "title": "Information"
+      },
+      "lifecycle": {
+        "title": "Lifecycle"
+      },
+      "history": {
+        "title": "Activity"
+      },
+      "metrics": {
+        "title": "Metrics"
+      }
     }
   }
 }
