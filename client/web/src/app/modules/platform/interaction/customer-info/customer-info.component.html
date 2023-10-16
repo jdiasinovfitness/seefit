@@ -10,8 +10,12 @@
             {{ cRecord.title | translate }}
           </ion-label>
         </ion-item>
-        <div class="ion-padding" slot="content">
-          <ion-item *ngFor="let record of cRecord.content">
+        <div slot="content">
+          <ion-item
+            color="light"
+            lines="none"
+            *ngFor="let record of cRecord.content"
+          >
             <ion-text class="key" color="medium">
               {{ record.key | translate }}
             </ion-text>
@@ -29,8 +33,12 @@
         <ion-item slot="header" color="light">
           <ion-label>{{ item.title | translate }} </ion-label>
         </ion-item>
-        <div class="ion-padding" slot="content">
-          <ion-item *ngFor="let contact of item.content">
+        <div slot="content">
+          <ion-item
+            color="light"
+            lines="none"
+            *ngFor="let contact of item.content"
+          >
             <ion-text class="key" color="medium">{{
               contact.key | translate
             }}</ion-text>
@@ -48,8 +56,12 @@
             {{ conType.title | translate }}
           </ion-label>
         </ion-item>
-        <div class="ion-padding" slot="content">
-          <ion-item *ngFor="let contract of conType.content">
+        <div slot="content">
+          <ion-item
+            color="light"
+            lines="none"
+            *ngFor="let contract of conType.content"
+          >
             <ion-text class="key" color="medium">
               {{ contract.key | translate }}
             </ion-text>
@@ -70,8 +82,12 @@
           {{ addInfo.title | translate }}
         </ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
-        <ion-item *ngIf="addInfo?.lifeCycle as aInfo">
+      <div slot="content">
+        <ion-item
+          color="light"
+          lines="none"
+          *ngIf="addInfo?.lifeCycle as aInfo"
+        >
           <ion-text class="key" color="medium">
             {{ aInfo.key | translate }}
           </ion-text>
@@ -98,7 +114,7 @@
       <ion-item slot="header" color="light">
         <ion-label> {{ lifeCycle.key | translate }} </ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
+      <div slot="content">
         <div class="p-bars">
           <div class="progress-labels">
             <div *ngFor="let tLabel of lifeCycle.topLabels">

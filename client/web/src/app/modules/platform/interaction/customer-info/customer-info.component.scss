@@ -103,12 +103,23 @@
 
 .content-text {
   font-weight: bold;
+  width: 50%;
+  margin-left: 12px;
 }
 
 .key {
   width: 50%;
-  margin-left: 20px;
 }
 ion-padding {
   background-color: var(--ion-color-light);
+}
+ion-item {
+  --background-color: var(--ion-color-light);
+}
+
+@media screen and (max-width: 560px) {
+  .side-by-side {
+    flex-wrap: wrap;
+    gap: 0px;
+  }
 }
