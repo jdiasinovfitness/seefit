@@ -4,8 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  padding: 0px 12px;
-
   .split-line {
     display: flex;
     flex-direction: row;
@@ -19,8 +17,9 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
+    background: var(--ion-color-light);
 
-    margin: 12px 4px;
+    padding: 12px 18px;
 
     .p-bars {
       width: 100%;
@@ -92,7 +91,7 @@
   align-items: center;
   justify-content: space-between;
 
-  margin: 8px 0px;
+  padding: 8px 18px;
 }
 
 .side-by-side {
@@ -110,12 +109,13 @@
   width: 50%;
 }
 
-ion-item {
-  --background-color: var(--ion-color-light);
-}
-
 ion-label {
   font-weight: bold;
+}
+
+#content {
+  background: var(--ion-color-light);
+  padding: 0px 18px;
 }
 
 @media screen and (max-width: 560px) {

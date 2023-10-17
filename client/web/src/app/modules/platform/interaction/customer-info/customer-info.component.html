@@ -82,8 +82,8 @@
           {{ addInfo.title | translate }}
         </ion-label>
       </ion-item>
-      <div slot="content">
-        <ion-item
+      <div class="a-content" slot="content">
+        <!-- <ion-item
           color="light"
           lines="none"
           *ngIf="addInfo?.lifeCycle as aInfo"
@@ -91,7 +91,7 @@
           <ion-text class="key" color="medium">
             {{ aInfo.key | translate }}
           </ion-text>
-        </ion-item>
+        </ion-item> -->
         <!-- Icons -->
         <div class="hole-line">
           <div
@@ -114,12 +114,12 @@
       <ion-item slot="header" color="light">
         <ion-label> {{ lifeCycle.key | translate }} </ion-label>
       </ion-item>
-      <div slot="content">
+      <div slot="content" id="content">
         <div class="p-bars">
           <div class="progress-labels">
-            <div *ngFor="let tLabel of lifeCycle.topLabels">
+            <ion-label *ngFor="let tLabel of lifeCycle.topLabels">
               {{ tLabel?.label }}
-            </div>
+            </ion-label>
           </div>
           <ion-progress-bar [value]="lifeCycle.progress"></ion-progress-bar>
           <div class="progress-labels">
