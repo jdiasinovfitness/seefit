@@ -30,11 +30,13 @@
       </ion-label>
       <!-- Risk -->
       <div class="labels hidden-big-device">
-        <div class="lbl">
+        <div class="lbl" *ngIf="item.primary.value !== 'n/a'">
           {{ item.primary.value }}
         </div>
         <!-- Usage -->
-        <div class="lbl">{{ item.secondary.value }}</div>
+        <div class="lbl" *ngIf="item.secondary.value !== 'n/a'">
+          {{ item.secondary.value }}
+        </div>
       </div>
     </div>
 
