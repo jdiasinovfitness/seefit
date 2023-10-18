@@ -97,6 +97,7 @@
 .side-by-side {
   display: flex;
   align-items: flex-start;
+  border-bottom: 1px solid var(--ion-color-medium);
 }
 
 .content-text {
@@ -121,5 +122,8 @@ ion-label {
 @media screen and (max-width: 560px) {
   .side-by-side {
     flex-wrap: wrap;
+  }
+  .see-icon {
+    margin-bottom: 8px;
   }
 }

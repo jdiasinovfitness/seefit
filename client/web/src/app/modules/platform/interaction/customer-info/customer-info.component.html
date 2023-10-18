@@ -5,7 +5,7 @@
         toggleIconSlot="start"
         *ngIf="data?.customerRecord as cRecord"
       >
-        <ion-item slot="header" color="light">
+        <ion-item lines="none" slot="header" color="light">
           <ion-label>
             {{ cRecord.title | translate }}
           </ion-label>
@@ -30,7 +30,7 @@
         *ngIf="data?.customerContact as item"
         toggleIconSlot="start"
       >
-        <ion-item slot="header" color="light">
+        <ion-item lines="none" slot="header" color="light">
           <ion-label>{{ item.title | translate }} </ion-label>
         </ion-item>
         <div slot="content">
@@ -51,7 +51,7 @@
         toggleIconSlot="start"
         *ngIf="data?.contractType as conType"
       >
-        <ion-item slot="header" color="light">
+        <ion-item lines="none" slot="header" color="light">
           <ion-label>
             {{ conType.title | translate }}
           </ion-label>
@@ -77,7 +77,7 @@
       toggleIconSlot="start"
       *ngIf="data?.additionalInfo as addInfo"
     >
-      <ion-item slot="header" color="light">
+      <ion-item lines="none" slot="header" color="light">
         <ion-label>
           {{ addInfo.title | translate }}
         </ion-label>
@@ -95,11 +95,11 @@
     </ion-accordion>
 
     <!-- Lifecycle -->
-    <ion-accordion
+    <!-- <ion-accordion
       toggleIconSlot="start"
       *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle"
     >
-      <ion-item slot="header" color="light">
+      <ion-item lines="none" slot="header" color="light">
         <ion-label> {{ lifeCycle.key | translate }} </ion-label>
       </ion-item>
       <div slot="content" id="content">
@@ -117,7 +117,7 @@
           </div>
         </div>
       </div>
-    </ion-accordion>
+    </ion-accordion> -->
   </ion-accordion-group>
 
   <!-- Observation -->
