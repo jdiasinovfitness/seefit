@@ -1705,7 +1705,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_5',
+                icon: 'ic-1_5',
                 isDisabled: true,
               },
               {
@@ -4020,7 +4020,7 @@ export class DataService {
               },
               {
                 icon: 'ic-1_5',
-                isDisabled: false,
+                isDisabled: true,
               },
               {
                 icon: 'ic-1_1',
