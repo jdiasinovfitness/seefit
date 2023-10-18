@@ -30,7 +30,7 @@
     }
 
     .disabled {
-      filter: opacity(0.4);
+      filter: opacity(0.5);
     }
   }
 
@@ -121,6 +121,5 @@ ion-label {
 @media screen and (max-width: 560px) {
   .side-by-side {
     flex-wrap: wrap;
-    gap: 0px;
   }
 }

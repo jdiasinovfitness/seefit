@@ -421,7 +421,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_5',
+                icon: 'ic-1_1',
                 isDisabled: false,
               },
               {
@@ -430,7 +430,43 @@ export class DataService {
               },
               {
                 icon: 'ic-3_2',
-                isDisabled: false,
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -644,7 +680,51 @@ export class DataService {
               },
               {
                 icon: 'ic-3_2',
-                isDisabled: false,
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -857,8 +937,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-5_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-2_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -1060,7 +1184,7 @@ export class DataService {
             title: 'interaction.data.additional-info',
             icons: [
               {
-                icon: 'ic-2_2',
+                icon: 'ic-1_5',
                 isDisabled: false,
               },
               {
@@ -1072,8 +1196,48 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-2_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -1288,7 +1452,47 @@ export class DataService {
               },
               {
                 icon: 'ic-3_2',
-                isDisabled: false,
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -1502,7 +1706,31 @@ export class DataService {
               },
               {
                 icon: 'ic-2_5',
-                isDisabled: false,
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -1715,8 +1943,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -1928,8 +2200,60 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -2141,8 +2465,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -2356,8 +2724,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -2571,8 +2983,56 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-3_5',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -2777,7 +3237,7 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_5',
+                icon: 'ic-1_5',
                 isDisabled: false,
               },
               {
@@ -2786,7 +3246,51 @@ export class DataService {
               },
               {
                 icon: 'ic-4_2',
-                isDisabled: false,
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -2999,8 +3503,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -3213,8 +3761,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -3427,8 +4019,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
+                icon: 'ic-1_5',
                 isDisabled: false,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -3640,8 +4276,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -3853,8 +4533,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -4067,8 +4791,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -4281,8 +5049,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -4496,8 +5308,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
@@ -4711,8 +5567,52 @@ export class DataService {
                 isDisabled: false,
               },
               {
-                icon: 'ic-2_2',
-                isDisabled: false,
+                icon: 'ic-1_5',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-1_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-3_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_1',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_2',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_3',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_4',
+                isDisabled: true,
+              },
+              {
+                icon: 'ic-4_5',
+                isDisabled: true,
               },
             ],
             lifeCycle: {
