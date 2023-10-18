@@ -73,6 +73,7 @@
       </ion-accordion>
     </div>
     <!-- Additional Info -->
+
     <ion-accordion
       toggleIconSlot="start"
       *ngIf="data?.additionalInfo as addInfo"
@@ -82,7 +83,7 @@
           {{ addInfo.title | translate }}
         </ion-label>
       </ion-item>
-      <div class="a-content" slot="content">
+      <div slot="content">
         <!-- Icons -->
         <div class="hole-line">
           <div
@@ -93,7 +94,6 @@
         </div>
       </div>
     </ion-accordion>
-
     <!-- Lifecycle -->
     <!-- <ion-accordion
       toggleIconSlot="start"
@@ -119,12 +119,13 @@
       </div>
     </ion-accordion> -->
   </ion-accordion-group>
-
-  <!-- Observation -->
-  <app-observation
-    [userId]="info.userId"
-    [displayBtn]="info.status !== statusTypes.COMPLETED"
-    (handleClick)="onButtonClick($event)"
-  >
-  </app-observation>
+  <div class="a-content">
+    <!-- Observation -->
+    <app-observation
+      [userId]="info.userId"
+      [displayBtn]="info.status !== statusTypes.COMPLETED"
+      (handleClick)="onButtonClick($event)"
+    >
+    </app-observation>
+  </div>
 </div>

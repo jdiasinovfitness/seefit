@@ -49,6 +49,18 @@
       flex-wrap: nowrap;
     }
   }
+  .side-by-side {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 0.5px solid var(--ion-color-medium);
+
+    .key {
+      width: 50%;
+    }
+  }
+  .a-content {
+    border-top: 0.5px solid var(--ion-color-medium);
+  }
 }
 
 .see-icon {
@@ -94,19 +106,10 @@
   padding: 8px 18px;
 }
 
-.side-by-side {
-  display: flex;
-  align-items: flex-start;
-  border-bottom: 1px solid var(--ion-color-medium);
-}
-
 .content-text {
   font-weight: bold;
-  width: 50%;
   margin-left: 12px;
-}
 
-.key {
   width: 50%;
 }
 
@@ -119,10 +122,13 @@ ion-label {
   padding: 0px 18px;
 }
 
+// Mobile view
+
 @media screen and (max-width: 560px) {
   .side-by-side {
     flex-wrap: wrap;
   }
+
   .see-icon {
     margin-bottom: 8px;
   }
