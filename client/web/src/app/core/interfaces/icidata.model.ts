@@ -68,7 +68,7 @@ export interface ICIAdditionalInfo {
 
 export interface ICIIcons {
   icon: string;
-  isDisabled: boolean;
+  id: string;
 }
 export interface ICILifecycle {
   key: string;

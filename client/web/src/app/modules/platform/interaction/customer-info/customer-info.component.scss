@@ -29,7 +29,10 @@
       margin-right: 4px;
     }
 
-    .disabled {
+    .enabled {
+      filter: opacity(0);
+    }
+    .icon-default-status {
       filter: opacity(0.5);
     }
   }
@@ -122,6 +125,9 @@ ion-label {
   padding: 0px 18px;
 }
 
+.item-native[aria-expanded="false"]:focus {
+  border: none;
+}
 // Mobile view
 
 @media screen and (max-width: 560px) {

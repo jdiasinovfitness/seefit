@@ -5,6 +5,7 @@ import {
   ICIFilter,
   ICI_STATUS,
   ICI_TYPE,
+  ICIIcons,
 } from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
@@ -21,6 +22,24 @@ export class DataService {
   menuItems!: Array<MenuData>;
   originList!: Array<any>;
   selectedOrigin!: number;
+
+  icons: Array<ICIIcons> = [
+    { id: 'ic-1_1', icon: '../assets/icons/interaction/1_1.svg' },
+    { id: 'ic-1_2', icon: '../assets/icons/interaction/1_2.svg' },
+    { id: 'ic-1_3', icon: '../assets/icons/interaction/1_3.svg' },
+    { id: 'ic-1_4', icon: '../assets/icons/interaction/1_4.svg' },
+    { id: 'ic-1_5', icon: '../assets/icons/interaction/1_5.svg' },
+    { id: 'ic-2_1', icon: '../assets/icons/interaction/2_1.svg' },
+    { id: 'ic-3_1', icon: '../assets/icons/interaction/3_1.svg' },
+    { id: 'ic-3_2', icon: '../assets/icons/interaction/3_2.svg' },
+    { id: 'ic-3_3', icon: '../assets/icons/interaction/3_3.svg' },
+    { id: 'ic-3_4', icon: '../assets/icons/interaction/3_4.svg' },
+    { id: 'ic-4_1', icon: '../assets/icons/interaction/4_1.svg' },
+    { id: 'ic-4_2', icon: '../assets/icons/interaction/4_2.svg' },
+    { id: 'ic-4_3', icon: '../assets/icons/interaction/4_3.svg' },
+    { id: 'ic-4_4', icon: '../assets/icons/interaction/4_4.svg' },
+    { id: 'ic-4_5', icon: '../assets/icons/interaction/4_5.svg' },
+  ];
 
   constructor() {
     this.data = this.getDummyData();
@@ -415,60 +434,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_1', 'ic-2_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -666,66 +632,7 @@ export class DataService {
           additionalInfo: {
             title: 'interaction.data.additional-info',
             icons: [
-              {
-                icon: 'ic-4_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_4',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
+              // 'ic-4_2','ic-2_4', 'ic-1_1',
             ],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
@@ -923,68 +830,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_4',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-5_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -1182,64 +1028,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_5',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -1437,64 +1226,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -1691,48 +1423,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_4',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_4', 'ic-3_1', 'ic-4_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -1929,68 +1620,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2186,76 +1816,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_5'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2451,68 +2012,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2710,68 +2210,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2969,72 +2408,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-4_1', 'ic-3_3', 'ic-2_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3231,68 +2605,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-3_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-3_2', 'ic-1_5', 'ic-2_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3489,68 +2802,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3747,68 +2999,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -4005,68 +3196,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -4262,68 +3392,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -4519,68 +3588,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -4777,68 +3785,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -5035,68 +3982,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -5294,68 +4180,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -5553,68 +4378,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_5',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-1_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-3_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_3',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_4',
-                isDisabled: true,
-              },
-              {
-                icon: 'ic-4_5',
-                isDisabled: true,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,

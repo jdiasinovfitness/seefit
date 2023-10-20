@@ -86,11 +86,12 @@
       <div slot="content">
         <!-- Icons -->
         <div class="hole-line">
-          <div
-            [ngClass]="{ disabled: icon.isDisabled }"
-            class="see-icon md {{ icon.icon }}"
-            *ngFor="let icon of info?.customerInfo?.additionalInfo?.icons"
-          ></div>
+          <div *ngFor="let icon of icons">
+            <div
+              class="see-icon md {{ icon.id }}"
+              [ngClass]="{ 'icon-default-status': !isIconEnabled(icon) }"
+            ></div>
+          </div>
         </div>
       </div>
     </ion-accordion>
