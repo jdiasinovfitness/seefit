@@ -120,9 +120,8 @@ ion-label {
   font-weight: bold;
 }
 
-:host(.ion-color:not(.item-fill-solid):not(.item-fill-outline)) .item-native,
-:host(.ion-color:not(.item-fill-solid):not(.item-fill-outline)) .item-inner {
-  border: none !important;
+ion-item::part(native) {
+  border: none;
 }
 
 #content {
@@ -130,9 +129,6 @@ ion-label {
   padding: 0px 18px;
 }
 
-.item-native[aria-expanded="false"]:focus {
-  border: none;
-}
 // Mobile view
 
 @media screen and (max-width: 560px) {
