@@ -631,9 +631,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              // 'ic-4_2','ic-2_4', 'ic-1_1',
-            ],
+            icons: ['ic-4_2', 'ic-1_5', 'ic-1_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -830,7 +828,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1'],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1', 'ic-4_2', 'ic-4_3', 'ic-4_4'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,

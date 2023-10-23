@@ -63,7 +63,7 @@ export interface ICICustomerRecord {
 export interface ICIAdditionalInfo {
   title: string;
   lifeCycle: ICILifecycle;
-  icons: Array<ICIIcons>;
+  icons: Array<string>;
 }
 
 export interface ICIIcons {

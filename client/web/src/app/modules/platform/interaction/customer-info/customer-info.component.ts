@@ -27,13 +27,8 @@ export class CustomerInfoComponent {
   init() {
     this.icons = this.dataService.icons;
   }
-  isIconEnabled(icon: any): boolean {
-    if (
-      this.info &&
-      this.info.customerInfo &&
-      this.info.customerInfo.additionalInfo &&
-      this.info.customerInfo.additionalInfo.icons
-    ) {
+  isIconEnabled(icon: ICIIcons): boolean {
+    if (this.info.customerInfo.additionalInfo.icons) {
       return this.info.customerInfo.additionalInfo.icons.includes(icon.id);
     }
     return false;
