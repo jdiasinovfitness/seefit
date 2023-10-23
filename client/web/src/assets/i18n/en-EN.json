@@ -125,7 +125,7 @@
   "interaction": {
     "tabs": {
       "customer": {
-        "title": "Client"
+        "title": "Customer"
       },
       "interaction": {
         "title": "Interaction",
@@ -154,7 +154,7 @@
         }
       },
       "history": {
-        "title": "History"
+        "title": "Activity"
       }
     },
     "filters": {
@@ -178,27 +178,27 @@
       "label": "{{total}} customer(s) found"
     },
     "data": {
-      "birth-date": "BIRTHDATE (AGE):",
-      "email": "Email:",
-      "phone": "Phone:",
-      "objective": "OBJECTIVE:",
-      "access": "VISITS (7 / 28 / 56 / ∞ DAYS):",
-      "ag": "GROUP CLASSES (7 / 28 / 56 / ∞ DAYS):",
-      "shareAG": "% OF GC:",
-      "last-af": "LAST APPOINTMENT (IN DAYS):",
-      "visit-length": "AVERAGE STAY:",
-      "membership": "MEMBERSHIP DATE (MONTHS):",
-      "subscription-type": "MEMBERSHIP PRICE:",
-      "schedule": "AVAILABLE SCHEDULE:",
+      "birth-date": "Birthdate:",
+      "email": "Email: ",
+      "phone": "Phone: ",
+      "objective": "Objective:",
+      "access": "Visits:",
+      "ag": "Group Classes",
+      "shareAG": "% Of GC:",
+      "last-af": "Last Appointment:",
+      "visit-length": "Average Stay:",
+      "membership": "Membership Date (Months):",
+      "subscription-type": "Membership Prices:",
+      "schedule": "Available Schedule:",
       "observation": "Comments",
       "btn-discard": "Discard",
       "btn-submit": "Submit",
-      "customer-info": "CUSTOMER INFO:",
-      "personal-info": "PERSONAL INFO",
-      "contract-info": "CONTRACT INFO:",
-      "additional-services": "ADDITIONAL SERVICES:",
-      "additional-info": "ADDITIONAL INFORMATION:",
-      "lifecycle": "LIFECYCLE:"
+      "customer-info": "General",
+      "personal-info": "Contact",
+      "contract-info": "Contract",
+      "additional-services": "Additional Services:",
+      "additional-info": "Additional Information:",
+      "lifecycle": "Life Cycle:"
     }
   },
   "user": {
@@ -274,10 +274,18 @@
   },
   "customer": {
     "tabs": {
-      "information": "Information",
-      "lifecycle": "Lifecycle",
-      "history": "History",
-      "metrics": "Metrics"
+      "information": {
+        "title": "Information"
+      },
+      "lifecycle": {
+        "title": "Lifecycle"
+      },
+      "history": {
+        "title": "Activity"
+      },
+      "metrics": {
+        "title": "Metrics"
+      }
     }
   }
 }

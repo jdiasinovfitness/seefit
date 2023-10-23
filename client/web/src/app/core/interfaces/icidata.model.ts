@@ -46,9 +46,14 @@ export interface ICIHistoryInfo {
 
 export interface ICIConsumerInfo {
   customerRecord: ICICustomerRecord;
+  customerContact: ICICustomerContact;
   contractType: ICICustomerRecord;
   additionalInfo: ICIAdditionalInfo;
   observation: string;
+}
+export interface ICICustomerContact {
+  title: string;
+  content: Array<ICIKeyVal>;
 }
 export interface ICICustomerRecord {
   title: string;
@@ -58,12 +63,12 @@ export interface ICICustomerRecord {
 export interface ICIAdditionalInfo {
   title: string;
   lifeCycle: ICILifecycle;
-  icons: Array<ICIIcons>;
+  icons: Array<string>;
 }
 
 export interface ICIIcons {
   icon: string;
-  isDisabled: boolean;
+  id: string;
 }
 export interface ICILifecycle {
   key: string;

@@ -5,6 +5,7 @@ import {
   ICIFilter,
   ICI_STATUS,
   ICI_TYPE,
+  ICIIcons,
 } from '../interfaces/icidata.model';
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
@@ -21,6 +22,24 @@ export class DataService {
   menuItems!: Array<MenuData>;
   originList!: Array<any>;
   selectedOrigin!: number;
+
+  icons: Array<ICIIcons> = [
+    { id: 'ic-1_1', icon: '../assets/icons/interaction/1_1.svg' },
+    { id: 'ic-1_2', icon: '../assets/icons/interaction/1_2.svg' },
+    { id: 'ic-1_3', icon: '../assets/icons/interaction/1_3.svg' },
+    { id: 'ic-1_4', icon: '../assets/icons/interaction/1_4.svg' },
+    { id: 'ic-1_5', icon: '../assets/icons/interaction/1_5.svg' },
+    { id: 'ic-2_1', icon: '../assets/icons/interaction/2_1.svg' },
+    { id: 'ic-3_1', icon: '../assets/icons/interaction/3_1.svg' },
+    { id: 'ic-3_2', icon: '../assets/icons/interaction/3_2.svg' },
+    { id: 'ic-3_3', icon: '../assets/icons/interaction/3_3.svg' },
+    { id: 'ic-3_4', icon: '../assets/icons/interaction/3_4.svg' },
+    { id: 'ic-4_1', icon: '../assets/icons/interaction/4_1.svg' },
+    { id: 'ic-4_2', icon: '../assets/icons/interaction/4_2.svg' },
+    { id: 'ic-4_3', icon: '../assets/icons/interaction/4_3.svg' },
+    { id: 'ic-4_4', icon: '../assets/icons/interaction/4_4.svg' },
+    { id: 'ic-4_5', icon: '../assets/icons/interaction/4_5.svg' },
+  ];
 
   constructor() {
     this.data = this.getDummyData();
@@ -288,7 +307,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: 'Moderate',
           color: '#000000',
         },
         secondary: {
@@ -379,6 +398,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -402,24 +434,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_5',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_1', 'ic-2_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -489,7 +504,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: '10',
           color: '#000000',
         },
         secondary: {
@@ -552,7 +567,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '2000-04-22 (22)',
+                value: '22 April | 23 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -580,6 +595,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'lauraashley@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -603,24 +631,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-4_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_4',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-1_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-4_2', 'ic-1_5', 'ic-1_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -753,7 +764,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '2000-04-22 (22)',
+                value: '22 April | 23 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -781,6 +792,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'sykes@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -804,24 +828,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_4',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-5_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-5_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1', 'ic-4_2', 'ic-4_3', 'ic-4_4'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -891,7 +898,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: 'Low',
           color: '#000000',
         },
         secondary: {
@@ -955,7 +962,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1996-07-01 (28)',
+                value: '22 June | 29 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -983,6 +990,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -1006,24 +1026,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -1093,7 +1096,7 @@ export class DataService {
         },
         primary: {
           label: 'RISK:',
-          value: 'n/a',
+          value: 'Low',
           color: '#000000',
         },
         secondary: {
@@ -1157,7 +1160,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1996-07-01 (28)',
+                value: '21 March | 28 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1185,6 +1188,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -1208,24 +1224,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 0,
@@ -1358,7 +1357,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '12 August | 33 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1386,6 +1385,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -1409,24 +1421,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_4',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_5',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_4', 'ic-3_1', 'ic-4_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -1559,7 +1554,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '17 May | 21 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1587,6 +1582,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -1610,24 +1618,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -1759,7 +1750,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1960-04-22 (62)',
+                value: '29 January | 28 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1787,6 +1778,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -1810,24 +1814,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_5'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -1959,7 +1946,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1960-04-22 (62)',
+                value: '5 April | 61 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -1987,6 +1974,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -2010,24 +2010,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_5', 'ic-4_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2161,7 +2144,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '28 September | 26 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2189,6 +2172,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -2212,24 +2208,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2363,7 +2342,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1990-08-05 (32)',
+                value: '03 April | 27 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2391,6 +2370,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -2414,24 +2406,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-4_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_3',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_5',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-4_1', 'ic-3_3', 'ic-2_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2564,7 +2539,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1971-11-02 (51)',
+                value: '2 January | 23 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2592,6 +2567,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -2615,24 +2603,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-3_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_5',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-4_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-3_2', 'ic-1_5', 'ic-2_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2765,7 +2736,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1971-11-02 (51)',
+                value: '17 April | 43 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2793,6 +2764,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.t@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -2816,24 +2800,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -2966,7 +2933,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1982-02-08 (41)',
+                value: '22 August | 36 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -2994,6 +2961,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3017,24 +2997,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3167,7 +3130,7 @@ export class DataService {
             content: [
               {
                 key: 'interaction.data.birth-date',
-                value: '1982-02-08 (41)',
+                value: '9 April | 41 years old',
               },
               {
                 key: 'interaction.data.objective',
@@ -3195,6 +3158,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3218,24 +3194,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3395,6 +3354,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3418,24 +3390,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3595,6 +3550,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3618,24 +3586,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3796,6 +3747,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -3819,24 +3783,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -3997,6 +3944,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -4020,24 +3980,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -4199,6 +4142,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -4222,24 +4178,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,
@@ -4401,6 +4340,19 @@ export class DataService {
               },
             ],
           },
+          customerContact: {
+            title: 'interaction.data.personal-info',
+            content: [
+              {
+                key: 'interaction.data.email',
+                value: 'teste.teste@gmail.com',
+              },
+              {
+                key: 'interaction.data.phone',
+                value: '+00 95554-2046',
+              },
+            ],
+          },
           contractType: {
             title: 'interaction.data.contract-info',
             content: [
@@ -4424,24 +4376,7 @@ export class DataService {
           },
           additionalInfo: {
             title: 'interaction.data.additional-info',
-            icons: [
-              {
-                icon: 'ic-1_2',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-3_1',
-                isDisabled: false,
-              },
-              {
-                icon: 'ic-2_2',
-                isDisabled: false,
-              },
-            ],
+            icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
             lifeCycle: {
               key: 'interaction.data.lifecycle',
               progress: 75,

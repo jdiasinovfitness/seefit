@@ -4,8 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  padding: 0px 12px;
-
   .split-line {
     display: flex;
     flex-direction: row;
@@ -19,8 +17,9 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
+    background: var(--ion-color-light);
 
-    margin: 12px 4px;
+    padding: 12px 18px;
 
     .p-bars {
       width: 100%;
@@ -30,8 +29,11 @@
       margin-right: 4px;
     }
 
-    .disabled {
-      filter: opacity(0.4);
+    .enabled {
+      filter: opacity(0);
+    }
+    .icon-default-status {
+      filter: opacity(0.5);
     }
   }
 
@@ -49,6 +51,18 @@
       display: flex;
       flex-wrap: nowrap;
     }
+  }
+  .side-by-side {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 0.5px solid var(--ion-color-medium);
+
+    .key {
+      width: 50%;
+    }
+  }
+  .a-content {
+    border-top: 0.5px solid var(--ion-color-medium);
   }
 }
 
@@ -92,5 +106,37 @@
   align-items: center;
   justify-content: space-between;
 
-  margin: 8px 0px;
+  padding: 8px 18px;
+}
+
+.content-text {
+  font-weight: bold;
+  margin-left: 12px;
+
+  width: 50%;
+}
+
+ion-label {
+  font-weight: bold;
+}
+
+ion-item::part(native) {
+  border: none;
+}
+
+#content {
+  background: var(--ion-color-light);
+  padding: 0px 18px;
+}
+
+// Mobile view
+
+@media screen and (max-width: 560px) {
+  .side-by-side {
+    flex-wrap: wrap;
+  }
+
+  .see-icon {
+    margin-bottom: 8px;
+  }
 }

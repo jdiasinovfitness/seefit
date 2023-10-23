@@ -1,8 +1,6 @@
 @import "../../../../../global.scss";
 
-
 ion-item {
-
   .icon-avatar {
     display: flex;
     flex-direction: row;
@@ -51,9 +49,7 @@ ion-item {
 .expanded-content {
   display: flex;
   flex-direction: column;
-
 }
-
 
 @media screen and (max-width: 580px) {
   .icon-avatar {
@@ -67,7 +63,6 @@ ion-item {
 
       ion-icon {
         margin-right: 4px;
-
       }
 
       :last-child {
@@ -107,4 +102,20 @@ ion-chip {
   margin-right: 0px;
   padding-bottom: 4px;
   padding-top: 4px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 6px;
+}
+
+.lbl {
+  padding: 6px;
+  margin-right: 8px;
+
+  border-radius: 6px;
+  color: var(--ion-color-dark);
+  background-color: var(--ion-color-light);
 }

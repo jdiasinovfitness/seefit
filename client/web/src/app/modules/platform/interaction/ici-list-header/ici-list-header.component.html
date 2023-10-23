@@ -2,8 +2,7 @@
   <div class="icon-avatar">
     <div class="col-icons">
       <div
-        class="see-icon md {{ icon.icon }}"
-        [ngClass]="{ disabled: icon.isDisabled }"
+        class="see-icon md {{ icon }}"
         *ngFor="
           let icon of item?.customerInfo?.additionalInfo?.icons | slice : 0 : 3
         "
@@ -20,32 +19,21 @@
     <!-- Left Column -->
     <div class="column">
       <!-- Title -->
-      <ion-label
-        [routerLink]="['/platform/customer/' + item.userId]"
-        routerLinkActive="router-link-active"
-      >
+      <ion-label>
         <ion-text color="primary">
           <b>{{ item.title }}</b>
         </ion-text>
       </ion-label>
       <!-- Risk -->
-      <ion-label>
-        <ion-text color="medium">
-          {{ item.primary.label }}
-        </ion-text>
-        <ion-text color="secondary">
+      <div class="labels hidden-big-device">
+        <div class="lbl" *ngIf="item.primary.value !== 'n/a'">
           {{ item.primary.value }}
-        </ion-text>
-      </ion-label>
-      <!-- Usage -->
-      <ion-label>
-        <ion-text color="medium">
-          {{ item.secondary.label }}
-        </ion-text>
-        <ion-text color="secondary">
+        </div>
+        <!-- Usage -->
+        <div class="lbl" *ngIf="item.secondary.value !== 'n/a'">
           {{ item.secondary.value }}
-        </ion-text>
-      </ion-label>
+        </div>
+      </div>
     </div>
 
     <!-- Right Column -->

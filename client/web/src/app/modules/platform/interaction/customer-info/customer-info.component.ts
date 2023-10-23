@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
+import {
+  ICIData,
+  ICI_STATUS,
+  ICIIcons,
+} from '../../../../core/interfaces/icidata.model';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
   selector: 'app-customer-info',
@@ -8,11 +13,26 @@ import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 })
 export class CustomerInfoComponent {
   statusTypes = ICI_STATUS;
+  icons: Array<ICIIcons> = [];
 
   @Input() info!: ICIData; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.init();
+  }
+
+  init() {
+    this.icons = this.dataService.icons;
+  }
+  isIconEnabled(icon: ICIIcons): boolean {
+    if (this.info.customerInfo.additionalInfo.icons) {
+      return this.info.customerInfo.additionalInfo.icons.includes(icon.id);
+    }
+    return false;
+  }
 
   onButtonClick(event: any) {
     this.handleClick.emit(event);

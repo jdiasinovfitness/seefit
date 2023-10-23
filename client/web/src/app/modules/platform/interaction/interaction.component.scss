@@ -10,7 +10,6 @@
   ion-button {
     min-height: 36px;
   }
-
 }
 
 .switch-wrp-popup {
@@ -43,7 +42,6 @@
 }
 
 ion-content {
-
   ion-accordion-group {
     ion-accordion {
       display: flex;
@@ -73,4 +71,6 @@ ion-footer {
 
 .expanded-area {
   background-color: var(--ion-color-light);
+
+  margin: 0px 12px;
 }
