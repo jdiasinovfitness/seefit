@@ -126,6 +126,7 @@
           *ngFor="let item of list; let i = index"
         >
           <!-- Header -->
+
           <app-ici-header [item]="item" slot="header"> </app-ici-header>
 
           <!-- Expanded Content -->
@@ -146,10 +147,10 @@
 
             <!-- Tab Content -->
             <div class="expanded-area" *ngIf="activeTabList[i] === '0'">
-              <app-customer-info
+              <!-- <app-customer-info
                 [info]="item"
                 (handleClick)="onButtonClick($event)"
-              ></app-customer-info>
+              ></app-customer-info>s
             </div>
             <div class="expanded-area" *ngIf="activeTabList[i] === '1'">
               <app-interaction-info
@@ -161,7 +162,7 @@
               <app-history
                 [info]="item"
                 (handleClick)="onButtonClick($event)"
-              ></app-history>
+              ></app-history> -->
             </div>
           </div>
         </ion-accordion>

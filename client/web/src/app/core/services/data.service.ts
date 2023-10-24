@@ -10,6 +10,7 @@ import {
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
+import { C_STATUS, Customer } from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -286,6 +287,270 @@ export class DataService {
             value: INTERACTION.REPROGRAMMING,
           },
         ],
+      },
+    ];
+  }
+
+  /*
+  ID: identificador unico = userID 
+  Code: Para ser mostrado na UI em vez do UserId
+  Name: igual ao Title
+  Photo: Customer image
+  frequency: recebe usage porém apensa com value
+  risk: 
+  description: value do interaction
+   */
+  getLiveClubDummyList(): Array<Customer> {
+    return [
+      {
+        id: '1', // depois será objectID
+        code: '',
+        name: 'Abby Cannon',
+        photo: 'assets/temp_images/userPhotos/profile_female6.jpg',
+        frequency: 'n/a',
+        risk: 'Moderate',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: true,
+        },
+        interaction: {
+          id: '1', // depois será objectID
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'First Day',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '2',
+        code: '',
+        name: 'Ismail Sykes',
+        photo: 'assets/temp_images/userPhotos/profile_male4.jpg',
+        frequency: 'n/a',
+        risk: 'n/a',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '2',
+          status: C_STATUS.COMPLETED,
+          date: '2023-04-02',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'First Week - +3 visits',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '3',
+        code: '',
+        name: 'Rupert Horton',
+        photo: 'assets/temp_images/userPhotos/profile_male3.jpg',
+        frequency: 'Active',
+        risk: '11%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '3',
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'Usage Very Active -> Active',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '4',
+        code: '',
+        name: 'Sanaa Tyler',
+        photo: 'assets/temp_images/userPhotos/profile_female5.jpg',
+        frequency: 'Active',
+        risk: '9%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '4',
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'NPS Promoter',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '5',
+        code: '',
+        name: 'Alan Rivers',
+        photo: 'assets/temp_images/userPhotos/profile_male2.jpg',
+        frequency: 'Very Active',
+        risk: '5%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '5',
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'Cycle Completed',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '6',
+        code: '',
+        name: 'Helena Saunders',
+        photo: 'assets/temp_images/userPhotos/profile_female4.jpg',
+        frequency: 'Active',
+        risk: '9%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '6',
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'Cycle 75% Under',
+            },
+          ],
+          callBlock: false,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '7',
+        code: '',
+        name: 'Elle Lawrence',
+        photo: 'assets/temp_images/userPhotos/profile_male8.jpg',
+        frequency: 'n/a',
+        risk: 'Low',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '7',
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'First 4-weeks, under 2x week',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '8',
+        code: '',
+        name: 'Josh Wolf',
+        photo: 'assets/temp_images/userPhotos/profile_male6.jpg',
+        frequency: 'Asleep',
+        risk: '33%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: false,
+        },
+        interaction: {
+          id: '8',
+          status: C_STATUS.COMPLETED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'New training plan',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '9',
+        code: '',
+        name: 'Lori Cabrera',
+        photo: 'assets/temp_images/userPhotos/profile_female1.jpg',
+        frequency: 'Asleep',
+        risk: '29%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: true,
+        },
+        interaction: {
+          id: '9',
+          status: C_STATUS.COMPLETED,
+          date: '2023-04-03',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'Email - PT Offer',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: false,
+      },
+      {
+        id: '10',
+        code: '',
+        name: 'Jana Miller',
+        photo: 'assets/temp_images/userPhotos/profile_female2.jpg',
+        frequency: 'Moderate',
+        risk: '26%',
+        currentLocation: {
+          inClub: true,
+          inExerciseRoom: true,
+        },
+        interaction: {
+          id: '10',
+          status: C_STATUS.PLANNED,
+          date: '2023-04-13',
+          description: [
+            {
+              lang: 'en-EN',
+              text: 'Churn Risk Increase',
+            },
+          ],
+          callBlock: true,
+        },
+        healthRisk: true,
       },
     ];
   }
