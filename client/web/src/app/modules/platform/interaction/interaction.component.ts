@@ -5,6 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonModal } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { CustomerService } from 'src/app/core/services/customer.service';
+import { Customer } from 'src/app/core/interfaces/customer.model';
 
 export enum Phases {
   loading,
@@ -23,7 +25,7 @@ export class InteractionComponent implements OnInit {
   currentPhase = Phases.loading;
   @ViewChild(IonModal) modal!: IonModal;
 
-  list: Array<ICIData> = [];
+  list: Array<Customer> = [];
   searchValue = '';
   activeTabList!: Array<string>;
   tabs!: Array<any>;
@@ -56,12 +58,13 @@ export class InteractionComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private translateService: TranslateService,
+    private customerService: CustomerService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.init();
-    this.list[0]?.title;
+    this.list[0]?.name;
   }
 
   confirm() {
@@ -111,7 +114,7 @@ export class InteractionComponent implements OnInit {
         disabled: false,
       },
       {
-        id: 'excludeAG',
+        id: 'inExerciseRoom',
         label: 'interaction.filters.exclude-ag',
         checked: !true,
         disabled: !!false,
@@ -154,8 +157,8 @@ export class InteractionComponent implements OnInit {
       this.filterList.forEach((f: any) => (filter[f.id] = f.checked));
 
       this.currentPhase = Phases.loading;
-      this.dataService
-        .getICIData(filter)
+      this.customerService
+        .listCustomers()
         .then((res) => {
           this.list = res?.length > 0 ? res : [];
           this.activeTabList = Array.from(

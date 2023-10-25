@@ -3,6 +3,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { LangInfo } from '../interfaces/auth-info.model';
 
+export interface I18N {
+  lang: string;
+  text: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })

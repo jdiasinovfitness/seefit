@@ -1,4 +1,4 @@
-<div class="c-info-wrapper" *ngIf="info?.customerInfo as data">
+<!-- <div class="c-info-wrapper" *ngIf="info?.customerInfo as data">
   <ion-accordion-group [multiple]="true">
     <div class="side-by-side">
       <ion-accordion
@@ -72,8 +72,8 @@
         </div>
       </ion-accordion>
     </div>
-    <!-- Additional Info -->
-
+     Additional Info -->
+<!-- 
     <ion-accordion
       toggleIconSlot="start"
       *ngIf="data?.additionalInfo as addInfo"
@@ -84,7 +84,7 @@
         </ion-label>
       </ion-item>
       <div slot="content">
-        <!-- Icons -->
+       Icons 
         <div class="hole-line">
           <div *ngFor="let icon of icons">
             <div
@@ -94,9 +94,9 @@
           </div>
         </div>
       </div>
-    </ion-accordion>
-    <!-- Lifecycle -->
-    <!-- <ion-accordion
+    </ion-accordion> -->
+<!-- Lifecycle -->
+<!-- <ion-accordion
       toggleIconSlot="start"
       *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle"
     >
@@ -119,14 +119,15 @@
         </div>
       </div>
     </ion-accordion> -->
+<!--     
   </ion-accordion-group>
   <div class="a-content">
-    <!-- Observation -->
-    <app-observation
+   Observation -->
+<!-- <app-observation
       [userId]="info.userId"
       [displayBtn]="info.status !== statusTypes.COMPLETED"
       (handleClick)="onButtonClick($event)"
     >
     </app-observation>
   </div>
-</div>
+</div> -->

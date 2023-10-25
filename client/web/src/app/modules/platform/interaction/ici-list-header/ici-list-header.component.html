@@ -3,59 +3,57 @@
     <div class="col-icons">
       <div
         class="see-icon md {{ icon }}"
-        *ngFor="
-          let icon of item?.customerInfo?.additionalInfo?.icons | slice : 0 : 3
-        "
+        *ngFor="let icon of item?.additionalInfo?.icons | slice : 0 : 3"
       ></div>
     </div>
 
-    <!-- Avatar -->
+    <!-- Avatar  -->
     <ion-avatar>
-      <img alt="Silhouette of a person's head" [src]="item.imageUrl" />
+      <img alt="Silhouette of a person's head" [src]="item.photo" />
     </ion-avatar>
   </div>
 
   <div class="col-wrapper">
-    <!-- Left Column -->
+    <!-- Left Column  -->
     <div class="column">
-      <!-- Title -->
+      <!-- Title  -->
       <ion-label>
         <ion-text color="primary">
-          <b>{{ item.title }}</b>
+          <b>{{ item.name }}</b>
         </ion-text>
       </ion-label>
-      <!-- Risk -->
+      <!-- Risk  -->
       <div class="labels hidden-big-device">
-        <div class="lbl" *ngIf="item.primary.value !== 'n/a'">
-          {{ item.primary.value }}
+        <div class="lbl" *ngIf="item.risk !== 'n/a'">
+          {{ item.risk }}
         </div>
-        <!-- Usage -->
-        <div class="lbl" *ngIf="item.secondary.value !== 'n/a'">
-          {{ item.secondary.value }}
+        <!-- Usage  -->
+        <div class="lbl" *ngIf="item.frequency !== 'n/a'">
+          {{ item.frequency }}
         </div>
       </div>
     </div>
 
-    <!-- Right Column -->
+    <!-- Right Column  -->
     <div class="column right" slot="end">
-      <!-- Date -->
+      <!-- Date  -->
       <ion-label class="right">
         <ion-text color="medium">
-          {{ item.date }}
+          {{ item.interaction.date }}
         </ion-text>
       </ion-label>
-      <!-- Status -->
+      <!-- Status  -->
       <div class="right">
         <ion-chip color="medium">
           <ion-text color="primary" style="font-size: smaller">
-            {{ item.status }}
+            {{ item.interaction.status }}
           </ion-text>
         </ion-chip>
       </div>
-      <!-- Interaction Type -->
+      <!-- Interaction Type  -->
       <ion-label class="right">
         <ion-text color="secondary">
-          {{ item.interaction.value }}
+          {{ item.interaction.description[0].text }}
         </ion-text>
       </ion-label>
     </div>
