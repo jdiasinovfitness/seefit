@@ -8,6 +8,8 @@ interface AuthInfo {
 	user: string;
 }
 const login = async (req: Request, token: string): Promise<AuthInfo> => {
+	console.log('login test');
+
 	try {
 		const response = await axios.request({
 			method: 'POST',
