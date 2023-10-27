@@ -4,7 +4,7 @@
 </ion-header>
 
 <!-- Tab Filters -->
-<div class="tab-wrapper">
+<div class="tab-wrapper" style="overflow-x: auto">
   <ion-item lines="full">
     <ion-button
       class="hidden-small-device"
@@ -16,15 +16,20 @@
 
     <ion-segment
       class="segment"
-      *ngFor="let filter of filterList; let i = index"
       [(ngModel)]="selectedFilterTab"
-      [scrollable]="true"
       mode="md"
-      (ionChange)="onFilterToggle($event, filter.id)"
+      [scrollable]="!isMobile"
+      (ionChange)="onFilterToggle($event, selectedFilterTab)"
     >
-      <ion-segment-button [value]="filter">
-        <label>{{ filter.id + filteredCustomerCount | translate }} </label>
-      </ion-segment-button>
+      <ng-container *ngFor="let filter of filterList; let i = index">
+        <ion-segment-button [value]="filter.id">
+          <label
+            >{{ filter.id | translate }} ({{
+              selectedFilterTab === filter.id ? filteredCustomerCount : "0"
+            }})
+          </label>
+        </ion-segment-button>
+      </ng-container>
     </ion-segment>
     <ion-button
       class="hidden-small-device"

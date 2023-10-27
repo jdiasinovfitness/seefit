@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IonModal } from '@ionic/angular';
@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
 import { Customer } from 'src/app/core/interfaces/customer.model';
-import { THRESHOLDS } from 'src/app/core/constants/config.constants';
 import { C_STATUS } from 'src/app/core/interfaces/customer.model';
 
 export enum Phases {
@@ -260,18 +259,24 @@ export class InteractionComponent implements OnInit {
   }
 
   prevTab(event: any) {
-    const newTab =
-      Number(this.currentTab) > 0
-        ? (Number(this.currentTab) - 1).toString()
-        : this.currentTab;
-    this.currentTab = newTab;
+    const currentIndex = this.filterList.findIndex(
+      (filter) => filter.id === this.selectedFilterTab
+    );
+    if (currentIndex > 0) {
+      this.selectedFilterTab = this.filterList[currentIndex - 1].id;
+      this.applyFilters(this.selectedFilterTab);
+    }
+    this.loadData();
   }
 
   nextTab(event: any) {
-    const newTab =
-      Number(this.currentTab) < this.list.length - 1
-        ? (Number(this.currentTab) + 1).toString()
-        : this.currentTab;
-    this.currentTab = newTab;
+    const currentIndex = this.filterList.findIndex(
+      (filter) => filter.id === this.selectedFilterTab
+    );
+    if (currentIndex < this.filterList.length - 1) {
+      this.selectedFilterTab = this.filterList[currentIndex + 1].id;
+      this.applyFilters(this.selectedFilterTab);
+    }
+    this.loadData();
   }
 }

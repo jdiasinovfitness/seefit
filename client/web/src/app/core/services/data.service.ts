@@ -325,7 +325,7 @@ export class DataService {
         frequency: 'n/a',
         risk: 'n/a',
         currentLocation: {
-          inClub: true,
+          inClub: false,
           inExerciseRoom: false,
         },
         interaction: {
@@ -375,7 +375,7 @@ export class DataService {
         frequency: 'Active',
         risk: '9%',
         currentLocation: {
-          inClub: true,
+          inClub: false,
           inExerciseRoom: false,
         },
         interaction: {
@@ -513,7 +513,7 @@ export class DataService {
               text: 'Email - PT Offer',
             },
           ],
-          callBlock: true,
+          callBlock: false,
         },
         healthRisk: false,
       },
