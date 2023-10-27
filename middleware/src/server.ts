@@ -20,12 +20,12 @@ applyMiddleware(activationMiddleware, router);
 applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
 
+const { PORT = 80 } = process.env;
+const server = http.createServer(router);
+
 router.get('/hello', (req, res) => {
 	res.send('Hello World!');
 });
-
-const { PORT = 80 } = process.env;
-const server = http.createServer(router);
 
 server.listen(PORT, () =>
 	console.info({
