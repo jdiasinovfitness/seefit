@@ -8,7 +8,7 @@ interface AuthInfo {
 	user: string;
 }
 const login = async (req: Request, token: string): Promise<AuthInfo> => {
-	console.log('login hitted', req.body, token);
+	console.log('login was called', req.body, token);
 
 	try {
 		const response = await axios.request({
