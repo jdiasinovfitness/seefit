@@ -161,8 +161,9 @@
       "title": "Filters",
       "ok": "Ok",
       "in-club": "In Club",
-      "exclude-ag": "In GC",
-      "expired": "Planned"
+      "exclude-ag": "In Exercise Room",
+      "expired": "Planned Int",
+      "all": "All Members"
     },
     "empty": {
       "empty-title": "No <b>Customer</b> Found",

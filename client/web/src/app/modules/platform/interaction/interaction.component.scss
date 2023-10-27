@@ -61,6 +61,22 @@ ion-segment {
   padding: 0px 16px;
 }
 
+.tab-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: inherit;
+  padding-top: 24px;
+  margin-bottom: -30px;
+  ion-item {
+    width: -webkit-fill-available;
+  }
+  .segment {
+    display: flex;
+    flex-grow: 1;
+    width: fit-content;
+  }
+}
+
 .counter {
   margin-left: 12px;
 }
