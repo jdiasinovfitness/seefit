@@ -20,9 +20,8 @@ applyMiddleware(activationMiddleware, router);
 applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
 
-router.use((req, res, next) => {
-	console.log(`Hitted route: ${req.url}`);
-	next();
+router.get('/hello', (req, res) => {
+	res.send('world!');
 });
 
 const { PORT = 80 } = process.env;
