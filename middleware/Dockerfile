@@ -4,10 +4,10 @@ WORKDIR /app
 
 RUN echo \; begin auth token > /root/.npmrc && \
 echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/registry/:username=inovretail >> /root/.npmrc && \ 
-echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/registry/:_password=emp0MzZ6bnJjdWxwaHF4eWppbW5tZnV6N3l2aWdoaXNvaXFrNWt2eHB2NWJkN3puanZvYQ== >> /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/registry/:_password=ZXFibmU2N2NzanI2enRyemdrM3p4aXV6dzU2dzYyamdhZWVveTM0dGNteG9tbWRpYnBmcQ== >> /root/.npmrc && \
 echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/registry/:email=email >> /root/.npmrc && \
 echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/:username=inovretail >> /root/.npmrc && \
-echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/:_password=emp0MzZ6bnJjdWxwaHF4eWppbW5tZnV6N3l2aWdoaXNvaXFrNWt2eHB2NWJkN3puanZvYQ== >> /root/.npmrc && \
+echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/:_password=ZXFibmU2N2NzanI2enRyemdrM3p4aXV6dzU2dzYyamdhZWVveTM0dGNteG9tbWRpYnBmcQ== >> /root/.npmrc && \
 echo //pkgs.dev.azure.com/inovretail/13f811ff-a4e7-4240-8ac2-06a16252dd80/_packaging/npd/npm/:email=email >> /root/.npmrc && \
 echo \; end auth token >> /root/.npmrc
 
