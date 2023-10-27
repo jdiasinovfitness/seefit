@@ -21,19 +21,14 @@ applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
 
 router.get('/hello', (req, res) => {
-	res.send('world!');
+	res.send('Hello World!');
 });
 
 const { PORT = 80 } = process.env;
 const server = http.createServer(router);
 
-server.listen(PORT, () => {
-	const address = server.address();
-	const actualAddress =
-		typeof address === 'string'
-			? address
-			: `http://${address?.address}:${address?.port}`;
+server.listen(PORT, () =>
 	console.info({
-		message: `Server is running on: ${actualAddress} at ${process.env.NODE_ENV}`,
-	});
-});
+		message: `Server is running on port: ${PORT} at ${process.env.NODE_ENV}`,
+	})
+);
