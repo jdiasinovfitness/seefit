@@ -8,13 +8,6 @@ interface ILoginResponse {
 	userId: string;
 	language: string;
 }
-interface UserInitialInfo {
-	id: string;
-	acessToken: string;
-	refreshToken: string;
-	name?: string;
-	email: string;
-}
 
 export default async (
 	req: Request,
