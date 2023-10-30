@@ -2,13 +2,13 @@ import { NextFunction, Request, Response } from 'express';
 import AuthProvider from '../../provider/Authentication';
 import UserProvider from '../../provider/User';
 
-interface UserInitialInfo {
-	id: string;
-	acessToken: string;
+interface ILoginResponse {
+	accessToken: string;
 	refreshToken: string;
-	name?: string;
-	email: string;
+	userId: string;
+	language: string;
 }
+
 export default async (
 	req: Request,
 	res: Response,
@@ -17,18 +17,17 @@ export default async (
 	try {
 		const authorization = req.headers['authorization'] as string;
 		const loginResponse = await AuthProvider.login(req, authorization);
-
 		const authToken = 'Bearer ' + loginResponse.accessToken;
 
 		const userInfo = await UserProvider.userProfile(authToken);
 
-		const user: UserInitialInfo = {
-			id: loginResponse.user,
-			acessToken: loginResponse.accessToken,
+		const user: ILoginResponse = {
+			userId: loginResponse.user,
+			accessToken: loginResponse.accessToken,
 			refreshToken: loginResponse.refreshToken,
-			name: userInfo.name,
-			email: userInfo.email,
+			language: userInfo.language || 'pt',
 		};
+
 		res.status(200).send(user);
 
 		return;

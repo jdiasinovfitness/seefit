@@ -176,13 +176,13 @@ const unlockUser = async (auth: string, user_id: string): Promise<unknown> => {
 export interface UserProfileBasic {
 	name: string;
 	email: string;
+	language: string;
 }
 const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 	try {
 		const response = await axios.request({
 			method: 'GET',
-			url: `${process.env.API_GATEWAY}/user/my_profile
-			`,
+			url: `${process.env.API_GATEWAY}/user/my_profile`,
 			headers: {
 				Authorization: auth,
 			},
@@ -191,6 +191,7 @@ const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 
 		return response.data;
 	} catch (err) {
+		console.log(err);
 		throw processAPIError(err);
 	}
 };
