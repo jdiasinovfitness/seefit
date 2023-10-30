@@ -60,6 +60,7 @@ export class InteractionComponent implements OnInit {
   ];
 
   filteredCustomerCount: number = 0;
+  showLoading: boolean = false;
 
   constructor(
     private dataService: DataService,
@@ -254,8 +255,11 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
   onFilterToggle(event: any, selectedFilterTab: string) {
+    this.showLoading = true; // Mostrar o spinner
     this.applyFilters(selectedFilterTab);
-    this.loadData();
+    this.loadData(); // Carregar dados
+    this.selectedFilterTab = selectedFilterTab;
+    this.showLoading = false; // Esconder o spinner
   }
 
   prevTab(event: any) {

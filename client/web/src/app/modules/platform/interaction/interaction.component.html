@@ -4,7 +4,7 @@
 </ion-header>
 
 <!-- Tab Filters -->
-<div class="tab-wrapper" style="overflow-x: auto">
+<div class="tab-wrapper">
   <ion-item lines="full">
     <ion-button
       class="hidden-small-device"
@@ -22,6 +22,8 @@
       (ionChange)="onFilterToggle($event, selectedFilterTab)"
     >
       <ng-container *ngFor="let filter of filterList; let i = index">
+        <ion-spinner *ngIf="showLoading"></ion-spinner>
+
         <ion-segment-button [value]="filter.id">
           <label
             >{{ filter.id | translate }} ({{
