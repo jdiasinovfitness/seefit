@@ -8,8 +8,6 @@ interface AuthInfo {
 	user: string;
 }
 const login = async (req: Request, token: string): Promise<AuthInfo> => {
-	console.log('login was called ', req.body, token);
-
 	try {
 		const response = await axios.request({
 			method: 'POST',
@@ -22,7 +20,6 @@ const login = async (req: Request, token: string): Promise<AuthInfo> => {
 			},
 			responseType: 'json',
 		});
-
 		return response.data;
 	} catch (err) {
 		throw processAPIError(err);
