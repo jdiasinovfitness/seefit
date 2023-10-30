@@ -17,7 +17,7 @@ export default async (
 	try {
 		const authorization = req.headers['authorization'] as string;
 		const loginResponse = await AuthProvider.login(req, authorization);
-
+		console.log(loginResponse.accessToken);
 		const authToken = 'Bearer ' + loginResponse.accessToken;
 		const userInfo = await UserProvider.userProfile(authToken);
 
