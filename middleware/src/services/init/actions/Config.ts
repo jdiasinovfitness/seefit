@@ -22,7 +22,8 @@ export default async (
 
 	try {
 		const decodedToken = await Authentication.decodeToken(authToken); // Make sure decodeToken is an asynchronous function
-		const userId = decodedToken.payload['user-id'];
+		// const userId = decodedToken.payload['user-id'];
+		const userId = '5c51de7120cc4509e2e941e5';
 
 		console.log('userid & decoded token ', userId, decodedToken);
 
