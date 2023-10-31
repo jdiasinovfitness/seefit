@@ -2,7 +2,15 @@ import UserProvider from '../../provider/User';
 import { NextFunction, Request, Response } from 'express';
 import Authentication from '../../provider/Authentication';
 
-type KeyValue = { [key: string]: any };
+export interface DecodedToken {
+	payload: {
+		'user-id': string;
+		origins: string;
+	};
+	iat: number;
+	exp: number;
+	iss: string;
+}
 
 export default async (
 	req: Request,
@@ -13,8 +21,8 @@ export default async (
 	console.log('auth header: ', authToken);
 
 	try {
-		const decodedToken: KeyValue = Authentication.decodeToken(authToken);
-		const userId = decodedToken['user-id'];
+		const decodedToken = await Authentication.decodeToken(authToken); // Make sure decodeToken is an asynchronous function
+		const userId = decodedToken.payload['user-id'];
 
 		console.log('userid & decoded token ', userId, decodedToken);
 
