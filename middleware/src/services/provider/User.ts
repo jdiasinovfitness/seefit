@@ -201,7 +201,7 @@ const getUserOrigins = async (userId: string, auth: string) => {
 	try {
 		const response = await axios.request({
 			method: 'GET',
-			url: `${process.env.API_GATEWAY}/user/${userId}/origin`,
+			url: `${process.env.API_GATEWAY}/user/${userId}/origins`,
 			headers: {
 				Authorization: auth,
 			},
