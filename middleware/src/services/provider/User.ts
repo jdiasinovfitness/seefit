@@ -196,7 +196,41 @@ const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 	}
 };
 
+const getUserOrigins = async (userId: string, auth: string) => {
+	try {
+		const response = await axios.request({
+			method: 'GET',
+			url: `${process.env.API_GATEWAY}/user/${userId}/origin`,
+		});
+
+		return response.data;
+	} catch (err) {
+		console.log(err);
+		throw processAPIError(err);
+	}
+};
+
+const getUserPermissions = async (userId: string, auth: string) => {
+	try {
+		const response = await axios.request({
+			method: 'GET',
+			url: `${process.env.API_GATEWAY}/user/${userId}/apps`,
+			headers: {
+				Authorization: auth,
+			},
+			responseType: 'json',
+		});
+
+		return response.data;
+	} catch (err) {
+		console.log(err);
+		throw processAPIError(err);
+	}
+};
+
 export default {
+	getUserOrigins,
+	getUserPermissions,
 	searchUser,
 	getUserLocations,
 	getUserRoles,
