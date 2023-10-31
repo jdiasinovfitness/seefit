@@ -219,7 +219,7 @@ const getUserPermissions = async (userId: string, auth: string) => {
 	try {
 		const response = await axios.request({
 			method: 'GET',
-			url: `${process.env.API_GATEWAY}/user/${userId}/apps`,
+			url: `${process.env.API_GATEWAY}/user/${userId}/app`,
 			headers: {
 				Authorization: auth,
 			},
