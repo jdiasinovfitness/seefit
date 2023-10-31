@@ -63,6 +63,7 @@ const getUserLocations = async (
 		});
 		return response.data as Array<UserLocation>;
 	} catch (err) {
+		console.log('GET USER LOCATION ERROR ', err);
 		throw processAPIError(err);
 	}
 };
@@ -201,11 +202,15 @@ const getUserOrigins = async (userId: string, auth: string) => {
 		const response = await axios.request({
 			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user/${userId}/origin`,
+			headers: {
+				Authorization: auth,
+			},
+			responseType: 'json',
 		});
 
 		return response.data;
 	} catch (err) {
-		console.log(err);
+		console.log('GET USER ORIGIN ERROR', err);
 		throw processAPIError(err);
 	}
 };
@@ -223,7 +228,7 @@ const getUserPermissions = async (userId: string, auth: string) => {
 
 		return response.data;
 	} catch (err) {
-		console.log(err);
+		console.log('GET USER PERMISSIONS ERROR', err);
 		throw processAPIError(err);
 	}
 };
