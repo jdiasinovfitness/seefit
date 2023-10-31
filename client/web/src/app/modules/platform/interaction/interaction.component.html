@@ -4,65 +4,67 @@
 </ion-header>
 
 <!-- Tab Filters -->
-<div class="tab-wrapper">
-  <ion-item lines="full">
+<div class="header-filters">
+  <div class="tab-wrapper">
+    <ion-item lines="full">
+      <ion-button
+        class="hidden-small-devices"
+        fill="clear"
+        (click)="prevTab($event)"
+      >
+        <ion-icon name="chevron-back-circle-outline"></ion-icon>
+      </ion-button>
+
+      <ion-segment
+        class="segment"
+        [(ngModel)]="selectedFilterTab"
+        mode="md"
+        [scrollable]="!isMobile"
+        (ionChange)="onFilterToggle($event, selectedFilterTab)"
+      >
+        <ng-container *ngFor="let filter of filterList; let i = index">
+          <ion-spinner *ngSwitch="onFilterToggle"></ion-spinner>
+
+          <ion-segment-button [value]="filter.id">
+            <label
+              >{{ filter.id | translate }} ({{
+                selectedFilterTab === filter.id ? filteredCustomerCount : "0"
+              }})
+            </label>
+            <!-- alterar '0' -->
+          </ion-segment-button>
+        </ng-container>
+      </ion-segment>
+      <ion-button
+        class="hidden-small-devices"
+        fill="clear"
+        (click)="nextTab($event)"
+      >
+        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+
+  <div class="filter-bar">
+    <!-- TODO: Group all in one action Sheet for small devices -->
+    <!-- Search -->
+    <ion-searchbar
+      color="light"
+      [debounce]="500"
+      (ionChange)="handleSearch($event)"
+      [value]="searchValue"
+    >
+    </ion-searchbar>
     <ion-button
-      class="hidden-small-device"
-      fill="clear"
-      (click)="prevTab($event)"
+      shape="round"
+      color="light"
+      size="small"
+      (click)="handleRefresh($event)"
     >
-      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+      <ion-icon name="refresh"></ion-icon>
     </ion-button>
-
-    <ion-segment
-      class="segment"
-      [(ngModel)]="selectedFilterTab"
-      mode="md"
-      [scrollable]="!isMobile"
-      (ionChange)="onFilterToggle($event, selectedFilterTab)"
-    >
-      <ng-container *ngFor="let filter of filterList; let i = index">
-        <ion-spinner *ngIf="showLoading"></ion-spinner>
-
-        <ion-segment-button [value]="filter.id">
-          <label
-            >{{ filter.id | translate }} ({{
-              selectedFilterTab === filter.id ? filteredCustomerCount : "0"
-            }})
-          </label>
-        </ion-segment-button>
-      </ng-container>
-    </ion-segment>
-    <ion-button
-      class="hidden-small-device"
-      fill="clear"
-      (click)="nextTab($event)"
-    >
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-    </ion-button>
-  </ion-item>
+  </div>
 </div>
-
-<div class="filter-bar">
-  <!-- TODO: Group all in one action Sheet for small devices -->
-  <!-- Search -->
-  <ion-searchbar
-    color="light"
-    [debounce]="500"
-    (ionChange)="handleSearch($event)"
-    [value]="searchValue"
-  >
-  </ion-searchbar>
-  <ion-button
-    shape="round"
-    color="light"
-    size="small"
-    (click)="handleRefresh($event)"
-  >
-    <ion-icon name="refresh"></ion-icon>
-  </ion-button>
-</div>
-
 <!-- Page Content -->
 <ion-content>
   <ng-container [ngSwitch]="currentPhase">

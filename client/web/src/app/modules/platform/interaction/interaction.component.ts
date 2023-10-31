@@ -157,7 +157,7 @@ export class InteractionComponent implements OnInit {
       {
         id: 'All Members',
         label: 'interaction.filters.all',
-        checked: false,
+        checked: true,
         disabled: false,
         allMembers: true,
         filteredCount: 0,
@@ -173,8 +173,8 @@ export class InteractionComponent implements OnInit {
     // this.list[0].
   }
 
-  async handleRefresh(event: any) {
-    await this.loadData();
+  handleRefresh(event: any) {
+    this.loadData();
     event.target.complete();
   }
 
@@ -252,14 +252,16 @@ export class InteractionComponent implements OnInit {
 
   handleSearch(newVal: any) {
     this.searchValue = newVal?.target?.value;
+    console.log(this.loadData, 'loadData on search');
     this.loadData();
   }
+
   onFilterToggle(event: any, selectedFilterTab: string) {
-    this.showLoading = true; // Mostrar o spinner
+    this.showLoading = true;
     this.applyFilters(selectedFilterTab);
-    this.loadData(); // Carregar dados
+    this.loadData();
     this.selectedFilterTab = selectedFilterTab;
-    this.showLoading = false; // Esconder o spinner
+    this.showLoading = false;
   }
 
   prevTab(event: any) {

@@ -93,3 +93,37 @@ ion-footer {
 
   margin: 0px 12px;
 }
+
+// Desktop View
+
+@media (min-width: 1024px) {
+  .header-filters {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tab-wrapper {
+    flex: 1;
+  }
+
+  .filter-bar {
+    flex: 1;
+    margin-right: 8px;
+    margin-top: 13px;
+    border-bottom: 0.55px solid var(--ion-color-medium);
+    ion-searchbar {
+      padding-top: 26px !important;
+    }
+    ion-button {
+      margin-top: 18px;
+    }
+  }
+
+  // Chevron Buttons Mobile and Tablet View:
+
+  @media screen and (min-width: 946px) {
+    .hidden-small-devices {
+      display: none !important;
+    }
+  }
+}
