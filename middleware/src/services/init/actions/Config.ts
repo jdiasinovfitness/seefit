@@ -1,5 +1,8 @@
 import UserProvider from '../../provider/User';
 import { NextFunction, Request, Response } from 'express';
+import Authentication from 'services/provider/Authentication';
+
+type KeyValue = { [key: string]: any };
 
 export default async (
 	req: Request,
@@ -10,14 +13,18 @@ export default async (
 	console.log('auth header: ', authToken);
 
 	try {
-		const testId = '5c51de7120cc4509e2e941e5';
+		const decodedToken: KeyValue = Authentication.decodeToken(authToken);
+		const userId = decodedToken['user-id'];
+
+		console.log('userid & decoded token ', userId, decodedToken);
+
 		const origin = '5c51c934737aaa0016733c00';
 
-		const userOrigins = await UserProvider.getUserOrigins(testId, authToken);
-		const userPerms = await UserProvider.getUserPermissions(testId, authToken);
+		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
+		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
 		const userLocations = await UserProvider.getUserLocations(
 			authToken,
-			testId,
+			userId,
 			origin
 		);
 
@@ -26,8 +33,6 @@ export default async (
 			permissions: userPerms,
 			locations: userLocations,
 		};
-
-		console.log(response);
 
 		res.status(200).send(response);
 	} catch (err) {
