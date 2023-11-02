@@ -59,7 +59,7 @@ export class InteractionComponent implements OnInit {
     },
   ];
 
-  filteredCustomerCount: number = 0;
+  filteredCounts: { [key: string]: number } = {};
   showLoading: boolean = false;
 
   constructor(
@@ -72,6 +72,7 @@ export class InteractionComponent implements OnInit {
   ngOnInit(): void {
     this.init();
     this.list[0]?.name;
+    this.applyFilters(this.selectedTab);
   }
 
   confirm() {
@@ -120,7 +121,6 @@ export class InteractionComponent implements OnInit {
         checked: false,
         disabled: false,
         interaction: 'PLANNED',
-        filteredCount: 0,
       },
       {
         id: 'Health Risk',
@@ -128,7 +128,6 @@ export class InteractionComponent implements OnInit {
         checked: false,
         disabled: false,
         healthRisk: true,
-        filteredCount: 0,
       },
       {
         id: 'In Exercise Room',
@@ -136,7 +135,6 @@ export class InteractionComponent implements OnInit {
         checked: false,
         disabled: false,
         inExerciseRoom: true,
-        filteredCount: 0,
       },
       {
         id: 'In Club',
@@ -144,7 +142,6 @@ export class InteractionComponent implements OnInit {
         checked: false,
         disabled: false,
         inClub: true,
-        filteredCount: 0,
       },
       {
         id: 'Call Action',
@@ -152,7 +149,6 @@ export class InteractionComponent implements OnInit {
         checked: false,
         disabled: false,
         callBlock: true,
-        filteredCount: 0,
       },
       {
         id: 'All Members',
@@ -160,11 +156,23 @@ export class InteractionComponent implements OnInit {
         checked: true,
         disabled: false,
         allMembers: true,
-        filteredCount: 0,
       },
     ] as any;
 
-    this.loadData();
+    this.filteredCounts = {};
+
+    await this.loadData();
+
+    this.filterList.forEach((filter) => {
+      this.filteredCounts[filter.id] = 0;
+    });
+
+    this.filterList.forEach((filter) => {
+      const filteredList = this.list.filter((customer: Customer) =>
+        this.filterCustomer(customer, filter.id)
+      );
+      this.filteredCounts[filter.id] = filteredList.length;
+    });
   }
 
   resetData() {
@@ -202,10 +210,10 @@ export class InteractionComponent implements OnInit {
             { length: this.list.length },
             () => '0'
           );
-          this.currentPhase =
-            this.list?.length === 0 ? Phases.empty : Phases.success;
           this.applyFilters(this.selectedFilterTab);
 
+          this.currentPhase =
+            this.list?.length === 0 ? Phases.empty : Phases.success;
           resolve(res);
         })
         .catch((err) => {
@@ -216,25 +224,24 @@ export class InteractionComponent implements OnInit {
     });
   }
 
-  applyFilters(selectedFilterTab: string) {
-    this.selectedFilterTab = selectedFilterTab;
-
+  applyFilters(filterId: string) {
+    this.selectedFilterTab = filterId;
     this.list = this.list.filter((customer: Customer) =>
-      this.filterCustomer(customer)
+      this.filterCustomer(customer, filterId)
     );
-    this.filteredCustomerCount = this.list.length;
+    this.filteredCounts[filterId] = this.list.length;
   }
 
-  filterCustomer(customer: Customer): boolean {
-    if (this.selectedFilterTab === 'Planned Int') {
+  filterCustomer(customer: Customer, filterId: string): boolean {
+    if (filterId === 'Planned Int') {
       return customer.interaction.status === C_STATUS.PLANNED;
-    } else if (this.selectedFilterTab === 'Health Risk') {
+    } else if (filterId === 'Health Risk') {
       return customer.healthRisk === true;
-    } else if (this.selectedFilterTab === 'In Exercise Room') {
+    } else if (filterId === 'In Exercise Room') {
       return customer.currentLocation.inExerciseRoom === true;
-    } else if (this.selectedFilterTab === 'In Club') {
+    } else if (filterId === 'In Club') {
       return customer.currentLocation.inClub === true;
-    } else if (this.selectedFilterTab === 'Call Action') {
+    } else if (filterId === 'Call Action') {
       return customer.interaction.callBlock === true;
     }
     return true;
@@ -258,7 +265,6 @@ export class InteractionComponent implements OnInit {
 
   onFilterToggle(event: any, selectedFilterTab: string) {
     this.showLoading = true;
-    this.applyFilters(selectedFilterTab);
     this.loadData();
     this.selectedFilterTab = selectedFilterTab;
     this.showLoading = false;

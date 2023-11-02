@@ -27,9 +27,7 @@
 
           <ion-segment-button [value]="filter.id">
             <label
-              >{{ filter.id | translate }} ({{
-                selectedFilterTab === filter.id ? filteredCustomerCount : "0"
-              }})
+              >{{ filter.id | translate }} ({{ filteredCounts[filter.id] }})
             </label>
             <!-- alterar '0' -->
           </ion-segment-button>
