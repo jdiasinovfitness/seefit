@@ -21,6 +21,19 @@ interface UserRole {
 	role: string;
 }
 
+export interface PermissionApp {
+	app: string;
+	features: string[];
+	pages: string[];
+	permissions: string[];
+	appCode: string;
+}
+
+export interface Permission {
+	origin: string;
+	apps: PermissionApp[];
+}
+
 const searchUser = async (
 	auth: string,
 	origin: string
