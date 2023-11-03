@@ -30,24 +30,22 @@ export default async (
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
-
 		const userLocations = await UserProvider.getUserLocations(
 			authToken,
 			userId,
 			origin
 		);
-		const locationIds = userLocations.map(location => location.location);
+
+		const locationIds = userLocations.map(({ location }) => location);
 		const locations = await LocationProvider.locationsSummary(authToken, origin);
 		const filteredLocations = locations.filter(location =>
 			locationIds.includes(location.id)
 		);
 
-		console.log(filteredLocations);
-
 		const response = {
 			origins: NormalizeHelper.normalizeOrigins(userOrigins),
 			permissions: NormalizeHelper.normalizePermissions(userPerms),
-			locations: filteredLocations,
+			locations: NormalizeHelper.normalizeLocations(filteredLocations),
 		};
 
 		res.status(200).send(response);
