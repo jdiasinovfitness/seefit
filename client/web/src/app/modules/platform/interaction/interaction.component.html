@@ -3,83 +3,66 @@
   <ion-toolbar></ion-toolbar>
 </ion-header>
 
-<div class="filter-bar">
-  <!-- TODO: Group all in one action Sheet for small devices -->
-  <!-- Search -->
-  <ion-searchbar
-    color="light"
-    [debounce]="500"
-    (ionChange)="handleSearch($event)"
-    [value]="searchValue"
-  >
-  </ion-searchbar>
-
-  <!-- Filters -->
-  <!-- Filter on small device -->
-  <ion-button
-    class="hidden-small-device"
-    shape="round"
-    color="light"
-    size="small"
-    id="open-modal"
-  >
-    <img class="menu-icon2" src="assets/icons/filter.svg" />
-  </ion-button>
-
-  <!-- Filter - Action Sheet (small device) -->
-  <ion-modal
-    trigger="open-modal"
-    id="filter-modal"
-    (willDismiss)="onWillDismiss($event)"
-  >
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>{{ "interaction.filters.title" | translate }}</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="confirm()" [strong]="true">{{
-              "interaction.filters.ok" | translate
-            }}</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <span class="filters">
-          <div
-            class="switch-wrp-popup"
-            *ngFor="let filter of filterList; let i = index"
-          >
-            <label>{{ filter.label | translate }}</label>
-            <ion-toggle
-              mode="ios"
-              (ionChange)="onFilterToggle($event, i)"
-              [checked]="filter.checked"
-              [disabled]="
-                filter.disabled || (i !== 0 && !filterList[0]?.checked)
-              "
-            >
-            </ion-toggle>
-          </div>
-        </span>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
-  <!-- Filter on large device -->
-  <span class="lg-filters hidden-big-device">
-    <div class="switch-wrp" *ngFor="let filter of filterList; let i = index">
-      <ion-toggle
-        mode="ios"
-        (ionChange)="onFilterToggle($event, i)"
-        [checked]="filter.checked"
-        [disabled]="filter.disabled || (i !== 0 && !filterList[0]?.checked)"
+<!-- Tab Filters -->
+<div class="header-filters">
+  <div class="tab-wrapper">
+    <ion-item lines="full">
+      <ion-button
+        class="hidden-small-devices"
+        fill="clear"
+        (click)="prevTab($event)"
       >
-      </ion-toggle>
-      <label>{{ filter.label | translate }}</label>
-    </div>
-  </span>
-</div>
+        <ion-icon name="chevron-back-circle-outline"></ion-icon>
+      </ion-button>
 
+      <ion-segment
+        class="segment"
+        [(ngModel)]="selectedFilterTab"
+        mode="md"
+        [scrollable]="!isMobile"
+        (ionChange)="onFilterToggle($event, selectedFilterTab)"
+      >
+        <ng-container *ngFor="let filter of filterList; let i = index">
+          <ion-spinner *ngSwitch="onFilterToggle"></ion-spinner>
+
+          <ion-segment-button [value]="filter.id">
+            <label
+              >{{ filter.id | translate }} ({{ filteredCounts[filter.id] }})
+            </label>
+            <!-- alterar '0' -->
+          </ion-segment-button>
+        </ng-container>
+      </ion-segment>
+      <ion-button
+        class="hidden-small-devices"
+        fill="clear"
+        (click)="nextTab($event)"
+      >
+        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+
+  <div class="filter-bar">
+    <!-- TODO: Group all in one action Sheet for small devices -->
+    <!-- Search -->
+    <ion-searchbar
+      color="light"
+      [debounce]="500"
+      (ionChange)="handleSearch($event)"
+      [value]="searchValue"
+    >
+    </ion-searchbar>
+    <ion-button
+      shape="round"
+      color="light"
+      size="small"
+      (click)="handleRefresh($event)"
+    >
+      <ion-icon name="refresh"></ion-icon>
+    </ion-button>
+  </div>
+</div>
 <!-- Page Content -->
 <ion-content>
   <ng-container [ngSwitch]="currentPhase">
