@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { processAPIError } from '../../utils/httpErrors';
+import axios, { AxiosResponse } from 'axios';
 
 interface SearchUserResponse {
 	id: string;
@@ -58,7 +58,7 @@ const getUserLocations = async (
 			},
 			responseType: 'json',
 			params: {
-				origin: origin,
+				origin,
 			},
 		});
 		return response.data as Array<UserLocation>;
@@ -179,6 +179,13 @@ export interface UserProfileBasic {
 	email: string;
 	language: string;
 }
+
+export interface UserOrigin {
+	code: string;
+	internal_code: string;
+	id: string;
+}
+
 const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 	try {
 		const response = await axios.request({
@@ -197,9 +204,12 @@ const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 	}
 };
 
-const getUserOrigins = async (userId: string, auth: string) => {
+const getUserOrigins = async (
+	userId: string,
+	auth: string
+): Promise<UserOrigin[]> => {
 	try {
-		const response = await axios.request({
+		const response: AxiosResponse<UserOrigin[]> = await axios.request({
 			method: 'GET',
 			url: `${process.env.API_GATEWAY}/user/${userId}/origins`,
 			headers: {
