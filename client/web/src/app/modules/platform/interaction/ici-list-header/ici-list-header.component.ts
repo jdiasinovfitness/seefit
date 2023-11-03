@@ -1,5 +1,5 @@
 import { Customer } from 'src/app/core/interfaces/customer.model';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ici-header',
   templateUrl: './ici-list-header.component.html',
@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class IciListHeaderComponent implements OnInit {
   @Input() item!: Customer;
+  profilePhoto = 'https://ionicframework.com/docs/img/demos/avatar.svg';
 
   constructor() {}
 

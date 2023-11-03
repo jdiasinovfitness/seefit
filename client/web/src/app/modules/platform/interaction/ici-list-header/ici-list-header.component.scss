@@ -104,6 +104,10 @@ ion-chip {
   padding-top: 4px;
 }
 
+.completed-chip {
+  background-color: var(--ion-color-primary);
+}
+
 .labels {
   display: flex;
   flex-direction: row;

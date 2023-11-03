@@ -9,14 +9,17 @@
 
     <!-- Avatar  -->
     <ion-avatar>
-      <img alt="Silhouette of a person's head" [src]="item.photo" />
+      <img
+        alt="Silhouette of a person's head"
+        [src]="item.photo || profilePhoto"
+      />
     </ion-avatar>
   </div>
 
   <div class="col-wrapper">
     <!-- Left Column  -->
     <div class="column">
-      <!-- Title  -->
+      <!-- Name  -->
       <ion-label>
         <ion-text color="primary">
           <b>{{ item.name }}</b>
@@ -36,20 +39,28 @@
 
     <!-- Right Column  -->
     <div class="column right" slot="end">
+      <!-- Status  -->
+      <div class="right">
+        <ion-chip
+          [class.completed-chip]="item.interaction.status === 'COMPLETED'"
+          [color]="item.interaction.status === 'PLANNED' ? 'medium' : 'primary'"
+        >
+          <ion-text
+            [color]="
+              item.interaction.status === 'COMPLETED' ? 'light' : 'primary'
+            "
+            style="font-size: smaller"
+          >
+            {{ item.interaction.status }}
+          </ion-text>
+        </ion-chip>
+      </div>
       <!-- Date  -->
       <ion-label class="right">
         <ion-text color="medium">
           {{ item.interaction.date }}
         </ion-text>
       </ion-label>
-      <!-- Status  -->
-      <div class="right">
-        <ion-chip color="medium">
-          <ion-text color="primary" style="font-size: smaller">
-            {{ item.interaction.status }}
-          </ion-text>
-        </ion-chip>
-      </div>
       <!-- Interaction Type  -->
       <ion-label class="right">
         <ion-text color="medium">
