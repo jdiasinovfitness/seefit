@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { processAPIError } from 'utils/httpErrors';
+import { processAPIError } from '../../utils/httpErrors';
 
 export interface Location {
 	id: string;
