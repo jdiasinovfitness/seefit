@@ -2,6 +2,8 @@ import UserProvider from '../../provider/User';
 import { NextFunction, Request, Response } from 'express';
 import Authentication from '../../provider/Authentication';
 
+import NormalizeHelper from '../../../helpers/Normalize';
+
 export interface DecodedToken {
 	payload: {
 		'user-id': string;
@@ -21,13 +23,11 @@ export default async (
 	console.log('auth header: ', authToken);
 
 	try {
-		const decodedToken = await Authentication.decodeToken(authToken); // Make sure decodeToken is an asynchronous function
+		// const decodedToken = await Authentication.decodeToken(authToken);
 		// const userId = decodedToken.payload['user-id'];
+
 		const userId = '5c51de7120cc4509e2e941e5';
-
-		console.log('userid & decoded token ', userId, decodedToken);
-
-		const origin = '5c51c934737aaa0016733c00';
+		const origin = '5e418b022ae91039d2da361f';
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
@@ -38,8 +38,8 @@ export default async (
 		);
 
 		const response = {
-			origins: userOrigins,
-			permissions: userPerms,
+			origins: NormalizeHelper.normalizeOrigins(userOrigins),
+			permissions: NormalizeHelper.normalizePermissions(userPerms),
 			locations: userLocations,
 		};
 
