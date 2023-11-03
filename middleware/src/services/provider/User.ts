@@ -47,7 +47,7 @@ const searchUser = async (
 const getUserLocations = async (
 	auth: string,
 	user_id: string,
-	origin: string
+	origin?: string
 ): Promise<UserLocation[]> => {
 	try {
 		const response = await axios.request({

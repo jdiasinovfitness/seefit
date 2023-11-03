@@ -43,6 +43,30 @@ const locationsSummary = async (
 	}
 };
 
+const locationsDetails = async (
+	token: string,
+	locationId: string
+): Promise<Location> => {
+	try {
+		const response: AxiosResponse<Location> = await axios.request({
+			method: 'GET',
+			url: `${process.env.API_GATEWAY}/location/${locationId}`,
+			headers: {
+				authorization: token,
+			},
+			params: {
+				'api-version': '1',
+			},
+			responseType: 'json',
+		});
+
+		return response.data;
+	} catch (err) {
+		throw processAPIError(err);
+	}
+};
+
 export default {
 	locationsSummary,
+	locationsDetails,
 };

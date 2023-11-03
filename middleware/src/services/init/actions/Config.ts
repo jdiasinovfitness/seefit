@@ -19,33 +19,32 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	const authToken = req.headers['authorization'] as string;
-	// const origin = req.headers['origin'] as string;
 
 	try {
 		// const decodedToken = await Authentication.decodeToken(authToken);
 		// const userId = decodedToken.payload['user-id'];
 
 		const userId = '5c51de7120cc4509e2e941e5';
-		const origin = '5e418b022ae91039d2da361f';
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
-		const userLocations = await UserProvider.getUserLocations(
-			authToken,
-			userId,
-			origin
-		);
+		const userLocations = await UserProvider.getUserLocations(authToken, userId);
 
-		const locationIds = userLocations.map(({ location }) => location);
-		const locations = await LocationProvider.locationsSummary(authToken, origin);
-		const filteredLocations = locations.filter(location =>
-			locationIds.includes(location.id)
-		);
+		const locations = [];
+		for (const { location } of userLocations) {
+			const locationDetails = LocationProvider.locationsDetails(
+				authToken,
+				location
+			);
+			locations.push(locationDetails);
+		}
+
+		const detailedLocations = await Promise.all(locations);
 
 		const response = {
 			origins: NormalizeHelper.normalizeOrigins(userOrigins),
 			permissions: NormalizeHelper.normalizePermissions(userPerms),
-			locations: NormalizeHelper.normalizeLocations(filteredLocations),
+			locations: NormalizeHelper.normalizeLocations(detailedLocations),
 		};
 
 		res.status(200).send(response);
