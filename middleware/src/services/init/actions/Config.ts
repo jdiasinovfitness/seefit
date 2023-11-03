@@ -19,7 +19,6 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	const authToken = req.headers['authorization'] as string;
-	console.log('auth header: ', authToken);
 
 	try {
 		// const decodedToken = await Authentication.decodeToken(authToken);
