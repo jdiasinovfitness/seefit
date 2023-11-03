@@ -2,8 +2,16 @@ import axios from 'axios';
 import { Request } from 'express';
 import { processAPIError } from '../../utils/httpErrors';
 import jwt from 'jsonwebtoken';
-import { DecodedToken } from 'services/init/actions/Config';
 
+export interface DecodedToken {
+	payload: {
+		'user-id': string;
+		origins: string;
+	};
+	iat: number;
+	exp: number;
+	iss: string;
+}
 interface AuthInfo {
 	accessToken: string;
 	refreshToken: string;

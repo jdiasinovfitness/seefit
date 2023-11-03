@@ -2,16 +2,7 @@ import UserProvider from '../../provider/User';
 import { NextFunction, Request, Response } from 'express';
 import LocationProvider from '../../provider/Location';
 import NormalizeHelper from '../../../helpers/Normalize';
-
-export interface DecodedToken {
-	payload: {
-		'user-id': string;
-		origins: string;
-	};
-	iat: number;
-	exp: number;
-	iss: string;
-}
+import Authentication from '../../provider/Authentication';
 
 export default async (
 	req: Request,
@@ -21,10 +12,8 @@ export default async (
 	const authToken = req.headers['authorization'] as string;
 
 	try {
-		// const decodedToken = await Authentication.decodeToken(authToken);
-		// const userId = decodedToken.payload['user-id'];
-
-		const userId = '5c51de7120cc4509e2e941e5';
+		const decodedToken = await Authentication.decodeToken(authToken);
+		const userId = decodedToken.payload['user-id'];
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
