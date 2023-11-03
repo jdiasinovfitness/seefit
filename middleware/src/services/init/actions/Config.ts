@@ -1,6 +1,5 @@
 import UserProvider from '../../provider/User';
 import { NextFunction, Request, Response } from 'express';
-import Authentication from '../../provider/Authentication';
 
 import NormalizeHelper from '../../../helpers/Normalize';
 
