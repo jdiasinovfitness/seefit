@@ -62,6 +62,7 @@ const locationsDetails = async (
 
 		return response.data;
 	} catch (err) {
+		console.log('ERROR ON LOCATIONS DETAILS');
 		throw processAPIError(err);
 	}
 };

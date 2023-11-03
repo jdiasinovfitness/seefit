@@ -32,6 +32,7 @@ export default async (
 
 		const locations = [];
 		for (const { location } of userLocations) {
+			console.log('location', location);
 			const locationDetails = LocationProvider.locationsDetails(
 				authToken,
 				location
