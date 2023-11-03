@@ -29,7 +29,6 @@
             <label
               >{{ filter.id | translate }} ({{ filteredCounts[filter.id] }})
             </label>
-            <!-- alterar '0' -->
           </ion-segment-button>
         </ng-container>
       </ion-segment>
@@ -133,7 +132,7 @@
               <!-- <app-customer-info
                 [info]="item"
                 (handleClick)="onButtonClick($event)"
-              ></app-customer-info>s
+              ></app-customer-info>
             </div>
             <div class="expanded-area" *ngIf="activeTabList[i] === '1'">
               <app-interaction-info
