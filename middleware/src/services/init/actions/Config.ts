@@ -19,14 +19,13 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	const authToken = req.headers['authorization'] as string;
-	const origin = req.headers['origin'] as string;
+	// const origin = req.headers['origin'] as string;
 
 	try {
 		// const decodedToken = await Authentication.decodeToken(authToken);
 		// const userId = decodedToken.payload['user-id'];
 
 		const userId = '5c51de7120cc4509e2e941e5';
-		const origin = '5e418b022ae91039d2da361f';
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		// for each origin get the perms and locations
