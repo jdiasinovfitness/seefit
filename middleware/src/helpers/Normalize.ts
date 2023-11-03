@@ -1,8 +1,9 @@
 //TODO: ADD TYPES HERE
 
 import { Location } from 'services/provider/Location';
+import { UserOrigin } from 'services/provider/User';
 
-const normalizeOrigins = (origins: any[]) => {
+const normalizeOrigins = (origins: UserOrigin[]) => {
 	return origins.map(({ code, id }) => ({
 		code,
 		id,
@@ -22,9 +23,10 @@ const normalizePermissions = (permissions: any[]) => {
 };
 
 const normalizeLocations = (locations: Location[]) => {
-	return locations.map(({ id, description }) => ({
+	return locations.map(({ id, description, origin }) => ({
 		locationId: id,
 		locationName: description,
+		origin,
 	}));
 };
 

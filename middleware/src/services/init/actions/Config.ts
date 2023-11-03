@@ -33,11 +33,11 @@ export default async (
 		const locations = [];
 		for (const { location } of userLocations) {
 			try {
-				console.log('location', location);
 				const locationDetails = await LocationProvider.locationsDetails(
 					authToken,
 					location
 				);
+
 				locations.push(locationDetails);
 			} catch (error) {
 				continue;
