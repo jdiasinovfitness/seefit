@@ -7,6 +7,7 @@ interface AuthInfo {
 	refreshToken: string;
 	user: string;
 }
+
 const login = async (req: Request, token: string): Promise<AuthInfo> => {
 	try {
 		const response = await axios.request({
