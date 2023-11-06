@@ -49,8 +49,8 @@
     <ion-searchbar
       color="light"
       [debounce]="500"
-      (ionChange)="handleSearch($event)"
-      [value]="searchValue"
+      (ionInput)="handleSearch($event)"
+      [(ngModel)]="searchValue"
     >
     </ion-searchbar>
     <ion-button

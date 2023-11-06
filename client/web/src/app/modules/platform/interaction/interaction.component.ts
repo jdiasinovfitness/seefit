@@ -206,6 +206,14 @@ export class InteractionComponent implements OnInit {
         .listCustomers()
         .then((res) => {
           this.list = res?.length > 0 ? res : [];
+          if (this.searchValue) {
+            this.list = this.list.filter((customer: Customer) => {
+              return customer.name
+                .toLowerCase()
+                .includes(this.searchValue.toLowerCase());
+            });
+          }
+
           this.activeTabList = Array.from(
             { length: this.list.length },
             () => '0'
@@ -259,7 +267,6 @@ export class InteractionComponent implements OnInit {
 
   handleSearch(newVal: any) {
     this.searchValue = newVal?.target?.value;
-    console.log(this.loadData, 'loadData on search');
     this.loadData();
   }
 
