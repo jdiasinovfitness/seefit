@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { processAPIError } from 'utils/httpErrors';
+import { processAPIError } from '../../utils/httpErrors';
 
 export interface UserInteractionParams {
 	inClub?: boolean;

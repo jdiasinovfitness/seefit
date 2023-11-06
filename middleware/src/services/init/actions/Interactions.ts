@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import Interactions from '../../provider/Interactions';
-import { processAPIError } from 'utils/httpErrors';
+import { processAPIError } from '../../../utils/httpErrors';
 
 export default async (
 	req: Request,
