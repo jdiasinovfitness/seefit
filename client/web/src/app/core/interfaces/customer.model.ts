@@ -5,6 +5,7 @@ export interface Customer {
   code: string;
   photo: string;
   name: string;
+  dob: string; //birthday date
   frequency: string;
   risk: string;
   interaction: InteractionBasicInfo;
