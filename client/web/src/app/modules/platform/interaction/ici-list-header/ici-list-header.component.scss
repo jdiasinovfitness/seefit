@@ -25,6 +25,7 @@ ion-item {
       max-height: 150px;
       max-width: 150px;
       margin: 8px;
+      border: 1px solid var(--ion-color-primary) !important;
     }
   }
 
@@ -98,10 +99,12 @@ ion-item {
 
 ion-chip {
   height: 24px;
-  font-size: small;
   margin-right: 0px;
-  padding-bottom: 4px;
   padding-top: 4px;
+  padding-bottom: 4px;
+
+  font-size: small;
+  border-radius: 6px;
 }
 
 .completed-chip {
