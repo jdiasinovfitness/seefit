@@ -25,6 +25,13 @@
           <b>{{ item.name }}</b>
         </ion-text>
       </ion-label>
+      <!-- Code  -->
+      <ion-label>
+        <ion-text color="medium">
+          {{ item.code }}
+        </ion-text>
+      </ion-label>
+
       <!-- Risk  -->
       <div class="labels hidden-big-device">
         <div class="lbl" *ngIf="item.risk !== 'n/a'">
