@@ -290,20 +290,10 @@ export class DataService {
       },
     ];
   }
-
-  /*
-  ID: identificador unico = userID 
-  Code: Para ser mostrado na UI em vez do UserId
-  Name: igual ao Title
-  Photo: Customer image
-  frequency: recebe usage porém apensa com value
-  risk: 
-  description: value do interaction
-   */
   getLiveClubDummyList(): Array<Customer> {
     return [
       {
-        id: '1', // depois será objectID
+        id: '1',
         code: '',
         name: 'Abby Cannon',
         photo: 'assets/temp_images/userPhotos/profile_female6.jpg',
@@ -314,7 +304,7 @@ export class DataService {
           inExerciseRoom: true,
         },
         interaction: {
-          id: '1', // depois será objectID
+          id: '1',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
           description: [
@@ -335,7 +325,7 @@ export class DataService {
         frequency: 'n/a',
         risk: 'n/a',
         currentLocation: {
-          inClub: true,
+          inClub: false,
           inExerciseRoom: false,
         },
         interaction: {
@@ -385,7 +375,7 @@ export class DataService {
         frequency: 'Active',
         risk: '9%',
         currentLocation: {
-          inClub: true,
+          inClub: false,
           inExerciseRoom: false,
         },
         interaction: {
@@ -523,7 +513,7 @@ export class DataService {
               text: 'Email - PT Offer',
             },
           ],
-          callBlock: true,
+          callBlock: false,
         },
         healthRisk: false,
       },

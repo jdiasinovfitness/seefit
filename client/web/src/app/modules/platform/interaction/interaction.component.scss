@@ -59,6 +59,25 @@ ion-content {
 
 ion-segment {
   padding: 0px 16px;
+  ion-segment-button.activated {
+    color: var(--ion-color-primary);
+  }
+}
+
+.tab-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: inherit;
+  padding-top: 24px;
+  margin-bottom: -30px;
+  ion-item {
+    width: -webkit-fill-available;
+  }
+  .segment {
+    display: flex;
+    flex-grow: 1;
+    width: fit-content;
+  }
 }
 
 .counter {
@@ -73,4 +92,38 @@ ion-footer {
   background-color: var(--ion-color-light);
 
   margin: 0px 12px;
+}
+
+// Desktop View
+
+@media (min-width: 1024px) {
+  .header-filters {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tab-wrapper {
+    flex: 1;
+  }
+
+  .filter-bar {
+    flex: 1;
+    margin-right: 8px;
+    margin-top: 13px;
+    border-bottom: 0.5px solid lightgray;
+    ion-searchbar {
+      padding-top: 26px !important;
+    }
+    ion-button {
+      margin-top: 18px;
+    }
+  }
+
+  // Chevron Buttons Mobile and Tablet View:
+
+  @media screen and (min-width: 946px) {
+    .hidden-small-devices {
+      display: none !important;
+    }
+  }
 }

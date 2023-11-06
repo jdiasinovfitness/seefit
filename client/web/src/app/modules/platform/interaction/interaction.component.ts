@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
-import { ICIData } from '../../../core/interfaces/icidata.model';
 import { TranslateService } from '@ngx-translate/core';
 import { IonModal } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
 import { Customer } from 'src/app/core/interfaces/customer.model';
+import { C_STATUS } from 'src/app/core/interfaces/customer.model';
 
 export enum Phases {
   loading,
@@ -25,12 +25,16 @@ export class InteractionComponent implements OnInit {
   currentPhase = Phases.loading;
   @ViewChild(IonModal) modal!: IonModal;
 
+  selectedFilterTab: any;
   list: Array<Customer> = [];
   searchValue = '';
   activeTabList!: Array<string>;
   tabs!: Array<any>;
+  currentTab = '0';
+  isMobile!: boolean;
 
-  filterList!: Array<any>;
+  filterList!: Array<Customer>;
+  selectedTab = 'All Members';
 
   public actionSheetButtons = [
     {
@@ -55,6 +59,9 @@ export class InteractionComponent implements OnInit {
     },
   ];
 
+  filteredCounts: { [key: string]: number } = {};
+  showLoading: boolean = false;
+
   constructor(
     private dataService: DataService,
     private translateService: TranslateService,
@@ -65,6 +72,7 @@ export class InteractionComponent implements OnInit {
   ngOnInit(): void {
     this.init();
     this.list[0]?.name;
+    this.applyFilters(this.selectedTab);
   }
 
   confirm() {
@@ -108,26 +116,63 @@ export class InteractionComponent implements OnInit {
 
     this.filterList = [
       {
-        id: 'inClub',
+        id: 'Planned Int',
+        label: 'interaction.status.planned',
+        checked: false,
+        disabled: false,
+        interaction: 'PLANNED',
+      },
+      {
+        id: 'Health Risk',
+        label: 'interaction.filters.health-risk',
+        checked: false,
+        disabled: false,
+        healthRisk: true,
+      },
+      {
+        id: 'In Exercise Room',
+        label: 'interaction.filters.in-exercise-room',
+        checked: false,
+        disabled: false,
+        inExerciseRoom: true,
+      },
+      {
+        id: 'In Club',
         label: 'interaction.filters.in-club',
+        checked: false,
+        disabled: false,
+        inClub: true,
+      },
+      {
+        id: 'Call Action',
+        label: 'interaction.filters.callback',
+        checked: false,
+        disabled: false,
+        callBlock: true,
+      },
+      {
+        id: 'All Members',
+        label: 'interaction.filters.all',
         checked: true,
         disabled: false,
-      },
-      {
-        id: 'inExerciseRoom',
-        label: 'interaction.filters.exclude-ag',
-        checked: !true,
-        disabled: !!false,
-      },
-      {
-        id: 'expired',
-        label: 'interaction.filters.expired',
-        checked: !true,
-        disabled: !!false,
+        allMembers: true,
       },
     ] as any;
 
-    this.loadData();
+    this.filteredCounts = {};
+
+    await this.loadData();
+
+    this.filterList.forEach((filter) => {
+      this.filteredCounts[filter.id] = 0;
+    });
+
+    this.filterList.forEach((filter) => {
+      const filteredList = this.list.filter((customer: Customer) =>
+        this.filterCustomer(customer, filter.id)
+      );
+      this.filteredCounts[filter.id] = filteredList.length;
+    });
   }
 
   resetData() {
@@ -136,8 +181,8 @@ export class InteractionComponent implements OnInit {
     // this.list[0].
   }
 
-  async handleRefresh(event: any) {
-    await this.loadData();
+  handleRefresh(event: any) {
+    this.loadData();
     event.target.complete();
   }
 
@@ -161,10 +206,20 @@ export class InteractionComponent implements OnInit {
         .listCustomers()
         .then((res) => {
           this.list = res?.length > 0 ? res : [];
+          if (this.searchValue) {
+            this.list = this.list.filter((customer: Customer) => {
+              return customer.name
+                .toLowerCase()
+                .includes(this.searchValue.toLowerCase());
+            });
+          }
+
           this.activeTabList = Array.from(
             { length: this.list.length },
             () => '0'
           );
+          this.applyFilters(this.selectedFilterTab);
+
           this.currentPhase =
             this.list?.length === 0 ? Phases.empty : Phases.success;
           resolve(res);
@@ -175,6 +230,29 @@ export class InteractionComponent implements OnInit {
           reject(err);
         });
     });
+  }
+
+  applyFilters(filterId: string) {
+    this.selectedFilterTab = filterId;
+    this.list = this.list.filter((customer: Customer) =>
+      this.filterCustomer(customer, filterId)
+    );
+    this.filteredCounts[filterId] = this.list.length;
+  }
+
+  filterCustomer(customer: Customer, filterId: string): boolean {
+    if (filterId === 'Planned Int') {
+      return customer.interaction.status === C_STATUS.PLANNED;
+    } else if (filterId === 'Health Risk') {
+      return customer.healthRisk === true;
+    } else if (filterId === 'In Exercise Room') {
+      return customer.currentLocation.inExerciseRoom === true;
+    } else if (filterId === 'In Club') {
+      return customer.currentLocation.inClub === true;
+    } else if (filterId === 'Call Action') {
+      return customer.interaction.callBlock === true;
+    }
+    return true;
   }
 
   onButtonClick(event: any) {
@@ -192,9 +270,32 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
-  onFilterToggle(event: any, index: number) {
-    const newState = event.detail.checked;
-    this.filterList[index].checked = newState;
+  onFilterToggle(event: any, selectedFilterTab: string) {
+    this.showLoading = true;
+    this.loadData();
+    this.selectedFilterTab = selectedFilterTab;
+    this.showLoading = false;
+  }
+
+  prevTab(event: any) {
+    const currentIndex = this.filterList.findIndex(
+      (filter) => filter.id === this.selectedFilterTab
+    );
+    if (currentIndex > 0) {
+      this.selectedFilterTab = this.filterList[currentIndex - 1].id;
+      this.applyFilters(this.selectedFilterTab);
+    }
+    this.loadData();
+  }
+
+  nextTab(event: any) {
+    const currentIndex = this.filterList.findIndex(
+      (filter) => filter.id === this.selectedFilterTab
+    );
+    if (currentIndex < this.filterList.length - 1) {
+      this.selectedFilterTab = this.filterList[currentIndex + 1].id;
+      this.applyFilters(this.selectedFilterTab);
+    }
     this.loadData();
   }
 }
