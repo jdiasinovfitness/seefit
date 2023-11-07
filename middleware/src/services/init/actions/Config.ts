@@ -61,10 +61,10 @@ export default async (
 			);
 
 			const permissions = matchedPerms
-				? matchedPerms.apps.map(app => app.permissions).flat()
+				? matchedPerms.apps.map(app => app.permissions.codes).flat()
 				: [];
 
-			const appCode = matchedPerms?.apps.find(app => !!app.appCode)?.appCode;
+			const appCode = matchedPerms?.apps.find(app => !!app.permissions.appCode);
 
 			const locations = matchedLocations.map(location => ({
 				locationId: location.locationId,
@@ -74,7 +74,7 @@ export default async (
 			const newResponseObj: ResponseResult = {
 				origin: origin.id,
 				permissions: permissions,
-				appCode: appCode ?? '',
+				appCode: appCode?.permissions.appCode ?? '',
 				locations: locations,
 			};
 
