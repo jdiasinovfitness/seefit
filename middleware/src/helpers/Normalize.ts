@@ -1,5 +1,9 @@
-import { Location } from 'services/provider/Location';
-import { Permission, PermissionApp, UserOrigin } from 'services/provider/User';
+import { Location } from '../services/provider/Location';
+import {
+	Permission,
+	PermissionApp,
+	UserOrigin,
+} from '../services/provider/User';
 
 const normalizeOrigins = (origins: UserOrigin[]) => {
 	return origins.map(({ code, id }) => ({
@@ -15,7 +19,6 @@ const normalizePermissions = (permissions: Permission[]) => {
 			apps: permission.apps.map((app: PermissionApp) => ({
 				appCode: app?.appCode,
 				permissions: app?.permissions,
-				features: app?.features,
 			})),
 		};
 	});
