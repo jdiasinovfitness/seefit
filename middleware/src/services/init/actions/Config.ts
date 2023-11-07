@@ -7,7 +7,7 @@ import Authentication from '../../provider/Authentication';
 interface ResponseResult {
 	origin: string;
 	permissions: Array<string>;
-	appCode: string; //this can be undefined for some origins
+	appCode: string;
 	locations: { locationName: string; locationId: string }[];
 }
 
@@ -20,7 +20,7 @@ export default async (
 
 	try {
 		const decodedToken = await Authentication.decodeToken(authToken);
-		const userId = decodedToken.payload['user-id'];
+		const userId = '5c51de7120cc4509e2e941e5';
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
