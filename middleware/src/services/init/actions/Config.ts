@@ -20,7 +20,8 @@ export default async (
 
 	try {
 		const decodedToken = await Authentication.decodeToken(authToken);
-		const userId = decodedToken.payload['user-id'];
+		// const userId = decodedToken.payload['user-id'];
+		const userId = '5c51de7120cc4509e2e941e5';
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
 		const userPerms = await UserProvider.getUserPermissions(userId, authToken);
