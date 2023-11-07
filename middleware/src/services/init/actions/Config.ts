@@ -64,7 +64,7 @@ export default async (
 				? matchedPerms.apps.map(app => app.permissions).flat()
 				: [];
 
-			const appCode = matchedPerms?.apps[0]?.appCode || undefined;
+			const appCode = matchedPerms?.apps[1]?.appCode || undefined;
 
 			const locations = matchedLocations.map(location => ({
 				locationId: location.locationId,
