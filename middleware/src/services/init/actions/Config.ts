@@ -63,6 +63,8 @@ export default async (
 			);
 
 			matchedPerms?.apps.forEach(app => {
+				if (!app.permissions.appCode) return;
+
 				apps.push({
 					permissions: app.permissions.codes,
 					appCode: app.permissions.appCode,
