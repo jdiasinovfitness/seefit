@@ -6,8 +6,7 @@ import Authentication from '../../provider/Authentication';
 
 interface ResponseResult {
 	origin: string;
-	permissions: Array<string>;
-	appCode: string;
+	apps: { appCode: string; permissions: Array<string> }[];
 	locations: { locationName: string; locationId: string }[];
 }
 
@@ -53,18 +52,22 @@ export default async (
 		let newResponse: ResponseResult[] = [];
 
 		for (const origin of organizedData.origins) {
+			let apps: ResponseResult['apps'] = [];
+
 			const matchedPerms = organizedData.permissions.find(
 				permission => permission.origin === origin.id
 			);
+
 			const matchedLocations = organizedData.locations.filter(
 				location => location.origin === origin.id
 			);
 
-			const permissions = matchedPerms
-				? matchedPerms.apps.map(app => app.permissions.codes).flat()
-				: [];
-
-			const appCode = matchedPerms?.apps.find(app => !!app.permissions.appCode);
+			matchedPerms?.apps.forEach(app => {
+				apps.push({
+					permissions: app.permissions.codes,
+					appCode: app.permissions.appCode,
+				});
+			});
 
 			const locations = matchedLocations.map(location => ({
 				locationId: location.locationId,
@@ -72,10 +75,9 @@ export default async (
 			}));
 
 			const newResponseObj: ResponseResult = {
+				apps,
 				origin: origin.id,
-				permissions: permissions,
-				appCode: appCode?.permissions.appCode ?? '',
-				locations: locations,
+				locations,
 			};
 
 			newResponse.push(newResponseObj);
