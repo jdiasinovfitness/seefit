@@ -21,6 +21,7 @@ export default async (
 	try {
 		//random comment to tsts
 		const decodedToken = await Authentication.decodeToken(authToken);
+		console.log(decodedToken);
 		const userId = '5c51de7120cc4509e2e941e5';
 
 		const userOrigins = await UserProvider.getUserOrigins(userId, authToken);
