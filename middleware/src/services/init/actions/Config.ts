@@ -81,7 +81,7 @@ export default async (
 
 		res.status(200).send(newResponse);
 	} catch (err) {
-		console.log('THIS IS THE ERROR', err);
+		console.log('Error: ', err);
 		next(err);
 	}
 };
