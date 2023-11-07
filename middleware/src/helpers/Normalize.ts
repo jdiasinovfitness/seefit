@@ -17,7 +17,6 @@ const normalizePermissions = (permissions: Permission[]) => {
 		return {
 			origin: permission.origin,
 			apps: permission.apps.map((app: PermissionApp) => {
-				console.log('app code -> ', app?.appCode);
 				return {
 					appCode: app?.appCode,
 					permissions: app?.permissions,

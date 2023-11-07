@@ -212,7 +212,6 @@ const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 
 		return response.data;
 	} catch (err) {
-		console.log(err);
 		throw processAPIError(err);
 	}
 };
