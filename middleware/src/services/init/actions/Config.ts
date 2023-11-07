@@ -20,6 +20,7 @@ export default async (
 
 	try {
 		const decodedToken = await Authentication.decodeToken(authToken);
+		console.log(decodedToken);
 		// const userId = decodedToken.payload['user-id'];
 		const userId = '5c51de7120cc4509e2e941e5';
 
