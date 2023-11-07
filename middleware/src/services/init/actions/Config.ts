@@ -19,6 +19,7 @@ export default async (
 	const authToken = req.headers['authorization'] as string;
 
 	try {
+		//random comment to tst
 		const decodedToken = await Authentication.decodeToken(authToken);
 		const userId = '5c51de7120cc4509e2e941e5';
 
