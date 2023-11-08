@@ -63,4 +63,5 @@ export class IciListHeaderComponent implements OnInit {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', options);
   }
+  //TODO: replace function to convert ISO string to Date
 }
