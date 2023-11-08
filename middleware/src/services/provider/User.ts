@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { processAPIError } from '../../utils/httpErrors';
+import axios, { AxiosResponse } from 'axios';
 
 interface SearchUserResponse {
 	id: string;
@@ -19,6 +19,19 @@ interface UserLocation {
 
 interface UserRole {
 	role: string;
+}
+
+export interface PermissionApp {
+	app: string;
+	features: string[];
+	pages: string[];
+	permissions: string[];
+	appCode: string;
+}
+
+export interface Permission {
+	origin: string;
+	apps: PermissionApp[];
 }
 
 const searchUser = async (
@@ -47,7 +60,7 @@ const searchUser = async (
 const getUserLocations = async (
 	auth: string,
 	user_id: string,
-	origin: string
+	origin?: string
 ): Promise<UserLocation[]> => {
 	try {
 		const response = await axios.request({
@@ -58,11 +71,12 @@ const getUserLocations = async (
 			},
 			responseType: 'json',
 			params: {
-				origin: origin,
+				origin,
 			},
 		});
 		return response.data as Array<UserLocation>;
 	} catch (err) {
+		console.log('GET USER LOCATION ERROR ', err);
 		throw processAPIError(err);
 	}
 };
@@ -178,6 +192,13 @@ export interface UserProfileBasic {
 	email: string;
 	language: string;
 }
+
+export interface UserOrigin {
+	code: string;
+	internal_code: string;
+	id: string;
+}
+
 const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 	try {
 		const response = await axios.request({
@@ -191,12 +212,52 @@ const userProfile = async (auth: string): Promise<UserProfileBasic> => {
 
 		return response.data;
 	} catch (err) {
-		console.log(err);
+		throw processAPIError(err);
+	}
+};
+
+const getUserOrigins = async (
+	userId: string,
+	auth: string
+): Promise<UserOrigin[]> => {
+	try {
+		const response: AxiosResponse<UserOrigin[]> = await axios.request({
+			method: 'GET',
+			url: `${process.env.API_GATEWAY}/user/${userId}/origins`,
+			headers: {
+				Authorization: auth,
+			},
+			responseType: 'json',
+		});
+
+		return response.data;
+	} catch (err) {
+		console.log('GET USER ORIGIN ERROR', err);
+		throw processAPIError(err);
+	}
+};
+
+const getUserPermissions = async (userId: string, auth: string) => {
+	try {
+		const response = await axios.request({
+			method: 'GET',
+			url: `${process.env.API_GATEWAY}/user/${userId}/app`,
+			headers: {
+				Authorization: auth,
+			},
+			responseType: 'json',
+		});
+
+		return response.data;
+	} catch (err) {
+		console.log('GET USER PERMISSIONS ERROR', err);
 		throw processAPIError(err);
 	}
 };
 
 export default {
+	getUserOrigins,
+	getUserPermissions,
 	searchUser,
 	getUserLocations,
 	getUserRoles,
