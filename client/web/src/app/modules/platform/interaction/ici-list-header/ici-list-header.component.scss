@@ -55,12 +55,12 @@ ion-item {
 @media screen and (max-width: 580px) {
   .icon-avatar {
     display: flex;
-    flex-direction: column-reverse !important;
+    flex-direction: row !important;
 
     .col-icons {
       display: flex;
       justify-content: center;
-      flex-direction: row !important;
+      flex-direction: column !important;
 
       ion-icon {
         margin-right: 4px;
@@ -125,4 +125,16 @@ ion-chip {
   border-radius: 6px;
   color: var(--ion-color-dark);
   background-color: var(--ion-color-light);
+}
+
+.see-icon {
+  margin-bottom: 2px !important;
+}
+
+.icon-inner,
+ion-icon,
+svg {
+  position: relative;
+
+  top: 2px;
 }
