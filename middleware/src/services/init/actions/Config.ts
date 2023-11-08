@@ -1,7 +1,7 @@
 import UserProvider from '../../provider/User';
 import { NextFunction, Request, Response } from 'express';
 import LocationProvider from '../../provider/Location';
-import NormalizeHelper from '../../../helpers/Normalize';
+import NormalizeHelper, { NormalizedData } from '../../../helpers/Normalize';
 import Authentication from '../../provider/Authentication';
 
 interface ResponseResult {
@@ -41,7 +41,7 @@ export default async (
 
 		const detailedLocations = await Promise.all(locations);
 
-		const organizedData = {
+		const organizedData: NormalizedData = {
 			origins: NormalizeHelper.normalizeOrigins(userOrigins),
 			permissions: NormalizeHelper.normalizePermissions(userPerms),
 			locations: NormalizeHelper.normalizeLocations(detailedLocations),

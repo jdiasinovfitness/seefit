@@ -5,6 +5,19 @@ import {
 	UserOrigin,
 } from '../services/provider/User';
 
+export interface NormalizedData {
+	origins: { code: string; id: string }[];
+	permissions: {
+		origin: string;
+		apps: {
+			permissions: {
+				appCode: string;
+				codes: string[];
+			};
+		}[];
+	}[];
+	locations: { locationName: string; locationId: string; origin: string }[];
+}
 const normalizeOrigins = (origins: UserOrigin[]) => {
 	return origins.map(({ code, id }) => ({
 		code,
