@@ -52,4 +52,15 @@ export class IciListHeaderComponent implements OnInit {
       birthday.getMonth() === today.getMonth()
     );
   }
+
+  //temporary date format
+  formatDate(dateString: string): string {
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short',
+    };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', options);
+  }
 }
