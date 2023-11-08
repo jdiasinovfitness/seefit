@@ -369,7 +369,7 @@ export class DataService {
           description: [
             {
               lang: 'en-EN',
-              text: 'Usage Very Active -> Active',
+              text: 'Usage Very Active',
             },
           ],
           callBlock: true,
