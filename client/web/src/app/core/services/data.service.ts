@@ -485,7 +485,7 @@ export class DataService {
           description: [
             {
               lang: 'en-EN',
-              text: 'First 4-weeks, under 2x week',
+              text: 'First 4-weeks, 2x week',
             },
           ],
           callBlock: true,
