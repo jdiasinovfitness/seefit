@@ -3,7 +3,7 @@
     <div class="col-icons">
       <div
         class="see-icon md {{ icon }}"
-        *ngFor="let icon of item?.additionalInfo?.icons | slice : 0 : 3"
+        *ngFor="let icon of orderIcons | slice : 0 : 3"
       ></div>
     </div>
 
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Right Column  -->
-    <div class="column right" slot="end">
+    <div class="column right ion-align-self-baseline" slot="end">
       <!-- Status  -->
       <div class="right">
         <ion-chip
@@ -64,15 +64,17 @@
       </div>
       <!-- Date  -->
       <ion-label class="right">
-        <ion-text color="medium">
+        <ion-text class="ion-align-self-baseline" color="medium">
           {{ item.interaction.date }}
         </ion-text>
+        <ion-icon color="medium" name="calendar-outline"></ion-icon>
       </ion-label>
       <!-- Interaction Type  -->
       <ion-label class="right">
         <ion-text color="medium">
           {{ item.interaction.description[0].text }}
         </ion-text>
+        <ion-icon color="medium" name="people-circle-outline"></ion-icon>
       </ion-label>
     </div>
   </div>
