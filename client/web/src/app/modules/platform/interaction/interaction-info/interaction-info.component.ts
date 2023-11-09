@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { ICIData, ICI_STATUS } from '../../../../core/interfaces/icidata.model';
 import { DataService } from '../../../../core/services/data.service';
 import {
   IInteraction,
   IITypeData,
 } from '../../../../core/interfaces/interaction.model';
+import { C_STATUS, Customer } from 'src/app/core/interfaces/customer.model';
 
 export enum Phases {
   loading,
@@ -20,7 +20,7 @@ export enum Phases {
   styleUrls: ['./interaction-info.component.scss'],
 })
 export class InteractionInfoComponent {
-  statusTypes = ICI_STATUS;
+  statusTypes = C_STATUS;
   phaseEnum = Phases;
   currentPhase = Phases.loading;
 
@@ -29,7 +29,7 @@ export class InteractionInfoComponent {
 
   typeList!: Array<IITypeData>;
   interactionList: Array<IInteraction> | undefined;
-  selectedType: ICI_STATUS | undefined;
+  selectedType: C_STATUS | undefined;
   selectedInteraction: string | undefined;
   selectedInteractionValue: string | undefined;
   details = '';
@@ -93,14 +93,16 @@ export class InteractionInfoComponent {
   }
 
   createInteraction(event: any) {
-    const newInteraction = JSON.parse(JSON.stringify(this.info)) as ICIData;
-    newInteraction.status = this.selectedType || ICI_STATUS.UNPLANNED;
-    newInteraction.interaction.value = this.selectedInteractionValue || '';
-    newInteraction.interaction.isBold = true;
-    newInteraction.interaction.label = 'INTERACTION:';
-    newInteraction.date = new Date('2023-04-30').toISOString().slice(0, 10);
+    const newInteraction = JSON.parse(JSON.stringify(this.info)) as Customer;
+    newInteraction.interaction.status = this.selectedType || C_STATUS.UNPLANNED;
+    newInteraction.interaction.id = this.selectedInteractionValue || '';
+    // newInteraction.interaction.isBold = true;
+    // newInteraction.interaction.title = 'INTERACTION:';
+    newInteraction.interaction.date = new Date('2023-04-30')
+      .toISOString()
+      .slice(0, 10);
 
-    this.dataService.addInteraction(newInteraction);
+    // this.dataService.addInteraction(newInteraction);
 
     this.currentPhase = Phases.created;
     this.handleClick.emit(event);
