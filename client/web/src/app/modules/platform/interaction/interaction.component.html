@@ -7,7 +7,11 @@
 <div class="header-filters">
   <div class="tab-wrapper">
     <ion-item lines="full">
-      <ion-button class="hidden" fill="clear" (click)="prevTab($event)">
+      <ion-button
+        class="hidden-small-devices"
+        fill="clear"
+        (click)="prevTab($event)"
+      >
         <ion-icon name="chevron-back-circle-outline"></ion-icon>
       </ion-button>
 
@@ -28,7 +32,11 @@
           </ion-segment-button>
         </ng-container>
       </ion-segment>
-      <ion-button class="hidden" fill="clear" (click)="nextTab($event)">
+      <ion-button
+        class="hidden-small-devices"
+        fill="clear"
+        (click)="nextTab($event)"
+      >
         <ion-icon name="chevron-forward-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -121,7 +129,7 @@
 
             <!-- Tab Content -->
             <div class="expanded-area" *ngIf="activeTabList[i] === '0'">
-              <!-- <app-customer-info
+              <app-customer-info
                 [info]="item"
                 (handleClick)="onButtonClick($event)"
               ></app-customer-info>
@@ -136,7 +144,7 @@
               <app-history
                 [info]="item"
                 (handleClick)="onButtonClick($event)"
-              ></app-history> -->
+              ></app-history>
             </div>
           </div>
         </ion-accordion>
