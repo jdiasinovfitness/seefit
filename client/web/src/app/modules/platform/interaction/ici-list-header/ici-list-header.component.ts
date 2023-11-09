@@ -36,7 +36,7 @@ export class IciListHeaderComponent implements OnInit {
     }
   }
 
-  moveToTop(iconArray: string[], icon: string): string[] {
+  moveToTop(iconArray: Array<string>, icon: string): Array<string> {
     const iconIndex = iconArray.indexOf(icon);
     if (iconIndex !== -1) {
       iconArray.splice(iconIndex, 1);
