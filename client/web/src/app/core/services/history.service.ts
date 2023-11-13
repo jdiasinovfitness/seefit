@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { C_TYPE, CustomerHistory } from '../interfaces/history.model';
-import { C_STATUS } from '../interfaces/customer.model';
+import {
+  C_STATUS,
+  C_TYPE,
+  CustomerHistory,
+} from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',

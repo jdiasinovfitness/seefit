@@ -1,5 +1,4 @@
 import { I18N } from '../services/lang.service';
-import { CustomerHistory } from './history.model';
 
 export interface Customer {
   id: string;
@@ -37,4 +36,19 @@ export enum C_STATUS {
   COMPLETED = 'COMPLETED',
   PLANNED = 'PLANNED',
   UNPLANNED = 'UNPLANNED',
+}
+
+export interface CustomerHistory {
+  id: string;
+  activity: C_TYPE;
+  date: string;
+  status: C_STATUS;
+  title: string;
+  comments: string;
+  highlight?: boolean;
+}
+
+export enum C_TYPE {
+  IN_CLUB = 'In_Club',
+  NPS = 'NPS',
 }

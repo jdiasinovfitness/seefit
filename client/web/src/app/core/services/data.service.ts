@@ -10,7 +10,7 @@ import {
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
-import { C_STATUS, Customer } from '../interfaces/customer.model';
+import { C_STATUS, Customer, C_TYPE } from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -582,6 +582,33 @@ export class DataService {
           icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
         },
         healthRisk: true,
+
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
     ];
   }
