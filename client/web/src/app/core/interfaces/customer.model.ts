@@ -13,7 +13,7 @@ export interface Customer {
   additionalInfo?: AdditionalInformation;
   currentLocation: CurrentLocation;
   healthRisk: boolean; //To be analyzed
-  historyInfo: Array<CustomerHistory>;
+  historyInfo?: Array<CustomerHistory>;
 }
 
 export interface InteractionBasicInfo {
