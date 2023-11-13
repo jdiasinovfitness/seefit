@@ -1,4 +1,5 @@
 import { I18N } from '../services/lang.service';
+import { CustomerHistory } from './history.model';
 
 export interface Customer {
   id: string;
@@ -12,6 +13,7 @@ export interface Customer {
   additionalInfo?: AdditionalInformation;
   currentLocation: CurrentLocation;
   healthRisk: boolean; //To be analyzed
+  historyInfo: Array<CustomerHistory>;
 }
 
 export interface InteractionBasicInfo {
