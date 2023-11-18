@@ -14,6 +14,10 @@
   width: 16px;
 }
 
+.button-native {
+  background-color: white;
+}
+
 @media (prefers-color-scheme: light) {
   #history-icon {
     background-image: url("../../../../../assets/icon/history_radio.svg");

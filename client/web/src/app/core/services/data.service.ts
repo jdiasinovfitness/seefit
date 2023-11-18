@@ -320,7 +320,34 @@ export class DataService {
           icons: ['ic-4_2', 'ic-1_1', 'ic-3_1'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Test',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: 'No comments',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
+
       {
         id: '2',
         code: 'N# 3400359',
@@ -349,6 +376,32 @@ export class DataService {
           icons: ['ic-1_2', 'ic-3_2', 'ic-3_1'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '2023-04-01', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comments added',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '2023-03-28', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '3',
@@ -378,6 +431,32 @@ export class DataService {
           icons: ['ic-1_5', 'ic-4_1', 'ic-3_1', 'ic-4_2', 'ic-4_3', 'ic-4_4'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '4',
@@ -407,6 +486,32 @@ export class DataService {
           icons: ['ic-1_2', 'ic-3_1', 'ic-4_2'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'No comments',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '5',
@@ -436,6 +541,32 @@ export class DataService {
           icons: ['ic-3_1', 'ic-4_2', 'ic-4_3'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '6',
@@ -465,6 +596,32 @@ export class DataService {
           icons: ['ic-1_4', 'ic-3_1', 'ic-4_1'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '7',
@@ -494,6 +651,32 @@ export class DataService {
           icons: ['ic-4_1', 'ic-3_3', 'ic-2_1'],
         },
         healthRisk: true,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '8',
@@ -523,6 +706,32 @@ export class DataService {
           icons: ['ic-4_2', 'ic-4_3', 'ic-4_4'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: '',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
 
       {
@@ -553,6 +762,32 @@ export class DataService {
           icons: ['ic-3_2', 'ic-1_5', 'ic-3_3'],
         },
         healthRisk: false,
+        historyInfo: [
+          {
+            id: '1',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: '',
+          },
+          {
+            id: '2',
+            activity: C_TYPE.IN_CLUB,
+            date: '', // replace with ISO string Date
+            status: C_STATUS.COMPLETED,
+            title: 'Test',
+            comments: 'No comments',
+          },
+          {
+            id: '3',
+            activity: C_TYPE.IN_CLUB,
+            date: '1994/26/09', // replace with ISO string Date
+            status: C_STATUS.PLANNED,
+            title: 'Interaction',
+            comments: 'Comentários',
+          },
+        ],
       },
       {
         id: '10',
