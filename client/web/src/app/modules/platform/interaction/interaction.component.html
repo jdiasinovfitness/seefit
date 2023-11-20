@@ -141,10 +141,7 @@
               ></app-interaction-info>
             </div>
             <div class="expanded-area" *ngIf="activeTabList[i] === '2'">
-              <app-history
-                [info]="item"
-                (handleClick)="onButtonClick($event)"
-              ></app-history>
+              <app-history (handleClick)="onButtonClick($event)"></app-history>
             </div>
           </div>
         </ion-accordion>

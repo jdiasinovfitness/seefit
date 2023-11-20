@@ -24,12 +24,18 @@
         <ion-label>Comms</ion-label></ion-button
       >
     </div>
-    <ion-row *ngFor="let item of info.historyInfo">
-      <ion-col>{{ item.date }}</ion-col>
+    <ion-row *ngFor="let item of info">
+      <ion-col
+        size="1"
+        size-lg="1"
+        size-md="1"
+        size-sm="1"
+        style="display: flex; justify-content: center"
+        >{{ item.date }}</ion-col
+      >
       <ion-col>{{ item.type }}</ion-col>
       <ion-col>{{ item.description }}</ion-col>
       <ion-col>{{ item.observation }}</ion-col>
-      <ion-col></ion-col>
     </ion-row>
   </ion-grid>
 </div>

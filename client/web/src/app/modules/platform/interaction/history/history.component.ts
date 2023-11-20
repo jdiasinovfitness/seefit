@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { C_STATUS, Customer } from 'src/app/core/interfaces/customer.model';
-import { DataService } from 'src/app/core/services/data.service';
+import {
+  C_STATUS,
+  CustomerActivity,
+} from 'src/app/core/interfaces/customer.model';
 import { HistoryService } from 'src/app/core/services/history.service';
 
 @Component({
@@ -10,14 +12,10 @@ import { HistoryService } from 'src/app/core/services/history.service';
 })
 export class HistoryComponent {
   statusTypes = C_STATUS;
-  @Input() info!: Customer; // TODO: set correct model type after API available
+  info: Array<CustomerActivity> = []; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
-  historyService: any;
 
-  constructor(
-    private activityService: HistoryService,
-    private dataService: DataService
-  ) {}
+  constructor(private activityService: HistoryService) {}
 
   ngOnInit() {
     this.loadHistory();
@@ -28,11 +26,6 @@ export class HistoryComponent {
   }
 
   loadHistory() {
-    console.log('info', this.info);
-    const dummyData = this.dataService.getLiveClubDummyList();
-    // Assuming there is a valid id in this.info.id
-    this.info.historyInfo = this.activityService.getActivityByCustomerId(
-      this.info.id
-    );
+    this.info = this.activityService.activityDummyList();
   }
 }

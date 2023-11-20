@@ -12,7 +12,6 @@ export interface Customer {
   additionalInfo?: AdditionalInformation;
   currentLocation: CurrentLocation;
   healthRisk: boolean; //To be analyzed
-  historyInfo: Array<CustomerActivity>;
 }
 
 export interface InteractionBasicInfo {
