@@ -12,7 +12,7 @@ export interface Customer {
   additionalInfo?: AdditionalInformation;
   currentLocation: CurrentLocation;
   healthRisk: boolean; //To be analyzed
-  historyInfo?: Array<CustomerHistory>;
+  historyInfo: Array<CustomerActivity>;
 }
 
 export interface InteractionBasicInfo {
@@ -38,17 +38,23 @@ export enum C_STATUS {
   UNPLANNED = 'UNPLANNED',
 }
 
-export interface CustomerHistory {
+export interface CustomerActivity {
   id: string;
-  activity: C_TYPE;
+  customer: string;
   date: string;
-  status: C_STATUS;
-  title: string;
-  comments: string;
-  highlight?: boolean;
+  type: I_TYPE;
+  description: string;
+  observation: string;
 }
 
 export enum C_TYPE {
   IN_CLUB = 'In_Club',
   NPS = 'NPS',
+}
+
+export enum I_TYPE {
+  ICI = 'ICI',
+  APPOINTMENT = 'Appointment',
+  OCI = 'Comms',
+  FOOTFALL = 'Footfall',
 }
