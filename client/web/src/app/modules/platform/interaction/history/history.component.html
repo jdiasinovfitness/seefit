@@ -1,8 +1,8 @@
-<div class="interaction-wrapper">
-  <ion-button class="ion-hide-sm-up" color="light">
+<div class="interaction-wrapper" *ngIf="info">
+  <!-- <ion-button class="ion-hide-sm-up" color="light">
     <ion-icon name="settings-sharp"></ion-icon>
     <ion-label> Activity Types </ion-label>
-  </ion-button>
+  </ion-button> -->
 
   <ion-grid>
     <div class="activity-buttons">
@@ -24,30 +24,12 @@
         <ion-label>Comms</ion-label></ion-button
       >
     </div>
-    <ion-row
-      *ngFor="let item of info?.historyInfo"
-      [ngClass]="item.highlight ? 'highlight' : ''"
-    >
-      <ion-col size="2" size-lg="1" size-md="2" size-sm="2">
-        {{ item.date | date : "yyyy dd/MMM" }}
-      </ion-col>
-
-      <ion-col
-        size="1"
-        size-lg="1"
-        size-md="1"
-        size-sm="1"
-        style="display: flex; justify-content: center"
-      >
-        <div class="logo" id="history-icon"></div>
-      </ion-col>
-
-      <ion-col size="4" size-lg="3" size-md="3" size-sm="3">{{
-        item.title
-      }}</ion-col>
-      <ion-col size="5" size-lg="7" size-md="4" size-sm="4">{{
-        item.comments
-      }}</ion-col>
+    <ion-row *ngFor="let item of info.historyInfo">
+      <ion-col>{{ item.date }}</ion-col>
+      <ion-col>{{ item.type }}</ion-col>
+      <ion-col>{{ item.description }}</ion-col>
+      <ion-col>{{ item.observation }}</ion-col>
+      <ion-col></ion-col>
     </ion-row>
   </ion-grid>
 </div>
