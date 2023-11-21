@@ -41,11 +41,13 @@
         ><b> {{ item.date | date : "yyyy" }}</b>
         {{ item.date | date : "dd/MMM" }}</ion-col
       >
-      <ion-col>
+      <ion-col size="4" class="activity-col">
         <ion-icon [name]="getIconByType(item.type)"></ion-icon>
         {{ item.description }}</ion-col
       >
-      <ion-col> {{ item.observation ? item.observation : noComments }}</ion-col>
+      <ion-col class="activity-col">
+        {{ item.observation ? item.observation : noComments }}</ion-col
+      >
     </ion-row>
   </ion-grid>
 </div>

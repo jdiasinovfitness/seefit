@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   CustomerActivity,
   I_TYPE,
@@ -12,7 +12,7 @@ import { HistoryService } from 'src/app/core/services/history.service';
 })
 export class HistoryComponent {
   activityTypes = I_TYPE;
-  noComments = '<i>No comments to display</i>';
+  noComments = 'No comments to display';
   info: Array<CustomerActivity> = []; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
@@ -32,7 +32,7 @@ export class HistoryComponent {
   }
 
   activityIcons: { [key: string]: string } = {
-    Visit: 'calendar-clear-sharp',
+    Visit: 'calendar-clear-outline',
     ICI: 'people-circle-outline',
     Appointment: 'location-sharp',
     Comms: 'star',
@@ -42,11 +42,11 @@ export class HistoryComponent {
     return this.activityIcons[type] || '';
   }
 
-  filterCustomerActivity(type: I_TYPE) {
-    if (type) {
-      this.loadActivity();
-    } else {
+  filterCustomerActivity(type: I_TYPE | null) {
+    if (type !== null) {
       this.info = this.info.filter((history) => history.type === type);
+    } else {
+      this.loadActivity();
     }
   }
 }

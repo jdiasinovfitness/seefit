@@ -10,6 +10,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  ion-button {
+    --background: var(--ion-color-primary);
+  }
+}
+.activity-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 64px;
 }
 
 .logo {
@@ -22,7 +31,6 @@
 ion-grid {
   margin: 10px !important;
 }
-
 @media (prefers-color-scheme: light) {
   #history-icon {
     background-image: url("../../../../../assets/icon/history_radio.svg");
