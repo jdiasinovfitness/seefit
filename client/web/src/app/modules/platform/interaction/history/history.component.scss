@@ -10,10 +10,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  ion-button {
-    --background: var(--ion-color-primary);
-  }
 }
+
+ion-button {
+  --color: var(--ion-color-dark);
+  --background: var(--ion-color-medium-contrast);
+  --background-hover: var(--ion-color-medium-contrast);
+  --background-activated: var(--ion-color-medium-contrast);
+}
+
 .activity-col {
   display: flex;
   align-items: center;

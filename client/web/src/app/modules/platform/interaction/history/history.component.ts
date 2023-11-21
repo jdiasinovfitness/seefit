@@ -43,10 +43,10 @@ export class HistoryComponent {
   }
 
   filterCustomerActivity(type: I_TYPE | null) {
+    this.info = this.activityService.activityDummyList();
+
     if (type !== null) {
       this.info = this.info.filter((history) => history.type === type);
-    } else {
-      this.loadActivity();
     }
   }
 }
