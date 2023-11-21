@@ -32,9 +32,9 @@ export class HistoryComponent {
   }
 
   activityIcons: { [key: string]: string } = {
-    Visits: 'calendar-clear',
-    Interact: 'people-circle',
-    Appoint: 'location',
+    Visit: 'calendar-clear-sharp',
+    ICI: 'people-circle-outline',
+    Appointment: 'location-sharp',
     Comms: 'star',
   };
 
