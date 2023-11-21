@@ -4,38 +4,48 @@
     <ion-label> Activity Types </ion-label>
   </ion-button> -->
 
-  <ion-grid>
-    <div class="activity-buttons">
-      <ion-button color="light">
-        <ion-icon name="calendar-clear-outline"></ion-icon>
-        <ion-label>Visits</ion-label>
-      </ion-button>
-      <ion-button color="light">
-        <ion-icon name="people-circle-outline"></ion-icon>
-        <ion-label>Interact</ion-label></ion-button
-      >
-      <ion-button color="light">
-        <ion-icon name="location-sharp"> </ion-icon>
-        <ion-label>Appoint</ion-label>
-      </ion-button>
+  <div class="activity-buttons">
+    <ion-button
+      (click)="filterCustomerActivity(activityTypes.FOOTFALL)"
+      color="light"
+    >
+      <ion-icon name="calendar-clear-outline"></ion-icon>
+      <ion-label>Visits</ion-label>
+    </ion-button>
+    <ion-button
+      (click)="filterCustomerActivity(activityTypes.ICI)"
+      color="light"
+    >
+      <ion-icon name="people-circle-outline"></ion-icon>
+      <ion-label>Interact</ion-label></ion-button
+    >
+    <ion-button
+      (click)="filterCustomerActivity(activityTypes.APPOINTMENT)"
+      color="light"
+    >
+      <ion-icon name="location-sharp"> </ion-icon>
+      <ion-label>Appoint</ion-label>
+    </ion-button>
 
-      <ion-button color="light"
-        ><ion-icon name="star"></ion-icon>
-        <ion-label>Comms</ion-label></ion-button
-      >
-    </div>
+    <ion-button
+      (click)="filterCustomerActivity(activityTypes.OCI)"
+      color="light"
+      ><ion-icon name="star"></ion-icon>
+      <ion-label>Comms</ion-label></ion-button
+    >
+  </div>
+
+  <ion-grid>
     <ion-row *ngFor="let item of info">
-      <ion-col
-        size="1"
-        size-lg="1"
-        size-md="1"
-        size-sm="1"
-        style="display: flex; justify-content: center"
-        >{{ item.date }}</ion-col
+      <ion-col size="1"
+        ><b> {{ item.date | date : "yyyy" }}</b>
+        {{ item.date | date : "dd/MMM" }}</ion-col
       >
-      <ion-col>{{ item.type }}</ion-col>
-      <ion-col>{{ item.description }}</ion-col>
-      <ion-col>{{ item.observation }}</ion-col>
+      <ion-col>
+        <ion-icon [name]="getIconByType(item.type)"></ion-icon>
+        {{ item.description }}</ion-col
+      >
+      <ion-col> {{ item.observation ? item.observation : noComments }}</ion-col>
     </ion-row>
   </ion-grid>
 </div>

@@ -55,5 +55,5 @@ export enum I_TYPE {
   ICI = 'ICI',
   APPOINTMENT = 'Appointment',
   OCI = 'Comms',
-  FOOTFALL = 'Footfall',
+  FOOTFALL = 'Visit',
 }
