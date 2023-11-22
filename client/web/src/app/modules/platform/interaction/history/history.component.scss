@@ -44,6 +44,7 @@ ion-grid {
   }
   .activity-buttons {
     justify-content: center;
+    padding: 2px;
   }
   .activity-col {
     display: flex;
@@ -51,9 +52,9 @@ ion-grid {
     justify-content: flex-start;
     text-align: justify;
   }
-  .activity-buttons {
-    font-size: 10px;
-    padding: 2px;
+  ion-button {
+    font-size: 13px;
+    padding: 0px 0px 1px 1px;
   }
 }
 
