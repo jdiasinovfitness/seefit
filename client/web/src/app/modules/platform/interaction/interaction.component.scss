@@ -96,8 +96,8 @@ ion-footer {
 
 // Chevron Buttons Mobile and Tablet View:
 
-@media screen and (min-width: 1000px) {
-  .hidden {
+@media screen and (min-width: 968px) {
+  .hidden-small-devices {
     display: none !important;
   }
 }
