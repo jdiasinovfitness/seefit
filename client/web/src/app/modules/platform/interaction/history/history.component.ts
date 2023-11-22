@@ -14,12 +14,19 @@ export class HistoryComponent {
   activityTypes = I_TYPE;
   noComments = 'No comments to display';
   info: Array<CustomerActivity> = []; // TODO: set correct model type after API available
+  selectedFilters: Array<I_TYPE> = [];
   @Output() handleClick = new EventEmitter();
 
   constructor(private activityService: HistoryService) {}
 
   ngOnInit() {
     this.loadActivity();
+    this.selectedFilters = [
+      this.activityTypes.FOOTFALL,
+      this.activityTypes.ICI,
+      this.activityTypes.APPOINTMENT,
+      this.activityTypes.OCI,
+    ];
   }
 
   onButtonClick(event: any) {
@@ -42,11 +49,27 @@ export class HistoryComponent {
     return this.activityIcons[type] || '';
   }
 
-  filterCustomerActivity(type: I_TYPE | null) {
-    this.info = this.activityService.activityDummyList();
+  isFilterActive(type: I_TYPE): boolean {
+    return this.selectedFilters.includes(type);
+  }
 
+  filterCustomerActivity(type: I_TYPE | null) {
     if (type !== null) {
-      this.info = this.info.filter((history) => history.type === type);
+      const index = this.selectedFilters.indexOf(type);
+
+      if (index !== -1) {
+        this.selectedFilters.splice(index, 1);
+      } else {
+        this.selectedFilters.push(type);
+      }
+
+      if (this.selectedFilters.length > 0) {
+        this.info = this.activityService
+          .activityDummyList()
+          .filter((history) => this.selectedFilters.includes(history.type));
+      } else {
+        this.info = this.activityService.activityDummyList();
+      }
     }
   }
 }

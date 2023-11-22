@@ -18,13 +18,15 @@ ion-button {
   --background: var(--ion-color-medium-contrast);
   --background-hover: var(--ion-color-medium-contrast);
   --background-activated: var(--ion-color-medium-contrast);
+  &.inactive {
+    --opacity: 0.4;
+  }
 }
 
 .activity-col {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 64px;
 }
 
 .logo {
@@ -48,12 +50,11 @@ ion-grid {
   }
   .activity-col {
     display: flex;
-    padding-left: 30px;
     justify-content: flex-start;
     text-align: justify;
   }
   ion-button {
-    font-size: 13px;
+    font-size: 12.5px;
     padding: 0px 0px 1px 1px;
   }
 }
