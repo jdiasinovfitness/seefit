@@ -52,16 +52,19 @@
         {{ item.date | date : "dd/MMM" }}</ion-col
       >
       <ion-col
-        size="3"
-        size-lg="3"
-        size-md="3"
-        size-sm="3"
         class="activity-col"
+        size="4"
+        size-lg="4"
+        size-md="4"
+        size-sm="4"
       >
-        <ion-icon [name]="getIconByType(item.type)"></ion-icon>
+        <ion-icon
+          style="width: 26px; margin-left: 9px"
+          [name]="getIconByType(item.type)"
+        ></ion-icon>
         {{ item.description }}</ion-col
       >
-      <ion-col size="7" size-md="7" size-sm="7" class="activity-col">
+      <ion-col size="6" size-md="6" size-sm="6" class="activity-col">
         {{ item.observation ? item.observation : noComments }}</ion-col
       >
     </ion-row>

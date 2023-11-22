@@ -22,11 +22,9 @@ ion-button {
     --opacity: 0.4;
   }
 }
-
 .activity-col {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .logo {
@@ -48,7 +46,7 @@ ion-grid {
     justify-content: center;
     padding: 2px;
   }
-  .activity-col {
+  .activity-col-2 {
     display: flex;
     justify-content: flex-start;
     text-align: justify;
