@@ -29,53 +29,37 @@ export class HistoryComponent {
 
   loadActivity() {
     const activities = this.activityService.activityDummyList();
-
-    if (this.selectedFilter !== null) {
-      this.info = this.orderActivityByDate(
-        activities.filter((history) => history.type === this.selectedFilter)
-      );
-    } else {
-      this.info = this.orderActivityByDate(activities);
-    }
+    this.info = this.selectedFilter
+      ? this.filterActivitiesByType(activities)
+      : this.orderActivitiesByDate(activities);
   }
 
-  orderActivityByDate(
-    activity: Array<CustomerActivity>
-  ): Array<CustomerActivity> {
-    return activity.sort((a, b) => {
-      const date1 = new Date(a.date);
-      const date2 = new Date(b.date);
-      return date2.getTime() - date1.getTime();
-    });
-  }
-
-  isLastActivity(item: CustomerActivity): boolean {
-    if (this.info.length === 0) {
-      return false;
-    }
-    const orderedActivities = this.orderActivityByDate(this.info);
-    const lastDate = new Date(orderedActivities[0].date);
-    const itemDate = new Date(item.date);
-    return itemDate.getTime() === lastDate.getTime();
-  }
-
-  isLastItem(item: CustomerActivity): boolean {
-    return !this.selectedFilter && this.isLastActivity(item);
+  orderActivitiesByDate(activities: CustomerActivity[]): CustomerActivity[] {
+    return activities.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
   }
 
   filterCustomerActivity(type: I_TYPE | null) {
     if (type !== null) {
-      if (type === this.selectedFilter) {
-        this.selectedFilter = null;
-        this.loadActivity();
-      } else {
-        this.selectedFilter = type;
-        this.info = this.activityService
-          .activityDummyList()
-          .filter((history) => history.type === this.selectedFilter);
-        this.info = this.orderActivityByDate(this.info);
-      }
+      this.selectedFilter = this.selectedFilter === type ? null : type;
+      this.loadActivity();
     }
+  }
+  filterActivitiesByType(activities: CustomerActivity[]): CustomerActivity[] {
+    return activities.filter((history) => history.type === this.selectedFilter);
+  }
+
+  isLastActivity(item: CustomerActivity): boolean {
+    const orderedActivities = this.orderActivitiesByDate(this.info);
+    return (
+      new Date(item.date).getTime() ===
+      new Date(orderedActivities[0].date).getTime()
+    );
+  }
+
+  isLastItem(item: CustomerActivity): boolean {
+    return !this.selectedFilter && this.isLastActivity(item);
   }
 
   activityIcons: { [key: string]: string } = {
