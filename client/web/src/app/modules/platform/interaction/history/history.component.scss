@@ -21,6 +21,7 @@ ion-button {
 
   &.selected {
     --background: var(--ion-color-primary);
+    --background-hover: var(--ion-color-primary);
     --color: var(--ion-color-light);
   }
 }
@@ -43,6 +44,14 @@ ion-grid {
 .last-activity {
   background-color: rgba(255, 98, 0, 0.1);
 }
+.activity-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .year {
+    padding-right: 6px;
+  }
+}
 
 @media screen and (max-width: 560px) {
   ion-grid {
@@ -52,14 +61,15 @@ ion-grid {
     justify-content: center;
     padding: 2px;
   }
-  .activity-col-2 {
-    display: flex;
-    justify-content: flex-start;
-    text-align: justify;
-  }
   ion-button {
     font-size: 12.5px;
     padding: 0px 0px 1px 1px;
+  }
+  .activity-date {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
   }
 }
 

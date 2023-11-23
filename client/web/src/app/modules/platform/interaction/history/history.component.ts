@@ -14,7 +14,6 @@ export class HistoryComponent {
   activityTypes = I_TYPE;
   noComments = 'No comments to display';
   info: Array<CustomerActivity> = []; // TODO: set correct model type after API available
-  selectedFilters: Array<I_TYPE> = [];
   selectedFilter: I_TYPE | null = null;
   @Output() handleClick = new EventEmitter();
 
@@ -30,18 +29,14 @@ export class HistoryComponent {
 
   loadActivity() {
     const activities = this.activityService.activityDummyList();
-    this.info = this.orderActivityByDate(activities);
-  }
 
-  isLastActivity(activity: CustomerActivity): boolean {
-    const activityDate = new Date(activity.date);
-
-    const orderedActivities = this.orderActivityByDate(this.info);
-
-    const lastDate = new Date(
-      orderedActivities[orderedActivities.length - 1].date
-    );
-    return lastDate.getTime() === activityDate.getTime();
+    if (this.selectedFilter !== null) {
+      this.info = this.orderActivityByDate(
+        activities.filter((history) => history.type === this.selectedFilter)
+      );
+    } else {
+      this.info = this.orderActivityByDate(activities);
+    }
   }
 
   orderActivityByDate(
@@ -54,6 +49,35 @@ export class HistoryComponent {
     });
   }
 
+  isLastActivity(item: CustomerActivity): boolean {
+    if (this.info.length === 0) {
+      return false;
+    }
+    const orderedActivities = this.orderActivityByDate(this.info);
+    const lastDate = new Date(orderedActivities[0].date);
+    const itemDate = new Date(item.date);
+    return itemDate.getTime() === lastDate.getTime();
+  }
+
+  isLastItem(item: CustomerActivity): boolean {
+    return !this.selectedFilter && this.isLastActivity(item);
+  }
+
+  filterCustomerActivity(type: I_TYPE | null) {
+    if (type !== null) {
+      if (type === this.selectedFilter) {
+        this.selectedFilter = null;
+        this.loadActivity();
+      } else {
+        this.selectedFilter = type;
+        this.info = this.activityService
+          .activityDummyList()
+          .filter((history) => history.type === this.selectedFilter);
+        this.info = this.orderActivityByDate(this.info);
+      }
+    }
+  }
+
   activityIcons: { [key: string]: string } = {
     Visit: 'calendar-clear-outline',
     ICI: 'people-circle-outline',
@@ -63,27 +87,5 @@ export class HistoryComponent {
 
   getIconByType(type: string): string {
     return this.activityIcons[type] || '';
-  }
-
-  isFilterActive(type: I_TYPE): boolean {
-    return this.selectedFilters.includes(type);
-  }
-
-  filterCustomerActivity(type: I_TYPE | null) {
-    if (type !== null) {
-      if (type === this.selectedFilter) {
-        this.selectedFilter = null;
-      } else {
-        this.selectedFilter = type;
-      }
-
-      if (this.selectedFilter !== null) {
-        this.info = this.activityService
-          .activityDummyList()
-          .filter((history) => history.type === this.selectedFilter);
-      } else {
-        this.info = this.activityService.activityDummyList();
-      }
-    }
   }
 }

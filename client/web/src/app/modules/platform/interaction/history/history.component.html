@@ -1,9 +1,4 @@
 <div class="interaction-wrapper" *ngIf="info">
-  <!-- <ion-button class="ion-hide-sm-up" color="light">
-    <ion-icon name="settings-sharp"></ion-icon>
-    <ion-label> Activity Types </ion-label>
-  </ion-button> -->
-
   <div class="activity-buttons">
     <ion-button
       mode="ios"
@@ -40,24 +35,23 @@
   </div>
 
   <ion-grid>
-    <ion-row
-      *ngFor="let item of info; let first = first"
-      [class.last-activity]="first"
-    >
+    <ion-row *ngFor="let item of info" [class.last-activity]="isLastItem(item)">
       <ion-col
         size="2"
         size-lg="2"
         size-md="2"
         size-sm="2"
-        style="
-          display: flex;
-          justify-content: left;
-          flex-wrap: wrap;
-          align-content: center;
-        "
-        ><b> {{ item.date | date : "yyyy" }}</b>
-        {{ item.date | date : "dd/MMM" }}</ion-col
+        class="activity-date"
       >
+        <label class="year">
+          {{ item.date | date : "yyyy" }}
+        </label>
+        <label>
+          <b>
+            {{ item.date | date : "dd/MMM" }}
+          </b>
+        </label>
+      </ion-col>
       <ion-col
         class="activity-col"
         size="4"

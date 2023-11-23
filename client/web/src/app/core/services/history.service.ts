@@ -66,7 +66,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2023-05-21',
+        date: '2022-05-21',
         type: I_TYPE.ICI,
         description: 'NPS Detractor',
         observation:
@@ -75,7 +75,7 @@ export class HistoryService {
       {
         id: '2',
         customer: '2',
-        date: '2021-09-21',
+        date: '2022-05-21',
         type: I_TYPE.APPOINTMENT,
         description: 'New Training Plan',
         observation: '',
@@ -116,7 +116,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2023-07-16',
+        date: '2020-07-16',
         type: I_TYPE.ICI,
         description: 'NPS Detractor',
         observation:
@@ -133,7 +133,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2021-09-21',
+        date: '2023-09-11',
         type: I_TYPE.FOOTFALL,
         description: 'Visit',
         observation: '14:34 - 15:53',
@@ -165,17 +165,17 @@ export class HistoryService {
       },
       {
         id: '1',
+        customer: '2',
+        date: '2021-09-21',
+        type: I_TYPE.ICI,
+        description: 'NPS Detractor',
+        observation:
+          'Graded out service a 5(1-10 scale) after getting feedback of new training plan',
+      },
+      {
+        id: '2',
         customer: '2',
         date: '2023-08-11',
-        type: I_TYPE.ICI,
-        description: 'NPS Detractor',
-        observation:
-          'Graded out service a 5(1-10 scale) after getting feedback of new training plan',
-      },
-      {
-        id: '2',
-        customer: '2',
-        date: '2021-09-21',
         type: I_TYPE.APPOINTMENT,
         description: 'New Training Plan',
         observation: '',
@@ -191,7 +191,7 @@ export class HistoryService {
       {
         id: '2',
         customer: '2',
-        date: '2021-09-21',
+        date: '2023-05-01',
         type: I_TYPE.OCI,
         description: 'SMS - Inactive 14 days',
         observation:
