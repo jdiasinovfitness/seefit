@@ -16,7 +16,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2023-03-21',
+        date: '2023-04-21',
         type: I_TYPE.ICI,
         description: 'NPS Detractor',
         observation:
@@ -66,7 +66,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2023-03-21',
+        date: '2023-05-21',
         type: I_TYPE.ICI,
         description: 'NPS Detractor',
         observation:
@@ -116,7 +116,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2023-03-21',
+        date: '2023-07-16',
         type: I_TYPE.ICI,
         description: 'NPS Detractor',
         observation:
@@ -166,7 +166,7 @@ export class HistoryService {
       {
         id: '1',
         customer: '2',
-        date: '2023-03-21',
+        date: '2023-08-11',
         type: I_TYPE.ICI,
         description: 'NPS Detractor',
         observation:

@@ -15,18 +15,13 @@ export class HistoryComponent {
   noComments = 'No comments to display';
   info: Array<CustomerActivity> = []; // TODO: set correct model type after API available
   selectedFilters: Array<I_TYPE> = [];
+  selectedFilter: I_TYPE | null = null;
   @Output() handleClick = new EventEmitter();
 
   constructor(private activityService: HistoryService) {}
 
   ngOnInit() {
     this.loadActivity();
-    this.selectedFilters = [
-      this.activityTypes.FOOTFALL,
-      this.activityTypes.ICI,
-      this.activityTypes.APPOINTMENT,
-      this.activityTypes.OCI,
-    ];
   }
 
   onButtonClick(event: any) {
@@ -34,8 +29,29 @@ export class HistoryComponent {
   }
 
   loadActivity() {
-    this.info = this.activityService.activityDummyList();
-    console.log(this.info, 'INFO: ');
+    const activities = this.activityService.activityDummyList();
+    this.info = this.orderActivityByDate(activities);
+  }
+
+  isLastActivity(activity: CustomerActivity): boolean {
+    const activityDate = new Date(activity.date);
+
+    const orderedActivities = this.orderActivityByDate(this.info);
+
+    const lastDate = new Date(
+      orderedActivities[orderedActivities.length - 1].date
+    );
+    return lastDate.getTime() === activityDate.getTime();
+  }
+
+  orderActivityByDate(
+    activity: Array<CustomerActivity>
+  ): Array<CustomerActivity> {
+    return activity.sort((a, b) => {
+      const date1 = new Date(a.date);
+      const date2 = new Date(b.date);
+      return date2.getTime() - date1.getTime();
+    });
   }
 
   activityIcons: { [key: string]: string } = {
@@ -55,18 +71,16 @@ export class HistoryComponent {
 
   filterCustomerActivity(type: I_TYPE | null) {
     if (type !== null) {
-      const index = this.selectedFilters.indexOf(type);
-
-      if (index !== -1) {
-        this.selectedFilters.splice(index, 1);
+      if (type === this.selectedFilter) {
+        this.selectedFilter = null;
       } else {
-        this.selectedFilters.push(type);
+        this.selectedFilter = type;
       }
 
-      if (this.selectedFilters.length > 0) {
+      if (this.selectedFilter !== null) {
         this.info = this.activityService
           .activityDummyList()
-          .filter((history) => this.selectedFilters.includes(history.type));
+          .filter((history) => history.type === this.selectedFilter);
       } else {
         this.info = this.activityService.activityDummyList();
       }

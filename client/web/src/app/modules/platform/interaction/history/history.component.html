@@ -6,37 +6,44 @@
 
   <div class="activity-buttons">
     <ion-button
+      mode="ios"
       (click)="filterCustomerActivity(activityTypes.FOOTFALL)"
-      [class.inactive]="!isFilterActive(activityTypes.FOOTFALL)"
+      [class.selected]="selectedFilter === activityTypes.FOOTFALL"
     >
       <ion-icon name="calendar-clear-outline"></ion-icon>
       <ion-label>Visits</ion-label>
     </ion-button>
     <ion-button
+      mode="ios"
       (click)="filterCustomerActivity(activityTypes.ICI)"
-      [class.inactive]="!isFilterActive(activityTypes.ICI)"
+      [class.selected]="selectedFilter === activityTypes.ICI"
     >
       <ion-icon name="people-circle-outline"></ion-icon>
       <ion-label>Interact</ion-label></ion-button
     >
     <ion-button
+      mode="ios"
       (click)="filterCustomerActivity(activityTypes.APPOINTMENT)"
-      [class.inactive]="!isFilterActive(activityTypes.APPOINTMENT)"
+      [class.selected]="selectedFilter === activityTypes.APPOINTMENT"
     >
       <ion-icon name="location-sharp"> </ion-icon>
       <ion-label>Appoint</ion-label>
     </ion-button>
 
     <ion-button
+      mode="ios"
       (click)="filterCustomerActivity(activityTypes.OCI)"
-      [class.inactive]="!isFilterActive(activityTypes.OCI)"
+      [class.selected]="selectedFilter === activityTypes.OCI"
       ><ion-icon name="star"></ion-icon>
       <ion-label>Comms</ion-label></ion-button
     >
   </div>
 
   <ion-grid>
-    <ion-row *ngFor="let item of info">
+    <ion-row
+      *ngFor="let item of info; let first = first"
+      [class.last-activity]="first"
+    >
       <ion-col
         size="2"
         size-lg="2"
@@ -64,7 +71,13 @@
         ></ion-icon>
         {{ item.description }}</ion-col
       >
-      <ion-col size="6" size-md="6" size-sm="6" class="activity-col">
+      <ion-col
+        size="6"
+        size-md="6"
+        size-sm="6"
+        class="activity-col"
+        style="word-spacing: 2px"
+      >
         {{ item.observation ? item.observation : noComments }}</ion-col
       >
     </ion-row>
