@@ -10,7 +10,12 @@ import {
 import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
-import { C_STATUS, Customer } from '../interfaces/customer.model';
+import {
+  C_STATUS,
+  Customer,
+  C_TYPE,
+  I_TYPE,
+} from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -294,8 +299,9 @@ export class DataService {
     return [
       {
         id: '1',
-        code: '',
+        code: 'N# 3031997',
         name: 'Abby Cannon',
+        dob: '1995-11-08',
         photo: 'assets/temp_images/userPhotos/profile_female6.jpg',
         frequency: 'n/a',
         risk: 'Moderate',
@@ -315,12 +321,17 @@ export class DataService {
           ],
           callBlock: true,
         },
+        additionalInfo: {
+          icons: ['ic-4_2', 'ic-1_1', 'ic-3_1'],
+        },
         healthRisk: false,
       },
+
       {
         id: '2',
-        code: '',
+        code: 'N# 3400359',
         name: 'Ismail Sykes',
+        dob: '1989-04-89',
         photo: 'assets/temp_images/userPhotos/profile_male4.jpg',
         frequency: 'n/a',
         risk: 'n/a',
@@ -340,12 +351,16 @@ export class DataService {
           ],
           callBlock: true,
         },
+        additionalInfo: {
+          icons: ['ic-1_2', 'ic-3_2', 'ic-3_1'],
+        },
         healthRisk: false,
       },
       {
         id: '3',
-        code: '',
+        code: 'N# 3140862',
         name: 'Rupert Horton',
+        dob: '1997-30-03',
         photo: 'assets/temp_images/userPhotos/profile_male3.jpg',
         frequency: 'Active',
         risk: '11%',
@@ -360,17 +375,21 @@ export class DataService {
           description: [
             {
               lang: 'en-EN',
-              text: 'Usage Very Active -> Active',
+              text: 'Usage Very Active',
             },
           ],
           callBlock: true,
+        },
+        additionalInfo: {
+          icons: ['ic-1_5', 'ic-4_1', 'ic-3_1', 'ic-4_2', 'ic-4_3', 'ic-4_4'],
         },
         healthRisk: false,
       },
       {
         id: '4',
-        code: '',
+        code: 'N# 3401261',
         name: 'Sanaa Tyler',
+        dob: '1987-04-09',
         photo: 'assets/temp_images/userPhotos/profile_female5.jpg',
         frequency: 'Active',
         risk: '9%',
@@ -390,12 +409,16 @@ export class DataService {
           ],
           callBlock: true,
         },
+        additionalInfo: {
+          icons: ['ic-1_2', 'ic-3_1', 'ic-4_2'],
+        },
         healthRisk: false,
       },
       {
         id: '5',
-        code: '',
+        code: 'N# 3112562',
         name: 'Alan Rivers',
+        dob: '1961-05-04',
         photo: 'assets/temp_images/userPhotos/profile_male2.jpg',
         frequency: 'Very Active',
         risk: '5%',
@@ -415,12 +438,16 @@ export class DataService {
           ],
           callBlock: true,
         },
+        additionalInfo: {
+          icons: ['ic-3_1', 'ic-4_2', 'ic-4_3'],
+        },
         healthRisk: false,
       },
       {
         id: '6',
-        code: '',
+        code: 'N# 3400182',
         name: 'Helena Saunders',
+        dob: '1959-02-01',
         photo: 'assets/temp_images/userPhotos/profile_female4.jpg',
         frequency: 'Active',
         risk: '9%',
@@ -440,12 +467,16 @@ export class DataService {
           ],
           callBlock: false,
         },
+        additionalInfo: {
+          icons: ['ic-1_4', 'ic-3_1', 'ic-4_1'],
+        },
         healthRisk: false,
       },
       {
         id: '7',
-        code: '',
+        code: 'N# 3400627',
         name: 'Elle Lawrence',
+        dob: '1997-28-09',
         photo: 'assets/temp_images/userPhotos/profile_male8.jpg',
         frequency: 'n/a',
         risk: 'Low',
@@ -460,17 +491,21 @@ export class DataService {
           description: [
             {
               lang: 'en-EN',
-              text: 'First 4-weeks, under 2x week',
+              text: 'First 4-weeks, 2x week',
             },
           ],
           callBlock: true,
         },
-        healthRisk: false,
+        additionalInfo: {
+          icons: ['ic-4_1', 'ic-3_3', 'ic-2_1'],
+        },
+        healthRisk: true,
       },
       {
         id: '8',
-        code: '',
+        code: 'N# 2007589',
         name: 'Josh Wolf',
+        dob: '1994-26-09',
         photo: 'assets/temp_images/userPhotos/profile_male6.jpg',
         frequency: 'Asleep',
         risk: '33%',
@@ -490,12 +525,17 @@ export class DataService {
           ],
           callBlock: true,
         },
+        additionalInfo: {
+          icons: ['ic-4_2', 'ic-4_3', 'ic-4_4'],
+        },
         healthRisk: false,
       },
+
       {
         id: '9',
-        code: '',
+        code: 'N# 3501968',
         name: 'Lori Cabrera',
+        dob: '1990-06-04',
         photo: 'assets/temp_images/userPhotos/profile_female1.jpg',
         frequency: 'Asleep',
         risk: '29%',
@@ -515,12 +555,16 @@ export class DataService {
           ],
           callBlock: false,
         },
+        additionalInfo: {
+          icons: ['ic-3_2', 'ic-1_5', 'ic-3_3'],
+        },
         healthRisk: false,
       },
       {
         id: '10',
-        code: '',
+        code: 'N# 34002562',
         name: 'Jana Miller',
+        dob: '1991-11-08',
         photo: 'assets/temp_images/userPhotos/profile_female2.jpg',
         frequency: 'Moderate',
         risk: '26%',
@@ -539,6 +583,9 @@ export class DataService {
             },
           ],
           callBlock: true,
+        },
+        additionalInfo: {
+          icons: ['ic-1_2', 'ic-2_1', 'ic-3_1'],
         },
         healthRisk: true,
       },

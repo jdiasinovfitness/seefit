@@ -1,29 +1,39 @@
-<ion-item slot="header" mode="ios" button>
+<ion-item slot="header" mode="ios" button detail="false">
   <div class="icon-avatar">
     <div class="col-icons">
       <div
         class="see-icon md {{ icon }}"
-        *ngFor="let icon of item?.additionalInfo?.icons | slice : 0 : 3"
+        *ngFor="let icon of orderIcons | slice : 0 : 3"
       ></div>
     </div>
 
     <!-- Avatar  -->
     <ion-avatar>
-      <img alt="Silhouette of a person's head" [src]="item.photo" />
+      <img
+        alt="Silhouette of a person's head"
+        [src]="item.photo || profilePhoto"
+      />
     </ion-avatar>
   </div>
 
   <div class="col-wrapper">
     <!-- Left Column  -->
     <div class="column">
-      <!-- Title  -->
+      <!-- Name  -->
       <ion-label>
         <ion-text color="primary">
           <b>{{ item.name }}</b>
         </ion-text>
       </ion-label>
+      <!-- Code  -->
+      <ion-label>
+        <ion-text color="medium">
+          {{ item.code }}
+        </ion-text>
+      </ion-label>
+
       <!-- Risk  -->
-      <div class="labels hidden-big-device">
+      <div class="labels">
         <div class="lbl" *ngIf="item.risk !== 'n/a'">
           {{ item.risk }}
         </div>
@@ -35,26 +45,36 @@
     </div>
 
     <!-- Right Column  -->
-    <div class="column right" slot="end">
-      <!-- Date  -->
-      <ion-label class="right">
-        <ion-text color="medium">
-          {{ item.interaction.date }}
-        </ion-text>
-      </ion-label>
+    <div class="column right ion-align-self-baseline" slot="end">
       <!-- Status  -->
       <div class="right">
-        <ion-chip color="medium">
-          <ion-text color="primary" style="font-size: smaller">
+        <ion-chip
+          [class.completed-chip]="item.interaction.status === 'COMPLETED'"
+          [color]="item.interaction.status === 'PLANNED' ? 'medium' : 'primary'"
+        >
+          <ion-text
+            [color]="
+              item.interaction.status === 'COMPLETED' ? 'light' : 'primary'
+            "
+            style="font-size: smaller"
+          >
             {{ item.interaction.status }}
           </ion-text>
         </ion-chip>
       </div>
+      <!-- Date  -->
+      <ion-label class="right">
+        <ion-text class="ion-align-self-baseline" color="dark-tint">
+          {{ formatDate(item.interaction.date) }}
+        </ion-text>
+        <ion-icon color="dark-tint" name="calendar-outline"></ion-icon>
+      </ion-label>
       <!-- Interaction Type  -->
       <ion-label class="right">
-        <ion-text color="medium">
+        <ion-text color="dark-tint">
           {{ item.interaction.description[0].text }}
         </ion-text>
+        <ion-icon color="dark-tint" name="people"></ion-icon>
       </ion-label>
     </div>
   </div>

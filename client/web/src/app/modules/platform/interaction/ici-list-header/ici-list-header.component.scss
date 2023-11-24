@@ -25,12 +25,13 @@ ion-item {
       max-height: 150px;
       max-width: 150px;
       margin: 8px;
+      border: 1px solid var(--ion-color-primary) !important;
     }
   }
 
   .col-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     flex-shrink: 0;
     flex-grow: 1;
     flex-wrap: 1;
@@ -52,14 +53,18 @@ ion-item {
 }
 
 @media screen and (max-width: 580px) {
+  .item-detail-icon {
+    display: none;
+  }
+
   .icon-avatar {
     display: flex;
-    flex-direction: column-reverse !important;
+    flex-direction: row !important;
 
     .col-icons {
       display: flex;
       justify-content: center;
-      flex-direction: row !important;
+      flex-direction: column !important;
 
       ion-icon {
         margin-right: 4px;
@@ -88,7 +93,7 @@ ion-item {
   }
 
   .right {
-    align-self: flex-start !important;
+    align-self: flex-end !important;
   }
 }
 
@@ -98,10 +103,16 @@ ion-item {
 
 ion-chip {
   height: 24px;
-  font-size: small;
   margin-right: 0px;
-  padding-bottom: 4px;
   padding-top: 4px;
+  padding-bottom: 4px;
+
+  font-size: small;
+  border-radius: 6px;
+}
+
+.completed-chip {
+  background-color: var(--ion-color-primary);
 }
 
 .labels {
@@ -118,4 +129,16 @@ ion-chip {
   border-radius: 6px;
   color: var(--ion-color-dark);
   background-color: var(--ion-color-light);
+}
+
+.see-icon {
+  margin-bottom: 2px !important;
+}
+
+.icon-inner,
+ion-icon,
+svg {
+  position: relative;
+
+  top: 2px;
 }

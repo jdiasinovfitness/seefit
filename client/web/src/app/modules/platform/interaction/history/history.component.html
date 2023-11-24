@@ -1,38 +1,79 @@
-<!-- <div class="interaction-wrapper">
+<div class="interaction-wrapper">
+  <div class="activity-buttons">
+    <ion-button
+      mode="ios"
+      (click)="filterCustomerActivity(activityTypes.FOOTFALL)"
+      [class.selected]="selectedFilter === activityTypes.FOOTFALL"
+    >
+      <ion-icon name="calendar-clear-outline"></ion-icon>
+      <ion-label>Visits</ion-label>
+    </ion-button>
+    <ion-button
+      mode="ios"
+      (click)="filterCustomerActivity(activityTypes.ICI)"
+      [class.selected]="selectedFilter === activityTypes.ICI"
+    >
+      <ion-icon name="people-circle-outline"></ion-icon>
+      <ion-label>Interact</ion-label></ion-button
+    >
+    <ion-button
+      mode="ios"
+      (click)="filterCustomerActivity(activityTypes.APPOINTMENT)"
+      [class.selected]="selectedFilter === activityTypes.APPOINTMENT"
+    >
+      <ion-icon name="location-sharp"> </ion-icon>
+      <ion-label>Appoint</ion-label>
+    </ion-button>
+
+    <ion-button
+      mode="ios"
+      (click)="filterCustomerActivity(activityTypes.OCI)"
+      [class.selected]="selectedFilter === activityTypes.OCI"
+      ><ion-icon name="star"></ion-icon>
+      <ion-label>Comms</ion-label></ion-button
+    >
+  </div>
+
   <ion-grid>
-    <ion-row *ngFor="let item of info?.historyInfo"
-             [ngClass]="item.highlight ? 'highlight': ''">
-      <ion-col size="2"
-               size-lg="1"
-               size-md="2"
-               size-sm="2">
-        {{item.date | date:'yyyy dd/MMM'}}
+    <ion-row *ngFor="let item of info" [class.last-activity]="isLastItem(item)">
+      <ion-col
+        size="2"
+        size-lg="2"
+        size-md="2"
+        size-sm="2"
+        class="activity-date"
+      >
+        <label class="year">
+          {{ item.date | date : "yyyy" }}
+        </label>
+        <label>
+          <b>
+            {{ item.date | date : "dd/MMM" }}
+          </b>
+        </label>
       </ion-col>
-
-      <ion-col size="1"
-               size-lg="1"
-               size-md="1"
-               size-sm="1"
-               style="display: flex;  justify-content: center;">
-        <div class="logo"
-             id="history-icon"></div>
-      </ion-col>
-
-      <ion-col size="4"
-               size-lg="3"
-               size-md="3"
-               size-sm="3">{{item.title}}</ion-col>
-      <ion-col size="5"
-               size-lg="7"
-               size-md="4"
-               size-sm="4">{{item.description}}</ion-col>
+      <ion-col
+        class="activity-col"
+        size="4"
+        size-lg="4"
+        size-md="4"
+        size-sm="4"
+      >
+        <ion-icon
+          style="width: 26px; margin-left: 9px"
+          [name]="getIconByType(item.type)"
+        ></ion-icon>
+        {{ item.description }}</ion-col
+      >
+      <ion-col
+        size="6"
+        size-md="6"
+        size-sm="6"
+        class="activity-col"
+        style="word-spacing: 2px"
+      >
+        {{ item.observation ? item.observation : noComments }}</ion-col
+      >
     </ion-row>
   </ion-grid>
-
-  <div style="padding-left: 6px;">
-    <app-observation [userId]="info.userId"
-                     [displayBtn]="info.status !== statusTypes.COMPLETED"
-                     (handleClick)="onButtonClick($event)">
-    </app-observation>
-  </div>
-</div> -->
+</div>

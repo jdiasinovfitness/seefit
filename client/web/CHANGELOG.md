@@ -83,3 +83,7 @@
 - [Refactor the customer info section](https://dev.azure.com/inovretail/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16260)
 
 - [Refactor filters header](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16331)
+
+- [Refactor list header](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16381)
+
+- [Refaction Interaction Info](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16325)

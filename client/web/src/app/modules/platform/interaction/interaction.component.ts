@@ -270,14 +270,14 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
-  onFilterToggle(event: any, selectedFilterTab: string) {
+  onFilterToggle(selectedFilterTab: string) {
     this.showLoading = true;
     this.loadData();
     this.selectedFilterTab = selectedFilterTab;
     this.showLoading = false;
   }
 
-  prevTab(event: any) {
+  prevTab() {
     const currentIndex = this.filterList.findIndex(
       (filter) => filter.id === this.selectedFilterTab
     );
@@ -288,7 +288,7 @@ export class InteractionComponent implements OnInit {
     this.loadData();
   }
 
-  nextTab(event: any) {
+  nextTab() {
     const currentIndex = this.filterList.findIndex(
       (filter) => filter.id === this.selectedFilterTab
     );

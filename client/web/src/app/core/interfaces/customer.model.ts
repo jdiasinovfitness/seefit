@@ -5,6 +5,7 @@ export interface Customer {
   code: string;
   photo: string;
   name: string;
+  dob: string; //birthday date
   frequency: string;
   risk: string;
   interaction: InteractionBasicInfo;
@@ -34,4 +35,25 @@ export enum C_STATUS {
   COMPLETED = 'COMPLETED',
   PLANNED = 'PLANNED',
   UNPLANNED = 'UNPLANNED',
+}
+
+export interface CustomerActivity {
+  id: string;
+  customer: string;
+  date: string;
+  type: I_TYPE;
+  description: string;
+  observation: string;
+}
+
+export enum C_TYPE {
+  IN_CLUB = 'In_Club',
+  NPS = 'NPS',
+}
+
+export enum I_TYPE {
+  ICI = 'ICI',
+  APPOINTMENT = 'Appointment',
+  OCI = 'Comms',
+  FOOTFALL = 'Visit',
 }
