@@ -45,6 +45,14 @@ export interface CustomerActivity {
   description: string;
   observation: string;
 }
+export interface InteractionInfo {
+  id: string;
+  name: string;
+  date: Date;
+  type: string;
+  description: Array<I18N>;
+  observation: string;
+}
 
 export enum C_TYPE {
   IN_CLUB = 'In_Club',

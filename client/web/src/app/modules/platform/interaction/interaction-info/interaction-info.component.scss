@@ -12,10 +12,15 @@
     padding: 12px 4px;
   }
 
-  ion-button {
-    display: flex;
-    align-self: flex-end;
-    margin: 24px 12px;
+  .btn-group {
+    justify-content: center;
+    padding-top: 10px;
+    .btn-discard {
+      width: -webkit-fill-available;
+    }
+    .btn-submit {
+      width: -webkit-fill-available;
+    }
   }
 }
 

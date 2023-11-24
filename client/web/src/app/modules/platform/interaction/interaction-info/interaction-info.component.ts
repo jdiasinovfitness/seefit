@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { firstValueFrom } from 'rxjs';
-import { DataService } from '../../../../core/services/data.service';
 import {
-  IInteraction,
-  IITypeData,
-} from '../../../../core/interfaces/interaction.model';
-import { C_STATUS, Customer } from 'src/app/core/interfaces/customer.model';
+  C_STATUS,
+  Customer,
+  InteractionInfo,
+} from 'src/app/core/interfaces/customer.model';
+import { InteractionService } from 'src/app/core/services/interaction.service';
+import { I18N } from 'src/app/core/services/lang.service';
 
 export enum Phases {
   loading,
@@ -24,38 +23,40 @@ export class InteractionInfoComponent {
   phaseEnum = Phases;
   currentPhase = Phases.loading;
 
-  @Input() info!: any; // TODO: set correct model type after API available
+  @Input() info!: Array<InteractionInfo>; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
-  typeList!: Array<IITypeData>;
-  interactionList: Array<IInteraction> | undefined;
+  typeList!: Array<InteractionInfo>;
+  interactionList: Array<InteractionInfo> | undefined;
   selectedType: C_STATUS | undefined;
   selectedInteraction: string | undefined;
   selectedInteractionValue: string | undefined;
   details = '';
 
-  constructor(
-    private dataService: DataService,
-    private translateService: TranslateService
-  ) {
+  constructor(private interactionService: InteractionService) {
     this.init();
   }
 
   async init() {
-    this.typeList = await Promise.all(
-      this.dataService.getInteractionList()?.map(async (el) => {
-        el.label = await firstValueFrom(this.translateService.get(el.label));
-        return el;
-      })
-    );
+    await this.loadTypeList();
     this.currentPhase = this.phaseEnum.success;
+  }
+
+  private async loadTypeList() {
+    this.typeList = await Promise.all(
+      this.interactionService
+        .interactionDummyList()
+        .map((el: InteractionInfo) => {
+          return el;
+        })
+    );
   }
 
   async onTypeChange(newSelection: any) {
     const newVal = newSelection?.detail?.value;
 
     const index = this.typeList?.findIndex((el) => {
-      return el.value === newVal;
+      return el.description === newVal;
     });
 
     this.selectedType = newVal;
@@ -63,13 +64,6 @@ export class InteractionInfoComponent {
     this.selectedInteractionValue = '';
     this.interactionList = undefined;
     this.details = '';
-
-    this.interactionList = await Promise.all(
-      this.typeList?.[index]?.interaction?.map(async (el) => {
-        el.label = await firstValueFrom(this.translateService.get(el.label));
-        return el;
-      })
-    );
   }
 
   onInteractionChange(newSelection: any) {
@@ -77,10 +71,10 @@ export class InteractionInfoComponent {
 
     this.selectedInteractionValue = '';
     this.selectedInteraction = undefined;
-    const index = this.interactionList?.findIndex((el) => el.value === newVal);
+    const index = this.interactionList?.findIndex((el) => el.id === newVal);
 
     if (typeof index === 'number' && index != -1) {
-      this.selectedInteractionValue = this.interactionList?.[index].label || '';
+      this.selectedInteractionValue = this.interactionList?.[index].name || '';
     }
 
     this.selectedInteraction = newVal;
@@ -110,5 +104,8 @@ export class InteractionInfoComponent {
 
   updateObservation(event: any) {
     this.handleClick.emit(event);
+  }
+  onButtonClick(isSubmit: boolean) {
+    this.handleClick.emit({ isSubmit });
   }
 }
