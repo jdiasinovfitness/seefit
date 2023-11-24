@@ -9,7 +9,7 @@ export class HistoryService {
 
   constructor() {}
 
-  //sarray para abrigar activity data depois chamar o serviço
+  //array para abrigar activity data depois chamar o serviço
 
   activityDummyList(): Array<CustomerActivity> {
     return [

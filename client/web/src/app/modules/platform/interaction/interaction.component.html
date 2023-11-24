@@ -7,11 +7,7 @@
 <div class="header-filters">
   <div class="tab-wrapper">
     <ion-item lines="full">
-      <ion-button
-        class="hidden-small-devices"
-        fill="clear"
-        (click)="prevTab($event)"
-      >
+      <ion-button class="hidden-small-devices" fill="clear" (click)="prevTab()">
         <ion-icon name="chevron-back-circle-outline"></ion-icon>
       </ion-button>
 
@@ -20,7 +16,7 @@
         [(ngModel)]="selectedFilterTab"
         mode="md"
         [scrollable]="!isMobile"
-        (ionChange)="onFilterToggle($event, selectedFilterTab)"
+        (ionChange)="onFilterToggle(selectedFilterTab)"
       >
         <ng-container *ngFor="let filter of filterList; let i = index">
           <ion-spinner *ngSwitch="onFilterToggle"></ion-spinner>
@@ -32,11 +28,7 @@
           </ion-segment-button>
         </ng-container>
       </ion-segment>
-      <ion-button
-        class="hidden-small-devices"
-        fill="clear"
-        (click)="nextTab($event)"
-      >
+      <ion-button class="hidden-small-devices" fill="clear" (click)="nextTab()">
         <ion-icon name="chevron-forward-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
