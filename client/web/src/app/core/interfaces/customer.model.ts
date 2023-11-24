@@ -16,10 +16,11 @@ export interface Customer {
 
 export interface InteractionBasicInfo {
   id: string;
-  status: C_STATUS;
-  date: string;
+  name: string;
+  date: Date;
+  type: string;
   description: Array<I18N>;
-  callBlock: boolean;
+  observation?: string;
 }
 
 export interface AdditionalInformation {
