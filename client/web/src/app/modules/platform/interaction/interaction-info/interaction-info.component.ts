@@ -1,11 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
+
 import {
   C_STATUS,
   Customer,
   InteractionInfo,
 } from 'src/app/core/interfaces/customer.model';
 import { InteractionService } from 'src/app/core/services/interaction.service';
-import { I18N } from 'src/app/core/services/lang.service';
 
 export enum Phases {
   loading,
@@ -23,7 +25,7 @@ export class InteractionInfoComponent {
   phaseEnum = Phases;
   currentPhase = Phases.loading;
 
-  @Input() info!: Array<InteractionInfo>; // TODO: set correct model type after API available
+  info: Array<InteractionInfo> = []; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
   typeList!: Array<InteractionInfo>;
@@ -33,37 +35,41 @@ export class InteractionInfoComponent {
   selectedInteractionValue: string | undefined;
   details = '';
 
-  constructor(private interactionService: InteractionService) {
+  constructor(
+    private interactionService: InteractionService,
+    private translateService: TranslateService
+  ) {
     this.init();
   }
 
   async init() {
-    await this.loadTypeList();
-    this.currentPhase = this.phaseEnum.success;
-  }
-
-  private async loadTypeList() {
     this.typeList = await Promise.all(
-      this.interactionService
-        .interactionDummyList()
-        .map((el: InteractionInfo) => {
-          return el;
-        })
+      this.interactionService.interactionDummyList().map(async (el) => {
+        return el;
+      })
     );
+    this.currentPhase = this.phaseEnum.success;
   }
 
   async onTypeChange(newSelection: any) {
     const newVal = newSelection?.detail?.value;
-
-    const index = this.typeList?.findIndex((el) => {
-      return el.description === newVal;
-    });
 
     this.selectedType = newVal;
     this.selectedInteraction = undefined;
     this.selectedInteractionValue = '';
     this.interactionList = undefined;
     this.details = '';
+
+    if (this.typeList) {
+      const filteredInteractions = this.typeList
+        .filter((el) => el.type === newVal)
+        .map(async (el) => {
+          el.type = await firstValueFrom(this.translateService.get(el.type));
+          return el;
+        });
+
+      this.interactionList = await Promise.all(filteredInteractions);
+    }
   }
 
   onInteractionChange(newSelection: any) {
@@ -71,7 +77,7 @@ export class InteractionInfoComponent {
 
     this.selectedInteractionValue = '';
     this.selectedInteraction = undefined;
-    const index = this.interactionList?.findIndex((el) => el.id === newVal);
+    const index = this.interactionList?.findIndex((el) => el.name === newVal);
 
     if (typeof index === 'number' && index != -1) {
       this.selectedInteractionValue = this.interactionList?.[index].name || '';
@@ -90,13 +96,11 @@ export class InteractionInfoComponent {
     const newInteraction = JSON.parse(JSON.stringify(this.info)) as Customer;
     newInteraction.interaction.status = this.selectedType || C_STATUS.UNPLANNED;
     newInteraction.interaction.id = this.selectedInteractionValue || '';
-    // newInteraction.interaction.isBold = true;
     // newInteraction.interaction.title = 'INTERACTION:';
     newInteraction.interaction.date = new Date('2023-04-30')
       .toISOString()
       .slice(0, 10);
-
-    // this.dataService.addInteraction(newInteraction);
+    // this.interactionService.addInteraction(newInteraction);
 
     this.currentPhase = Phases.created;
     this.handleClick.emit(event);
@@ -104,8 +108,5 @@ export class InteractionInfoComponent {
 
   updateObservation(event: any) {
     this.handleClick.emit(event);
-  }
-  onButtonClick(isSubmit: boolean) {
-    this.handleClick.emit({ isSubmit });
   }
 }

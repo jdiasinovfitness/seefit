@@ -1,10 +1,29 @@
 <div class="interaction-wrapper">
-  <!-- <div class="inner-wrapper" *ngIf="info" [innerHTML]="info | safeHtml"></div> -->
+  <div class="inner-wrapper" *ngIf="info" [innerHTML]="info | safeHtml"></div>
 
-  <ng-container>
+  <ng-container *ngIf="statusTypes.COMPLETED">
+    <ion-item mode="ios">
+      <ion-select
+        [placeholder]="'interaction.tabs.interaction.type.default' | translate"
+        [disabled]="!true"
+        mode="ios"
+        label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
+        label-placement="floating"
+        fill="solid"
+        (ionChange)="onTypeChange($event)"
+      >
+        <ion-select-option
+          *ngFor="let typeOpt of typeList"
+          [value]="typeOpt.type"
+          >{{ typeOpt.type | translate }}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+
     <ion-item mode="ios">
       <ion-select
         [placeholder]="'interaction.tabs.interaction.label.default' | translate"
+        [disabled]="!this.selectedType"
         mode="ios"
         label="{{ 'interaction.tabs.interaction.label.label' | translate }}"
         label-placement="floating"
@@ -28,24 +47,30 @@
         [placeholder]="
           'interaction.tabs.interaction.details.placeholder' | translate
         "
-        label="{{ 'Description' }}"
+        label="{{ 'interaction.tabs.interaction.details.label' | translate }}"
         labelPlacement="floating"
+        [disabled]="!selectedInteraction"
         (ionChange)="onDetailsKeyup($event)"
       >
       </ion-input>
     </ion-item>
+
+    <ion-button
+      fill="solid"
+      size="default"
+      [disabled]="!details"
+      (click)="createInteraction(true)"
+    >
+      {{ "interaction.tabs.interaction.details.create" | translate }}
+    </ion-button>
+  </ng-container>
+  <ng-container *ngIf="statusTypes.PLANNED">
+    <label>Description</label>
+    <!-- Replace with correct interaction description -->
+    <ion-textarea *ngFor="let interaction of interactionList">{{
+      interaction.description | json
+    }}</ion-textarea>
   </ng-container>
 
-  <!-- Buttons -->
-  <span class="btn-group">
-    <ion-button
-      class="btn-discard"
-      fill="outline"
-      (click)="onButtonClick(false)"
-      >{{ "interaction.data.btn-discard" | translate }}
-    </ion-button>
-    <ion-button class="btn-submit" fill="solid" (click)="onButtonClick(true)">{{
-      "interaction.data.btn-submit" | translate
-    }}</ion-button>
-  </span>
+  <app-observation (handleClick)="updateObservation($event)"> </app-observation>
 </div>

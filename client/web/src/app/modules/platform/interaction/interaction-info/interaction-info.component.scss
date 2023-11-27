@@ -16,10 +16,10 @@
     justify-content: center;
     padding-top: 10px;
     .btn-discard {
-      width: -webkit-fill-available;
+      width: 100%;
     }
     .btn-submit {
-      width: -webkit-fill-available;
+      width: 100%;
     }
   }
 }
@@ -29,6 +29,6 @@ ion-item {
   --background: transparent;
 
   .has-focus {
-    border-bottom: solid 2px $primary;
+    border-bottom: solid 1px var(--ion-color-dark);
   }
 }
