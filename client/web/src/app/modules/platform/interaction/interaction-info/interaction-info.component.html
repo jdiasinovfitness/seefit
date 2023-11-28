@@ -70,9 +70,9 @@
   </ng-container>
 
   <div *ngIf="interaction?.status === statusTypes.PLANNED">
-    <div class="i-planned">
+    <div>
       <h5>Description</h5>
-      <span>{{ interaction?.observation }}</span>
+      <span class="observation" [innerHTML]="interaction?.observation"></span>
       <!--TODO: REPLACE WITH INTERACTION.DESCRIPTION WHEN USING TRANSLATIONS -->
       <span>
         <ion-item color="light ion-no-padding" mode="md">
@@ -89,12 +89,18 @@
       </span>
 
       <span class="btn-group">
-        <ion-button fill="outline" (click)="onButtonClick(false)"
+        <ion-button
+          class="btn-discard"
+          fill="outline"
+          (click)="onButtonClick(false)"
           >{{ "interaction.data.btn-discard" | translate }}
         </ion-button>
-        <ion-button fill="solid" (click)="onButtonClick(true)">{{
-          "interaction.data.btn-submit" | translate
-        }}</ion-button>
+        <ion-button
+          class="btn-submit"
+          fill="solid"
+          (click)="onButtonClick(true)"
+          >{{ "interaction.data.btn-submit" | translate }}</ion-button
+        >
       </span>
     </div>
   </div>

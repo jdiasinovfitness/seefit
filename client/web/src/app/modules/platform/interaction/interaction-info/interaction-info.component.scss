@@ -11,17 +11,43 @@
     flex-direction: column;
     padding: 12px 4px;
   }
+}
 
+.observation {
+  text-align: justify;
+  font-size: 16px;
+}
+
+// Buttons
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0px 10px;
+}
+
+.btn-discard {
+  width: 25%;
+}
+.btn-submit {
+  width: 25%;
+}
+ion-button {
+  --border-radius: 0%;
+}
+
+@media screen and (max-width: 568px) {
   .btn-group {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 10px;
+    display: block !important;
     .btn-discard {
-      width: 100%;
+      width: 100% !important;
     }
     .btn-submit {
-      width: 100%;
+      width: 100% !important;
     }
+  }
+  .observation {
+    font-size: 15px;
   }
 }
 

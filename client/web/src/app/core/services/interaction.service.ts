@@ -24,7 +24,8 @@ export class InteractionService {
 
         status: C_STATUS.PLANNED,
         description: [{ lang: 'en', text: 'Description for Interaction' }],
-        observation: 'Observation for Interaction 1',
+        observation:
+          '<b> Abby Cannon </b> grade our service a <b> 5 </b> (1-10 scale), which puts her as detractor. Relate to gym floor satisfaction, the evaluation is <b>3</b> (1-10 scale)',
       },
       {
         id: '2',
