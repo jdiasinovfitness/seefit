@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { firstValueFrom } from 'rxjs';
-import { DataService } from '../../../../core/services/data.service';
 import {
   C_STATUS,
   Customer,
@@ -34,12 +33,10 @@ export class InteractionInfoComponent implements OnInit {
   selectedType: C_STATUS | undefined;
   selectedInteraction: InteractionInfo | undefined;
   selectedInteractionValue: string | undefined;
-  selectedCustomer: Customer | undefined;
   interaction: InteractionInfo | undefined;
   details = '';
 
   constructor(
-    private dataService: DataService,
     private interactionService: InteractionService,
     private translateService: TranslateService
   ) {}
@@ -51,43 +48,24 @@ export class InteractionInfoComponent implements OnInit {
     this.interaction = this.interactionService.getInteractionById(
       this.info.interaction.id
     );
+    this.typeList = this.interactionService.getDummyInteractionTypes();
   }
   getStatusTypesArray(): Array<string> {
     return Object.values(this.statusTypes);
   }
-
-  onSelectCustomer(customer: Customer): void {
-    this.selectedCustomer = customer;
-    console.log(this.selectedCustomer, 'Selected Customer: ');
-  }
-
   async onTypeChange(newSelection: any) {
     const newVal = newSelection?.detail?.value;
 
-    const index = this.typeList?.findIndex((el) => el.name === newVal);
+    const index = this.typeList?.findIndex((el) => {
+      return el.id === newVal;
+    });
 
     this.selectedType = newVal;
     this.selectedInteraction = undefined;
     this.selectedInteractionValue = '';
     this.interactionList = undefined;
     this.details = '';
-
-    const interactions = this.typeList?.[index]?.interactions;
-    if (interactions && Array.isArray(interactions)) {
-      this.interactionList = await Promise.all(
-        interactions.map(async (el) => {
-          const translatedDescription = await firstValueFrom(
-            this.translateService.get(el.description[0].text)
-          );
-          el.description = [translatedDescription];
-          return el as InteractionInfo;
-        })
-      );
-    } else {
-      this.interactionList = [];
-    }
   }
-
   onInteractionChange(newSelection: any) {
     const newVal = newSelection?.detail?.value;
 
@@ -110,13 +88,10 @@ export class InteractionInfoComponent implements OnInit {
   }
 
   createInteraction(event: any) {
-    const newInteraction = JSON.parse(JSON.stringify(this.info)) as Customer;
+    const newInteraction = { ...this.info } as Customer;
     newInteraction.interaction.status = this.selectedType || C_STATUS.UNPLANNED;
     newInteraction.interaction.id = this.selectedInteractionValue || '';
-    // newInteraction.interaction.title = 'INTERACTION:';
-    newInteraction.interaction.date = new Date('2023-04-30')
-      .toISOString()
-      .slice(0, 10);
+    newInteraction.interaction.date = new Date().toISOString().slice(0, 10);
 
     this.currentPhase = Phases.created;
     this.handleClick.emit(event);

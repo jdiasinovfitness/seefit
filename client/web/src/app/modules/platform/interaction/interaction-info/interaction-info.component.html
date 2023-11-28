@@ -1,6 +1,4 @@
 <div class="interaction-wrapper">
-  <div class="inner-wrapper"></div>
-
   <ng-container *ngIf="interaction?.status === statusTypes.COMPLETED">
     <ion-item mode="ios">
       <ion-select
@@ -22,19 +20,25 @@
 
     <ion-item mode="ios">
       <ion-select
-        [placeholder]="'interaction.tabs.interaction.label.default' | translate"
+        [placeholder]="'interaction.tabs.interaction.type.default' | translate"
         [disabled]="!this.selectedType"
         mode="ios"
-        label="{{ 'interaction.tabs.interaction.label.label' | translate }}"
+        label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
         label-placement="floating"
         fill="solid"
         (ionChange)="onInteractionChange($event)"
       >
-        <ion-select-option
-          *ngFor="let interaction of interactionList"
-          [value]="interaction.name"
-          >{{ interaction.name[0] | translate }}</ion-select-option
-        >
+        <ng-container *ngFor="let interactionType of typeList">
+          <ion-select-option [value]="interactionType.name[0].text">
+            {{ interactionType.name[0].text }}
+          </ion-select-option>
+          <ion-select-option
+            *ngFor="let interaction of interactionType.interactions"
+            [value]="interaction.name"
+          >
+            {{ interaction.name }}
+          </ion-select-option>
+        </ng-container>
       </ion-select>
     </ion-item>
 
@@ -66,10 +70,23 @@
   </ng-container>
 
   <div *ngIf="interaction?.status === statusTypes.PLANNED">
-    <div>
-      <h3>Description</h3>
+    <div class="i-planned">
+      <h5>Description</h5>
       <span>{{ interaction?.observation }}</span>
       <!--TODO: REPLACE WITH INTERACTION.DESCRIPTION WHEN USING TRANSLATIONS -->
+      <span>
+        <ion-item color="light ion-no-padding" mode="md">
+          <ion-input
+            class="custom"
+            mode="md"
+            color="medium"
+            type="text"
+            [placeholder]="''"
+            [label]="'Interaction Note'"
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+      </span>
 
       <span class="btn-group">
         <ion-button fill="outline" (click)="onButtonClick(false)"
@@ -81,6 +98,4 @@
       </span>
     </div>
   </div>
-
-  <ion-input placeholder="details"></ion-input>
 </div>

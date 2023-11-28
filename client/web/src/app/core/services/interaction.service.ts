@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {
   C_STATUS,
-  C_TYPE,
   I_TYPE,
   InteractionInfo,
+  InteractionTypes,
 } from '../interfaces/customer.model';
 
 @Injectable({
@@ -33,8 +33,8 @@ export class InteractionService {
         type: I_TYPE.ICI,
 
         status: C_STATUS.COMPLETED,
-        description: [{ lang: 'en', text: 'Description for Interaction' }],
-        observation: 'Observation for Interaction 1',
+        description: [{ lang: 'en', text: 'Description for Interaction 2' }],
+        observation: 'Observation for Interaction 2',
       },
       {
         id: '3',
@@ -43,8 +43,8 @@ export class InteractionService {
         type: I_TYPE.OCI,
 
         status: C_STATUS.PLANNED,
-        description: [{ lang: 'en', text: 'Description for Interaction' }],
-        observation: 'Observation for Interaction 1',
+        description: [{ lang: 'en', text: 'Description for Interaction 3' }],
+        observation: 'Observation for Interaction 3',
       },
       {
         id: '4',
@@ -52,8 +52,8 @@ export class InteractionService {
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
         type: I_TYPE.ICI,
         status: C_STATUS.PLANNED,
-        description: [{ lang: 'en', text: 'Description for Interaction 1' }],
-        observation: 'Observation for Interaction 1',
+        description: [{ lang: 'en', text: 'Description for Interaction 4' }],
+        observation: 'Observation for Interaction 4',
       },
       {
         id: '5',
@@ -61,17 +61,115 @@ export class InteractionService {
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
         status: C_STATUS.PLANNED,
         type: I_TYPE.ICI,
-        description: [{ lang: 'en', text: 'Description for Interaction 1' }],
-        observation: 'Observation for Interaction 1',
+        description: [{ lang: 'en', text: 'Description for Interaction 5' }],
+        observation: 'Observation for Interaction 5',
       },
       {
         id: '6',
         name: 'Interaction 6',
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
         type: I_TYPE.OCI,
+        status: C_STATUS.PLANNED,
+        description: [{ lang: 'en', text: 'Description for Interaction 6' }],
+        observation: 'Observation for Interaction 6',
+      },
+      {
+        id: '7',
+        name: 'Interaction 7',
+        date: new Date(2023, 6, 4, 17, 23, 42, 11),
+        type: I_TYPE.OCI,
+        status: C_STATUS.PLANNED,
+        description: [{ lang: 'en', text: 'Description for Interaction 7' }],
+        observation: 'Observation for Interaction 7',
+      },
+      {
+        id: '8',
+        name: 'Interaction 8',
+        date: new Date(2023, 6, 4, 17, 23, 42, 11),
+        type: I_TYPE.OCI,
         status: C_STATUS.COMPLETED,
-        description: [{ lang: 'en', text: 'Description for Interaction 1' }],
-        observation: 'Observation for Interaction 1',
+        description: [{ lang: 'en', text: 'Description for Interaction 8' }],
+        observation: 'Observation for Interaction 8',
+      },
+      {
+        id: '9',
+        name: 'Interaction 9',
+        date: new Date(2023, 6, 4, 17, 23, 42, 11),
+        type: I_TYPE.OCI,
+        status: C_STATUS.COMPLETED,
+        description: [{ lang: 'en', text: 'Description for Interaction 9' }],
+        observation: 'Observation for Interaction 9',
+      },
+      {
+        id: '10',
+        name: 'Interaction 10',
+        date: new Date(2023, 6, 4, 17, 23, 42, 11),
+        type: I_TYPE.OCI,
+        status: C_STATUS.PLANNED,
+        description: [{ lang: 'en', text: 'Description for Interaction 10' }],
+        observation: 'Observation for Interaction 10',
+      },
+    ];
+  }
+
+  getDummyInteractionTypes(): Array<InteractionTypes> {
+    return [
+      {
+        id: '1',
+        name: [{ lang: 'en', text: 'Unplanned Interactions' }],
+        interactions: [
+          {
+            id: '1',
+            name: 'Next Visit',
+            date: new Date(),
+            type: 'unplanned',
+            description: [{ lang: 'en', text: 'Description for Next Visit' }],
+            observation: 'Observation for Next Visit',
+            status: C_STATUS.PLANNED,
+          },
+          {
+            id: '2',
+            name: 'Group Class',
+            date: new Date(),
+            type: 'unplanned',
+            description: [{ lang: 'en', text: 'Description for Group Class' }],
+            observation: 'Observation for Group Class',
+            status: C_STATUS.PLANNED,
+          },
+          {
+            id: '3',
+            name: 'Execution Support',
+            date: new Date(),
+            type: 'unplanned',
+            description: [
+              { lang: 'en', text: 'Description for Execution Support' },
+            ],
+            observation: 'Observation for Execution Support',
+            status: C_STATUS.PLANNED,
+          },
+          {
+            id: '4',
+            name: 'Monthly Challenge',
+            date: new Date(),
+            type: 'unplanned',
+            description: [
+              { lang: 'en', text: 'Description for Monthly Challenge' },
+            ],
+            observation: 'Observation for Monthly Challenge',
+            status: C_STATUS.PLANNED,
+          },
+          {
+            id: '5',
+            name: 'Reprogramming',
+            date: new Date(),
+            type: 'unplanned',
+            description: [
+              { lang: 'en', text: 'Description for Reprogramming' },
+            ],
+            observation: 'Observation for Reprogramming',
+            status: C_STATUS.PLANNED,
+          },
+        ],
       },
     ];
   }

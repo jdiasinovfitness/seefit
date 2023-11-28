@@ -9,12 +9,7 @@ import {
 } from '../interfaces/icidata.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
-import {
-  C_STATUS,
-  Customer,
-  C_TYPE,
-  I_TYPE,
-} from '../interfaces/customer.model';
+import { C_STATUS, Customer } from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -258,36 +253,6 @@ export class DataService {
     ];
   }
 
-  getDummyInteractionData() {
-    return [
-      {
-        label: 'interaction.tabs.interaction.type.types.unplanned',
-        value: 'unplanned',
-        interaction: [
-          {
-            label: 'interaction.tabs.interaction.label.types.next_visit',
-            value: INTERACTION.NEXT_VISIT,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.group_class',
-            value: INTERACTION.GROUP_CLASS,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.execution_support',
-            value: INTERACTION.EXECUTION_SUPPORT,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.monthly_challenge',
-            value: INTERACTION.MONTHLY_CHALLENGE,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.reprogramming',
-            value: INTERACTION.REPROGRAMMING,
-          },
-        ],
-      },
-    ];
-  }
   getLiveClubDummyList(): Array<Customer> {
     return [
       {
