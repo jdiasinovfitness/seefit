@@ -128,6 +128,7 @@
             </div>
             <div class="expanded-area" *ngIf="activeTabList[i] === '1'">
               <app-interaction-info
+                [info]="item"
                 (handleClick)="onButtonClick($event)"
               ></app-interaction-info>
             </div>

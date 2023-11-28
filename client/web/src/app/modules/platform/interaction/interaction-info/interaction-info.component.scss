@@ -13,7 +13,8 @@
   }
 
   .btn-group {
-    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
     padding-top: 10px;
     .btn-discard {
       width: 100%;

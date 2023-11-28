@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { C_TYPE, InteractionInfo } from '../interfaces/customer.model';
+import {
+  C_STATUS,
+  C_TYPE,
+  I_TYPE,
+  InteractionInfo,
+} from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +20,9 @@ export class InteractionService {
         id: '1',
         name: 'Interaction 1',
         date: new Date(2023, 5, 4, 17, 23, 42, 11),
-        type: 'PLANNED',
+        type: I_TYPE.ICI,
+
+        status: C_STATUS.PLANNED,
         description: [{ lang: 'en', text: 'Description for Interaction' }],
         observation: 'Observation for Interaction 1',
       },
@@ -23,7 +30,9 @@ export class InteractionService {
         id: '2',
         name: 'Interaction 2',
         date: new Date(2023, 6, 4, 17, 23, 42, 11),
-        type: 'UNPLANNED',
+        type: I_TYPE.ICI,
+
+        status: C_STATUS.COMPLETED,
         description: [{ lang: 'en', text: 'Description for Interaction' }],
         observation: 'Observation for Interaction 1',
       },
@@ -31,7 +40,9 @@ export class InteractionService {
         id: '3',
         name: 'Interaction 3',
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
-        type: 'COMPLETED',
+        type: I_TYPE.OCI,
+
+        status: C_STATUS.PLANNED,
         description: [{ lang: 'en', text: 'Description for Interaction' }],
         observation: 'Observation for Interaction 1',
       },
@@ -39,7 +50,8 @@ export class InteractionService {
         id: '4',
         name: 'Interaction 4',
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
-        type: 'UNPLANNED',
+        type: I_TYPE.ICI,
+        status: C_STATUS.PLANNED,
         description: [{ lang: 'en', text: 'Description for Interaction 1' }],
         observation: 'Observation for Interaction 1',
       },
@@ -47,7 +59,8 @@ export class InteractionService {
         id: '5',
         name: 'Interaction 5',
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
-        type: 'PLANNED',
+        status: C_STATUS.PLANNED,
+        type: I_TYPE.ICI,
         description: [{ lang: 'en', text: 'Description for Interaction 1' }],
         observation: 'Observation for Interaction 1',
       },
@@ -55,25 +68,20 @@ export class InteractionService {
         id: '6',
         name: 'Interaction 6',
         date: new Date(2023, 7, 4, 17, 23, 42, 11),
-        type: 'COMPLETED',
+        type: I_TYPE.OCI,
+        status: C_STATUS.COMPLETED,
         description: [{ lang: 'en', text: 'Description for Interaction 1' }],
         observation: 'Observation for Interaction 1',
       },
     ];
   }
 
-  getInteractionByCustomerId(customerId: string): Array<InteractionInfo> {
-    const interaction = this.interactionData.filter(
-      (item) => item.id === customerId
-    );
-    console.log(interaction, ' interaction');
-    return interaction;
-  }
-
   getInteractionById(interactionId: string): InteractionInfo | undefined {
-    return this.interactionData.find((item) => item.id === interactionId);
+    return this.interactionDummyList().find(
+      (item) => item.id === interactionId
+    );
   }
   getInteractionsByType(type: string): Array<InteractionInfo> {
-    return this.interactionData.filter((item) => item.type === type);
+    return this.interactionDummyList().filter((item) => item.type === type);
   }
 }

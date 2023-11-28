@@ -28,6 +28,7 @@ export interface InteractionInfo {
   type: string;
   description: Array<I18N>;
   observation: string;
+  status: C_STATUS;
 }
 export interface InteractionTypes {
   id: string;
