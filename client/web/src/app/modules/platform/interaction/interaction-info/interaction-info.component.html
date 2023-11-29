@@ -1,61 +1,109 @@
 <div class="interaction-wrapper">
-
-  <div class="inner-wrapper"
-       *ngIf="info"
-       [innerHTML]="info?.interactionInfo | safeHtml"></div>
-
-  <ng-container *ngIf="currentPhase === phaseEnum.success && info?.status === statusTypes.COMPLETED">
+  <ng-container *ngIf="interaction?.status === statusTypes.COMPLETED">
     <ion-item mode="ios">
-      <ion-select [placeholder]="'interaction.tabs.interaction.type.default' | translate"
-                  [disabled]="!true"
-                  mode="ios"
-                  label="{{'interaction.tabs.interaction.type.label' | translate}}"
-                  label-placement="floating"
-                  fill="solid"
-                  (ionChange)="onTypeChange($event)">
-        <ion-select-option *ngFor="let typeOpt of typeList"
-                           [value]="typeOpt.value">{{typeOpt.label | translate}}</ion-select-option>
+      <ion-select
+        [placeholder]="'interaction.tabs.interaction.type.default' | translate"
+        [disabled]="!true"
+        mode="ios"
+        label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
+        label-placement="floating"
+        fill="solid"
+        (ionChange)="onTypeChange($event)"
+      >
+        <ion-select-option
+          *ngFor="let typeOpt of getStatusTypesArray()"
+          [value]="typeOpt"
+          >{{ typeOpt }}</ion-select-option
+        >
       </ion-select>
     </ion-item>
 
     <ion-item mode="ios">
-      <ion-select [placeholder]="'interaction.tabs.interaction.label.default' | translate"
-                  [disabled]="!this.selectedType"
-                  mode="ios"
-                  label="{{'interaction.tabs.interaction.label.label' | translate}}"
-                  label-placement="floating"
-                  fill="solid"
-                  (ionChange)="onInteractionChange($event)">
-        <ion-select-option *ngFor="let interactionOpt of interactionList"
-                           [value]="interactionOpt.value">{{interactionOpt.label | translate}}</ion-select-option>
+      <ion-select
+        [placeholder]="'interaction.tabs.interaction.label.default' | translate"
+        [disabled]="!this.selectedType"
+        mode="ios"
+        label="{{ 'interaction.tabs.interaction.title' | translate }}"
+        label-placement="floating"
+        fill="solid"
+        (ionChange)="onInteractionChange($event)"
+      >
+        <ng-container *ngFor="let interactionType of typeList">
+          <ion-select-option [value]="interactionType.name[0].text">
+            {{ interactionType.name[0].text }}
+          </ion-select-option>
+          <ion-select-option
+            *ngFor="let interaction of interactionType.interactions"
+            [value]="interaction.name"
+          >
+            {{ interaction.name }}
+          </ion-select-option>
+        </ng-container>
       </ion-select>
     </ion-item>
 
     <ion-item mode="md">
-      <ion-input class="custom"
-                 mode="md"
-                 type="text"
-                 [value]="details"
-                 [placeholder]="'interaction.tabs.interaction.details.placeholder' | translate"
-                 label="{{'interaction.tabs.interaction.details.label' | translate}}"
-                 labelPlacement="floating"
-                 [disabled]="!selectedInteraction"
-                 (ionChange)="onDetailsKeyup($event)">
+      <ion-input
+        class="custom"
+        mode="md"
+        color="medium"
+        type="text"
+        [value]="details"
+        [placeholder]="
+          'interaction.tabs.interaction.details.placeholder' | translate
+        "
+        label="{{ 'interaction.tabs.interaction.details.label' | translate }}"
+        labelPlacement="floating"
+        [disabled]="!selectedInteraction"
+        (ionChange)="onDetailsKeyup($event)"
+      >
       </ion-input>
     </ion-item>
 
-    <ion-button fill="solid"
-                size="default"
-                [disabled]="!details"
-                (click)="createInteraction(true)">
-      {{'interaction.tabs.interaction.details.create' | translate}}
+    <ion-button
+      class="btn-create"
+      fill="solid"
+      size="default"
+      [disabled]="!details"
+      (click)="createInteraction(true)"
+    >
+      {{ "interaction.tabs.interaction.details.create" | translate }}
     </ion-button>
-
   </ng-container>
 
-  <app-observation *ngIf="info.status !== statusTypes.COMPLETED"
-                   [userId]="info.userId"
-                   [displayBtn]="info.status !== statusTypes.COMPLETED"
-                   (handleClick)="updateObservation($event)">
-  </app-observation>
+  <div *ngIf="interaction?.status === statusTypes.PLANNED">
+    <div>
+      <h5>Description</h5>
+      <span class="observation" [innerHTML]="interaction?.observation"></span>
+      <!--TODO: REPLACE WITH INTERACTION.DESCRIPTION WHEN USING TRANSLATIONS -->
+      <span>
+        <ion-item color="light ion-no-padding" mode="md">
+          <ion-input
+            class="custom"
+            mode="md"
+            color="medium"
+            type="text"
+            [placeholder]="''"
+            [label]="'Interaction Note'"
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+      </span>
+
+      <span class="btn-group">
+        <ion-button
+          class="btn-discard"
+          fill="outline"
+          (click)="onButtonClick(false)"
+          >{{ "interaction.data.btn-discard" | translate }}
+        </ion-button>
+        <ion-button
+          class="btn-submit"
+          fill="solid"
+          (click)="onButtonClick(true)"
+          >{{ "interaction.data.btn-submit" | translate }}</ion-button
+        >
+      </span>
+    </div>
+  </div>
 </div>

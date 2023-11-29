@@ -16,11 +16,32 @@ export interface Customer {
 
 export interface InteractionBasicInfo {
   id: string;
+  status: C_STATUS;
+  date: string;
+  name: Array<I18N>;
+  callBlock: boolean;
+}
+export interface InteractionInfo {
+  id: string;
   name: string;
   date: Date;
   type: string;
   description: Array<I18N>;
-  observation?: string;
+  observation: string;
+  status: C_STATUS;
+}
+export interface InteractionTypes {
+  id: string;
+  name: Array<I18N>;
+  interactions: Array<InteractionInfo>;
+}
+export interface InteractionCreation {
+  id: string;
+  name: string;
+  date: Date;
+  type: C_STATUS;
+  description: Array<I18N>;
+  observation: string;
 }
 
 export interface AdditionalInformation {
@@ -32,12 +53,6 @@ export interface CurrentLocation {
   inExerciseRoom: boolean;
 }
 
-export enum C_STATUS {
-  COMPLETED = 'COMPLETED',
-  PLANNED = 'PLANNED',
-  UNPLANNED = 'UNPLANNED',
-}
-
 export interface CustomerActivity {
   id: string;
   customer: string;
@@ -47,6 +62,11 @@ export interface CustomerActivity {
   observation: string;
 }
 
+export enum C_STATUS {
+  COMPLETED = 'COMPLETED',
+  PLANNED = 'PLANNED',
+  UNPLANNED = 'UNPLANNED',
+}
 export enum C_TYPE {
   IN_CLUB = 'In_Club',
   NPS = 'NPS',
