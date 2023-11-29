@@ -28,17 +28,12 @@
         fill="solid"
         (ionChange)="onInteractionChange($event)"
       >
-        <ng-container *ngFor="let interactionType of typeList">
-          <ion-select-option [value]="interactionType.name[0].text">
-            {{ interactionType.name[0].text }}
-          </ion-select-option>
-          <ion-select-option
-            *ngFor="let interaction of interactionType.interactions"
-            [value]="interaction.name"
-          >
-            {{ interaction.name }}
-          </ion-select-option>
-        </ng-container>
+        <ion-select-option
+          *ngFor="let interaction of interactionList"
+          [value]="interaction.name"
+        >
+          {{ interaction.name }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
 

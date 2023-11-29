@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { firstValueFrom } from 'rxjs';
 import {
   C_STATUS,
   Customer,
@@ -65,7 +64,14 @@ export class InteractionInfoComponent implements OnInit {
     this.selectedInteractionValue = '';
     this.interactionList = undefined;
     this.details = '';
+
+    if (this.selectedType) {
+      this.interactionList = this.interactionService.getInteractionsByType(
+        this.selectedType
+      );
+    }
   }
+
   onInteractionChange(newSelection: any) {
     const newVal = newSelection?.detail?.value;
 

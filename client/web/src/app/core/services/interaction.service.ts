@@ -180,7 +180,7 @@ export class InteractionService {
       (item) => item.id === interactionId
     );
   }
-  getInteractionsByType(type: string): Array<InteractionInfo> {
-    return this.interactionDummyList().filter((item) => item.type === type);
+  getInteractionsByType(type: C_STATUS): Array<InteractionInfo> {
+    return this.interactionDummyList().filter((item) => item.status === type);
   }
 }
