@@ -20,10 +20,10 @@
 
     <ion-item mode="ios">
       <ion-select
-        [placeholder]="'interaction.tabs.interaction.type.default' | translate"
+        [placeholder]="'interaction.tabs.interaction.label.default' | translate"
         [disabled]="!this.selectedType"
         mode="ios"
-        label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
+        label="{{ 'interaction.tabs.interaction.title' | translate }}"
         label-placement="floating"
         fill="solid"
         (ionChange)="onInteractionChange($event)"
@@ -46,6 +46,7 @@
       <ion-input
         class="custom"
         mode="md"
+        color="medium"
         type="text"
         [value]="details"
         [placeholder]="
@@ -60,6 +61,7 @@
     </ion-item>
 
     <ion-button
+      class="btn-create"
       fill="solid"
       size="default"
       [disabled]="!details"

@@ -26,6 +26,11 @@
   padding: 10px 0px 10px;
 }
 
+.btn-create {
+  width: 20%;
+  align-self: end;
+}
+
 .btn-discard {
   width: 25%;
 }
@@ -45,9 +50,13 @@ ion-button {
     .btn-submit {
       width: 100% !important;
     }
+    .observation {
+      font-size: 15px;
+    }
   }
-  .observation {
-    font-size: 15px;
+  .btn-create {
+    width: 100%;
+    align-self: center;
   }
 }
 
