@@ -27,15 +27,15 @@
 }
 
 .btn-create {
-  width: 20%;
+  min-width: 120px;
   align-self: end;
 }
 
 .btn-discard {
-  width: 25%;
+  min-width: 120px;
 }
 .btn-submit {
-  width: 25%;
+  min-width: 120px;
 }
 ion-button {
   --border-radius: 8px;
@@ -45,10 +45,10 @@ ion-button {
   .btn-group {
     display: block !important;
     .btn-discard {
-      width: 100% !important;
+      width: -webkit-fill-available;
     }
     .btn-submit {
-      width: 100% !important;
+      width: -webkit-fill-available;
     }
     .observation {
       font-size: 15px;

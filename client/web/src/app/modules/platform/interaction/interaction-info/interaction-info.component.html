@@ -1,6 +1,6 @@
 <div class="interaction-wrapper">
   <ng-container *ngIf="interaction?.status === statusTypes.COMPLETED">
-    <ion-item mode="ios">
+    <ion-item lines="full" mode="ios">
       <ion-select
         [placeholder]="'interaction.tabs.interaction.type.default' | translate"
         [disabled]="!true"
@@ -18,7 +18,7 @@
       </ion-select>
     </ion-item>
 
-    <ion-item mode="ios">
+    <ion-item lines="full" mode="ios">
       <ion-select
         [placeholder]="'interaction.tabs.interaction.label.default' | translate"
         [disabled]="!this.selectedType"
@@ -42,7 +42,7 @@
       </ion-select>
     </ion-item>
 
-    <ion-item mode="md">
+    <ion-item lines="full" mode="md">
       <ion-input
         class="custom"
         mode="md"
