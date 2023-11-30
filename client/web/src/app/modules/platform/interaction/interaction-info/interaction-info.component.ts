@@ -88,8 +88,8 @@ export class InteractionInfoComponent implements OnInit {
     this.details = '';
   }
 
-  onDetailsKeyup(event: any) {
-    const val = event?.detail?.value;
+  onDetailsInput(event: any) {
+    const val = event?.target?.value;
     this.details = val;
   }
 

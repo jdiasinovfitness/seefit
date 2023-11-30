@@ -23,7 +23,7 @@
 .btn-group {
   display: flex;
   justify-content: flex-end;
-  padding: 10px 0px 10px;
+  padding: 20px 0px 10px;
 }
 
 .btn-create {
@@ -37,6 +37,14 @@
 .btn-submit {
   min-width: 120px;
 }
+
+.btn-create,
+.btn-discard,
+.btn-submit {
+  min-height: 40px;
+  margin: 10px 5px;
+}
+
 ion-button {
   --border-radius: 8px;
 }
@@ -44,6 +52,7 @@ ion-button {
 @media screen and (max-width: 568px) {
   .btn-group {
     display: block !important;
+    align-items: center;
     .btn-discard {
       width: -webkit-fill-available;
     }
@@ -57,6 +66,13 @@ ion-button {
   .btn-create {
     width: 100%;
     align-self: center;
+  }
+
+  .btn-create,
+  .btn-discard,
+  .btn-submit {
+    width: 100%;
+    margin: 10px 0;
   }
 }
 

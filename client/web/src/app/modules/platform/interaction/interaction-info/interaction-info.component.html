@@ -50,7 +50,7 @@
         label="{{ 'interaction.tabs.interaction.details.label' | translate }}"
         labelPlacement="floating"
         [disabled]="!selectedInteraction"
-        (ionChange)="onDetailsKeyup($event)"
+        (ionInput)="onDetailsInput($event)"
       >
       </ion-input>
     </ion-item>
@@ -87,17 +87,17 @@
 
       <span class="btn-group">
         <ion-button
-          class="btn-discard"
-          fill="outline"
-          (click)="onButtonClick(false)"
-          >{{ "interaction.data.btn-discard" | translate }}
-        </ion-button>
-        <ion-button
           class="btn-submit"
           fill="solid"
           (click)="onButtonClick(true)"
           >{{ "interaction.data.btn-submit" | translate }}</ion-button
         >
+        <ion-button
+          class="btn-discard"
+          fill="outline"
+          (click)="onButtonClick(false)"
+          >{{ "interaction.data.btn-discard" | translate }}
+        </ion-button>
       </span>
     </div>
   </div>
