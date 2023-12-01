@@ -8,6 +8,7 @@
         label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
         label-placement="floating"
         fill="solid"
+        [(ngModel)]="selectedType"
         (ionChange)="onTypeChange($event)"
       >
         <ion-select-option
@@ -26,6 +27,7 @@
         label="{{ 'interaction.tabs.interaction.title' | translate }}"
         label-placement="floating"
         fill="solid"
+        [(ngModel)]="selectedInteraction"
         (ionChange)="onInteractionChange($event)"
       >
         <ion-select-option
@@ -43,7 +45,7 @@
         mode="md"
         color="medium"
         type="text"
-        [value]="details"
+        [(ngModel)]="details"
         [placeholder]="
           'interaction.tabs.interaction.details.placeholder' | translate
         "

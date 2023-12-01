@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 import {
   C_STATUS,
   Customer,
@@ -36,11 +36,17 @@ export class InteractionInfoComponent implements OnInit {
   details = '';
 
   constructor(
-    private interactionService: InteractionService,
-    private translateService: TranslateService
-  ) {}
+    private interactionService: InteractionService
+  ) // private translateService: TranslateService
+  {}
   ngOnInit(): void {
+    this.loadSelectionFromLocalStorage();
     this.init();
+    if (this.selectedType && this.selectedInteraction) {
+      this.interactionList = this.interactionService.getInteractionsByType(
+        this.selectedType
+      );
+    }
   }
 
   async init() {
@@ -49,11 +55,38 @@ export class InteractionInfoComponent implements OnInit {
     );
     this.typeList = this.interactionService.getDummyInteractionTypes();
   }
+  saveSelectionToLocalStorage() {
+    const userId = this.info.id;
+    const selectionData = {
+      selectedType: this.selectedType,
+      selectedInteraction: this.selectedInteraction,
+      details: this.details,
+    };
+    localStorage.setItem(
+      `interactionSelection_${userId}`,
+      JSON.stringify(selectionData)
+    );
+  }
+
+  loadSelectionFromLocalStorage() {
+    const userId = this.info.id;
+    const savedSelection = localStorage.getItem(
+      `interactionSelection_${userId}`
+    );
+
+    if (savedSelection) {
+      const selectionData = JSON.parse(savedSelection);
+
+      this.selectedType = selectionData.selectedType || null;
+      this.selectedInteraction = selectionData.selectedInteraction || null;
+      this.details = selectionData.details || '';
+    }
+  }
   getStatusTypesArray(): Array<string> {
     return Object.values(this.statusTypes);
   }
   async onTypeChange(newSelection: any) {
-    const newVal = newSelection?.detail?.value;
+    const newVal = newSelection?.target?.value;
 
     const index = this.typeList?.findIndex((el) => {
       return el.id === newVal;
@@ -69,11 +102,12 @@ export class InteractionInfoComponent implements OnInit {
       this.interactionList = this.interactionService.getInteractionsByType(
         this.selectedType
       );
+      this.saveSelectionToLocalStorage();
     }
   }
 
   onInteractionChange(newSelection: any) {
-    const newVal = newSelection?.detail?.value;
+    const newVal = newSelection?.target?.value;
 
     this.selectedInteractionValue = '';
     this.selectedInteraction = undefined;
@@ -86,21 +120,25 @@ export class InteractionInfoComponent implements OnInit {
 
     this.selectedInteraction = newVal;
     this.details = '';
+    this.saveSelectionToLocalStorage();
   }
 
   onDetailsInput(event: any) {
     const val = event?.target?.value;
     this.details = val;
+    this.saveSelectionToLocalStorage();
   }
 
   createInteraction(event: any) {
     const newInteraction = { ...this.info } as Customer;
+    const userId = this.info.id;
     newInteraction.interaction.status = this.selectedType || C_STATUS.UNPLANNED;
     newInteraction.interaction.id = this.selectedInteractionValue || '';
     newInteraction.interaction.date = new Date().toISOString().slice(0, 10);
 
     this.currentPhase = Phases.created;
     this.handleClick.emit(event);
+    localStorage.removeItem(`interactionSelection_${userId}`);
   }
 
   onButtonClick(isSubmit: boolean) {
