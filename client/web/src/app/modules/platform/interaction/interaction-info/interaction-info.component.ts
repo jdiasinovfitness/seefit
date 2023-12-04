@@ -36,9 +36,8 @@ export class InteractionInfoComponent implements OnInit {
   details = '';
 
   constructor(
-    private interactionService: InteractionService
-  ) // private translateService: TranslateService
-  {}
+    private interactionService: InteractionService // private translateService: TranslateService
+  ) {}
   ngOnInit(): void {
     this.loadSelectionFromLocalStorage();
     this.init();
@@ -49,15 +48,17 @@ export class InteractionInfoComponent implements OnInit {
     }
   }
 
-  async init() {
+  init() {
     this.interaction = this.interactionService.getInteractionById(
       this.info.interaction.id
     );
     this.typeList = this.interactionService.getDummyInteractionTypes();
   }
+
   saveSelectionToLocalStorage() {
     const userId = this.info.id;
     const selectionData = {
+      userId: userId,
       selectedType: this.selectedType,
       selectedInteraction: this.selectedInteraction,
       details: this.details,
@@ -67,7 +68,6 @@ export class InteractionInfoComponent implements OnInit {
       JSON.stringify(selectionData)
     );
   }
-
   loadSelectionFromLocalStorage() {
     const userId = this.info.id;
     const savedSelection = localStorage.getItem(
@@ -82,6 +82,12 @@ export class InteractionInfoComponent implements OnInit {
       this.details = selectionData.details || '';
     }
   }
+
+  clearSelectionFromLocalStorage() {
+    const userId = this.info.id;
+    localStorage.removeItem(`interactionSelection_${userId}`);
+  }
+
   getStatusTypesArray(): Array<string> {
     return Object.values(this.statusTypes);
   }
@@ -138,7 +144,7 @@ export class InteractionInfoComponent implements OnInit {
 
     this.currentPhase = Phases.created;
     this.handleClick.emit(event);
-    localStorage.removeItem(`interactionSelection_${userId}`);
+    this.clearSelectionFromLocalStorage();
   }
 
   onButtonClick(isSubmit: boolean) {

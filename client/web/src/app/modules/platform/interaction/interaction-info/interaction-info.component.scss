@@ -49,6 +49,11 @@ ion-button {
   --border-radius: 8px;
 }
 
+.required {
+  color: var(--ion-color-primary);
+  margin-left: 4px;
+}
+
 @media screen and (max-width: 568px) {
   .btn-group {
     display: block !important;

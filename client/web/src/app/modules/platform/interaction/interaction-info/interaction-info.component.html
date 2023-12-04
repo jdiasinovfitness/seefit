@@ -1,12 +1,14 @@
 <div class="interaction-wrapper">
   <ng-container *ngIf="interaction?.status === statusTypes.COMPLETED">
     <ion-item lines="full" mode="ios">
+      <ion-label color="medium" position="floating"
+        >{{ "interaction.tabs.interaction.type.label" | translate
+        }}<span class="required">*</span></ion-label
+      >
       <ion-select
         [placeholder]="'interaction.tabs.interaction.type.default' | translate"
         [disabled]="!true"
         mode="ios"
-        label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
-        label-placement="floating"
         fill="solid"
         [(ngModel)]="selectedType"
         (ionChange)="onTypeChange($event)"
@@ -20,12 +22,14 @@
     </ion-item>
 
     <ion-item lines="full" mode="ios">
+      <ion-label color="medium" position="floating"
+        >{{ "interaction.tabs.interaction.title" | translate
+        }}<span class="required">*</span></ion-label
+      >
       <ion-select
         [placeholder]="'interaction.tabs.interaction.label.default' | translate"
         [disabled]="!this.selectedType"
         mode="ios"
-        label="{{ 'interaction.tabs.interaction.title' | translate }}"
-        label-placement="floating"
         fill="solid"
         [(ngModel)]="selectedInteraction"
         (ionChange)="onInteractionChange($event)"
@@ -40,17 +44,18 @@
     </ion-item>
 
     <ion-item lines="full" mode="md">
+      <ion-label color="medium" position="floating"
+        >{{ "interaction.tabs.interaction.details.label" | translate
+        }}<span class="required">*</span></ion-label
+      >
       <ion-input
         class="custom"
-        mode="md"
-        color="medium"
+        mode="ios"
         type="text"
         [(ngModel)]="details"
         [placeholder]="
           'interaction.tabs.interaction.details.placeholder' | translate
         "
-        label="{{ 'interaction.tabs.interaction.details.label' | translate }}"
-        labelPlacement="floating"
         [disabled]="!selectedInteraction"
         (ionInput)="onDetailsInput($event)"
       >
