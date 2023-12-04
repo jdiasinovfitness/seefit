@@ -1,7 +1,7 @@
 <div class="interaction-wrapper">
   <ng-container *ngIf="interaction?.status === statusTypes.COMPLETED">
     <ion-item lines="full" mode="ios">
-      <ion-label color="medium" position="floating"
+      <ion-label position="floating"
         >{{ "interaction.tabs.interaction.type.label" | translate
         }}<span class="required">*</span></ion-label
       >
@@ -22,7 +22,7 @@
     </ion-item>
 
     <ion-item lines="full" mode="ios">
-      <ion-label color="medium" position="floating"
+      <ion-label position="floating"
         >{{ "interaction.tabs.interaction.title" | translate
         }}<span class="required">*</span></ion-label
       >
@@ -44,18 +44,19 @@
     </ion-item>
 
     <ion-item lines="full" mode="md">
-      <ion-label color="medium" position="floating"
+      <ion-label color="dark" position="stacked"
         >{{ "interaction.tabs.interaction.details.label" | translate
-        }}<span class="required">*</span></ion-label
+        }}<ion-text color="primary">*</ion-text></ion-label
       >
       <ion-input
         class="custom"
-        mode="ios"
+        mode="md"
         type="text"
         [(ngModel)]="details"
         [placeholder]="
           'interaction.tabs.interaction.details.placeholder' | translate
         "
+        labelPlacement="stacked"
         [disabled]="!selectedInteraction"
         (ionInput)="onDetailsInput($event)"
       >
