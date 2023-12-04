@@ -91,7 +91,7 @@ export class InteractionInfoComponent implements OnInit {
   getStatusTypesArray(): Array<string> {
     return Object.values(this.statusTypes);
   }
-  async onTypeChange(newSelection: any) {
+  onTypeChange(newSelection: any) {
     const newVal = newSelection?.target?.value;
 
     const index = this.typeList?.findIndex((el) => {
