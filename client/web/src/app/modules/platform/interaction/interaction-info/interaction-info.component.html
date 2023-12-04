@@ -1,13 +1,16 @@
 <div class="interaction-wrapper">
   <ng-container *ngIf="interaction?.status === statusTypes.COMPLETED">
-    <ion-item mode="ios">
+    <ion-item lines="full" mode="ios">
+      <ion-label position="floating"
+        >{{ "interaction.tabs.interaction.type.label" | translate
+        }}<span class="required">*</span></ion-label
+      >
       <ion-select
         [placeholder]="'interaction.tabs.interaction.type.default' | translate"
         [disabled]="!true"
         mode="ios"
-        label="{{ 'interaction.tabs.interaction.type.label' | translate }}"
-        label-placement="floating"
         fill="solid"
+        [(ngModel)]="selectedType"
         (ionChange)="onTypeChange($event)"
       >
         <ion-select-option
@@ -18,44 +21,44 @@
       </ion-select>
     </ion-item>
 
-    <ion-item mode="ios">
+    <ion-item lines="full" mode="ios">
+      <ion-label position="floating"
+        >{{ "interaction.tabs.interaction.title" | translate
+        }}<span class="required">*</span></ion-label
+      >
       <ion-select
         [placeholder]="'interaction.tabs.interaction.label.default' | translate"
         [disabled]="!this.selectedType"
         mode="ios"
-        label="{{ 'interaction.tabs.interaction.title' | translate }}"
-        label-placement="floating"
         fill="solid"
+        [(ngModel)]="selectedInteraction"
         (ionChange)="onInteractionChange($event)"
       >
-        <ng-container *ngFor="let interactionType of typeList">
-          <ion-select-option [value]="interactionType.name[0].text">
-            {{ interactionType.name[0].text }}
-          </ion-select-option>
-          <ion-select-option
-            *ngFor="let interaction of interactionType.interactions"
-            [value]="interaction.name"
-          >
-            {{ interaction.name }}
-          </ion-select-option>
-        </ng-container>
+        <ion-select-option
+          *ngFor="let interaction of interactionList"
+          [value]="interaction.name"
+        >
+          {{ interaction.name }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
 
-    <ion-item mode="md">
+    <ion-item lines="full" mode="md">
+      <ion-label color="dark" position="stacked"
+        >{{ "interaction.tabs.interaction.details.label" | translate
+        }}<ion-text color="primary">*</ion-text></ion-label
+      >
       <ion-input
         class="custom"
         mode="md"
-        color="medium"
         type="text"
-        [value]="details"
+        [(ngModel)]="details"
         [placeholder]="
           'interaction.tabs.interaction.details.placeholder' | translate
         "
-        label="{{ 'interaction.tabs.interaction.details.label' | translate }}"
-        labelPlacement="floating"
+        labelPlacement="stacked"
         [disabled]="!selectedInteraction"
-        (ionChange)="onDetailsKeyup($event)"
+        (ionInput)="onDetailsInput($event)"
       >
       </ion-input>
     </ion-item>
@@ -92,17 +95,17 @@
 
       <span class="btn-group">
         <ion-button
-          class="btn-discard"
-          fill="outline"
-          (click)="onButtonClick(false)"
-          >{{ "interaction.data.btn-discard" | translate }}
-        </ion-button>
-        <ion-button
           class="btn-submit"
           fill="solid"
           (click)="onButtonClick(true)"
           >{{ "interaction.data.btn-submit" | translate }}</ion-button
         >
+        <ion-button
+          class="btn-discard"
+          fill="outline"
+          (click)="onButtonClick(false)"
+          >{{ "interaction.data.btn-discard" | translate }}
+        </ion-button>
       </span>
     </div>
   </div>

@@ -76,7 +76,7 @@ export class InteractionService {
       },
       {
         id: '7',
-        name: 'Interaction 7',
+        name: 'Next Visit',
         date: new Date(2023, 6, 4, 17, 23, 42, 11),
         type: I_TYPE.OCI,
         status: C_STATUS.PLANNED,
@@ -85,7 +85,7 @@ export class InteractionService {
       },
       {
         id: '8',
-        name: 'Interaction 8',
+        name: 'Execution Support',
         date: new Date(2023, 6, 4, 17, 23, 42, 11),
         type: I_TYPE.OCI,
         status: C_STATUS.COMPLETED,
@@ -94,7 +94,7 @@ export class InteractionService {
       },
       {
         id: '9',
-        name: 'Interaction 9',
+        name: 'Monthly Challenge',
         date: new Date(2023, 6, 4, 17, 23, 42, 11),
         type: I_TYPE.OCI,
         status: C_STATUS.COMPLETED,
@@ -103,7 +103,7 @@ export class InteractionService {
       },
       {
         id: '10',
-        name: 'Interaction 10',
+        name: 'Reprogramming',
         date: new Date(2023, 6, 4, 17, 23, 42, 11),
         type: I_TYPE.OCI,
         status: C_STATUS.PLANNED,
@@ -180,7 +180,7 @@ export class InteractionService {
       (item) => item.id === interactionId
     );
   }
-  getInteractionsByType(type: string): Array<InteractionInfo> {
-    return this.interactionDummyList().filter((item) => item.type === type);
+  getInteractionsByType(type: C_STATUS): Array<InteractionInfo> {
+    return this.interactionDummyList().filter((item) => item.status === type);
   }
 }
