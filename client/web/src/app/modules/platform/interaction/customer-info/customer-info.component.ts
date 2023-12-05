@@ -1,11 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {
-  ICIData,
-  ICI_STATUS,
-  ICIIcons,
-} from '../../../../core/interfaces/icidata.model';
+import { ICIIcons } from '../../../../core/interfaces/icidata.model';
 import { DataService } from 'src/app/core/services/data.service';
-import { Customer } from 'src/app/core/interfaces/customer.model';
+import { C_STATUS, CustomerInfo } from 'src/app/core/interfaces/customer.model';
+import { CustomerService } from 'src/app/core/services/customer.service';
 
 @Component({
   selector: 'app-customer-info',
@@ -13,13 +10,16 @@ import { Customer } from 'src/app/core/interfaces/customer.model';
   styleUrls: ['./customer-info.component.scss'],
 })
 export class CustomerInfoComponent {
-  statusTypes = ICI_STATUS;
+  statusTypes = C_STATUS;
   icons: Array<ICIIcons> = [];
 
-  @Input() info!: Customer; // TODO: set correct model type after API available
+  @Input() info!: CustomerInfo; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private customerService: CustomerService
+  ) {}
 
   ngOnInit() {
     this.init();
@@ -29,10 +29,33 @@ export class CustomerInfoComponent {
     this.icons = this.dataService.icons;
   }
   isIconEnabled(icon: ICIIcons): boolean {
-    if (this.info.additionalInfo?.icons) {
-      return this.info.additionalInfo?.icons.includes(icon.id);
+    if (this.info.additional_information?.icons) {
+      return this.info.additional_information?.icons.includes(icon.id);
     }
     return false;
+  }
+
+  calculateAge(dob: Date): number {
+    const birthDate = new Date(dob);
+    const ageDifMs = Date.now() - birthDate.getTime();
+    const ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+
+  calculateLastAppointment(lastAppointment: Date): number {
+    const lastAppointmentDate = new Date(lastAppointment);
+    const today = new Date();
+    return Math.floor(
+      (today.getTime() - lastAppointmentDate.getTime()) / (1000 * 3600 * 24)
+    );
+  }
+
+  calculateMembership(contractDate: Date): number {
+    const contractStartDate = new Date(contractDate);
+    const today = new Date();
+    return Math.floor(
+      (today.getTime() - contractStartDate.getTime()) / (1000 * 3600 * 24)
+    );
   }
 
   onButtonClick(event: any) {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LangService } from './lang.service';
-import { Customer } from '../interfaces/customer.model';
+import { Customer, CustomerInfo } from '../interfaces/customer.model';
 import { DataService } from './data.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CustomerService {
+  customerData: Array<CustomerInfo> = [];
   path: any; // url to api
   constructor(
     private langService: LangService,
@@ -21,6 +22,7 @@ export class CustomerService {
    * @param origin
    * @returns
    */
+
   listCustomers(location?: string, origin?: string): Promise<Array<Customer>> {
     return new Promise((resolve, reject) => {
       const dummyCustomerData: Array<Customer> =
@@ -28,6 +30,8 @@ export class CustomerService {
       resolve(dummyCustomerData);
     });
   }
+
+  //getCustomerFullInfo(): Array<CustomerInfo> {
 
   //TODO: Replace this codeblock by Middleware HTTP Request
   getCustomerById(id: string): Observable<Customer> {
