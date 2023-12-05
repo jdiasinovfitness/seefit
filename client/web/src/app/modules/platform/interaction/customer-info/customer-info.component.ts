@@ -12,6 +12,7 @@ import { CustomerService } from 'src/app/core/services/customer.service';
 export class CustomerInfoComponent {
   statusTypes = C_STATUS;
   icons: Array<ICIIcons> = [];
+  customerFullInfo: Array<CustomerInfo> = [];
 
   @Input() info!: CustomerInfo; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
@@ -27,7 +28,10 @@ export class CustomerInfoComponent {
 
   init() {
     this.icons = this.dataService.icons;
+
+    this.customerFullInfo = this.customerService.listCustomerInfo();
   }
+
   isIconEnabled(icon: ICIIcons): boolean {
     if (this.info.additional_information?.icons) {
       return this.info.additional_information?.icons.includes(icon.id);

@@ -31,7 +31,10 @@ export class CustomerService {
     });
   }
 
-  //getCustomerFullInfo(): Array<CustomerInfo> {
+  listCustomerInfo(): Array<CustomerInfo> {
+    this.customerData = this.dataService.getDummyCustomerFullInfo();
+    return this.customerData;
+  }
 
   //TODO: Replace this codeblock by Middleware HTTP Request
   getCustomerById(id: string): Observable<Customer> {

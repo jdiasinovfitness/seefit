@@ -251,7 +251,7 @@ export class DataService {
       },
     ];
   }
-  getCustomerFullInfo(): Array<CustomerInfo> {
+  getDummyCustomerFullInfo(): Array<CustomerInfo> {
     return [
       {
         dob: new Date('1995-11-08'),
