@@ -52,7 +52,7 @@
             *ngFor="let item of customerFullInfo.contract"
           >
             <ion-text class="key" color="medium">
-              {{ calculateLastAppointment(item.date) }}
+              {{ calculateMembership(item.date) }}
             </ion-text>
             <ion-text class="content-text">
               {{ item.subscription | translate }}
