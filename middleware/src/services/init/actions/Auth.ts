@@ -18,9 +18,9 @@ export default async (
 		const authorization = req.headers['authorization'] as string;
 		const loginResponse = await AuthProvider.login(req, authorization);
 		const authToken = 'Bearer ' + loginResponse.accessToken;
-		console.log("authToken", authToken);
+		console.log('authToken', authToken);
 		const userInfo = await UserProvider.userProfile(authToken);
-		console.info("userProfile", userInfo);
+		console.info('userProfile', userInfo);
 
 		const user: ILoginResponse = {
 			userId: loginResponse.user,
@@ -28,7 +28,7 @@ export default async (
 			refreshToken: loginResponse.refreshToken,
 			language: userInfo.language || 'pt',
 		};
-		console.log("user", user);
+		console.log('user', user);
 		res.status(200).send(user);
 
 		return;
