@@ -1,91 +1,80 @@
-<!-- <div class="c-info-wrapper" *ngIf="info?.customerInfo as data">
+<div class="c-info-wrapper" *ngIf="customerFullInfo">
   <ion-accordion-group [multiple]="true">
-    <div class="side-by-side">
-      <ion-accordion
-        toggleIconSlot="start"
-        *ngIf="data?.customerRecord as cRecord"
-      >
+    <div class="side-by-side" *ngIf="customerFullInfo as cRecord">
+      <!-- General  -->
+      <ion-accordion toggleIconSlot="start">
         <ion-item lines="none" slot="header" color="light">
-          <ion-label>
-            {{ cRecord.title | translate }}
-          </ion-label>
+          <ion-label>General</ion-label>
         </ion-item>
         <div slot="content">
-          <ion-item
-            color="light"
-            lines="none"
-            *ngFor="let record of cRecord.content"
-          >
-            <ion-text class="key" color="medium">
-              {{ record.key | translate }}
-            </ion-text>
-            <ion-text class="content-text">
-              {{ record.value | translate }}
-            </ion-text>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="medium">Birthdate</ion-text>
+            <ion-text class="content-text"
+              >{{ cRecord.dob | date : "dd/MM" }} |
+              {{ calculateAge(cRecord.dob) }} years old</ion-text
+            >
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="medium">Objective</ion-text>
+            <ion-text class="content-text">{{ cRecord.objective }}</ion-text>
           </ion-item>
         </div>
       </ion-accordion>
 
-      <ion-accordion
-        *ngIf="data?.customerContact as item"
-        toggleIconSlot="start"
-      >
+      <!-- Contact  -->
+      <ion-accordion toggleIconSlot="start">
         <ion-item lines="none" slot="header" color="light">
-          <ion-label>{{ item.title | translate }} </ion-label>
+          <ion-label>Contact</ion-label>
         </ion-item>
         <div slot="content">
-          <ion-item
-            color="light"
-            lines="none"
-            *ngFor="let contact of item.content"
-          >
-            <ion-text class="key" color="medium">{{
-              contact.key | translate
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="medium">Phone</ion-text>
+            <ion-text class="content-text">{{
+              cRecord.contact.phone
             }}</ion-text>
-            <ion-text class="content-text">{{ contact.value }}</ion-text>
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="medium">Email</ion-text>
+            <ion-text class="content-text">{{
+              cRecord.contact.email
+            }}</ion-text>
           </ion-item>
         </div>
       </ion-accordion>
-
-      <ion-accordion
-        toggleIconSlot="start"
-        *ngIf="data?.contractType as conType"
-      >
+      <ion-accordion toggleIconSlot="start" *ngIf="customerFullInfo as conType">
         <ion-item lines="none" slot="header" color="light">
-          <ion-label>
-            {{ conType.title | translate }}
-          </ion-label>
+          <ion-label> Contract </ion-label>
         </ion-item>
         <div slot="content">
           <ion-item
             color="light"
             lines="none"
-            *ngFor="let contract of conType.content"
+            *ngFor="let item of customerFullInfo.contract"
           >
             <ion-text class="key" color="medium">
-              {{ contract.key | translate }}
+              {{ calculateLastAppointment(item.date) }}
             </ion-text>
             <ion-text class="content-text">
-              {{ contract.value | translate }}
+              {{ item.subscription | translate }}
+            </ion-text>
+            <ion-text class="content-text">
+              {{ item.schedule | translate }}
             </ion-text>
           </ion-item>
         </div>
       </ion-accordion>
     </div>
-
     <!--  Additional Info -->
-
-<!--  <ion-accordion
+    <ion-accordion
       toggleIconSlot="start"
-      *ngIf="data?.additionalInfo as addInfo"
+      *ngIf="info?.additionalInfo as addInfo"
     >
       <ion-item lines="none" slot="header" color="light">
         <ion-label>
-          {{ addInfo.title | translate }}
+          {{ "Additional Information" }}
         </ion-label>
       </ion-item>
       <div slot="content">
-       Icons 
         <div class="hole-line">
           <div *ngFor="let icon of icons">
             <div
@@ -95,9 +84,11 @@
           </div>
         </div>
       </div>
-    </ion-accordion> -->
-<!-- Lifecycle -->
-<!-- <ion-accordion
+    </ion-accordion>
+  </ion-accordion-group>
+  <div>
+    <!-- Lifecycle -->
+    <!-- <ion-accordion
       toggleIconSlot="start"
       *ngIf="data?.additionalInfo?.lifeCycle as lifeCycle"
     >
@@ -120,14 +111,10 @@
         </div>
       </div>
     </ion-accordion>  
-  </ion-accordion-group>
+ 
   <div class="a-content"> -->
-<!--  Observation -->
-<!-- <app-observation
-      [userId]="info.userId"
-      [displayBtn]="info.status !== statusTypes.COMPLETED"
-      (handleClick)="onButtonClick($event)"
-    >
+    <!--  Observation -->
+    <app-observation [userId]="info.id" (handleClick)="onButtonClick($event)">
     </app-observation>
   </div>
-</div> -->
+</div>

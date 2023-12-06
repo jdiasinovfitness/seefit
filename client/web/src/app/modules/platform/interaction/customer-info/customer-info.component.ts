@@ -1,7 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICIIcons } from '../../../../core/interfaces/icidata.model';
 import { DataService } from 'src/app/core/services/data.service';
-import { C_STATUS, CustomerInfo } from 'src/app/core/interfaces/customer.model';
+import {
+  C_STATUS,
+  Customer,
+  CustomerFullInfo,
+} from 'src/app/core/interfaces/customer.model';
 import { CustomerService } from 'src/app/core/services/customer.service';
 
 @Component({
@@ -12,9 +16,9 @@ import { CustomerService } from 'src/app/core/services/customer.service';
 export class CustomerInfoComponent {
   statusTypes = C_STATUS;
   icons: Array<ICIIcons> = [];
-  customerFullInfo: Array<CustomerInfo> = [];
+  customerFullInfo: CustomerFullInfo | undefined;
 
-  @Input() info!: CustomerInfo; // TODO: set correct model type after API available
+  @Input() info!: Customer; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
 
   constructor(
@@ -28,13 +32,16 @@ export class CustomerInfoComponent {
 
   init() {
     this.icons = this.dataService.icons;
-
-    this.customerFullInfo = this.customerService.listCustomerInfo();
+    if (this.info !== undefined) {
+      this.customerFullInfo = this.customerService.listCustomerInfoById(
+        this.info.id
+      );
+    }
   }
 
   isIconEnabled(icon: ICIIcons): boolean {
-    if (this.info.additional_information?.icons) {
-      return this.info.additional_information?.icons.includes(icon.id);
+    if (this.info.additionalInfo?.icons) {
+      return this.info.additionalInfo?.icons.includes(icon.id);
     }
     return false;
   }

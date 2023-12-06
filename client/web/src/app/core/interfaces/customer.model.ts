@@ -14,7 +14,8 @@ export interface Customer {
   healthRisk: boolean; //To be analyzed
 }
 
-export interface CustomerInfo {
+export interface CustomerFullInfo {
+  id: string;
   dob: Date;
   objective: string;
   visits: { [key: string]: string };
