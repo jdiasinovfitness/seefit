@@ -7,6 +7,7 @@ interface ILoginResponse {
 	refreshToken: string;
 	userId: string;
 	language: string;
+	name: string;
 }
 
 export default async (
@@ -27,6 +28,7 @@ export default async (
 			accessToken: loginResponse.accessToken,
 			refreshToken: loginResponse.refreshToken,
 			language: userInfo.language || 'pt',
+			name: userInfo.name,
 		};
 		console.log('user', user);
 		res.status(200).send(user);
