@@ -64,8 +64,10 @@ export class CustomerInfoComponent {
   calculateMembership(contractDate: Date): number {
     const contractStartDate = new Date(contractDate);
     const today = new Date();
-    return Math.floor(
-      (today.getTime() - contractStartDate.getTime()) / (1000 * 3600 * 24)
+    return (
+      (today.getFullYear() - contractStartDate.getFullYear()) * 12 +
+      today.getMonth() -
+      contractStartDate.getMonth()
     );
   }
 

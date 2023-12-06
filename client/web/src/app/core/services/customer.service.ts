@@ -36,10 +36,8 @@ export class CustomerService {
         id: '1',
         dob: new Date('1995-11-08'),
         objective: 'Weight Loss',
-        visits: {
-          '2023-01-10': 'Yoga Class',
-          '2023-02-15': 'Gym Session',
-        },
+        groupC: { '7': '2', '14': '7', '28': '19', '60': '97' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.75,
         last_appointment: new Date('2023-04-13'),
         avg_stay: 120,
@@ -50,8 +48,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-03-01'),
-            subscription: 'Premium',
-            schedule: 'Morning',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -62,10 +60,8 @@ export class CustomerService {
         id: '2',
         dob: new Date('1989-04-02'),
         objective: 'Fitness Goals',
-        visits: {
-          '2023-01-01': 'Cardio Session',
-          '2023-01-15': 'Strength Training',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.6,
         last_appointment: new Date('2023-04-02'),
         avg_stay: 45,
@@ -76,8 +72,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-01-01'),
-            subscription: 'Premium Membership',
-            schedule: 'Weekdays: 6am - 9pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -88,10 +84,8 @@ export class CustomerService {
         id: '3',
         dob: new Date('1997-03-30'),
         objective: 'Weight Loss',
-        visits: {
-          '2023-04-01': 'Gym',
-          '2023-04-03': 'Yoga',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.65,
         last_appointment: new Date('2023-04-03'),
         avg_stay: 60,
@@ -102,8 +96,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-01-15'),
-            subscription: 'Silver Membership',
-            schedule: 'Weekdays: 6am - 10pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -114,10 +108,8 @@ export class CustomerService {
         id: '4',
         dob: new Date('1987-04-09'),
         objective: 'Muscle Building',
-        visits: {
-          '2023-04-05': 'Weight Training',
-          '2023-04-06': 'Boxing',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.55,
         last_appointment: new Date('2023-04-06'),
         avg_stay: 75,
@@ -128,8 +120,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-02-01'),
-            subscription: 'Platinum Membership',
-            schedule: 'Everyday: 5am - 12am',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -140,10 +132,8 @@ export class CustomerService {
         id: '5',
         dob: new Date('1961-04-05'),
         objective: 'Tonification',
-        visits: {
-          '2023-03-31': 'Cardio',
-          '2023-04-02': 'Pilates',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.7,
         last_appointment: new Date('2023-04-02'),
         avg_stay: 50,
@@ -154,8 +144,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-02-15'),
-            subscription: 'Membership',
-            schedule: 'Weekdays: 7am - 9pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 19:30 - 21:00',
           },
         ],
         additional_information: {
@@ -166,10 +156,8 @@ export class CustomerService {
         id: '6',
         dob: new Date('1959-02-01'),
         objective: 'Flexibility',
-        visits: {
-          '2023-04-07': 'Dance',
-          '2023-04-09': 'Stretching',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.35,
         last_appointment: new Date('2023-04-07'),
         avg_stay: 40,
@@ -180,8 +168,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-03-01'),
-            subscription: 'Senior Membership',
-            schedule: 'Weekdays: 8am - 5pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -192,10 +180,8 @@ export class CustomerService {
         id: '7',
         dob: new Date('1959-02-01'),
         objective: 'Flexibility',
-        visits: {
-          '2023-04-07': 'Dance',
-          '2023-04-09': 'Stretching',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.35,
         last_appointment: new Date('2023-04-07'),
         avg_stay: 40,
@@ -206,8 +192,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-03-01'),
-            subscription: 'Senior Membership',
-            schedule: 'Weekdays: 8am - 5pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -218,10 +204,8 @@ export class CustomerService {
         id: '8',
         dob: new Date('1959-02-01'),
         objective: 'Flexibility',
-        visits: {
-          '2023-04-07': 'Dance',
-          '2023-04-09': 'Stretching',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 0.35,
         last_appointment: new Date('2023-04-07'),
         avg_stay: 40,
@@ -232,8 +216,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-03-01'),
-            subscription: 'Senior Membership',
-            schedule: 'Weekdays: 8am - 5pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 20:30 - 22:00',
           },
         ],
         additional_information: {
@@ -244,10 +228,8 @@ export class CustomerService {
         id: '9',
         dob: new Date('1990-04-06'),
         objective: 'Flexibility',
-        visits: {
-          '2023-04-07': 'Dance',
-          '2023-04-09': 'Stretching',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 1,
         last_appointment: new Date('2023-04-02'),
         avg_stay: 40,
@@ -258,8 +240,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-03-01'),
-            subscription: 'Senior Membership',
-            schedule: 'Weekdays: 8am - 5pm',
+            subscription: '29$/ Month',
+            schedule: '07:00 - 18:00 | 19:30 - 21:00',
           },
         ],
         additional_information: {
@@ -270,10 +252,8 @@ export class CustomerService {
         id: '10',
         dob: new Date('1990-04-06'),
         objective: 'Muscles',
-        visits: {
-          '2023-04-07': 'Dance',
-          '2023-04-09': 'Stretching',
-        },
+        groupC: { '7': '1', '14': '3', '28': '6', '60': '12' },
+        visits: { '7': '1', '14': '3', '28': '6', '60': '12' },
         pp_gc: 1,
         last_appointment: new Date('2023-04-02'),
         avg_stay: 40,
@@ -284,8 +264,8 @@ export class CustomerService {
         contract: [
           {
             date: new Date('2023-03-01'),
-            subscription: 'Membership',
-            schedule: 'Weekdays: 8am - 5pm',
+            subscription: '29$/ Month',
+            schedule: '06:00 - 17:00',
           },
         ],
         additional_information: {

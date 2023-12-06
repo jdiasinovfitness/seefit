@@ -19,10 +19,12 @@ export interface CustomerFullInfo {
   dob: Date;
   objective: string;
   visits: { [key: string]: string };
+  groupC: { [key: string]: string };
   pp_gc: number;
   last_appointment: Date;
   avg_stay: number;
-  contact: {
+  contact?: {
+    //might not be available because of RGPD
     email: string;
     phone: string;
   };

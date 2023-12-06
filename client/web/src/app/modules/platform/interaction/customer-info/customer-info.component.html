@@ -4,65 +4,115 @@
       <!-- General  -->
       <ion-accordion toggleIconSlot="start">
         <ion-item lines="none" slot="header" color="light">
-          <ion-label>General</ion-label>
+          <ion-label>{{ "General" }}</ion-label>
         </ion-item>
         <div slot="content">
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="medium">Birthdate</ion-text>
+            <ion-text class="key" color="dark">{{ "Birthdate" }}</ion-text>
             <ion-text class="content-text"
               >{{ cRecord.dob | date : "dd/MM" }} |
               {{ calculateAge(cRecord.dob) }} years old</ion-text
             >
           </ion-item>
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="medium">Objective</ion-text>
+            <ion-text class="key" color="dark">{{ "Objective" }}</ion-text>
             <ion-text class="content-text">{{ cRecord.objective }}</ion-text>
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="dark">{{ "Visits" }}</ion-text>
+            <ion-text class="content-text">
+              {{ cRecord.visits["7"] }} / {{ cRecord.visits["14"] }} /
+              {{ cRecord.visits["28"] }} /
+              {{ cRecord.visits["60"] }} days</ion-text
+            >
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="dark">{{ "Group Classes" }}</ion-text>
+            <ion-text class="content-text">
+              {{ cRecord.groupC["7"] }} / {{ cRecord.groupC["14"] }} /
+              {{ cRecord.groupC["28"] }} /
+              {{ cRecord.groupC["60"] }} days</ion-text
+            >
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="dark">{{
+              "% Group Classes"
+            }}</ion-text>
+            <ion-text class="content-text">{{ cRecord.pp_gc }}%</ion-text>
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="dark">{{
+              "Last Appointment"
+            }}</ion-text>
+            <ion-text class="content-text">
+              {{ cRecord.last_appointment | date : "yyyy-MM-dd" }} |
+              {{ calculateLastAppointment(cRecord.last_appointment) }} days
+            </ion-text>
+          </ion-item>
+          <ion-item color="light" lines="none">
+            <ion-text class="key" color="dark">{{ "Average Stay" }}</ion-text>
+            <ion-text class="content-text"
+              >{{ cRecord.avg_stay }} mins</ion-text
+            >
           </ion-item>
         </div>
       </ion-accordion>
 
-      <!-- Contact  -->
-      <ion-accordion toggleIconSlot="start">
-        <ion-item lines="none" slot="header" color="light">
-          <ion-label>Contact</ion-label>
-        </ion-item>
-        <div slot="content">
-          <ion-item color="light" lines="none">
-            <ion-text class="key" color="medium">Phone</ion-text>
-            <ion-text class="content-text">{{
-              cRecord.contact.phone
-            }}</ion-text>
+      <!-- Contacts  -->
+      <div class="info-section">
+        <ion-accordion *ngIf="customerFullInfo.contact" toggleIconSlot="start">
+          <ion-item lines="none" slot="header" color="light">
+            <ion-label>{{ "Contact" }}</ion-label>
           </ion-item>
-          <ion-item color="light" lines="none">
-            <ion-text class="key" color="medium">Email</ion-text>
-            <ion-text class="content-text">{{
-              cRecord.contact.email
-            }}</ion-text>
+          <div slot="content">
+            <ion-item color="light" lines="none">
+              <ion-text class="key" color="dark">{{ "Phone" }}</ion-text>
+              <ion-text class="content-text">{{
+                cRecord.contact?.phone
+              }}</ion-text>
+            </ion-item>
+            <ion-item color="light" lines="none">
+              <ion-text class="key" color="dark">{{ "Email" }}</ion-text>
+              <ion-text class="content-text">{{
+                cRecord.contact?.email
+              }}</ion-text>
+            </ion-item>
+          </div>
+        </ion-accordion>
+
+        <!-- Contract -->
+        <ion-accordion
+          toggleIconSlot="start"
+          *ngIf="customerFullInfo as conType"
+        >
+          <ion-item lines="none" slot="header" color="light">
+            <ion-label>{{ "Contract" }}</ion-label>
           </ion-item>
-        </div>
-      </ion-accordion>
-      <ion-accordion toggleIconSlot="start" *ngIf="customerFullInfo as conType">
-        <ion-item lines="none" slot="header" color="light">
-          <ion-label> Contract </ion-label>
-        </ion-item>
-        <div slot="content">
-          <ion-item
-            color="light"
-            lines="none"
-            *ngFor="let item of customerFullInfo.contract"
-          >
-            <ion-text class="key" color="medium">
-              {{ calculateMembership(item.date) }}
-            </ion-text>
-            <ion-text class="content-text">
-              {{ item.subscription | translate }}
-            </ion-text>
-            <ion-text class="content-text">
-              {{ item.schedule | translate }}
-            </ion-text>
-          </ion-item>
-        </div>
-      </ion-accordion>
+          <div slot="content" *ngFor="let item of customerFullInfo.contract">
+            <ion-item color="light" lines="none">
+              <ion-text class="key" color="dark">{{
+                "Membership Date"
+              }}</ion-text>
+              <ion-text class="content-text">
+                {{ item.date | date : "yyyy-MM-dd" }} |
+                {{ calculateMembership(item.date) }} months
+              </ion-text>
+            </ion-item>
+            <ion-item color="light" lines="none">
+              <ion-text class="key" color="dark">{{ "Subscription" }}</ion-text>
+              <ion-text class="content-text">
+                {{ item.subscription | translate }}
+              </ion-text>
+            </ion-item>
+            <ion-item color="light" lines="none">
+              <ion-text class="key" color="dark">{{ "Schedule" }}</ion-text>
+              <ion-text class="content-text">
+                {{ item.schedule | translate }}
+              </ion-text>
+            </ion-item>
+          </div>
+        </ion-accordion>
+      </div>
     </div>
     <!--  Additional Info -->
     <ion-accordion

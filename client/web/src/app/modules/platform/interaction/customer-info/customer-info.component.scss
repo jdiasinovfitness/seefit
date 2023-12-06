@@ -129,6 +129,10 @@ ion-item::part(native) {
   padding: 0px 18px;
 }
 
+.info-section {
+  width: -webkit-fill-available;
+}
+
 // Mobile view
 
 @media screen and (max-width: 560px) {
