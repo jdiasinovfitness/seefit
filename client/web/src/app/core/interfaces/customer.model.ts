@@ -32,12 +32,6 @@ export interface CurrentLocation {
   inExerciseRoom: boolean;
 }
 
-export enum C_STATUS {
-  COMPLETED = 'COMPLETED',
-  PLANNED = 'PLANNED',
-  UNPLANNED = 'UNPLANNED',
-}
-
 export interface CustomerActivity {
   id: string;
   customer: string;
@@ -47,6 +41,11 @@ export interface CustomerActivity {
   observation: string;
 }
 
+export enum C_STATUS {
+  COMPLETED = 'COMPLETED',
+  PLANNED = 'PLANNED',
+  UNPLANNED = 'UNPLANNED',
+}
 export enum C_TYPE {
   IN_CLUB = 'In_Club',
   NPS = 'NPS',

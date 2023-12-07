@@ -7,22 +7,15 @@ import {
   ICI_TYPE,
   ICIIcons,
 } from '../interfaces/icidata.model';
-import { IITypeData } from '../interfaces/interaction.model';
 import { MenuData } from '../interfaces/menu.model';
 import { PEdata, PromptType } from '../interfaces/pedata.model';
-import {
-  C_STATUS,
-  Customer,
-  C_TYPE,
-  I_TYPE,
-} from '../interfaces/customer.model';
+import { C_STATUS, Customer } from '../interfaces/customer.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   data!: Array<ICIData>;
-  interactionList!: Array<IITypeData>;
   reportMenuItems!: Array<MenuData>;
   userMenuItems!: Array<MenuData>;
   menuItems!: Array<MenuData>;
@@ -49,7 +42,6 @@ export class DataService {
 
   constructor() {
     this.data = this.getDummyData();
-    this.interactionList = this.getDummyInteractionData();
     this.userMenuItems = this.getDummyUserMenuData();
     this.reportMenuItems = this.getDummyReportMenuData();
     this.menuItems = this.getDummyMenuData();
@@ -59,10 +51,6 @@ export class DataService {
 
   resetData() {
     this.getDummyData();
-  }
-
-  getInteractionList(): Array<IITypeData> {
-    return this.interactionList ? this.interactionList : [];
   }
 
   addInteraction(newInteraction: ICIData) {
@@ -265,36 +253,6 @@ export class DataService {
     ];
   }
 
-  getDummyInteractionData() {
-    return [
-      {
-        label: 'interaction.tabs.interaction.type.types.unplanned',
-        value: 'unplanned',
-        interaction: [
-          {
-            label: 'interaction.tabs.interaction.label.types.next_visit',
-            value: INTERACTION.NEXT_VISIT,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.group_class',
-            value: INTERACTION.GROUP_CLASS,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.execution_support',
-            value: INTERACTION.EXECUTION_SUPPORT,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.monthly_challenge',
-            value: INTERACTION.MONTHLY_CHALLENGE,
-          },
-          {
-            label: 'interaction.tabs.interaction.label.types.reprogramming',
-            value: INTERACTION.REPROGRAMMING,
-          },
-        ],
-      },
-    ];
-  }
   getLiveClubDummyList(): Array<Customer> {
     return [
       {
@@ -313,7 +271,7 @@ export class DataService {
           id: '1',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'First Day',
@@ -343,7 +301,7 @@ export class DataService {
           id: '2',
           status: C_STATUS.COMPLETED,
           date: '2023-04-02',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'First Week - +3 visits',
@@ -372,7 +330,7 @@ export class DataService {
           id: '3',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'Usage Very Active',
@@ -401,7 +359,7 @@ export class DataService {
           id: '4',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'NPS Promoter',
@@ -430,7 +388,7 @@ export class DataService {
           id: '5',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'Cycle Completed',
@@ -459,7 +417,7 @@ export class DataService {
           id: '6',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'Cycle 75% Under',
@@ -488,7 +446,7 @@ export class DataService {
           id: '7',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'First 4-weeks, 2x week',
@@ -517,7 +475,7 @@ export class DataService {
           id: '8',
           status: C_STATUS.COMPLETED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'New training plan',
@@ -547,7 +505,7 @@ export class DataService {
           id: '9',
           status: C_STATUS.COMPLETED,
           date: '2023-04-03',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'Email - PT Offer',
@@ -576,7 +534,7 @@ export class DataService {
           id: '10',
           status: C_STATUS.PLANNED,
           date: '2023-04-13',
-          description: [
+          name: [
             {
               lang: 'en-EN',
               text: 'Churn Risk Increase',

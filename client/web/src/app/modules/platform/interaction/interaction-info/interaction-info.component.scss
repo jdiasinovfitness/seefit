@@ -11,12 +11,11 @@
     flex-direction: column;
     padding: 12px 4px;
   }
+}
 
-  ion-button {
-    display: flex;
-    align-self: flex-end;
-    margin: 24px 12px;
-  }
+.observation {
+  text-align: justify;
+  font-size: 16px;
 }
 
 // Input border bottom color on focus
@@ -24,6 +23,74 @@ ion-item {
   --background: transparent;
 
   .has-focus {
-    border-bottom: solid 2px $primary;
+    border-bottom: solid 1px var(--ion-color-dark) !important;
+    color: var(--ion-color-dark);
+  }
+  .item-highlight {
+    border-bottom: solid 1px var(--ion-color-dark) !important;
+    color: var(--ion-color-dark);
+  }
+}
+
+.required {
+  color: var(--ion-color-primary);
+  margin-left: 4px;
+}
+
+// Buttons
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0px 10px;
+}
+
+.btn-create {
+  min-width: 120px;
+  align-self: end;
+}
+
+.btn-discard {
+  min-width: 120px;
+}
+.btn-submit {
+  min-width: 120px;
+}
+
+.btn-create,
+.btn-discard,
+.btn-submit {
+  min-height: 40px;
+  margin: 10px 5px;
+}
+
+ion-button {
+  --border-radius: 8px;
+}
+
+@media screen and (max-width: 568px) {
+  .btn-group {
+    display: block !important;
+    align-items: center;
+    .btn-discard {
+      width: -webkit-fill-available;
+    }
+    .btn-submit {
+      width: -webkit-fill-available;
+    }
+    .observation {
+      font-size: 15px;
+    }
+  }
+  .btn-create {
+    width: 100%;
+    align-self: center;
+  }
+
+  .btn-create,
+  .btn-discard,
+  .btn-submit {
+    width: 100%;
+    margin: 10px 0;
   }
 }
