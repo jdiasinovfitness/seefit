@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { LangInfo } from '../interfaces/auth-info.model';
 
 export interface I18N {
@@ -11,24 +12,31 @@ export interface I18N {
   providedIn: 'root',
 })
 export class LangService {
-  private currentLanguage: string;
+  langSubject = new BehaviorSubject<string>(this.translateService.currentLang);
+  lang$ = this.langSubject?.asObservable();
 
   languages!: Array<LangInfo>;
 
   constructor(private translateService: TranslateService) {
-    this.currentLanguage = this.translateService.currentLang;
+    // Update lang data when lang is changed
+    this.translateService.onLangChange.subscribe((newVal: any) => {
+      this.langSubject.next(newVal.lang);
+    });
     this.getLangList().then((langList) => {
       this.languages = langList;
     });
   }
 
-  get currentLang(): string {
-    return this.currentLanguage;
+  translate(key: string) {
+    return this.translateService.instant(key);
   }
 
-  set currentLang(lang: string) {
-    this.currentLanguage = lang;
-    this.translateService.use(lang);
+  useLang(lang: string) {
+    return firstValueFrom(this.translateService.use(lang));
+  }
+
+  async getCurrentLang() {
+    return await firstValueFrom(this.lang$);
   }
 
   // FIXME: implement API request
@@ -42,10 +50,6 @@ export class LangService {
         {
           id: 'en-EN',
           name: 'English',
-        },
-        {
-          id: 'cs-CS',
-          name: 'Český',
         },
       ] as Array<LangInfo>);
     });
