@@ -38,6 +38,10 @@ export interface ContractInfo {
   schedule: string;
 }
 
+export interface AdditionalInformation {
+  icons: Array<string>;
+}
+
 export interface InteractionBasicInfo {
   id: string;
   status: C_STATUS;
@@ -66,10 +70,6 @@ export interface InteractionCreation {
   type: C_STATUS;
   description: Array<I18N>;
   observation: string;
-}
-
-export interface AdditionalInformation {
-  icons: Array<string>;
 }
 
 export interface CurrentLocation {
