@@ -1,0 +1,283 @@
+{
+    "lang": {
+        "pt-PT": "Portuguese",
+        "en-EN": "Angličtina"
+    },
+    "menu": {
+        "items": {
+            "interaction": {
+                "title": "Interakce",
+                "live-club": "Živý Klub",
+                "data-report": "Datové Zprávy",
+                "customer": "Zákazník",
+                "pe": "Fyzické Hodnocení"
+            },
+            "health": {
+                "title": "Zdraví a Výživa",
+                "": ""
+            },
+            "training": {
+                "title": "Školení",
+                "evaluation": "Fyzické hodnocení"
+            },
+            "feed": {
+                "title": "Postřehy a feed"
+            }
+        },
+        "footer": {
+            "origin": {
+                "title": "Ořígem",
+                "close": "zavřít",
+                "save": "uložit"
+            },
+            "profile": {
+                "title": "Profil"
+            },
+            "logout": {
+                "title": "Odhlášení"
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "btn-submit": "PŘIHLÁŠENÍ",
+            "welcome": "Vítejte na přihlašovací stránce",
+            "register-link": "Zapomněli jste heslo?",
+            "form": {
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "Zadejte platný e-mail",
+                    "errors": {
+                        "invalid": "Neplatný e-mail",
+                        "required": "Zadejte e-mail"
+                    }
+                },
+                "pwd": {
+                    "label": "Heslo",
+                    "placeholder": "Zadejte heslo",
+                    "errors": {
+                        "invalid": "Neplatné heslo",
+                        "required": "Zadejte své heslo"
+                    }
+                }
+            }
+        },
+        "reset-pwd": {
+            "header": "Vaše nové heslo se musí lišit od dříve používaných hesel.",
+            "btn-submit": "Obnovit heslo",
+            "login-link": "Zpět na přihlášení",
+            "form": {
+                "pwd": {
+                    "label": "Heslo",
+                    "placeholder": "Zadejte heslo",
+                    "errors": {
+                        "required": "Vyžadováno heslo"
+                    }
+                },
+                "pwd-confirmation": {
+                    "label": "Potvrzení hesla",
+                    "placeholder": "Znovu zadejte heslo",
+                    "errors": {
+                        "required": "Vyžadováno heslo",
+                        "miss-match": "Hesla se neshodují"
+                    }
+                }
+            }
+        },
+        "register": {
+            "header": "v následujícím formuláři můžete nastavit heslo. Požadavky jsou následující:<br/><br/>- 8 znaků nebo<br/>- Mix velkých a malých písmen<br/>- Použití speciálního znaku",
+            "btn-submit": "Odeslat",
+            "clear-form": "Vymazat formulář",
+            "form": {
+                "pwd": {
+                    "label": "Heslo",
+                    "placeholder": "Zadejte heslo",
+                    "errors": {
+                        "required": "Vyžadováno heslo"
+                    }
+                },
+                "pwd-confirmation": {
+                    "label": "Potvrzení hesla",
+                    "placeholder": "Znovu zadejte heslo",
+                    "errors": {
+                        "required": "Vyžadováno heslo",
+                        "miss-match": "Hesla se neshodují"
+                    }
+                }
+            }
+        },
+        "reset-request": {
+            "header": "pokud jste zapomněli své heslo, můžeme vám pomoci obnovit tím, že vám zašleme e-mail s pokyny pro resetování. K tomu potřebujeme, abyste nám poskytli svou e-mailovou adresu",
+            "btn-submit": "Obnovit heslo",
+            "login-link": "Zpět na přihlášení",
+            "form": {
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "Zadejte platný e-mail",
+                    "errors": {
+                        "invalid": "Neplatný e-mail",
+                        "required": "Zadejte e-mail"
+                    }
+                }
+            }
+        }
+    },
+    "interaction": {
+        "tabs": {
+            "customer": {
+                "title": "Klient"
+            },
+            "interaction": {
+                "title": "Interakce",
+                "type": {
+                    "default": "Vyberte typ interakce",
+                    "label": "Typ",
+                    "types": {
+                        "unplanned": "Neplánované"
+                    }
+                },
+                "label": {
+                    "default": "Vyberte interakci",
+                    "label": "Interakce",
+                    "types": {
+                        "next_visit": "Příští návštěva",
+                        "group_class": "Skupina třídy",
+                        "execution_support": "Podpora Provedení",
+                        "monthly_challenge": "Měsíční výzva",
+                        "reprogramming": "Znovu naplánováno"
+                    }
+                },
+                "details": {
+                    "placeholder": "Přidat popis",
+                    "create": "Vytvořit",
+                    "label": "Podrobnosti"
+                }
+            },
+            "history": {
+                "title": "Historie"
+            }
+        },
+        "filters": {
+            "title": "Filtry",
+            "ok": "Ok",
+            "in-club": "V klubu",
+            "exclude-ag": "V GC",
+            "expired": "Plánováno"
+        },
+        "empty": {
+            "empty-title": "Nebyl nalezen žádný <b>zákazník</b>",
+            "empty-footer": "Zvažte použití jiných <b>možností</b> filtru</div>",
+            "empty-search-title": "Nebyl nalezen žádný výsledek hledání pro: <b>{{query}}</b>",
+            "empty-search-footer": "Zvažte další kritéria <b>vyhledávání</b>"
+        },
+        "error": {
+            "error-title": "Požadavek nelze splnit",
+            "error-footer": "Zkontrolujte připojení k internetu a zkuste to znovu později"
+        },
+        "footer": {
+            "label": "{{total}} zákazník(y) nalezen"
+        },
+        "data": {
+            "birth-date": "Datum NAROZENÍ (VĚK):",
+            "email": "E-mail:",
+            "phone": "Telefon:",
+            "objective": "CÍL:",
+            "access": "NÁVŠTĚVY (7 / 28 / 56 / ∞ DNY):",
+            "ag": "KUPINOVÉ TŘÍDY (7 / 28 / 56 / ∞ DNÍ):",
+            "shareAG": "% OF GC:",
+            "last-af": "POSLEDNÍ SCHŮZKA (VE DNECH):",
+            "visit-length": "PRŮMĚRNÝ POBYT:",
+            "membership": "DATUM ČLENSTVÍ (MĚSÍCE):",
+            "subscription-type": "CENA ČLENSTVÍ:",
+            "schedule": "DOSTUPNÝ PLÁN:",
+            "observation": "Komentáře",
+            "btn-discard": "Dilaďte",
+            "btn-submit": "Odeslat",
+            "customer-info": "INFORMACE O ZÁKAZNÍKOVI:",
+            "personal-info": "OSOBNÍ INFORMACE",
+            "contract-info": "INFORMACE O SMLOUVĚ:",
+            "additional-services": "DOPLŇKOVÉ SLUŽBY:",
+            "additional-info": "DALŠÍ INFORMACE:",
+            "lifecycle": "ŽIVOTNÍ CYKLUS:"
+        }
+    },
+    "user": {
+        "report-menu": {
+            "reports": "Zprávy",
+            "menu-items": {
+                "usage": "Řízení použití",
+                "survey": "NPS & Ankety",
+                "status": "Stav interakce"
+            }
+        },
+        "user-menu": {
+            "profile": "Profil",
+            "configurations": "Konfigurace",
+            "menu-items": {
+                "edit-profile": "Upravit Profil",
+                "activity": "Moje činnost",
+                "customers": "Moji zákazníci",
+                "notifications": "Oznámení"
+            },
+            "form": {
+                "email": "E-mail",
+                "role": "Role",
+                "language": {
+                    "label": "Jazyk",
+                    "placeholder": "Vyberte jazyk"
+                },
+                "password": {
+                    "label": "Heslo",
+                    "placeholder": "Zadejte platné heslo"
+                }
+            }
+        },
+        "profile": {
+            "title": "Upravit informace o profilu",
+            "form": {
+                "name": {
+                    "label": "Zobrazovaný název",
+                    "placeholder": "Toto pole je povinné",
+                    "errors": {
+                        "required": "Zobrazované jméno"
+                    }
+                },
+                "email": "E-mail",
+                "role": "Role",
+                "language": {
+                    "label": "Jazyk",
+                    "placeholder": "Vybrat jazyk"
+                },
+                "password": {
+                    "label": "Nové heslo",
+                    "placeholder": "*******",
+                    "errors": {
+                        "required": "Toto pole je povinné"
+                    }
+                },
+                "confirm": {
+                    "submit": "Potvrdit",
+                    "cancel": "Zrušit",
+                    "name": "Vaše jméno bylo aktualizováno",
+                    "lang": "Jazyk byl aktualizován",
+                    "password": "Vaše heslo bylo aktualizováno"
+                }
+            }
+        },
+        "notification": {
+            "title": "Oznámení",
+            "empty": {
+                "title": "Momentálně nemáte žádná oznámení!",
+                "subtitle": "Dáme vám vědět, když něco přijde"
+            }
+        }
+    },
+    "customer": {
+        "tabs": {
+            "information": "Informace",
+            "lifecycle": "Životní cyklus",
+            "history": "Historie",
+            "metrics": "Metriky"
+        }
+    }
+}
