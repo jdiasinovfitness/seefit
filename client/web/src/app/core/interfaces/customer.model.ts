@@ -14,17 +14,62 @@ export interface Customer {
   healthRisk: boolean; //To be analyzed
 }
 
+export interface CustomerFullInfo {
+  id: string;
+  dob: Date;
+  objective: string;
+  visits: { [key: string]: string };
+  groupC: { [key: string]: string };
+  pp_gc: number;
+  last_appointment: Date;
+  avg_stay: number;
+  contact?: {
+    //might not be available because of RGPD
+    email: string;
+    phone: string;
+  };
+  contract: Array<ContractInfo>;
+  additional_information: AdditionalInformation;
+}
+
+export interface ContractInfo {
+  date: Date;
+  subscription: string;
+  schedule: string;
+}
+
+export interface AdditionalInformation {
+  icons: Array<string>;
+}
+
 export interface InteractionBasicInfo {
+  id: string;
+  status: C_STATUS;
+  date: string;
+  name: Array<I18N>;
+  callBlock: boolean;
+}
+export interface InteractionInfo {
   id: string;
   name: string;
   date: Date;
   type: string;
   description: Array<I18N>;
-  observation?: string;
+  observation: string;
+  status: C_STATUS;
 }
-
-export interface AdditionalInformation {
-  icons: Array<string>;
+export interface InteractionTypes {
+  id: string;
+  name: Array<I18N>;
+  interactions: Array<InteractionInfo>;
+}
+export interface InteractionCreation {
+  id: string;
+  name: string;
+  date: Date;
+  type: C_STATUS;
+  description: Array<I18N>;
+  observation: string;
 }
 
 export interface CurrentLocation {

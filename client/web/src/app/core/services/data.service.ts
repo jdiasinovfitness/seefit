@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { INTERACTION } from '../constants/status.constants';
 import {
   ICIData,
   ICIFilter,

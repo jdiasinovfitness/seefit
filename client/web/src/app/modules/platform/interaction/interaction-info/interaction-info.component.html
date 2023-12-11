@@ -16,7 +16,7 @@
         <ion-select-option
           *ngFor="let typeOpt of getStatusTypesArray()"
           [value]="typeOpt"
-          >{{ typeOpt }}</ion-select-option
+          >{{ typeOpt | translate }}</ion-select-option
         >
       </ion-select>
     </ion-item>
@@ -38,7 +38,7 @@
           *ngFor="let interaction of interactionList"
           [value]="interaction.name"
         >
-          {{ interaction.name }}
+          {{ interaction.name | translate }}
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -76,9 +76,8 @@
 
   <div *ngIf="interaction?.status === statusTypes.PLANNED">
     <div>
-      <h5>Description</h5>
+      <h5>{{ "interaction.tabs.interaction.description" | translate }}</h5>
       <span class="observation" [innerHTML]="interaction?.observation"></span>
-      <!--TODO: REPLACE WITH INTERACTION.DESCRIPTION WHEN USING TRANSLATIONS -->
       <span>
         <ion-item color="light ion-no-padding" mode="md">
           <ion-input
@@ -87,7 +86,7 @@
             color="medium"
             type="text"
             [placeholder]="''"
-            [label]="'Interaction Note'"
+            [label]="'interaction.tabs.interaction.details.note'"
             labelPlacement="floating"
           ></ion-input>
         </ion-item>

@@ -3,7 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../../core/services/user.service';
 import { ToastService } from '../../../../core/services/toast.service';
 import { LangService } from '../../../../core/services/lang.service';
-import { AuthInfo, LangInfo, } from '../../../../core/interfaces/auth-info.model';
+import {
+  AuthInfo,
+  LangInfo,
+} from '../../../../core/interfaces/auth-info.model';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -24,7 +27,7 @@ export class ProfileComponent {
     public userService: UserService,
     private formBuilder: FormBuilder,
     private toastService: ToastService,
-    private langService: LangService,
+    private langService: LangService
   ) {
     this.resetForm();
     this.alertButtons = [
@@ -45,20 +48,22 @@ export class ProfileComponent {
 
   setAlert(event: any) {
     this.isAlertOpen = false;
-    if (event.detail.role === 'cancel') { return; }
+    if (event.detail.role === 'cancel') {
+      return;
+    }
 
     this.onSubmit();
   }
 
   async resetForm() {
     const usr = await firstValueFrom(this.userService.user$);
-    const lang = await this.langService.getCurrentLang();
+    const lang = this.langService.currentLang;
     if (!usr || !lang) {
       return;
     }
 
     this.userData = usr;
-    this.langList = await this.langService.getLangList();
+    this.langList = this.langService.languages;
     this.userForm = this.formBuilder.group({
       name: [usr?.name, [Validators.required]],
       lang: [lang, [Validators.required]],
@@ -70,7 +75,7 @@ export class ProfileComponent {
     const usr = await firstValueFrom(this.userService.user$);
     const { name, lang, password } = this.userForm.value;
     const hasNewName = name && name !== usr?.name;
-    const hasNewLang = lang && lang !== this.langService.getCurrentLang();
+    const hasNewLang = lang && lang !== this.langService.currentLang;
     const hasNewPassword = password && password !== '';
 
     if (hasNewName) {
@@ -82,7 +87,7 @@ export class ProfileComponent {
     }
 
     if (hasNewLang) {
-      await this.langService.useLang(lang);
+      this.langService.currentLang = lang;
       const instLang = this.langService.translate(
         'user.profile.form.confirm.lang'
       );

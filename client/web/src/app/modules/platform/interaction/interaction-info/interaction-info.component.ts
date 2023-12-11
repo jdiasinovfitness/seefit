@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import {
   C_STATUS,
   Customer,
@@ -36,7 +36,8 @@ export class InteractionInfoComponent implements OnInit {
   details = '';
 
   constructor(
-    private interactionService: InteractionService // private translateService: TranslateService
+    private interactionService: InteractionService,
+    private translateService: TranslateService
   ) {}
   ngOnInit(): void {
     this.loadSelectionFromLocalStorage();
@@ -91,7 +92,7 @@ export class InteractionInfoComponent implements OnInit {
   getStatusTypesArray(): Array<string> {
     return Object.values(this.statusTypes);
   }
-  async onTypeChange(newSelection: any) {
+  onTypeChange(newSelection: any) {
     const newVal = newSelection?.target?.value;
 
     const index = this.typeList?.findIndex((el) => {
