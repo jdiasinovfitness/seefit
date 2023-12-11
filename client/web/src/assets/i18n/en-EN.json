@@ -32,10 +32,10 @@
         "save": "save"
       },
       "profile": {
-        "title": "Perfil"
+        "title": "Profile"
       },
       "logout": {
-        "title": "Sair"
+        "title": "Logout"
       }
     }
   },
@@ -180,18 +180,18 @@
       "label": "{{total}} customer(s) found"
     },
     "data": {
-      "birth-date": "Birthdate:",
-      "email": "Email: ",
-      "phone": "Phone: ",
-      "objective": "Objective:",
-      "access": "Visits:",
+      "birth-date": "Birthdate",
+      "email": "Email ",
+      "phone": "Phone ",
+      "objective": "Objective",
+      "access": "Visits",
       "ag": "Group Classes",
-      "shareAG": "% Of GC:",
-      "last-af": "Last Appointment:",
-      "visit-length": "Average Stay:",
-      "membership": "Membership Date (Months):",
-      "subscription-type": "Membership Prices:",
-      "schedule": "Available Schedule:",
+      "shareAG": "% Group Classes",
+      "last-af": "Last Appointment",
+      "visit-length": "Average Stay",
+      "membership": "Membership Date",
+      "subscription-type": "Membership Prices",
+      "schedule": "Schedule",
       "observation": "Comments",
       "btn-discard": "Discard",
       "btn-submit": "Submit",
