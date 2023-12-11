@@ -59,8 +59,6 @@
   .side-by-side {
     display: flex;
     align-items: flex-start;
-    border-bottom: 0.5px solid var(--ion-color-medium);
-
     .key {
       width: 50%;
     }
