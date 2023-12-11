@@ -16,7 +16,7 @@
         <ion-select-option
           *ngFor="let typeOpt of getStatusTypesArray()"
           [value]="typeOpt"
-          >{{ typeOpt }}</ion-select-option
+          >{{ typeOpt | translate }}</ion-select-option
         >
       </ion-select>
     </ion-item>
@@ -38,7 +38,7 @@
           *ngFor="let interaction of interactionList"
           [value]="interaction.name"
         >
-          {{ interaction.name }}
+          {{ interaction.name | translate }}
         </ion-select-option>
       </ion-select>
     </ion-item>

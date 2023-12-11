@@ -6,7 +6,9 @@
       [class.selected]="selectedFilter === activityTypes.FOOTFALL"
     >
       <ion-icon name="calendar-clear-outline"></ion-icon>
-      <ion-label>Visits</ion-label>
+      <ion-label>{{
+        "interaction.button-filters.footfall" | translate
+      }}</ion-label>
     </ion-button>
     <ion-button
       mode="ios"
@@ -14,7 +16,9 @@
       [class.selected]="selectedFilter === activityTypes.ICI"
     >
       <ion-icon name="people-circle-outline"></ion-icon>
-      <ion-label>Interact</ion-label></ion-button
+      <ion-label>{{
+        "interaction.button-filters.ici" | translate
+      }}</ion-label></ion-button
     >
     <ion-button
       mode="ios"
@@ -22,7 +26,9 @@
       [class.selected]="selectedFilter === activityTypes.APPOINTMENT"
     >
       <ion-icon name="location-sharp"> </ion-icon>
-      <ion-label>Appoint</ion-label>
+      <ion-label>{{
+        "interaction.button-filters.appointment" | translate
+      }}</ion-label>
     </ion-button>
 
     <ion-button
@@ -30,7 +36,9 @@
       (click)="filterCustomerActivity(activityTypes.OCI)"
       [class.selected]="selectedFilter === activityTypes.OCI"
       ><ion-icon name="star"></ion-icon>
-      <ion-label>Comms</ion-label></ion-button
+      <ion-label>{{
+        "interaction.button-filters.comments" | translate
+      }}</ion-label></ion-button
     >
   </div>
 

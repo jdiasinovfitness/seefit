@@ -134,7 +134,9 @@
           "default": "Select the interaction type",
           "label": "Type",
           "types": {
-            "unplanned": "Unplanned"
+            "unplanned": "Unplanned",
+            "completed": "Completed",
+            "planned": "Planned"
           }
         },
         "label": {
@@ -190,7 +192,7 @@
       "last-af": "Last Appointment",
       "visit-length": "Average Stay",
       "membership": "Membership Date",
-      "subscription-type": "Membership Prices",
+      "subscription-type": "Subscription",
       "schedule": "Schedule",
       "observation": "Comments",
       "btn-discard": "Discard",
@@ -199,94 +201,100 @@
       "personal-info": "Contact",
       "contract-info": "Contract",
       "additional-services": "Additional Services:",
-      "additional-info": "Additional Information:",
+      "additional-info": "Additional Information",
       "lifecycle": "Life Cycle:"
-    }
-  },
-  "user": {
-    "report-menu": {
-      "reports": "Reports",
-      "menu-items": {
-        "usage": "Usage Control",
-        "survey": "NPS & Surveys",
-        "status": "Interaction Status"
-      }
     },
-    "user-menu": {
-      "profile": "Profile",
-      "configurations": "Configurations",
-      "menu-items": {
-        "edit-profile": "Edit Profile",
-        "activity": "My Activity",
-        "customers": "My Customers",
-        "notifications": "Notifications"
+    "button-filters": {
+      "footfall": "Visits",
+      "ici": "Interact",
+      "comments": "Comms",
+      "appointment": "Appoint"
+    },
+    "user": {
+      "report-menu": {
+        "reports": "Reports",
+        "menu-items": {
+          "usage": "Usage Control",
+          "survey": "NPS & Surveys",
+          "status": "Interaction Status"
+        }
       },
-      "form": {
-        "email": "Email",
-        "role": "Role",
-        "language": {
-          "label": "Language",
-          "placeholder": "Please select a language"
+      "user-menu": {
+        "profile": "Profile",
+        "configurations": "Configurations",
+        "menu-items": {
+          "edit-profile": "Edit Profile",
+          "activity": "My Activity",
+          "customers": "My Customers",
+          "notifications": "Notifications"
         },
-        "password": {
-          "label": "Password",
-          "placeholder": "Enter a valid password"
+        "form": {
+          "email": "Email",
+          "role": "Role",
+          "language": {
+            "label": "Language",
+            "placeholder": "Please select a language"
+          },
+          "password": {
+            "label": "Password",
+            "placeholder": "Enter a valid password"
+          }
+        }
+      },
+      "profile": {
+        "title": "Edit Profile Information",
+        "form": {
+          "name": {
+            "label": "Display Name",
+            "placeholder": "This field is required",
+            "errors": {
+              "required": "Display Name"
+            }
+          },
+          "email": "Email",
+          "role": "Role",
+          "language": {
+            "label": "Language",
+            "placeholder": "Select a Language"
+          },
+          "password": {
+            "label": "New Password",
+            "placeholder": "*******",
+            "errors": {
+              "required": "This field is required"
+            }
+          },
+          "confirm": {
+            "submit": "Confirm",
+            "cancel": "Cancel",
+            "name": "Your Name was updated",
+            "lang": "The Language was updated",
+            "password": "Your password was updated"
+          }
+        }
+      },
+      "notification": {
+        "title": "Notifications",
+        "empty": {
+          "title": "You have no notifications right now!",
+          "subtitle": "We'll let you know when something arrives"
         }
       }
     },
-    "profile": {
-      "title": "Edit Profile Information",
-      "form": {
-        "name": {
-          "label": "Display Name",
-          "placeholder": "This field is required",
-          "errors": {
-            "required": "Display Name"
-          }
+    "customer": {
+      "tabs": {
+        "information": {
+          "title": "Information"
         },
-        "email": "Email",
-        "role": "Role",
-        "language": {
-          "label": "Language",
-          "placeholder": "Select a Language"
+        "lifecycle": {
+          "title": "Lifecycle"
         },
-        "password": {
-          "label": "New Password",
-          "placeholder": "*******",
-          "errors": {
-            "required": "This field is required"
-          }
+        "history": {
+          "title": "Activity"
         },
-        "confirm": {
-          "submit": "Confirm",
-          "cancel": "Cancel",
-          "name": "Your Name was updated",
-          "lang": "The Language was updated",
-          "password": "Your password was updated"
+        "metrics": {
+          "title": "Metrics"
         }
-      }
-    },
-    "notification": {
-      "title": "Notifications",
-      "empty": {
-        "title": "You have no notifications right now!",
-        "subtitle": "We'll let you know when something arrives"
-      }
-    }
-  },
-  "customer": {
-    "tabs": {
-      "information": {
-        "title": "Information"
-      },
-      "lifecycle": {
-        "title": "Lifecycle"
-      },
-      "history": {
-        "title": "Activity"
-      },
-      "metrics": {
-        "title": "Metrics"
       }
     }
   }

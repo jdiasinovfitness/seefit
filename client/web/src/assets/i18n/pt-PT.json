@@ -135,7 +135,9 @@
           "default": "Selecione o tipo",
           "label": "Tipo",
           "types": {
-            "unplanned": "Não Planeada"
+            "unplanned": "Não Planeada",
+            "completed": "Completa",
+            "planned": "Planeada"
           }
         },
         "label": {
@@ -180,25 +182,25 @@
       "label": "{{total}} cliente(s) encontrados"
     },
     "data": {
-      "birth-date": "Data Nascimento (Idade):",
-      "email": "Email: ",
-      "phone": "Phone: ",
-      "objective": "Objetivo:",
-      "access": "Visitas:",
-      "ag": "Aulas de Grupo:",
-      "shareAG": "% de AG:",
-      "last-af": "Útima Avaliação:",
-      "visit-length": "Média de Permanência:",
-      "membership": "Data de Adesão:",
-      "subscription-type": "Preço do Plano:",
-      "schedule": "Horário:",
+      "birth-date": "Data Nascimento",
+      "email": "Email",
+      "phone": "Phone",
+      "objective": "Objetivo",
+      "access": "Visitas",
+      "ag": "Aulas de Grupo",
+      "shareAG": "% de Aulas de Grupo",
+      "last-af": "Útima Avaliação",
+      "visit-length": "Média de Permanência",
+      "membership": "Data de Adesão",
+      "subscription-type": "Subscrição",
+      "schedule": "Horário",
       "observation": "Comentários",
       "btn-discard": "Eliminar",
       "btn-submit": "Concluir",
       "customer-info": "Geral",
       "personal-info": "Contatos",
       "contract-info": "Contrato",
-      "additional-services": "Serviços Adicionais:",
+      "additional-services": "Serviços Adicionais",
       "additional-info": "Informação Adicional",
       "lifecycle": "Ciclo De Vida"
     }
