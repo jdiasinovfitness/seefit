@@ -130,6 +130,7 @@
       },
       "interaction": {
         "title": "Interaction",
+        "description": "Description",
         "type": {
           "default": "Select the interaction type",
           "label": "Type",
@@ -153,7 +154,8 @@
         "details": {
           "placeholder": "Add a description",
           "create": "Create",
-          "label": "Details"
+          "label": "Details",
+          "note": "Interaction Note"
         }
       },
       "history": {

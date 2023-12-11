@@ -131,6 +131,7 @@
       },
       "interaction": {
         "title": "Interação",
+        "description": "Descrição",
         "type": {
           "default": "Selecione o tipo",
           "label": "Tipo",
@@ -154,7 +155,8 @@
         "details": {
           "placeholder": "Adicione uma descrição da interação",
           "create": "Criar",
-          "label": "Detalhes"
+          "label": "Detalhes",
+          "note": "Notas"
         }
       },
       "history": {
