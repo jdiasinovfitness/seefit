@@ -109,9 +109,8 @@
 
 .content-text {
   font-weight: bold;
-  margin-left: 12px;
 
-  width: 50%;
+  min-width: 50%;
 }
 
 ion-label {
@@ -129,6 +128,14 @@ ion-item::part(native) {
 
 .info-section {
   width: -webkit-fill-available;
+  display: flex;
+  align-items: start;
+}
+
+@media screen and (max-width: 780px) {
+  .info-section {
+    flex-wrap: wrap;
+  }
 }
 
 // Mobile view

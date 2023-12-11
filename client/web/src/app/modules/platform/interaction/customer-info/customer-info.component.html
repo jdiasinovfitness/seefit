@@ -1,8 +1,11 @@
 <div class="c-info-wrapper" *ngIf="customerFullInfo">
-  <ion-accordion-group [multiple]="true">
+  <ion-accordion-group
+    [multiple]="true"
+    [value]="['general', 'contact', 'contract']"
+  >
     <div class="side-by-side" *ngIf="customerFullInfo as cRecord">
       <!-- General  -->
-      <ion-accordion toggleIconSlot="start">
+      <ion-accordion value="general" toggleIconSlot="start">
         <ion-item lines="none" slot="header" color="light">
           <ion-label>{{
             "interaction.data.customer-info" | translate
@@ -100,6 +103,7 @@
 
         <!-- Contract -->
         <ion-accordion
+          value="contract"
           toggleIconSlot="start"
           *ngIf="customerFullInfo as conType"
         >
