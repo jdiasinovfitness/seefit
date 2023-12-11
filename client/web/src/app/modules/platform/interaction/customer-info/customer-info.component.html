@@ -16,8 +16,8 @@
             <ion-text class="key" color="dark">{{
               "interaction.data.birth-date" | translate
             }}</ion-text>
-            <ion-text class="content-text"
-              >{{ cRecord.dob | date : "dd/MM" }} |
+            <ion-text
+              ><strong>{{ cRecord.dob | date : "dd/MMM" }} |</strong>
               {{ calculateAge(cRecord.dob) }} years old</ion-text
             >
           </ion-item>
@@ -57,8 +57,10 @@
             <ion-text class="key" color="dark">{{
               "interaction.data.last-af" | translate
             }}</ion-text>
-            <ion-text class="content-text">
-              {{ cRecord.last_appointment | date : "yyyy-MM-dd" }} |
+            <ion-text>
+              <strong
+                >{{ cRecord.last_appointment | date : "yyyy-MM-dd" }} |</strong
+              >
               {{ calculateLastAppointment(cRecord.last_appointment) }} days
             </ion-text>
           </ion-item>
@@ -75,7 +77,11 @@
 
       <!-- Contacts  -->
       <div class="info-section">
-        <ion-accordion *ngIf="customerFullInfo.contact" toggleIconSlot="start">
+        <ion-accordion
+          value="contact"
+          *ngIf="customerFullInfo.contact"
+          toggleIconSlot="start"
+        >
           <ion-item lines="none" slot="header" color="light">
             <ion-label>{{
               "interaction.data.personal-info" | translate
@@ -117,8 +123,8 @@
               <ion-text class="key" color="dark">{{
                 "interaction.data.membership" | translate
               }}</ion-text>
-              <ion-text class="content-text">
-                {{ item.date | date : "yyyy-MM-dd" }} |
+              <ion-text>
+                <strong>{{ item.date | date : "yyyy-MM-dd" }} |</strong>
                 {{ calculateMembership(item.date) }} months
               </ion-text>
             </ion-item>
