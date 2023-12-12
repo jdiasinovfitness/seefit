@@ -93,3 +93,5 @@
 - [Data structures for customer full info & finish the refactor](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16354)
 
 - [Set the translations engine for the plataform](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16327)
+
+- [Complete a Planned Interaction](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16449)
