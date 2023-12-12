@@ -5,7 +5,11 @@
   >
     <div class="side-by-side" *ngIf="customerFullInfo as cRecord">
       <!-- General  -->
-      <ion-accordion value="general" toggleIconSlot="start">
+      <ion-accordion
+        class="general-info"
+        value="general"
+        toggleIconSlot="start"
+      >
         <ion-item lines="none" slot="header" color="light">
           <ion-label>{{
             "interaction.data.customer-info" | translate
@@ -25,39 +29,39 @@
             <ion-text class="key" color="dark">{{
               "interaction.data.objective" | translate
             }}</ion-text>
-            <ion-text class="content-text">{{ cRecord.objective }}</ion-text>
+            <ion-text class="content-text bold">{{
+              cRecord.objective
+            }}</ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
             <ion-text class="key" color="dark">{{
               "interaction.data.access" | translate
             }}</ion-text>
-            <ion-text class="content-text">
+            <ion-text class="bold content-text">
               {{ cRecord.visits["7"] }} / {{ cRecord.visits["14"] }} /
-              {{ cRecord.visits["28"] }} /
-              {{ cRecord.visits["60"] }} days</ion-text
-            >
+              {{ cRecord.visits["28"] }} / {{ cRecord.visits["60"] }}
+            </ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
             <ion-text class="key" color="dark">{{
               "interaction.data.ag" | translate
             }}</ion-text>
-            <ion-text class="content-text">
+            <ion-text class="bold content-text">
               {{ cRecord.groupC["7"] }} / {{ cRecord.groupC["14"] }} /
-              {{ cRecord.groupC["28"] }} /
-              {{ cRecord.groupC["60"] }} days</ion-text
-            >
+              {{ cRecord.groupC["28"] }} / {{ cRecord.groupC["60"] }}
+            </ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
             <ion-text class="key" color="dark">{{
               "interaction.data.shareAG" | translate
             }}</ion-text>
-            <ion-text class="content-text">{{ cRecord.pp_gc }}%</ion-text>
+            <ion-text class="bold content-text">{{ cRecord.pp_gc }}%</ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
             <ion-text class="key" color="dark">{{
               "interaction.data.last-af" | translate
             }}</ion-text>
-            <ion-text>
+            <ion-text class="content-text">
               <strong
                 >{{ cRecord.last_appointment | date : "yyyy-MM-dd" }} |</strong
               >
@@ -68,7 +72,7 @@
             <ion-text class="key" color="dark">{{
               "interaction.data.visit-length" | translate
             }}</ion-text>
-            <ion-text class="content-text"
+            <ion-text class="bold content-text"
               >{{ cRecord.avg_stay }} mins</ion-text
             >
           </ion-item>
@@ -92,7 +96,7 @@
               <ion-text class="key" color="dark">{{
                 "interaction.data.phone" | translate
               }}</ion-text>
-              <ion-text class="content-text">{{
+              <ion-text class="bold content-text">{{
                 cRecord.contact?.phone
               }}</ion-text>
             </ion-item>
@@ -100,7 +104,7 @@
               <ion-text class="key" color="dark">{{
                 "interaction.data.email" | translate
               }}</ion-text>
-              <ion-text class="content-text">{{
+              <ion-text class="bold content-text">{{
                 cRecord.contact?.email
               }}</ion-text>
             </ion-item>
@@ -123,7 +127,7 @@
               <ion-text class="key" color="dark">{{
                 "interaction.data.membership" | translate
               }}</ion-text>
-              <ion-text>
+              <ion-text class="content-text">
                 <strong>{{ item.date | date : "yyyy-MM-dd" }} |</strong>
                 {{ calculateMembership(item.date) }} months
               </ion-text>
@@ -132,7 +136,7 @@
               <ion-text class="key" color="dark">{{
                 "interaction.data.subscription-type" | translate
               }}</ion-text>
-              <ion-text class="content-text">
+              <ion-text class="bold content-text">
                 {{ item.subscription | translate }}
               </ion-text>
             </ion-item>
@@ -140,7 +144,7 @@
               <ion-text class="key" color="dark">{{
                 "interaction.data.schedule" | translate
               }}</ion-text>
-              <ion-text class="content-text">
+              <ion-text class="bold content-text">
                 {{ item.schedule | translate }}
               </ion-text>
             </ion-item>
