@@ -1,57 +1,78 @@
 <div class="c-info-wrapper" *ngIf="customerFullInfo">
-  <ion-accordion-group [multiple]="true">
+  <ion-accordion-group
+    [multiple]="true"
+    [value]="['general', 'contact', 'contract']"
+  >
     <div class="side-by-side" *ngIf="customerFullInfo as cRecord">
       <!-- General  -->
-      <ion-accordion toggleIconSlot="start">
+      <ion-accordion
+        class="general-info"
+        value="general"
+        toggleIconSlot="start"
+      >
         <ion-item lines="none" slot="header" color="light">
-          <ion-label>{{ "General" }}</ion-label>
+          <ion-label>{{
+            "interaction.data.customer-info" | translate
+          }}</ion-label>
         </ion-item>
         <div slot="content">
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="dark">{{ "Birthdate" }}</ion-text>
-            <ion-text class="content-text"
-              >{{ cRecord.dob | date : "dd/MM" }} |
+            <ion-text class="key" color="dark">{{
+              "interaction.data.birth-date" | translate
+            }}</ion-text>
+            <ion-text
+              ><strong>{{ cRecord.dob | date : "dd/MMM" }} |</strong>
               {{ calculateAge(cRecord.dob) }} years old</ion-text
             >
           </ion-item>
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="dark">{{ "Objective" }}</ion-text>
-            <ion-text class="content-text">{{ cRecord.objective }}</ion-text>
+            <ion-text class="key" color="dark">{{
+              "interaction.data.objective" | translate
+            }}</ion-text>
+            <ion-text class="content-text bold">{{
+              cRecord.objective
+            }}</ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="dark">{{ "Visits" }}</ion-text>
-            <ion-text class="content-text">
+            <ion-text class="key" color="dark">{{
+              "interaction.data.access" | translate
+            }}</ion-text>
+            <ion-text class="bold content-text">
               {{ cRecord.visits["7"] }} / {{ cRecord.visits["14"] }} /
-              {{ cRecord.visits["28"] }} /
-              {{ cRecord.visits["60"] }} days</ion-text
-            >
+              {{ cRecord.visits["28"] }} / {{ cRecord.visits["60"] }}
+            </ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="dark">{{ "Group Classes" }}</ion-text>
-            <ion-text class="content-text">
+            <ion-text class="key" color="dark">{{
+              "interaction.data.ag" | translate
+            }}</ion-text>
+            <ion-text class="bold content-text">
               {{ cRecord.groupC["7"] }} / {{ cRecord.groupC["14"] }} /
-              {{ cRecord.groupC["28"] }} /
-              {{ cRecord.groupC["60"] }} days</ion-text
-            >
+              {{ cRecord.groupC["28"] }} / {{ cRecord.groupC["60"] }}
+            </ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
             <ion-text class="key" color="dark">{{
-              "% Group Classes"
+              "interaction.data.shareAG" | translate
             }}</ion-text>
-            <ion-text class="content-text">{{ cRecord.pp_gc }}%</ion-text>
+            <ion-text class="bold content-text">{{ cRecord.pp_gc }}%</ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
             <ion-text class="key" color="dark">{{
-              "Last Appointment"
+              "interaction.data.last-af" | translate
             }}</ion-text>
             <ion-text class="content-text">
-              {{ cRecord.last_appointment | date : "yyyy-MM-dd" }} |
+              <strong
+                >{{ cRecord.last_appointment | date : "yyyy-MM-dd" }} |</strong
+              >
               {{ calculateLastAppointment(cRecord.last_appointment) }} days
             </ion-text>
           </ion-item>
           <ion-item color="light" lines="none">
-            <ion-text class="key" color="dark">{{ "Average Stay" }}</ion-text>
-            <ion-text class="content-text"
+            <ion-text class="key" color="dark">{{
+              "interaction.data.visit-length" | translate
+            }}</ion-text>
+            <ion-text class="bold content-text"
               >{{ cRecord.avg_stay }} mins</ion-text
             >
           </ion-item>
@@ -60,20 +81,30 @@
 
       <!-- Contacts  -->
       <div class="info-section">
-        <ion-accordion *ngIf="customerFullInfo.contact" toggleIconSlot="start">
+        <ion-accordion
+          value="contact"
+          *ngIf="customerFullInfo.contact"
+          toggleIconSlot="start"
+        >
           <ion-item lines="none" slot="header" color="light">
-            <ion-label>{{ "Contact" }}</ion-label>
+            <ion-label>{{
+              "interaction.data.personal-info" | translate
+            }}</ion-label>
           </ion-item>
           <div slot="content">
             <ion-item color="light" lines="none">
-              <ion-text class="key" color="dark">{{ "Phone" }}</ion-text>
-              <ion-text class="content-text">{{
+              <ion-text class="key" color="dark">{{
+                "interaction.data.phone" | translate
+              }}</ion-text>
+              <ion-text class="bold content-text">{{
                 cRecord.contact?.phone
               }}</ion-text>
             </ion-item>
             <ion-item color="light" lines="none">
-              <ion-text class="key" color="dark">{{ "Email" }}</ion-text>
-              <ion-text class="content-text">{{
+              <ion-text class="key" color="dark">{{
+                "interaction.data.email" | translate
+              }}</ion-text>
+              <ion-text class="bold content-text">{{
                 cRecord.contact?.email
               }}</ion-text>
             </ion-item>
@@ -82,31 +113,38 @@
 
         <!-- Contract -->
         <ion-accordion
+          value="contract"
           toggleIconSlot="start"
           *ngIf="customerFullInfo as conType"
         >
           <ion-item lines="none" slot="header" color="light">
-            <ion-label>{{ "Contract" }}</ion-label>
+            <ion-label>{{
+              "interaction.data.contract-info" | translate
+            }}</ion-label>
           </ion-item>
           <div slot="content" *ngFor="let item of customerFullInfo.contract">
             <ion-item color="light" lines="none">
               <ion-text class="key" color="dark">{{
-                "Membership Date"
+                "interaction.data.membership" | translate
               }}</ion-text>
               <ion-text class="content-text">
-                {{ item.date | date : "yyyy-MM-dd" }} |
+                <strong>{{ item.date | date : "yyyy-MM-dd" }} |</strong>
                 {{ calculateMembership(item.date) }} months
               </ion-text>
             </ion-item>
             <ion-item color="light" lines="none">
-              <ion-text class="key" color="dark">{{ "Subscription" }}</ion-text>
-              <ion-text class="content-text">
+              <ion-text class="key" color="dark">{{
+                "interaction.data.subscription-type" | translate
+              }}</ion-text>
+              <ion-text class="bold content-text">
                 {{ item.subscription | translate }}
               </ion-text>
             </ion-item>
             <ion-item color="light" lines="none">
-              <ion-text class="key" color="dark">{{ "Schedule" }}</ion-text>
-              <ion-text class="content-text">
+              <ion-text class="key" color="dark">{{
+                "interaction.data.schedule" | translate
+              }}</ion-text>
+              <ion-text class="bold content-text">
                 {{ item.schedule | translate }}
               </ion-text>
             </ion-item>
@@ -121,7 +159,7 @@
     >
       <ion-item lines="none" slot="header" color="light">
         <ion-label>
-          {{ "Additional Information" }}
+          {{ "interaction.data.additional-info" | translate }}
         </ion-label>
       </ion-item>
       <div slot="content">
@@ -160,11 +198,12 @@
           </div>
         </div>
       </div>
-    </ion-accordion>  
- 
-  <div class="a-content"> -->
-    <!--  Observation -->
-    <app-observation [userId]="info.id" (handleClick)="onButtonClick($event)">
-    </app-observation>
+    </ion-accordion>  -->
+
+    <div class="a-content">
+      <!--  Observation -->
+      <app-observation [userId]="info.id" (handleClick)="onButtonClick($event)">
+      </app-observation>
+    </div>
   </div>
 </div>

@@ -35,11 +35,11 @@
       <!-- Risk  -->
       <div class="labels">
         <div class="lbl" *ngIf="item.risk !== 'n/a'">
-          {{ item.risk }}
+          {{ item.risk | translate }}
         </div>
         <!-- Usage  -->
         <div class="lbl" *ngIf="item.frequency !== 'n/a'">
-          {{ item.frequency }}
+          {{ item.frequency | translate }}
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
             "
             style="font-size: smaller"
           >
-            {{ item.interaction.status }}
+            {{ item.interaction.status | translate }}
           </ion-text>
         </ion-chip>
       </div>
@@ -72,7 +72,7 @@
       <!-- Interaction Type  -->
       <ion-label class="right">
         <ion-text color="dark-tint">
-          {{ item.interaction.name[0].text }}
+          {{ item.interaction.name[0].text | translate }}
         </ion-text>
         <ion-icon color="dark-tint" name="people"></ion-icon>
       </ion-label>

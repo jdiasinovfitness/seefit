@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import {
   C_STATUS,
   Customer,
@@ -35,8 +35,13 @@ export class InteractionInfoComponent implements OnInit {
   interaction: InteractionInfo | undefined;
   details = '';
 
+  customSelectAlert = {
+    header: 'Type',
+  };
+
   constructor(
-    private interactionService: InteractionService // private translateService: TranslateService
+    private interactionService: InteractionService,
+    private translateService: TranslateService
   ) {}
   ngOnInit(): void {
     this.loadSelectionFromLocalStorage();
