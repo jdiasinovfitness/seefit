@@ -37,6 +37,10 @@
     }
   }
 
+  .see-icon {
+    margin-right: 8px;
+  }
+
   .add-info {
     margin-left: 0px;
   }
@@ -64,10 +68,6 @@
   .a-content {
     border-top: 0.5px solid var(--ion-color-medium);
   }
-}
-
-.see-icon {
-  margin-right: 8px;
 }
 
 .info-col {
@@ -127,6 +127,10 @@ ion-item::part(native) {
 #content {
   background: var(--ion-color-light);
   padding: 0px 18px;
+}
+
+.info-section {
+  width: -webkit-fill-available;
 }
 
 // Mobile view

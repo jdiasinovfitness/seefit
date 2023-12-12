@@ -86,4 +86,8 @@
 
 - [Refactor list header](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16381)
 
-- [Refaction Interaction Info](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16325)
+- [Refactor Interaction Info](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16325)
+
+- [Refactor Activity Tab](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16326)
+
+- [Data structures for customer full info & finish the refactor](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16354)
