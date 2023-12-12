@@ -66,34 +66,66 @@
 
 - [Question tabs component](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15747)
 
+#### 1.12.1
+
 - [Origin selection fails at the first selection](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15768)
-
-- [Question tabs component](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15747)
-
-- [Implement Customer Profile view](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15773)
-
-- [Physical evaluation form design](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_workitems/edit/15753/)
-
-- [Divide content into available tabs & finalize](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15811)
-
-- [Physical Evaluation mobile - header](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=16001)
-
-- [Physical Evaluation mobile - form](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=16000)
 
 #### 1.13.0
 
+- [Question tabs component](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15747)
+
+#### 1.14.0
+
+- [Implement Customer Profile view](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15773)
+
+#### 1.15.0
+
+- [Physical evaluation form design](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_workitems/edit/15753/)
+
+#### 1.16.0
+
+- [Divide content into available tabs & finalize](https://inovretail.visualstudio.com/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=15811)
+
+#### 1.17.0
+
+- [Physical Evaluation mobile - header](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=16001)
+
+#### 1.18.0
+
+- [Physical Evaluation mobile - form](https://dev.azure.com/inovretail/PRODUCT_DEVELOPMENT/_boards/board/t/PRODUCT_DEVELOPMENT%20Team/Stories/?workitem=16000)
+
+#### 1.19.0
+
 - [Refactor the customer info section](https://dev.azure.com/inovretail/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16260)
+
+#### 1.20.0
 
 - [Refactor filters header](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16331)
 
+#### 1.21.0
+
 - [Refactor list header](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16381)
+
+#### 1.22.0
 
 - [Refactor Interaction Info](https://inovretail.visualstudio.com/Seeplus%20Fitness%20Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16325)
 
+#### 1.23.0
+
 - [Refactor Activity Tab](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16326)
+
+#### 1.24.0
 
 - [Data structures for customer full info & finish the refactor](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16354)
 
+#### 1.25.0
+
 - [Set the translations engine for the plataform](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16327)
+
+#### 1.25.1
+
+-[Customer Tab](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16554)
+
+#### 1.26.0
 
 - [Complete a Planned Interaction](https://inovretail.visualstudio.com/Seeplus_Fitness_Roadmap/_boards/board/t/InovFitness%204Q42024/Stories/?workitem=16449)
