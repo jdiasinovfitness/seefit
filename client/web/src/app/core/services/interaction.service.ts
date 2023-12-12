@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   C_STATUS,
   I_TYPE,
+  Interaction2BCompleted,
   InteractionInfo,
   InteractionTypes,
 } from '../interfaces/customer.model';
@@ -182,5 +183,10 @@ export class InteractionService {
   }
   getInteractionsByType(type: C_STATUS): Array<InteractionInfo> {
     return this.interactionDummyList().filter((item) => item.status === type);
+  }
+
+  completePlannedInteractions(interaction: Interaction2BCompleted): void {
+    // TODO: Implement API Call
+    const url = `/interaction/${interaction.id}/complete`;
   }
 }

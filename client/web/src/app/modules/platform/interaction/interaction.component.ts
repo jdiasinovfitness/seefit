@@ -5,10 +5,7 @@ import { IonModal } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
-import {
-  Customer,
-  CustomerFullInfo,
-} from 'src/app/core/interfaces/customer.model';
+import { Customer } from 'src/app/core/interfaces/customer.model';
 import { C_STATUS } from 'src/app/core/interfaces/customer.model';
 
 export enum Phases {
@@ -191,10 +188,6 @@ export class InteractionComponent implements OnInit {
 
   onTabChange(event: any, index: number) {
     this.activeTabList[index] = event?.target?.value;
-  }
-
-  onSort(event: any) {
-    console.log('event', event); // TODO: Remove on PR!
   }
 
   async loadData() {
