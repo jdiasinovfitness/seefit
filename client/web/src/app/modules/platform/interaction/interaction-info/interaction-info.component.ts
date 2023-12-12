@@ -35,6 +35,10 @@ export class InteractionInfoComponent implements OnInit {
   interaction: InteractionInfo | undefined;
   details = '';
 
+  customSelectAlert = {
+    header: 'Type',
+  };
+
   constructor(
     private interactionService: InteractionService,
     private translateService: TranslateService

@@ -7,6 +7,7 @@
       >
       <ion-select
         [placeholder]="'interaction.tabs.interaction.type.default' | translate"
+        [interfaceOptions]="customSelectAlert"
         [disabled]="!true"
         mode="ios"
         fill="solid"
@@ -86,8 +87,8 @@
             color="medium"
             type="text"
             [placeholder]="''"
-            [label]="'interaction.tabs.interaction.details.note'"
-            labelPlacement="floating"
+            [label]="'interaction.tabs.interaction.details.note' | translate"
+            labelPlacement="stacked"
           ></ion-input>
         </ion-item>
       </span>
