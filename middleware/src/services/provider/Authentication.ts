@@ -27,6 +27,7 @@ const login = async (token: string): Promise<AuthInfo> => {
 			url: `${process.env.API_GATEWAY}/auth/login`,
 			headers: {
 				authorization: token,
+				'Content-Type': 'application/json',
 			},
 			params: {
 				'api-version': '1',
@@ -46,6 +47,7 @@ const refreshLoginToken = async (token: string): Promise<IRefreshResponse> => {
 			url: `${process.env.API_GATEWAY}/login/refresh`,
 			headers: {
 				authorization: token,
+				'Content-Type': 'application/json',
 			},
 			responseType: 'json',
 		});
