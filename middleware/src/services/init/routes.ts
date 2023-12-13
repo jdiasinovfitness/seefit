@@ -10,6 +10,11 @@ const routes: Route[] = [
 		handler: [Auth, apiVersionError],
 	},
 	{
+		path: '/auth/refresh',
+		method: 'POST',
+		handler: [Auth, apiVersionError],
+	},
+	{
 		path: '/config',
 		method: 'GET',
 		handler: [Config, apiVersionError],

@@ -17,7 +17,11 @@ interface AuthInfo {
 	refreshToken: string;
 	user: string;
 }
-const login = async (req: Request, token: string): Promise<AuthInfo> => {
+
+export interface IRefreshResponse {
+	access_token: string;
+}
+const login = async (token: string): Promise<AuthInfo> => {
 	try {
 		const response = await axios.request({
 			method: 'POST',
@@ -27,6 +31,22 @@ const login = async (req: Request, token: string): Promise<AuthInfo> => {
 			},
 			params: {
 				'api-version': '1',
+			},
+			responseType: 'json',
+		});
+		return response.data;
+	} catch (err) {
+		throw processAPIError(err);
+	}
+};
+
+const refreshLoginToken = async (token: string): Promise<IRefreshResponse> => {
+	try {
+		const response = await axios.request({
+			method: 'POST',
+			url: `${process.env.API_GATEWAY}/login/refresh`,
+			headers: {
+				authorization: token,
 			},
 			responseType: 'json',
 		});
@@ -50,4 +70,5 @@ const decodeToken = async (token: string): Promise<DecodedToken> => {
 export default {
 	login,
 	decodeToken,
+	refreshLoginToken,
 };

@@ -17,7 +17,7 @@ export default async (
 ): Promise<void> => {
 	try {
 		const authorization = req.headers['authorization'] as string;
-		const loginResponse = await AuthProvider.login(req, authorization);
+		const loginResponse = await AuthProvider.login(authorization);
 		const authToken = 'Bearer ' + loginResponse.accessToken;
 		console.log('authToken', authToken);
 		const userInfo = await UserProvider.userProfile(authToken);
