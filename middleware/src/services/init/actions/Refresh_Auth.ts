@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
 import AuthProvider from '../../provider/Authentication';
-import UserProvider from '../../provider/User';
 
 export default async (
 	req: Request,
@@ -9,9 +8,8 @@ export default async (
 ): Promise<void> => {
 	try {
 		const authorization = req.headers['authorization'] as string;
-
-		res.status(200).send(user);
-
+		const refreshResponse = await AuthProvider.refreshLoginToken(authorization);
+		res.status(200).send(refreshResponse);
 		return;
 	} catch (err) {
 		next(err);
