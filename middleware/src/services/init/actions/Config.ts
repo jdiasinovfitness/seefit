@@ -15,7 +15,7 @@ export default async (
 	res: Response,
 	next: NextFunction
 ): Promise<void> => {
-	console.info('GET /config');
+	console.log('GET /config');
 
 	const authToken = req.headers['authorization'] as string;
 
@@ -87,7 +87,7 @@ export default async (
 
 		res.status(200).send(newResponse);
 	} catch (err) {
-		console.error(err);
+		console.log(err);
 		next(err);
 	}
 };

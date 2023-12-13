@@ -16,7 +16,7 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	try {
-		console.info('POST /auth/login');
+		console.log('POST /auth/login');
 		const authorization = req.headers['authorization'] as string;
 		const loginResponse = await AuthProvider.login(authorization);
 		const authToken = 'Bearer ' + loginResponse.accessToken;
@@ -33,7 +33,7 @@ export default async (
 
 		return;
 	} catch (err) {
-		console.error(err);
+		console.log(err);
 		next(err);
 	}
 };
