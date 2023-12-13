@@ -73,7 +73,7 @@ export interface InteractionCreation {
 }
 
 export interface Interaction2BCompleted {
-  id: string;
+  interaction_id: string;
   observation: string;
 }
 

@@ -5,8 +5,12 @@ import { IonModal } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
-import { Customer } from 'src/app/core/interfaces/customer.model';
-import { C_STATUS } from 'src/app/core/interfaces/customer.model';
+import {
+  Customer,
+  C_STATUS,
+  Interaction2BCompleted,
+} from 'src/app/core/interfaces/customer.model';
+import { InteractionService } from 'src/app/core/services/interaction.service';
 
 export enum Phases {
   loading,
@@ -61,6 +65,12 @@ export class InteractionComponent implements OnInit {
 
   filteredCounts: { [key: string]: number } = {};
   showLoading: boolean = false;
+
+  interactionToBeCompleted: Interaction2BCompleted = {
+    interaction_id: '',
+    observation: '',
+  };
+  interactionService: InteractionService | undefined;
 
   constructor(
     private dataService: DataService,
@@ -292,6 +302,18 @@ export class InteractionComponent implements OnInit {
       this.selectedFilterTab = this.filterList[currentIndex + 1].id;
       this.applyFilters(this.selectedFilterTab);
     }
+    this.loadData();
+  }
+
+  handleInteractionComplete(data: Interaction2BCompleted) {
+    this.interactionToBeCompleted = data;
+    this.completeInteraction();
+  }
+
+  completeInteraction() {
+    this.interactionService?.completePlannedInteractions(
+      this.interactionToBeCompleted
+    );
     this.loadData();
   }
 }

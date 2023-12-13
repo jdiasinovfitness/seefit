@@ -187,6 +187,6 @@ export class InteractionService {
 
   completePlannedInteractions(interaction: Interaction2BCompleted): void {
     // TODO: Implement API Call
-    const url = `/interaction/${interaction.id}/complete`;
+    const url = `/interaction/${interaction.interaction_id}/complete`;
   }
 }
