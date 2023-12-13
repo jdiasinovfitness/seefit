@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Request } from 'express';
 import { processAPIError } from '../../utils/httpErrors';
 import jwt from 'jsonwebtoken';
 
