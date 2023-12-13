@@ -2,6 +2,7 @@ import { apiVersionError } from '../../utils/ErrorHandler';
 import { Route } from '../../utils';
 import Auth from './actions/Auth';
 import Config from './actions/Config';
+import Refresh_Auth from './actions/Refresh_Auth';
 
 const routes: Route[] = [
 	{
@@ -12,7 +13,7 @@ const routes: Route[] = [
 	{
 		path: '/auth/refresh',
 		method: 'POST',
-		handler: [Auth, apiVersionError],
+		handler: [Refresh_Auth, apiVersionError],
 	},
 	{
 		path: '/config',

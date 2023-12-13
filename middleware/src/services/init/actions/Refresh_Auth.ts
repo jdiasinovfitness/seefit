@@ -7,11 +7,13 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	try {
+		console.info('POST /auth/refresh');
 		const authorization = req.headers['authorization'] as string;
 		const refreshResponse = await AuthProvider.refreshLoginToken(authorization);
 		res.status(200).send(refreshResponse);
 		return;
 	} catch (err) {
+		console.error(err);
 		next(err);
 	}
 };

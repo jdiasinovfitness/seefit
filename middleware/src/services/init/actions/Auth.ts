@@ -16,12 +16,11 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	try {
+		console.info('POST /auth/login');
 		const authorization = req.headers['authorization'] as string;
 		const loginResponse = await AuthProvider.login(authorization);
 		const authToken = 'Bearer ' + loginResponse.accessToken;
-		console.log('authToken', authToken);
 		const userInfo = await UserProvider.userProfile(authToken);
-		console.info('userProfile', userInfo);
 
 		const user: ILoginResponse = {
 			userId: loginResponse.user,
@@ -30,11 +29,11 @@ export default async (
 			language: userInfo.language || 'pt',
 			name: userInfo.name,
 		};
-		console.log('user', user);
 		res.status(200).send(user);
 
 		return;
 	} catch (err) {
+		console.error(err);
 		next(err);
 	}
 };
