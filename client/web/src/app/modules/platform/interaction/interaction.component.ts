@@ -5,7 +5,10 @@ import { IonModal } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
-import { Customer } from 'src/app/core/interfaces/customer.model';
+import {
+  Customer,
+  CustomerFullInfo,
+} from 'src/app/core/interfaces/customer.model';
 import { C_STATUS } from 'src/app/core/interfaces/customer.model';
 import { UserService } from 'src/app/core/services/user.service';
 import { ConfigService } from 'src/app/core/services/config.service';

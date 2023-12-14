@@ -1,29 +1,29 @@
 <div class="base-line">
-
   <!-- Comments Input -->
   <span>
-    <ion-item color="light ion-no-padding"
-              mode="md">
-      <ion-input class="custom"
-                 mode="md"
-                 color="primary"
-                 type="text"
-                 [value]=observation
-                 [placeholder]="''"
-                 [label]="'interaction.data.observation' | translate"
-                 labelPlacement="floating"
-                 [disabled]="!displayBtn"
-                 (ionChange)="onKeyUp($event)"></ion-input>
+    <ion-item color="light ion-no-padding" mode="md">
+      <ion-input
+        class="custom"
+        mode="md"
+        color="primary"
+        type="text"
+        [value]="observation"
+        [placeholder]="''"
+        [label]="'interaction.tabs.interaction.details.note' | translate"
+        labelPlacement="stacked"
+        [disabled]="!displayBtn"
+        (ionChange)="onKeyUp($event)"
+      ></ion-input>
     </ion-item>
   </span>
 
   <!-- Buttons -->
   <span class="btn-group">
-    <ion-button fill="outline"
-                *ngIf="displayBtn"
-                (click)="onButtonClick(false)">{{'interaction.data.btn-discard' | translate}} </ion-button>
-    <ion-button fill="solid"
-                *ngIf="displayBtn"
-                (click)="onButtonClick(true)">{{'interaction.data.btn-submit' | translate}}</ion-button>
+    <ion-button fill="solid" *ngIf="displayBtn" (click)="onButtonClick(true)">{{
+      "interaction.data.btn-submit" | translate
+    }}</ion-button>
+    <ion-button fill="outline" *ngIf="displayBtn" (click)="onButtonClick(false)"
+      >{{ "interaction.data.btn-discard" | translate }}
+    </ion-button>
   </span>
 </div>

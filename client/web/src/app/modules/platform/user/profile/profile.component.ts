@@ -58,13 +58,13 @@ export class ProfileComponent {
 
   async resetForm() {
     const usr = this.userService.getUserInfo();
-    const lang = await this.langService.getCurrentLang();
+    const lang = this.langService.currentLang;
     if (!usr || !lang) {
       return;
     }
 
     this.userData = usr;
-    this.langList = await this.langService.getLangList();
+    this.langList = this.langService.languages;
     this.userForm = this.formBuilder.group({
       name: [usr?.name, [Validators.required]],
       lang: [lang, [Validators.required]],
@@ -76,7 +76,7 @@ export class ProfileComponent {
     const usr = this.userService.getUserInfo();
     const { name, lang, password } = this.userForm.value;
     const hasNewName = name && name !== usr?.name;
-    const hasNewLang = lang && lang !== this.langService.getCurrentLang();
+    const hasNewLang = lang && lang !== this.langService.currentLang;
     const hasNewPassword = password && password !== '';
 
     if (hasNewName) {
@@ -88,7 +88,7 @@ export class ProfileComponent {
     }
 
     if (hasNewLang) {
-      await this.langService.useLang(lang);
+      this.langService.currentLang = lang;
       const instLang = this.langService.translate(
         'user.profile.form.confirm.lang'
       );

@@ -8,7 +8,6 @@
 
   padding-left: 3px;
 
-
   span {
     display: flex;
     align-items: center;
@@ -35,7 +34,7 @@
   .btn-group {
     justify-content: flex-end;
     flex-grow: 1;
-
+    padding: 10px 0px 10px;
     margin-bottom: 12px;
 
     :first-child {
@@ -43,17 +42,42 @@
     }
   }
 
-}
+  .btn-discard,
+  .btn-submit {
+    min-width: 120px;
+    min-height: 40px;
+    margin: 10px 5px;
+  }
 
-ion-input.custom {
-  --padding-start: 0px !important;
-}
+  ion-button {
+    min-width: 120px;
+    --border-radius: 8px;
+  }
 
-// Input border bottom color on focus
-ion-item {
-  --background: transparent;
+  @media screen and (max-width: 568px) {
+    .btn-group {
+      display: block !important;
+      align-items: center;
+      .btn-discard,
+      .btn-submit {
+        width: -webkit-fill-available;
+      }
+      .observation {
+        font-size: 15px;
+      }
+    }
+  }
 
-  .has-focus {
-    border-bottom: solid 2px $primary;
+  ion-input.custom {
+    --padding-start: 0px !important;
+  }
+
+  // Input border bottom color on focus
+  ion-item {
+    --background: transparent;
+
+    .has-focus {
+      border-bottom: solid 2px $primary;
+    }
   }
 }
