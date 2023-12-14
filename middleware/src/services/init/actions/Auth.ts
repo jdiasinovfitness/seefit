@@ -8,6 +8,7 @@ interface ILoginResponse {
 	userId: string;
 	language: string;
 	name: string;
+	pluginResult?: string;
 }
 
 export default async (
@@ -28,6 +29,7 @@ export default async (
 			refreshToken: loginResponse.refreshToken,
 			language: userInfo.language || 'pt',
 			name: userInfo.name,
+			pluginResult: loginResponse.pluginResult,
 		};
 		res.status(200).send(user);
 

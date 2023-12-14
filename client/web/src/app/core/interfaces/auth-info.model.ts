@@ -1,11 +1,18 @@
+import { GymnList } from './core.model';
+
 export interface AuthInfo {
-  id: string;
-  role: string;
-  acessToken: string;
+  userId: string;
+  accessToken: string;
   refreshToken?: string;
   avatar?: string;
   name: string;
   email: string;
+  role: string;
+  language: string;
+}
+
+export interface RefreshInfo {
+  access_token: string;
 }
 
 export interface LangInfo {

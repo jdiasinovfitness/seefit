@@ -26,15 +26,16 @@
     },
     "footer": {
       "origin": {
-        "title": "Orígem",
-        "close": "close",
-        "save": "save"
+        "title": "Gyms",
+        "modal-title": "Gyms",
+        "close": "Close",
+        "save": "Save"
       },
       "profile": {
-        "title": "Perfil"
+        "title": "Profile"
       },
       "logout": {
-        "title": "Sair"
+        "title": "Logout"
       }
     }
   },
@@ -43,6 +44,7 @@
       "btn-submit": "LOGIN",
       "welcome": "Welcome to login page",
       "register-link": "Forgot your password?",
+      "guide-short-description": "Fullfill the form to continue",
       "form": {
         "email": {
           "label": "Email",

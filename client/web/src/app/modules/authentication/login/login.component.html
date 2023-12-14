@@ -15,6 +15,7 @@
             "auth.login.form.email.label" | translate
           }}</ion-label>
           <ion-input
+            aria-label="email input element"
             type="email"
             formControlName="email"
             inputmode="email"
@@ -48,6 +49,7 @@
             "auth.login.form.pwd.label" | translate
           }}</ion-label>
           <ion-input
+            aria-label="password input element"
             [type]="passwordType"
             formControlName="password"
             placeholder="{{ 'auth.login.form.pwd.placeholder' | translate }}"
@@ -84,13 +86,10 @@
         </ion-item>
 
         <div class="btn-row">
-          <ion-button
-            fill="clear"
-            [routerLink]="['/auth/reset-request']"
-            routerDirection="forward"
-          >
-            {{ "auth.login.register-link" | translate }}
+          <ion-button class="no-pointer" fill="clear">
+            {{ "auth.login.guide-short-description" | translate }}
           </ion-button>
+
           <ng-container [ngSwitch]="currentPhase">
             <ion-button
               expand="block"
@@ -105,6 +104,11 @@
             </ion-button>
           </ng-container>
         </div>
+        <ion-item *ngIf="this.currentPhase === 2">
+          <ion-note slot="end" color="danger"
+            >Something comes up! Try again!</ion-note
+          >
+        </ion-item>
       </form>
     </div>
   </div>

@@ -39,7 +39,7 @@ export class ResumeComponent implements OnInit {
   }
 
   resumedAnswers(group: GroupData): { question: Prompts; answer: string }[] {
-    let questionAnswer: { question: Prompts; answer: string }[] = [];
+    const questionAnswer: { question: Prompts; answer: string }[] = [];
 
     group.prompts.forEach((prompt: Prompts) => {
       let answer = '';

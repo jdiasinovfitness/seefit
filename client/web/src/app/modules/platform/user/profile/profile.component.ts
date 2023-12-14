@@ -3,8 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../../core/services/user.service';
 import { ToastService } from '../../../../core/services/toast.service';
 import { LangService } from '../../../../core/services/lang.service';
-import { AuthInfo, LangInfo, } from '../../../../core/interfaces/auth-info.model';
+import {
+  AuthInfo,
+  LangInfo,
+} from '../../../../core/interfaces/auth-info.model';
 import { firstValueFrom } from 'rxjs';
+import { UserInfo } from '../../../../core/interfaces/core.model';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +16,7 @@ import { firstValueFrom } from 'rxjs';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  userData!: AuthInfo;
+  userData!: UserInfo;
   newName!: string;
   langList!: Array<LangInfo>;
   userForm!: FormGroup;
@@ -24,7 +28,7 @@ export class ProfileComponent {
     public userService: UserService,
     private formBuilder: FormBuilder,
     private toastService: ToastService,
-    private langService: LangService,
+    private langService: LangService
   ) {
     this.resetForm();
     this.alertButtons = [
@@ -45,13 +49,15 @@ export class ProfileComponent {
 
   setAlert(event: any) {
     this.isAlertOpen = false;
-    if (event.detail.role === 'cancel') { return; }
+    if (event.detail.role === 'cancel') {
+      return;
+    }
 
     this.onSubmit();
   }
 
   async resetForm() {
-    const usr = await firstValueFrom(this.userService.user$);
+    const usr = this.userService.getUserInfo();
     const lang = await this.langService.getCurrentLang();
     if (!usr || !lang) {
       return;
@@ -67,7 +73,7 @@ export class ProfileComponent {
   }
 
   async onSubmit() {
-    const usr = await firstValueFrom(this.userService.user$);
+    const usr = this.userService.getUserInfo();
     const { name, lang, password } = this.userForm.value;
     const hasNewName = name && name !== usr?.name;
     const hasNewLang = lang && lang !== this.langService.getCurrentLang();
