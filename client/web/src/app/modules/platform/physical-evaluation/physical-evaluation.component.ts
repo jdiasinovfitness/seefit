@@ -77,8 +77,6 @@ export class PhysicalEvaluationComponent {
       if (this.currentStep > 0) {
         this.currentStep--;
       }
-      if (!this.completedSteps[this.currentStep]) {
-      }
     }
     this.resumeSelected = false;
     this.content.scrollToTop(200);
