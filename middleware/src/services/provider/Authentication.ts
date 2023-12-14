@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Request } from 'express';
 import { processAPIError } from '../../utils/httpErrors';
 import jwt from 'jsonwebtoken';
 
@@ -17,19 +16,42 @@ interface AuthInfo {
 	refreshToken: string;
 	user: string;
 }
-const login = async (req: Request, token: string): Promise<AuthInfo> => {
+
+export interface IRefreshResponse {
+	access_token: string;
+}
+const login = async (token: string): Promise<AuthInfo> => {
 	try {
 		const response = await axios.request({
 			method: 'POST',
 			url: `${process.env.API_GATEWAY}/auth/login`,
 			headers: {
 				authorization: token,
+				'Content-Type': 'application/json',
 			},
 			params: {
 				'api-version': '1',
 			},
 			responseType: 'json',
 		});
+		return response.data;
+	} catch (err) {
+		throw processAPIError(err);
+	}
+};
+
+const refreshLoginToken = async (token: string): Promise<IRefreshResponse> => {
+	try {
+		const response = await axios.request({
+			method: 'POST',
+			url: `${process.env.API_GATEWAY}/login/refresh`,
+			headers: {
+				authorization: token,
+				'Content-Type': 'application/json',
+			},
+			responseType: 'json',
+		});
+		console.log('Response', response);
 		return response.data;
 	} catch (err) {
 		throw processAPIError(err);
@@ -50,4 +72,5 @@ const decodeToken = async (token: string): Promise<DecodedToken> => {
 export default {
 	login,
 	decodeToken,
+	refreshLoginToken,
 };
