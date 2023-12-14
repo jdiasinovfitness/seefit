@@ -6,17 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 
-
 @NgModule({
-  declarations: [
-    UserComponent,
-    UserMenuComponent,
-  ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
-    SharedModule,
-    FormsModule,
-  ],
+  declarations: [UserComponent, UserMenuComponent],
+  imports: [CommonModule, UserRoutingModule, SharedModule, FormsModule],
 })
-export class UserModule { }
+export class UserModule {}

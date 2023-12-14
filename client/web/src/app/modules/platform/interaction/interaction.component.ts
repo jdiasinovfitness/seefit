@@ -10,6 +10,8 @@ import {
   CustomerFullInfo,
 } from 'src/app/core/interfaces/customer.model';
 import { C_STATUS } from 'src/app/core/interfaces/customer.model';
+import { UserService } from 'src/app/core/services/user.service';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 export enum Phases {
   loading,
@@ -63,7 +65,7 @@ export class InteractionComponent implements OnInit {
   ];
 
   filteredCounts: { [key: string]: number } = {};
-  showLoading: boolean = false;
+  showLoading = false;
 
   constructor(
     private dataService: DataService,

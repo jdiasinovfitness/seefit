@@ -6,6 +6,7 @@ import { MenuData } from '../../core/interfaces/menu.model';
 import { UserService } from '../../core/services/user.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { ConfigService } from '../../core/services/config.service';
 
 @Component({
   selector: 'app-platform',
@@ -14,39 +15,46 @@ import { Router } from '@angular/router';
 })
 export class PlatformComponent implements OnInit {
   profilePhoto = 'https://ionicframework.com/docs/img/demos/avatar.svg';
-  userName = 'John Doe';
+  userName = '';
   public menuItems!: Array<MenuData>;
-  public originList!: Array<any>;
-  selectedOrigin!: number;
-
+  public locList!: Array<any>;
+  selectedLoc!: number;
+  show = false;
   constructor(
     private router: Router,
     private menu: MenuController,
     private authService: AuthService,
     private userService: UserService,
     public dataService: DataService,
-    private modalCtrl: ModalController
-  ) { }
+    private modalCtrl: ModalController,
+    private configService: ConfigService
+  ) {
+    this.configService.configChangeEmmitter$.subscribe((ev) => {
+      console.log('Recebeu', ev);
+      this.show = true;
+    });
+  }
 
   ngOnInit(): void {
     this.menuItems = this.dataService.menuItems;
-    this.originList = this.dataService.originList;
-    this.selectedOrigin = this.dataService.selectedOrigin;
+    this.locList = this.configService.getGymnList();
+    this.selectedLoc = this.locList[0]?.locationId;
+    this.userName = this.userService.getUserInfo()?.name || '';
   }
 
-  onOriginSelect(event: any) {
+  onLocationSelect(event: any) {
     const val = event.target.value;
-    this.selectedOrigin = val ? val : this.selectedOrigin;
+    this.selectedLoc = val ? val : this.selectedLoc;
   }
 
   cancel() {
-    this.selectedOrigin = this.dataService.selectedOrigin;
+    this.selectedLoc = this.dataService.selectedOrigin;
     this.modalCtrl.dismiss();
   }
 
   confirm() {
     this.modalCtrl.dismiss();
-    this.dataService.selectedOrigin = this.selectedOrigin;
+    this.dataService.selectedOrigin = this.selectedLoc;
   }
 
   navigate(path: string) {

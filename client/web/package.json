@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "sync": "ng build && ionic capacitor build android && capacitor build android && ionic sync && npx cap sync && cd electron && npm run electron:pack && cd ..",
-    "start": "ng serve --port 4400 --host=0.0.0.0 --disable-host-check",
+    "start": "ng serve --port 4400 --host=0.0.0.0 --disable-host-check --poll=2000",
     "serve": "ionic serve --no-open",
     "start:ios": "ionic cap run ios -l --external",
     "start:android": "ionic cap run android -l --external",

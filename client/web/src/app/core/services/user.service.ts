@@ -1,36 +1,41 @@
 import { Injectable } from '@angular/core';
-import { AuthInfo } from '../interfaces/auth-info.model';
-import { BehaviorSubject, firstValueFrom } from 'rxjs';
+import { BehaviorSubject, Observable, firstValueFrom } from 'rxjs';
 import { NotificationData } from '../interfaces/notification.model';
+import { UserInfo } from '../interfaces/core.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  userSubject = new BehaviorSubject<AuthInfo | undefined>(undefined);
-  user$ = this.userSubject?.asObservable();
-
+  private userInfo: UserInfo | undefined;
   isUserMenuOpen = false;
   isReportMenuOpen = false;
 
-  notificationSubject = new BehaviorSubject<Array<NotificationData> | undefined>(undefined);
+  notificationSubject = new BehaviorSubject<
+    Array<NotificationData> | undefined
+  >(undefined);
   notification$ = this.notificationSubject?.asObservable();
 
-  constructor() {
-    this.fetchUserInfo();
-    this.fetchNotificationData();
+  constructor() {}
+
+  getUserInfo() {
+    return this.userInfo;
+  }
+
+  setUserInfo(data: UserInfo) {
+    this.userInfo = data;
   }
 
   // FIXME: implement API request
   async updateUserName(name: string) {
-    if (!name) {
+    /* if (!name) {
       return;
     }
     const usr = await firstValueFrom(this.user$);
     if (!usr) {
       return;
     }
-    usr.name = name;
+    usr.name = name;*/
   }
 
   // FIXME: implement API request
@@ -41,26 +46,9 @@ export class UserService {
     // this.user.name = name;
   }
 
-  // FIXME: implement API request
-  fetchUserInfo() {
-    this.userSubject.next(this.getDummyAuthData());
-  }
-
-  fetchNotificationData() {
-    this.notificationSubject.next(this.getDummyNotificationData());
-  }
-
-  getDummyAuthData() {
-    const authInfo: AuthInfo = {
-      id: '3H8J09',
-      acessToken: '',
-      refreshToken: '',
-      role: 'Instructor',
-      avatar: '../../../../../assets/temp_images/userPhotos/profile_blank.jpg',
-      name: 'Usain Bolt',
-      email: 'usain.bolt@inovfitness.com',
-    };
-    return authInfo;
+  // FIXME: implement API request for retrive more information about the user
+  fetchUserInfo(userId: string) {
+    /* this.userSubject.next(user);*/
   }
 
   getDummyNotificationData() {

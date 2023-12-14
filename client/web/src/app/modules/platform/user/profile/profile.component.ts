@@ -8,6 +8,7 @@ import {
   LangInfo,
 } from '../../../../core/interfaces/auth-info.model';
 import { firstValueFrom } from 'rxjs';
+import { UserInfo } from '../../../../core/interfaces/core.model';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +16,7 @@ import { firstValueFrom } from 'rxjs';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  userData!: AuthInfo;
+  userData!: UserInfo;
   newName!: string;
   langList!: Array<LangInfo>;
   userForm!: FormGroup;
@@ -56,7 +57,7 @@ export class ProfileComponent {
   }
 
   async resetForm() {
-    const usr = await firstValueFrom(this.userService.user$);
+    const usr = this.userService.getUserInfo();
     const lang = this.langService.currentLang;
     if (!usr || !lang) {
       return;
@@ -72,7 +73,7 @@ export class ProfileComponent {
   }
 
   async onSubmit() {
-    const usr = await firstValueFrom(this.userService.user$);
+    const usr = this.userService.getUserInfo();
     const { name, lang, password } = this.userForm.value;
     const hasNewName = name && name !== usr?.name;
     const hasNewLang = lang && lang !== this.langService.currentLang;

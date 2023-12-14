@@ -1,49 +1,26 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { GlobalStorage } from '../storage/global.storage';
 import { ConfigService } from './config.service';
 import { Buffer } from 'buffer';
 import { Router } from '@angular/router';
-import { AuthInfo } from '../interfaces/auth-info.model';
-
-export class UserEntity {
-  private id: string | undefined;
-  private email: string | undefined;
-  private name: string | undefined;
-
-  constructor(id?: string, email?: string, name?: string) {
-    this.id = id;
-    (this.email = email), (this.name = name);
-  }
-
-  get userId() {
-    return this.id;
-  }
-  get userName() {
-    return this.name;
-  }
-  get userEmail() {
-    return this.email;
-  }
-}
+import { AuthInfo, RefreshInfo } from '../interfaces/auth-info.model';
+import { UserService } from './user.service';
+import { UserInfo } from '../interfaces/core.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private authToken = '';
-  private initialData: string[] = ['t'];
-  private user: UserEntity | undefined;
+  private authToken: string | undefined;
+  private refreshAuthToken: string | undefined;
 
   constructor(
-    @Inject(GlobalStorage) private appStorage: Storage,
     private http: HttpClient,
+    private router: Router,
     private config: ConfigService,
-    private router: Router
-  ) {
-    this.authToken = this.initialData[0];
-  }
+    private user: UserService
+  ) {}
 
   /* - Access methods and access functions - */
 
@@ -52,19 +29,31 @@ export class AuthService {
   }
   set token(token: string) {
     this.authToken = token;
+    localStorage.setItem('t', token);
   }
 
-  isAuthenticated(): boolean {
-    return true;
+  get refreshToken() {
+    return this.refreshAuthToken ? this.refreshAuthToken : '';
+  }
+
+  set refreshToken(token: string) {
+    this.refreshAuthToken = token;
   }
 
   /* - Functions - */
 
+  /**
+   * Logins into the platform. API request  middleware to return the essencial data.
+   * @param formValue
+   * @returns accessToken
+   * @returns refreshToken
+   * @returns userId
+   * @returns language
+   */
   async login(formValue: {
     email: string;
     password: string;
   }): Promise<AuthInfo> {
-    //TODO: api call to authentication in order to retrieve the access token
     const authString = Buffer.from(
       `${formValue.email}:${formValue.password}`
     ).toString('base64');
@@ -84,37 +73,59 @@ export class AuthService {
     ).catch((err) => {
       return Promise.reject(err);
     });
+    localStorage.setItem('t', r.accessToken);
+    localStorage.setItem('r_t', r.refreshToken || '');
+    this.refreshAuthToken = r.refreshToken;
+    this.user.setUserInfo(this.retrieveUserInfoObject(r));
+    await this.config.fetchConfigData();
 
-    this.setStorageItem('t', r.acessToken);
-    this.setUserInfo(r);
     return r;
   }
 
   logOut() {
     this.token = '';
-    this.appStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/auth/login']);
   }
-  private getStorageItem(key: string): any {
-    return this.appStorage.getItem(key);
+
+  async postRefreshToken() {
+    const headers = {
+      headers: new HttpHeaders()
+        .append('content-type', 'application/json')
+        .append('authorization', 'Bearer ' + this.refreshCredentials()),
+      params: {
+        'api-version': '1',
+      },
+    };
+
+    const r_t = await firstValueFrom(
+      this.http.post<RefreshInfo>(
+        `${this.config.getApiUrl()}/auth/refresh`,
+        {},
+        headers
+      )
+    ).catch((err) => {
+      return Promise.reject(err);
+    });
+    this.token = r_t.access_token;
+    localStorage.setItem('t', this.token);
+    console.log('TOKEN1', this.token);
+    return r_t;
   }
 
-  private setStorageItem(key: string, value: string): void {
-    this.appStorage.setItem(key, value);
-    if (key === 'token') {
-      this.token = value;
-    }
+  private refreshCredentials(): string | null {
+    return localStorage.getItem('r_t');
   }
 
-  refreshToken() {}
-
-  setUserInfo(loginInfo: AuthInfo) {
-    this.user = new UserEntity(loginInfo.id, loginInfo.email, loginInfo.email);
-    console.log('USERRR', this.user);
+  public isAuthenticated() {
+    return localStorage.getItem('t');
   }
 
-  getUserInfo(): UserEntity | undefined {
-    console.log('THISUSSSSSER', this.user);
-    return this.user;
+  retrieveUserInfoObject(data: AuthInfo): UserInfo {
+    return {
+      name: data.name,
+      language: data.language,
+      id: data.userId,
+    };
   }
 }

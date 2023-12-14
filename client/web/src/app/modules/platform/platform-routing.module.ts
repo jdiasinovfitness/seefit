@@ -15,7 +15,9 @@ const routes: Routes = [
       {
         path: 'interaction',
         loadChildren: () =>
-          import('./interaction/interaction.module').then((m) => m.InteractionModule),
+          import('./interaction/interaction.module').then(
+            (m) => m.InteractionModule
+          ),
       },
       {
         path: 'report',
@@ -42,4 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PlatformRoutingModule { }
+export class PlatformRoutingModule {}

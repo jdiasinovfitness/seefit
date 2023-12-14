@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
 
 export enum Phases {
   loading,
@@ -32,10 +33,15 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router,
     private formBuilder: FormBuilder,
+    private user: UserService
   ) {
+    this.currentPhase = Phases.empty;
     this.authForm = this.formBuilder.group({
-      email: ['admin@inovfitness.com', [Validators.required, Validators.email]],
-      password: ['admin', [Validators.required]],
+      email: [
+        'testes.inovretail@gmail.com',
+        [Validators.required, Validators.email],
+      ],
+      password: ['TestesNPD2020.', [Validators.required]],
     });
   }
 
@@ -44,7 +50,7 @@ export class LoginComponent {
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
-  signIn() {
+  async signIn() {
     if (!this.authForm.valid) {
       return;
     }
@@ -53,23 +59,16 @@ export class LoginComponent {
     }
 
     this.currentPhase = Phases.loading;
-    console.log('this.authForm?.value)', this.authForm?.value); // TODO: Remove on PR!
-    this.authService
-      .login(this.authForm?.value)
-      .then((res) => {
-        this.currentPhase = Phases.success;
-        this.authForm.get('password')?.setErrors(null);
 
-        this.currentPhase = Phases.empty;
-        this.router.navigate(['platform/interaction']);
-      })
+    const loginInfo = await this.authService
+      .login(this.authForm?.value)
       .catch((err) => {
         // TODO: Implement error logic
+        console.log('Phases.error', Phases.error);
         this.currentPhase = Phases.error;
-        console.log('Error', err); // TODO: Remove on PR!
-
-        this.authForm.get('password')?.setErrors({ wrongPassword: true });
-        this.router.navigate(['platform/interaction']); // FIXME: remove once done!
+        // this.authForm.get('password')?.setErrors({ wrongPassword: true });
       });
+
+    this.router.navigate(['/platform']);
   }
 }

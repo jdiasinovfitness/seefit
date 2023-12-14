@@ -153,12 +153,6 @@ export class DataService {
             icon: 'square-outline',
             disabled: false,
           },
-          {
-            title: 'menu.items.interaction.data-report',
-            url: '/platform/report',
-            icon: 'podium-outline',
-            disabled: true,
-          },
           // {
           //   title: 'menu.items.interaction.customer',
           //   url: '/platform/customer',
@@ -166,32 +160,6 @@ export class DataService {
           //   disabled: false,
           // },
         ],
-      },
-      {
-        title: 'menu.items.health.title',
-        url: '/platform',
-        icon: 'medkit',
-        disabled: false,
-        subMenu: [
-          {
-            title: 'menu.items.interaction.pe',
-            url: '/platform/pe',
-            icon: 'scale-outline',
-            disabled: false,
-          },
-        ],
-      },
-      {
-        title: 'menu.items.training.title',
-        url: '/user/profile',
-        icon: 'barbell',
-        disabled: false,
-      },
-      {
-        title: 'menu.items.feed.title',
-        url: '/user/profile',
-        icon: 'logo-rss',
-        disabled: false,
       },
     ];
   }

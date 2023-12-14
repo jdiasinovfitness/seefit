@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   CustomerActivity,
   I_TYPE,
@@ -10,7 +10,7 @@ import { HistoryService } from 'src/app/core/services/history.service';
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.scss'],
 })
-export class HistoryComponent {
+export class HistoryComponent implements OnInit {
   activityTypes = I_TYPE;
   noComments = 'No comments to display';
   info: Array<CustomerActivity> = []; // TODO: set correct model type after API available

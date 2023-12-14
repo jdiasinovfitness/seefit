@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './core/guards/auth.guard';
+import { authGuard } from './core/services/guards/auth_guard.service';
+import { noAuthGuard } from './core/services/guards/no_auth_guard.service';
+import { configGuard } from './core/services/guards/config_guard.service';
 
 const routes: Routes = [
   {
@@ -10,6 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'auth',
+    canActivate: [noAuthGuard],
     loadChildren: () =>
       import('./modules/authentication/authentication.module').then(
         (m) => m.AuthenticationModule
@@ -17,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'platform',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./modules/platform/platform.module').then(
         (m) => m.PlatformModule
@@ -35,4 +38,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -9,5 +9,5 @@ export class InputComponent {
   @Input() label!: string;
   @Input() placeholder!: string;
   @Input() prompt!: any;
-  value: string = '';
+  value = '';
 }

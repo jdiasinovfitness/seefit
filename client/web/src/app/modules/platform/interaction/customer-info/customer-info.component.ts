@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICIIcons } from '../../../../core/interfaces/icidata.model';
 import { DataService } from 'src/app/core/services/data.service';
 import {
@@ -13,7 +13,7 @@ import { CustomerService } from 'src/app/core/services/customer.service';
   templateUrl: './customer-info.component.html',
   styleUrls: ['./customer-info.component.scss'],
 })
-export class CustomerInfoComponent {
+export class CustomerInfoComponent implements OnInit {
   statusTypes = C_STATUS;
   icons: Array<ICIIcons> = [];
   customerFullInfo: CustomerFullInfo | undefined;

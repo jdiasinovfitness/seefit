@@ -14,7 +14,7 @@
 </ion-header>
 
 <!-- SideBar Opened -->
-<ion-menu contentId="mainContent" type="push">
+<ion-menu *ngIf="show" contentId="mainContent" type="push">
   <ion-header type="ios">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -126,18 +126,18 @@
             <ion-content>
               <ion-list>
                 <ion-radio-group
-                  [value]="selectedOrigin"
-                  (ionChange)="onOriginSelect($event)"
+                  [value]="selectedLoc"
+                  (ionChange)="onLocationSelect($event)"
                 >
                   <ion-radio
-                    [value]="org.id"
-                    *ngFor="let org of originList; let i = index"
+                    [value]="loc.locationId"
+                    *ngFor="let loc of locList; let i = index"
                     labelPlacement="end"
                     justify="start"
                     slot="end"
                   >
                     <ion-item class="radio-item">
-                      {{ org.name }}
+                      {{ loc.locationName }}
                     </ion-item>
                   </ion-radio>
                 </ion-radio-group>

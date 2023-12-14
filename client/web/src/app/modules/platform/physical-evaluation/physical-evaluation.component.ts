@@ -25,7 +25,7 @@ export class PhysicalEvaluationComponent {
   completedSteps: boolean[] = [];
   nextStepClicked = false;
   nextClickedSteps: boolean[] = [];
-  showPe: boolean = false;
+  showPe = false;
   resumeScreen = 0;
   resumeSelected = false;
 
@@ -76,8 +76,6 @@ export class PhysicalEvaluationComponent {
     } else {
       if (this.currentStep > 0) {
         this.currentStep--;
-      }
-      if (!this.completedSteps[this.currentStep]) {
       }
     }
     this.resumeSelected = false;
@@ -150,10 +148,10 @@ export class PhysicalEvaluationComponent {
     if (!this.pEData || this.pEData.length === 0) {
       return false;
     }
-    for (let pData of this.pEData) {
-      for (let step of pData.steps) {
-        for (let group of step.group) {
-          for (let prompt of group.prompts) {
+    for (const pData of this.pEData) {
+      for (const step of pData.steps) {
+        for (const group of step.group) {
+          for (const prompt of group.prompts) {
             if (!this.isAnswered(prompt)) {
               return false;
             }

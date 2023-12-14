@@ -15,6 +15,7 @@ interface AuthInfo {
 	accessToken: string;
 	refreshToken: string;
 	user: string;
+	pluginResult: string;
 }
 
 export interface IRefreshResponse {
@@ -51,7 +52,6 @@ const refreshLoginToken = async (token: string): Promise<IRefreshResponse> => {
 			},
 			responseType: 'json',
 		});
-		console.log('Response', response);
 		return response.data;
 	} catch (err) {
 		throw processAPIError(err);

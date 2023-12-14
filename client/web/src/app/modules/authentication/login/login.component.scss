@@ -89,3 +89,9 @@ form {
   top: 24px !important;
   margin: 0 auto !important;
 }
+
+.no-pointer {
+  cursor: none;
+  pointer-events: none;
+
+}

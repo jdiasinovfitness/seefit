@@ -27,8 +27,8 @@
     },
     "footer": {
       "origin": {
-        "title": "Orígem",
-        "modal-title": "Orígens",
+        "title": "Ginásios",
+        "modal-title": "Ginásios",
         "close": "Cancelar",
         "save": "Alterar"
       },
@@ -45,6 +45,8 @@
       "btn-submit": "LOGIN",
       "welcome": "Welcome to login page",
       "register-link": "Forgot your password?",
+      "guide-short-description": "Fullfill the form to continue",
+
       "form": {
         "email": {
           "label": "Email",

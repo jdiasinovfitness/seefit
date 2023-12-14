@@ -9,6 +9,7 @@ import { ObservationComponent } from './observation/observation.component';
 import { IciListHeaderComponent } from './ici-list-header/ici-list-header.component';
 import { SharedModule } from '../../../core/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from 'src/app/core/services/user.service';
 
 @NgModule({
   declarations: [
@@ -26,5 +27,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
   ],
+  providers: [UserService],
 })
-export class InteractionModule { }
+export class InteractionModule {}
