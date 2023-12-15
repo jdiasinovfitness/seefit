@@ -95,7 +95,7 @@ export default async (
 		for (const c of plannedInteractions.customers) {
 			responseCustomers.push({
 				id: c.code,
-				code: c.code,
+				code: c.loyalty_code,
 				name: c.name,
 				photo: c.photo,
 				dob: c.dob,
