@@ -60,11 +60,14 @@ export default async (
 	next: NextFunction
 ): Promise<void> => {
 	try {
+		console.log('GET /liveclub/interactions/planned');
 		const authorization = req.headers['authorization'] as string;
 		const in_club = req.query['in_club'] as boolean | undefined;
 		const loc = req.query['location_code'] as string | undefined;
 		const page = req.query['page'] as number | undefined;
 		const size = req.query['size'] as number | undefined;
+
+		console.log('Params', req.query);
 		let enddate = new Date();
 		// add a day
 		enddate.setDate(enddate.getDate() + 1);
@@ -78,10 +81,14 @@ export default async (
 			start_date: new Date().toISOString(),
 			end_date: enddate.toISOString(),
 		};
+		console.log('query', query);
 		const plannedInteractions = await LiveClubProvider.interactionsPlanned(
 			query,
 			authorization
 		);
+
+		console.log('ResponseProvider', plannedInteractions);
+
 		let responseCustomers: Array<ResponseCustomers> = [];
 
 		for (const c of plannedInteractions) {

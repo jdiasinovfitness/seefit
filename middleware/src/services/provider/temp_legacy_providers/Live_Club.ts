@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { processAPIError } from '../../../utils/httpErrors';
+import { UnderlyingSink } from 'stream/web';
 
 export interface QueryInteractions {
 	origin: string;
@@ -15,7 +16,7 @@ const interactionsPlanned = async (
 	token: string
 ): Promise<any[]> => {
 	try {
-		const response: AxiosResponse<QueryInteractions[]> = await axios.request({
+		const response: AxiosResponse<any[]> = await axios.request({
 			method: 'GET',
 			url: `https://scfitness.api.inovretail.com/interaction/instore`,
 			headers: {
