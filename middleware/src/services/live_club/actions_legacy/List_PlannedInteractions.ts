@@ -67,7 +67,6 @@ export default async (
 		const page = req.query['page'] as number | undefined;
 		const size = req.query['size'] as number | undefined;
 
-		console.log('Params', req.query);
 		let endDate = new Date();
 		endDate.setHours(0, 0, 0, 0);
 		endDate.setDate(endDate.getDate() + 1);
@@ -86,13 +85,10 @@ export default async (
 			start_date: startDate.toISOString(),
 			end_date: endDate.toISOString(),
 		};
-		console.log('query', query);
 		const plannedInteractions = await LiveClubProvider.interactionsPlanned(
 			query,
 			authorization
 		);
-
-		console.log('ResponseProvider', plannedInteractions);
 
 		let responseCustomers: Array<ResponseCustomers> = [];
 
@@ -122,7 +118,7 @@ export default async (
 					callBlock: false,
 				},
 				additionalInfo: { icons: [] },
-				healthRisk: c.last_conclusion_af.personal_history ? true : false,
+				healthRisk: c.last_conclusion_af?.personal_history ? true : false,
 			});
 		}
 
