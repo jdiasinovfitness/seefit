@@ -42,9 +42,10 @@ const normalizePermissions = (permissions: Permission[]) => {
 };
 
 const normalizeLocations = (locations: Location[]) => {
-	return locations.map(({ id, description, origin }) => ({
+	return locations.map(({ id, description, origin, code }) => ({
 		locationId: id,
 		locationName: description,
+		locationCode: code,
 		origin,
 	}));
 };
