@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from 'express';
 import LiveClubProvider, {
 	QueryInteractions,
 } from '../../provider/temp_legacy_providers/Live_Club';
-import { start } from 'repl';
 
 export interface I18N {
 	lang: string;

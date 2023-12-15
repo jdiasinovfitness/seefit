@@ -1,6 +1,10 @@
 import axios, { AxiosResponse } from 'axios';
 import { processAPIError } from '../../../utils/httpErrors';
 
+export interface returnInter {
+	count: number;
+	customers: Array<any>;
+}
 export interface QueryInteractions {
 	origin: string;
 	start_date?: string;
@@ -13,9 +17,9 @@ export interface QueryInteractions {
 const interactionsPlanned = async (
 	query: QueryInteractions,
 	token: string
-): Promise<any[]> => {
+): Promise<returnInter> => {
 	try {
-		const response: AxiosResponse<any[]> = await axios.request({
+		const response: AxiosResponse<returnInter> = await axios.request({
 			method: 'GET',
 			url: `https://scfitness.api.inovretail.com/interaction/instore`,
 			headers: {
