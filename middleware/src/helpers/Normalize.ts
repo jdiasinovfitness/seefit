@@ -16,7 +16,12 @@ export interface NormalizedData {
 			};
 		}[];
 	}[];
-	locations: { locationName: string; locationId: string; origin: string }[];
+	locations: {
+		locationName: string;
+		locationId: string;
+		origin: string;
+		locationCode: string;
+	}[];
 }
 const normalizeOrigins = (origins: UserOrigin[]) => {
 	return origins.map(({ code, id }) => ({
@@ -42,9 +47,10 @@ const normalizePermissions = (permissions: Permission[]) => {
 };
 
 const normalizeLocations = (locations: Location[]) => {
-	return locations.map(({ id, description, origin }) => ({
+	return locations.map(({ id, description, origin, code }) => ({
 		locationId: id,
 		locationName: description,
+		locationCode: code,
 		origin,
 	}));
 };
