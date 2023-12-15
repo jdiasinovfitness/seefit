@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
 import { processAPIError } from '../../../utils/httpErrors';
-import { UnderlyingSink } from 'stream/web';
 
 export interface QueryInteractions {
 	origin: string;
