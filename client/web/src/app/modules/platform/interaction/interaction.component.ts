@@ -5,13 +5,12 @@ import { IonModal } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
-import { InteractionService } from 'src/app/core/services/interaction.service';
 import {
   Customer,
   C_STATUS,
   Interaction2BCompleted,
-  InteractionInfo,
 } from 'src/app/core/interfaces/customer.model';
+import { InteractionService } from 'src/app/core/services/interaction.service';
 
 export enum Phases {
   loading,
@@ -32,7 +31,6 @@ export class InteractionComponent implements OnInit {
 
   selectedFilterTab: any;
   list: Array<Customer> = [];
-  interactionList: Array<InteractionInfo> = [];
   searchValue = '';
   activeTabList!: Array<string>;
   tabs!: Array<any>;
@@ -308,11 +306,14 @@ export class InteractionComponent implements OnInit {
   }
 
   handleInteractionComplete(data: Interaction2BCompleted) {
-    const index = this.list.findIndex(
-      (item) => item.interaction.id === data.interaction_id
+    this.interactionToBeCompleted = data;
+    this.completeInteraction();
+  }
+
+  completeInteraction() {
+    this.interactionService?.completePlannedInteractions(
+      this.interactionToBeCompleted
     );
-    if (index !== -1) {
-      this.list[index].interaction.status = C_STATUS.COMPLETED;
-    }
+    this.loadData();
   }
 }
