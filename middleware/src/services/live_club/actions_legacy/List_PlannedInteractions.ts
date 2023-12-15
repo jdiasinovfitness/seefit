@@ -122,7 +122,7 @@ export default async (
 			});
 		}
 
-		res.status(200).send(plannedInteractions);
+		res.status(200).send(responseCustomers);
 		return;
 	} catch (err) {
 		console.log(err);
