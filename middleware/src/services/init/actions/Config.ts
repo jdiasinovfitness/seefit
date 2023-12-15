@@ -74,6 +74,7 @@ export default async (
 			const locations = matchedLocations.map(location => ({
 				locationId: location.locationId,
 				locationName: location.locationName,
+				locationCode: location.locationCode,
 			}));
 
 			const newResponseObj: ResponseResult = {

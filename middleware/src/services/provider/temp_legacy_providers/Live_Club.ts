@@ -13,6 +13,8 @@ export interface QueryInteractions {
 	in_club: boolean | undefined;
 	page: number | undefined;
 	size: number | undefined;
+	exclude_class?: boolean | undefined;
+	with_interactions?: boolean | undefined;
 }
 const interactionsPlanned = async (
 	query: QueryInteractions,
