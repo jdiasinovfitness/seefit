@@ -161,11 +161,31 @@ export class InteractionInfoComponent implements OnInit {
     this.handleClick.emit(event);
   }
 
+  /* use when API service is ready */
+  // completeInteraction() {
+  //   const data: Interaction2BCompleted = {
+  //     interaction_id: this.info.interaction.id,
+  //     observation: this.details,
+  //   };
+
+  //   this.interactionService.completePlannedInteraction(data).subscribe({
+  //     next: (response) => {
+  //       this.onInteractionComplete.emit(data);
+  //     },
+  //     error: (error) => {
+  //       console.error(error);
+  //     },
+  //   });
+  // }
   completeInteraction() {
     const data: Interaction2BCompleted = {
-      interaction_id: this.selectedInteraction?.id || '',
+      interaction_id: this.info.id || '',
       observation: this.details,
     };
-    this.onInteractionComplete.emit(data);
+    this.interactionService.completePlannedInteraction(data).subscribe({
+      next: (response) => {
+        this.onInteractionComplete.emit(data);
+      },
+    });
   }
 }

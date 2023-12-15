@@ -6,14 +6,22 @@ import {
   InteractionInfo,
   InteractionTypes,
 } from '../interfaces/customer.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+import { BehaviorSubject, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InteractionService {
   interactionData: Array<InteractionInfo> = [];
+  private dummyInteractions = this.interactionDummyList();
+  private interactionsUpdated = new BehaviorSubject<InteractionInfo[]>(
+    this.dummyInteractions
+  );
+  public interactionsUpdated$ = this.interactionsUpdated.asObservable();
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   interactionDummyList(): Array<InteractionInfo> {
     return [
@@ -185,8 +193,31 @@ export class InteractionService {
     return this.interactionDummyList().filter((item) => item.status === type);
   }
 
-  completePlannedInteractions(interaction: Interaction2BCompleted): void {
-    // TODO: Implement API Call
-    const url = `/interaction/${interaction.interaction_id}/complete`;
+  // completePlannedInteraction(
+  //   interaction: Interaction2BCompleted
+  // ): Observable<any> {
+  //   // TODO: Implemet additional data when API available
+  //   const url = `/interaction/${interaction.interaction_id}/complete`;
+  //   return this.http.post(url, { observation: interaction.observation });
+  // }
+
+  completePlannedInteraction(
+    interactionData: Interaction2BCompleted
+  ): Observable<any> {
+    const interactionIndex = this.dummyInteractions.findIndex(
+      (inter) => inter.id === interactionData.interaction_id
+    );
+
+    if (interactionIndex !== -1) {
+      this.dummyInteractions[interactionIndex].status = C_STATUS.COMPLETED;
+      this.dummyInteractions[interactionIndex].observation =
+        interactionData.observation;
+      this.interactionsUpdated.next(this.dummyInteractions);
+      return of({ success: true });
+    } else {
+      return throwError(
+        () => new Error(`Error ${interactionData.interaction_id}`)
+      );
+    }
   }
 }
