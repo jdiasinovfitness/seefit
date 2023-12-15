@@ -5,11 +5,10 @@ export interface QueryInteractions {
 	origin: string;
 	start_date?: string;
 	end_date?: string;
-	location_code: string | undefined;
-	main_location: string;
-	in_club: boolean;
-	page: number;
-	size: number;
+	main_location: string | undefined;
+	in_club: boolean | undefined;
+	page: number | undefined;
+	size: number | undefined;
 }
 const interactionsPlanned = async (
 	query: QueryInteractions,

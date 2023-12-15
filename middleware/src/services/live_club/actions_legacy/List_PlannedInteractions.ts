@@ -66,7 +66,6 @@ export default async (
 		const page = req.query['page'] as number | undefined;
 		const size = req.query['size'] as number | undefined;
 		let enddate = new Date();
-
 		// add a day
 		enddate.setDate(enddate.getDate() + 1);
 
