@@ -70,7 +70,7 @@ export default async (
 					appCode: app.permissions.appCode,
 				});
 			});
-			console.log("MatchedLoc", matchedLocations);
+			console.log('MatchedLoc', matchedLocations);
 			const locations = matchedLocations.map(location => ({
 				locationId: location.locationId,
 				locationName: location.locationName,
