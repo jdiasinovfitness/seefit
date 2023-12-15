@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import LiveClubProvider, {
 	QueryInteractions,
 } from '../../provider/temp_legacy_providers/Live_Club';
+import { start } from 'repl';
 
 export interface I18N {
 	lang: string;
@@ -68,9 +69,14 @@ export default async (
 		const size = req.query['size'] as number | undefined;
 
 		console.log('Params', req.query);
-		let enddate = new Date();
+		let endDate = new Date();
+		endDate.setHours(0, 0, 0, 0);
+		endDate.setDate(endDate.getDate() + 1);
+
+		let startDate = new Date();
+		startDate.setHours(0, 0, 0, 0);
+
 		// add a day
-		enddate.setDate(enddate.getDate() + 1);
 
 		let query: QueryInteractions = {
 			in_club: in_club,
@@ -78,8 +84,8 @@ export default async (
 			main_location: loc,
 			page: page,
 			size: size,
-			start_date: new Date().toISOString(),
-			end_date: enddate.toISOString(),
+			start_date: startDate.toISOString(),
+			end_date: endDate.toISOString(),
 		};
 		console.log('query', query);
 		const plannedInteractions = await LiveClubProvider.interactionsPlanned(
@@ -91,7 +97,7 @@ export default async (
 
 		let responseCustomers: Array<ResponseCustomers> = [];
 
-		for (const c of plannedInteractions) {
+		for (const c of plannedInteractions.customers) {
 			responseCustomers.push({
 				id: c.code,
 				code: c.code,
