@@ -306,14 +306,11 @@ export class InteractionComponent implements OnInit {
   }
 
   handleInteractionComplete(data: Interaction2BCompleted) {
-    this.interactionToBeCompleted = data;
-    this.completeInteraction();
-  }
-
-  completeInteraction() {
-    this.interactionService?.completePlannedInteractions(
-      this.interactionToBeCompleted
+    const index = this.list.findIndex(
+      (item) => item.interaction.id === data.interaction_id
     );
-    this.loadData();
+    if (index !== -1) {
+      this.list[index].interaction.status = C_STATUS.COMPLETED;
+    }
   }
 }
