@@ -128,9 +128,14 @@ export default async (
 				healthRisk: c.last_conclusion_af?.personal_history ? true : false,
 			});
 		}
-		console.log('HealthRisk', healthRisk);
-		console.log('CallAction', callAction);
-		res.status(200).send(responseCustomers.filter);
+		responseCustomers = healthRisk
+			? responseCustomers.filter(rC => rC.healthRisk)
+			: responseCustomers;
+		responseCustomers = callAction
+			? responseCustomers.filter(rC => rC.interaction.callBlock)
+			: responseCustomers;
+
+		res.status(200).send(responseCustomers);
 		return;
 	} catch (err) {
 		console.log(err);
