@@ -129,14 +129,12 @@ export default async (
 			});
 		}
 
-		console.log('HealthRisk', healthRisk);
-		console.log('CallAction', callAction);
-		// responseCustomers = healthRisk
-		// 	? responseCustomers.filter(rC => rC.healthRisk)
-		// 	: responseCustomers;
-		// responseCustomers = callAction
-		// 	? responseCustomers.filter(rC => rC.interaction.callBlock)
-		// 	: responseCustomers;
+		responseCustomers = healthRisk === true 
+		 	? responseCustomers.filter(rC => rC.healthRisk)
+		 	: responseCustomers;
+		 responseCustomers = callAction === true
+		 	? responseCustomers.filter(rC => rC.interaction.callBlock)
+		 	: responseCustomers;
 
 		res.status(200).send(responseCustomers);
 		return;
