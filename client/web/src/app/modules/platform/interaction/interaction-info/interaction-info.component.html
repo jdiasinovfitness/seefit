@@ -82,6 +82,7 @@
       <span>
         <ion-item color="light ion-no-padding" mode="md">
           <ion-input
+            [(ngModel)]="details"
             class="custom"
             mode="md"
             color="medium"
@@ -97,7 +98,7 @@
         <ion-button
           class="btn-submit"
           fill="solid"
-          (click)="onButtonClick(true)"
+          (click)="completeInteraction()"
           >{{ "interaction.data.btn-submit" | translate }}</ion-button
         >
         <ion-button

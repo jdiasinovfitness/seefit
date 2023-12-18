@@ -72,6 +72,11 @@ export interface InteractionCreation {
   observation: string;
 }
 
+export interface Interaction2BCompleted {
+  interaction_id: string;
+  observation: string;
+}
+
 export interface CurrentLocation {
   inClub: boolean;
   inExerciseRoom: boolean;

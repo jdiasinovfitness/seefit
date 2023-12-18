@@ -130,7 +130,9 @@
               <app-interaction-info
                 [info]="item"
                 (handleClick)="onButtonClick($event)"
+                (onInteractionComplete)="handleInteractionComplete($event)"
               ></app-interaction-info>
+              <ion-spinner *ngIf="showLoading"></ion-spinner>
             </div>
             <div class="expanded-area" *ngIf="activeTabList[i] === '2'">
               <app-history (handleClick)="onButtonClick($event)"></app-history>

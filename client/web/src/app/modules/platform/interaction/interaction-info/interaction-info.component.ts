@@ -5,6 +5,7 @@ import {
   Customer,
   InteractionTypes,
   InteractionInfo,
+  Interaction2BCompleted,
 } from 'src/app/core/interfaces/customer.model';
 import { InteractionService } from 'src/app/core/services/interaction.service';
 
@@ -26,6 +27,7 @@ export class InteractionInfoComponent implements OnInit {
 
   @Input() info!: Customer; // TODO: set correct model type after API available
   @Output() handleClick = new EventEmitter();
+  @Output() onInteractionComplete = new EventEmitter<Interaction2BCompleted>();
 
   typeList!: Array<InteractionTypes>;
   interactionList: Array<InteractionInfo> | undefined;
@@ -157,5 +159,13 @@ export class InteractionInfoComponent implements OnInit {
   }
   updateObservation(event: any) {
     this.handleClick.emit(event);
+  }
+
+  completeInteraction() {
+    const data: Interaction2BCompleted = {
+      interaction_id: this.selectedInteraction?.id || '',
+      observation: this.details,
+    };
+    this.onInteractionComplete.emit(data);
   }
 }

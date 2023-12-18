@@ -7,11 +7,10 @@ import { firstValueFrom } from 'rxjs';
 import { CustomerService } from 'src/app/core/services/customer.service';
 import {
   Customer,
-  CustomerFullInfo,
+  C_STATUS,
+  Interaction2BCompleted,
 } from 'src/app/core/interfaces/customer.model';
-import { C_STATUS } from 'src/app/core/interfaces/customer.model';
-import { UserService } from 'src/app/core/services/user.service';
-import { ConfigService } from 'src/app/core/services/config.service';
+import { InteractionService } from 'src/app/core/services/interaction.service';
 
 export enum Phases {
   loading,
@@ -66,6 +65,12 @@ export class InteractionComponent implements OnInit {
 
   filteredCounts: { [key: string]: number } = {};
   showLoading = false;
+
+  interactionToBeCompleted: Interaction2BCompleted = {
+    interaction_id: '',
+    observation: '',
+  };
+  interactionService: InteractionService | undefined;
 
   constructor(
     private dataService: DataService,
@@ -195,10 +200,6 @@ export class InteractionComponent implements OnInit {
     this.activeTabList[index] = event?.target?.value;
   }
 
-  onSort(event: any) {
-    console.log('event', event); // TODO: Remove on PR!
-  }
-
   async loadData() {
     return new Promise((resolve, reject) => {
       const filter = {
@@ -301,6 +302,18 @@ export class InteractionComponent implements OnInit {
       this.selectedFilterTab = this.filterList[currentIndex + 1].id;
       this.applyFilters(this.selectedFilterTab);
     }
+    this.loadData();
+  }
+
+  handleInteractionComplete(data: Interaction2BCompleted) {
+    this.interactionToBeCompleted = data;
+    this.completeInteraction();
+  }
+
+  completeInteraction() {
+    this.interactionService?.completePlannedInteractions(
+      this.interactionToBeCompleted
+    );
     this.loadData();
   }
 }
