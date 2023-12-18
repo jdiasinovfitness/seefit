@@ -138,6 +138,15 @@ export default async (
 			rC => rC.interaction.callBlock === true
 		);
 
+		console.log(
+			'Number(healthRisk) - Number(true)',
+			Number(healthRisk) - Number(true)
+		);
+		console.log(
+			'Number(callAction) - Number(true)',
+			Number(callAction) - Number(true)
+		);
+
 		responseCustomers =
 			Number(healthRisk) - Number(true) === 0
 				? healthRiskCustomers
