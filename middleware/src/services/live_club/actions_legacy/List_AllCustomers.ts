@@ -91,6 +91,7 @@ export default async (
 			exclude_class: inRoom,
 			with_interactions: withInt,
 		};
+		console.log('Query Implemented', query);
 		const plannedInteractions = await LiveClubProvider.interactionsPlanned(
 			query,
 			authorization

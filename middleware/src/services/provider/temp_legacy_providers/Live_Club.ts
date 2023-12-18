@@ -30,7 +30,7 @@ const interactionsPlanned = async (
 			params: query,
 			responseType: 'json',
 		});
-
+		console.log('Response', response);
 		return response.data;
 	} catch (err) {
 		throw processAPIError(err);
