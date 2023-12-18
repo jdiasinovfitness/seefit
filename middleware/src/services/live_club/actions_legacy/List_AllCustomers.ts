@@ -129,14 +129,17 @@ export default async (
 			});
 		}
 
+		let healthRiskCustomers = responseCustomers.filter(
+			rC => rC.healthRisk === true
+		);
+		let callActionsCustomers = responseCustomers.filter(
+			rC => rC.interaction.callBlock === true
+		);
+
 		responseCustomers =
-			healthRisk === true
-				? responseCustomers.filter(rC => rC.healthRisk)
-				: responseCustomers;
+			healthRisk === true ? healthRiskCustomers : responseCustomers;
 		responseCustomers =
-			callAction === true
-				? responseCustomers.filter(rC => rC.interaction.callBlock)
-				: responseCustomers;
+			callAction === true ? callActionsCustomers : responseCustomers;
 
 		res.status(200).send(responseCustomers);
 		return;
