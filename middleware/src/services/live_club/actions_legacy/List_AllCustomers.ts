@@ -70,7 +70,8 @@ export default async (
 		const loc = req.query['location_code'] as string | undefined;
 		const page = req.query['page'] as number | undefined;
 		const size = req.query['size'] as number | undefined;
-
+		console.log('HealthRisk', healthRisk);
+		console.log('CallAction', callAction);
 		let endDate = new Date();
 		endDate.setHours(0, 0, 0, 0);
 		endDate.setDate(endDate.getDate() + 1);
