@@ -132,19 +132,18 @@ export default async (
 		let healthRiskCustomers = responseCustomers.filter(
 			rC => rC.healthRisk === true
 		);
-		console.log('HealthRisk & CallAction', healthRisk, callAction);
-		console.log('HealthRiskCustomers', healthRiskCustomers);
+
 		let callActionsCustomers = responseCustomers.filter(
 			rC => rC.interaction.callBlock === true
 		);
-		console.log('callActionCustomers', callActionsCustomers);
+		console.log("HealthRisk", healthRisk === true ? 'healthRisk' : 'noHealthRisk');
+		console.log("CallAction", callAction === true ? 'callAction' : 'noCallAction');
 
 		responseCustomers =
 			healthRisk === true ? healthRiskCustomers : responseCustomers;
-		console.log('Response1', responseCustomers);
 		responseCustomers =
 			callAction === true ? callActionsCustomers : responseCustomers;
-		console.log('response2', responseCustomers);
+
 
 		res.status(200).send(responseCustomers);
 		return;
