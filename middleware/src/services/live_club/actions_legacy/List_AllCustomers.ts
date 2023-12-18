@@ -62,9 +62,11 @@ export default async (
 	try {
 		console.log('GET /liveclub/interactions/planned');
 		const authorization = req.headers['authorization'] as string;
-		const in_club = req.query['in_club'] as boolean | undefined;
+		const inClub = req.query['inClub'] as boolean | undefined;
 		const inRoom = req.query['inRoom'] as boolean | undefined;
 		const withInt = req.query['withInt'] as boolean | undefined;
+		const callAction = req.query['callAction'] as boolean | undefined;
+		const healthRisk = req.query['healthRisk'] as boolean | undefined;
 		const loc = req.query['location_code'] as string | undefined;
 		const page = req.query['page'] as number | undefined;
 		const size = req.query['size'] as number | undefined;
@@ -79,7 +81,7 @@ export default async (
 		// add a day
 
 		let query: QueryInteractions = {
-			in_club: in_club,
+			in_club: inClub,
 			origin: 'solinca.solinca',
 			main_location: loc,
 			page: page,
