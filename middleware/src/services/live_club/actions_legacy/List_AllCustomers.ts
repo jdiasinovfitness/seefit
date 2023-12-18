@@ -128,12 +128,15 @@ export default async (
 				healthRisk: c.last_conclusion_af?.personal_history ? true : false,
 			});
 		}
-		responseCustomers = healthRisk
-			? responseCustomers.filter(rC => rC.healthRisk)
-			: responseCustomers;
-		responseCustomers = callAction
-			? responseCustomers.filter(rC => rC.interaction.callBlock)
-			: responseCustomers;
+
+		console.log('HealthRisk', healthRisk);
+		console.log('CallAction', callAction);
+		// responseCustomers = healthRisk
+		// 	? responseCustomers.filter(rC => rC.healthRisk)
+		// 	: responseCustomers;
+		// responseCustomers = callAction
+		// 	? responseCustomers.filter(rC => rC.interaction.callBlock)
+		// 	: responseCustomers;
 
 		res.status(200).send(responseCustomers);
 		return;
