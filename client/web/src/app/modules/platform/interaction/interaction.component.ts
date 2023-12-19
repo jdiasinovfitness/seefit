@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IonModal } from '@ionic/angular';
@@ -9,6 +9,7 @@ import {
   Customer,
   C_STATUS,
   Interaction2BCompleted,
+  InteractionInfo,
 } from 'src/app/core/interfaces/customer.model';
 import { InteractionService } from 'src/app/core/services/interaction.service';
 
@@ -71,8 +72,10 @@ export class InteractionComponent implements OnInit {
     observation: '',
   };
   interactionService: InteractionService | undefined;
+  interactionList: Array<InteractionInfo> = [];
 
   constructor(
+    private cdRef: ChangeDetectorRef,
     private dataService: DataService,
     private translateService: TranslateService,
     private customerService: CustomerService,
@@ -306,11 +309,20 @@ export class InteractionComponent implements OnInit {
   }
 
   handleInteractionComplete(data: Interaction2BCompleted) {
+    this.showLoading = true;
     const index = this.list.findIndex(
       (item) => item.interaction.id === data.interaction_id
     );
     if (index !== -1) {
-      this.list[index].interaction.status = C_STATUS.COMPLETED;
+      this.list[index] = {
+        ...this.list[index],
+        interaction: {
+          ...this.list[index].interaction,
+          status: C_STATUS.COMPLETED,
+        },
+      };
+      this.list = [...this.list];
     }
+    this.showLoading = false;
   }
 }
