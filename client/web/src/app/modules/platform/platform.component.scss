@@ -1,5 +1,15 @@
 @import "../../../global.scss";
 
+ion-menu {
+  --width: 30%; 
+}
+
+ion-toolbar:first-of-type{
+  --background: white;
+  --border-width: 0 0 0;
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .logo {
   height: 64px;
   width: 150px;
@@ -37,6 +47,90 @@
 
 ion-menu::part(backdrop) {
   background-color: transparent;
+}
+
+ion-content{
+  --padding-start: 5%;
+  --padding-end: 5%;
+  --padding-top: 5%;
+
+  #sub-menu{
+    margin-bottom: 50%;
+  }
+
+  ion-item{
+    border: none;
+    
+    ion-label{
+      margin-left: 5%;
+      overflow: visible;
+    }
+
+    ion-label.sub-menu-title{
+      margin-left: 5px;
+      font-weight: bold;
+    }
+  }
+
+  .sub-menu-item{
+    margin-left: 2%;
+
+    ion-label{
+      color: #646464;
+      margin-left: 0;
+      font-size: 0.95rem;
+    }
+
+    ion-icon{
+      width: 0.8em;
+      color: #646464;
+      margin-top: 4px;
+      margin-right: 4%;
+    }
+  }
+
+  #back-to-main-menu{
+    margin-left: 2%;
+
+    ion-label{
+      margin-left: 0;
+    }
+
+    ion-icon{
+      margin-right: 3%;
+    }
+  }
+}
+
+.menu-item{
+  margin-bottom: 10px;
+}
+
+.menu-containers{
+  ion-label{
+    overflow: visible;
+    font-weight: 600;
+  }
+
+  ion-label.sub-menu-title{
+    margin-left: 5px;
+    font-weight: bold;
+  }
+}
+
+#sub-menu-header{
+  --border-color: black;
+}
+
+.footer-item{
+  ion-label{
+    font-size: 0.7rem;
+    font-weight: 800 !important; //TODO: arranjar maneira de tirar o important
+  }
+
+  ion-icon{
+    margin-bottom: 0 !important; //TODO: arranjar maneira de tirar o important
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -131,4 +225,9 @@ ion-radio {
 ion-radio-group {
   display: flex;
   flex-direction: column;
+}
+
+#main-content{
+  background-image: url("../../../assets/images/background-inov.PNG");
+  background-size: cover;
 }

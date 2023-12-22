@@ -16,10 +16,13 @@ import { ConfigService } from '../../core/services/config.service';
 export class PlatformComponent implements OnInit {
   profilePhoto = 'https://ionicframework.com/docs/img/demos/avatar.svg';
   userName = '';
+  public selectedMenuItem?: MenuData;
   public menuItems!: Array<MenuData>;
+  public auxMenuItems!: Array<MenuData>;
   public locList!: Array<any>;
   selectedLoc!: number;
   show = false;
+  quickLinksShow = false;
   constructor(
     private router: Router,
     private menu: MenuController,
@@ -37,6 +40,7 @@ export class PlatformComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = this.dataService.menuItems;
+    this.auxMenuItems = this.menuItems;
     this.locList = this.configService.getGymnList();
     this.selectedLoc = this.locList[0]?.locationId;
     this.userName = this.userService.getUserInfo()?.name || '';
@@ -73,5 +77,25 @@ export class PlatformComponent implements OnInit {
   logOut() {
     this.menu.close();
     this.authService.logOut();
+  }
+
+  showSubMenuOrNavigate(item: MenuData | undefined){
+    if(item != undefined){
+      if(item.subMenu){
+        this.menuItems = this.auxMenuItems;
+        this.menuItems = this.menuItems.filter(i => i.title != item.title);
+        this.selectedMenuItem = item;
+        this.quickLinksShow = this.selectedMenuItem.subMenu!.length <= 2;
+      }else{
+        if(item.url != undefined && item.url != ''){
+          this.navigate(item.url);
+        }
+        this.quickLinksShow = false;
+      }
+    }else{
+      this.menuItems = this.auxMenuItems;
+      this.selectedMenuItem = undefined;
+      this.quickLinksShow = false;
+    }
   }
 }

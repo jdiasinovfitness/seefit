@@ -9,7 +9,7 @@
       </ion-menu-toggle>
     </ion-buttons>
 
-    <div class="logo" id="inov-fitness-logo"></div>
+    <a href="/"><div class="logo" id="inov-fitness-logo"></div></a>
   </ion-toolbar>
 </ion-header>
 
@@ -32,26 +32,61 @@
   </ion-header>
 
   <!-- User Section -->
-  <ion-avatar class="menu-avatar" (click)="navigate('/platform/user/profile')">
+  <!--<ion-avatar class="menu-avatar" (click)="navigate('/platform/user/profile')">
     <img alt="Silhouette of a person's head" [src]="profilePhoto" />
   </ion-avatar>
   <div class="avatar-name" (click)="navigate('/platform/user/profile')">
     <ion-label color="primary">{{ userName }}</ion-label>
-  </div>
+  </div>-->
 
   <!-- Menu Section -->
   <ion-content>
-    <ng-container *ngFor="let item of menuItems; let i = index">
-      <!-- Menu Item -->
-      <ion-item *ngIf="!item.subMenu" lines="full" button detail="false">
+    <!-- SubItems -->
+    <div id="sub-menu" class="menu-containers" *ngIf="selectedMenuItem != undefined && selectedMenuItem.subMenu != undefined">
+      <ion-item id="sub-menu-header">
+        <ion-label class="sub-menu-title" lines="full" detail="false" color="black">
+          {{ selectedMenuItem.title | translate }} Menu:
+        </ion-label>
+      </ion-item>
+      <ion-item class="sub-menu-item"
+        *ngFor="let subItem of selectedMenuItem.subMenu"
+        [routerLink]="subItem?.url ? [subItem?.url] : null"
+        detail="false"
+        lines="none"
+        (click)="toggleMenu()"
+        slot="content"
+      >
+        <ion-icon slot="start" [name]="subItem?.icon">
+        </ion-icon>
+        <ion-label color="dark">
+          {{ subItem.title | translate }}
+        </ion-label>
+      </ion-item>
+      <ion-item id="back-to-main-menu" lines="none" detail="false" button (click)="showSubMenuOrNavigate(undefined)">
+        <ion-icon name="chevron-back-outline" slot="start" color="primary"></ion-icon>
+        <ion-label slot="start" color="primary">
+          Back to Main Menu
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <!-- Menu Item -->
+    <ion-item *ngIf="selectedMenuItem && quickLinksShow">
+      <ion-label class="sub-menu-title" lines="full" detail="false" color="black">
+        Quick Links:
+      </ion-label>
+    </ion-item>
+    <ng-container class="menu-containers" *ngFor="let item of menuItems; let i = index">
+      <ion-item class="menu-item" *ngIf="quickLinksShow || selectedMenuItem==undefined" lines="none" button detail="false" (click)="showSubMenuOrNavigate(item)">
         <ion-icon slot="start" color="primary" [name]="item?.icon"> </ion-icon>
         <ion-label style="font-weight: 600" slot="start" color="primary">
           {{ item.title | translate }}
         </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" color="primary"></ion-icon>
       </ion-item>
 
       <!-- Menu Item with SubItems -->
-      <ion-accordion-group [multiple]="true" *ngIf="item.subMenu">
+      <!--<ion-accordion-group [multiple]="true" *ngIf="item.subMenu">
         <ion-accordion [value]="i" color="primary">
           <ion-item
             slot="header"
@@ -64,10 +99,10 @@
             <ion-label style="font-weight: 600" slot="start" color="primary">
               {{ item.title | translate }}
             </ion-label>
-          </ion-item>
+          </ion-item>-->
 
           <!-- Sub Menu Item -->
-          <ion-item
+          <!-- <ion-item
             *ngFor="let subItem of item.subMenu"
             [routerLink]="subItem?.url ? [subItem?.url] : null"
             detail="false"
@@ -82,7 +117,7 @@
             </ion-label>
           </ion-item>
         </ion-accordion>
-      </ion-accordion-group>
+      </ion-accordion-group>-->
     </ng-container>
   </ion-content>
 
@@ -92,7 +127,7 @@
       <div class="footer" color="light">
         <!-- Origin -->
         <div class="footer-item" id="origin-modal">
-          <img class="menu-icon" src="assets/icons/molecule.svg" />
+          <img class="menu-icon" src="assets/icons/origin.svg" />
           <ion-label slot="end" color="primary">
             {{ "menu.footer.origin.title" | translate }}
           </ion-label>
@@ -113,7 +148,7 @@
                   </ion-button>
                 </ion-buttons>
 
-                <ion-title> Ginásios </ion-title>
+                <ion-title> {{ "menu.footer.origin.modal-title" | translate }} </ion-title>
 
                 <ion-buttons slot="end">
                   <ion-button (click)="confirm()" [strong]="true">
@@ -146,19 +181,29 @@
           </ng-template>
         </ion-modal>
 
-        <!-- Profile -->
-        <div class="footer-item" (click)="navigate('/platform/user/profile')">
-          <img class="menu-icon" src="assets/icons/user.svg" />
+        <!-- Language -->
+        <div class="footer-item" (click)="navigate('/platform/user/language')">
+          <!--<img class="menu-icon" src="assets/icons/user.svg" /> TODO: trocar para o icon certo (svg) -->
+          <ion-icon class="menu-icon" name="globe-outline" color="primary"></ion-icon>
           <ion-label slot="end" color="primary">
-            {{ "menu.footer.profile.title" | translate }}
+            {{ "menu.footer.language.title" | translate }}
           </ion-label>
         </div>
 
         <!-- Logout -->
         <div class="footer-item" slot="end" (click)="logOut()">
-          <img class="menu-icon" src="assets/icons/bell.svg" />
+          <ion-icon name="power-outline" color="primary"></ion-icon>
+          <!--<img class="menu-icon" src="assets/icons/bell.svg" /> TODO: alterar para o icon certo (svg)-->
           <ion-label slot="end" color="primary">
             {{ "menu.footer.logout.title" | translate }}
+          </ion-label>
+        </div>
+
+        <!-- Profile -->
+        <div class="footer-item" (click)="navigate('/platform/user/profile')">
+          <img class="menu-icon" src="assets/icons/user.svg" />
+          <ion-label slot="end" color="primary">
+            Usain Bolt
           </ion-label>
         </div>
       </div>

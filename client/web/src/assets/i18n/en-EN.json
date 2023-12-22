@@ -15,7 +15,8 @@
       },
       "health": {
         "title": "Health & Nutrition",
-        "": ""
+        "physical-evaluation": "Physical Evaluation",
+        "swimming-evaluation" : "Swimming Evaluation"
       },
       "training": {
         "title": "Training",
@@ -27,10 +28,16 @@
     },
     "footer": {
       "origin": {
-        "title": "Gyms",
-        "modal-title": "Gyms",
-        "close": "Close",
-        "save": "Save"
+        "title": "Origin",
+        "modal-title": "Origin Selection",
+        "close": "Cancel",
+        "save": "Change"
+      },
+      "language": {
+        "title": "Language",
+        "modal-title": "Language Selection",
+        "close": "Cancel",
+        "save": "Change"
       },
       "profile": {
         "title": "Profile"
