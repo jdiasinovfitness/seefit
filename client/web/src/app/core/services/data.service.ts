@@ -153,13 +153,45 @@ export class DataService {
             icon: 'square-outline',
             disabled: false,
           },
-          // {
-          //   title: 'menu.items.interaction.customer',
-          //   url: '/platform/customer',
-          //   icon: 'person-add-outline',
-          //   disabled: false,
-          // },
+          {
+          title: 'menu.items.interaction.data-report',
+          url: '',
+          icon: 'bar-chart-outline',
+          disabled: false,
+          },
         ],
+      },
+      {
+        title: 'menu.items.health.title',
+        icon: 'people',
+
+        disabled: false,
+        subMenu: [
+          {
+            title: 'menu.items.health.physical-evaluation',
+            url: '',
+            icon: 'square-outline',
+            disabled: false,
+          },
+          {
+            title: 'menu.items.health.swimming-evaluation',
+            url: '',
+            icon: 'square-outline',
+            disabled: false,
+          },
+        ],
+      },
+      {
+        title: 'menu.items.training.title',
+        icon: 'barbell-outline',
+
+        disabled: false,        
+      },
+      {
+        title: 'menu.items.feed.title',
+        icon: 'wifi-outline',
+
+        disabled: false,        
       },
     ];
   }

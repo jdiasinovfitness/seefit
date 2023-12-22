@@ -3,7 +3,7 @@
 .user-menu-wrapper {
   display: flex;
   flex-direction: column;
-  width: -webkit-fill-available;
+  width: -webkit-fill-available; //TODO: resolver menu demasiado pequeno e nome fica em duas linhas em vez de apenas numa
 
   ion-label {
     margin-top: 16px;
@@ -45,7 +45,6 @@
     }
   }
 }
-
 
 .logo {
   height: 64px;
