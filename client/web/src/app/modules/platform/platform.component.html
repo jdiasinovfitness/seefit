@@ -1,16 +1,43 @@
 <!-- SideBar Closed -->
 <ion-header type="md">
+  <!--Menu button and logo-->
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-toggle>
         <ion-button class="pic">
-          <img class="pic" src="assets/icons/menu.svg"
-        /></ion-button>
+          <img id="menu-image" class="pic" src="assets/icons/menu.svg">
+        </ion-button>
       </ion-menu-toggle>
     </ion-buttons>
 
     <a href="/"><div class="logo" id="inov-fitness-logo"></div></a>
+
+    <ion-buttons id="menu-other-options" slot="end">
+      <!-- Origin -->
+      <ion-button (click)="openModalFromMenu('origin-modal')">
+        <img class="menu-icon menu-icon-header" src="assets/icons/origin.svg" />
+      </ion-button>
+
+      <!-- Language -->
+      <ion-button (click)="navigate('/platform/user/language')">
+        <!--<img class="menu-icon" src="assets/icons/user.svg" /> TODO: trocar para o icon certo (svg) -->
+        <ion-icon class="menu-icon menu-icon-header" name="globe-outline"></ion-icon>
+      </ion-button>
+
+      <!-- Logout -->
+      <ion-button (click)="logOut()">
+        <ion-icon  class="menu-icon-header" name="power-outline"></ion-icon>
+        <!--<img class="menu-icon" src="assets/icons/bell.svg" /> TODO: alterar para o icon certo (svg)-->
+      </ion-button>
+
+      <!-- Profile -->
+      <ion-button (click)="navigate('/platform/user/profile')">
+        <img class="menu-icon menu-icon-header" src="assets/icons/user.svg" />
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
+
 </ion-header>
 
 <!-- SideBar Opened -->
@@ -21,8 +48,8 @@
         <ion-menu-toggle>
           <ion-button>
             <ion-button class="pic">
-              <img class="pic" src="assets/icons/close.svg"
-            /></ion-button>
+              <img id="menu-close-image" class="pic" src="assets/icons/close.svg">
+            </ion-button>
           </ion-button>
         </ion-menu-toggle>
       </ion-buttons>

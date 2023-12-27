@@ -98,4 +98,10 @@ export class PlatformComponent implements OnInit {
       this.quickLinksShow = false;
     }
   }
+
+  openModalFromMenu(elemId:string){
+    if(elemId!=null){
+      document.getElementById(elemId)!.click();
+    }
+  }
 }

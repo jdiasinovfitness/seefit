@@ -1,5 +1,15 @@
 @import "../../../global.scss";
 
+#menu-image{
+  width: 1rem;
+  margin-left: 1.2rem;
+  margin-right: 1rem;
+}
+
+#menu-close-image{
+  margin-left: 1.2rem;
+}
+
 ion-menu {
   --width: 30%; 
 }
@@ -43,6 +53,11 @@ ion-toolbar:first-of-type{
   ion-label {
     font-weight: 600;
   }
+}
+
+.menu-icon-header{
+  filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(0%) hue-rotate(235deg) brightness(107%) contrast(101%);
+  margin-right: 1rem;
 }
 
 ion-menu::part(backdrop) {
@@ -196,6 +211,10 @@ ion-footer {
   ion-menu {
     // Makes side menu width 100% for sm devices (phones)
     --min-width: 90%;
+  }
+
+  #menu-other-options{
+    display: none;
   }
 }
 
