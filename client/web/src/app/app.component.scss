@@ -117,3 +117,12 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+ion-app{
+  background-image: url("../../assets/images/background-inov.PNG");
+  background-size: cover;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

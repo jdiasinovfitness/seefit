@@ -1,11 +1,17 @@
 @import "../../../../global.scss";
 
+.header-filters{
+  background-color: white;
+}
+
 .filter-bar {
   display: flex;
   align-items: center;
 
   margin-top: 26px;
   margin-right: 8px;
+
+  border-bottom: none;
 
   ion-button {
     min-height: 36px;
@@ -59,7 +65,10 @@ ion-content {
 
 ion-segment {
   padding: 0px 16px;
-  ion-segment-button.activated {
+  ion-segment-button{
+    color: black;
+  }
+  ion-segment-button.segment-button-checked {
     color: var(--ion-color-primary);
   }
 }
@@ -69,14 +78,18 @@ ion-segment {
   justify-content: flex-start;
   align-items: inherit;
   padding-top: 24px;
-  margin-bottom: -30px;
+  margin-bottom: -15px;
+  //border-bottom-color: rgba (244, 245, 248, 0.5);
   ion-item {
     width: -webkit-fill-available;
+    --border-color: #f4f5f8;
+    --border-width: 0 0 0.2rem 0;
   }
   .segment {
     display: flex;
     flex-grow: 1;
     width: fit-content;
+    --border-width: 0;
   }
 }
 
@@ -106,7 +119,8 @@ ion-footer {
 
 @media (min-width: 1200px) {
   .header-filters {
-    display: flex;
+    display: block;
+    //display: flex;
     flex-direction: row;
   }
 
@@ -118,7 +132,7 @@ ion-footer {
     flex: 1;
     margin-right: 8px;
     margin-top: 13px;
-    border-bottom: 0.5px solid lightgray;
+    //border-bottom: 0.5px solid lightgray;
     ion-searchbar {
       padding-top: 26px !important;
     }
