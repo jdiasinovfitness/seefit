@@ -119,10 +119,17 @@ ion-item.selected {
 }
 
 ion-app{
-  background-image: url("../../assets/images/background-inov.PNG");
+  background-image: url("../assets/images/background-inov.PNG"); //TODO: alterar para a imagem original
   background-size: cover;
-  background-repeat: no-repeat, repeat;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+}
+
+@media screen and (max-width: 968px) {
+  ion-app{
+    background-image: url("../assets/images/background-inov.PNG"); //TODO: alterar para imagem adaptada a mobile
+    background-repeat: repeat, no-repeat;
+    background-position: center 70px;
+    background-size: 350% 95%;
+  }
 }

@@ -15,7 +15,8 @@
       },
       "health": {
         "title": "Saúde e Nutrição",
-        "": ""
+        "physical-evaluation": "Avaliação Física",
+        "swimming-evaluation" : "Avaliação de Natação"
       },
       "training": {
         "title": "Treino",
@@ -27,8 +28,14 @@
     },
     "footer": {
       "origin": {
-        "title": "Ginásios",
-        "modal-title": "Ginásios",
+        "title": "Origem",
+        "modal-title": "Seleção de Origem",
+        "close": "Cancelar",
+        "save": "Alterar"
+      },
+      "language": {
+        "title": "Linguagem",
+        "modal-title": "Seleção de Linguagem",
         "close": "Cancelar",
         "save": "Alterar"
       },
