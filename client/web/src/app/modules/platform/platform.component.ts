@@ -7,6 +7,7 @@ import { UserService } from '../../core/services/user.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../core/services/config.service';
+import { LangService } from 'src/app/core/services/lang.service';
 
 @Component({
   selector: 'app-platform',
@@ -20,7 +21,9 @@ export class PlatformComponent implements OnInit {
   public menuItems!: Array<MenuData>;
   public auxMenuItems!: Array<MenuData>;
   public locList!: Array<any>;
+  public langList!: Array<any>;
   selectedLoc!: number;
+  selectedLang!: string;
   show = false;
   quickLinksShow = false;
   constructor(
@@ -30,7 +33,8 @@ export class PlatformComponent implements OnInit {
     private userService: UserService,
     public dataService: DataService,
     private modalCtrl: ModalController,
-    private configService: ConfigService
+    private configService: ConfigService,
+    private langService: LangService
   ) {
     this.configService.configChangeEmmitter$.subscribe((ev) => {
       console.log('Recebeu', ev);
@@ -42,6 +46,8 @@ export class PlatformComponent implements OnInit {
     this.menuItems = this.dataService.menuItems;
     this.auxMenuItems = this.menuItems;
     this.locList = this.configService.getGymnList();
+    this.langList = this.langService.languages;
+    this.selectedLang = this.langService.currentLang;
     this.selectedLoc = this.locList[0]?.locationId;
     this.userName = this.userService.getUserInfo()?.name || '';
   }
@@ -49,6 +55,11 @@ export class PlatformComponent implements OnInit {
   onLocationSelect(event: any) {
     const val = event.target.value;
     this.selectedLoc = val ? val : this.selectedLoc;
+  }
+
+  onLanguageSelect(event: any) {
+    const val = event.target.value;
+    this.selectedLang = val ? val : this.selectedLang;
   }
 
   cancel() {
@@ -59,6 +70,20 @@ export class PlatformComponent implements OnInit {
   confirm() {
     this.modalCtrl.dismiss();
     this.dataService.selectedOrigin = this.selectedLoc;
+  }
+
+  cancelLang() {
+    this.selectedLang = this.langService.currentLang;
+    this.modalCtrl.dismiss();
+  }
+
+  confirmLang() {
+    this.modalCtrl.dismiss();
+    this.langService.currentLang = this.selectedLang;
+    /*const instLang = this.langService.translate(
+      'user.profile.form.confirm.lang'
+    );
+    this.toastService.presentToast({ message: instLang });*/
   }
 
   navigate(path: string) {

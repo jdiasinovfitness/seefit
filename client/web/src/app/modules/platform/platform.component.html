@@ -19,7 +19,7 @@
       </ion-button>
 
       <!-- Language -->
-      <ion-button (click)="navigate('/platform/user/language')">
+      <ion-button (click)="openModalFromMenu('language-modal')">
         <!--<img class="menu-icon" src="assets/icons/user.svg" /> TODO: trocar para o icon certo (svg) -->
         <ion-icon class="menu-icon menu-icon-header" name="globe-outline"></ion-icon>
       </ion-button>
@@ -31,7 +31,7 @@
       </ion-button>
 
       <!-- Profile -->
-      <ion-button (click)="navigate('/platform/user/profile')">
+      <ion-button (click)="navigate('/platform/user/profile')" [disabled]="true"> <!--TODO: Voltar a pôr ação no botão-->
         <img class="menu-icon menu-icon-header" src="assets/icons/user.svg" />
       </ion-button>
     </ion-buttons>
@@ -211,11 +211,59 @@
         <!-- Language -->
         <div class="footer-item" (click)="navigate('/platform/user/language')">
           <!--<img class="menu-icon" src="assets/icons/user.svg" /> TODO: trocar para o icon certo (svg) -->
-          <ion-icon class="menu-icon" name="globe-outline" color="primary"></ion-icon>
+          <ion-icon id="language-modal" class="menu-icon" name="globe-outline" color="primary"></ion-icon>
           <ion-label slot="end" color="primary">
             {{ "menu.footer.language.title" | translate }}
           </ion-label>
         </div>
+
+        <!-- Language Modal -->
+        <ion-modal
+          trigger="language-modal"
+          id="language-modal"
+          (willDismiss)="onWillDismiss($event)"
+        >
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-buttons slot="start">
+                  <ion-button (click)="cancelLang()">
+                    {{ "menu.footer.language.close" | translate }}
+                  </ion-button>
+                </ion-buttons>
+
+                <ion-title> {{ "menu.footer.language.modal-title" | translate }} </ion-title>
+
+                <ion-buttons slot="end">
+                  <ion-button (click)="confirmLang()" [strong]="true">
+                    {{ "menu.footer.language.save" | translate }}
+                  </ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content>
+              <ion-list>
+                <ion-radio-group
+                  [value]="selectedLang"
+                  (ionChange)="onLanguageSelect($event)"
+                >
+                  <ion-radio
+                    [value]="lang.id"
+                    *ngFor="let lang of langList; let i = index"
+                    labelPlacement="end"
+                    justify="start"
+                    slot="end"
+                  >
+                    <ion-item class="radio-item">
+                      {{ lang.name }}
+                    </ion-item>
+                  </ion-radio>
+                </ion-radio-group>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
 
         <!-- Logout -->
         <div class="footer-item" slot="end" (click)="logOut()">
@@ -227,10 +275,11 @@
         </div>
 
         <!-- Profile -->
-        <div class="footer-item" (click)="navigate('/platform/user/profile')">
+        <!--TODO: Voltar a pôr ação no botão <div class="footer-item" button (click)="navigate('/platform/user/profile')" [disabled]="true"> -->
+        <div class="footer-item" style="opacity: 0.5;">
           <img class="menu-icon" src="assets/icons/user.svg" />
           <ion-label slot="end" color="primary">
-            Usain Bolt
+            User
           </ion-label>
         </div>
       </div>
