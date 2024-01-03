@@ -80,10 +80,6 @@ export class PlatformComponent implements OnInit {
   confirmLang() {
     this.modalCtrl.dismiss();
     this.langService.currentLang = this.selectedLang;
-    /*const instLang = this.langService.translate(
-      'user.profile.form.confirm.lang'
-    );
-    this.toastService.presentToast({ message: instLang });*/
   }
 
   navigate(path: string) {

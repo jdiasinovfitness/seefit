@@ -98,7 +98,8 @@ ion-segment {
 }
 
 ion-footer {
-  padding-bottom: 20px;
+  //padding-bottom: 20px;
+  --opacity-scale: 1;
 }
 
 .expanded-area {
